@@ -1,0 +1,19 @@
+continents = {
+	Beanamh
+	Lean
+	Segio
+	Msafikutifu
+	Cailteach
+	Kuvivalawiki
+	Monerriame
+	
+	
+	#Vanilla continents kept in for compatibility. Removing them breaks a lot of references to them
+	europe
+	north_america
+	south_america
+	australia
+	africa
+	asia
+	middle_east
+}

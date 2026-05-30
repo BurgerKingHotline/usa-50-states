@@ -1,0 +1,82 @@
+areas = {
+	# Generated continents
+		beanamh = {
+		continents = {
+			beanamh
+		}
+	}
+	lean = {
+		continents = {
+			lean
+		}
+	}
+	segio = {
+		continents = {
+			segio
+		}
+	}
+	msafikutifu = {
+		continents = {
+			msafikutifu
+		}
+	}
+	cailteach = {
+		continents = {
+			cailteach
+		}
+	}
+	kuvivalawiki = {
+		continents = {
+			kuvivalawiki
+		}
+	}
+	monerriame = {
+		continents = {
+			monerriame
+		}
+	}
+
+
+	#Vanilla continents kept in for compatibility. Removing them breaks a lot of references to them
+	europe = {
+		continents = {
+			europe
+		}
+	}
+
+	north_america = {
+		continents = {
+			north_america
+		}
+	}
+
+	south_america = {
+		continents = {
+			south_america
+		}
+	}
+
+	africa = {
+		continents = {
+			africa
+		}
+	}
+
+	australia = {
+		continents = {
+			australia
+		}
+	}
+
+	asia = {
+		continents = {
+			asia
+		}
+	}
+
+	middle_east = {
+		continents = {
+			middle_east
+		}
+	}
+}
