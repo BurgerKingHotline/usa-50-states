@@ -1,0 +1,15 @@
+# Characters for Delaware
+characters = {
+	DELAWARE_GOV = {
+		name = "C. Douglass Buck"
+		portraits = {
+			civilian = { large = "GFX_DLW_Portrait_C_Douglass_Buck" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Delaware, 1929-1937"
+		}
+	}
+}

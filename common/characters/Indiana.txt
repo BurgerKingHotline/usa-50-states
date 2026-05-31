@@ -1,0 +1,15 @@
+# Characters for Indiana
+characters = {
+	INDIANA_GOV = {
+		name = "Harry G. Leslie"
+		portraits = {
+			civilian = { large = "GFX_INA_Portrait_Harry_G_Leslie" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Indiana, 1929-1933"
+		}
+	}
+}

@@ -4,6 +4,7 @@ set_politics = {
     election_frequency = 48
     elections_allowed = yes
 }
+recruit_character = MAINE_GOV
 
 set_popularities = {
     democratic = 40
@@ -11,6 +12,3 @@ set_popularities = {
     fascism = 3
     communism = 2
 }
-
-
-#recruit_character = ABK_kirilli_bechvaya

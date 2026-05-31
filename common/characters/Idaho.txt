@@ -1,0 +1,15 @@
+# Characters for Idaho
+characters = {
+	IDAHO_GOV = {
+		name = "C. Ben Ross"
+		portraits = {
+			civilian = { large = "GFX_IDH_Portrait_C_Ben_Ross" }
+		}
+		gender = male
+		country_leader = {
+			ideology = Liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Idaho, 1931-1937"
+		}
+	}
+}

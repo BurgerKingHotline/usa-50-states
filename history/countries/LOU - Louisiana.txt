@@ -4,6 +4,8 @@ set_politics = {
     election_frequency = 48
     elections_allowed = yes
 }
+recruit_character = LOUISIANA_GOV
+
 
 set_popularities = {
     democratic = 60
@@ -12,5 +14,3 @@ set_popularities = {
     communism = 5
 }
 
-
-#recruit_character = ABK_kirilli_bechvaya

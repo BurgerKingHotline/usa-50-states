@@ -4,6 +4,8 @@ set_politics = {
     election_frequency = 48
     elections_allowed = yes
 }
+recruit_character = NEVADA_GOV
+
 
 set_popularities = {
     democratic = 55

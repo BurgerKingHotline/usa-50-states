@@ -4,13 +4,10 @@ set_politics = {
     election_frequency = 48
     elections_allowed = yes
 }
-
+recruit_character = FLORIDA_GOV
 set_popularities = {
     democratic = 60
     neutrality = 25
     fascism = 12
     communism = 3
 }
-
-
-#recruit_character = ABK_kirilli_bechvaya

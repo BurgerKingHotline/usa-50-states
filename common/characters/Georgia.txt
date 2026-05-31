@@ -1,0 +1,15 @@
+# Characters for Georgia
+characters = {
+	GEORGIA_GOV = {
+		name = "Richard B. Russell Jr."
+		portraits = {
+			civilian = { large = "GFX_GRR_Portrait_Richard_B_Russell_Jr" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Georgia, 1931-1933"
+		}
+	}
+}

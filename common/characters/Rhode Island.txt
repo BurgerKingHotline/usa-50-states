@@ -1,0 +1,15 @@
+# Characters for Rhode Island
+characters = {
+	RHODE_ISLAND_GOV = {
+		name = "Norman S. Case"
+		portraits = {
+			civilian = { large = "GFX_RHD_Portrait_Norman_S_Case" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Rhode Island, 1928-1933"
+		}
+	}
+}

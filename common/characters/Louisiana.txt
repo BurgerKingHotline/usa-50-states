@@ -1,0 +1,15 @@
+# Characters for Louisiana
+characters = {
+	LOUISIANA_GOV = {
+		name = "Oscar K. Allen"
+		portraits = {
+			civilian = { large = "GFX_LOU_Portrait_Oscar_K_Allen" }
+		}
+		gender = male
+		country_leader = {
+			ideology = populism
+			expire = "1965.1.1"
+			desc = "Governor of Louisiana, 1932-1936"
+		}
+	}
+}

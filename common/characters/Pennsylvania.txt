@@ -1,0 +1,15 @@
+# Characters for Pennsylvania
+characters = {
+	PENNSYLVANIA_GOV = {
+		name = "Gifford Pinchot"
+		portraits = {
+			civilian = { large = "GFX_PEN_Portrait_Gifford_Pinchot" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Pennsylvania, 1931-1935"
+		}
+	}
+}

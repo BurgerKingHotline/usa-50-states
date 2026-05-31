@@ -4,6 +4,7 @@ set_politics = {
     election_frequency = 48
     elections_allowed = yes
 }
+recruit_character = SOUTH_DAKOTA_GOV
 
 set_popularities = {
     democratic = 45

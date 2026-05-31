@@ -1,0 +1,15 @@
+# Characters for Connecticut
+characters = {
+	CONNECTICUT_GOV = {
+		name = "Wilbur L. Cross"
+		portraits = {
+			civilian = { large = "GFX_CCT_Portrait_Wilbur_L_Cross" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Connecticut, 1931-1939"
+		}
+	}
+}

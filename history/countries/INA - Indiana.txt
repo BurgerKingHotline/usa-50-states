@@ -4,6 +4,7 @@ set_politics = {
     election_frequency = 48
     elections_allowed = yes
 }
+recruit_character = INDIANA_GOV
 
 set_popularities = {
     democratic = 40
@@ -11,6 +12,3 @@ set_popularities = {
     fascism = 10
     communism = 5
 }
-
-
-#recruit_character = ABK_kirilli_bechvaya

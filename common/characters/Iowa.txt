@@ -1,0 +1,15 @@
+# Characters for Iowa
+characters = {
+	IOWA_GOV = {
+		name = "Dan W. Turner"
+		portraits = {
+			civilian = { large = "GFX_IOW_Portrait_Dan_W_Turner" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Iowa, 1931-1933"
+		}
+	}
+}

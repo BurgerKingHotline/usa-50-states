@@ -1,0 +1,15 @@
+# Characters for Wisconsin
+characters = {
+	WISCONSIN_GOV = {
+		name = "Philip La Follette"
+		portraits = {
+			civilian = { large = "GFX_WSC_Portrait_Philip_La_Follette" }
+		}
+		gender = male
+		country_leader = {
+			ideology = socialism
+			expire = "1965.1.1"
+			desc = "Governor of Wisconsin, 1931-1933"
+		}
+	}
+}

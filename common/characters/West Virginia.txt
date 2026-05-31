@@ -1,0 +1,15 @@
+# Characters for West Virginia
+characters = {
+	WEST_VIRGINIA_GOV = {
+		name = "William G. Conley"
+		portraits = {
+			civilian = { large = "GFX_WVR_Portrait_William_G_Conley" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of West Virginia, 1929-1933"
+		}
+	}
+}

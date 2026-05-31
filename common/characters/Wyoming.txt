@@ -1,0 +1,15 @@
+# Characters for Wyoming
+characters = {
+	WYOMING_GOV = {
+		name = "Alonzo M. Clark"
+		portraits = {
+			civilian = { large = "GFX_WYM_Portrait_Alonzo_M_Clark" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Wyoming, 1931-1933"
+		}
+	}
+}

@@ -1,0 +1,15 @@
+# Characters for South Dakota
+characters = {
+	SOUTH_DAKOTA_GOV = {
+		name = "Warren Green"
+		portraits = {
+			civilian = { large = "GFX_SDK_Portrait_Warren_Green" }
+		}
+		gender = male
+		country_leader = {
+			ideology = populism
+			expire = "1965.1.1"
+			desc = "Governor of South Dakota, 1931-1933"
+		}
+	}
+}

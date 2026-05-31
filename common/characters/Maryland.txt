@@ -1,0 +1,15 @@
+# Characters for Maryland
+characters = {
+	MARYLAND_GOV = {
+		name = "Albert C. Ritchie"
+		portraits = {
+			civilian = { large = "GFX_MRY_Portrait_Albert_C_Ritchie" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Maryland, 1920-1935"
+		}
+	}
+}

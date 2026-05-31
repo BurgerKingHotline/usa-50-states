@@ -1,0 +1,15 @@
+# Characters for Alaska
+characters = {
+	ALASKA_GOV = {
+		name = "George Alexander Parks"
+		portraits = {
+			civilian = { large = "GFX_ABM_Portrait_George_A_Parks" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Territorial Governor of Alaska, 1925-1933"
+		}
+	}
+}

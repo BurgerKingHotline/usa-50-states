@@ -4,6 +4,8 @@ set_politics = {
     election_frequency = 48
     elections_allowed = yes
 }
+#recruit_character = ABK_kirilli_bechvaya
+recruit_character = VERMONT_GOV
 
 set_popularities = {
     democratic = 35
@@ -13,4 +15,3 @@ set_popularities = {
 }
 
 
-#recruit_character = ABK_kirilli_bechvaya

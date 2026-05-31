@@ -1,0 +1,15 @@
+# Characters for Florida
+characters = {
+	FLORIDA_GOV = {
+		name = "Doyle E. Carlton"
+		portraits = {
+			civilian = { large = "GFX_FLO_Portrait_Doyle_E_Carlton" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Florida, 1929-1933"
+		}
+	}
+}

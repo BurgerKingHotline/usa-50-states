@@ -1,0 +1,15 @@
+# Characters for Vermont
+characters = {
+	VERMONT_GOV = {
+		name = "Stanley C. Wilson"
+		portraits = {
+			civilian = { large = "GFX_VMT_Portrait_Stanley_C_Wilson" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Vermont, 1931-1935"
+		}
+	}
+}

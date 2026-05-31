@@ -1,0 +1,15 @@
+# Characters for Maine
+characters = {
+	MAINE_GOV = {
+		name = "William Tudor Gardiner"
+		portraits = {
+			civilian = { large = "GFX_MNE_Portrait_William_Tudor_Gardiner" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Maine, 1929-1933"
+		}
+	}
+}

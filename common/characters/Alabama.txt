@@ -1,0 +1,15 @@
+# Characters for Alabama
+characters = {
+	ALABAMA_GOV = {
+		name = "Benjamin M. Miller"
+		portraits = {
+			civilian = { large = "GFX_ABM_Portrait_Benjamin_M_Miller" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Alabama, 1931-1935"
+		}
+	}
+}

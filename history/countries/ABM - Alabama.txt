@@ -5,6 +5,8 @@ set_politics = {
     elections_allowed = yes
 }
 
+recruit_character = ALABAMA_GOV
+
 set_popularities = {
     democratic = 65
     neutrality = 20
@@ -13,4 +15,3 @@ set_popularities = {
 }
 
 
-#recruit_character = ABK_kirilli_bechvaya

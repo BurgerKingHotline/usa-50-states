@@ -1,0 +1,15 @@
+# Characters for Kansas
+characters = {
+	KANSAS_GOV = {
+		name = "Harry Hines Woodring"
+		portraits = {
+			civilian = { large = "GFX_KNS_Portrait_Harry_Hines_Woodring" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Kansas, 1931-1933"
+		}
+	}
+}

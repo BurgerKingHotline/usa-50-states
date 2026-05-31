@@ -1,0 +1,15 @@
+# Characters for New Mexico
+characters = {
+	NEW_MEXICO_GOV = {
+		name = "Arthur Seligman"
+		portraits = {
+			civilian = { large = "GFX_NWM_Portrait_Billy_Adams" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of New Mexico, 1931-1935"
+		}
+	}
+}

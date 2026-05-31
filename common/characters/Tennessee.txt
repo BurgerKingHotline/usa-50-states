@@ -1,0 +1,15 @@
+# Characters for Tennessee
+characters = {
+	TENNESSEE_GOV = {
+		name = "Henry H. Horton"
+		portraits = {
+			civilian = { large = "GFX_TNN_Portrait_Henry_H_Horton" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Tennessee, 1927-1933"
+		}
+	}
+}

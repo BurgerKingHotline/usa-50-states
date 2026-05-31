@@ -1,0 +1,15 @@
+# Characters for Texas
+characters = {
+	TEXAS_GOV = {
+		name = "Ross S. Sterling"
+		portraits = {
+			civilian = { large = "GFX_TEX_Portrait_Ross_S_Sterling" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Texas, 1931-1933"
+		}
+	}
+}

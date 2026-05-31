@@ -1,0 +1,15 @@
+# Characters for Minnesota
+characters = {
+	MINNESOTA_GOV = {
+		name = "Floyd B. Olson"
+		portraits = {
+			civilian = { large = "GFX_MNS_Portrait_Floyd_B_Olson" }
+		}
+		gender = male
+		country_leader = {
+			ideology = socialism
+			expire = "1965.1.1"
+			desc = "Governor of Minnesota, 1931-1936"
+		}
+	}
+}

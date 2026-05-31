@@ -1,0 +1,15 @@
+# Characters for North Dakota
+characters = {
+	NORTH_DAKOTA_GOV = {
+		name = "George F. Shafer"
+		portraits = {
+			civilian = { large = "GFX_NRD_Portrait_George_F_Shafer" }
+		}
+		gender = male
+		country_leader = {
+			ideology = populism
+			expire = "1965.1.1"
+			desc = "Governor of North Dakota, 1929-1933"
+		}
+	}
+}

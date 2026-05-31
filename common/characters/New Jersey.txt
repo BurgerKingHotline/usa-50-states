@@ -1,0 +1,15 @@
+# Characters for New Jersey
+characters = {
+	NEW_JERSEY_GOV = {
+		name = "A. Harry Moore"
+		portraits = {
+			civilian = { large = "GFX_NYJ_Portrait_A_Harry_Moore" }
+		}
+		gender = male
+		country_leader = {
+ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of New Jersey, 1932-1935"
+		}
+	}
+}

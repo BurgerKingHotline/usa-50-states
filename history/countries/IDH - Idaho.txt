@@ -4,6 +4,7 @@ set_politics = {
     election_frequency = 48
     elections_allowed = yes
 }
+recruit_character = IDAHO_GOV
 
 set_popularities = {
     democratic = 55
@@ -11,6 +12,3 @@ set_popularities = {
     fascism = 5
     communism = 5
 }
-
-
-#recruit_character = ABK_kirilli_bechvaya

@@ -1,0 +1,15 @@
+# Characters for Utah
+characters = {
+	UTAH_GOV = {
+		name = "George Dern"
+		portraits = {
+			civilian = { large = "GFX_UTT_Portrait_George_Dern" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Utah, 1925-1933"
+		}
+	}
+}

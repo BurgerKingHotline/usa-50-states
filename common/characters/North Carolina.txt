@@ -1,0 +1,15 @@
+# Characters for North Carolina
+characters = {
+	NORTH_CAROLINA_GOV = {
+		name = "O. Max Gardner"
+		portraits = {
+			civilian = { large = "GFX_NRC_Portrait_O_Max_Gardner" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of North Carolina, 1929-1933"
+		}
+	}
+}

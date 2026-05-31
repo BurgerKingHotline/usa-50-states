@@ -1,0 +1,15 @@
+# Characters for Montana
+characters = {
+	MONTANA_GOV = {
+		name = "John E. Erickson"
+		portraits = {
+			civilian = { large = "GFX_MTN_Portrait_John_E_Erickson" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Montana, 1925-1933"
+		}
+	}
+}

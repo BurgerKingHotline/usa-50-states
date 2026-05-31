@@ -1,0 +1,15 @@
+# Characters for Illinois
+characters = {
+	ILLINOIS_GOV = {
+		name = "Louis L. Emmerson"
+		portraits = {
+			civilian = { large = "GFX_ILN_Portrait_Louis_L_Emmerson" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Illinois, 1929-1933"
+		}
+	}
+}

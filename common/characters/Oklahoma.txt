@@ -1,0 +1,15 @@
+# Characters for Oklahoma
+characters = {
+	OKLAHOMA_GOV = {
+		name = "William H. 'Alfalfa Bill' Murray"
+		portraits = {
+			civilian = { large = "GFX_OKL_Portrait_William_H_Alfalfa_Bill_Murray" }
+		}
+		gender = male
+		country_leader = {
+			ideology = populism
+			expire = "1965.1.1"
+			desc = "Governor of Oklahoma, 1931-1935"
+		}
+	}
+}

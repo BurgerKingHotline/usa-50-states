@@ -1,0 +1,15 @@
+# Characters for Massachusetts
+characters = {
+	MASSACHUSETTS_GOV = {
+		name = "Joseph B. Ely"
+		portraits = {
+			civilian = { large = "GFX_MSS_Portrait_Joseph_B_Ely" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Massachusetts, 1931-1935"
+		}
+	}
+}

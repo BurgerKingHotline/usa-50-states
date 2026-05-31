@@ -1,0 +1,15 @@
+# Characters for Arizona
+characters = {
+	ARIZONA_GOV = {
+		name = "George W. P. Hunt"
+		portraits = {
+			civilian = { large = "GFX_ABM_Portrait_George_W_P_Hunt" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Arizona, 1931-1933"
+		}
+	}
+}

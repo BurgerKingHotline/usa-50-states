@@ -1,0 +1,15 @@
+# Characters for Arkansas
+characters = {
+	ARKANSAS_GOV = {
+		name = "Harvey Parnell"
+		portraits = {
+			civilian = { large = "GFX_ABM_Portrait_Harvey_Parnell" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Arkansas, 1928-1933"
+		}
+	}
+}

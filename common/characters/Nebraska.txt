@@ -1,0 +1,15 @@
+# Characters for Nebraska
+characters = {
+	NEBRASKA_GOV = {
+		name = "Charles W. Bryan"
+		portraits = {
+			civilian = { large = "GFX_NEB_Portrait_Charles_W_Bryan" }
+		}
+		gender = male
+		country_leader = {
+			ideology = populism
+			expire = "1965.1.1"
+			desc = "Governor of Nebraska, 1931-1935"
+		}
+	}
+}

@@ -1,0 +1,15 @@
+# Characters for California
+characters = {
+	CALIFORNIA_GOV = {
+		name = "James Rolph"
+		portraits = {
+			civilian = { large = "GFX_ABM_Portrait_James_Rolph" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of California, 1931-1934"
+		}
+	}
+}

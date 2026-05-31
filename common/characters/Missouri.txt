@@ -1,0 +1,15 @@
+# Characters for Missouri
+characters = {
+	MISSOURI_GOV = {
+		name = "Henry S. Caulfield"
+		portraits = {
+			civilian = { large = "GFX_MSR_Portrait_Henry_S_Caulfield" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Missouri, 1929-1933"
+		}
+	}
+}

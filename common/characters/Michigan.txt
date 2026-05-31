@@ -1,0 +1,15 @@
+# Characters for Michigan
+characters = {
+	MICHIGAN_GOV = {
+		name = "William A. Comstock"
+		portraits = {
+			civilian = { large = "GFX_MCH_Portrait_William_A_Comstock" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Michigan, 1933-1935"
+		}
+	}
+}

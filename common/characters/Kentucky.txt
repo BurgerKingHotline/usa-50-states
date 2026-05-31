@@ -1,0 +1,15 @@
+# Characters for Kentucky
+characters = {
+	KENTUCKY_GOV = {
+		name = "Ruby Laffoon"
+		portraits = {
+			civilian = { large = "GFX_KTY_Portrait_Ruby_Laffoon" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Kentucky, 1931-1935"
+		}
+	}
+}

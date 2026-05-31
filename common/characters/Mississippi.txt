@@ -1,0 +1,15 @@
+# Characters for Mississippi
+characters = {
+	MISSISSIPPI_GOV = {
+		name = "Martin S. Conner"
+		portraits = {
+			civilian = { large = "GFX_MSP_Portrait_Martin_S_Conner" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Mississippi, 1932-1936"
+		}
+	}
+}

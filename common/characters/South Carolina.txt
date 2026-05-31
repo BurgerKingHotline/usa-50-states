@@ -1,0 +1,15 @@
+# Characters for South Carolina
+characters = {
+	SOUTH_CAROLINA_GOV = {
+		name = "Ibra C. Blackwood"
+		portraits = {
+			civilian = { large = "GFX_SCR_Portrait_Ibra_C_Blackwood" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of South Carolina, 1931-1935"
+		}
+	}
+}

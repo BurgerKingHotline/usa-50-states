@@ -1,0 +1,15 @@
+# Characters for Nevada
+characters = {
+	NEVADA_GOV = {
+		name = "Fred B. Balzar"
+		portraits = {
+			civilian = { large = "GFX_NVD_Portrait_Fred_B_Balzar" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Nevada, 1927-1934"
+		}
+	}
+}

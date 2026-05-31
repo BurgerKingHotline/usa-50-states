@@ -5,12 +5,11 @@ set_politics = {
     elections_allowed = yes
 }
 
+recruit_character = ARKANSAS_GOV
+
 set_popularities = {
     democratic = 63
     neutrality = 22
     fascism = 12
     communism = 3
 }
-
-
-#recruit_character = ABK_kirilli_bechvaya

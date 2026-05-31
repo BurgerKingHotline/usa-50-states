@@ -1,0 +1,15 @@
+# Characters for Virginia
+characters = {
+	VIRGINIA_GOV = {
+		name = "John Garland Pollard"
+		portraits = {
+			civilian = { large = "GFX_VRG_Portrait_John_Garland_Pollard" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Virginia, 1930-1934"
+		}
+	}
+}

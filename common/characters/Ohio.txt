@@ -1,0 +1,15 @@
+# Characters for Ohio
+characters = {
+	OHIO_GOV = {
+		name = "George White"
+		portraits = {
+			civilian = { large = "GFX_OHI_Portrait_George_White" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Ohio, 1931-1935"
+		}
+	}
+}

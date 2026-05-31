@@ -1,0 +1,15 @@
+# Characters for New York
+characters = {
+	NEW_YORK_GOV = {
+		name = "Herbert H. Lehman"
+		portraits = {
+			civilian = { large = "GFX_NYK_Portrait_Herbert_H_Lehman" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of New York, 1933-1942"
+		}
+	}
+}

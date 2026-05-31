@@ -1,0 +1,15 @@
+# Characters for Oregon
+characters = {
+	OREGON_GOV = {
+		name = "Julius Meier"
+		portraits = {
+			civilian = { large = "GFX_ORE_Portrait_Julius_Meier" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+			desc = "Governor of Oregon, 1931-1935"
+		}
+	}
+}
