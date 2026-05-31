@@ -1,0 +1,11 @@
+state = {
+	id = 84
+	name = "STATE_84"
+	manpower = 0
+	state_category = rural
+	provinces = { 54 583 819 1083 1822 1944 2067 2235 2304 2322 2489 3544 4446 7324 7403 7414 7445 }
+	history = {
+		owner = MTN
+		add_core_of = MTN
+	}
+}

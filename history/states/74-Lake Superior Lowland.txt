@@ -1,0 +1,11 @@
+state = {
+	id = 74
+	name = "STATE_74"
+	manpower = 0
+	state_category = town
+	provinces = { 209 1439 1959 1998 3534 3789 4270 4766 5221 5286 6031 7384 7410 7431 7449 7460 7472 7476 }
+	history = {
+		owner = WSC
+		add_core_of = WSC
+	}
+}

@@ -1,0 +1,11 @@
+state = {
+	id = 87
+	name = "STATE_87"
+	manpower = 0
+	state_category = rural
+	provinces = { 509 1678 1732 1736 2307 2699 3414 4499 6201 7620 7776 7795 7866 }
+	history = {
+		owner = SDK
+		add_core_of = SDK
+	}
+}

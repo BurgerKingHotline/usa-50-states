@@ -1,0 +1,11 @@
+state = {
+	id = 76
+	name = "STATE_76"
+	manpower = 0
+	state_category = town
+	provinces = { 5049 7783 7812 7863 }
+	history = {
+		owner = WSC
+		add_core_of = WSC
+	}
+}

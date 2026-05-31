@@ -1,0 +1,11 @@
+﻿state = {
+	id = 69
+	name = "STATE_69"
+	manpower = 123093
+	state_category = rural
+	provinces = { 128 1114 2538 2707 2832 3072 3582 4092 4349 5611 6643 7240 7246 7334 7350 12977 }
+	history = {
+		owner = MNS
+		add_core_of = MNS
+	}
+}
