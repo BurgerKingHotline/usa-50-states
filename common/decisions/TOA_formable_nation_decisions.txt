@@ -1,0 +1,361 @@
+
+hispaniola_category = {
+	
+	unite_hispaniola = { 
+
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = HAI # Haiti
+				original_tag = DOM # Dominican Republic
+			}
+		}
+
+		available = {
+			
+
+
+		}
+
+		visible = {
+			OR = {
+				original_tag = HAI # Haiti
+				original_tag = DOM # Dominican Republic
+			}
+			
+			NOT = { 
+				OR = {
+					has_global_flag = antilles_formed_flag
+					has_global_flag = hispaniola_flag 
+				}
+			}
+			
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = hispaniola 
+			
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+			
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			hidden_effect = {
+				set_global_flag = hispaniola_flag
+
+				news_event = { 
+					id = south_american_news.6
+					days = 1
+					random_days = 2
+				}
+
+			}
+		}
+
+		ai_will_do = {
+			factor = 2000
+		}
+	}
+}
+
+peru_bolivia_category = {
+	
+	reunite_peru_bolivia = { 
+
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = BOL # Bolivia
+				original_tag = PRU # Peru
+			}
+		}
+
+		available = {
+			
+			# Loreto
+
+			# Lima
+
+			# Ucayali
+
+			# Arequipa
+
+			# Santa Cruz
+
+			# La Paz
+
+			# Tacna
+
+			OR = {
+				AND = {
+					original_tag = BOL
+					PRU = {
+						exists = no
+					}
+				}
+				AND = {
+					original_tag = PRU
+					BOL = {
+						exists = no
+					}
+				}
+			}
+
+		}
+
+		visible = {
+			OR = {
+				original_tag = BOL # Bolivia
+				original_tag = PRU # Peru
+			}
+			
+			NOT = { has_global_flag = peru_bolivia_revived_flag }
+			
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = peru_bolivian_confederation 
+			
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+			
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			hidden_effect = {
+				set_global_flag = peru_bolivia_revived_flag
+
+				news_event = { 
+					id = south_american_news.5
+					days = 1
+					random_days = 2
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 2000
+		}
+	}
+}
+
+guianas_category = {
+	
+	unite_guiana = { 
+
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = GYA
+				original_tag = SUR
+				original_tag = CAY
+			}
+		}
+
+		available = {
+			
+
+
+
+		}
+
+		visible = {
+			OR = {
+				original_tag = GYA # Guyana
+				original_tag = SUR # Suriname
+				original_tag = CAY # Cayenne
+			}
+			
+			NOT = { has_global_flag = guiana_flag }
+			
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = united_guiana 
+			
+			# Suriname
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+			
+			# French Guyana
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			# British Guyana
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			# Bolivar
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			# Amapa
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			# Rio Branco
+			IF =  {
+				limit = {
+					NOT = {
+					}
+				}
+			}
+
+			hidden_effect = {
+				# Guianan Rainforest
+				IF =  {
+					limit = {
+						NOT = {
+						}
+					}
+				}
+			}
+
+			hidden_effect = {
+				set_global_flag = guiana_flag
+
+				news_event = { 
+					id = south_american_news.7
+					days = 1
+					random_days = 2
+				}
+
+			}
+		}
+
+		ai_will_do = {
+			factor = 2000
+		}
+	}
+}

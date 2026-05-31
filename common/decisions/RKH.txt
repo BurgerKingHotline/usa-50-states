@@ -1,0 +1,37 @@
+political_actions = {
+	RKH_legtimatize_the_protektorat = {
+		priority = 11
+
+		icon = GFX_decision_generic_political_address
+		allowed = {
+			original_tag = RKH
+		}
+
+		days_re_enable = 30
+
+		cost = 200
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			NOT = {
+			}
+		}
+
+		available = {
+			has_stability > 0.75
+			has_war_support > 0.75
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				fascism > 0.75
+			}
+		}
+
+		complete_effect = {
+		}
+	}
+}
