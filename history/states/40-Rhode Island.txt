@@ -5,7 +5,7 @@ state = {
 	provinces = { 418 1339 4036 5813 7623 7624 7641 7680 7694 }
 	manpower = 675000
 	history = {
-		owner = RHD
-		add_core_of = RHD
+		owner = RDH
+		add_core_of = RDH
 	}
 }

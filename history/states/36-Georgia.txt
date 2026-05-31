@@ -7,7 +7,7 @@ state = {
 	}
 	manpower = 2950000
 	history = {
-		owner = GEO
-		add_core_of = GEO
+		owner = GRR
+		add_core_of = GRR
 	}
 }
