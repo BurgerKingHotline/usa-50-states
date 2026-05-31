@@ -1,0 +1,8 @@
+
+strategic_region = {
+	id = 19
+	name = "STRATEGICREGION_19"
+	provinces = {
+		12166 11718 12408 12144 12373 11793 12591
+	}
+}

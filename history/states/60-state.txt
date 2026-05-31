@@ -1,0 +1,11 @@
+state = {
+	id = 60
+	name = "STATE_60"
+	manpower = 0
+	state_category = rural
+	provinces = { 755 10240 10250 10253 10254 10257 10258 10260 10265 10301 10305 10309 10318 }
+	history = {
+		owner = ZZZ
+		add_core_of = ZZZ
+	}
+}
