@@ -6,11 +6,10 @@ set_politics = {
 }
 
 set_popularities = {
-    democratic = 60
-    fascism = 30
-    communism = 10
-    neutrality = 0
+    democratic = 70
+    neutrality = 15
+    fascism = 12
+    communism = 3
 }
-
 
 #recruit_character = ABK_kirilli_bechvaya
