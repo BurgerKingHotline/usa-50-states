@@ -1,0 +1,17 @@
+bookmarks = {
+	bookmark = {
+		name = "GREAT_COLLAPSE_NAME"
+		desc = "GREAT_COLLAPSE_DESC"
+		date = 1933.1.1.12
+		picture = "GFX_start_date_1933"
+		default = yes
+		"WSH" = { history = "WSH_GREAT_COLLAPSE_DESC" }
+		"ORE" = { history = "ORE_GREAT_COLLAPSE_DESC" }
+		"IDH" = { history = "IDH_GREAT_COLLAPSE_DESC" }
+		"---" = { history = "OTHER_GREAT_COLLAPSE_DESC" }
+		effect = {
+			randomize_weather = 12345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

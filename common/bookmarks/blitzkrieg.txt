@@ -1,12 +1,11 @@
 bookmarks = {
 	bookmark = {
-		name = "GATHERING_STORM_NAME"
-		desc = "GATHERING_STORM_DESC"
-		date = 9999.1.1.12
-		picture = "GFX_select_date_1936"
+		name = "BLITZKRIEG_NAME"
+		desc = "BLITZKRIEG_DESC"
+		date = 9999.8.14.12
+		picture = "GFX_select_date_1939"
 		default = no
 		default_country = "WSH"
-		"---" = { history = "OTHER_GATHERING_STORM_DESC" }
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }
