@@ -5,7 +5,7 @@ state = {
 	provinces = { 5431 6123 8411 8486 8505 8533 }
 	manpower = 180000
 	history = {
-		owner = DLW
-		add_core_of = DLW
+		owner = VRG
+		add_core_of = VRG
 	}
 }

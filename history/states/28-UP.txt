@@ -7,7 +7,7 @@ state = {
 	}
 	manpower = 330000
 	history = {
-		owner = UPR
-		add_core_of = UPR
+		owner = MCH
+		add_core_of = MCH
 	}
 }
