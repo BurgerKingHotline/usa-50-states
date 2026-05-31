@@ -231,7 +231,7 @@ def set_manpower(path: Path, new_value: int, dry_run: bool = False) -> None:
         print(f"DRY RUN: would SET {path}")
         print(f"  manpower: {old_value} -> {new_value}")
     else:
-        path.write_text(new_text, encoding=enc)
+        path.write_text(new_text, encoding="utf-8")
         print(f"Updated {path}")
         print(f"  manpower: {old_value} -> {new_value}")
 
