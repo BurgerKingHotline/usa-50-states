@@ -1282,7 +1282,7 @@ MRY = {
 	color = rgb { 85 75 20 }
 	color_ui = rgb { 85 75 20 }
 }
-MAS = {
+MSS = {
 	color = rgb { 40 75 175 }
 	color_ui = rgb { 40 75 175 }
 }
