@@ -1,11 +1,14 @@
 state = {
 	id = 78
 	name = "STATE_78"
-	manpower = 0
+	manpower = 417847
 	state_category = town
 	provinces = { 50 309 551 734 991 1148 1466 1489 1532 2087 2635 3508 3653 3927 4091 4327 4634 4926 4985 5552 5734 5742 6507 6598 7417 7438 7440 7456 7457 7461 7469 7470 7520 7527 7530 7543 7555 }
 	history = {
 		owner = WSC
 		add_core_of = WSC
+		victory_points = {
+			5742 2 #wausau
+		}
 	}
 }

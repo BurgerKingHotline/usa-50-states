@@ -1,11 +1,23 @@
 state = {
 	id = 70
 	name = "STATE_70"
-	manpower = 0
+	manpower = 173336
 	state_category = rural
 	provinces = { 8 18 744 865 934 961 1174 1569 1904 1994 2059 2708 2813 3721 4124 4292 4868 5152 5376 5461 5983 6565 7234 7269 7313 7326 7377 12975 12987 }
 	history = {
 		owner = NRD
 		add_core_of = NRD
+		victory_points = {
+			4124 3 #minot
+		}
+		victory_points = {
+			5376 5 #bismarck
+		}
+		victory_points = {
+			5983 2 #mandan
+		}
+		victory_points = {
+			4292 1 #dickinson
+		}
 	}
 }

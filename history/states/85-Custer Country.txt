@@ -1,11 +1,14 @@
 state = {
 	id = 85
 	name = "STATE_85"
-	manpower = 0
+	manpower = 25351
 	state_category = rural
 	provinces = { 187 252 349 719 750 1231 1872 2162 2772 3325 3722 4273 4375 4993 7385 7389 7409 7421 7443 7447 }
 	history = {
 		owner = MTN
 		add_core_of = MTN
+		victory_points = {
+			2772 1 #colstrip
+		}
 	}
 }

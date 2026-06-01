@@ -1,11 +1,20 @@
 state = {
 	id = 76
 	name = "STATE_76"
-	manpower = 0
+	manpower = 904974
 	state_category = town
 	provinces = { 5049 7783 7812 7863 }
 	history = {
 		owner = WSC
 		add_core_of = WSC
+		victory_points = {
+			7812 25 #milwaukee
+		}
+		victory_points = {
+			5049 10 #racine
+		}
+		victory_points = {
+			7863 6 #kenosha
+		}
 	}
 }

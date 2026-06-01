@@ -1,11 +1,20 @@
 state = {
 	id = 81
 	name = "STATE_81"
-	manpower = 0
+	manpower = 198036
 	state_category = rural
 	provinces = { 110 392 899 977 1259 1371 1528 2250 3322 3432 3497 3764 4801 5018 5041 5167 5466 6472 6568 7360 7386 }
 	history = {
 		owner = NRD
 		add_core_of = NRD
+		victory_points = {
+			7360 5 #fargo
+		}
+		victory_points = {
+			1259 3 #grand forks
+		}
+		victory_points = {
+			6472 2 #jamestown
+		}
 	}
 }

@@ -1,11 +1,23 @@
 state = {
 	id = 20
 	name = "STATE_20"
-	manpower = 690000
+	manpower = 297540
 	state_category = rural
 	provinces = { 97 119 247 320 687 708 1608 2482 2562 2794 3050 3356 4637 5306 6320 6750 6766 6788 7480 7546 7839 12994 13015 13018 }
 	history = {
 		owner = SDK
 		add_core_of = SDK
+		victory_points = {
+			6320 4 #aberdeen
+		}
+		victory_points = {
+			320 4 #huron
+		}
+		victory_points = {
+			2794 3 #yankton
+		}
+		victory_points = {
+			2562 5 #pierre
+		}
 	}
 }

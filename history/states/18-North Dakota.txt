@@ -1,11 +1,14 @@
 state = {
 	id = 18
 	name = "STATE_18"
-	manpower = 674000
+	manpower = 284243 
 	state_category = rural
 	provinces = { 251 483 558 815 994 1090 2334 3246 4420 4664 4944 5292 5936 7244 7249 7260 7318 }
 	history = {
 		owner = NRD
 		add_core_of = NRD
+		victory_points = {
+			4664 2 #devils lake
+		}
 	}
 }

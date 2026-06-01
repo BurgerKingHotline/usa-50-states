@@ -7,5 +7,17 @@ state = {
 	history = {
 		owner = MNS
 		add_core_of = MNS
+		victory_points = {
+			7481 3 #st cloud
+		}
+		victory_points = {
+			4202 2 #hibbing
+		}
+		victory_points = {
+			6761 1 #moorhead
+		}
+		victory_points = {
+			3860 1 #bemidji
+		}
 	}
 }

@@ -1,11 +1,17 @@
 state = {
 	id = 87
 	name = "STATE_87"
-	manpower = 0
+	manpower = 171867
 	state_category = rural
 	provinces = { 509 1678 1732 1736 2307 2699 3414 4499 6201 7620 7776 7795 7866 }
 	history = {
 		owner = SDK
 		add_core_of = SDK
+		victory_points = {
+			1736 6 #sioux falls
+		}
+		victory_points = {
+			4499 3 #brookings
+		}
 	}
 }

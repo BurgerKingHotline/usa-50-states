@@ -1,11 +1,14 @@
 state = {
 	id = 22
 	name = "STATE_22"
-	manpower = 3040000
+	manpower = 360909
 	state_category = town
 	provinces = { 43 1251 1720 1881 3671 4275 4843 5554 5694 5851 6240 6657 6733 7796 7803 7811 7817 7820 7842 7862 7865 7871 7886 }
 	history = {
 		owner = WSC
 		add_core_of = WSC
+		victory_points = {
+			7817 11 #madison
+		}
 	}
 }

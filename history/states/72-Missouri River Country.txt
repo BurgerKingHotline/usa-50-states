@@ -1,11 +1,14 @@
 state = {
 	id = 72
 	name = "STATE_72"
-	manpower = 0
+	manpower = 34563
 	state_category = rural
 	provinces = { 489 1149 1244 3554 4346 5472 6428 }
 	history = {
 		owner = MTN
 		add_core_of = MTN
+		victory_points = {
+			4346 1 #plentywood
+		}
 	}
 }

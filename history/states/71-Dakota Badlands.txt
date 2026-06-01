@@ -1,11 +1,14 @@
 state = {
 	id = 71
 	name = "STATE_71"
-	manpower = 0
+	manpower = 18385
 	state_category = rural
 	provinces = { 1626 2013 7343 7415 }
 	history = {
 		owner = NRD
 		add_core_of = NRD
+		victory_points = {
+			2013 1 #bowman
+		}
 	}
 }
