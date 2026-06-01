@@ -1,0 +1,17 @@
+state = {
+	id = 98
+	name = "STATE_98"
+	manpower = 83681
+	state_category = rural
+	provinces = {
+		366 372 524 2111 2301 2618 3862 4325 4377 5623 6797 7474 7492 7494 7508 7516 7538 12998
+	}
+	history = {
+		owner = ORE
+		add_core_of = ORE
+		victory_points = { 372 1 } # Klamath Falls, OR
+		victory_points = { 2111 1 } # Brookings and Gold Beach, OR
+		victory_points = { 7492 1 } # Roseburg, OR
+		victory_points = { 7516 2 } # Medford and Ashland, OR -- Combined pop ~15,214; key southern Oregon cities.
+	}
+}

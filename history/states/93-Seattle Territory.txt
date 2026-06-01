@@ -1,0 +1,15 @@
+state = {
+	id = 93
+	name = "STATE_93"
+	manpower = 644095
+	state_category = rural
+	provinces = {
+		826 2262 2497 2868 3647 3687 3894 3913 4002 6048 6173 6269 6541 6792 7094 7096 7101 7109 7117 7133 7171 10345 10346 10347 10348 10350 10352 10355 10357
+	}
+	history = {
+		owner = WSH
+		add_core_of = WSH
+		victory_points = { 4002 13 } # Seattle
+		victory_points = { 6541 2 } # Bellevue
+	}
+}

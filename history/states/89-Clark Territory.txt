@@ -1,0 +1,15 @@
+state = {
+	id = 89
+	name = "STATE_89"
+	manpower = 183235
+	state_category = rural
+	provinces = {
+		226 337 1642 2469 3165 3602 3695 3869 4520 4740 6270 6303 6684 7225 7242 7262 7264 7267 7284
+	}
+	history = {
+		owner = WSH
+		add_core_of = WSH
+		victory_points = { 7262 1 } # Richland, WA
+		victory_points = { 7264 3 } # Vancouver, WA <-- Strategically important as a foothold across the Columbia River for Oregonians.
+	}
+}

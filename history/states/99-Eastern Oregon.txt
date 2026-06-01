@@ -1,0 +1,17 @@
+state = {
+	id = 99
+	name = "STATE_99"
+	manpower = 24270
+	state_category = rural
+	provinces = {
+		90 195 624 777 1012 1110 1208 1860 1991 2091 2351 2520 2579 3561 4027 4416 4782 5148 5862 6595 6759 7402 7454 7501 7503 7564 7612 12996 12997
+	}
+	history = {
+		owner = ORE
+		add_core_of = ORE
+		victory_points = { 1012 1 } # Jordan Valley, OR
+		victory_points = { 4782 1 } # Ontario, OR
+		victory_points = { 5148 1 } # Lakeview, OR
+		victory_points = { 6595 1 } # Burns, OR
+	}
+}

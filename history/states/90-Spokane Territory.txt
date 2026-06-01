@@ -1,0 +1,16 @@
+state = {
+	id = 90
+	name = "STATE_90"
+	manpower = 250711
+	state_category = rural
+	provinces = {
+		9 1515 2020 2223 2254 2416 2532 2950 2989 3395 3665 4248 5140 5379 5539 5551 5741 5771 6156 7184 7186 7196 7205 7208 7211 7237 7243 7250 12939
+	}
+	history = {
+		owner = WSH
+		add_core_of = WSH
+		victory_points = { 3665 1 } # Pasco, WA
+		victory_points = { 7196 5 } # Spokane, WA
+		victory_points = { 7250 2 } # Pullman + Clarkston, WA
+	}
+}

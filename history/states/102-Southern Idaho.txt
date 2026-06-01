@@ -1,0 +1,14 @@
+state = {
+	id = 102
+	name = "STATE_102"
+	manpower = 110933
+	state_category = rural
+	provinces = {
+		167 643 1404 1419 1432 1550 1951 2243 4195 4354 4523 5280 5510 5899 6011 7518 7617 7632 7653 7735 7819 13010
+	}
+	history = {
+		owner = IDH
+		add_core_of = IDH
+		victory_points = { 5280 3 } # Pocatello, ID -- Major Union Pacific rail hub (pop 16,471; county 32,037).
+	}
+}

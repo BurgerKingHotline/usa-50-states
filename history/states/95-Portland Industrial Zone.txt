@@ -1,0 +1,22 @@
+state = {
+	id = 95
+	name = "STATE_95"
+	manpower = 520400
+	state_category = rural
+	provinces = {
+		117 283 459 502 674 925 1776 1877 1962 2848 3047 3138 3178 3662 3995 4280 4355 4986 5061 5754 6174 6184 6633 6740 7281 7287 7308 7316 7317 7321 7348 7359 7373
+	}
+	history = {
+		owner = ORE
+		add_core_of = ORE
+		victory_points = { 459 1 }   # Tigard, OR
+		victory_points = { 3138 6 }  # Salem, OR -- State capital (pop 26,266; county 63,715).
+		victory_points = { 3178 1 }  # Redmond, OR
+		victory_points = { 5061 1 }  # Woodburn, OR
+		victory_points = { 6184 1 }  # Hood River, OR
+		victory_points = { 6740 1 }  # The Dalles, OR
+		victory_points = { 7281 12 } # Portland, OR
+		victory_points = { 7359 1 }  # Springfield, OR
+		victory_points = { 7373 1 }	 # Bend, OR
+	}
+}

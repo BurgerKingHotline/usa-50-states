@@ -1,0 +1,17 @@
+state = {
+	id = 96
+	name = "STATE_96"
+	manpower = 154235
+	state_category = rural
+	provinces = {
+		30 133 1438 2333 2568 2736 3301 3598 5114 5181 5453 6074 6079 6807 7229 7263 7266 7273 7278 7286 7293 7298 7303 7323
+	}
+	history = {
+		owner = ORE
+		add_core_of = ORE
+		victory_points = { 2568 1 } # St. Helens, OR
+		victory_points = { 7229 1 } # Seaside, OR
+		victory_points = { 7263 1 } # Lincoln City, OR
+		victory_points = { 7298 1 } # Newport, OR
+	}
+}

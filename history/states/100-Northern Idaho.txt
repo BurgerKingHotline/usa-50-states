@@ -1,0 +1,12 @@
+state = {
+	id = 100
+	name = "STATE_100"
+	manpower = 18666
+	state_category = rural
+	provinces = { 1788 5337 }
+	history = {
+		owner = IDH
+		add_core_of = IDH
+		victory_points = { 5337 1 } # Sandpoint, ID
+	}
+}

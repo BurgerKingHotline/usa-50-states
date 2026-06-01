@@ -1,0 +1,10 @@
+﻿l_english:
+ BM_HISTORY_TITLE:0 "Brief History"
+ GATHERING_STORM_NAME:0 "Gathering Storm"
+ GATHERING_STORM_DESC:0 "Dark times are coming. In Europe, Hitler has consolidated his power and his attention is now increasingly drawn beyond Germany's borders. Mussolini's Italy continues to embark on daring military adventures, while the Empire of Japan stands poised to attack China in Asia. Almost twenty years have passed since the end of the Great War, and the world has yet again been doused in gasoline. A single spark may be all it takes."
+ COUNTRY_SELECTION_CHARACTER_DESC: "$NAME|Y$ $DESC|$\n$TRAITS_DESC|$"
+
+ GREAT_COLLAPSE_NAME:0 "The Great Collapse"
+ GREAT_COLLAPSE_DESC:0 "The Great Collapse describes the fall of the United States of America as a national entity."
+ 
+ 

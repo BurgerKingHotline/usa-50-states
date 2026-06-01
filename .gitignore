@@ -1,2 +1,6 @@
 .vscode
 .vscode/*
+.github
+.github/*
+_population/__pycache__
+_population/__pycache__/*

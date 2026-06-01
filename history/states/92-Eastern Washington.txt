@@ -1,0 +1,11 @@
+state = {
+	id = 92
+	name = "STATE_92"
+	manpower = 24306
+	state_category = rural
+	provinces = { 6 91 578 665 1024 2809 3616 4693 5991 6763 7139 7147 }
+	history = {
+		owner = WSH
+		add_core_of = WSH
+	}
+}

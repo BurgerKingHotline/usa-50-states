@@ -1,0 +1,15 @@
+state = {
+	id = 97
+	name = "STATE_97"
+	manpower = 109518
+	state_category = rural
+	provinces = {
+		184 449 695 1911 2270 3433 3909 3964 5076 5130 5199 5756 5944 6154 7336 7338 7354 7368 7391 7401 7435 7436
+	}
+	history = {
+		owner = ORE
+		add_core_of = ORE
+		victory_points = { 5199 4 } # Eugene, OR -- University of Oregon; 2nd-largest OR city (pop 18,901; county 57,718).
+		victory_points = { 7368 1 } # Florence, OR
+	}
+}

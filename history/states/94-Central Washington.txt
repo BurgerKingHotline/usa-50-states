@@ -1,0 +1,16 @@
+state = {
+	id = 94
+	name = "STATE_94"
+	manpower = 339730
+	state_category = rural
+	provinces = {
+		1087 1115 1575 1595 2166 2425 3302 3612 3738 3845 4682 4911 5496 6124 6502 6649 7168 7179 7182 7219 7236 12938
+	}
+	history = {
+		owner = WSH
+		add_core_of = WSH
+		victory_points = { 1087 2 } # Yakima, WA -- Agricultural hub (pop 22,101; county 82,411).
+		victory_points = { 1115 1 } # Wenatchee, WA
+		victory_points = { 4682 1 } # Ellensburg, WA
+	}
+}

@@ -1,0 +1,16 @@
+state = {
+	id = 103
+	name = "STATE_103"
+	manpower = 115027
+	state_category = rural
+	provinces = {
+		419 535 892 955 1200 1320 1789 2491 2770 3140 3320 3982 4632 5796 5870 6257 6318 6380 6776 7424 7425
+	}
+	history = {
+		owner = IDH
+		add_core_of = IDH
+		victory_points = { 419 1 } # Weiser and Payette, ID
+		victory_points = { 1320 1 } # Caldwell, ID
+		victory_points = { 5796 1 } # Emmett, ID
+	}
+}
