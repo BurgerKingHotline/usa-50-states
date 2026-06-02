@@ -1019,10 +1019,10 @@ def display_drill_down(
         # ── County seat ──
         pct_seat = (breakdown.county_seat_pop / grand_total * 100) if grand_total else 0
         if breakdown.county_seat_pop > 0:
-            print(f"\n  🏙️  COUNTY SEAT: {breakdown.county_seat_name}")
+            print(f"\n    COUNTY SEAT: {breakdown.county_seat_name}")
             print(f"      Population: {breakdown.county_seat_pop:,}  ({pct_seat:.1f}%)")
         else:
-            print("\n  🏙️  COUNTY SEAT:  (unincorporated / no dominant municipality)")
+            print("\n    COUNTY SEAT:  (unincorporated / no dominant municipality)")
 
         # ── Other towns ──
         if breakdown.other_towns:
@@ -1030,7 +1030,7 @@ def display_drill_down(
                 (breakdown.other_towns_pop / grand_total * 100) if grand_total else 0
             )
             print(
-                f"\n  🏘️  {'TOWNS' if has_real_data else 'OTHER TOWNS & VILLAGES'}  ({pct_towns:.1f}%)"
+                f"\n    {'TOWNS' if has_real_data else 'OTHER TOWNS & VILLAGES'}  ({pct_towns:.1f}%)"
             )
             # Show all towns when we have real data (user wants to see them)
             show = (
@@ -1049,7 +1049,7 @@ def display_drill_down(
                     f"      ... and {len(breakdown.other_towns) - 3} more small settlements"
                 )
         else:
-            print("\n  🏘️  OTHER TOWNS:  None (fully rural or single municipality)")
+            print("\n    OTHER TOWNS:  None (fully rural or single municipality)")
 
         # ── Rural ──
         pct_rural = (breakdown.rural_pop / grand_total * 100) if grand_total else 0
@@ -1061,21 +1061,21 @@ def display_drill_down(
         if breakdown.military_bases:
             base_total = sum(p for _, p in breakdown.military_bases)
             pct_base = (base_total / grand_total * 100) if grand_total else 0
-            print(f"\n  🏛️  MILITARY INSTALLATIONS  ({pct_base:.1f}%)")
+            print(f"\n    MILITARY INSTALLATIONS  ({pct_base:.1f}%)")
             for b_name, b_pop in breakdown.military_bases:
                 print(f"      • {b_name}:  {b_pop:,} personnel")
         else:
-            print("\n  🏛️  MILITARY INSTALLATIONS:  None known in this county")
+            print("\n    MILITARY INSTALLATIONS:  None known in this county")
 
         # ── Industrial facilities ──
         if breakdown.industrial_facilities:
             ind_total = sum(p for _, p in breakdown.industrial_facilities)
             pct_ind = (ind_total / grand_total * 100) if grand_total else 0
-            print(f"\n  🏭  MAJOR INDUSTRIAL FACILITIES  ({pct_ind:.1f}%)")
+            print(f"\n    MAJOR INDUSTRIAL FACILITIES  ({pct_ind:.1f}%)")
             for f_name, f_workers in breakdown.industrial_facilities:
                 print(f"      • {f_name}:  {f_workers:,} workers")
         else:
-            print("\n  🏭  MAJOR INDUSTRIAL FACILITIES:  None known in this county")
+            print("\n    MAJOR INDUSTRIAL FACILITIES:  None known in this county")
 
         # ── Summary bar ──
         print(f"\n{'─' * 56}")
