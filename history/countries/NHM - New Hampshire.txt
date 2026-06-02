@@ -1,18 +1,15 @@
+capital = 39
 set_politics = {
-    ruling_party = democratic
-    last_election = "1936.1.1"
-    election_frequency = 48
-    elections_allowed = yes
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
 }
 recruit_character = NEW_HAMPSHIRE_GOV
-
-
 set_popularities = {
-    democratic = 40
-    neutrality = 55
-    fascism = 3
-    communism = 2
+	democratic = 40
+	neutrality = 55
+	fascism = 3
+	communism = 2
 }
-
-
 #recruit_character = ABK_kirilli_bechvaya

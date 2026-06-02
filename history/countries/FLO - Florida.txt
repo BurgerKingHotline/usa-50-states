@@ -1,13 +1,14 @@
+capital = 35
 set_politics = {
-    ruling_party = democratic
-    last_election = "1936.1.1"
-    election_frequency = 48
-    elections_allowed = yes
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
 }
 recruit_character = FLORIDA_GOV
 set_popularities = {
-    democratic = 60
-    neutrality = 25
-    fascism = 12
-    communism = 3
+	democratic = 60
+	neutrality = 25
+	fascism = 12
+	communism = 3
 }

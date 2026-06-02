@@ -1,18 +1,15 @@
+capital = 5
 set_politics = {
-    ruling_party = democratic
-    last_election = "1936.1.1"
-    election_frequency = 48
-    elections_allowed = yes
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
 }
 recruit_character = NEVADA_GOV
-
-
 set_popularities = {
-    democratic = 55
-    neutrality = 35
-    fascism = 5
-    communism = 5
+	democratic = 55
+	neutrality = 35
+	fascism = 5
+	communism = 5
 }
-
-
 #recruit_character = ABK_kirilli_bechvaya

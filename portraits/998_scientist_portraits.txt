@@ -1,0 +1,10 @@
+default = {
+	scientist = {
+		male = {
+			"GFX_portrait_unknown"
+		}
+		female = {
+			"GFX_portrait_unknown_female"
+		}
+	}
+}

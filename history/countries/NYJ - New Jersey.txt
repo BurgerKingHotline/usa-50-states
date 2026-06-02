@@ -1,17 +1,15 @@
+capital = 31
 set_politics = {
-    ruling_party = democratic
-    last_election = "1936.1.1"
-    election_frequency = 48
-    elections_allowed = yes
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
 }
 recruit_character = NEW_JERSEY_GOV
-
 set_popularities = {
-    democratic = 40
-    neutrality = 50
-    fascism = 5
-    communism = 5
+	democratic = 40
+	neutrality = 50
+	fascism = 5
+	communism = 5
 }
-
-
 #recruit_character = ABK_kirilli_bechvaya
