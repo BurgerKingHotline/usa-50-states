@@ -1,5 +1,7 @@
 capital = 84
 
+recruit_character = MONTANA_GOV
+
 set_politics = {
     ruling_party = democratic
     last_election = "1936.1.1"
@@ -8,10 +10,13 @@ set_politics = {
 }
 
 set_popularities = {
-    democratic = 50
-    neutrality = 35
-    fascism = 5
-    communism = 10
+    democratic = 20
+    conservatism_ideology = 25
+    socialism_ideology = 15
+    populism_ideology = 25
+    neutrality = 2
+    fascism = 10
+    communism = 3
 }
 
 

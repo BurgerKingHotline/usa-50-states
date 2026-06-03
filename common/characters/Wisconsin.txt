@@ -7,7 +7,7 @@ characters = {
 		}
 		gender = male
 		country_leader = {
-			ideology = socialism
+			ideology = liberalism
 			expire = "1965.1.1"
 			desc = "Governor of Wisconsin, 1931-1933"
 		}

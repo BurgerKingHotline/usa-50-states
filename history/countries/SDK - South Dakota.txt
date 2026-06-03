@@ -1,7 +1,7 @@
 capital = 20
 
 set_politics = {
-    ruling_party = democratic
+    ruling_party = conservatism_ideology
     last_election = "1936.1.1"
     election_frequency = 48
     elections_allowed = yes
@@ -9,10 +9,13 @@ set_politics = {
 recruit_character = SOUTH_DAKOTA_GOV
 
 set_popularities = {
-    democratic = 45
-    neutrality = 45
-    fascism = 5
-    communism = 5
+    democratic = 15
+    neutrality = 2
+    fascism = 10
+    communism = 1
+    conservatism_ideology = 35
+    populism_ideology = 32
+    socialism_ideology = 5
 }
 
 

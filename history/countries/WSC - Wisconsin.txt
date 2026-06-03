@@ -9,10 +9,13 @@ set_politics = {
 recruit_character = WISCONSIN_GOV
 
 set_popularities = {
-    democratic = 45
-    neutrality = 35
-    fascism = 5
-    communism = 15
+    democratic = 40
+    neutrality = 2
+    fascism = 8
+    communism = 2
+    conservatism_ideology = 20
+    populism_ideology = 13
+    socialism_ideology = 15
 }
 
 

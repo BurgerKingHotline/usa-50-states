@@ -1,0 +1,14 @@
+add_namespace = minnesota
+
+country_event = {
+    id = minnesota.1
+    title = "minnesota.1.name"
+    desc = "minnesota.1.desc"
+    picture = GFX_report_event_generic_political
+    is_triggered_only = yes
+    
+    option = {
+        name = "minnesota.1.a"
+        #States to the socialists - > 70, 72, 69, 86, 61, 66, 67, 74, 77, 73, 76
+    }
+}

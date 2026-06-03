@@ -7,7 +7,7 @@ characters = {
 		}
 		gender = male
 		country_leader = {
-			ideology = socialism
+			ideology = socialism_subideology
 			expire = "1965.1.1"
 			desc = "Governor of Minnesota, 1931-1936"
 		}
