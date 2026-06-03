@@ -9,6 +9,6 @@ state = {
 	history = {
 		owner = IDH
 		add_core_of = IDH
-		victory_points = { 5280 3 } # Pocatello, ID -- Major Union Pacific rail hub (pop 16,471; county 32,037).
+		victory_points = { 1419 3 } # Pocatello, ID -- Major Union Pacific rail hub (pop 16,471; county 32,037).
 	}
 }

@@ -10,8 +10,8 @@ state = {
 		owner = WSH
 		add_core_of = WSH
 		victory_points = { 201 2 } # Aberdeen -- Major Grays Harbor lumber port (pop 21,723; county 57,381).
-		victory_points = { 7115 10 } # Olympia, WA <-- Higher value to represent symbolic meaning to Washingtonians.
-		victory_points = { 7173 1 } # Port Angeles
+		victory_points = { 7115 1 } # Port Angeles
+		victory_points = { 7173 10 } # Olympia, WA <-- Higher value to represent symbolic meaning to Washingtonians.
 		# victory_points = { 7159 1 } # Shelton
 		victory_points = { 1046 1 } # Centralia
 	}

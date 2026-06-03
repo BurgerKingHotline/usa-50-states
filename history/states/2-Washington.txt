@@ -8,5 +8,6 @@ state = {
 		owner = WSH
 		add_core_of = WSH
 		victory_points = { 7292 1 } # Walla Walla, WA
+		victory_points = { 4704 1 } # Clarkston, WA
 	}
 }

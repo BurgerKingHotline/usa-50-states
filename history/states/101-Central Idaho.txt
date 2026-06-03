@@ -15,5 +15,6 @@ state = {
 		victory_points = { 7233 1 } # St. Maries, ID
 		victory_points = { 7304 2 } # Lewiston, ID -- Strategic inland port at Snake/Clearwater confluence (pop 7,559; county 17,844).
 		victory_points = { 12953 1 } # Sandpoint, ID (South)
+		victory_points = { 5870 10 } # Boise, ID
 	}
 }

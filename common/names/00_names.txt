@@ -12,17 +12,23 @@
 # You can specify the same name in several regions, though I would suggest not doing this too often, for performance reasons.
 # After this, a first and second will be randomly picked from the default pool
 # The prefix must be provided for all pools
-
 default = {
 	male = {
-		names = { "John" "Bob" "Lucas" "Marcus" "Alexander" "Alex" "Peter" "Jonas" "Jim" "Johannes" "James" "Robert" "Michael" "William" "David" "Richard" "Charles" "Joseph" "Thomas" "Daniel" "Matthew" "Anthony" "Mark" "Donald" "Steven" "Paul" "Andrew" "Kenneth" "George" "Edward" "Brian" "Ronald" "Kevin" "Jason" "Jeffrey" "Frank" "Scott" "Eric" "Stephen" "Raymond" "Gregory" "Larry" "Dennis" "Walter" "Patrick" "Harold" "Douglas" "Henry" "Carl" "Arthur" "Roger" "Albert" "Samuel" "Benjamin" "Eugene" "Ralph" "Louis" "Roy" "Jack" "Willie" "Johnny" "Clarence" "Fred" "Howard"}
+		names = {
+			"John" "Bob" "Lucas" "Marcus" "Alexander" "Alex" "Peter" "Jonas" "Jim" "Johannes" "James" "Robert" "Michael" "William" "David" "Richard" "Charles" "Joseph" "Thomas" "Daniel" "Matthew" "Anthony" "Mark" "Donald" "Steven" "Paul" "Andrew" "Kenneth" "George" "Edward" "Brian" "Ronald" "Kevin" "Jason" "Jeffrey" "Frank" "Scott" "Eric" "Stephen" "Raymond" "Gregory" "Larry" "Dennis" "Walter" "Patrick" "Harold" "Douglas" "Henry" "Carl" "Arthur" "Roger" "Albert" "Samuel" "Benjamin" "Eugene" "Ralph" "Louis" "Roy" "Jack" "Willie" "Johnny" "Clarence" "Fred" "Howard"
+		}
 	}
 	female = {
-		names = { "Mary" "Anna" "Emma" "Elizabeth" "Margaret" "Minnie" "Ida" "Bertha" "Clara" "Alice" "Annie" "Florence" "Bessie" "Grace" "Ethel" "Sarah" "Ella" "Martha" "Nellie" "Mabel" "Laura" "Carrie" "Cora" "Helen" "Maude" "Lillian" "Gertrude" "Rose" "Edna" "Pearl" "Edith" "Jennie" "Hattie" "Mattie" "Myrtle" "Julia" "Lula" "Catherine" "Louise" "Frances" "Marie" "Josephine" "Elsie" "Eva" "Lena" "Lucy" "Ada" "Agnes" "Dora" "Ruth" "Mildred" "Esther" "Dorothy" "Virginia" "Irene" "Ruby" "Kathryn" "Thelma" "Gladys" "Beatrice" "Marion" "Marjorie" "Evelyn" "Pauline" "Lucille" "Betty"}
+		names = {
+			"Mary" "Anna" "Emma" "Elizabeth" "Margaret" "Minnie" "Ida" "Bertha" "Clara" "Alice" "Annie" "Florence" "Bessie" "Grace" "Ethel" "Sarah" "Ella" "Martha" "Nellie" "Mabel" "Laura" "Carrie" "Cora" "Helen" "Maude" "Lillian" "Gertrude" "Rose" "Edna" "Pearl" "Edith" "Jennie" "Hattie" "Mattie" "Myrtle" "Julia" "Lula" "Catherine" "Louise" "Frances" "Marie" "Josephine" "Elsie" "Eva" "Lena" "Lucy" "Ada" "Agnes" "Dora" "Ruth" "Mildred" "Esther" "Dorothy" "Virginia" "Irene" "Ruby" "Kathryn" "Thelma" "Gladys" "Beatrice" "Marion" "Marjorie" "Evelyn" "Pauline" "Lucille" "Betty"
+		}
 	}
-	surnames = { "Smith" "Jones" "Taylor" "Brown" "Williams" "Wilson" "Evans" "Walker" "White" "Roberts" "Johnson" "Miller" "Davis" "Garcia" "Rodriguez" "Martinez" "Hernandez" "Lopez" "Gonzalez" "Anderson" "Thomas" "Jackson" "Harris" "Martin" "Thompson" "Moore" "Clark" "Lewis" "Robinson" "Young" "Allen" "King" "Wright" "Scott" "Green" "Baker" "Adams" "Nelson" "Hill" "Ramirez" "Campbell" "Mitchell" "Carter" "Phillips" "Turner" "Collins" "Stewart" "Morris" "Murphy" "Cook" "Rogers" "Morgan" "Peterson" "Cooper" "Reed" "Bell" "Gomez" "Kelly" "Howard" "Ward" "Cox" "Diaz" "Richardson" "Wood" "Watson" "Brooks" "Bennett" "Gray" "James" "Reyes" "Cruz" "Hughes" "Price" "Myers" "Long" "Foster" "Sanders" "Ross" "Morales" "Powell" "Sullivan" "Russell" "Ortiz" "Jenkins" "Gutierrez" "Perry" "Butler" "Barnes" "Fisher" "Henderson" "Coleman" "Simmons" "Patterson" "Jordan" "Reynolds" "Hamilton" "Graham" "Knight" "Ford" "Ellis" "Washington" "Jefferson" "Lincoln" "Roosevelt"}
-	callsigns = { "Easy Kill" "The Lightning" "The Devil" "Grasshopper" "Handsome" "Moose" "Mouse" "Pebbles" "Sunshine" "Demon" "Eagle" "Bulldog" "Wolf" "Falcon" "Mustang" "Panther" "Ghost" "Bandit" "Renegade" "Vagabond" "Viper" "Cobra" "Rattler" "Breaker" "Striker" "Warhawk" "Tomahawk" "Razor" "Ace" "Maverick"}
-
+	surnames = {
+		"Smith" "Jones" "Taylor" "Brown" "Williams" "Wilson" "Evans" "Walker" "White" "Roberts" "Johnson" "Miller" "Davis" "Garcia" "Rodriguez" "Martinez" "Hernandez" "Lopez" "Gonzalez" "Anderson" "Thomas" "Jackson" "Harris" "Martin" "Thompson" "Moore" "Clark" "Lewis" "Robinson" "Young" "Allen" "King" "Wright" "Scott" "Green" "Baker" "Adams" "Nelson" "Hill" "Ramirez" "Campbell" "Mitchell" "Carter" "Phillips" "Turner" "Collins" "Stewart" "Morris" "Murphy" "Cook" "Rogers" "Morgan" "Peterson" "Cooper" "Reed" "Bell" "Gomez" "Kelly" "Howard" "Ward" "Cox" "Diaz" "Richardson" "Wood" "Watson" "Brooks" "Bennett" "Gray" "James" "Reyes" "Cruz" "Hughes" "Price" "Myers" "Long" "Foster" "Sanders" "Ross" "Morales" "Powell" "Sullivan" "Russell" "Ortiz" "Jenkins" "Gutierrez" "Perry" "Butler" "Barnes" "Fisher" "Henderson" "Coleman" "Simmons" "Patterson" "Jordan" "Reynolds" "Hamilton" "Graham" "Knight" "Ford" "Ellis" "Washington" "Jefferson" "Lincoln" "Roosevelt"
+	}
+	callsigns = {
+		"Easy Kill" "The Lightning" "The Devil" "Grasshopper" "Handsome" "Moose" "Mouse" "Pebbles" "Sunshine" "Demon" "Eagle" "Bulldog" "Wolf" "Falcon" "Mustang" "Panther" "Ghost" "Bandit" "Renegade" "Vagabond" "Viper" "Cobra" "Rattler" "Breaker" "Striker" "Warhawk" "Tomahawk" "Razor" "Ace" "Maverick"
+	}
 	#Operations - treat these as keys, not strings.
 	prefix = o_operation
 	operation = {
@@ -33,53 +39,885 @@ default = {
 	defensive_operation_suffix = o_strat_defensive_default
 	naval_operation_suffix = o_strat_naval_default
 }
-
-WSH = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Hanson" "Olson" "Larson" "Carlson" "Erickson" } callsigns = { "Cascade" "Rainier" "Olympian" "Evergreen" "Orca" "Salmon" "Timber" "Pacific" "Columbia" "Starbuck" } }
-ORE = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Anderson" "Brown" "Jones" "Wilson" "Davis" "Clark" "Thomas" } callsigns = { "Beaver" "Douglas" "Willamette" "Crater" "Trailblazer" "Pioneer" "Lumberjack" "Forester" "Hood" "Cascade" } }
-CAL = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Garcia" "Martinez" "Lopez" "Hernandez" "Gonzalez" "Rodriguez" "Williams" "Brown" } callsigns = { "Golden" "Grizzly" "Sequoia" "Pacific" "Redwood" "Valley" "Sierra" "Coastal" "El Dorado" "Condor" } }
-NVD = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Wilson" "Anderson" "Taylor" } callsigns = { "Silver" "Prospector" "Sagebrush" "Reno" "Desert" "Comstock" "Basin" "Sierra" "Bonanza" "Mustang" } }
-IDH = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Jones" "Brown" "Miller" "Hansen" "Olson" } callsigns = { "Gem" "Sawtooth" "Potato" "Salmon" "Bitterroot" "Pioneer" "Ranger" "Cobalt" "Thunder" "Peregrine" } }
-MTN = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Olson" "Hanson" "Miller" "Brown" "Jones" } callsigns = { "Bison" "Glacier" "Grizzly" "Beartooth" "Copper" "Trapper" "Big Sky" "Continental" "Anaconda" "Mountain" } }
-WYM = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Nelson" "Peterson" "Davis" } callsigns = { "Bison" "Cheyenne" "Tetons" "Yellowstone" "Prairie" "Sheridan" "Ranger" "Outlaw" "Frontier" "Wind River" } }
-UTT = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Young" "Johnson" "Brown" "Jensen" "Peterson" "Hansen" "Anderson" "Nelson" "Christensen" } callsigns = { "Deseret" "Zion" "Beehive" "Seagull" "Wasatch" "Bonneville" "Pioneer" "Timpanogos" "Salt Lake" "Canyon" } }
-ARZ = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Garcia" "Martinez" "Lopez" "Rodriguez" "Hernandez" "Gonzalez" "Williams" "Brown" } callsigns = { "Copper" "Saguaro" "Canyon" "Phoenix" "Gila" "Sonoran" "Rattler" "Turquoise" "Cochise" "Thunderbird" } }
-NWM = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Garcia" "Martinez" "Lopez" "Hernandez" "Gonzalez" "Rodriguez" "Johnson" "Williams" "Brown" } callsigns = { "Zia" "Sandia" "Mesilla" "Enchanted" "Roadrunner" "Adobe" "Cibolero" "Conquistador" "Sangre" "Cristo" } }
-CLO = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Nelson" "Davis" "Garcia" } callsigns = { "Rockies" "Continental" "Centennial" "Bighorn" "Pikes" "Mineral" "Summit" "Granite" "Arapaho" "Silver" } }
-NEB = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Nelson" "Peterson" "Hansen" } callsigns = { "Cornhusker" "Platte" "Prairie" "Buffalo" "Homesteader" "Pioneer" "Overland" "Chimney" "Sandhill" "Antelope" } }
-KNS = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Nelson" "Peterson" } callsigns = { "Jayhawk" "Sunflower" "Wheat" "Prairie" "Flint" "Abilene" "Dodge" "Cyclone" "Meadowlark" "Bison" } }
-OKL = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Sooner" "Boomer" "Red River" "Cimarron" "Osage" "Cherokee" "Choctaw" "Wichita" "Panhandle" "Scissortail" } }
-TEX = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Garcia" "Martinez" "Rodriguez" "Williams" "Brown" "Jones" "Hernandez" "Lopez" } callsigns = { "Lone Star" "Alamo" "Ranger" "Cavalry" "San Jacinto" "Brazos" "Pecos" "Mustang" "Armadillo" "Longhorn" } }
-LOU = { male = { names = { "John" "William" "James" "Joseph" "Charles" "Henry" "George" "Robert" "Pierre" "Jean" } } female = { names = { "Mary" "Marie" "Louise" "Anna" "Emma" "Elizabeth" "Marguerite" "Celestine" "Bertha" "Ida" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Garcia" "Landry" "Broussard" "Fontenot" "Hebert" "Guidry" "Boudreaux" "Thibodeaux" } callsigns = { "Pelican" "Bayou" "Catahoula" "Magnolia" "Cypress" "Cajun" "Creole" "Pontchartrain" "Delta" "Voodoo" } }
-NRD = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Olson" "Hanson" "Miller" "Brown" "Jones" } callsigns = { "Badlands" "Bison" "Roughrider" "Prairie" "Flickertail" "Peace Garden" "Missouri" "Pembina" "Dakota" "Thunder" } }
-MNS = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Johnson" "Anderson" "Nelson" "Peterson" "Olson" "Hanson" "Larson" "Carlson" "Erickson" "Swenson" } callsigns = { "Gopher" "Loon" "North Star" "Voyageur" "Lumberjack" "Timberwolf" "Mississippi" "Boundary" "Iron Range" "Paul Bunyan" } }
-SDK = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Hanson" "Olson" "Miller" "Brown" "Jones" } callsigns = { "Rushmore" "Black Hills" "Badlands" "Bison" "Prairie" "Coyote" "Pheasant" "Homestake" "Dakota" "Thunder" } }
-IOW = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Nelson" "Peterson" "Hansen" } callsigns = { "Hawkeye" "Corn" "Tallgrass" "Prairie" "Des Moines" "Mississippi" "Goldfinch" "Cyclone" "Frontier" "Heartland" } }
-WSC = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Johnson" "Anderson" "Nelson" "Peterson" "Olson" "Hanson" "Larson" "Carlson" "Erickson" "Swenson" } callsigns = { "Badger" "Forward" "Dairyland" "Timber" "Cheese" "La Follette" "Milwaukee" "Great Lake" "Progressive" "Iron Brigade" } }
-ILN = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Prairie" "Lincoln" "Land of Lincoln" "Illini" "Sangamon" "Cahokia" "Chicago" "Midwest" "Cardinal" "Rail Splitter" } }
-INA = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore" } callsigns = { "Hoosier" "Crossroads" "Wabash" "Tippecanoe" "Limestone" "Cardinal" "Covered Bridge" "Pioneer" "Riley" "Harrison" } }
-MCH = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Wolverine" "Great Lake" "Detroit" "Automotive" "Mackinac" "Peninsula" "Lumberman" "Ironwood" "Motors" "Copper" } }
-MSR = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore" } callsigns = { "Gateway" "Ozark" "Mule" "Show Me" "Missouri" "River" "Cave" "Hawthorn" "Bluebird" "Truman" } }
-ARK = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Razorback" "Diamond" "Ouachita" "Mockingbird" "Delta" "Ozark" "Natural" "Quapaw" "Hot Springs" "Timber" } }
-OHI = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore" } callsigns = { "Buckeye" "Erie" "Cuyahoga" "Cardinal" "Portage" "Mound" "Miami" "Scioto" "Pioneer" "Tecumseh" } }
-PEN = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore" } callsigns = { "Keystone" "Quaker" "Liberty" "Independence" "Allegheny" "Susquehanna" "Pittsburgh" "Anthracite" "Laurel" "Gettysburg" } }
-NYJ = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Garden" "Boardwalk" "Atlantic" "Delaware" "Blueberry" "Cranberry" "Shore" "Meadowlands" "Paterson" "Trenton" } }
-DLW = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Diamond" "Blue Hen" "First State" "Brandywine" "DuPont" "Delaware" "Coastal" "Chesapeake" "Dover" "Holly" } }
-MSS = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Bay" "Minuteman" "Pilgrim" "Pioneer" "Puritan" "Concord" "Adams" "Lexington" "Harvard" "Whaler" } }
-ABM = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Camellia" "Cotton" "Yellowhammer" "Dixie" "Coosa" "Cahaba" "Tuscaloosa" "Mobile" "Crimson" "Heart of Dixie" } }
-FLO = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Garcia" "Rodriguez" "Gonzalez" } callsigns = { "Sunshine" "Panther" "Everglade" "Manatee" "Seminole" "Conch" "Mangrove" "Alligator" "Hurricane" "Orange" } }
-GRR = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Peach" "Empire" "Cherokee" "Chattahoochee" "Thrasher" "Live Oak" "Savannah" "Appalachian" "Brown Thrasher" "Confederate" } }
-NYK = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Empire" "Excelsior" "Hudson" "Albany" "Broadway" "Iroquois" "Adirondack" "Niagara" "Manhattan" "Liberty" } }
-VMT = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Miller" "Jones" "Williams" "Anderson" "Davis" "Wilson" "Moore" } callsigns = { "Green Mountain" "Maple" "Ethan Allen" "Champlain" "Hermit Thrush" "Granite" "Taconic" "Appalachian" "Catamount" "Freedom" } }
-NHM = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Miller" "Jones" "Williams" "Anderson" "Davis" "Wilson" "Moore" } callsigns = { "Granite" "White Mountain" "Merrimack" "Old Man" "Live Free" "Finch" "Lilac" "Kancamagus" "Monadnock" "Winnipesaukee" } }
-RDH = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Ocean" "Narragansett" "Providence" "Block Island" "Red Rooster" "Violet" "Coastal" "Aquidneck" "Hope" "Independence" } }
-CCT = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Nutmeg" "Constitution" "Charter Oak" "Yankee" "Long Island" "Mystic" "Nutmegger" "Hartford" "Robin" "Whaler" } }
-MIE = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Miller" "Jones" "Williams" "Anderson" "Davis" "Wilson" "Moore" } callsigns = { "Pine Tree" "Dirigo" "Lobster" "Acadia" "Moosehead" "Katahdin" "Chickadee" "Lumberjack" "Downeast" "Kennebec" } }
-KTY = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Jones" "Miller" "Williams" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Bluegrass" "Cardinal" "Thoroughbred" "Daniel Boone" "Cumberland" "Appalachian" "Pennyroyal" "Goldenrod" "Bourbon" "Cave" } }
-MRY = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Jones" "Miller" "Williams" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Old Line" "Chesapeake" "Oriole" "Free State" "Antietam" "Annapolis" "Baltimore" "Potomac" "Black-Eyed Susan" "Fort McHenry" } }
-SCR = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Palmetto" "Carolina Wren" "Swamp Fox" "Santee" "Congaree" "Lowcountry" "Charleston" "Catawba" "Magnolia" "Rice" } }
-TNS = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Volunteer" "Mockingbird" "Cumberland" "Smoky" "Tennessee" "Cherokee" "Chickasaw" "Iris" "Andrew Jackson" "Crockett" } }
-NRC = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Tar Heel" "Cardinal" "Pine" "Outer Banks" "Cape Fear" "Blue Ridge" "Dogwood" "Catawba" "Longleaf" "Wright" } }
-WVR = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore" } callsigns = { "Mountaineer" "Kanawha" "Rhododendron" "Cardinal" "Allegheny" "Monongahela" "New River" "Seneca" "Appalachian" "Coal" } }
-VRG = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Old Dominion" "Dogwood" "Shenandoah" "Cardinal" "Chesapeake" "Blue Ridge" "Jamestown" "Yorktown" "Appomattox" "Powhatan" } }
-MSP = { male = { names = { "George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Magnolia" "Mockingbird" "Delta" "Natchez" "Biloxi" "Chickasaw" "Pascagoula" "Yazoo" "Gulf" "Vicksburg" } }
-ZZZ = { male = { names = { "John" "Bob" "James" "Robert" "William" "Henry" "Charles" "Arthur" "Frank" "Clarence" } } female = { names = { "Mary" "Anna" "Emma" "Bertha" "Ida" "Clara" "Ethel" "Nellie" "Florence" "Grace" } } surnames = { "Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore" } callsigns = { "Unknown" "Ghost" "Shadow" "Nomad" "Drifter" "Outsider" "Stranger" "Wayfarer" "Vagrant" "Outcast" } }
+WSH = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Hanson" "Olson" "Larson" "Carlson" "Erickson"
+	}
+	callsigns = {
+		"Cascade" "Rainier" "Olympian" "Evergreen" "Orca" "Salmon" "Timber" "Pacific" "Columbia" "Starbuck"
+	}
+}
+ORE = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Anderson" "Brown" "Jones" "Wilson" "Davis" "Clark" "Thomas"
+	}
+	callsigns = {
+		"Beaver" "Douglas" "Willamette" "Crater" "Trailblazer" "Pioneer" "Lumberjack" "Forester" "Hood" "Cascade"
+	}
+}
+CAL = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Garcia" "Martinez" "Lopez" "Hernandez" "Gonzalez" "Rodriguez" "Williams" "Brown"
+	}
+	callsigns = {
+		"Golden" "Grizzly" "Sequoia" "Pacific" "Redwood" "Valley" "Sierra" "Coastal" "El Dorado" "Condor"
+	}
+}
+NVD = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Wilson" "Anderson" "Taylor"
+	}
+	callsigns = {
+		"Silver" "Prospector" "Sagebrush" "Reno" "Desert" "Comstock" "Basin" "Sierra" "Bonanza" "Mustang"
+	}
+}
+IDH = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Jones" "Brown" "Miller" "Hansen" "Olson"
+	}
+	callsigns = {
+		"Gem" "Sawtooth" "Potato" "Salmon" "Bitterroot" "Pioneer" "Ranger" "Cobalt" "Thunder" "Peregrine"
+	}
+}
+MTN = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Olson" "Hanson" "Miller" "Brown" "Jones"
+	}
+	callsigns = {
+		"Bison" "Glacier" "Grizzly" "Beartooth" "Copper" "Trapper" "Big Sky" "Continental" "Anaconda" "Mountain"
+	}
+}
+WYM = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Nelson" "Peterson" "Davis"
+	}
+	callsigns = {
+		"Bison" "Cheyenne" "Tetons" "Yellowstone" "Prairie" "Sheridan" "Ranger" "Outlaw" "Frontier" "Wind River"
+	}
+}
+UTT = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Young" "Johnson" "Brown" "Jensen" "Peterson" "Hansen" "Anderson" "Nelson" "Christensen"
+	}
+	callsigns = {
+		"Deseret" "Zion" "Beehive" "Seagull" "Wasatch" "Bonneville" "Pioneer" "Timpanogos" "Salt Lake" "Canyon"
+	}
+}
+ARZ = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Garcia" "Martinez" "Lopez" "Rodriguez" "Hernandez" "Gonzalez" "Williams" "Brown"
+	}
+	callsigns = {
+		"Copper" "Saguaro" "Canyon" "Phoenix" "Gila" "Sonoran" "Rattler" "Turquoise" "Cochise" "Thunderbird"
+	}
+}
+NWM = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Garcia" "Martinez" "Lopez" "Hernandez" "Gonzalez" "Rodriguez" "Johnson" "Williams" "Brown"
+	}
+	callsigns = {
+		"Zia" "Sandia" "Mesilla" "Enchanted" "Roadrunner" "Adobe" "Cibolero" "Conquistador" "Sangre" "Cristo"
+	}
+}
+CLO = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Nelson" "Davis" "Garcia"
+	}
+	callsigns = {
+		"Rockies" "Continental" "Centennial" "Bighorn" "Pikes" "Mineral" "Summit" "Granite" "Arapaho" "Silver"
+	}
+}
+NEB = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Nelson" "Peterson" "Hansen"
+	}
+	callsigns = {
+		"Cornhusker" "Platte" "Prairie" "Buffalo" "Homesteader" "Pioneer" "Overland" "Chimney" "Sandhill" "Antelope"
+	}
+}
+KNS = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Nelson" "Peterson"
+	}
+	callsigns = {
+		"Jayhawk" "Sunflower" "Wheat" "Prairie" "Flint" "Abilene" "Dodge" "Cyclone" "Meadowlark" "Bison"
+	}
+}
+OKL = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Sooner" "Boomer" "Red River" "Cimarron" "Osage" "Cherokee" "Choctaw" "Wichita" "Panhandle" "Scissortail"
+	}
+}
+TEX = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Garcia" "Martinez" "Rodriguez" "Williams" "Brown" "Jones" "Hernandez" "Lopez"
+	}
+	callsigns = {
+		"Lone Star" "Alamo" "Ranger" "Cavalry" "San Jacinto" "Brazos" "Pecos" "Mustang" "Armadillo" "Longhorn"
+	}
+}
+LOU = {
+	male = {
+		names = {
+			"John" "William" "James" "Joseph" "Charles" "Henry" "George" "Robert" "Pierre" "Jean"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Marie" "Louise" "Anna" "Emma" "Elizabeth" "Marguerite" "Celestine" "Bertha" "Ida"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Garcia" "Landry" "Broussard" "Fontenot" "Hebert" "Guidry" "Boudreaux" "Thibodeaux"
+	}
+	callsigns = {
+		"Pelican" "Bayou" "Catahoula" "Magnolia" "Cypress" "Cajun" "Creole" "Pontchartrain" "Delta" "Voodoo"
+	}
+}
+NRD = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Olson" "Hanson" "Miller" "Brown" "Jones"
+	}
+	callsigns = {
+		"Badlands" "Bison" "Roughrider" "Prairie" "Flickertail" "Peace Garden" "Missouri" "Pembina" "Dakota" "Thunder"
+	}
+}
+MNS = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Johnson" "Anderson" "Nelson" "Peterson" "Olson" "Hanson" "Larson" "Carlson" "Erickson" "Swenson"
+	}
+	callsigns = {
+		"Gopher" "Loon" "North Star" "Voyageur" "Lumberjack" "Timberwolf" "Mississippi" "Boundary" "Iron Range" "Paul Bunyan"
+	}
+}
+SDK = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Anderson" "Nelson" "Peterson" "Hanson" "Olson" "Miller" "Brown" "Jones"
+	}
+	callsigns = {
+		"Rushmore" "Black Hills" "Badlands" "Bison" "Prairie" "Coyote" "Pheasant" "Homestake" "Dakota" "Thunder"
+	}
+}
+IOW = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Nelson" "Peterson" "Hansen"
+	}
+	callsigns = {
+		"Hawkeye" "Corn" "Tallgrass" "Prairie" "Des Moines" "Mississippi" "Goldfinch" "Cyclone" "Frontier" "Heartland"
+	}
+}
+WSC = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Johnson" "Anderson" "Nelson" "Peterson" "Olson" "Hanson" "Larson" "Carlson" "Erickson" "Swenson"
+	}
+	callsigns = {
+		"Badger" "Forward" "Dairyland" "Timber" "Cheese" "La Follette" "Milwaukee" "Great Lake" "Progressive" "Iron Brigade"
+	}
+}
+ILN = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Prairie" "Lincoln" "Land of Lincoln" "Illini" "Sangamon" "Cahokia" "Chicago" "Midwest" "Cardinal" "Rail Splitter"
+	}
+}
+INA = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Hoosier" "Crossroads" "Wabash" "Tippecanoe" "Limestone" "Cardinal" "Covered Bridge" "Pioneer" "Riley" "Harrison"
+	}
+}
+MCH = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Wolverine" "Great Lake" "Detroit" "Automotive" "Mackinac" "Peninsula" "Lumberman" "Ironwood" "Motors" "Copper"
+	}
+}
+MSR = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Gateway" "Ozark" "Mule" "Show Me" "Missouri" "River" "Cave" "Hawthorn" "Bluebird" "Truman"
+	}
+}
+ARK = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Razorback" "Diamond" "Ouachita" "Mockingbird" "Delta" "Ozark" "Natural" "Quapaw" "Hot Springs" "Timber"
+	}
+}
+OHI = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Buckeye" "Erie" "Cuyahoga" "Cardinal" "Portage" "Mound" "Miami" "Scioto" "Pioneer" "Tecumseh"
+	}
+}
+PEN = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Keystone" "Quaker" "Liberty" "Independence" "Allegheny" "Susquehanna" "Pittsburgh" "Anthracite" "Laurel" "Gettysburg"
+	}
+}
+NYJ = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Garden" "Boardwalk" "Atlantic" "Delaware" "Blueberry" "Cranberry" "Shore" "Meadowlands" "Paterson" "Trenton"
+	}
+}
+DLW = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Diamond" "Blue Hen" "First State" "Brandywine" "DuPont" "Delaware" "Coastal" "Chesapeake" "Dover" "Holly"
+	}
+}
+MSS = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Bay" "Minuteman" "Pilgrim" "Pioneer" "Puritan" "Concord" "Adams" "Lexington" "Harvard" "Whaler"
+	}
+}
+ABM = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Camellia" "Cotton" "Yellowhammer" "Dixie" "Coosa" "Cahaba" "Tuscaloosa" "Mobile" "Crimson" "Heart of Dixie"
+	}
+}
+FLO = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Garcia" "Rodriguez" "Gonzalez"
+	}
+	callsigns = {
+		"Sunshine" "Panther" "Everglade" "Manatee" "Seminole" "Conch" "Mangrove" "Alligator" "Hurricane" "Orange"
+	}
+}
+GRR = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Peach" "Empire" "Cherokee" "Chattahoochee" "Thrasher" "Live Oak" "Savannah" "Appalachian" "Brown Thrasher" "Confederate"
+	}
+}
+NYK = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Empire" "Excelsior" "Hudson" "Albany" "Broadway" "Iroquois" "Adirondack" "Niagara" "Manhattan" "Liberty"
+	}
+}
+VMT = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Miller" "Jones" "Williams" "Anderson" "Davis" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Green Mountain" "Maple" "Ethan Allen" "Champlain" "Hermit Thrush" "Granite" "Taconic" "Appalachian" "Catamount" "Freedom"
+	}
+}
+NHM = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Miller" "Jones" "Williams" "Anderson" "Davis" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Granite" "White Mountain" "Merrimack" "Old Man" "Live Free" "Finch" "Lilac" "Kancamagus" "Monadnock" "Winnipesaukee"
+	}
+}
+RDH = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Ocean" "Narragansett" "Providence" "Block Island" "Red Rooster" "Violet" "Coastal" "Aquidneck" "Hope" "Independence"
+	}
+}
+CCT = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Nutmeg" "Constitution" "Charter Oak" "Yankee" "Long Island" "Mystic" "Nutmegger" "Hartford" "Robin" "Whaler"
+	}
+}
+MIE = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Miller" "Jones" "Williams" "Anderson" "Davis" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Pine Tree" "Dirigo" "Lobster" "Acadia" "Moosehead" "Katahdin" "Chickadee" "Lumberjack" "Downeast" "Kennebec"
+	}
+}
+KTY = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Jones" "Miller" "Williams" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Bluegrass" "Cardinal" "Thoroughbred" "Daniel Boone" "Cumberland" "Appalachian" "Pennyroyal" "Goldenrod" "Bourbon" "Cave"
+	}
+}
+MRY = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Jones" "Miller" "Williams" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Old Line" "Chesapeake" "Oriole" "Free State" "Antietam" "Annapolis" "Baltimore" "Potomac" "Black-Eyed Susan" "Fort McHenry"
+	}
+}
+SCR = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Palmetto" "Carolina Wren" "Swamp Fox" "Santee" "Congaree" "Lowcountry" "Charleston" "Catawba" "Magnolia" "Rice"
+	}
+}
+TNS = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Volunteer" "Mockingbird" "Cumberland" "Smoky" "Tennessee" "Cherokee" "Chickasaw" "Iris" "Andrew Jackson" "Crockett"
+	}
+}
+NRC = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Tar Heel" "Cardinal" "Pine" "Outer Banks" "Cape Fear" "Blue Ridge" "Dogwood" "Catawba" "Longleaf" "Wright"
+	}
+}
+WVR = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Miller" "Brown" "Jones" "Anderson" "Williams" "Davis" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Mountaineer" "Kanawha" "Rhododendron" "Cardinal" "Allegheny" "Monongahela" "New River" "Seneca" "Appalachian" "Coal"
+	}
+}
+VRG = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Brown" "Williams" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Old Dominion" "Dogwood" "Shenandoah" "Cardinal" "Chesapeake" "Blue Ridge" "Jamestown" "Yorktown" "Appomattox" "Powhatan"
+	}
+}
+MSP = {
+	male = {
+		names = {
+			"George" "William" "John" "James" "Robert" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Bertha" "Ida" "Anna" "Minnie" "Florence" "Emma" "Ethel" "Clara" "Nellie"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Magnolia" "Mockingbird" "Delta" "Natchez" "Biloxi" "Chickasaw" "Pascagoula" "Yazoo" "Gulf" "Vicksburg"
+	}
+}
+ZZZ = {
+	male = {
+		names = {
+			"John" "Bob" "James" "Robert" "William" "Henry" "Charles" "Arthur" "Frank" "Clarence"
+		}
+	}
+	female = {
+		names = {
+			"Mary" "Anna" "Emma" "Bertha" "Ida" "Clara" "Ethel" "Nellie" "Florence" "Grace"
+		}
+	}
+	surnames = {
+		"Smith" "Johnson" "Williams" "Brown" "Jones" "Miller" "Davis" "Anderson" "Wilson" "Moore"
+	}
+	callsigns = {
+		"Unknown" "Ghost" "Shadow" "Nomad" "Drifter" "Outsider" "Stranger" "Wayfarer" "Vagrant" "Outcast"
+	}
+}

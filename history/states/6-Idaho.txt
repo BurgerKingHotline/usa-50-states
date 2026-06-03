@@ -9,7 +9,7 @@ state = {
 	history = {
 		owner = IDH
 		add_core_of = IDH
-		victory_points = { 1355 1 }
-		victory_points = { 7548 1 }
+		victory_points = { 2905 1 } # Twin Falls, ID -- County seat of Twin Falls County (pop 44,125; county 90,046).
+		# victory_points = { 7548 1 } <-- misplaced, retaining for now in case it can be used for another city in the state.
 	}
 }

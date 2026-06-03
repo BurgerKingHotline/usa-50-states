@@ -1,4 +1,4 @@
-capital = 93
+capital = 91 # Western Washington
 set_politics = {
 	ruling_party = democratic
 	last_election = "1936.1.1"

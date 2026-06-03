@@ -11,6 +11,6 @@ state = {
 		add_core_of = WSH
 		victory_points = { 3665 1 } # Pasco, WA
 		victory_points = { 7196 5 } # Spokane, WA
-		victory_points = { 7250 2 } # Pullman + Clarkston, WA
+		victory_points = { 7250 2 } # Pullman, WA
 	}
 }
