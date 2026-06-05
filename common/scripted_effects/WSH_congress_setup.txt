@@ -1,0 +1,618 @@
+WSH_senate_gui_setup = {
+	clear_array = wsh_senate_gui_x
+	clear_array = wsh_senate_gui_y
+	clear_array = wsh_senate_gui_frame
+	add_to_array = { wsh_senate_gui_x = 0 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 29 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 59 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 88 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 6 }
+	add_to_array = { wsh_senate_gui_y = 101 }
+	add_to_array = { wsh_senate_gui_x = 38 }
+	add_to_array = { wsh_senate_gui_y = 98 }
+	add_to_array = { wsh_senate_gui_x = 18 }
+	add_to_array = { wsh_senate_gui_y = 73 }
+	add_to_array = { wsh_senate_gui_x = 69 }
+	add_to_array = { wsh_senate_gui_y = 103 }
+	add_to_array = { wsh_senate_gui_x = 57 }
+	add_to_array = { wsh_senate_gui_y = 70 }
+	add_to_array = { wsh_senate_gui_x = 100 }
+	add_to_array = { wsh_senate_gui_y = 110 }
+	add_to_array = { wsh_senate_gui_x = 37 }
+	add_to_array = { wsh_senate_gui_y = 49 }
+	add_to_array = { wsh_senate_gui_x = 90 }
+	add_to_array = { wsh_senate_gui_y = 80 }
+	add_to_array = { wsh_senate_gui_x = 60 }
+	add_to_array = { wsh_senate_gui_y = 30 }
+	add_to_array = { wsh_senate_gui_x = 84 }
+	add_to_array = { wsh_senate_gui_y = 50 }
+	add_to_array = { wsh_senate_gui_x = 88 }
+	add_to_array = { wsh_senate_gui_y = 16 }
+	add_to_array = { wsh_senate_gui_x = 120 }
+	add_to_array = { wsh_senate_gui_y = 98 }
+	add_to_array = { wsh_senate_gui_x = 117 }
+	add_to_array = { wsh_senate_gui_y = 68 }
+	add_to_array = { wsh_senate_gui_x = 116 }
+	add_to_array = { wsh_senate_gui_y = 39 }
+	add_to_array = { wsh_senate_gui_x = 117 }
+	add_to_array = { wsh_senate_gui_y = 9 }
+	add_to_array = { wsh_senate_gui_x = 148 }
+	add_to_array = { wsh_senate_gui_y = 9 }
+	add_to_array = { wsh_senate_gui_x = 149 }
+	add_to_array = { wsh_senate_gui_y = 39 }
+	add_to_array = { wsh_senate_gui_x = 148 }
+	add_to_array = { wsh_senate_gui_y = 68 }
+	add_to_array = { wsh_senate_gui_x = 144 }
+	add_to_array = { wsh_senate_gui_y = 98 }
+	add_to_array = { wsh_senate_gui_x = 177 }
+	add_to_array = { wsh_senate_gui_y = 16 }
+	add_to_array = { wsh_senate_gui_x = 181 }
+	add_to_array = { wsh_senate_gui_y = 50 }
+	add_to_array = { wsh_senate_gui_x = 205 }
+	add_to_array = { wsh_senate_gui_y = 30 }
+	add_to_array = { wsh_senate_gui_x = 175 }
+	add_to_array = { wsh_senate_gui_y = 80 }
+	add_to_array = { wsh_senate_gui_x = 228 }
+	add_to_array = { wsh_senate_gui_y = 49 }
+	add_to_array = { wsh_senate_gui_x = 165 }
+	add_to_array = { wsh_senate_gui_y = 110 }
+	add_to_array = { wsh_senate_gui_x = 208 }
+	add_to_array = { wsh_senate_gui_y = 70 }
+	add_to_array = { wsh_senate_gui_x = 196 }
+	add_to_array = { wsh_senate_gui_y = 103 }
+	add_to_array = { wsh_senate_gui_x = 247 }
+	add_to_array = { wsh_senate_gui_y = 73 }
+	add_to_array = { wsh_senate_gui_x = 227 }
+	add_to_array = { wsh_senate_gui_y = 98 }
+	add_to_array = { wsh_senate_gui_x = 259 }
+	add_to_array = { wsh_senate_gui_y = 101 }
+	add_to_array = { wsh_senate_gui_x = 176 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 206 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 236 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 265 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+}
+WSH_house_gui_setup = {
+	clear_array = wsh_house_gui_x
+	clear_array = wsh_house_gui_y
+	clear_array = wsh_house_gui_frame
+	add_to_array = { wsh_house_gui_x = 0 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 16 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 31 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 47 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 63 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 79 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 3 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 19 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 35 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 51 }
+	add_to_array = { wsh_house_gui_y = 118 }
+	add_to_array = { wsh_house_gui_x = 8 }
+	add_to_array = { wsh_house_gui_y = 98 }
+	add_to_array = { wsh_house_gui_x = 67 }
+	add_to_array = { wsh_house_gui_y = 119 }
+	add_to_array = { wsh_house_gui_x = 25 }
+	add_to_array = { wsh_house_gui_y = 99 }
+	add_to_array = { wsh_house_gui_x = 84 }
+	add_to_array = { wsh_house_gui_y = 121 }
+	add_to_array = { wsh_house_gui_x = 42 }
+	add_to_array = { wsh_house_gui_y = 99 }
+	add_to_array = { wsh_house_gui_x = 17 }
+	add_to_array = { wsh_house_gui_y = 80 }
+	add_to_array = { wsh_house_gui_x = 59 }
+	add_to_array = { wsh_house_gui_y = 101 }
+	add_to_array = { wsh_house_gui_x = 33 }
+	add_to_array = { wsh_house_gui_y = 82 }
+	add_to_array = { wsh_house_gui_x = 76 }
+	add_to_array = { wsh_house_gui_y = 103 }
+	add_to_array = { wsh_house_gui_x = 27 }
+	add_to_array = { wsh_house_gui_y = 64 }
+	add_to_array = { wsh_house_gui_x = 52 }
+	add_to_array = { wsh_house_gui_y = 82 }
+	add_to_array = { wsh_house_gui_x = 45 }
+	add_to_array = { wsh_house_gui_y = 67 }
+	add_to_array = { wsh_house_gui_x = 93 }
+	add_to_array = { wsh_house_gui_y = 107 }
+	add_to_array = { wsh_house_gui_x = 70 }
+	add_to_array = { wsh_house_gui_y = 85 }
+	add_to_array = { wsh_house_gui_x = 40 }
+	add_to_array = { wsh_house_gui_y = 49 }
+	add_to_array = { wsh_house_gui_x = 66 }
+	add_to_array = { wsh_house_gui_y = 68 }
+	add_to_array = { wsh_house_gui_x = 88 }
+	add_to_array = { wsh_house_gui_y = 90 }
+	add_to_array = { wsh_house_gui_x = 58 }
+	add_to_array = { wsh_house_gui_y = 53 }
+	add_to_array = { wsh_house_gui_x = 55 }
+	add_to_array = { wsh_house_gui_y = 36 }
+	add_to_array = { wsh_house_gui_x = 84 }
+	add_to_array = { wsh_house_gui_y = 73 }
+	add_to_array = { wsh_house_gui_x = 106 }
+	add_to_array = { wsh_house_gui_y = 96 }
+	add_to_array = { wsh_house_gui_x = 81 }
+	add_to_array = { wsh_house_gui_y = 56 }
+	add_to_array = { wsh_house_gui_x = 74 }
+	add_to_array = { wsh_house_gui_y = 42 }
+	add_to_array = { wsh_house_gui_x = 71 }
+	add_to_array = { wsh_house_gui_y = 26 }
+	add_to_array = { wsh_house_gui_x = 103 }
+	add_to_array = { wsh_house_gui_y = 80 }
+	add_to_array = { wsh_house_gui_x = 100 }
+	add_to_array = { wsh_house_gui_y = 63 }
+	add_to_array = { wsh_house_gui_x = 91 }
+	add_to_array = { wsh_house_gui_y = 34 }
+	add_to_array = { wsh_house_gui_x = 99 }
+	add_to_array = { wsh_house_gui_y = 47 }
+	add_to_array = { wsh_house_gui_x = 89 }
+	add_to_array = { wsh_house_gui_y = 17 }
+	add_to_array = { wsh_house_gui_x = 121 }
+	add_to_array = { wsh_house_gui_y = 89 }
+	add_to_array = { wsh_house_gui_x = 119 }
+	add_to_array = { wsh_house_gui_y = 73 }
+	add_to_array = { wsh_house_gui_x = 109 }
+	add_to_array = { wsh_house_gui_y = 28 }
+	add_to_array = { wsh_house_gui_x = 108 }
+	add_to_array = { wsh_house_gui_y = 12 }
+	add_to_array = { wsh_house_gui_x = 118 }
+	add_to_array = { wsh_house_gui_y = 58 }
+	add_to_array = { wsh_house_gui_x = 118 }
+	add_to_array = { wsh_house_gui_y = 42 }
+	add_to_array = { wsh_house_gui_x = 128 }
+	add_to_array = { wsh_house_gui_y = 25 }
+	add_to_array = { wsh_house_gui_x = 127 }
+	add_to_array = { wsh_house_gui_y = 9 }
+	add_to_array = { wsh_house_gui_x = 137 }
+	add_to_array = { wsh_house_gui_y = 87 }
+	add_to_array = { wsh_house_gui_x = 137 }
+	add_to_array = { wsh_house_gui_y = 71 }
+	add_to_array = { wsh_house_gui_x = 137 }
+	add_to_array = { wsh_house_gui_y = 40 }
+	add_to_array = { wsh_house_gui_x = 137 }
+	add_to_array = { wsh_house_gui_y = 56 }
+	add_to_array = { wsh_house_gui_x = 147 }
+	add_to_array = { wsh_house_gui_y = 9 }
+	add_to_array = { wsh_house_gui_x = 147 }
+	add_to_array = { wsh_house_gui_y = 25 }
+	add_to_array = { wsh_house_gui_x = 157 }
+	add_to_array = { wsh_house_gui_y = 42 }
+	add_to_array = { wsh_house_gui_x = 156 }
+	add_to_array = { wsh_house_gui_y = 58 }
+	add_to_array = { wsh_house_gui_x = 166 }
+	add_to_array = { wsh_house_gui_y = 12 }
+	add_to_array = { wsh_house_gui_x = 166 }
+	add_to_array = { wsh_house_gui_y = 28 }
+	add_to_array = { wsh_house_gui_x = 155 }
+	add_to_array = { wsh_house_gui_y = 73 }
+	add_to_array = { wsh_house_gui_x = 154 }
+	add_to_array = { wsh_house_gui_y = 89 }
+	add_to_array = { wsh_house_gui_x = 185 }
+	add_to_array = { wsh_house_gui_y = 17 }
+	add_to_array = { wsh_house_gui_x = 175 }
+	add_to_array = { wsh_house_gui_y = 47 }
+	add_to_array = { wsh_house_gui_x = 184 }
+	add_to_array = { wsh_house_gui_y = 34 }
+	add_to_array = { wsh_house_gui_x = 174 }
+	add_to_array = { wsh_house_gui_y = 63 }
+	add_to_array = { wsh_house_gui_x = 172 }
+	add_to_array = { wsh_house_gui_y = 80 }
+	add_to_array = { wsh_house_gui_x = 203 }
+	add_to_array = { wsh_house_gui_y = 26 }
+	add_to_array = { wsh_house_gui_x = 201 }
+	add_to_array = { wsh_house_gui_y = 42 }
+	add_to_array = { wsh_house_gui_x = 193 }
+	add_to_array = { wsh_house_gui_y = 56 }
+	add_to_array = { wsh_house_gui_x = 169 }
+	add_to_array = { wsh_house_gui_y = 96 }
+	add_to_array = { wsh_house_gui_x = 190 }
+	add_to_array = { wsh_house_gui_y = 73 }
+	add_to_array = { wsh_house_gui_x = 219 }
+	add_to_array = { wsh_house_gui_y = 36 }
+	add_to_array = { wsh_house_gui_x = 216 }
+	add_to_array = { wsh_house_gui_y = 53 }
+	add_to_array = { wsh_house_gui_x = 187 }
+	add_to_array = { wsh_house_gui_y = 90 }
+	add_to_array = { wsh_house_gui_x = 209 }
+	add_to_array = { wsh_house_gui_y = 68 }
+	add_to_array = { wsh_house_gui_x = 234 }
+	add_to_array = { wsh_house_gui_y = 49 }
+	add_to_array = { wsh_house_gui_x = 204 }
+	add_to_array = { wsh_house_gui_y = 85 }
+	add_to_array = { wsh_house_gui_x = 181 }
+	add_to_array = { wsh_house_gui_y = 107 }
+	add_to_array = { wsh_house_gui_x = 230 }
+	add_to_array = { wsh_house_gui_y = 67 }
+	add_to_array = { wsh_house_gui_x = 222 }
+	add_to_array = { wsh_house_gui_y = 82 }
+	add_to_array = { wsh_house_gui_x = 247 }
+	add_to_array = { wsh_house_gui_y = 64 }
+	add_to_array = { wsh_house_gui_x = 199 }
+	add_to_array = { wsh_house_gui_y = 103 }
+	add_to_array = { wsh_house_gui_x = 241 }
+	add_to_array = { wsh_house_gui_y = 82 }
+	add_to_array = { wsh_house_gui_x = 215 }
+	add_to_array = { wsh_house_gui_y = 101 }
+	add_to_array = { wsh_house_gui_x = 258 }
+	add_to_array = { wsh_house_gui_y = 80 }
+	add_to_array = { wsh_house_gui_x = 232 }
+	add_to_array = { wsh_house_gui_y = 99 }
+	add_to_array = { wsh_house_gui_x = 191 }
+	add_to_array = { wsh_house_gui_y = 121 }
+	add_to_array = { wsh_house_gui_x = 250 }
+	add_to_array = { wsh_house_gui_y = 99 }
+	add_to_array = { wsh_house_gui_x = 207 }
+	add_to_array = { wsh_house_gui_y = 119 }
+	add_to_array = { wsh_house_gui_x = 266 }
+	add_to_array = { wsh_house_gui_y = 98 }
+	add_to_array = { wsh_house_gui_x = 223 }
+	add_to_array = { wsh_house_gui_y = 118 }
+	add_to_array = { wsh_house_gui_x = 239 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 256 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 271 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 196 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 211 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 227 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 243 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 259 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 274 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+}
+WSH_calculate_party_seats = { # === Senate seat calculation (38 seats) ===
+	set_temp_variable = { wsh_senate_max = 38 }
+	set_temp_variable = { wsh_senate_sum = 0 }
+	# Conservative (frame 1)
+	set_temp_variable = { wsh_t = party_popularity@conservatism_ideology }
+	multiply_temp_variable = { wsh_t = wsh_senate_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_conservative_senate_seats = wsh_t }
+	add_to_temp_variable = { wsh_senate_sum = wsh_conservative_senate_seats }
+	# Agrarian (frame 2)
+	set_temp_variable = { wsh_t = party_popularity@populism_ideology }
+	multiply_temp_variable = { wsh_t = wsh_senate_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_agrarian_senate_seats = wsh_t }
+	add_to_temp_variable = { wsh_senate_sum = wsh_agrarian_senate_seats }
+	# Liberal (frame 3)
+	set_temp_variable = { wsh_t = party_popularity@democratic }
+	multiply_temp_variable = { wsh_t = wsh_senate_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_liberal_senate_seats = wsh_t }
+	add_to_temp_variable = { wsh_senate_sum = wsh_liberal_senate_seats }
+	# Socialist (frame 4)
+	set_temp_variable = { wsh_t = party_popularity@socialism_ideology }
+	multiply_temp_variable = { wsh_t = wsh_senate_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_socialist_senate_seats = wsh_t }
+	add_to_temp_variable = { wsh_senate_sum = wsh_socialist_senate_seats }
+	# Communist (frame 5)
+	set_temp_variable = { wsh_t = party_popularity@communism }
+	multiply_temp_variable = { wsh_t = wsh_senate_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_communist_senate_seats = wsh_t }
+	add_to_temp_variable = { wsh_senate_sum = wsh_communist_senate_seats }
+	# Fascist (frame 6)
+	set_temp_variable = { wsh_t = party_popularity@fascism }
+	multiply_temp_variable = { wsh_t = wsh_senate_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_fascist_senate_seats = wsh_t }
+	add_to_temp_variable = { wsh_senate_sum = wsh_fascist_senate_seats }
+	# Nonaligned (frame 7)
+	set_temp_variable = { wsh_t = party_popularity@neutrality }
+	multiply_temp_variable = { wsh_t = wsh_senate_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_nonaligned_senate_seats = wsh_t }
+	add_to_temp_variable = { wsh_senate_sum = wsh_nonaligned_senate_seats }
+	# Safety catch: adjust conservative seats to reach exact total
+	if = {
+		limit = {
+			check_variable = { wsh_senate_sum < wsh_senate_max }
+		}
+		set_temp_variable = { wsh_diff = wsh_senate_max }
+		subtract_from_temp_variable = { wsh_diff = wsh_senate_sum }
+		add_to_variable = { wsh_conservative_senate_seats = wsh_diff }
+	}
+	if = {
+		limit = {
+			check_variable = { wsh_senate_sum > wsh_senate_max }
+		}
+		set_temp_variable = { wsh_diff = wsh_senate_sum }
+		subtract_from_temp_variable = { wsh_diff = wsh_senate_max }
+		subtract_from_variable = { wsh_conservative_senate_seats = wsh_diff }
+	}
+	# === House seat calculation (98 seats) ===
+	set_temp_variable = { wsh_house_max = 98 }
+	set_temp_variable = { wsh_house_sum = 0 }
+	# Conservative (frame 1)
+	set_temp_variable = { wsh_t = party_popularity@conservatism_ideology }
+	multiply_temp_variable = { wsh_t = wsh_house_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_conservative_house_seats = wsh_t }
+	add_to_temp_variable = { wsh_house_sum = wsh_conservative_house_seats }
+	# Agrarian (frame 2)
+	set_temp_variable = { wsh_t = party_popularity@populism_ideology }
+	multiply_temp_variable = { wsh_t = wsh_house_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_agrarian_house_seats = wsh_t }
+	add_to_temp_variable = { wsh_house_sum = wsh_agrarian_house_seats }
+	# Liberal (frame 3)
+	set_temp_variable = { wsh_t = party_popularity@democratic }
+	multiply_temp_variable = { wsh_t = wsh_house_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_liberal_house_seats = wsh_t }
+	add_to_temp_variable = { wsh_house_sum = wsh_liberal_house_seats }
+	# Socialist (frame 4)
+	set_temp_variable = { wsh_t = party_popularity@socialism_ideology }
+	multiply_temp_variable = { wsh_t = wsh_house_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_socialist_house_seats = wsh_t }
+	add_to_temp_variable = { wsh_house_sum = wsh_socialist_house_seats }
+	# Communist (frame 5)
+	set_temp_variable = { wsh_t = party_popularity@communism }
+	multiply_temp_variable = { wsh_t = wsh_house_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_communist_house_seats = wsh_t }
+	add_to_temp_variable = { wsh_house_sum = wsh_communist_house_seats }
+	# Fascist (frame 6)
+	set_temp_variable = { wsh_t = party_popularity@fascism }
+	multiply_temp_variable = { wsh_t = wsh_house_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_fascist_house_seats = wsh_t }
+	add_to_temp_variable = { wsh_house_sum = wsh_fascist_house_seats }
+	# Nonaligned (frame 7)
+	set_temp_variable = { wsh_t = party_popularity@neutrality }
+	multiply_temp_variable = { wsh_t = wsh_house_max }
+	round_temp_variable = wsh_t
+	set_variable = { wsh_nonaligned_house_seats = wsh_t }
+	add_to_temp_variable = { wsh_house_sum = wsh_nonaligned_house_seats }
+	# Safety catch: adjust conservative seats to reach exact total
+	if = {
+		limit = {
+			check_variable = { wsh_house_sum < wsh_house_max }
+		}
+		set_temp_variable = { wsh_diff = wsh_house_max }
+		subtract_from_temp_variable = { wsh_diff = wsh_house_sum }
+		add_to_variable = { wsh_conservative_house_seats = wsh_diff }
+	}
+	if = {
+		limit = {
+			check_variable = { wsh_house_sum > wsh_house_max }
+		}
+		set_temp_variable = { wsh_diff = wsh_house_sum }
+		subtract_from_temp_variable = { wsh_diff = wsh_house_max }
+		subtract_from_variable = { wsh_conservative_house_seats = wsh_diff }
+	}
+}
+WSH_senate_parties_setup = { # Fallback seat counts used before dynamic recalculation
+	# Overwritten by WSH_calculate_party_seats on each congress button click
+	set_variable = { wsh_conservative_senate_seats = 6 }
+	set_variable = { wsh_agrarian_senate_seats = 8 }
+	set_variable = { wsh_liberal_senate_seats = 8 }
+	set_variable = { wsh_socialist_senate_seats = 8 }
+	set_variable = { wsh_communist_senate_seats = 5 }
+	set_variable = { wsh_fascist_senate_seats = 2 }
+	set_variable = { wsh_nonaligned_senate_seats = 1 }
+}
+WSH_house_parties_setup = { # Fallback seat counts used before dynamic recalculation
+	# Overwritten by WSH_calculate_party_seats on each congress button click
+	set_variable = { wsh_conservative_house_seats = 16 }
+	set_variable = { wsh_agrarian_house_seats = 20 }
+	set_variable = { wsh_liberal_house_seats = 22 }
+	set_variable = { wsh_socialist_house_seats = 20 }
+	set_variable = { wsh_communist_house_seats = 13 }
+	set_variable = { wsh_fascist_house_seats = 5 }
+	set_variable = { wsh_nonaligned_house_seats = 2 }
+}
+WSH_senate_reload = { # Load seat count variables and populate frame array via resize_array
+	set_temp_variable = { wsh_p1 = wsh_conservative_senate_seats }
+	set_temp_variable = { wsh_p2 = wsh_agrarian_senate_seats }
+	set_temp_variable = { wsh_p3 = wsh_liberal_senate_seats }
+	set_temp_variable = { wsh_p4 = wsh_socialist_senate_seats }
+	set_temp_variable = { wsh_p5 = wsh_communist_senate_seats }
+	set_temp_variable = { wsh_p6 = wsh_fascist_senate_seats }
+	set_temp_variable = { wsh_p7 = wsh_nonaligned_senate_seats }
+	# Convert to cumulative thresholds for resize_array chaining
+	add_to_temp_variable = { wsh_p2 = wsh_p1 }
+	add_to_temp_variable = { wsh_p3 = wsh_p2 }
+	add_to_temp_variable = { wsh_p4 = wsh_p3 }
+	add_to_temp_variable = { wsh_p5 = wsh_p4 }
+	add_to_temp_variable = { wsh_p6 = wsh_p5 }
+	add_to_temp_variable = { wsh_p7 = wsh_p6 }
+	clear_array = wsh_senate_gui_frame
+	resize_array = { array = wsh_senate_gui_frame value = 1 size = wsh_p1 }
+	resize_array = { array = wsh_senate_gui_frame value = 2 size = wsh_p2 }
+	resize_array = { array = wsh_senate_gui_frame value = 3 size = wsh_p3 }
+	resize_array = { array = wsh_senate_gui_frame value = 4 size = wsh_p4 }
+	resize_array = { array = wsh_senate_gui_frame value = 5 size = wsh_p5 }
+	resize_array = { array = wsh_senate_gui_frame value = 6 size = wsh_p6 }
+	resize_array = { array = wsh_senate_gui_frame value = 7 size = wsh_p7 }
+}
+WSH_house_reload = { # Load seat count variables and populate frame array via resize_array
+	set_temp_variable = { wsh_p1 = wsh_conservative_house_seats }
+	set_temp_variable = { wsh_p2 = wsh_agrarian_house_seats }
+	set_temp_variable = { wsh_p3 = wsh_liberal_house_seats }
+	set_temp_variable = { wsh_p4 = wsh_socialist_house_seats }
+	set_temp_variable = { wsh_p5 = wsh_communist_house_seats }
+	set_temp_variable = { wsh_p6 = wsh_fascist_house_seats }
+	set_temp_variable = { wsh_p7 = wsh_nonaligned_house_seats }
+	# Convert to cumulative thresholds for resize_array chaining
+	add_to_temp_variable = { wsh_p2 = wsh_p1 }
+	add_to_temp_variable = { wsh_p3 = wsh_p2 }
+	add_to_temp_variable = { wsh_p4 = wsh_p3 }
+	add_to_temp_variable = { wsh_p5 = wsh_p4 }
+	add_to_temp_variable = { wsh_p6 = wsh_p5 }
+	add_to_temp_variable = { wsh_p7 = wsh_p6 }
+	clear_array = wsh_house_gui_frame
+	resize_array = { array = wsh_house_gui_frame value = 1 size = wsh_p1 }
+	resize_array = { array = wsh_house_gui_frame value = 2 size = wsh_p2 }
+	resize_array = { array = wsh_house_gui_frame value = 3 size = wsh_p3 }
+	resize_array = { array = wsh_house_gui_frame value = 4 size = wsh_p4 }
+	resize_array = { array = wsh_house_gui_frame value = 5 size = wsh_p5 }
+	resize_array = { array = wsh_house_gui_frame value = 6 size = wsh_p6 }
+	resize_array = { array = wsh_house_gui_frame value = 7 size = wsh_p7 }
+}
+WSH_recalculate_all_seats = {
+	WSH_calculate_party_seats = yes
+	WSH_senate_gui_setup = yes
+	WSH_house_gui_setup = yes
+	WSH_senate_reload = yes
+	WSH_house_reload = yes
+}

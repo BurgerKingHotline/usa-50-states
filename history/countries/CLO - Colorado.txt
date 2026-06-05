@@ -1,14 +1,17 @@
 capital = 12
 set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
+        ruling_party = populism_ideology
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
 recruit_character = COLORADO_GOV
 set_popularities = {
-	democratic = 55
-	neutrality = 35
-	fascism = 5
-	communism = 5
-}
+        democratic = 22
+        conservatism_ideology = 26
+        socialism_ideology = 13
+        populism_ideology = 27
+        neutrality = 2
+        fascism = 5
+        communism = 5
+    }

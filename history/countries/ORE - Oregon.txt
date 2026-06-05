@@ -1,15 +1,18 @@
 capital = 95
 set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
+        ruling_party = democratic
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
 recruit_character = OREGON_GOV
 set_popularities = {
-	democratic = 50
-	neutrality = 40
-	fascism = 5
-	communism = 5
-}
+        democratic = 26
+        conservatism_ideology = 18
+        socialism_ideology = 22
+        populism_ideology = 22
+        neutrality = 2
+        fascism = 5
+        communism = 5
+    }
 #recruit_character = ABK_kirilli_bechvaya

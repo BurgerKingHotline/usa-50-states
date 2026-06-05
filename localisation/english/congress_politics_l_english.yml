@@ -1,0 +1,29 @@
+﻿l_english:
+ # WSH Legislature
+ wsh_senate_seat_tt:0 "Washington State Senate Seat"
+ wsh_house_seat_tt:0 "Washington State House Seat"
+ wsh_senate_seat_combined_tt:0 "[GetWSHSenateSeatName]\n[GetWSHSenatePartyName]"
+ wsh_house_seat_combined_tt:0 "[GetWSHHouseSeatName]\n[GetWSHHousePartyName]"
+ wsh_senate_seat_number_fallback:0 "Senate Seat [?seat_idx|+1|0]"
+ wsh_house_seat_number_fallback:0 "House Seat [?house_idx|+1|0]"
+
+ # WSH Party Names
+ wsh_senate_party_frame_1:0 "Conservative"
+ wsh_senate_party_frame_2:0 "Agrarian"
+ wsh_senate_party_frame_3:0 "Liberal"
+ wsh_senate_party_frame_4:0 "Socialist"
+ wsh_senate_party_frame_5:0 "Communist"
+ wsh_senate_party_frame_6:0 "Fascist"
+ wsh_senate_party_frame_7:0 "Non-Aligned"
+ wsh_house_party_frame_1:0 "Conservative"
+ wsh_house_party_frame_2:0 "Agrarian"
+ wsh_house_party_frame_3:0 "Liberal"
+ wsh_house_party_frame_4:0 "Socialist"
+ wsh_house_party_frame_5:0 "Communist"
+ wsh_house_party_frame_6:0 "Fascist"
+ wsh_house_party_frame_7:0 "Non-Aligned"
+
+ # Congress GUI
+ CONGRESS_TITLE:0 "Washington State Legislature"
+ SENATE_SECTION:0 "Senate"
+ HOUSE_SECTION:0 "House"

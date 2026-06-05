@@ -1,0 +1,24 @@
+defined_text = {
+	name = GetSecondLeaderName
+	text = {
+		trigger = { tag = WSH }
+		localization_key = "WSH_SECOND_LEADER_NAME"
+	}
+	text = { localization_key = "DEFAULT_SECOND_LEADER_NAME" }
+}
+defined_text = {
+	name = GetSecondLeaderTitle
+	text = {
+		trigger = { tag = WSH }
+		localization_key = "WSH_SECOND_LEADER_TITLE"
+	}
+	text = { localization_key = "DEFAULT_SECOND_LEADER_TITLE" }
+}
+defined_text = {
+	name = GetSecondLeaderPortrait
+	text = {
+		trigger = { tag = WSH }
+		localization_key = "dual_leader_wsh_icon"
+	}
+	text = { localization_key = "dual_leader_blank_icon" }
+}

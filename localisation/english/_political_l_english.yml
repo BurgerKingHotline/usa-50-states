@@ -1,0 +1,56 @@
+﻿l_english:
+
+ ### Tooltips ###
+ KR_party_pop_less_than: "Less than $RIGHT|%0Y$ support for [ROOT.GetRulingParty]"
+ KR_party_pop_more_than: "More than $RIGHT|%0Y$ support for [ROOT.GetRulingParty]"
+ has_coalition_with: "Is in coalition with the §H[?coalition_partner_to_check.GetTokenLocalizedKey]§!"
+
+ ##################
+ ### Ideologies ###
+ ##################
+
+ ### Names ###
+ liberalism: "Liberalism"
+ conservatism: "Conservatism"
+ socialism: "Socialism"
+ communism: "Communism"
+ nationalism: "Nationalism"
+ populism: "Populism"
+ authoritarianism: "Authoritarianism"
+
+ ### Names Coloured ###
+ liberalism_coloured: "§lLiberalism§!"
+ conservatism_coloured: "§cConservatism§!"
+ socialism_coloured: "§sSocialism§!"
+ communism_coloured: "§rCommunism§!"
+ nationalism_coloured: "§nNationalism§!"
+ populism_coloured: "§pPopulism§!"
+ authoritarianism_coloured: "§aAuthoritarianism§!"
+
+ ### Ideology Grouping ###
+ kr_government_grouping: "Ideological Group"
+ liberalism_desc: "Liberal"
+ conservatism_desc: "Conservative"
+ socialism_desc: "Socialist"
+ communism_desc: "Communist"
+ nationalism_desc: "Nationalist"
+ populism_desc: "Populist"
+ authoritarianism_desc: "Authoritarian"
+
+ ### Subtype Descs ###
+ liberalism_subtype_desc: "Liberalism is a political and moral philosophy based on liberty, consent of the governed and equality before the law."
+ conservatism_subtype_desc: "Conservatism is a political and social philosophy promoting traditional social institutions in the context of culture and civilization."
+ socialism_subtype_desc: "Socialism is a political, social and economic philosophy encompassing a range of economic and social systems characterised by social ownership of the means of production."
+ communism_subtype_desc: "Communism is a philosophical, social, political, and economic ideology and movement whose ultimate goal is the establishment of a communist society."
+ nationalism_subtype_desc: "Nationalism is an ideology and movement that promotes the interests of a particular nation, especially with the aim of gaining and maintaining the nation's sovereignty over its homeland."
+ populism_subtype_desc: "Populism refers to a range of political stances that emphasize the idea of 'the people' and often juxtapose this group against 'the elite'."
+ authoritarianism_subtype_desc: "Authoritarianism is a form of government characterized by strong central power and limited political freedoms."
+
+ ### Colours for Scripted Loc ###
+ colour_liberalism: "§l"
+ colour_conservatism: "§c"
+ colour_socialism: "§s"
+ colour_communism: "§r"
+ colour_nationalism: "§n"
+ colour_populism: "§p"
+ colour_authoritarianism: "§a"

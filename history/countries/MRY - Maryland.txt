@@ -5,10 +5,13 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = yes
 }
-recruit_character = MAINE_GOV
+recruit_character = MARYLAND_GOV
 set_popularities = {
-	democratic = 55
-	neutrality = 35
+	democratic = 26
+	conservatism_ideology = 26
+	socialism_ideology = 18
+	populism_ideology = 18
+	neutrality = 2
 	fascism = 5
 	communism = 5
 }

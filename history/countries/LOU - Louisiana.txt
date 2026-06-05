@@ -1,14 +1,17 @@
 capital = 17
 set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
+        ruling_party = conservatism_ideology
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
 recruit_character = LOUISIANA_GOV
 set_popularities = {
-	democratic = 60
-	neutrality = 20
-	fascism = 15
-	communism = 5
-}
+        democratic = 16
+        conservatism_ideology = 38
+        socialism_ideology = 8
+        populism_ideology = 16
+        neutrality = 2
+        fascism = 15
+        communism = 5
+    }

@@ -1,0 +1,14 @@
+liberalism = { has_ideology = liberalism }
+conservatism = { has_ideology = conservatism_subideology }
+socialism = { has_ideology = socialism_subideology }
+nationalism = {
+	OR = {
+		has_ideology = integral_nationalism
+		has_ideology = civil_nationalism
+	}
+}
+populism = { has_ideology = populism_subideology }
+authoritarianism = { has_ideology = despotism }
+has_coalition = {
+	is_in_array = { coalitions_array = 2 }
+}

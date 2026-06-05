@@ -1,15 +1,18 @@
 capital = 11
 set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
+        ruling_party = conservatism_ideology
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
 recruit_character = NEW_MEXICO_GOV
 set_popularities = {
-	democratic = 60
-	neutrality = 25
-	fascism = 10
-	communism = 5
-}
+        democratic = 21
+        conservatism_ideology = 25
+        socialism_ideology = 12
+        populism_ideology = 25
+        neutrality = 2
+        fascism = 10
+        communism = 5
+    }
 #recruit_character = ABK_kirilli_bechvaya

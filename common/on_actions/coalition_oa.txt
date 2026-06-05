@@ -1,0 +1,34 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			set_global_flag = ideology_groups_initialized
+			add_to_array = { global.ideology_groups = token:democratic }
+			add_to_array = { global.ideology_groups = token:conservatism_ideology }
+			add_to_array = { global.ideology_groups = token:socialism_ideology }
+			add_to_array = { global.ideology_groups = token:communism }
+			add_to_array = { global.ideology_groups = token:fascism }
+			add_to_array = { global.ideology_groups = token:populism_ideology }
+			add_to_array = { global.ideology_groups = token:neutrality }
+			every_country = {
+				create_coalitions_array_if_missing = yes
+				default_party_popularity_PP_gain = yes
+				set_country_flag = coalitions_system_active
+			}
+		}
+	}
+	on_ruling_party_change = {
+		effect = { default_party_popularity_PP_gain = yes }
+	}
+	on_monthly = {
+		effect = {
+			every_country = {
+				limit = {
+					has_country_flag = coalitions_system_active
+					has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
+				}
+				set_variable = { current_ruling_party_pop = party_popularity@var:current_party_ideology_group }
+				force_update_dynamic_modifier = yes
+			}
+		}
+	}
+}

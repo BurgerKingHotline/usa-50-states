@@ -1,0 +1,32 @@
+scripted_gui = {
+	HOS_button_container = {
+		window_name = "HOS_button_container"
+		parent_window_token = politics_tab
+		visible = {
+			is_ai = no
+			uses_dual_leader_gui = yes
+		}
+		effects = {
+			HOS_button_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = hos_screen_is_visible }
+					}
+					set_country_flag = hos_screen_is_visible
+				}
+				else = { clr_country_flag = hos_screen_is_visible }
+			}
+		}
+	}
+	HOS_screen_container = {
+		window_name = "HOS_screen"
+		parent_window_token = politics_tab
+		properties = {
+			leader2 = { image = "[Root.GetSecondLeaderPortrait]" }
+		}
+		visible = {
+			is_ai = no
+			has_country_flag = hos_screen_is_visible
+		}
+	}
+}

@@ -1,0 +1,12 @@
+party_popularity_dynamic_modifier = {
+	enable = { always = yes }
+	political_power_gain = current_ruling_party_pop
+}
+party_popularity_dynamic_modifier_ideology_mapped = {
+	enable = { always = yes }
+	political_power_gain = party_popularity_gain_mapped
+}
+party_popularity_dynamic_modifier_coalition = {
+	enable = { always = yes }
+	political_power_gain = coalition_pp_gain
+}

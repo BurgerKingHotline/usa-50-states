@@ -1,14 +1,17 @@
 capital = 32
 set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
+        ruling_party = conservatism_ideology
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
 recruit_character = DELAWARE_GOV
 set_popularities = {
-	democratic = 45
-	neutrality = 50
-	fascism = 3
-	communism = 2
-}
+        democratic = 27
+        conservatism_ideology = 28
+        socialism_ideology = 19
+        populism_ideology = 19
+        neutrality = 2
+        fascism = 3
+        communism = 2
+    }

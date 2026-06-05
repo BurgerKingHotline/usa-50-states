@@ -1,14 +1,17 @@
 capital = 24
 set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
+        ruling_party = democratic
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
 recruit_character = INDIANA_GOV
 set_popularities = {
-	democratic = 40
-	neutrality = 45
-	fascism = 10
-	communism = 5
-}
+        democratic = 29
+        conservatism_ideology = 21
+        socialism_ideology = 21
+        populism_ideology = 12
+        neutrality = 2
+        fascism = 10
+        communism = 5
+    }

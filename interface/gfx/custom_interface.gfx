@@ -3,4 +3,52 @@ spriteTypes = {
 		name = "GFX_start_date_1933"
 		texturefile = "gfx/interface/start_date_1933.dds"
 	}
+
+	# DUAL LEADER
+	 spriteType = {
+	 	name = "GFX_dual_leader_toggle_btn"
+	 	texturefile = "gfx/interface/congress/HOS_button.png"
+	}	 
+	spriteType = {
+	 	name = "GFX_dual_leader_indicator"
+	 	texturefile = "gfx/interface/congress/HOS_button.png"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_bg_blank"
+		texturefile = "gfx/portrait_bg_blank.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_diplo_leader_frame_2"
+		texturefile = "gfx/interface/diplo_leader_frame.dds"
+	}
+
+	## CONGRESS SPRITES
+	spriteType = {
+		name = "GFX_congress_button"
+		texturefile = "gfx/interface/congress/congress_button.png"
+	}
+	spriteType = {
+		name = "GFX_small_circle"
+		texturefile = "gfx/interface/congress/small_circle.png"
+	}
+	spriteType = {
+		name = "GFX_seat_icon"
+		texturefile = "gfx/interface/congress/seat_icon.dds"
+		noOfFrames = 16
+	}
+	spriteType = {
+		name = "GFX_seat_icon2"
+		texturefile = "gfx/interface/congress/congress_seat_colors.png"
+		noOfFrames = 16
+	}
+	#spriteType = {
+	#	name = "GFX_button_1"
+	#	texturefile = "gfx/interface/button_1.dds"
+	#}
+	spriteType = {
+		name = "GFX_congress_header"
+		texturefile = "gfx/interface/congress/title_header.dds"
+	}
 }

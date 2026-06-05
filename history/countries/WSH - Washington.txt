@@ -6,10 +6,19 @@ set_politics = {
 	elections_allowed = yes
 }
 recruit_character = WASHINGTON_GOV
+WSH_calculate_party_seats = yes
+WSH_senate_gui_setup = yes
+WSH_house_gui_setup = yes
+WSH_senate_reload = yes
+WSH_house_reload = yes
 set_popularities = {
-	democratic = 45
-	neutrality = 35
+	democratic = 22
+	conservatism_ideology = 16
+	socialism_ideology = 20
+	populism_ideology = 20
+	neutrality = 2
 	fascism = 5
 	communism = 15
 }
-#recruit_character = ABK_kirilli_bechvaya
+# SECONDARY LEADER (dynamic)
+set_country_flag = dual_leader_active

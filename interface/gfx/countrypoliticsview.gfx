@@ -1,0 +1,45 @@
+spriteTypes = {
+
+	## Defines custom textures used by countrypoliticsview.gui
+	spriteType = {
+		name = "GFX_coalition_pol_party_bg"
+		textureFile = "gfx/interface/coalition_pol_party_bg.png"
+		noOfFrames = 3
+	}
+
+	spriteType = {
+		name = "GFX_idea_slot_second_in_command"
+		textureFile = "gfx/interface/officer_corp/select_advisor.dds"
+	}
+
+	## Ideology Groups
+	spriteType = {
+		name = "GFX_liberalism_group"
+		texturefile = "gfx/interface/ideologies/liberalism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_conservatism_group"
+		texturefile = "gfx/interface/ideologies/conservatism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_socialism_group"
+		texturefile = "gfx/interface/ideologies/socialism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_communism_group"
+		texturefile = "gfx/interface/ideologies/communism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_authoritarianism_group"
+		texturefile = "gfx/interface/ideologies/authoritarianism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_populism_group"
+		texturefile = "gfx/interface/ideologies/fascism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_nationalism_group"
+		texturefile = "gfx/interface/ideologies/nationalism_group.dds"
+	}
+}
+

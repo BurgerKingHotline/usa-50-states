@@ -1,0 +1,133 @@
+scripted_gui = {
+	congress_button_container = {
+		window_name = "congress_button_container"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = { is_ai = no }
+		effects = {
+			congress_button_click = {
+				if = {
+					limit = { tag = WSH }
+					WSH_calculate_party_seats = yes
+					WSH_house_gui_setup = yes
+					WSH_senate_reload = yes
+					WSH_house_reload = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = congress_visible }
+					}
+					set_country_flag = congress_visible
+				}
+				else = {
+					clr_country_flag = congress_visible
+					clr_country_flag = congress_roster_visible
+				}
+			}
+		}
+	}
+	congress_screen_container = {
+		window_name = "congress_gui"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			is_ai = no
+			has_country_flag = congress_visible
+		}
+		dynamic_lists = {
+			senate_gui_diagram_container = {
+				array = senate_gui_x
+				change_scope = no
+				entry_container = senate_gui_seat
+				index = seat_idx
+			}
+			congress_gui_diagram_container = {
+				array = congress_gui_x
+				change_scope = no
+				entry_container = congress_gui_seat
+				index = seat_congress_idx
+			}
+			wsh_senate_diagram_container = {
+				array = wsh_senate_gui_x
+				change_scope = no
+				entry_container = wsh_senate_gui_seat
+				index = seat_idx
+			}
+			wsh_house_diagram_container = {
+				array = wsh_house_gui_x
+				change_scope = no
+				entry_container = wsh_house_gui_seat
+				index = house_idx
+			}
+		}
+		properties = {
+			senate_gui_seat_icon = {
+				x = senate_gui_x^seat_idx
+				y = senate_gui_y^seat_idx
+				frame = senate_gui_frame^seat_idx
+			}
+			congress_gui_seat_icon = {
+				x = congress_gui_x^seat_congress_idx
+				y = congress_gui_y^seat_congress_idx
+				frame = congress_gui_frame^seat_congress_idx
+			}
+			wsh_senate_seat_icon = {
+				x = wsh_senate_gui_x^seat_idx
+				y = wsh_senate_gui_y^seat_idx
+				frame = wsh_senate_gui_frame^seat_idx
+			}
+			wsh_house_seat_icon = {
+				x = wsh_house_gui_x^house_idx
+				y = wsh_house_gui_y^house_idx
+				frame = wsh_house_gui_frame^house_idx
+			}
+			toggle_names_button = { frame = usa_show_names_frame }
+		}
+		effects = {
+			toggle_names_button_click = {
+				if = {
+					limit = { has_country_flag = usa_show_congress_names }
+					clr_country_flag = usa_show_congress_names
+					set_variable = { usa_show_names_frame = 1 }
+				}
+				else = {
+					set_country_flag = usa_show_congress_names
+					set_variable = { usa_show_names_frame = 2 }
+				}
+			}
+			congress_close_button_click = {
+				clr_country_flag = congress_visible
+				clr_country_flag = congress_roster_visible
+			}
+			open_roster_button_click = {
+				if = {
+					limit = { has_country_flag = congress_roster_visible }
+					clr_country_flag = congress_roster_visible
+				}
+				else = { set_country_flag = congress_roster_visible }
+			}
+		}
+	}
+	# congress_roster_container = {
+	# 	window_name = "congress_roster_panel"
+	# 	context_type = player_context
+	# 	visible = { has_country_flag = congress_roster_visible }
+	# 	dynamic_lists = {
+	# 		senate_roster_list = {
+	# 			array = usa_senate_roster_array
+	# 			change_scope = no
+	# 			entry_container = senate_roster_entry
+	# 			index = roster_idx
+	# 		}
+	# 		house_roster_list = {
+	# 			array = usa_house_roster_array
+	# 			change_scope = no
+	# 			entry_container = house_roster_entry
+	# 			index = roster_idx
+	# 		}
+	# 	}
+	# 	effects = {
+	# 		close_roster_panel_click = { clr_country_flag = congress_roster_visible }
+	# 	}
+	# }
+}

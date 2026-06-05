@@ -1,14 +1,17 @@
 capital = 43
 set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
+        ruling_party = conservatism_ideology
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
 recruit_character = MAINE_GOV
 set_popularities = {
-	democratic = 40
-	neutrality = 55
-	fascism = 3
-	communism = 2
-}
+        democratic = 28
+        conservatism_ideology = 32
+        socialism_ideology = 14
+        populism_ideology = 19
+        neutrality = 2
+        fascism = 3
+        communism = 2
+    }

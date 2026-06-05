@@ -1,6 +1,12 @@
+.venv/
+
+/gfx/interface/leaders/Washington/maybe
+
 .vscode
 .vscode/*
 .github
 .github/*
 _population/__pycache__
 _population/__pycache__/*
+
+*.zip
