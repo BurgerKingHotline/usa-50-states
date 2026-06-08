@@ -1,3 +1,5 @@
+_tools/_combinator
+
 .venv/
 
 /gfx/interface/leaders/Washington/maybe
@@ -10,3 +12,5 @@ _population/__pycache__
 _population/__pycache__/*
 
 *.zip
+
+text.txt

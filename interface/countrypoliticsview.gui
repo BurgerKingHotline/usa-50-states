@@ -154,13 +154,13 @@ guiTypes = {
 			name = "chart_explanation"
 			position = { x = 300 y = 298 }
 			size = { width = 245 height = 120 }
-			clipping = no
+			clipping = yes
 			verticalScrollbar = "right_vertical_slider"
-			margin = { top = 3 bottom = 2 }
+			margin = { top = 3 bottom = 50 }
 			background = {
 				name = "Background"
-				spriteType = "GFX_political_chart"
-				position = { x = 37 y = 3 }
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 0 y = 0 }
 			}
 			containerWindowType = {
 				name = "coalition_pol_party_bg_anchor" # KR: added to anchor the coalition backgrounds behind the normal UI - see coalition_indicator in scripted GUIs
@@ -170,7 +170,7 @@ guiTypes = {
 			gridBoxType = {
 				name = "parties_grid"
 				position = { x = -20 y = -5 }
-				size = { width = 230 height = 80 }
+				size = { width = 100% height = 100% }
 				slotsize = { width = 230 height = 14 }
 				format = "UPPER_LEFT"
 			}

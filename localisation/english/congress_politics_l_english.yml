@@ -24,6 +24,6 @@
  wsh_house_party_frame_7:0 "Non-Aligned"
 
  # Congress GUI
- CONGRESS_TITLE:0 "Washington State Legislature"
- SENATE_SECTION:0 "Senate"
- HOUSE_SECTION:0 "House"
+ WSH_CONGRESS_TITLE:0 "Washington Legislature"
+ WSH_SENATE_SECTION:0 "Senate"
+ WSH_HOUSE_SECTION:0 "House"

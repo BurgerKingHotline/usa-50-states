@@ -40,7 +40,7 @@ from typing import Any
 
 import pandas as pd
 
-from western_us_towns_1930 import get_towns_for_county
+from _tools._population.western_us_towns_1930 import get_towns_for_county
 
 # ---------------------------------------------------------------------------
 # Constants

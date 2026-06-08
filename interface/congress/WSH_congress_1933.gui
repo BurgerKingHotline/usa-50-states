@@ -1,4 +1,3 @@
-
 guiTypes = {
 	containerWindowType = {
 		name = "congress_gui"
@@ -15,8 +14,8 @@ guiTypes = {
 			name = "congress_title"
 			position = { x = 0 y = 8 }
 			font = "hoi_24header"
-			text = "CONGRESS_TITLE"
-			maxWidth = 360
+			text = "WSH_CONGRESS_TITLE"
+			maxWidth = 310
 			maxHeight = 20
 			format = centre
 		}
@@ -24,7 +23,7 @@ guiTypes = {
 			name = "senate_section_label"
 			position = { x = 21 y = 45 }
 			font = "hoi_18mbs"
-			text = "SENATE_SECTION"
+			text = "WSH_SENATE_SECTION"
 			maxWidth = 170
 			maxHeight = 16
 			format = left
@@ -33,7 +32,7 @@ guiTypes = {
 			name = "wsh_senate_diagram_container"
 			position = { x = 16 y = 70 }
 			size = { width = 290 height = 155 }
-			slotsize = { width = 100% height = 1 }
+			slotsize = { width = 100%% height = 1 }
 			max_slots_horizontal = 1
 			add_horizontal = no
 		}
@@ -41,7 +40,7 @@ guiTypes = {
 			name = "house_section_label"
 			position = { x = 21 y = 245 }
 			font = "hoi_18mbs"
-			text = "HOUSE_SECTION"
+			text = "WSH_HOUSE_SECTION"
 			maxWidth = 170
 			maxHeight = 16
 			format = left
@@ -50,17 +49,60 @@ guiTypes = {
 			name = "wsh_house_diagram_container"
 			position = { x = 18 y = 270 }
 			size = { width = 295 height = 175 }
-			slotsize = { width = 100% height = 1 }
+			slotsize = { width = 100%% height = 1 }
 			max_slots_horizontal = 1
 			add_horizontal = no
 		}
 		buttonType = {
+			name = "open_roster_button"
+			position = { x = 270 y = 8 }
+			quadTextureSprite = "GFX_button_94x31"
+			buttonFont = "hoi_16mbs"
+			buttonText = "Roster"
+			clicksound = click_default
+		}
+		buttonType = {
 			name = "congress_close_button"
-			position = { x = 340 y = 6 }
+			position = { x = 354 y = 6 }
 			quadTextureSprite = "GFX_closebutton"
 			buttonFont = "Main_14_black"
-			buttonText = ""
 			clicksound = click_default
+		}
+	}
+	containerWindowType = {
+		name = "wsh_congress_roster_panel"
+		position = { x = 925 y = 4 }
+		size = { width = 300 height = 460 }
+		background = { name = "roster_bg" quadTextureSprite = "GFX_tiled_bg" }
+		instantTextboxType = {
+			name = "roster_title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			text = "Active Subideologies"
+			maxWidth = 300
+			format = center
+		}
+		containerWindowType = {
+			name = "wsh_roster_scroll_area"
+			position = { x = 10 y = 50 }
+			size = { width = 280 height = 400 }
+			verticalScrollbar = "right_vertical_slider"
+			margin = { top = 5 bottom = 5 }
+			smooth_scrolling = yes
+			scroll_wheel_factor = 40
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+			}
+			gridBoxType = {
+				name = "wsh_roster_grid"
+				position = { x = 25 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 270 height = 65 }
+				max_slots_horizontal = 1
+				add_horizontal = no
+				format = "UPPER_LEFT"
+			}
 		}
 	}
 	containerWindowType = {
@@ -71,6 +113,7 @@ guiTypes = {
 			name = "wsh_senate_seat_icon"
 			spriteType = "GFX_seat_icon"
 			frame = 0
+			scale = 1.0
 			pdx_tooltip = "wsh_senate_seat_combined_tt"
 		}
 	}
@@ -82,7 +125,44 @@ guiTypes = {
 			name = "wsh_house_seat_icon"
 			spriteType = "GFX_seat_icon"
 			frame = 0
+			scale = 1.0
 			pdx_tooltip = "wsh_house_seat_combined_tt"
+		}
+	}
+	containerWindowType = {
+		name = "wsh_roster_entry"
+		size = { width = 270 height = 60 }
+		background = {
+			name = "bg"
+			quadTextureSprite = "GFX_tiled_window_transparent"
+		}
+		iconType = {
+			name = "roster_color_icon"
+			spriteType = "GFX_seat_icon"
+			position = { x = 5 y = 20 }
+		}
+		iconType = {
+			name = "roster_badge_icon"
+			spriteType = "GFX_subideology_badge_large"
+			position = { x = 30 y = 5 }
+			scale = 0.7
+		}
+		instantTextboxType = {
+			name = "roster_name"
+			position = { x = 85 y = 10 }
+			font = "hoi_16mbs"
+			text = "[?wsh_roster_tokens^roster_idx.GetTokenLocalizedKey]"
+			maxWidth = 180
+			maxHeight = 16
+			fixedsize = yes
+		}
+		instantTextboxType = {
+			name = "roster_seats"
+			position = { x = 85 y = 30 }
+			font = "hoi_16mbs"
+			text = "Senate: [?wsh_roster_senate_seats^roster_idx|Y0] | House: [?wsh_roster_house_seats^roster_idx|Y0]"
+			maxWidth = 180
+			maxHeight = 16
 		}
 	}
 }

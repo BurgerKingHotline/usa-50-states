@@ -2,21 +2,17 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_WSH_Portrait_Roland_H_Hartley"
 		texturefile = "gfx/interface/leaders/Washington/WSH_Portrait_Roland_H_Hartley.dds"
-	}	
+	}
 	spriteType = {
 		name = "GFX_ORE_Portrait_Julius_Meier"
 		texturefile = "gfx/interface/leaders/Oregon/ORE_Portrait_Julius_Meier.dds"
-	}	
+	}
 	spriteType = {
 		name = "GFX_IDH_Portrait_C_Ben_Ross"
 		texturefile = "gfx/interface/leaders/Idaho/IDH_Portrait_C_Ben_Ross.dds"
 	}
-
 	spriteType = {
 		name = "GFX_WSH_Portrait_Maurice_Thompson"
-	
 		texturefile = "gfx/interface/leaders/Washington/WSH_Portrait_Maurice_Thompson.dds"
-	
-		legacy_lazy_load = no
 	}
 }

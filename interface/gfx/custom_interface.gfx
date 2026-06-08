@@ -1,29 +1,186 @@
-spriteTypes = {
+spriteTypes = { ## Defines custom textures used by countrypoliticsview.gui
+	spriteType = {
+		name = "GFX_coalition_pol_party_bg"
+		textureFile = "gfx/interface/coalition_pol_party_bg.png"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_idea_slot_second_in_command"
+		textureFile = "gfx/interface/officer_corp/select_advisor.dds"
+	}
+	## Ideology Groups
+	spriteType = {
+		name = "GFX_ideology_democratic_group"
+		texturefile = "gfx/interface/ideologies/liberalism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_conservatism_ideology_group"
+		texturefile = "gfx/interface/ideologies/conservatism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_socialism_ideology_group"
+		texturefile = "gfx/interface/ideologies/socialism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_communism_group"
+		texturefile = "gfx/interface/ideologies/communism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_authoritarianism_group"
+		texturefile = "gfx/interface/ideologies/authoritarianism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_fascism_group"
+		texturefile = "gfx/interface/ideologies/fascism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_populism_ideology_group"
+		texturefile = "gfx/interface/ideologies/nationalism_group.dds"
+	}
 	spriteType = {
 		name = "GFX_start_date_1933"
 		texturefile = "gfx/interface/start_date_1933.dds"
 	}
-
 	# DUAL LEADER
-	 spriteType = {
-	 	name = "GFX_dual_leader_toggle_btn"
-	 	texturefile = "gfx/interface/congress/HOS_button.png"
-	}	 
 	spriteType = {
-	 	name = "GFX_dual_leader_indicator"
-	 	texturefile = "gfx/interface/congress/HOS_button.png"
+		name = "GFX_dual_leader_toggle_btn"
+		texturefile = "gfx/interface/congress/HOS_button.png"
 	}
-	
+	spriteType = {
+		name = "GFX_dual_leader_indicator"
+		texturefile = "gfx/interface/congress/HOS_button.png"
+	}
 	spriteType = {
 		name = "GFX_portrait_bg_blank"
 		texturefile = "gfx/portrait_bg_blank.dds"
 	}
-	
 	spriteType = {
 		name = "GFX_diplo_leader_frame_2"
 		texturefile = "gfx/interface/diplo_leader_frame.dds"
 	}
-
+	## SUB-IDEOLOGIES
+	spriteType = {
+		name = "GFX_agrarian_populism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/agrarian_populism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_anarchism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/anarchism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_anarchist_communism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/anarchist_communism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_anti_revisionism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/anti_revisionism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_buddhist_socialism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/buddhist_socialism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_centrism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/centrism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_christian_democracy_subideology"
+		texturefile = "gfx/interface/congress/subideologies/christian_democracy_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_civic_nationalism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/civic_nationalism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_conservatism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/conservatism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_corporate_technocracy_subideology"
+		texturefile = "gfx/interface/congress/subideologies/corporate_technocracy_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_despotism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/despotism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_emperor_fascism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/emperor_fascism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_falangism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/falangism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_fascism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/fascism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_generic_nazism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/generic_nazism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_integral_nationalism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/integral_nationalism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_japanese_militarism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/japanese_militarism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_leninism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/leninism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_liberal_integrationism"
+		texturefile = "gfx/interface/congress/subideologies/liberal_integrationism.dds"
+	}
+	spriteType = {
+		name = "GFX_liberalism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/liberalism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_marxism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/marxism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_moderatism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/moderatism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_nazism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/nazism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_oligarchism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/oligarchism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_organic_statism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/organic_statism.dds"
+	}
+	spriteType = {
+		name = "GFX_populism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/populism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_rexism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/rexism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_socialism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/socialism_subideology.dds"
+	}
+	spriteType = {
+		name = "GFX_stalinism_subideology"
+		texturefile = "gfx/interface/congress/subideologies/stalinism_subideology.dds"
+	}
+	## SUBIDEOLOGY BIG SPRITE
+	spriteType = {
+		name = "GFX_subideology_badge_large"
+		texturefile = "gfx/interface/congress/subideologies/subideology_badge_combined.dds"
+		noOfFrames = 29
+	}
 	## CONGRESS SPRITES
 	spriteType = {
 		name = "GFX_congress_button"
@@ -38,15 +195,6 @@ spriteTypes = {
 		texturefile = "gfx/interface/congress/seat_icon.dds"
 		noOfFrames = 16
 	}
-	spriteType = {
-		name = "GFX_seat_icon2"
-		texturefile = "gfx/interface/congress/congress_seat_colors.png"
-		noOfFrames = 16
-	}
-	#spriteType = {
-	#	name = "GFX_button_1"
-	#	texturefile = "gfx/interface/button_1.dds"
-	#}
 	spriteType = {
 		name = "GFX_congress_header"
 		texturefile = "gfx/interface/congress/title_header.dds"
