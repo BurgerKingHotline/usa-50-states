@@ -206,20 +206,20 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		iconType = {
+			name = "coalition_pol_party_bg_populism"
+			position = { x = 35 y = 39 }   # fixed 
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
 			name = "coalition_pol_party_bg_communism"
-			position = { x = 35 y = 69 }
+			position = { x = 35 y = 53 }
 			quadTextureSprite = "GFX_coalition_pol_party_bg"
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "coalition_pol_party_bg_nationalism"
-			position = { x = 35 y = 69 }
-			quadTextureSprite = "GFX_coalition_pol_party_bg"
-			alwaystransparent = yes
-		}
-		iconType = {
-			name = "coalition_pol_party_bg_populism"
-			position = { x = 35 y = 38 }   # fixed 
+			position = { x = 35 y = 67 }
 			quadTextureSprite = "GFX_coalition_pol_party_bg"
 			alwaystransparent = yes
 		}

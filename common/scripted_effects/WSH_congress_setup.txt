@@ -1782,8 +1782,6 @@ WSH_house_reload = {
 WSH_recalculate_all_seats = {
 	WSH_calculate_party_seats = yes
 	WSH_build_roster = yes
-	WSH_senate_gui_setup = yes
-	WSH_house_gui_setup = yes
 	WSH_senate_reload = yes
 	WSH_house_reload = yes
 }

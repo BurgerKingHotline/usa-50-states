@@ -59,27 +59,52 @@ default_party_popularity_PP_gain = {
 			}
 			add_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
 		}
-		set_variable = { current_ruling_party_pop = party_popularity@var:current_party_ideology_group }
+		set_variable = { current_ruling_party_pop = party_popularity@ruling_party }
 		force_update_dynamic_modifier = yes
 	}
 }
-map_party_popularity_PP_gain_to_ideology = {
+map_party_popularity_PP_gain_to_ideology = { # Hardcoded token check to bypass HOI4 math limitations
 	if = {
 		limit = {
-			NOT = {
-				check_variable = { ideology_temp < global.ideology_groups^num }
-			}
+			check_variable = { ideology_temp = token:democratic }
 		}
-		for_each_loop = {
-			array = global.ideology_groups
-			if = {
-				limit = {
-					check_variable = { ideology_temp = v }
-				}
-				set_temp_variable = { ideology_temp = i }
-				set_temp_variable = { break = 1 }
-			}
+		set_temp_variable = { ideology_temp = 0 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ideology_temp = token:conservatism_ideology }
 		}
+		set_temp_variable = { ideology_temp = 1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ideology_temp = token:socialism_ideology }
+		}
+		set_temp_variable = { ideology_temp = 2 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ideology_temp = token:communism }
+		}
+		set_temp_variable = { ideology_temp = 3 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ideology_temp = token:fascism }
+		}
+		set_temp_variable = { ideology_temp = 4 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ideology_temp = token:populism_ideology }
+		}
+		set_temp_variable = { ideology_temp = 5 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ideology_temp = token:neutrality }
+		}
+		set_temp_variable = { ideology_temp = 6 }
 	}
 	for_each_loop = {
 		array = coalitions_array
@@ -161,23 +186,48 @@ create_coalitions_array_if_missing = {
 		}
 	}
 }
-convert_coalition_partner_var_into_index = {
+convert_coalition_partner_var_into_index = { # Hardcoded token check to bypass HOI4 math limitations
 	if = {
 		limit = {
-			NOT = {
-				check_variable = { coalition_partner_var < global.ideology_groups^num }
-			}
+			check_variable = { coalition_partner_var = token:democratic }
 		}
-		for_each_loop = {
-			array = global.ideology_groups
-			if = {
-				limit = {
-					check_variable = { coalition_partner_var = v }
-				}
-				set_temp_variable = { coalition_partner_var = i }
-				set_temp_variable = { break = 1 }
-			}
+		set_temp_variable = { coalition_partner_var = 0 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { coalition_partner_var = token:conservatism_ideology }
 		}
+		set_temp_variable = { coalition_partner_var = 1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { coalition_partner_var = token:socialism_ideology }
+		}
+		set_temp_variable = { coalition_partner_var = 2 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { coalition_partner_var = token:communism }
+		}
+		set_temp_variable = { coalition_partner_var = 3 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { coalition_partner_var = token:fascism }
+		}
+		set_temp_variable = { coalition_partner_var = 4 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { coalition_partner_var = token:populism_ideology }
+		}
+		set_temp_variable = { coalition_partner_var = 5 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { coalition_partner_var = token:neutrality }
+		}
+		set_temp_variable = { coalition_partner_var = 6 }
 	}
 }
 add_to_coalition = {
@@ -406,6 +456,7 @@ set_coalition_stability_authoritarianism = {
 }
 on_startup = {
 	set_global_flag = ideology_groups_initialized
+	clear_array = global.ideology_groups
 	add_to_array = { global.ideology_groups = token:democratic }
 	add_to_array = { global.ideology_groups = token:conservatism_ideology }
 	add_to_array = { global.ideology_groups = token:socialism_ideology }

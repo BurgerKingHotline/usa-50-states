@@ -7,31 +7,16 @@
  dual_leader_wsh_icon:0 "GFX_WSH_Portrait_Maurice_Thompson"
  dual_leader_blank_icon:0 "GFX_portrait_bg_blank"
  
- # OPTION 1: AUTO-DISPLAY LOCALISATION
- DEFAULT_SECOND_LEADER_NAME:0 "Vacant"
- DEFAULT_SECOND_LEADER_TITLE:0 "Second Leader" 
-
- # OPTION 2: CLICK-TOGGLE TOOLTIPS
  CLICK_TO_SWAP_LEADER:0 "§YClick to view Second Leader§!"
  CLICK_TO_SWAP_LEADER_DELAYED:0 "Click to toggle between the Head of State and the Second Leader portrait."
  TOGGLE_DUAL_LEADER:0 "§YToggle Second Leader§!" 
  TOGGLE_DUAL_LEADER_DELAYED:0 "Click to toggle between the Head of State and the Second Leader portrait."
  
- # OPTION 3: HOVER INDICATOR TOOLTIPS
- SECOND_LEADER_HOVER_INFO:0 "§Y[Root.GetSecondLeaderName]§![Root.GetSecondLeaderTitle]"
+ SECOND_LEADER_HOVER_INFO:0 "§Y[Root.GetSecondLeaderName]§!\n[Root.GetSecondLeaderTitle]"
  SECOND_LEADER_HOVER_INFO_DELAYED:0 "The current Second Leader is [Root.GetSecondLeaderName], serving as [Root.GetSecondLeaderTitle]. Click the indicator to toggle their portrait." 
  
- # GUI ELEMENT LABELS
- dual_leader_name_loc_key:0 "[Root.GetSecondLeaderName]"
- second_leader_name_loc_key:0 "[Root.GetSecondLeaderName]"
  BUTTON_TOOLTIP_KEY:0 "Click to view Head of State"
- SECOND_LEADER_TOOLTIP_KEY:0 "§Y[Root.GetSecondLeaderName]§![Root.GetSecondLeaderTitle]" 
-
- WSH_SECOND_LEADER_NAME:0 "Maurice Thompson"
- WSH_SECOND_LEADER_TITLE:0 "Vice President of the Republic of Washington"
- WSH_HOVER_INFO:0 "§YMaurice Thompson§!\nVice President of the Republic of Washington" 
- dual_leader_wsh_icon:0 "GFX_WSH_Portrait_Maurice_Thompson"
- dual_leader_blank_icon:0 "GFX_portrait_bg_blank" 
- # Updated tooltips utilizing global macros directly
+ SECOND_LEADER_TOOLTIP_KEY:0 "§Y[Root.GetSecondLeaderName]§!\n[Root.GetSecondLeaderTitle]" 
+ 
  dual_leader_tt:0 "§Y[GetSecondLeaderName]§!\n[GetSecondLeaderTitle]"
  dual_leader_tt_delayed:0 "The current Second Leader is [GetSecondLeaderName], serving as [GetSecondLeaderTitle]."

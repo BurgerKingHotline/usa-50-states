@@ -1,0 +1,10 @@
+WSH_debug_activation = {
+	icon = generic_prepare_civil_war
+	allowed = { always = yes }
+	visible = { is_ai = no }
+}
+WSH_debug_category = {
+	icon = generic_political_discourse
+	allowed = { always = yes }
+	visible = { has_country_flag = wsh_backend_debug_active }
+}
