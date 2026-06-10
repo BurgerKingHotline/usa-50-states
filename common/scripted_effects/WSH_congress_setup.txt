@@ -1,4 +1,4 @@
-WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
+WSH_calculate_party_seats = { # --- SENATE SEATS ---
 	set_temp_variable = { wsh_senate_max = 38 }
 	set_temp_variable = { wsh_senate_sum = 0 }
 	set_temp_variable = { wsh_t = party_popularity@conservatism_ideology }
@@ -36,70 +36,242 @@ WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
 	round_temp_variable = wsh_t
 	set_variable = { wsh_nonaligned_senate_seats = wsh_t }
 	add_to_temp_variable = { wsh_senate_sum = wsh_nonaligned_senate_seats }
-	# Seat Safety Adjustments
-	if = {
-		limit = {
-			check_variable = { wsh_senate_sum < wsh_senate_max }
-		}
-		set_temp_variable = { wsh_diff = wsh_senate_max }
-		subtract_from_temp_variable = { wsh_diff = wsh_senate_sum }
-		add_to_variable = { wsh_conservative_senate_seats = wsh_diff }
-	}
+	# Cascade overflows for senate
 	if = {
 		limit = {
 			check_variable = { wsh_senate_sum > wsh_senate_max }
 		}
 		set_temp_variable = { wsh_diff = wsh_senate_sum }
 		subtract_from_temp_variable = { wsh_diff = wsh_senate_max }
-		subtract_from_variable = { wsh_conservative_senate_seats = wsh_diff }
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_conservative_senate_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_conservative_senate_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_conservative_senate_seats }
+				set_variable = { wsh_conservative_senate_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_agrarian_senate_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_agrarian_senate_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_agrarian_senate_seats }
+				set_variable = { wsh_agrarian_senate_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_liberal_senate_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_liberal_senate_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_liberal_senate_seats }
+				set_variable = { wsh_liberal_senate_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_socialist_senate_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_socialist_senate_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_socialist_senate_seats }
+				set_variable = { wsh_socialist_senate_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_communist_senate_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_communist_senate_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_communist_senate_seats }
+				set_variable = { wsh_communist_senate_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_fascist_senate_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_fascist_senate_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_fascist_senate_seats }
+				set_variable = { wsh_fascist_senate_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_nonaligned_senate_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_nonaligned_senate_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_nonaligned_senate_seats }
+				set_variable = { wsh_nonaligned_senate_seats = 0 }
+			}
+		}
 	}
-	# === SENATE: Subideology Splits ===
+	# Cascade deficits for senate
+	if = {
+		limit = {
+			check_variable = { wsh_senate_sum < wsh_senate_max }
+		}
+		set_temp_variable = { wsh_diff = wsh_senate_max }
+		subtract_from_temp_variable = { wsh_diff = wsh_senate_sum }
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_conservative_senate_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_agrarian_senate_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_liberal_senate_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_socialist_senate_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_communist_senate_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_fascist_senate_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_nonaligned_senate_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+	}
+	# --- SENATE SUBIDEOLOGIES ---
 	set_variable = { wsh_conservatism_subideology_senate_seats = wsh_conservative_senate_seats }
-	multiply_variable = { wsh_conservatism_subideology_senate_seats = 0.5 }
+	multiply_variable = { wsh_conservatism_subideology_senate_seats = 0.667 }
 	round_variable = wsh_conservatism_subideology_senate_seats
 	set_variable = { wsh_christian_democracy_senate_seats = wsh_conservative_senate_seats }
 	subtract_from_variable = { wsh_christian_democracy_senate_seats = wsh_conservatism_subideology_senate_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_christian_democracy_senate_seats < 0 }
+		}
+		set_variable = { wsh_christian_democracy_senate_seats = 0 }
+	}
 	set_variable = { wsh_populism_subideology_senate_seats = wsh_agrarian_senate_seats }
-	multiply_variable = { wsh_populism_subideology_senate_seats = 0.5 }
+	multiply_variable = { wsh_populism_subideology_senate_seats = 0.667 }
 	round_variable = wsh_populism_subideology_senate_seats
 	set_variable = { wsh_agrarian_populism_senate_seats = wsh_agrarian_senate_seats }
 	subtract_from_variable = { wsh_agrarian_populism_senate_seats = wsh_populism_subideology_senate_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_agrarian_populism_senate_seats < 0 }
+		}
+		set_variable = { wsh_agrarian_populism_senate_seats = 0 }
+	}
 	set_variable = { wsh_liberalism_senate_seats = wsh_liberal_senate_seats }
-	multiply_variable = { wsh_liberalism_senate_seats = 0.2 }
+	multiply_variable = { wsh_liberalism_senate_seats = 0.80 }
 	round_variable = wsh_liberalism_senate_seats
-	set_variable = { wsh_conservatism_senate_seats = wsh_liberal_senate_seats }
-	multiply_variable = { wsh_conservatism_senate_seats = 0.2 }
-	round_variable = wsh_conservatism_senate_seats
-	set_variable = { wsh_socialism_senate_seats = wsh_liberal_senate_seats }
-	multiply_variable = { wsh_socialism_senate_seats = 0.2 }
-	round_variable = wsh_socialism_senate_seats
-	set_variable = { wsh_populism_senate_seats = wsh_liberal_senate_seats }
-	multiply_variable = { wsh_populism_senate_seats = 0.2 }
-	round_variable = wsh_populism_senate_seats
 	set_variable = { wsh_liberal_integrationism_senate_seats = wsh_liberal_senate_seats }
 	subtract_from_variable = { wsh_liberal_integrationism_senate_seats = wsh_liberalism_senate_seats }
-	subtract_from_variable = { wsh_liberal_integrationism_senate_seats = wsh_conservatism_senate_seats }
-	subtract_from_variable = { wsh_liberal_integrationism_senate_seats = wsh_socialism_senate_seats }
-	subtract_from_variable = { wsh_liberal_integrationism_senate_seats = wsh_populism_senate_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_liberal_integrationism_senate_seats < 0 }
+		}
+		set_variable = { wsh_liberal_integrationism_senate_seats = 0 }
+	}
 	set_variable = { wsh_socialism_subideology_senate_seats = wsh_socialist_senate_seats }
-	multiply_variable = { wsh_socialism_subideology_senate_seats = 0.5 }
+	multiply_variable = { wsh_socialism_subideology_senate_seats = 0.667 }
 	round_variable = wsh_socialism_subideology_senate_seats
 	set_variable = { wsh_farmer_laborism_senate_seats = wsh_socialist_senate_seats }
 	subtract_from_variable = { wsh_farmer_laborism_senate_seats = wsh_socialism_subideology_senate_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_farmer_laborism_senate_seats < 0 }
+		}
+		set_variable = { wsh_farmer_laborism_senate_seats = 0 }
+	}
 	set_variable = { wsh_marxism_senate_seats = wsh_communist_senate_seats }
-	multiply_variable = { wsh_marxism_senate_seats = 0.167 }
+	multiply_variable = { wsh_marxism_senate_seats = 0.286 }
 	round_variable = wsh_marxism_senate_seats
 	set_variable = { wsh_leninism_senate_seats = wsh_communist_senate_seats }
-	multiply_variable = { wsh_leninism_senate_seats = 0.167 }
+	multiply_variable = { wsh_leninism_senate_seats = 0.238 }
 	round_variable = wsh_leninism_senate_seats
 	set_variable = { wsh_stalinism_senate_seats = wsh_communist_senate_seats }
-	multiply_variable = { wsh_stalinism_senate_seats = 0.167 }
+	multiply_variable = { wsh_stalinism_senate_seats = 0.19 }
 	round_variable = wsh_stalinism_senate_seats
 	set_variable = { wsh_anti_revisionism_senate_seats = wsh_communist_senate_seats }
-	multiply_variable = { wsh_anti_revisionism_senate_seats = 0.167 }
+	multiply_variable = { wsh_anti_revisionism_senate_seats = 0.143 }
 	round_variable = wsh_anti_revisionism_senate_seats
 	set_variable = { wsh_anarchist_communism_senate_seats = wsh_communist_senate_seats }
-	multiply_variable = { wsh_anarchist_communism_senate_seats = 0.167 }
+	multiply_variable = { wsh_anarchist_communism_senate_seats = 0.095 }
 	round_variable = wsh_anarchist_communism_senate_seats
 	set_variable = { wsh_buddhist_socialism_senate_seats = wsh_communist_senate_seats }
 	subtract_from_variable = { wsh_buddhist_socialism_senate_seats = wsh_marxism_senate_seats }
@@ -107,26 +279,32 @@ WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
 	subtract_from_variable = { wsh_buddhist_socialism_senate_seats = wsh_stalinism_senate_seats }
 	subtract_from_variable = { wsh_buddhist_socialism_senate_seats = wsh_anti_revisionism_senate_seats }
 	subtract_from_variable = { wsh_buddhist_socialism_senate_seats = wsh_anarchist_communism_senate_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_buddhist_socialism_senate_seats < 0 }
+		}
+		set_variable = { wsh_buddhist_socialism_senate_seats = 0 }
+	}
 	set_variable = { wsh_fascism_ideology_senate_seats = wsh_fascist_senate_seats }
-	multiply_variable = { wsh_fascism_ideology_senate_seats = 0.125 }
+	multiply_variable = { wsh_fascism_ideology_senate_seats = 0.222 }
 	round_variable = wsh_fascism_ideology_senate_seats
 	set_variable = { wsh_nazism_senate_seats = wsh_fascist_senate_seats }
-	multiply_variable = { wsh_nazism_senate_seats = 0.125 }
+	multiply_variable = { wsh_nazism_senate_seats = 0.194 }
 	round_variable = wsh_nazism_senate_seats
 	set_variable = { wsh_gen_nazism_senate_seats = wsh_fascist_senate_seats }
-	multiply_variable = { wsh_gen_nazism_senate_seats = 0.125 }
+	multiply_variable = { wsh_gen_nazism_senate_seats = 0.167 }
 	round_variable = wsh_gen_nazism_senate_seats
 	set_variable = { wsh_falangism_senate_seats = wsh_fascist_senate_seats }
-	multiply_variable = { wsh_falangism_senate_seats = 0.125 }
+	multiply_variable = { wsh_falangism_senate_seats = 0.139 }
 	round_variable = wsh_falangism_senate_seats
 	set_variable = { wsh_rexism_senate_seats = wsh_fascist_senate_seats }
-	multiply_variable = { wsh_rexism_senate_seats = 0.125 }
+	multiply_variable = { wsh_rexism_senate_seats = 0.111 }
 	round_variable = wsh_rexism_senate_seats
 	set_variable = { wsh_emperor_fascism_senate_seats = wsh_fascist_senate_seats }
-	multiply_variable = { wsh_emperor_fascism_senate_seats = 0.125 }
+	multiply_variable = { wsh_emperor_fascism_senate_seats = 0.083 }
 	round_variable = wsh_emperor_fascism_senate_seats
 	set_variable = { wsh_integral_nationalism_senate_seats = wsh_fascist_senate_seats }
-	multiply_variable = { wsh_integral_nationalism_senate_seats = 0.125 }
+	multiply_variable = { wsh_integral_nationalism_senate_seats = 0.056 }
 	round_variable = wsh_integral_nationalism_senate_seats
 	set_variable = { wsh_civil_nationalism_senate_seats = wsh_fascist_senate_seats }
 	subtract_from_variable = { wsh_civil_nationalism_senate_seats = wsh_fascism_ideology_senate_seats }
@@ -136,26 +314,32 @@ WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
 	subtract_from_variable = { wsh_civil_nationalism_senate_seats = wsh_rexism_senate_seats }
 	subtract_from_variable = { wsh_civil_nationalism_senate_seats = wsh_emperor_fascism_senate_seats }
 	subtract_from_variable = { wsh_civil_nationalism_senate_seats = wsh_integral_nationalism_senate_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_civil_nationalism_senate_seats < 0 }
+		}
+		set_variable = { wsh_civil_nationalism_senate_seats = 0 }
+	}
 	set_variable = { wsh_despotism_senate_seats = wsh_nonaligned_senate_seats }
-	multiply_variable = { wsh_despotism_senate_seats = 0.125 }
+	multiply_variable = { wsh_despotism_senate_seats = 0.222 }
 	round_variable = wsh_despotism_senate_seats
 	set_variable = { wsh_oligarchism_senate_seats = wsh_nonaligned_senate_seats }
-	multiply_variable = { wsh_oligarchism_senate_seats = 0.125 }
+	multiply_variable = { wsh_oligarchism_senate_seats = 0.194 }
 	round_variable = wsh_oligarchism_senate_seats
 	set_variable = { wsh_anarchism_senate_seats = wsh_nonaligned_senate_seats }
-	multiply_variable = { wsh_anarchism_senate_seats = 0.125 }
+	multiply_variable = { wsh_anarchism_senate_seats = 0.167 }
 	round_variable = wsh_anarchism_senate_seats
 	set_variable = { wsh_moderatism_senate_seats = wsh_nonaligned_senate_seats }
-	multiply_variable = { wsh_moderatism_senate_seats = 0.125 }
+	multiply_variable = { wsh_moderatism_senate_seats = 0.139 }
 	round_variable = wsh_moderatism_senate_seats
 	set_variable = { wsh_centrism_senate_seats = wsh_nonaligned_senate_seats }
-	multiply_variable = { wsh_centrism_senate_seats = 0.125 }
+	multiply_variable = { wsh_centrism_senate_seats = 0.111 }
 	round_variable = wsh_centrism_senate_seats
 	set_variable = { wsh_japan_militarism_ideology_senate_seats = wsh_nonaligned_senate_seats }
-	multiply_variable = { wsh_japan_militarism_ideology_senate_seats = 0.125 }
+	multiply_variable = { wsh_japan_militarism_ideology_senate_seats = 0.083 }
 	round_variable = wsh_japan_militarism_ideology_senate_seats
 	set_variable = { wsh_corporate_technocracy_senate_seats = wsh_nonaligned_senate_seats }
-	multiply_variable = { wsh_corporate_technocracy_senate_seats = 0.125 }
+	multiply_variable = { wsh_corporate_technocracy_senate_seats = 0.056 }
 	round_variable = wsh_corporate_technocracy_senate_seats
 	set_variable = { wsh_organical_statism_senate_seats = wsh_nonaligned_senate_seats }
 	subtract_from_variable = { wsh_organical_statism_senate_seats = wsh_despotism_senate_seats }
@@ -165,7 +349,13 @@ WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
 	subtract_from_variable = { wsh_organical_statism_senate_seats = wsh_centrism_senate_seats }
 	subtract_from_variable = { wsh_organical_statism_senate_seats = wsh_japan_militarism_ideology_senate_seats }
 	subtract_from_variable = { wsh_organical_statism_senate_seats = wsh_corporate_technocracy_senate_seats }
-	# === HOUSE: 98 Seats (Parent Calculations) ===
+	if = {
+		limit = {
+			check_variable = { wsh_organical_statism_senate_seats < 0 }
+		}
+		set_variable = { wsh_organical_statism_senate_seats = 0 }
+	}
+	# --- HOUSE SEATS ---
 	set_temp_variable = { wsh_house_max = 98 }
 	set_temp_variable = { wsh_house_sum = 0 }
 	set_temp_variable = { wsh_t = party_popularity@conservatism_ideology }
@@ -203,70 +393,242 @@ WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
 	round_temp_variable = wsh_t
 	set_variable = { wsh_nonaligned_house_seats = wsh_t }
 	add_to_temp_variable = { wsh_house_sum = wsh_nonaligned_house_seats }
-	# Seat Safety Adjustments
-	if = {
-		limit = {
-			check_variable = { wsh_house_sum < wsh_house_max }
-		}
-		set_temp_variable = { wsh_diff = wsh_house_max }
-		subtract_from_temp_variable = { wsh_diff = wsh_house_sum }
-		add_to_variable = { wsh_conservative_house_seats = wsh_diff }
-	}
+	# Cascade overflows for house
 	if = {
 		limit = {
 			check_variable = { wsh_house_sum > wsh_house_max }
 		}
 		set_temp_variable = { wsh_diff = wsh_house_sum }
 		subtract_from_temp_variable = { wsh_diff = wsh_house_max }
-		subtract_from_variable = { wsh_conservative_house_seats = wsh_diff }
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_conservative_house_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_conservative_house_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_conservative_house_seats }
+				set_variable = { wsh_conservative_house_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_agrarian_house_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_agrarian_house_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_agrarian_house_seats }
+				set_variable = { wsh_agrarian_house_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_liberal_house_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_liberal_house_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_liberal_house_seats }
+				set_variable = { wsh_liberal_house_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_socialist_house_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_socialist_house_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_socialist_house_seats }
+				set_variable = { wsh_socialist_house_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_communist_house_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_communist_house_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_communist_house_seats }
+				set_variable = { wsh_communist_house_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_fascist_house_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_fascist_house_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_fascist_house_seats }
+				set_variable = { wsh_fascist_house_seats = 0 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { wsh_nonaligned_house_seats > wsh_diff }
+				}
+				subtract_from_variable = { wsh_nonaligned_house_seats = wsh_diff }
+				set_temp_variable = { wsh_diff = 0 }
+			}
+			else = {
+				subtract_from_temp_variable = { wsh_diff = wsh_nonaligned_house_seats }
+				set_variable = { wsh_nonaligned_house_seats = 0 }
+			}
+		}
 	}
-	# === HOUSE: Subideology Splits ===
+	# Cascade deficits for house
+	if = {
+		limit = {
+			check_variable = { wsh_house_sum < wsh_house_max }
+		}
+		set_temp_variable = { wsh_diff = wsh_house_max }
+		subtract_from_temp_variable = { wsh_diff = wsh_house_sum }
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_conservative_house_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_agrarian_house_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_liberal_house_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_socialist_house_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_communist_house_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_fascist_house_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+		if = {
+			limit = {
+				check_variable = { wsh_diff > 0 }
+			}
+			add_to_variable = { wsh_nonaligned_house_seats = wsh_diff }
+			set_temp_variable = { wsh_diff = 0 }
+		}
+	}
+	# --- HOUSE SUBIDEOLOGIES ---
 	set_variable = { wsh_conservatism_subideology_house_seats = wsh_conservative_house_seats }
-	multiply_variable = { wsh_conservatism_subideology_house_seats = 0.5 }
+	multiply_variable = { wsh_conservatism_subideology_house_seats = 0.667 }
 	round_variable = wsh_conservatism_subideology_house_seats
 	set_variable = { wsh_christian_democracy_house_seats = wsh_conservative_house_seats }
 	subtract_from_variable = { wsh_christian_democracy_house_seats = wsh_conservatism_subideology_house_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_christian_democracy_house_seats < 0 }
+		}
+		set_variable = { wsh_christian_democracy_house_seats = 0 }
+	}
 	set_variable = { wsh_populism_subideology_house_seats = wsh_agrarian_house_seats }
-	multiply_variable = { wsh_populism_subideology_house_seats = 0.5 }
+	multiply_variable = { wsh_populism_subideology_house_seats = 0.667 }
 	round_variable = wsh_populism_subideology_house_seats
 	set_variable = { wsh_agrarian_populism_house_seats = wsh_agrarian_house_seats }
 	subtract_from_variable = { wsh_agrarian_populism_house_seats = wsh_populism_subideology_house_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_agrarian_populism_house_seats < 0 }
+		}
+		set_variable = { wsh_agrarian_populism_house_seats = 0 }
+	}
 	set_variable = { wsh_liberalism_house_seats = wsh_liberal_house_seats }
-	multiply_variable = { wsh_liberalism_house_seats = 0.2 }
+	multiply_variable = { wsh_liberalism_house_seats = 0.80 }
 	round_variable = wsh_liberalism_house_seats
-	set_variable = { wsh_conservatism_house_seats = wsh_liberal_house_seats }
-	multiply_variable = { wsh_conservatism_house_seats = 0.2 }
-	round_variable = wsh_conservatism_house_seats
-	set_variable = { wsh_socialism_house_seats = wsh_liberal_house_seats }
-	multiply_variable = { wsh_socialism_house_seats = 0.2 }
-	round_variable = wsh_socialism_house_seats
-	set_variable = { wsh_populism_house_seats = wsh_liberal_house_seats }
-	multiply_variable = { wsh_populism_house_seats = 0.2 }
-	round_variable = wsh_populism_house_seats
 	set_variable = { wsh_liberal_integrationism_house_seats = wsh_liberal_house_seats }
 	subtract_from_variable = { wsh_liberal_integrationism_house_seats = wsh_liberalism_house_seats }
-	subtract_from_variable = { wsh_liberal_integrationism_house_seats = wsh_conservatism_house_seats }
-	subtract_from_variable = { wsh_liberal_integrationism_house_seats = wsh_socialism_house_seats }
-	subtract_from_variable = { wsh_liberal_integrationism_house_seats = wsh_populism_house_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_liberal_integrationism_house_seats < 0 }
+		}
+		set_variable = { wsh_liberal_integrationism_house_seats = 0 }
+	}
 	set_variable = { wsh_socialism_subideology_house_seats = wsh_socialist_house_seats }
-	multiply_variable = { wsh_socialism_subideology_house_seats = 0.5 }
+	multiply_variable = { wsh_socialism_subideology_house_seats = 0.667 }
 	round_variable = wsh_socialism_subideology_house_seats
 	set_variable = { wsh_farmer_laborism_house_seats = wsh_socialist_house_seats }
 	subtract_from_variable = { wsh_farmer_laborism_house_seats = wsh_socialism_subideology_house_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_farmer_laborism_house_seats < 0 }
+		}
+		set_variable = { wsh_farmer_laborism_house_seats = 0 }
+	}
 	set_variable = { wsh_marxism_house_seats = wsh_communist_house_seats }
-	multiply_variable = { wsh_marxism_house_seats = 0.167 }
+	multiply_variable = { wsh_marxism_house_seats = 0.286 }
 	round_variable = wsh_marxism_house_seats
 	set_variable = { wsh_leninism_house_seats = wsh_communist_house_seats }
-	multiply_variable = { wsh_leninism_house_seats = 0.167 }
+	multiply_variable = { wsh_leninism_house_seats = 0.238 }
 	round_variable = wsh_leninism_house_seats
 	set_variable = { wsh_stalinism_house_seats = wsh_communist_house_seats }
-	multiply_variable = { wsh_stalinism_house_seats = 0.167 }
+	multiply_variable = { wsh_stalinism_house_seats = 0.19 }
 	round_variable = wsh_stalinism_house_seats
 	set_variable = { wsh_anti_revisionism_house_seats = wsh_communist_house_seats }
-	multiply_variable = { wsh_anti_revisionism_house_seats = 0.167 }
+	multiply_variable = { wsh_anti_revisionism_house_seats = 0.143 }
 	round_variable = wsh_anti_revisionism_house_seats
 	set_variable = { wsh_anarchist_communism_house_seats = wsh_communist_house_seats }
-	multiply_variable = { wsh_anarchist_communism_house_seats = 0.167 }
+	multiply_variable = { wsh_anarchist_communism_house_seats = 0.095 }
 	round_variable = wsh_anarchist_communism_house_seats
 	set_variable = { wsh_buddhist_socialism_house_seats = wsh_communist_house_seats }
 	subtract_from_variable = { wsh_buddhist_socialism_house_seats = wsh_marxism_house_seats }
@@ -274,26 +636,32 @@ WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
 	subtract_from_variable = { wsh_buddhist_socialism_house_seats = wsh_stalinism_house_seats }
 	subtract_from_variable = { wsh_buddhist_socialism_house_seats = wsh_anti_revisionism_house_seats }
 	subtract_from_variable = { wsh_buddhist_socialism_house_seats = wsh_anarchist_communism_house_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_buddhist_socialism_house_seats < 0 }
+		}
+		set_variable = { wsh_buddhist_socialism_house_seats = 0 }
+	}
 	set_variable = { wsh_fascism_ideology_house_seats = wsh_fascist_house_seats }
-	multiply_variable = { wsh_fascism_ideology_house_seats = 0.125 }
+	multiply_variable = { wsh_fascism_ideology_house_seats = 0.222 }
 	round_variable = wsh_fascism_ideology_house_seats
 	set_variable = { wsh_nazism_house_seats = wsh_fascist_house_seats }
-	multiply_variable = { wsh_nazism_house_seats = 0.125 }
+	multiply_variable = { wsh_nazism_house_seats = 0.194 }
 	round_variable = wsh_nazism_house_seats
 	set_variable = { wsh_gen_nazism_house_seats = wsh_fascist_house_seats }
-	multiply_variable = { wsh_gen_nazism_house_seats = 0.125 }
+	multiply_variable = { wsh_gen_nazism_house_seats = 0.167 }
 	round_variable = wsh_gen_nazism_house_seats
 	set_variable = { wsh_falangism_house_seats = wsh_fascist_house_seats }
-	multiply_variable = { wsh_falangism_house_seats = 0.125 }
+	multiply_variable = { wsh_falangism_house_seats = 0.139 }
 	round_variable = wsh_falangism_house_seats
 	set_variable = { wsh_rexism_house_seats = wsh_fascist_house_seats }
-	multiply_variable = { wsh_rexism_house_seats = 0.125 }
+	multiply_variable = { wsh_rexism_house_seats = 0.111 }
 	round_variable = wsh_rexism_house_seats
 	set_variable = { wsh_emperor_fascism_house_seats = wsh_fascist_house_seats }
-	multiply_variable = { wsh_emperor_fascism_house_seats = 0.125 }
+	multiply_variable = { wsh_emperor_fascism_house_seats = 0.083 }
 	round_variable = wsh_emperor_fascism_house_seats
 	set_variable = { wsh_integral_nationalism_house_seats = wsh_fascist_house_seats }
-	multiply_variable = { wsh_integral_nationalism_house_seats = 0.125 }
+	multiply_variable = { wsh_integral_nationalism_house_seats = 0.056 }
 	round_variable = wsh_integral_nationalism_house_seats
 	set_variable = { wsh_civil_nationalism_house_seats = wsh_fascist_house_seats }
 	subtract_from_variable = { wsh_civil_nationalism_house_seats = wsh_fascism_ideology_house_seats }
@@ -303,26 +671,32 @@ WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
 	subtract_from_variable = { wsh_civil_nationalism_house_seats = wsh_rexism_house_seats }
 	subtract_from_variable = { wsh_civil_nationalism_house_seats = wsh_emperor_fascism_house_seats }
 	subtract_from_variable = { wsh_civil_nationalism_house_seats = wsh_integral_nationalism_house_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_civil_nationalism_house_seats < 0 }
+		}
+		set_variable = { wsh_civil_nationalism_house_seats = 0 }
+	}
 	set_variable = { wsh_despotism_house_seats = wsh_nonaligned_house_seats }
-	multiply_variable = { wsh_despotism_house_seats = 0.125 }
+	multiply_variable = { wsh_despotism_house_seats = 0.222 }
 	round_variable = wsh_despotism_house_seats
 	set_variable = { wsh_oligarchism_house_seats = wsh_nonaligned_house_seats }
-	multiply_variable = { wsh_oligarchism_house_seats = 0.125 }
+	multiply_variable = { wsh_oligarchism_house_seats = 0.194 }
 	round_variable = wsh_oligarchism_house_seats
 	set_variable = { wsh_anarchism_house_seats = wsh_nonaligned_house_seats }
-	multiply_variable = { wsh_anarchism_house_seats = 0.125 }
+	multiply_variable = { wsh_anarchism_house_seats = 0.167 }
 	round_variable = wsh_anarchism_house_seats
 	set_variable = { wsh_moderatism_house_seats = wsh_nonaligned_house_seats }
-	multiply_variable = { wsh_moderatism_house_seats = 0.125 }
+	multiply_variable = { wsh_moderatism_house_seats = 0.139 }
 	round_variable = wsh_moderatism_house_seats
 	set_variable = { wsh_centrism_house_seats = wsh_nonaligned_house_seats }
-	multiply_variable = { wsh_centrism_house_seats = 0.125 }
+	multiply_variable = { wsh_centrism_house_seats = 0.111 }
 	round_variable = wsh_centrism_house_seats
 	set_variable = { wsh_japan_militarism_ideology_house_seats = wsh_nonaligned_house_seats }
-	multiply_variable = { wsh_japan_militarism_ideology_house_seats = 0.125 }
+	multiply_variable = { wsh_japan_militarism_ideology_house_seats = 0.083 }
 	round_variable = wsh_japan_militarism_ideology_house_seats
 	set_variable = { wsh_corporate_technocracy_house_seats = wsh_nonaligned_house_seats }
-	multiply_variable = { wsh_corporate_technocracy_house_seats = 0.125 }
+	multiply_variable = { wsh_corporate_technocracy_house_seats = 0.056 }
 	round_variable = wsh_corporate_technocracy_house_seats
 	set_variable = { wsh_organical_statism_house_seats = wsh_nonaligned_house_seats }
 	subtract_from_variable = { wsh_organical_statism_house_seats = wsh_despotism_house_seats }
@@ -332,13 +706,27 @@ WSH_calculate_party_seats = { # === SENATE: 38 Seats (Parent Calculations) ===
 	subtract_from_variable = { wsh_organical_statism_house_seats = wsh_centrism_house_seats }
 	subtract_from_variable = { wsh_organical_statism_house_seats = wsh_japan_militarism_ideology_house_seats }
 	subtract_from_variable = { wsh_organical_statism_house_seats = wsh_corporate_technocracy_house_seats }
+	if = {
+		limit = {
+			check_variable = { wsh_organical_statism_house_seats < 0 }
+		}
+		set_variable = { wsh_organical_statism_house_seats = 0 }
+	}
 }
-WSH_build_roster = {
-	clear_array = wsh_roster_tokens
-	clear_array = wsh_roster_frames
-	clear_array = wsh_roster_colors
-	clear_array = wsh_roster_senate_seats
-	clear_array = wsh_roster_house_seats
+WSH_build_roster = { # =======================================================
+	# 1. INITIALIZE TEMPORARY ARRAYS & COUNTER
+	# =======================================================
+	clear_array = wsh_temp_tokens
+	clear_array = wsh_temp_name_idx
+	clear_array = wsh_temp_frames
+	clear_array = wsh_temp_colors
+	clear_array = wsh_temp_senate_seats
+	clear_array = wsh_temp_house_seats
+	clear_array = wsh_temp_total_seats
+	set_temp_variable = { wsh_unsorted_count = 0 }
+	# =======================================================
+	# 2. POPULATE TEMPORARY ARRAYS WITH ACTIVE PARTIES
+	# =======================================================
 	if = {
 		limit = {
 			OR = {
@@ -346,11 +734,16 @@ WSH_build_roster = {
 				check_variable = { wsh_conservatism_subideology_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:conservatism_subideology }
-		add_to_array = { wsh_roster_frames = 9 }
-		add_to_array = { wsh_roster_colors = 1 }
-		add_to_array = { wsh_roster_senate_seats = wsh_conservatism_subideology_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_conservatism_subideology_house_seats }
+		add_to_array = { wsh_temp_tokens = token:conservatism_subideology }
+		add_to_array = { wsh_temp_name_idx = 1 }
+		add_to_array = { wsh_temp_frames = 9 }
+		add_to_array = { wsh_temp_colors = 1 }
+		add_to_array = { wsh_temp_senate_seats = wsh_conservatism_subideology_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_conservatism_subideology_house_seats }
+		set_temp_variable = { wsh_tot = wsh_conservatism_subideology_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_conservatism_subideology_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -359,11 +752,16 @@ WSH_build_roster = {
 				check_variable = { wsh_christian_democracy_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:christian_democracy }
-		add_to_array = { wsh_roster_frames = 7 }
-		add_to_array = { wsh_roster_colors = 1 }
-		add_to_array = { wsh_roster_senate_seats = wsh_christian_democracy_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_christian_democracy_house_seats }
+		add_to_array = { wsh_temp_tokens = token:christian_democracy }
+		add_to_array = { wsh_temp_name_idx = 2 }
+		add_to_array = { wsh_temp_frames = 7 }
+		add_to_array = { wsh_temp_colors = 1 }
+		add_to_array = { wsh_temp_senate_seats = wsh_christian_democracy_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_christian_democracy_house_seats }
+		set_temp_variable = { wsh_tot = wsh_christian_democracy_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_christian_democracy_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -372,11 +770,16 @@ WSH_build_roster = {
 				check_variable = { wsh_populism_subideology_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:populism_subideology }
-		add_to_array = { wsh_roster_frames = 26 }
-		add_to_array = { wsh_roster_colors = 2 }
-		add_to_array = { wsh_roster_senate_seats = wsh_populism_subideology_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_populism_subideology_house_seats }
+		add_to_array = { wsh_temp_tokens = token:populism_subideology }
+		add_to_array = { wsh_temp_name_idx = 3 }
+		add_to_array = { wsh_temp_frames = 26 }
+		add_to_array = { wsh_temp_colors = 2 }
+		add_to_array = { wsh_temp_senate_seats = wsh_populism_subideology_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_populism_subideology_house_seats }
+		set_temp_variable = { wsh_tot = wsh_populism_subideology_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_populism_subideology_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -385,11 +788,16 @@ WSH_build_roster = {
 				check_variable = { wsh_agrarian_populism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:agrarian_populism }
-		add_to_array = { wsh_roster_frames = 1 }
-		add_to_array = { wsh_roster_colors = 2 }
-		add_to_array = { wsh_roster_senate_seats = wsh_agrarian_populism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_agrarian_populism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:agrarian_populism }
+		add_to_array = { wsh_temp_name_idx = 4 }
+		add_to_array = { wsh_temp_frames = 1 }
+		add_to_array = { wsh_temp_colors = 2 }
+		add_to_array = { wsh_temp_senate_seats = wsh_agrarian_populism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_agrarian_populism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_agrarian_populism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_agrarian_populism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -398,50 +806,16 @@ WSH_build_roster = {
 				check_variable = { wsh_liberalism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:liberalism }
-		add_to_array = { wsh_roster_frames = 20 }
-		add_to_array = { wsh_roster_colors = 3 }
-		add_to_array = { wsh_roster_senate_seats = wsh_liberalism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_liberalism_house_seats }
-	}
-	if = {
-		limit = {
-			OR = {
-				check_variable = { wsh_conservatism_senate_seats > 0 }
-				check_variable = { wsh_conservatism_house_seats > 0 }
-			}
-		}
-		add_to_array = { wsh_roster_tokens = token:conservatism }
-		add_to_array = { wsh_roster_frames = 9 }
-		add_to_array = { wsh_roster_colors = 3 }
-		add_to_array = { wsh_roster_senate_seats = wsh_conservatism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_conservatism_house_seats }
-	}
-	if = {
-		limit = {
-			OR = {
-				check_variable = { wsh_socialism_senate_seats > 0 }
-				check_variable = { wsh_socialism_house_seats > 0 }
-			}
-		}
-		add_to_array = { wsh_roster_tokens = token:socialism }
-		add_to_array = { wsh_roster_frames = 28 }
-		add_to_array = { wsh_roster_colors = 3 }
-		add_to_array = { wsh_roster_senate_seats = wsh_socialism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_socialism_house_seats }
-	}
-	if = {
-		limit = {
-			OR = {
-				check_variable = { wsh_populism_senate_seats > 0 }
-				check_variable = { wsh_populism_house_seats > 0 }
-			}
-		}
-		add_to_array = { wsh_roster_tokens = token:populism }
-		add_to_array = { wsh_roster_frames = 26 }
-		add_to_array = { wsh_roster_colors = 3 }
-		add_to_array = { wsh_roster_senate_seats = wsh_populism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_populism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:liberalism }
+		add_to_array = { wsh_temp_name_idx = 5 }
+		add_to_array = { wsh_temp_frames = 20 }
+		add_to_array = { wsh_temp_colors = 3 }
+		add_to_array = { wsh_temp_senate_seats = wsh_liberalism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_liberalism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_liberalism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_liberalism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -450,11 +824,16 @@ WSH_build_roster = {
 				check_variable = { wsh_liberal_integrationism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:liberal_integrationism }
-		add_to_array = { wsh_roster_frames = 19 }
-		add_to_array = { wsh_roster_colors = 3 }
-		add_to_array = { wsh_roster_senate_seats = wsh_liberal_integrationism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_liberal_integrationism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:liberal_integrationism }
+		add_to_array = { wsh_temp_name_idx = 6 }
+		add_to_array = { wsh_temp_frames = 19 }
+		add_to_array = { wsh_temp_colors = 3 }
+		add_to_array = { wsh_temp_senate_seats = wsh_liberal_integrationism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_liberal_integrationism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_liberal_integrationism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_liberal_integrationism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -463,11 +842,16 @@ WSH_build_roster = {
 				check_variable = { wsh_socialism_subideology_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:socialism_subideology }
-		add_to_array = { wsh_roster_frames = 28 }
-		add_to_array = { wsh_roster_colors = 4 }
-		add_to_array = { wsh_roster_senate_seats = wsh_socialism_subideology_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_socialism_subideology_house_seats }
+		add_to_array = { wsh_temp_tokens = token:socialism_subideology }
+		add_to_array = { wsh_temp_name_idx = 7 }
+		add_to_array = { wsh_temp_frames = 28 }
+		add_to_array = { wsh_temp_colors = 4 }
+		add_to_array = { wsh_temp_senate_seats = wsh_socialism_subideology_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_socialism_subideology_house_seats }
+		set_temp_variable = { wsh_tot = wsh_socialism_subideology_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_socialism_subideology_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -476,11 +860,16 @@ WSH_build_roster = {
 				check_variable = { wsh_farmer_laborism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:farmer_laborism }
-		add_to_array = { wsh_roster_frames = 28 }
-		add_to_array = { wsh_roster_colors = 4 }
-		add_to_array = { wsh_roster_senate_seats = wsh_farmer_laborism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_farmer_laborism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:farmer_laborism }
+		add_to_array = { wsh_temp_name_idx = 8 }
+		add_to_array = { wsh_temp_frames = 28 }
+		add_to_array = { wsh_temp_colors = 4 }
+		add_to_array = { wsh_temp_senate_seats = wsh_farmer_laborism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_farmer_laborism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_farmer_laborism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_farmer_laborism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -489,11 +878,16 @@ WSH_build_roster = {
 				check_variable = { wsh_marxism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:marxism }
-		add_to_array = { wsh_roster_frames = 21 }
-		add_to_array = { wsh_roster_colors = 5 }
-		add_to_array = { wsh_roster_senate_seats = wsh_marxism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_marxism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:marxism }
+		add_to_array = { wsh_temp_name_idx = 9 }
+		add_to_array = { wsh_temp_frames = 21 }
+		add_to_array = { wsh_temp_colors = 5 }
+		add_to_array = { wsh_temp_senate_seats = wsh_marxism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_marxism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_marxism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_marxism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -502,11 +896,16 @@ WSH_build_roster = {
 				check_variable = { wsh_leninism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:leninism }
-		add_to_array = { wsh_roster_frames = 18 }
-		add_to_array = { wsh_roster_colors = 5 }
-		add_to_array = { wsh_roster_senate_seats = wsh_leninism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_leninism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:leninism }
+		add_to_array = { wsh_temp_name_idx = 10 }
+		add_to_array = { wsh_temp_frames = 18 }
+		add_to_array = { wsh_temp_colors = 5 }
+		add_to_array = { wsh_temp_senate_seats = wsh_leninism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_leninism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_leninism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_leninism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -515,11 +914,16 @@ WSH_build_roster = {
 				check_variable = { wsh_stalinism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:stalinism }
-		add_to_array = { wsh_roster_frames = 29 }
-		add_to_array = { wsh_roster_colors = 5 }
-		add_to_array = { wsh_roster_senate_seats = wsh_stalinism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_stalinism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:stalinism }
+		add_to_array = { wsh_temp_name_idx = 11 }
+		add_to_array = { wsh_temp_frames = 29 }
+		add_to_array = { wsh_temp_colors = 5 }
+		add_to_array = { wsh_temp_senate_seats = wsh_stalinism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_stalinism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_stalinism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_stalinism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -528,11 +932,16 @@ WSH_build_roster = {
 				check_variable = { wsh_anti_revisionism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:anti_revisionism }
-		add_to_array = { wsh_roster_frames = 4 }
-		add_to_array = { wsh_roster_colors = 5 }
-		add_to_array = { wsh_roster_senate_seats = wsh_anti_revisionism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_anti_revisionism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:anti_revisionism }
+		add_to_array = { wsh_temp_name_idx = 12 }
+		add_to_array = { wsh_temp_frames = 4 }
+		add_to_array = { wsh_temp_colors = 5 }
+		add_to_array = { wsh_temp_senate_seats = wsh_anti_revisionism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_anti_revisionism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_anti_revisionism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_anti_revisionism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -541,11 +950,16 @@ WSH_build_roster = {
 				check_variable = { wsh_anarchist_communism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:anarchist_communism }
-		add_to_array = { wsh_roster_frames = 3 }
-		add_to_array = { wsh_roster_colors = 5 }
-		add_to_array = { wsh_roster_senate_seats = wsh_anarchist_communism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_anarchist_communism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:anarchist_communism }
+		add_to_array = { wsh_temp_name_idx = 13 }
+		add_to_array = { wsh_temp_frames = 3 }
+		add_to_array = { wsh_temp_colors = 5 }
+		add_to_array = { wsh_temp_senate_seats = wsh_anarchist_communism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_anarchist_communism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_anarchist_communism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_anarchist_communism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -554,11 +968,16 @@ WSH_build_roster = {
 				check_variable = { wsh_buddhist_socialism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:buddhist_socialism }
-		add_to_array = { wsh_roster_frames = 5 }
-		add_to_array = { wsh_roster_colors = 5 }
-		add_to_array = { wsh_roster_senate_seats = wsh_buddhist_socialism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_buddhist_socialism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:buddhist_socialism }
+		add_to_array = { wsh_temp_name_idx = 14 }
+		add_to_array = { wsh_temp_frames = 5 }
+		add_to_array = { wsh_temp_colors = 5 }
+		add_to_array = { wsh_temp_senate_seats = wsh_buddhist_socialism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_buddhist_socialism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_buddhist_socialism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_buddhist_socialism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -567,11 +986,16 @@ WSH_build_roster = {
 				check_variable = { wsh_fascism_ideology_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:fascism_ideology }
-		add_to_array = { wsh_roster_frames = 14 }
-		add_to_array = { wsh_roster_colors = 6 }
-		add_to_array = { wsh_roster_senate_seats = wsh_fascism_ideology_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_fascism_ideology_house_seats }
+		add_to_array = { wsh_temp_tokens = token:fascism_ideology }
+		add_to_array = { wsh_temp_name_idx = 15 }
+		add_to_array = { wsh_temp_frames = 14 }
+		add_to_array = { wsh_temp_colors = 6 }
+		add_to_array = { wsh_temp_senate_seats = wsh_fascism_ideology_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_fascism_ideology_house_seats }
+		set_temp_variable = { wsh_tot = wsh_fascism_ideology_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_fascism_ideology_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -580,11 +1004,16 @@ WSH_build_roster = {
 				check_variable = { wsh_nazism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:nazism }
-		add_to_array = { wsh_roster_frames = 23 }
-		add_to_array = { wsh_roster_colors = 6 }
-		add_to_array = { wsh_roster_senate_seats = wsh_nazism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_nazism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:nazism }
+		add_to_array = { wsh_temp_name_idx = 16 }
+		add_to_array = { wsh_temp_frames = 23 }
+		add_to_array = { wsh_temp_colors = 6 }
+		add_to_array = { wsh_temp_senate_seats = wsh_nazism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_nazism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_nazism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_nazism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -593,11 +1022,16 @@ WSH_build_roster = {
 				check_variable = { wsh_gen_nazism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:gen_nazism }
-		add_to_array = { wsh_roster_frames = 15 }
-		add_to_array = { wsh_roster_colors = 6 }
-		add_to_array = { wsh_roster_senate_seats = wsh_gen_nazism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_gen_nazism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:gen_nazism }
+		add_to_array = { wsh_temp_name_idx = 17 }
+		add_to_array = { wsh_temp_frames = 15 }
+		add_to_array = { wsh_temp_colors = 6 }
+		add_to_array = { wsh_temp_senate_seats = wsh_gen_nazism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_gen_nazism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_gen_nazism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_gen_nazism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -606,11 +1040,16 @@ WSH_build_roster = {
 				check_variable = { wsh_falangism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:falangism }
-		add_to_array = { wsh_roster_frames = 13 }
-		add_to_array = { wsh_roster_colors = 6 }
-		add_to_array = { wsh_roster_senate_seats = wsh_falangism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_falangism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:falangism }
+		add_to_array = { wsh_temp_name_idx = 18 }
+		add_to_array = { wsh_temp_frames = 13 }
+		add_to_array = { wsh_temp_colors = 6 }
+		add_to_array = { wsh_temp_senate_seats = wsh_falangism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_falangism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_falangism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_falangism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -619,11 +1058,16 @@ WSH_build_roster = {
 				check_variable = { wsh_rexism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:rexism }
-		add_to_array = { wsh_roster_frames = 27 }
-		add_to_array = { wsh_roster_colors = 6 }
-		add_to_array = { wsh_roster_senate_seats = wsh_rexism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_rexism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:rexism }
+		add_to_array = { wsh_temp_name_idx = 19 }
+		add_to_array = { wsh_temp_frames = 27 }
+		add_to_array = { wsh_temp_colors = 6 }
+		add_to_array = { wsh_temp_senate_seats = wsh_rexism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_rexism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_rexism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_rexism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -632,11 +1076,16 @@ WSH_build_roster = {
 				check_variable = { wsh_emperor_fascism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:emperor_fascism }
-		add_to_array = { wsh_roster_frames = 12 }
-		add_to_array = { wsh_roster_colors = 6 }
-		add_to_array = { wsh_roster_senate_seats = wsh_emperor_fascism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_emperor_fascism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:emperor_fascism }
+		add_to_array = { wsh_temp_name_idx = 20 }
+		add_to_array = { wsh_temp_frames = 12 }
+		add_to_array = { wsh_temp_colors = 6 }
+		add_to_array = { wsh_temp_senate_seats = wsh_emperor_fascism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_emperor_fascism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_emperor_fascism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_emperor_fascism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -645,11 +1094,16 @@ WSH_build_roster = {
 				check_variable = { wsh_integral_nationalism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:integral_nationalism }
-		add_to_array = { wsh_roster_frames = 16 }
-		add_to_array = { wsh_roster_colors = 6 }
-		add_to_array = { wsh_roster_senate_seats = wsh_integral_nationalism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_integral_nationalism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:integral_nationalism }
+		add_to_array = { wsh_temp_name_idx = 21 }
+		add_to_array = { wsh_temp_frames = 16 }
+		add_to_array = { wsh_temp_colors = 6 }
+		add_to_array = { wsh_temp_senate_seats = wsh_integral_nationalism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_integral_nationalism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_integral_nationalism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_integral_nationalism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -658,11 +1112,16 @@ WSH_build_roster = {
 				check_variable = { wsh_civil_nationalism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:civil_nationalism }
-		add_to_array = { wsh_roster_frames = 8 }
-		add_to_array = { wsh_roster_colors = 6 }
-		add_to_array = { wsh_roster_senate_seats = wsh_civil_nationalism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_civil_nationalism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:civil_nationalism }
+		add_to_array = { wsh_temp_name_idx = 22 }
+		add_to_array = { wsh_temp_frames = 8 }
+		add_to_array = { wsh_temp_colors = 6 }
+		add_to_array = { wsh_temp_senate_seats = wsh_civil_nationalism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_civil_nationalism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_civil_nationalism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_civil_nationalism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -671,11 +1130,16 @@ WSH_build_roster = {
 				check_variable = { wsh_despotism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:despotism }
-		add_to_array = { wsh_roster_frames = 11 }
-		add_to_array = { wsh_roster_colors = 7 }
-		add_to_array = { wsh_roster_senate_seats = wsh_despotism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_despotism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:despotism }
+		add_to_array = { wsh_temp_name_idx = 23 }
+		add_to_array = { wsh_temp_frames = 11 }
+		add_to_array = { wsh_temp_colors = 7 }
+		add_to_array = { wsh_temp_senate_seats = wsh_despotism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_despotism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_despotism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_despotism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -684,11 +1148,16 @@ WSH_build_roster = {
 				check_variable = { wsh_oligarchism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:oligarchism }
-		add_to_array = { wsh_roster_frames = 24 }
-		add_to_array = { wsh_roster_colors = 7 }
-		add_to_array = { wsh_roster_senate_seats = wsh_oligarchism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_oligarchism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:oligarchism }
+		add_to_array = { wsh_temp_name_idx = 24 }
+		add_to_array = { wsh_temp_frames = 24 }
+		add_to_array = { wsh_temp_colors = 7 }
+		add_to_array = { wsh_temp_senate_seats = wsh_oligarchism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_oligarchism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_oligarchism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_oligarchism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -697,11 +1166,16 @@ WSH_build_roster = {
 				check_variable = { wsh_anarchism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:anarchism }
-		add_to_array = { wsh_roster_frames = 2 }
-		add_to_array = { wsh_roster_colors = 7 }
-		add_to_array = { wsh_roster_senate_seats = wsh_anarchism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_anarchism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:anarchism }
+		add_to_array = { wsh_temp_name_idx = 25 }
+		add_to_array = { wsh_temp_frames = 2 }
+		add_to_array = { wsh_temp_colors = 7 }
+		add_to_array = { wsh_temp_senate_seats = wsh_anarchism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_anarchism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_anarchism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_anarchism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -710,11 +1184,16 @@ WSH_build_roster = {
 				check_variable = { wsh_moderatism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:moderatism }
-		add_to_array = { wsh_roster_frames = 22 }
-		add_to_array = { wsh_roster_colors = 7 }
-		add_to_array = { wsh_roster_senate_seats = wsh_moderatism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_moderatism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:moderatism }
+		add_to_array = { wsh_temp_name_idx = 26 }
+		add_to_array = { wsh_temp_frames = 22 }
+		add_to_array = { wsh_temp_colors = 7 }
+		add_to_array = { wsh_temp_senate_seats = wsh_moderatism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_moderatism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_moderatism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_moderatism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -723,11 +1202,16 @@ WSH_build_roster = {
 				check_variable = { wsh_centrism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:centrism }
-		add_to_array = { wsh_roster_frames = 6 }
-		add_to_array = { wsh_roster_colors = 7 }
-		add_to_array = { wsh_roster_senate_seats = wsh_centrism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_centrism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:centrism }
+		add_to_array = { wsh_temp_name_idx = 27 }
+		add_to_array = { wsh_temp_frames = 6 }
+		add_to_array = { wsh_temp_colors = 7 }
+		add_to_array = { wsh_temp_senate_seats = wsh_centrism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_centrism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_centrism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_centrism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -736,11 +1220,16 @@ WSH_build_roster = {
 				check_variable = { wsh_japan_militarism_ideology_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:japan_militarism_ideology }
-		add_to_array = { wsh_roster_frames = 17 }
-		add_to_array = { wsh_roster_colors = 7 }
-		add_to_array = { wsh_roster_senate_seats = wsh_japan_militarism_ideology_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_japan_militarism_ideology_house_seats }
+		add_to_array = { wsh_temp_tokens = token:japan_militarism_ideology }
+		add_to_array = { wsh_temp_name_idx = 28 }
+		add_to_array = { wsh_temp_frames = 17 }
+		add_to_array = { wsh_temp_colors = 7 }
+		add_to_array = { wsh_temp_senate_seats = wsh_japan_militarism_ideology_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_japan_militarism_ideology_house_seats }
+		set_temp_variable = { wsh_tot = wsh_japan_militarism_ideology_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_japan_militarism_ideology_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -749,11 +1238,16 @@ WSH_build_roster = {
 				check_variable = { wsh_corporate_technocracy_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:corporate_technocracy }
-		add_to_array = { wsh_roster_frames = 10 }
-		add_to_array = { wsh_roster_colors = 7 }
-		add_to_array = { wsh_roster_senate_seats = wsh_corporate_technocracy_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_corporate_technocracy_house_seats }
+		add_to_array = { wsh_temp_tokens = token:corporate_technocracy }
+		add_to_array = { wsh_temp_name_idx = 29 }
+		add_to_array = { wsh_temp_frames = 10 }
+		add_to_array = { wsh_temp_colors = 7 }
+		add_to_array = { wsh_temp_senate_seats = wsh_corporate_technocracy_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_corporate_technocracy_house_seats }
+		set_temp_variable = { wsh_tot = wsh_corporate_technocracy_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_corporate_technocracy_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
 	}
 	if = {
 		limit = {
@@ -762,11 +1256,61 @@ WSH_build_roster = {
 				check_variable = { wsh_organical_statism_house_seats > 0 }
 			}
 		}
-		add_to_array = { wsh_roster_tokens = token:organical_statism }
-		add_to_array = { wsh_roster_frames = 25 }
-		add_to_array = { wsh_roster_colors = 7 }
-		add_to_array = { wsh_roster_senate_seats = wsh_organical_statism_senate_seats }
-		add_to_array = { wsh_roster_house_seats = wsh_organical_statism_house_seats }
+		add_to_array = { wsh_temp_tokens = token:organical_statism }
+		add_to_array = { wsh_temp_name_idx = 30 }
+		add_to_array = { wsh_temp_frames = 25 }
+		add_to_array = { wsh_temp_colors = 7 }
+		add_to_array = { wsh_temp_senate_seats = wsh_organical_statism_senate_seats }
+		add_to_array = { wsh_temp_house_seats = wsh_organical_statism_house_seats }
+		set_temp_variable = { wsh_tot = wsh_organical_statism_senate_seats }
+		add_to_temp_variable = { wsh_tot = wsh_organical_statism_house_seats }
+		add_to_array = { wsh_temp_total_seats = wsh_tot }
+		add_to_temp_variable = { wsh_unsorted_count = 1 }
+	}
+	# =======================================================
+	# 3. SCRIPTED SELECTION SORT (Descending Order)
+	# =======================================================
+	clear_array = wsh_roster_tokens
+	clear_array = wsh_roster_name_idx
+	clear_array = wsh_roster_frames
+	clear_array = wsh_roster_colors
+	clear_array = wsh_roster_senate_seats
+	clear_array = wsh_roster_house_seats
+	set_temp_variable = { wsh_items_to_sort = wsh_unsorted_count }
+	while_loop_effect = {
+		limit = {
+			check_variable = { wsh_items_to_sort > 0 }
+		}
+		# Reset our search trackers for this pass
+		set_temp_variable = { wsh_max_val = -1 }
+		set_temp_variable = { wsh_max_idx = -1 }
+		set_temp_variable = { wsh_curr_idx = 0 }
+		# Iterate through the temporary arrays to find the highest total seats
+		while_loop_effect = {
+			limit = {
+				check_variable = { wsh_curr_idx < wsh_unsorted_count }
+			}
+			set_temp_variable = { wsh_eval_val = wsh_temp_total_seats^wsh_curr_idx }
+			if = {
+				limit = {
+					check_variable = { wsh_eval_val > wsh_max_val }
+				}
+				set_temp_variable = { wsh_max_val = wsh_eval_val }
+				set_temp_variable = { wsh_max_idx = wsh_curr_idx }
+			}
+			add_to_temp_variable = { wsh_curr_idx = 1 }
+		}
+		# Push the properties of the highest found party into the final arrays
+		add_to_array = { wsh_roster_tokens = wsh_temp_tokens^wsh_max_idx }
+		add_to_array = { wsh_roster_name_idx = wsh_temp_name_idx^wsh_max_idx }
+		add_to_array = { wsh_roster_frames = wsh_temp_frames^wsh_max_idx }
+		add_to_array = { wsh_roster_colors = wsh_temp_colors^wsh_max_idx }
+		add_to_array = { wsh_roster_senate_seats = wsh_temp_senate_seats^wsh_max_idx }
+		add_to_array = { wsh_roster_house_seats = wsh_temp_house_seats^wsh_max_idx }
+		# Set its total value to -2 so it is ignored on the next iteration of the outer loop
+		set_variable = { wsh_temp_total_seats^wsh_max_idx = -2 }
+		# Decrement items left to sort
+		subtract_from_temp_variable = { wsh_items_to_sort = 1 }
 	}
 }
 # Array Initializations
@@ -774,418 +1318,418 @@ WSH_senate_gui_setup = {
 	clear_array = wsh_senate_gui_x
 	clear_array = wsh_senate_gui_y
 	clear_array = wsh_senate_gui_frame
-	add_to_array = { wsh_senate_gui_x = 15 }
-	add_to_array = { wsh_senate_gui_y = 116 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 17 }
-	add_to_array = { wsh_senate_gui_y = 96 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 23 }
-	add_to_array = { wsh_senate_gui_y = 77 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 32 }
-	add_to_array = { wsh_senate_gui_y = 59 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 45 }
-	add_to_array = { wsh_senate_gui_y = 44 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_x = 0 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 29 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 59 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 88 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 6 }
+	add_to_array = { wsh_senate_gui_y = 101 }
+	add_to_array = { wsh_senate_gui_x = 38 }
+	add_to_array = { wsh_senate_gui_y = 98 }
+	add_to_array = { wsh_senate_gui_x = 18 }
+	add_to_array = { wsh_senate_gui_y = 73 }
+	add_to_array = { wsh_senate_gui_x = 69 }
+	add_to_array = { wsh_senate_gui_y = 103 }
+	add_to_array = { wsh_senate_gui_x = 57 }
+	add_to_array = { wsh_senate_gui_y = 70 }
+	add_to_array = { wsh_senate_gui_x = 100 }
+	add_to_array = { wsh_senate_gui_y = 110 }
+	add_to_array = { wsh_senate_gui_x = 37 }
+	add_to_array = { wsh_senate_gui_y = 49 }
+	add_to_array = { wsh_senate_gui_x = 90 }
+	add_to_array = { wsh_senate_gui_y = 80 }
 	add_to_array = { wsh_senate_gui_x = 60 }
-	add_to_array = { wsh_senate_gui_y = 31 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 78 }
-	add_to_array = { wsh_senate_gui_y = 22 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 97 }
+	add_to_array = { wsh_senate_gui_y = 30 }
+	add_to_array = { wsh_senate_gui_x = 84 }
+	add_to_array = { wsh_senate_gui_y = 50 }
+	add_to_array = { wsh_senate_gui_x = 88 }
 	add_to_array = { wsh_senate_gui_y = 16 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_x = 120 }
+	add_to_array = { wsh_senate_gui_y = 98 }
 	add_to_array = { wsh_senate_gui_x = 117 }
-	add_to_array = { wsh_senate_gui_y = 14 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 137 }
-	add_to_array = { wsh_senate_gui_y = 16 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 156 }
-	add_to_array = { wsh_senate_gui_y = 22 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 174 }
-	add_to_array = { wsh_senate_gui_y = 31 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 189 }
-	add_to_array = { wsh_senate_gui_y = 44 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 202 }
-	add_to_array = { wsh_senate_gui_y = 59 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 211 }
-	add_to_array = { wsh_senate_gui_y = 77 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 217 }
-	add_to_array = { wsh_senate_gui_y = 96 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 219 }
-	add_to_array = { wsh_senate_gui_y = 116 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 40 }
-	add_to_array = { wsh_senate_gui_y = 116 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 43 }
-	add_to_array = { wsh_senate_gui_y = 96 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 50 }
-	add_to_array = { wsh_senate_gui_y = 78 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 63 }
-	add_to_array = { wsh_senate_gui_y = 62 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 78 }
-	add_to_array = { wsh_senate_gui_y = 49 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 97 }
-	add_to_array = { wsh_senate_gui_y = 42 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 117 }
+	add_to_array = { wsh_senate_gui_y = 68 }
+	add_to_array = { wsh_senate_gui_x = 116 }
 	add_to_array = { wsh_senate_gui_y = 39 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 137 }
-	add_to_array = { wsh_senate_gui_y = 42 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 156 }
-	add_to_array = { wsh_senate_gui_y = 49 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 171 }
-	add_to_array = { wsh_senate_gui_y = 62 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 184 }
-	add_to_array = { wsh_senate_gui_y = 78 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 191 }
-	add_to_array = { wsh_senate_gui_y = 96 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 194 }
-	add_to_array = { wsh_senate_gui_y = 116 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 65 }
-	add_to_array = { wsh_senate_gui_y = 116 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 70 }
-	add_to_array = { wsh_senate_gui_y = 93 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 85 }
-	add_to_array = { wsh_senate_gui_y = 75 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 105 }
-	add_to_array = { wsh_senate_gui_y = 65 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 129 }
-	add_to_array = { wsh_senate_gui_y = 65 }
-	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_x = 117 }
+	add_to_array = { wsh_senate_gui_y = 9 }
+	add_to_array = { wsh_senate_gui_x = 148 }
+	add_to_array = { wsh_senate_gui_y = 9 }
 	add_to_array = { wsh_senate_gui_x = 149 }
-	add_to_array = { wsh_senate_gui_y = 75 }
+	add_to_array = { wsh_senate_gui_y = 39 }
+	add_to_array = { wsh_senate_gui_x = 148 }
+	add_to_array = { wsh_senate_gui_y = 68 }
+	add_to_array = { wsh_senate_gui_x = 144 }
+	add_to_array = { wsh_senate_gui_y = 98 }
+	add_to_array = { wsh_senate_gui_x = 177 }
+	add_to_array = { wsh_senate_gui_y = 16 }
+	add_to_array = { wsh_senate_gui_x = 181 }
+	add_to_array = { wsh_senate_gui_y = 50 }
+	add_to_array = { wsh_senate_gui_x = 205 }
+	add_to_array = { wsh_senate_gui_y = 30 }
+	add_to_array = { wsh_senate_gui_x = 175 }
+	add_to_array = { wsh_senate_gui_y = 80 }
+	add_to_array = { wsh_senate_gui_x = 228 }
+	add_to_array = { wsh_senate_gui_y = 49 }
+	add_to_array = { wsh_senate_gui_x = 165 }
+	add_to_array = { wsh_senate_gui_y = 110 }
+	add_to_array = { wsh_senate_gui_x = 208 }
+	add_to_array = { wsh_senate_gui_y = 70 }
+	add_to_array = { wsh_senate_gui_x = 196 }
+	add_to_array = { wsh_senate_gui_y = 103 }
+	add_to_array = { wsh_senate_gui_x = 247 }
+	add_to_array = { wsh_senate_gui_y = 73 }
+	add_to_array = { wsh_senate_gui_x = 227 }
+	add_to_array = { wsh_senate_gui_y = 98 }
+	add_to_array = { wsh_senate_gui_x = 259 }
+	add_to_array = { wsh_senate_gui_y = 101 }
+	add_to_array = { wsh_senate_gui_x = 176 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 206 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 236 }
+	add_to_array = { wsh_senate_gui_y = 131 }
+	add_to_array = { wsh_senate_gui_x = 265 }
+	add_to_array = { wsh_senate_gui_y = 131 }
 	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 164 }
-	add_to_array = { wsh_senate_gui_y = 93 }
 	add_to_array = { wsh_senate_gui_frame = 0 }
-	add_to_array = { wsh_senate_gui_x = 169 }
-	add_to_array = { wsh_senate_gui_y = 116 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
+	add_to_array = { wsh_senate_gui_frame = 0 }
 	add_to_array = { wsh_senate_gui_frame = 0 }
 }
 WSH_house_gui_setup = {
 	clear_array = wsh_house_gui_x
 	clear_array = wsh_house_gui_y
 	clear_array = wsh_house_gui_frame
-	add_to_array = { wsh_house_gui_x = 88 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 91 }
-	add_to_array = { wsh_house_gui_y = 143 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 100 }
-	add_to_array = { wsh_house_gui_y = 127 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 113 }
-	add_to_array = { wsh_house_gui_y = 116 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 130 }
-	add_to_array = { wsh_house_gui_y = 110 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 148 }
-	add_to_array = { wsh_house_gui_y = 110 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 164 }
-	add_to_array = { wsh_house_gui_y = 116 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 178 }
-	add_to_array = { wsh_house_gui_y = 127 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 187 }
-	add_to_array = { wsh_house_gui_y = 143 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 190 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 74 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 77 }
-	add_to_array = { wsh_house_gui_y = 142 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 84 }
-	add_to_array = { wsh_house_gui_y = 125 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 96 }
-	add_to_array = { wsh_house_gui_y = 111 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 112 }
-	add_to_array = { wsh_house_gui_y = 101 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 130 }
-	add_to_array = { wsh_house_gui_y = 96 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 148 }
-	add_to_array = { wsh_house_gui_y = 96 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 166 }
-	add_to_array = { wsh_house_gui_y = 101 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 182 }
-	add_to_array = { wsh_house_gui_y = 111 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 194 }
-	add_to_array = { wsh_house_gui_y = 125 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 201 }
-	add_to_array = { wsh_house_gui_y = 142 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 204 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 60 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 62 }
-	add_to_array = { wsh_house_gui_y = 142 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 68 }
-	add_to_array = { wsh_house_gui_y = 126 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 77 }
-	add_to_array = { wsh_house_gui_y = 111 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 90 }
-	add_to_array = { wsh_house_gui_y = 98 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 105 }
-	add_to_array = { wsh_house_gui_y = 89 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 121 }
-	add_to_array = { wsh_house_gui_y = 83 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 139 }
-	add_to_array = { wsh_house_gui_y = 81 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 157 }
-	add_to_array = { wsh_house_gui_y = 83 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 173 }
-	add_to_array = { wsh_house_gui_y = 89 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 188 }
-	add_to_array = { wsh_house_gui_y = 98 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 201 }
-	add_to_array = { wsh_house_gui_y = 111 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 210 }
-	add_to_array = { wsh_house_gui_y = 126 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 216 }
-	add_to_array = { wsh_house_gui_y = 142 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 218 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 46 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 48 }
-	add_to_array = { wsh_house_gui_y = 143 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 52 }
-	add_to_array = { wsh_house_gui_y = 126 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 60 }
-	add_to_array = { wsh_house_gui_y = 111 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 70 }
-	add_to_array = { wsh_house_gui_y = 97 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 83 }
-	add_to_array = { wsh_house_gui_y = 86 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 98 }
-	add_to_array = { wsh_house_gui_y = 77 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 114 }
-	add_to_array = { wsh_house_gui_y = 71 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 130 }
-	add_to_array = { wsh_house_gui_y = 67 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 148 }
-	add_to_array = { wsh_house_gui_y = 67 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 164 }
-	add_to_array = { wsh_house_gui_y = 71 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 180 }
-	add_to_array = { wsh_house_gui_y = 77 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 195 }
-	add_to_array = { wsh_house_gui_y = 86 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 208 }
-	add_to_array = { wsh_house_gui_y = 97 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 218 }
-	add_to_array = { wsh_house_gui_y = 111 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 226 }
-	add_to_array = { wsh_house_gui_y = 126 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 230 }
-	add_to_array = { wsh_house_gui_y = 143 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 232 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 32 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 33 }
-	add_to_array = { wsh_house_gui_y = 142 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 38 }
-	add_to_array = { wsh_house_gui_y = 125 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 45 }
-	add_to_array = { wsh_house_gui_y = 109 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 55 }
-	add_to_array = { wsh_house_gui_y = 94 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 67 }
-	add_to_array = { wsh_house_gui_y = 81 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 80 }
-	add_to_array = { wsh_house_gui_y = 70 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 96 }
-	add_to_array = { wsh_house_gui_y = 62 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 113 }
-	add_to_array = { wsh_house_gui_y = 56 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 130 }
-	add_to_array = { wsh_house_gui_y = 53 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 148 }
-	add_to_array = { wsh_house_gui_y = 53 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 165 }
-	add_to_array = { wsh_house_gui_y = 56 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 182 }
-	add_to_array = { wsh_house_gui_y = 62 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 198 }
-	add_to_array = { wsh_house_gui_y = 70 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 211 }
-	add_to_array = { wsh_house_gui_y = 81 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 223 }
-	add_to_array = { wsh_house_gui_y = 94 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 233 }
-	add_to_array = { wsh_house_gui_y = 109 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 240 }
-	add_to_array = { wsh_house_gui_y = 125 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 245 }
-	add_to_array = { wsh_house_gui_y = 142 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 246 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 18 }
-	add_to_array = { wsh_house_gui_y = 160 }
-	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_x = 0 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 16 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 31 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 47 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 63 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 79 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 3 }
+	add_to_array = { wsh_house_gui_y = 117 }
 	add_to_array = { wsh_house_gui_x = 19 }
-	add_to_array = { wsh_house_gui_y = 143 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 23 }
-	add_to_array = { wsh_house_gui_y = 126 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 29 }
-	add_to_array = { wsh_house_gui_y = 110 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 37 }
-	add_to_array = { wsh_house_gui_y = 95 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 48 }
-	add_to_array = { wsh_house_gui_y = 81 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 60 }
-	add_to_array = { wsh_house_gui_y = 69 }
-	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 35 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 51 }
+	add_to_array = { wsh_house_gui_y = 118 }
+	add_to_array = { wsh_house_gui_x = 8 }
+	add_to_array = { wsh_house_gui_y = 98 }
+	add_to_array = { wsh_house_gui_x = 67 }
+	add_to_array = { wsh_house_gui_y = 119 }
+	add_to_array = { wsh_house_gui_x = 25 }
+	add_to_array = { wsh_house_gui_y = 99 }
+	add_to_array = { wsh_house_gui_x = 84 }
+	add_to_array = { wsh_house_gui_y = 121 }
+	add_to_array = { wsh_house_gui_x = 42 }
+	add_to_array = { wsh_house_gui_y = 99 }
+	add_to_array = { wsh_house_gui_x = 17 }
+	add_to_array = { wsh_house_gui_y = 80 }
+	add_to_array = { wsh_house_gui_x = 59 }
+	add_to_array = { wsh_house_gui_y = 101 }
+	add_to_array = { wsh_house_gui_x = 33 }
+	add_to_array = { wsh_house_gui_y = 82 }
+	add_to_array = { wsh_house_gui_x = 76 }
+	add_to_array = { wsh_house_gui_y = 103 }
+	add_to_array = { wsh_house_gui_x = 27 }
+	add_to_array = { wsh_house_gui_y = 64 }
+	add_to_array = { wsh_house_gui_x = 52 }
+	add_to_array = { wsh_house_gui_y = 82 }
+	add_to_array = { wsh_house_gui_x = 45 }
+	add_to_array = { wsh_house_gui_y = 67 }
+	add_to_array = { wsh_house_gui_x = 93 }
+	add_to_array = { wsh_house_gui_y = 107 }
+	add_to_array = { wsh_house_gui_x = 70 }
+	add_to_array = { wsh_house_gui_y = 85 }
+	add_to_array = { wsh_house_gui_x = 40 }
+	add_to_array = { wsh_house_gui_y = 49 }
+	add_to_array = { wsh_house_gui_x = 66 }
+	add_to_array = { wsh_house_gui_y = 68 }
+	add_to_array = { wsh_house_gui_x = 88 }
+	add_to_array = { wsh_house_gui_y = 90 }
+	add_to_array = { wsh_house_gui_x = 58 }
+	add_to_array = { wsh_house_gui_y = 53 }
+	add_to_array = { wsh_house_gui_x = 55 }
+	add_to_array = { wsh_house_gui_y = 36 }
+	add_to_array = { wsh_house_gui_x = 84 }
+	add_to_array = { wsh_house_gui_y = 73 }
+	add_to_array = { wsh_house_gui_x = 106 }
+	add_to_array = { wsh_house_gui_y = 96 }
+	add_to_array = { wsh_house_gui_x = 81 }
+	add_to_array = { wsh_house_gui_y = 56 }
 	add_to_array = { wsh_house_gui_x = 74 }
-	add_to_array = { wsh_house_gui_y = 58 }
-	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_y = 42 }
+	add_to_array = { wsh_house_gui_x = 71 }
+	add_to_array = { wsh_house_gui_y = 26 }
+	add_to_array = { wsh_house_gui_x = 103 }
+	add_to_array = { wsh_house_gui_y = 80 }
+	add_to_array = { wsh_house_gui_x = 100 }
+	add_to_array = { wsh_house_gui_y = 63 }
+	add_to_array = { wsh_house_gui_x = 91 }
+	add_to_array = { wsh_house_gui_y = 34 }
+	add_to_array = { wsh_house_gui_x = 99 }
+	add_to_array = { wsh_house_gui_y = 47 }
 	add_to_array = { wsh_house_gui_x = 89 }
-	add_to_array = { wsh_house_gui_y = 50 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 105 }
-	add_to_array = { wsh_house_gui_y = 44 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 122 }
-	add_to_array = { wsh_house_gui_y = 40 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 139 }
-	add_to_array = { wsh_house_gui_y = 39 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 156 }
-	add_to_array = { wsh_house_gui_y = 40 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 173 }
-	add_to_array = { wsh_house_gui_y = 44 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 189 }
-	add_to_array = { wsh_house_gui_y = 50 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 204 }
+	add_to_array = { wsh_house_gui_y = 17 }
+	add_to_array = { wsh_house_gui_x = 121 }
+	add_to_array = { wsh_house_gui_y = 89 }
+	add_to_array = { wsh_house_gui_x = 119 }
+	add_to_array = { wsh_house_gui_y = 73 }
+	add_to_array = { wsh_house_gui_x = 109 }
+	add_to_array = { wsh_house_gui_y = 28 }
+	add_to_array = { wsh_house_gui_x = 108 }
+	add_to_array = { wsh_house_gui_y = 12 }
+	add_to_array = { wsh_house_gui_x = 118 }
 	add_to_array = { wsh_house_gui_y = 58 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 218 }
-	add_to_array = { wsh_house_gui_y = 69 }
-	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_x = 118 }
+	add_to_array = { wsh_house_gui_y = 42 }
+	add_to_array = { wsh_house_gui_x = 128 }
+	add_to_array = { wsh_house_gui_y = 25 }
+	add_to_array = { wsh_house_gui_x = 127 }
+	add_to_array = { wsh_house_gui_y = 9 }
+	add_to_array = { wsh_house_gui_x = 137 }
+	add_to_array = { wsh_house_gui_y = 87 }
+	add_to_array = { wsh_house_gui_x = 137 }
+	add_to_array = { wsh_house_gui_y = 71 }
+	add_to_array = { wsh_house_gui_x = 137 }
+	add_to_array = { wsh_house_gui_y = 40 }
+	add_to_array = { wsh_house_gui_x = 137 }
+	add_to_array = { wsh_house_gui_y = 56 }
+	add_to_array = { wsh_house_gui_x = 147 }
+	add_to_array = { wsh_house_gui_y = 9 }
+	add_to_array = { wsh_house_gui_x = 147 }
+	add_to_array = { wsh_house_gui_y = 25 }
+	add_to_array = { wsh_house_gui_x = 157 }
+	add_to_array = { wsh_house_gui_y = 42 }
+	add_to_array = { wsh_house_gui_x = 156 }
+	add_to_array = { wsh_house_gui_y = 58 }
+	add_to_array = { wsh_house_gui_x = 166 }
+	add_to_array = { wsh_house_gui_y = 12 }
+	add_to_array = { wsh_house_gui_x = 166 }
+	add_to_array = { wsh_house_gui_y = 28 }
+	add_to_array = { wsh_house_gui_x = 155 }
+	add_to_array = { wsh_house_gui_y = 73 }
+	add_to_array = { wsh_house_gui_x = 154 }
+	add_to_array = { wsh_house_gui_y = 89 }
+	add_to_array = { wsh_house_gui_x = 185 }
+	add_to_array = { wsh_house_gui_y = 17 }
+	add_to_array = { wsh_house_gui_x = 175 }
+	add_to_array = { wsh_house_gui_y = 47 }
+	add_to_array = { wsh_house_gui_x = 184 }
+	add_to_array = { wsh_house_gui_y = 34 }
+	add_to_array = { wsh_house_gui_x = 174 }
+	add_to_array = { wsh_house_gui_y = 63 }
+	add_to_array = { wsh_house_gui_x = 172 }
+	add_to_array = { wsh_house_gui_y = 80 }
+	add_to_array = { wsh_house_gui_x = 203 }
+	add_to_array = { wsh_house_gui_y = 26 }
+	add_to_array = { wsh_house_gui_x = 201 }
+	add_to_array = { wsh_house_gui_y = 42 }
+	add_to_array = { wsh_house_gui_x = 193 }
+	add_to_array = { wsh_house_gui_y = 56 }
+	add_to_array = { wsh_house_gui_x = 169 }
+	add_to_array = { wsh_house_gui_y = 96 }
+	add_to_array = { wsh_house_gui_x = 190 }
+	add_to_array = { wsh_house_gui_y = 73 }
+	add_to_array = { wsh_house_gui_x = 219 }
+	add_to_array = { wsh_house_gui_y = 36 }
+	add_to_array = { wsh_house_gui_x = 216 }
+	add_to_array = { wsh_house_gui_y = 53 }
+	add_to_array = { wsh_house_gui_x = 187 }
+	add_to_array = { wsh_house_gui_y = 90 }
+	add_to_array = { wsh_house_gui_x = 209 }
+	add_to_array = { wsh_house_gui_y = 68 }
+	add_to_array = { wsh_house_gui_x = 234 }
+	add_to_array = { wsh_house_gui_y = 49 }
+	add_to_array = { wsh_house_gui_x = 204 }
+	add_to_array = { wsh_house_gui_y = 85 }
+	add_to_array = { wsh_house_gui_x = 181 }
+	add_to_array = { wsh_house_gui_y = 107 }
 	add_to_array = { wsh_house_gui_x = 230 }
-	add_to_array = { wsh_house_gui_y = 81 }
-	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_y = 67 }
+	add_to_array = { wsh_house_gui_x = 222 }
+	add_to_array = { wsh_house_gui_y = 82 }
+	add_to_array = { wsh_house_gui_x = 247 }
+	add_to_array = { wsh_house_gui_y = 64 }
+	add_to_array = { wsh_house_gui_x = 199 }
+	add_to_array = { wsh_house_gui_y = 103 }
 	add_to_array = { wsh_house_gui_x = 241 }
-	add_to_array = { wsh_house_gui_y = 95 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 249 }
-	add_to_array = { wsh_house_gui_y = 110 }
-	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 255 }
-	add_to_array = { wsh_house_gui_y = 126 }
-	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_y = 82 }
+	add_to_array = { wsh_house_gui_x = 215 }
+	add_to_array = { wsh_house_gui_y = 101 }
+	add_to_array = { wsh_house_gui_x = 258 }
+	add_to_array = { wsh_house_gui_y = 80 }
+	add_to_array = { wsh_house_gui_x = 232 }
+	add_to_array = { wsh_house_gui_y = 99 }
+	add_to_array = { wsh_house_gui_x = 191 }
+	add_to_array = { wsh_house_gui_y = 121 }
+	add_to_array = { wsh_house_gui_x = 250 }
+	add_to_array = { wsh_house_gui_y = 99 }
+	add_to_array = { wsh_house_gui_x = 207 }
+	add_to_array = { wsh_house_gui_y = 119 }
+	add_to_array = { wsh_house_gui_x = 266 }
+	add_to_array = { wsh_house_gui_y = 98 }
+	add_to_array = { wsh_house_gui_x = 223 }
+	add_to_array = { wsh_house_gui_y = 118 }
+	add_to_array = { wsh_house_gui_x = 239 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 256 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 271 }
+	add_to_array = { wsh_house_gui_y = 117 }
+	add_to_array = { wsh_house_gui_x = 196 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 211 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 227 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 243 }
+	add_to_array = { wsh_house_gui_y = 136 }
 	add_to_array = { wsh_house_gui_x = 259 }
-	add_to_array = { wsh_house_gui_y = 143 }
+	add_to_array = { wsh_house_gui_y = 136 }
+	add_to_array = { wsh_house_gui_x = 274 }
+	add_to_array = { wsh_house_gui_y = 136 }
 	add_to_array = { wsh_house_gui_frame = 0 }
-	add_to_array = { wsh_house_gui_x = 260 }
-	add_to_array = { wsh_house_gui_y = 160 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
+	add_to_array = { wsh_house_gui_frame = 0 }
 	add_to_array = { wsh_house_gui_frame = 0 }
 }
 # Array Logic (Variables corrected to use Main Ideologies to ensure the array totals 38 & 98 seats)

@@ -1,3 +1,4 @@
+
 guiTypes = {
 	containerWindowType = {
 		name = "congress_gui"
@@ -55,7 +56,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "open_roster_button"
-			position = { x = 270 y = 8 }
+			position = { x = 230 y = 8 }
 			quadTextureSprite = "GFX_button_94x31"
 			buttonFont = "hoi_16mbs"
 			buttonText = "Roster"
@@ -63,7 +64,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "congress_close_button"
-			position = { x = 354 y = 6 }
+			position = { x = 338 y = 6 }
 			quadTextureSprite = "GFX_closebutton"
 			buttonFont = "Main_14_black"
 			clicksound = click_default
@@ -71,8 +72,8 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "wsh_congress_roster_panel"
-		position = { x = 925 y = 4 }
-		size = { width = 300 height = 460 }
+		position = { x = 917 y = 4 }
+		size = { width = 335 height = 460 }
 		background = { name = "roster_bg" quadTextureSprite = "GFX_tiled_bg" }
 		instantTextboxType = {
 			name = "roster_title"
@@ -84,8 +85,8 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "wsh_roster_scroll_area"
-			position = { x = 10 y = 50 }
-			size = { width = 280 height = 400 }
+			position = { x = 0 y = 50 }
+			size = { width = 325 height = 360 }
 			verticalScrollbar = "right_vertical_slider"
 			margin = { top = 5 bottom = 5 }
 			smooth_scrolling = yes
@@ -103,6 +104,14 @@ guiTypes = {
 				add_horizontal = no
 				format = "UPPER_LEFT"
 			}
+		}
+		buttonType = {
+			name = "disband_coalition_button"
+			position = { x = 90 y = 410 }
+			quadTextureSprite = "GFX_button_148x34"
+			buttonText = "COALITION_DISBAND"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "disband_coalition_tt"
 		}
 	}
 	containerWindowType = {
@@ -149,20 +158,76 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "roster_name"
-			position = { x = 85 y = 10 }
+			position = { x = 70 y = 10 }
 			font = "hoi_16mbs"
 			text = "[?wsh_roster_tokens^roster_idx.GetTokenLocalizedKey]"
-			maxWidth = 180
+			maxWidth = 100
 			maxHeight = 16
 			fixedsize = yes
 		}
 		instantTextboxType = {
 			name = "roster_seats"
-			position = { x = 85 y = 30 }
+			position = { x = 70 y = 30 }
 			font = "hoi_16mbs"
-			text = "Senate: [?wsh_roster_senate_seats^roster_idx|Y0] | House: [?wsh_roster_house_seats^roster_idx|Y0]"
-			maxWidth = 180
+			text = "S: [?wsh_roster_senate_seats^roster_idx|Y0]  H: [?wsh_roster_house_seats^roster_idx|Y0]"
+			maxWidth = 100
 			maxHeight = 16
+		}
+		buttonType = {
+			name = "roster_coalition_button"
+			position = { x = 175 y = 15 }
+			quadTextureSprite = "GFX_button_94x31"
+			buttonFont = "hoi_16mbs"
+			buttonText = "[GetRosterCoalitionActionText]"
+			pdx_tooltip = "[GetRosterCoalitionActionTooltip]"
+		}
+	}
+	containerWindowType = {
+		name = "coalition_pol_party_bg"
+		position = { x = 0 y = 0 }
+		size = { width = 216 height = 120 }
+		clipping = no
+		iconType = {
+			name = "coalition_pol_party_bg_liberalism"
+			position = { x = 35 y = -3 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "coalition_pol_party_bg_conservatism"
+			position = { x = 35 y = 11 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "coalition_pol_party_bg_socialism"
+			position = { x = 35 y = 25 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "coalition_pol_party_bg_communism"
+			position = { x = 35 y = 69 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "coalition_pol_party_bg_nationalism"
+			position = { x = 35 y = 69 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "coalition_pol_party_bg_populism"
+			position = { x = 35 y = 38 }   # fixed 
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "coalition_pol_party_bg_authoritarianism"
+			position = { x = 35 y = 81 } # fixed
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
 		}
 	}
 }

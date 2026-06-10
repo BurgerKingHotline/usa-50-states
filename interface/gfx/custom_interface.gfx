@@ -1,5 +1,9 @@
 spriteTypes = { ## Defines custom textures used by countrypoliticsview.gui
 	spriteType = {
+		name = "GFX_coalition_disabled_overlay"
+		texturefile = "gfx/interface/coalition_disabled_overlay.dds"
+	}
+	spriteType = {
 		name = "GFX_coalition_pol_party_bg"
 		textureFile = "gfx/interface/coalition_pol_party_bg.png"
 		noOfFrames = 3
@@ -36,6 +40,35 @@ spriteTypes = { ## Defines custom textures used by countrypoliticsview.gui
 	spriteType = {
 		name = "GFX_ideology_populism_ideology_group"
 		texturefile = "gfx/interface/ideologies/nationalism_group.dds"
+	}
+	## Ideology Small Icons (aliases for coalition management panel)
+	spriteType = {
+		name = "GFX_democratic_small"
+		texturefile = "gfx/interface/ideologies/liberalism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_conservatism_ideology_small"
+		texturefile = "gfx/interface/ideologies/conservatism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_socialism_ideology_small"
+		texturefile = "gfx/interface/ideologies/socialism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_communism_small"
+		texturefile = "gfx/interface/ideologies/communism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_fascism_small"
+		texturefile = "gfx/interface/ideologies/fascism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_populism_ideology_small"
+		texturefile = "gfx/interface/ideologies/nationalism_group.dds"
+	}
+	spriteType = {
+		name = "GFX_neutrality_small"
+		texturefile = "gfx/interface/ideologies/authoritarianism_group.dds"
 	}
 	spriteType = {
 		name = "GFX_start_date_1933"

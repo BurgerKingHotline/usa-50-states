@@ -1,0 +1,533 @@
+scripted_gui = {
+	wsh_congress_button_container = {
+		window_name = "congress_button_container"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = { is_ai = no tag = WSH }
+		effects = {
+			congress_button_click = {
+				if = {
+					limit = { tag = WSH }
+					WSH_recalculate_all_seats = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = congress_visible }
+					}
+					set_country_flag = congress_visible
+				}
+				else = {
+					clr_country_flag = congress_visible
+					clr_country_flag = congress_roster_visible
+				}
+			}
+		}
+	}
+	wsh_congress_screen_container = {
+		window_name = "congress_gui"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			is_ai = no
+			has_country_flag = congress_visible
+			tag = WSH
+		}
+		dynamic_lists = {
+			wsh_senate_diagram_container = {
+				array = wsh_senate_gui_x
+				change_scope = no
+				entry_container = wsh_senate_gui_seat
+				index = seat_idx
+			}
+			wsh_house_diagram_container = {
+				array = wsh_house_gui_x
+				change_scope = no
+				entry_container = wsh_house_gui_seat
+				index = house_idx
+			}
+		}
+		properties = {
+			wsh_senate_seat_icon = {
+				x = wsh_senate_gui_x^seat_idx
+				y = wsh_senate_gui_y^seat_idx
+				frame = wsh_senate_gui_frame^seat_idx
+			}
+			wsh_house_seat_icon = {
+				x = wsh_house_gui_x^house_idx
+				y = wsh_house_gui_y^house_idx
+				frame = wsh_house_gui_frame^house_idx
+			}
+			toggle_names_button = { frame = usa_show_names_frame }
+		}
+		effects = {
+			toggle_names_button_click = {
+				if = {
+					limit = { has_country_flag = usa_show_congress_names }
+					clr_country_flag = usa_show_congress_names
+					set_variable = { usa_show_names_frame = 1 }
+				}
+				else = {
+					set_country_flag = usa_show_congress_names
+					set_variable = { usa_show_names_frame = 2 }
+				}
+			}
+			congress_close_button_click = {
+				clr_country_flag = congress_visible
+				clr_country_flag = congress_roster_visible
+			}
+			open_roster_button_click = {
+				if = {
+					limit = { has_country_flag = congress_roster_visible }
+					clr_country_flag = congress_roster_visible
+				}
+				else = { set_country_flag = congress_roster_visible }
+			}
+		}
+	}
+	wsh_congress_roster_container = {
+		window_name = "wsh_congress_roster_panel"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			is_ai = no
+			has_country_flag = congress_visible
+			has_country_flag = congress_roster_visible
+			tag = WSH
+		}
+		dynamic_lists = {
+			wsh_roster_grid = {
+				array = wsh_roster_tokens
+				change_scope = no
+				entry_container = wsh_roster_entry
+				index = roster_idx
+			}
+		}
+		properties = {
+			roster_badge_icon = { frame = wsh_roster_frames^roster_idx }
+			roster_color_icon = { frame = wsh_roster_colors^roster_idx }
+		}
+		effects = {
+			disband_coalition_button_click = {
+				if = {
+					limit = {
+						has_coalition = yes
+						has_political_power > 19
+					}
+					add_political_power = -20
+					add_stability = -0.05
+					end_coalition = yes
+				}
+			}
+			roster_coalition_button_click = {
+				if = {
+					limit = {
+						check_variable = { wsh_roster_colors^roster_idx = 1 }
+					}
+					if = {
+						limit = {
+							check_variable = { coalitions_array^1 = 2 }
+							command_power > 19
+							has_political_power > 49
+						}
+						add_political_power = -50
+						add_command_power = -20
+						add_popularity = { ideology = conservatism_ideology popularity = -0.03 }
+						add_popularity = { ideology = var:current_party_ideology_group popularity = 0.03 }
+						set_temp_variable = { coalition_stability_var = coalition_stability_array^1 }
+						add_to_temp_variable = { coalition_stability_var = 0.1 }
+						if = {
+							limit = {
+								check_variable = { coalition_stability_var > 1 }
+							}
+							set_temp_variable = { coalition_stability_var = 1 }
+						}
+						set_coalition_stability_conservatism = yes
+					}
+					else_if = {
+						limit = {
+							NOT = { has_government = conservatism_ideology }
+							NOT = {
+								check_variable = { coalitions_array^1 = 2 }
+							}
+							NOT = { has_coalition = yes }
+							can_form_coalition_with_conservatism = yes
+						}
+						set_temp_variable = { coalition_partner_var = token:conservatism_ideology }
+						add_to_coalition = yes
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { wsh_roster_colors^roster_idx = 2 }
+					}
+					if = {
+						limit = {
+							check_variable = { coalitions_array^5 = 2 }
+							command_power > 19
+							has_political_power > 49
+						}
+						add_political_power = -50
+						add_command_power = -20
+						add_popularity = { ideology = populism_ideology popularity = -0.03 }
+						add_popularity = { ideology = var:current_party_ideology_group popularity = 0.03 }
+						set_temp_variable = { coalition_stability_var = coalition_stability_array^5 }
+						add_to_temp_variable = { coalition_stability_var = 0.1 }
+						if = {
+							limit = {
+								check_variable = { coalition_stability_var > 1 }
+							}
+							set_temp_variable = { coalition_stability_var = 1 }
+						}
+						set_coalition_stability_populism = yes
+					}
+					else_if = {
+						limit = {
+							NOT = { has_government = populism_ideology }
+							NOT = {
+								check_variable = { coalitions_array^5 = 2 }
+							}
+							NOT = { has_coalition = yes }
+							can_form_coalition_with_populism = yes
+						}
+						set_temp_variable = { coalition_partner_var = token:populism_ideology }
+						add_to_coalition = yes
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { wsh_roster_colors^roster_idx = 3 }
+					}
+					if = {
+						limit = {
+							check_variable = { coalitions_array^0 = 2 }
+							command_power > 19
+							has_political_power > 49
+						}
+						add_political_power = -50
+						add_command_power = -20
+						add_popularity = { ideology = democratic popularity = -0.03 }
+						add_popularity = { ideology = var:current_party_ideology_group popularity = 0.03 }
+						set_temp_variable = { coalition_stability_var = coalition_stability_array^0 }
+						add_to_temp_variable = { coalition_stability_var = 0.1 }
+						if = {
+							limit = {
+								check_variable = { coalition_stability_var > 1 }
+							}
+							set_temp_variable = { coalition_stability_var = 1 }
+						}
+						set_coalition_stability_liberalism = yes
+					}
+					else_if = {
+						limit = {
+							NOT = { has_government = democratic }
+							NOT = {
+								check_variable = { coalitions_array^0 = 2 }
+							}
+							NOT = { has_coalition = yes }
+							can_form_coalition_with_liberalism = yes
+						}
+						set_temp_variable = { coalition_partner_var = token:democratic }
+						add_to_coalition = yes
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { wsh_roster_colors^roster_idx = 4 }
+					}
+					if = {
+						limit = {
+							check_variable = { coalitions_array^2 = 2 }
+							command_power > 19
+							has_political_power > 49
+						}
+						add_political_power = -50
+						add_command_power = -20
+						add_popularity = { ideology = socialism_ideology popularity = -0.03 }
+						add_popularity = { ideology = var:current_party_ideology_group popularity = 0.03 }
+						set_temp_variable = { coalition_stability_var = coalition_stability_array^2 }
+						add_to_temp_variable = { coalition_stability_var = 0.1 }
+						if = {
+							limit = {
+								check_variable = { coalition_stability_var > 1 }
+							}
+							set_temp_variable = { coalition_stability_var = 1 }
+						}
+						set_coalition_stability_socialism = yes
+					}
+					else_if = {
+						limit = {
+							NOT = { has_government = socialism_ideology }
+							NOT = {
+								check_variable = { coalitions_array^2 = 2 }
+							}
+							NOT = { has_coalition = yes }
+							can_form_coalition_with_socialism = yes
+						}
+						set_temp_variable = { coalition_partner_var = token:socialism_ideology }
+						add_to_coalition = yes
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { wsh_roster_colors^roster_idx = 5 }
+					}
+					if = {
+						limit = {
+							check_variable = { coalitions_array^3 = 2 }
+							command_power > 19
+							has_political_power > 49
+						}
+						add_political_power = -50
+						add_command_power = -20
+						add_popularity = { ideology = communism popularity = -0.03 }
+						add_popularity = { ideology = var:current_party_ideology_group popularity = 0.03 }
+						set_temp_variable = { coalition_stability_var = coalition_stability_array^3 }
+						add_to_temp_variable = { coalition_stability_var = 0.1 }
+						if = {
+							limit = {
+								check_variable = { coalition_stability_var > 1 }
+							}
+							set_temp_variable = { coalition_stability_var = 1 }
+						}
+						set_coalition_stability_communism = yes
+					}
+					else_if = {
+						limit = {
+							NOT = { has_government = communism }
+							NOT = {
+								check_variable = { coalitions_array^3 = 2 }
+							}
+							NOT = { has_coalition = yes }
+							can_form_coalition_with_communism = yes
+						}
+						set_temp_variable = { coalition_partner_var = token:communism }
+						add_to_coalition = yes
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { wsh_roster_colors^roster_idx = 6 }
+					}
+					if = {
+						limit = {
+							check_variable = { coalitions_array^4 = 2 }
+							command_power > 19
+							has_political_power > 49
+						}
+						add_political_power = -50
+						add_command_power = -20
+						add_popularity = { ideology = fascism popularity = -0.03 }
+						add_popularity = { ideology = var:current_party_ideology_group popularity = 0.03 }
+						set_temp_variable = { coalition_stability_var = coalition_stability_array^4 }
+						add_to_temp_variable = { coalition_stability_var = 0.1 }
+						if = {
+							limit = {
+								check_variable = { coalition_stability_var > 1 }
+							}
+							set_temp_variable = { coalition_stability_var = 1 }
+						}
+						set_coalition_stability_nationalism = yes
+					}
+					else_if = {
+						limit = {
+							NOT = { has_government = fascism }
+							NOT = {
+								check_variable = { coalitions_array^4 = 2 }
+							}
+							NOT = { has_coalition = yes }
+							can_form_coalition_with_nationalism = yes
+						}
+						set_temp_variable = { coalition_partner_var = token:fascism }
+						add_to_coalition = yes
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { wsh_roster_colors^roster_idx = 7 }
+					}
+					if = {
+						limit = {
+							check_variable = { coalitions_array^6 = 2 }
+							command_power > 19
+							has_political_power > 49
+						}
+						add_political_power = -50
+						add_command_power = -20
+						add_popularity = { ideology = neutrality popularity = -0.03 }
+						add_popularity = { ideology = var:current_party_ideology_group popularity = 0.03 }
+						set_temp_variable = { coalition_stability_var = coalition_stability_array^6 }
+						add_to_temp_variable = { coalition_stability_var = 0.1 }
+						if = {
+							limit = {
+								check_variable = { coalition_stability_var > 1 }
+							}
+							set_temp_variable = { coalition_stability_var = 1 }
+						}
+						set_coalition_stability_authoritarianism = yes
+					}
+					else_if = {
+						limit = {
+							NOT = { has_government = neutrality }
+							NOT = {
+								check_variable = { coalitions_array^6 = 2 }
+							}
+							NOT = { has_coalition = yes }
+							can_form_coalition_with_authoritarianism = yes
+						}
+						set_temp_variable = { coalition_partner_var = token:neutrality }
+						add_to_coalition = yes
+					}
+				}
+			}
+		}
+		triggers = {
+			disband_coalition_button_click = { has_coalition = yes }
+			roster_coalition_button_click = {
+				OR = {
+					AND = {
+						check_variable = { wsh_roster_colors^roster_idx = 1 }
+						OR = {
+							AND = {
+								check_variable = { coalitions_array^1 = 2 }
+								command_power > 19
+								has_political_power > 49
+							}
+							AND = {
+								NOT = { has_government = conservatism_ideology }
+								NOT = {
+									check_variable = { coalitions_array^1 = 2 }
+								}
+								NOT = { has_coalition = yes }
+								can_form_coalition_with_conservatism = yes
+							}
+						}
+					}
+					AND = {
+						check_variable = { wsh_roster_colors^roster_idx = 2 }
+						OR = {
+							AND = {
+								check_variable = { coalitions_array^5 = 2 }
+								command_power > 19
+								has_political_power > 49
+							}
+							AND = {
+								NOT = { has_government = populism_ideology }
+								NOT = {
+									check_variable = { coalitions_array^5 = 2 }
+								}
+								NOT = { has_coalition = yes }
+								can_form_coalition_with_populism = yes
+							}
+						}
+					}
+					AND = {
+						check_variable = { wsh_roster_colors^roster_idx = 3 }
+						OR = {
+							AND = {
+								check_variable = { coalitions_array^0 = 2 }
+								command_power > 19
+								has_political_power > 49
+							}
+							AND = {
+								NOT = { has_government = democratic }
+								NOT = {
+									check_variable = { coalitions_array^0 = 2 }
+								}
+								NOT = { has_coalition = yes }
+								can_form_coalition_with_liberalism = yes
+							}
+						}
+					}
+					AND = {
+						check_variable = { wsh_roster_colors^roster_idx = 4 }
+						OR = {
+							AND = {
+								check_variable = { coalitions_array^2 = 2 }
+								command_power > 19
+								has_political_power > 49
+							}
+							AND = {
+								NOT = { has_government = socialism_ideology }
+								NOT = {
+									check_variable = { coalitions_array^2 = 2 }
+								}
+								NOT = { has_coalition = yes }
+								can_form_coalition_with_socialism = yes
+							}
+						}
+					}
+					AND = {
+						check_variable = { wsh_roster_colors^roster_idx = 5 }
+						OR = {
+							AND = {
+								check_variable = { coalitions_array^3 = 2 }
+								command_power > 19
+								has_political_power > 49
+							}
+							AND = {
+								NOT = { has_government = communism }
+								NOT = {
+									check_variable = { coalitions_array^3 = 2 }
+								}
+								NOT = { has_coalition = yes }
+								can_form_coalition_with_communism = yes
+							}
+						}
+					}
+					AND = {
+						check_variable = { wsh_roster_colors^roster_idx = 6 }
+						OR = {
+							AND = {
+								check_variable = { coalitions_array^4 = 2 }
+								command_power > 19
+								has_political_power > 49
+							}
+							AND = {
+								NOT = { has_government = fascism }
+								NOT = {
+									check_variable = { coalitions_array^4 = 2 }
+								}
+								NOT = { has_coalition = yes }
+								can_form_coalition_with_nationalism = yes
+							}
+						}
+					}
+					AND = {
+						check_variable = { wsh_roster_colors^roster_idx = 7 }
+						OR = {
+							AND = {
+								check_variable = { coalitions_array^6 = 2 }
+								command_power > 19
+								has_political_power > 49
+							}
+							AND = {
+								NOT = { has_government = neutrality }
+								NOT = {
+									check_variable = { coalitions_array^6 = 2 }
+								}
+								NOT = { has_coalition = yes }
+								can_form_coalition_with_authoritarianism = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	coalition_indicator = {
+		context_type = player_context
+		parent_window_name = coalition_pol_party_bg_anchor
+		window_name = "coalition_pol_party_bg"
+		ai_enabled = { always = no }
+		visible = { always = yes }
+		properties = {
+			coalition_pol_party_bg_liberalism = { frame = coalitions_array^0 }
+			coalition_pol_party_bg_conservatism = { frame = coalitions_array^1 }
+			coalition_pol_party_bg_socialism = { frame = coalitions_array^2 }
+			coalition_pol_party_bg_communism = { frame = coalitions_array^3 }
+			coalition_pol_party_bg_nationalism = { frame = coalitions_array^4 }
+			coalition_pol_party_bg_populism = { frame = coalitions_array^5 }
+			coalition_pol_party_bg_authoritarianism = { frame = coalitions_array^6 }
+		}
+	}
+}

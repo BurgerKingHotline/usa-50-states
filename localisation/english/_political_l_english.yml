@@ -1,10 +1,34 @@
 ﻿l_english:
-
- ### Tooltips ###
- KR_party_pop_less_than: "Less than $RIGHT|%0Y$ support for [ROOT.GetRulingParty]"
- KR_party_pop_more_than: "More than $RIGHT|%0Y$ support for [ROOT.GetRulingParty]"
- has_coalition_with: "Is in coalition with the §H[?coalition_partner_to_check.GetTokenLocalizedKey]§!"
-
+ MANAGE_COALITIONS: "Manage Coalitions"
+ COALITION_MANAGEMENT_TITLE: "Coalition Government Management"
+ RULING_PARTY_LABEL: "§YRuling Party§!"
+ COALITION_FORM: "Co-Govern"
+ COALITION_MANIPULATE: "Manipulate"
+ COALITION_DISBAND: "Disband Coalition"
+ OPEN_COALITION_MANAGEMENT_TT: "Open Coalition Management"
+ 
+ COALITION_POP_LIBERALISM: "[?party_popularity@democratic|%0]"
+ COALITION_POP_CONSERVATISM: "[?party_popularity@conservatism_ideology|%0]"
+ COALITION_POP_SOCIALISM: "[?party_popularity@socialism_ideology|%0]"
+ COALITION_POP_COMMUNISM: "[?party_popularity@communism|%0]"
+ COALITION_POP_NATIONALISM: "[?party_popularity@fascism|%0]"
+ COALITION_POP_POPULISM: "[?party_popularity@populism_ideology|%0]"
+ COALITION_POP_AUTHORITARIANISM: "[?party_popularity@neutrality|%0]"
+ 
+ COALITION_ACTION_TT_LIBERALISM: "[GetCoalitionActionTooltip_Liberalism]"
+ COALITION_ACTION_TT_CONSERVATISM: "[GetCoalitionActionTooltip_Conservatism]"
+ COALITION_ACTION_TT_SOCIALISM: "[GetCoalitionActionTooltip_Socialism]"
+ COALITION_ACTION_TT_COMMUNISM: "[GetCoalitionActionTooltip_Communism]"
+ COALITION_ACTION_TT_NATIONALISM: "[GetCoalitionActionTooltip_Nationalism]"
+ COALITION_ACTION_TT_POPULISM: "[GetCoalitionActionTooltip_Populism]"
+ COALITION_ACTION_TT_AUTHORITARIANISM: "[GetCoalitionActionTooltip_Authoritarianism]"
+ 
+ ruling_party_tt: "This party is already the primary ruling party."
+ form_coalition_tt: "Invite this party to form a ruling coalition government."
+ coalition_formation_rules_tt: "§RYou cannot form a coalition with this party.§!\nIdeological alignment or current threat levels forbid it. Valid pairings:\n- Liberalism & Socialism\n- Conservatism & Populism\n- Authoritarianism & Fascism\n- Authoritarianism & Communism\n- Socialism & Communism\n- Populism & Fascism\n- §YGrand Coalition:§! Liberalism & Conservatism (Only if combined Extremist Threat > 50%)"
+ 
+ disband_coalition_tt: "Disbanding the coalition will cost £pol_power §R20§! and £stability §R-5.00%§! base stability."
+ manipulate_coalition_tt: "Siphons §G+3%§! Popularity from the partner to the ruling party and increases internal coalition stability. Costs £pol_power §R50§! and £command_power §R20§!."
  ##################
  ### Ideologies ###
  ##################
