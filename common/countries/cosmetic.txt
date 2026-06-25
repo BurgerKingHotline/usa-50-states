@@ -1,0 +1,4 @@
+MN_farmer_labor = {
+	color = rgb { 72 206 67 }
+	color_ui = rgb { 36 177 31 }
+}

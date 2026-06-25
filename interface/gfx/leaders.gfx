@@ -12,6 +12,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/leaders/Idaho/IDH_Portrait_C_Ben_Ross.dds"
 	}
 	spriteType = {
+		name = "GFX_MNS_Portrait_Floyd_B_Olson"
+		texturefile = "gfx/interface/leaders/Minnesota/MIN_Portrait_Floyd_Olson.dds"
+	}
+	spriteType = {
 		name = "GFX_WSH_Portrait_Maurice_Thompson"
 		texturefile = "gfx/interface/leaders/Washington/WSH_Portrait_Maurice_Thompson.dds"
 	}

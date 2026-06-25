@@ -9,6 +9,35 @@ country_event = {
     
     option = {
         name = "minnesota.1.a"
-        #States to the socialists - > 70, 72, 69, 86, 61, 66, 67, 74, 77, 73, 76
+        declare_war_on = {
+            target = NRD
+            type = annex_everything
+        }
+        declare_war_on = {
+            target = SDK
+            type = annex_everything
+        }
+        declare_war_on = {
+            target = WSC
+            type = annex_everything
+        }
+        declare_war_on = {
+            target = MTN
+            type = annex_everything
+        }
+        set_cosmetic_tag = MN_farmer_labor
+        start_civil_war = {
+            ideology = conservatism_ideology
+            states = {
+                64 62 63 19 68
+            }
+        }
+        set_state_controller = 70
+        set_state_controller = 72
+        set_state_controller = 86
+        set_state_controller = 74
+        set_state_controller = 77
+        set_state_controller = 73
+        set_state_controller = 76
     }
 }
