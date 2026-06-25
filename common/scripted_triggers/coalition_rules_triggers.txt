@@ -1,0 +1,73 @@
+has_coalition = {
+	is_in_array = { coalitions_array = 2 }
+}
+is_single_party_government = {
+	NOT = { has_coalition = yes }
+}
+has_high_extremist_threat = {
+	set_temp_variable = { extremism_threat = party_popularity@communism }
+	add_to_temp_variable = { extremism_threat = party_popularity@fascism }
+	check_variable = { extremism_threat > 0.50 }
+}
+can_form_coalition_with_liberalism = {
+	NOT = { has_government = democratic }
+	check_variable = { party_popularity@democratic > 0.05 }
+	OR = {
+		has_government = socialism_ideology
+		AND = {
+			has_government = conservatism_ideology
+			has_high_extremist_threat = yes
+		}
+	}
+}
+can_form_coalition_with_conservatism = {
+	NOT = { has_government = conservatism_ideology }
+	check_variable = { party_popularity@conservatism_ideology > 0.05 }
+	OR = {
+		has_government = populism_ideology
+		AND = {
+			has_government = democratic
+			has_high_extremist_threat = yes
+		}
+	}
+}
+can_form_coalition_with_socialism = {
+	NOT = { has_government = socialism_ideology }
+	check_variable = { party_popularity@socialism_ideology > 0.05 }
+	OR = {
+		has_government = democratic
+		has_government = communism
+	}
+}
+can_form_coalition_with_communism = {
+	NOT = { has_government = communism }
+	check_variable = { party_popularity@communism > 0.05 }
+	OR = {
+		has_government = socialism_ideology
+		has_government = neutrality
+	}
+}
+can_form_coalition_with_nationalism = {
+	NOT = { has_government = fascism }
+	check_variable = { party_popularity@fascism > 0.05 }
+	OR = {
+		has_government = populism_ideology
+		has_government = neutrality
+	}
+}
+can_form_coalition_with_populism = {
+	NOT = { has_government = populism_ideology }
+	check_variable = { party_popularity@populism_ideology > 0.05 }
+	OR = {
+		has_government = conservatism_ideology
+		has_government = fascism
+	}
+}
+can_form_coalition_with_authoritarianism = {
+	NOT = { has_government = neutrality }
+	check_variable = { party_popularity@neutrality > 0.05 }
+	OR = {
+		has_government = fascism
+		has_government = communism
+	}
+}

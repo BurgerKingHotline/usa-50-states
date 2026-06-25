@@ -1,0 +1,782 @@
+### Consolidated Party Popularity, Coalitions & Congress Scripted Loc ###
+defined_text = {
+	name = GetPopIcon
+	text = {
+		trigger = { has_variable = political_power_ideology }
+		localization_key = "GFX_[?global.ideology_groups^political_power_ideology.GetTokenKey]_small"
+	}
+	text = { localization_key = "GFX_[?current_party_ideology_group.GetTokenKey]_small" }
+}
+defined_text = {
+	name = GetPopularityTooltip
+	text = {
+		trigger = {
+			has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
+		}
+		localization_key = popularity_ideology_tooltip_mapped
+	}
+	text = { localization_key = popularity_ideology_tooltip_default }
+}
+defined_text = {
+	name = GetPopularityTooltipDesc
+	text = {
+		trigger = { has_government = democratic }
+		localization_key = liberalism_subtype_desc
+	}
+	text = {
+		trigger = { has_government = conservatism_ideology }
+		localization_key = conservatism_subtype_desc
+	}
+	text = {
+		trigger = { has_government = socialism_ideology }
+		localization_key = socialism_subtype_desc
+	}
+	text = {
+		trigger = { has_government = communism }
+		localization_key = communism_subtype_desc
+	}
+	text = {
+		trigger = { has_government = fascism }
+		localization_key = nationalism_subtype_desc
+	}
+	text = {
+		trigger = { has_government = populism_ideology }
+		localization_key = populism_subtype_desc
+	}
+	text = {
+		trigger = { has_government = neutrality }
+		localization_key = authoritarianism_subtype_desc
+	}
+}
+defined_text = {
+	name = GetPopularityPercent
+	text = {
+		trigger = {
+			has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
+			set_temp_variable = { temp = global.ideology_groups^political_power_ideology }
+		}
+		localization_key = party_popularity_value_mapped
+	}
+	text = { localization_key = party_popularity_value_default }
+}
+defined_text = {
+	name = GetPopularityPPGain
+	text = {
+		trigger = {
+			OR = {
+				has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
+				has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
+			}
+		}
+		localization_key = party_popularity_tooltip_long
+	}
+}
+defined_text = {
+	name = GetPopularityPPGainValue
+	text = {
+		trigger = {
+			has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_ideology_mapped }
+			set_temp_variable = { temp = global.ideology_groups^political_power_ideology }
+		}
+		localization_key = party_popularity_gain_value_mapped
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }
+			}
+		}
+		localization_key = party_popularity_gain_value_disabled
+	}
+	text = { localization_key = party_popularity_gain_value_default }
+}
+defined_text = {
+	name = GetHasCoalition
+	text = {
+		trigger = { has_coalition = yes }
+		localization_key = party_pop_coalition
+	}
+}
+defined_text = {
+	name = GetCoalitionPartyPop
+	text = {
+		trigger = {
+			check_variable = { ideology_index_next < global.ideology_groups^num }
+			check_variable = { coalitions_array^ideology_index_next = 2 }
+			set_temp_variable = { ideology_index_current = ideology_index_next }
+			add_to_temp_variable = { ideology_index_next = 1 }
+		}
+		localization_key = party_pop_coalition_ideology
+	}
+	text = {
+		trigger = {
+			check_variable = { ideology_index_next < global.ideology_groups^num }
+			set_temp_variable = { ideology_index_current = ideology_index_next }
+			add_to_temp_variable = { ideology_index_next = 1 }
+		}
+		localization_key = "[GetCoalitionPartyPop]"
+	}
+}
+defined_text = {
+	name = GetCoalitionStability
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					NOT = {
+						check_variable = { coalition_stability_array^ideology_index_current = 0 }
+					}
+				}
+				set_temp_variable = { coalition_stab = coalition_stability_array^ideology_index_current }
+			}
+			else = {
+				set_temp_variable = { coalition_stab = coalition_stability?0.5 }
+			}
+		}
+		localization_key = party_pop_coalition_stability
+	}
+}
+defined_text = {
+	name = GetCoalitionPPGain
+	text = {
+		trigger = {
+			set_temp_variable = { coalition_partner = global.ideology_groups^ideology_index_current }
+			set_temp_variable = { coalition_pp = party_popularity@var:coalition_partner }
+			if = {
+				limit = {
+					NOT = {
+						check_variable = { coalition_stability_array^ideology_index_current = 0 }
+					}
+				}
+				multiply_temp_variable = { coalition_pp = coalition_stability_array^ideology_index_current }
+			}
+			else = {
+				multiply_temp_variable = { coalition_pp = coalition_stability?0.5 }
+			}
+		}
+		localization_key = party_pop_coalition_pp_gain
+	}
+}
+defined_text = {
+	name = GetCoalitionTooltipColour
+	text = {
+		trigger = {
+			check_variable = { coalition_partner_var = token:democratic }
+		}
+		localization_key = colour_liberalism
+	}
+	text = {
+		trigger = {
+			check_variable = { coalition_partner_var = token:conservatism_ideology }
+		}
+		localization_key = colour_conservatism
+	}
+	text = {
+		trigger = {
+			check_variable = { coalition_partner_var = token:socialism_ideology }
+		}
+		localization_key = colour_socialism
+	}
+	text = {
+		trigger = {
+			check_variable = { coalition_partner_var = token:communism }
+		}
+		localization_key = colour_communism
+	}
+	text = {
+		trigger = {
+			check_variable = { coalition_partner_var = token:fascism }
+		}
+		localization_key = colour_nationalism
+	}
+	text = {
+		trigger = {
+			check_variable = { coalition_partner_var = token:populism_ideology }
+		}
+		localization_key = colour_populism
+	}
+	text = {
+		trigger = {
+			check_variable = { coalition_partner_var = token:neutrality }
+		}
+		localization_key = colour_authoritarianism
+	}
+}
+# --- Action Text Builders ---
+defined_text = {
+	name = GetCoalitionActionText_Liberalism
+	text = {
+		trigger = { has_government = democratic }
+		localization_key = RULING_PARTY_LABEL
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^0 = 2 }
+		}
+		localization_key = COALITION_MANIPULATE
+	}
+	text = { localization_key = COALITION_FORM }
+}
+defined_text = {
+	name = GetCoalitionActionText_Conservatism
+	text = {
+		trigger = { has_government = conservatism_ideology }
+		localization_key = RULING_PARTY_LABEL
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^1 = 2 }
+		}
+		localization_key = COALITION_MANIPULATE
+	}
+	text = { localization_key = COALITION_FORM }
+}
+defined_text = {
+	name = GetCoalitionActionText_Socialism
+	text = {
+		trigger = { has_government = socialism_ideology }
+		localization_key = RULING_PARTY_LABEL
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^2 = 2 }
+		}
+		localization_key = COALITION_MANIPULATE
+	}
+	text = { localization_key = COALITION_FORM }
+}
+defined_text = {
+	name = GetCoalitionActionText_Communism
+	text = {
+		trigger = { has_government = communism }
+		localization_key = RULING_PARTY_LABEL
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^3 = 2 }
+		}
+		localization_key = COALITION_MANIPULATE
+	}
+	text = { localization_key = COALITION_FORM }
+}
+defined_text = {
+	name = GetCoalitionActionText_Nationalism
+	text = {
+		trigger = { has_government = fascism }
+		localization_key = RULING_PARTY_LABEL
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^4 = 2 }
+		}
+		localization_key = COALITION_MANIPULATE
+	}
+	text = { localization_key = COALITION_FORM }
+}
+defined_text = {
+	name = GetCoalitionActionText_Populism
+	text = {
+		trigger = { has_government = populism_ideology }
+		localization_key = RULING_PARTY_LABEL
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^5 = 2 }
+		}
+		localization_key = COALITION_MANIPULATE
+	}
+	text = { localization_key = COALITION_FORM }
+}
+defined_text = {
+	name = GetCoalitionActionText_Authoritarianism
+	text = {
+		trigger = { has_government = neutrality }
+		localization_key = RULING_PARTY_LABEL
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^6 = 2 }
+		}
+		localization_key = COALITION_MANIPULATE
+	}
+	text = { localization_key = COALITION_FORM }
+}
+# --- Action Tooltip Builders ---
+defined_text = {
+	name = GetCoalitionActionTooltip_Liberalism
+	text = {
+		trigger = { has_government = democratic }
+		localization_key = ruling_party_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^0 = 2 }
+		}
+		localization_key = manipulate_coalition_tt
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = { coalitions_array^0 = 2 }
+			}
+			NOT = { has_government = democratic }
+			can_form_coalition_with_liberalism = no
+		}
+		localization_key = coalition_formation_rules_tt
+	}
+	text = { localization_key = form_coalition_tt }
+}
+defined_text = {
+	name = GetCoalitionActionTooltip_Conservatism
+	text = {
+		trigger = { has_government = conservatism_ideology }
+		localization_key = ruling_party_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^1 = 2 }
+		}
+		localization_key = manipulate_coalition_tt
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = { coalitions_array^1 = 2 }
+			}
+			NOT = { has_government = conservatism_ideology }
+			can_form_coalition_with_conservatism = no
+		}
+		localization_key = coalition_formation_rules_tt
+	}
+	text = { localization_key = form_coalition_tt }
+}
+defined_text = {
+	name = GetCoalitionActionTooltip_Socialism
+	text = {
+		trigger = { has_government = socialism_ideology }
+		localization_key = ruling_party_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^2 = 2 }
+		}
+		localization_key = manipulate_coalition_tt
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = { coalitions_array^2 = 2 }
+			}
+			NOT = { has_government = socialism_ideology }
+			can_form_coalition_with_socialism = no
+		}
+		localization_key = coalition_formation_rules_tt
+	}
+	text = { localization_key = form_coalition_tt }
+}
+defined_text = {
+	name = GetCoalitionActionTooltip_Communism
+	text = {
+		trigger = { has_government = communism }
+		localization_key = ruling_party_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^3 = 2 }
+		}
+		localization_key = manipulate_coalition_tt
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = { coalitions_array^3 = 2 }
+			}
+			NOT = { has_government = communism }
+			can_form_coalition_with_communism = no
+		}
+		localization_key = coalition_formation_rules_tt
+	}
+	text = { localization_key = form_coalition_tt }
+}
+defined_text = {
+	name = GetCoalitionActionTooltip_Nationalism
+	text = {
+		trigger = { has_government = fascism }
+		localization_key = ruling_party_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^4 = 2 }
+		}
+		localization_key = manipulate_coalition_tt
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = { coalitions_array^4 = 2 }
+			}
+			NOT = { has_government = fascism }
+			can_form_coalition_with_nationalism = no
+		}
+		localization_key = coalition_formation_rules_tt
+	}
+	text = { localization_key = form_coalition_tt }
+}
+defined_text = {
+	name = GetCoalitionActionTooltip_Populism
+	text = {
+		trigger = { has_government = populism_ideology }
+		localization_key = ruling_party_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^5 = 2 }
+		}
+		localization_key = manipulate_coalition_tt
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = { coalitions_array^5 = 2 }
+			}
+			NOT = { has_government = populism_ideology }
+			can_form_coalition_with_populism = no
+		}
+		localization_key = coalition_formation_rules_tt
+	}
+	text = { localization_key = form_coalition_tt }
+}
+defined_text = {
+	name = GetCoalitionActionTooltip_Authoritarianism
+	text = {
+		trigger = { has_government = neutrality }
+		localization_key = ruling_party_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { coalitions_array^6 = 2 }
+		}
+		localization_key = manipulate_coalition_tt
+	}
+	text = {
+		trigger = {
+			NOT = {
+				check_variable = { coalitions_array^6 = 2 }
+			}
+			NOT = { has_government = neutrality }
+			can_form_coalition_with_authoritarianism = no
+		}
+		localization_key = coalition_formation_rules_tt
+	}
+	text = { localization_key = form_coalition_tt }
+}
+# --- NEW: Roster Panel -> Coalition Links ---
+defined_text = {
+	name = GetRosterCoalitionActionText
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 1 }
+		}
+		localization_key = "[GetCoalitionActionText_Conservatism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 2 }
+		}
+		localization_key = "[GetCoalitionActionText_Populism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 3 }
+		}
+		localization_key = "[GetCoalitionActionText_Liberalism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 4 }
+		}
+		localization_key = "[GetCoalitionActionText_Socialism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 5 }
+		}
+		localization_key = "[GetCoalitionActionText_Communism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 6 }
+		}
+		localization_key = "[GetCoalitionActionText_Nationalism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 7 }
+		}
+		localization_key = "[GetCoalitionActionText_Authoritarianism]"
+	}
+}
+defined_text = {
+	name = GetRosterCoalitionActionTooltip
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 1 }
+		}
+		localization_key = "[GetCoalitionActionTooltip_Conservatism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 2 }
+		}
+		localization_key = "[GetCoalitionActionTooltip_Populism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 3 }
+		}
+		localization_key = "[GetCoalitionActionTooltip_Liberalism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 4 }
+		}
+		localization_key = "[GetCoalitionActionTooltip_Socialism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 5 }
+		}
+		localization_key = "[GetCoalitionActionTooltip_Communism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 6 }
+		}
+		localization_key = "[GetCoalitionActionTooltip_Nationalism]"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_colors^roster_idx = 7 }
+		}
+		localization_key = "[GetCoalitionActionTooltip_Authoritarianism]"
+	}
+}
+# --- Congress Fallbacks & Names ---
+defined_text = {
+	name = GetWSHSenateSeatName
+	text = { localization_key = "wsh_senate_seat_number_fallback" }
+}
+defined_text = {
+	name = GetWSHHouseSeatName
+	text = { localization_key = "wsh_house_seat_number_fallback" }
+}
+defined_text = {
+	name = GetWSHSenatePartyName
+	text = { localization_key = "wsh_senate_party_frame_[?wsh_senate_gui_frame^seat_idx]" }
+}
+defined_text = {
+	name = GetWSHHousePartyName
+	text = { localization_key = "wsh_house_party_frame_[?wsh_house_gui_frame^house_idx]" }
+}
+defined_text = {
+	name = GetWSHRosterName
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 1 }
+		}
+		localization_key = "wsh_roster_name_1"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 2 }
+		}
+		localization_key = "wsh_roster_name_2"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 3 }
+		}
+		localization_key = "wsh_roster_name_3"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 4 }
+		}
+		localization_key = "wsh_roster_name_4"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 5 }
+		}
+		localization_key = "wsh_roster_name_5"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 6 }
+		}
+		localization_key = "wsh_roster_name_6"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 7 }
+		}
+		localization_key = "wsh_roster_name_7"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 8 }
+		}
+		localization_key = "wsh_roster_name_8"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 9 }
+		}
+		localization_key = "wsh_roster_name_9"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 10 }
+		}
+		localization_key = "wsh_roster_name_10"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 11 }
+		}
+		localization_key = "wsh_roster_name_11"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 12 }
+		}
+		localization_key = "wsh_roster_name_12"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 13 }
+		}
+		localization_key = "wsh_roster_name_13"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 14 }
+		}
+		localization_key = "wsh_roster_name_14"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 15 }
+		}
+		localization_key = "wsh_roster_name_15"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 16 }
+		}
+		localization_key = "wsh_roster_name_16"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 17 }
+		}
+		localization_key = "wsh_roster_name_17"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 18 }
+		}
+		localization_key = "wsh_roster_name_18"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 19 }
+		}
+		localization_key = "wsh_roster_name_19"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 20 }
+		}
+		localization_key = "wsh_roster_name_20"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 21 }
+		}
+		localization_key = "wsh_roster_name_21"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 22 }
+		}
+		localization_key = "wsh_roster_name_22"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 23 }
+		}
+		localization_key = "wsh_roster_name_23"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 24 }
+		}
+		localization_key = "wsh_roster_name_24"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 25 }
+		}
+		localization_key = "wsh_roster_name_25"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 26 }
+		}
+		localization_key = "wsh_roster_name_26"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 27 }
+		}
+		localization_key = "wsh_roster_name_27"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 28 }
+		}
+		localization_key = "wsh_roster_name_28"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 29 }
+		}
+		localization_key = "wsh_roster_name_29"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 30 }
+		}
+		localization_key = "wsh_roster_name_30"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 31 }
+		}
+		localization_key = "wsh_roster_name_31"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 32 }
+		}
+		localization_key = "wsh_roster_name_32"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 33 }
+		}
+		localization_key = "wsh_roster_name_33"
+	}
+	text = { localization_key = "wsh_roster_name_unknown" }
+}

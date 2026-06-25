@@ -1,0 +1,32 @@
+﻿l_english:
+ WSH_debug_activation:0 "Backend Toolbox Activation"
+ WSH_debug_activation_desc:0 "Controls for developers."
+ wsh_toggle_debug_menu:0 "Toggle Developer Toolbox"
+
+ WSH_debug_category:0 "WSH Developer Toolbox"
+ WSH_debug_category_desc:0 "Rapid testing of UI systems."
+ 
+ wsh_debug_add_resources:0 "Add 500 PP & 100 CP"
+ wsh_debug_randomize_congress:0 "Randomize Popularity & Update Congress"
+ 
+ # ==========================================
+ # FORCE COALITIONS
+ # ==========================================
+ wsh_debug_coalition_lib:0 "Debug: Force Coalition (Liberal)"
+ wsh_debug_coalition_con:0 "Debug: Force Coalition (Conservative)"
+ wsh_debug_coalition_soc:0 "Debug: Force Coalition (Socialist)"
+ wsh_debug_coalition_com:0 "Debug: Force Coalition (Communist)"
+ wsh_debug_coalition_fas:0 "Debug: Force Coalition (Fascist)"
+ wsh_debug_coalition_pop:0 "Debug: Force Coalition (Populist)"
+ wsh_debug_coalition_neu:0 "Debug: Force Coalition (Non-Aligned)"
+
+ # ==========================================
+ # SWAP RULING PARTIES
+ # ==========================================
+ wsh_debug_swap_lib:0 "Debug: Swap to Liberal"
+ wsh_debug_swap_con:0 "Debug: Swap to Conservative"
+ wsh_debug_swap_soc:0 "Debug: Swap to Socialist"
+ wsh_debug_swap_com:0 "Debug: Swap to Communist"
+ wsh_debug_swap_fas:0 "Debug: Swap to Fascist"
+ wsh_debug_swap_pop:0 "Debug: Swap to Populist"
+ wsh_debug_swap_neu:0 "Debug: Swap to Non-Aligned"

@@ -1,0 +1,196 @@
+WSH_debug_activation = {
+	wsh_toggle_debug_menu = {
+		icon = generic_prepare_civil_war
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = wsh_backend_debug_active }
+				clr_country_flag = wsh_backend_debug_active
+			}
+			else = { set_country_flag = wsh_backend_debug_active }
+		}
+	}
+}
+WSH_debug_category = {
+	wsh_debug_add_resources = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { add_political_power = 500 add_command_power = 100 }
+	}
+	wsh_debug_randomize_congress = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_popularities = {
+				democratic = 10
+				conservatism_ideology = 15
+				socialism_ideology = 20
+				communism = 15
+				fascism = 15
+				populism_ideology = 10
+				neutrality = 15
+			}
+			# Instantly force the arrays to rebuild based on new popularities
+			WSH_recalculate_all_seats = yes
+		}
+	}
+	# ==========================================
+	# FORCE COALITION FORMATIONS (All 7 Groups)
+	# ==========================================
+	wsh_debug_coalition_lib = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { coalition_partner_var = token:democratic }
+			add_to_coalition = yes
+		}
+	}
+	wsh_debug_coalition_con = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { coalition_partner_var = token:conservatism_ideology }
+			add_to_coalition = yes
+		}
+	}
+	wsh_debug_coalition_soc = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { coalition_partner_var = token:socialism_ideology }
+			add_to_coalition = yes
+		}
+	}
+	wsh_debug_coalition_com = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { coalition_partner_var = token:communism }
+			add_to_coalition = yes
+		}
+	}
+	wsh_debug_coalition_fas = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { coalition_partner_var = token:fascism }
+			add_to_coalition = yes
+		}
+	}
+	wsh_debug_coalition_pop = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { coalition_partner_var = token:populism_ideology }
+			add_to_coalition = yes
+		}
+	}
+	wsh_debug_coalition_neu = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { coalition_partner_var = token:neutrality }
+			add_to_coalition = yes
+		}
+	}
+	# ==========================================
+	# SWAP RULING PARTIES RAPIDLY (All 7 Groups)
+	# ==========================================
+	wsh_debug_swap_lib = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			end_coalition = yes
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			add_popularity = { ideology = democratic popularity = 0.50 }
+		}
+	}
+	wsh_debug_swap_con = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			end_coalition = yes
+			set_politics = { ruling_party = conservatism_ideology elections_allowed = yes }
+			add_popularity = { ideology = conservatism_ideology popularity = 0.50 }
+		}
+	}
+	wsh_debug_swap_soc = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			end_coalition = yes
+			set_politics = { ruling_party = socialism_ideology elections_allowed = yes }
+			add_popularity = { ideology = socialism_ideology popularity = 0.50 }
+		}
+	}
+	wsh_debug_swap_com = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			end_coalition = yes
+			set_politics = { ruling_party = communism elections_allowed = yes }
+			add_popularity = { ideology = communism popularity = 0.50 }
+		}
+	}
+	wsh_debug_swap_fas = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			end_coalition = yes
+			set_politics = { ruling_party = fascism elections_allowed = yes }
+			add_popularity = { ideology = fascism popularity = 0.50 }
+		}
+	}
+	wsh_debug_swap_pop = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			end_coalition = yes
+			set_politics = { ruling_party = populism_ideology elections_allowed = yes }
+			add_popularity = { ideology = populism_ideology popularity = 0.50 }
+		}
+	}
+	wsh_debug_swap_neu = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			end_coalition = yes
+			set_politics = { ruling_party = neutrality elections_allowed = yes }
+			add_popularity = { ideology = neutrality popularity = 0.50 }
+		}
+	}
+}
