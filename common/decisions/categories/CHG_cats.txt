@@ -1,0 +1,11 @@
+CHG_council_choice = {
+    allowed = {
+        always = yes
+    }
+    visible = {
+        original_tag = CHG
+    }
+    visible_when_empty = yes
+    scripted_gui = CHG_leader_gui
+    priority = 10
+}

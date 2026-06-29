@@ -1,0 +1,12 @@
+state = {
+	id = 106
+	name = "STATE_106"
+	manpower = 0
+	state_category = town
+	provinces = { 3063 }
+	history = {
+		owner = CHG
+		add_core_of = CHG
+		add_core_of = INA
+	}
+}

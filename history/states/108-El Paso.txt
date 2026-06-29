@@ -1,0 +1,11 @@
+state = {
+	id = 108
+	name = "STATE_108"
+	manpower = 0
+	state_category = rural
+	provinces = { 548 1637 4333 5689 6130 }
+	history = {
+		owner = CLO
+		add_core_of = CLO
+	}
+}

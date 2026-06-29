@@ -1372,6 +1372,10 @@ WYM = {
 	color = rgb { 125 125 90 }
 	color_ui = rgb { 125 125 90 }
 }
+CHG = {
+	color = rgb { 125 25 25 }
+	color_ui = rgb { 125 25 25 }
+}
 ZZZ = {
 	color = rgb { 0 0 0 }
 	color_ui = rgb { 0 0 0 }

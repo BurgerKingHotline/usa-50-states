@@ -1,0 +1,5 @@
+CHG_council_choice = {
+    CHG_test = {
+        cost = 10000
+    }
+}

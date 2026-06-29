@@ -1,0 +1,18 @@
+capital = 10
+set_politics = {
+    ruling_party = neutrality
+    last_election = "1936.1.1"
+    election_frequency = 48
+    elections_allowed = yes
+}
+recruit_character = CHG_Council
+CHG_city_council_setup = yes
+set_popularities = {
+    democratic = 31
+    conservatism_ideology = 5
+    socialism_ideology = 25
+    populism_ideology = 6
+    neutrality = 15
+    fascism = 3
+    communism = 15
+}

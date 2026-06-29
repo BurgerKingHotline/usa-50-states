@@ -1,0 +1,15 @@
+state = {
+	id = 104
+	name = "STATE_104"
+	manpower = 0
+	state_category = town
+	provinces = { 6100 7946 8000 }
+	history = {
+		owner = CHG
+		add_core_of = CHG
+		add_core_of = ILN
+		victory_points = {
+			6100 50
+		}
+	}
+}

@@ -1,0 +1,100 @@
+# Characters for Illinois
+characters = {
+	ILLINOIS_GOV = {
+		name = "Louis L. Emmerson"
+		portraits = {
+			civilian = { large = "GFX_ILN_Portrait_Louis_L_Emmerson" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Illinois, 1929-1933"
+		}
+	}
+	ILN_Oscar_Carlstrom = {
+		name = "Oscar E. Carlstrom"
+		portraits = {
+			civilian = { large = "GFX_ILN_Portrait_Oscar_Carlstrom" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism_subideology
+			expire = "1965.1.1"
+			desc = ""
+		}
+	}
+
+	# Characters for Chicago
+	CHG_Council = {
+		name = "Chicago City Council"
+		portraits = {
+			civilian = { large = "GFX_CHG_Portrait_Council" }
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1965.1.1"
+		}
+	}
+	CHG_Henry_Horner = {
+		name = "Henry Horner"
+		portraits = {
+			civilian = { large = "GFX_CHG_Portrait_Henry_Horner" }
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+		}
+	}
+	CHG_William_Hale_Thompson = {
+		name = "William Hale Thompson"
+		portraits = {
+			civilian = { large = "GFX_CHG_Portrait_William_Hale_Thompson" }
+		}
+		country_leader = {
+			ideology = mafia_oligarchism
+			expire = "1965.1.1"
+		}
+	}
+	CHG_John_Fitzpatrick = {
+		name = "John Fitzpatrick"
+		portraits = {
+			civilian = { large = "GFX_CHG_Portrait_John_Fitzpatrick" }
+		}
+		country_leader = {
+			ideology = socialism_subideology
+			expire = "1965.1.1"
+		}
+	}
+	CHG_Anton_Cermak = {
+		name = "Anton Cermak"
+		portraits = {
+			civilian = { large = "GFX_CHG_Portrait_Anton_Cermak" }
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+		}
+	}
+
+	CHG_Newton_Jenkins = {
+		name = "Newton Jenkins"
+		portraits = {
+			civilian = { large = "GFX_CHG_Portrait_Newton_Jenkins" }
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.1.1"
+		}
+	}
+	CHG_William_Foster = {
+		name = "William Z. Foster"
+		portraits = {
+			civilian = { large = "GFX_CHG_Portrait_William_Foster" }
+		}
+		country_leader = {
+			ideology = stalinism
+			expire = "1965.1.1"
+		}
+	}
+}

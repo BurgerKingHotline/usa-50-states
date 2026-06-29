@@ -19,4 +19,29 @@ spriteTypes = {
 		name = "GFX_WSH_Portrait_Maurice_Thompson"
 		texturefile = "gfx/interface/leaders/Washington/WSH_Portrait_Maurice_Thompson.dds"
 	}
+
+	spriteType = {
+		name = "GFX_ILN_Portrait_Oscar_Carlstrom"
+		texturefile = "gfx/interface/leaders/Illinois/ILN_Oscar_Carlstrom.dds"
+	}
+	spriteType = {
+		name = "GFX_CHG_Portrait_Council"
+		texturefile = "gfx/interface/leaders/Illinois/Chicago/CHG_City_Council.dds"
+	}
+	spriteType = {
+		name = "GFX_CHG_Portrait_Henry_Horner"
+		texturefile = "gfx/interface/leaders/Illinois/Chicago/CHG_Henry_Horner.dds"
+	}
+	spriteType = {
+		name = "GFX_CHG_Portrait_William_Hale_Thompson"
+		texturefile = "gfx/interface/leaders/Illinois/Chicago/CHG_William_Hale_Thompson.dds"
+	}
+	spriteType = {
+		name = "GFX_CHG_Portrait_John_Fitzpatrick"
+		texturefile = "gfx/interface/leaders/Illinois/Chicago/CHG_John_Fitzpatrick.dds"
+	}
+	spriteType = {
+		name = "GFX_CHG_Portrait_Anton_Cermak"
+		texturefile = "gfx/interface/leaders/Illinois/Chicago/CHG_Anton_Cermak.dds"
+	}
 }

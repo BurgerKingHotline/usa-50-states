@@ -499,5 +499,10 @@
  MSP_fascism:0 "Mississippi Order"
  MSP_fascism_DEF:0 "The Mississippi Order"
 
+ # Chicago
+ CHG:0 "Chicago"
+ CHG_DEF:0 "the Free City of Chicago"
+ CHG_ADJ:0 "Chicagoan"
+
  # ZZZ Placeholder
  ZZZ:0 ""

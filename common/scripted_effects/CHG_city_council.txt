@@ -1,0 +1,195 @@
+CHG_city_council_setup = {
+	clear_array = chg_city_council_x
+	clear_array = chg_city_council_y
+	clear_array = chg_city_council_frame
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 0 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 10 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 15 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 20 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 25 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 30 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 35 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 40 }
+
+	add_to_array = { chg_city_council_x = 20 }
+	add_to_array = { chg_city_council_y = 10 }
+
+	add_to_array = { chg_city_council_x = 10 }
+	add_to_array = { chg_city_council_y = 10 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 49 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 80 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 30 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 50 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 16 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 98 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 68 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 39 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 9 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 9 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 39 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 68 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 98 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 16 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 50 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 30 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 80 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 49 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 110 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 70 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 103 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 73 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 98 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 101 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_x = 0 }
+	add_to_array = { chg_city_council_y = 131 }
+
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+	add_to_array = { chg_city_council_frame = 0 }
+}

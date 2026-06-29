@@ -1,17 +1,17 @@
 capital = 23
 set_politics = {
-        ruling_party = democratic
-        last_election = "1936.1.1"
-        election_frequency = 48
-        elections_allowed = yes
-    }
-recruit_character = ILLINOIS_GOV
+    ruling_party = conservatism_ideology
+    last_election = "1936.1.1"
+    election_frequency = 48
+    elections_allowed = yes
+}
+recruit_character = ILN_Oscar_Carlstrom
 set_popularities = {
-        democratic = 26
-        conservatism_ideology = 20
-        socialism_ideology = 20
-        populism_ideology = 12
-        neutrality = 2
-        fascism = 5
-        communism = 15
-    }
+    democratic = 27
+    conservatism_ideology = 31
+    socialism_ideology = 10
+    populism_ideology = 22
+    neutrality = 2
+    fascism = 3
+    communism = 5
+}
