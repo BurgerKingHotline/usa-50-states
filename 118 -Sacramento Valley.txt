@@ -1,0 +1,43 @@
+state = {
+	id = 118
+	name = "STATE_118"
+	manpower = 313919
+	state_category = large_city
+	provinces = { 1823 8162 5776 8256 3712 3005 8235 5786 3197 8409 1176 4602 3708 1271 984 8118 5120 8097 4821 8206 6521 2312 3797 5204 8335 4374 5625 2274 3015 1617 1708 8306 3146 5866 4485 5409 6833 2293 8159 8176 6801 5146 8177 2199 8156 8071 }
+	history = {
+		owner = CAL
+		add_core_of = CAL
+		victory_points = {
+			3797 2 #Modesto
+		}
+		victory_points = {
+			6833 25#Sacramento 9
+		}
+		victory_points = {
+			8235 5#Stockton
+		}
+		victory_points = {
+			4485 1#Mariposa
+		}
+		victory_points = {
+			5866 1#Sonora
+		}
+		victory_points = {
+			1708 1#Andreas
+		}
+		victory_points = {
+			4821 1#Jackson
+		}
+		victory_points = {
+			6801 1#Placerville
+		}
+		victory_points = {
+			8162 1#Alpine
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 3
+		}
+	}
+}
