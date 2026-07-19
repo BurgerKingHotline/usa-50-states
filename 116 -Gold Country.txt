@@ -1,0 +1,45 @@
+state = {
+	id = 116
+	name = "STATE_116"
+	manpower = 147691
+	state_category = town
+	provinces = { 1578 2152 3190 3715 4299 4519 7977 7988 4583 5705 7940 5316 414 4723 7999 7986 8003 7928 6696 6511 3896 7899 7906 13027 5270 3924 7998 1604 7943 1863 2280 3742 4855 8029 1725 13029 }
+	history = {
+		owner = CAL
+		add_core_of = CAL
+		victory_points = {
+			4855 1#Auburn
+		}
+		victory_points = {
+			7986 1#Maryarille
+		}
+		victory_points = {
+			7999 1#Chico
+		}
+		victory_points = {
+			414 1#Colusa
+		}
+		victory_points = {
+			6696 1#Willowa
+		}
+		victory_points = {
+			7943 1#Lakeport
+		}
+		victory_points = {
+			4519 1#Red Bluff
+		}
+		victory_points = {
+			2280 1#Oroville
+		}
+		victory_points = {
+			5270 1#Veha
+		}
+		victory_points = {
+			7906 1#Quincy
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+	}
+}
