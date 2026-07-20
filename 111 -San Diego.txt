@@ -1,0 +1,22 @@
+state = {
+	id = 111
+	name = "STATE_111"
+	manpower = 209669
+	state_category = city
+	history = { 
+		owner = CAL
+		add_core_of = CAL
+		victory_points = {
+			9182 15#San Diego 14
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			dockyard = 1
+			9182 = {
+				naval_base = 4
+			}
+		}
+	}
+	provinces = { 595 1001 1613 3317 3478 3638 4272 5044 5159 5236 6338 9091 9148 9149 9155 9167 9182 9184 9229 }
+}
