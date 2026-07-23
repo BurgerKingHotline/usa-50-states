@@ -8,3 +8,13 @@ CAL_1934_gubernatorial_election = {
 	visible_when_empty = yes
 
 }
+CAL_economics_of_cooperation_cat= {
+	allowed = {
+		tag = CAL
+	}
+	visible = {
+		always = yes
+	}
+	visible_when_empty = yes
+
+}

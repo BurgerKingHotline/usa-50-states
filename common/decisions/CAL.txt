@@ -1,5 +1,5 @@
-CAL_1934_gubernatorial_election = {
-	CAL_merriam_campaigning = {
+CAL_1934_gubernatorial_election_cat = {
+	CAL_merriam_campaigning_mission = {
 	    activation = {
 			always = yes
     	}
@@ -21,7 +21,7 @@ CAL_1934_gubernatorial_election = {
 		}
 
 	}
-	CAL_campaign_sinclair_1 = {
+	CAL_campaign_sinclair_1_decision = {
 
 		icon = generic_prepare_civil_war
 
@@ -57,7 +57,7 @@ CAL_1934_gubernatorial_election = {
 
 		}
 	}
-	CAL_campaign_sinclair_2 = {
+	CAL_campaign_sinclair_2_decision = {
 
 		icon = generic_prepare_civil_war
 
@@ -90,6 +90,224 @@ CAL_1934_gubernatorial_election = {
 				var = CAL_sinclair_increase_1934_gb_large
 				value = 10
 			}
+		}
+	}
+}
+CAL_economics_of_cooperation_cat = {
+	CAL_create_colonies_decision = {
+		icon = generic_prepare_civil_war
+		state_target = yes
+		on_map_mode = map_only
+		days_remove = 50
+		allowed = {
+			original_tag = CAL
+		}
+
+		visible = {
+			
+		}
+		targets = {
+			4 118 116 117 115
+
+		}
+		target_trigger = {
+		}
+
+		available = {
+		}
+		modifier = {
+		}
+		
+		cost = 50
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_manpower = 25000
+			}
+			
+		}
+
+		complete_effect = {
+		}
+	}
+	CAL_create_colonies_small_decision = {
+		icon = generic_prepare_civil_war
+		state_target = yes
+		on_map_mode = map_only
+		days_remove = 50
+		allowed = {
+			original_tag = CAL
+		}
+
+		visible = {
+			
+		}
+		targets = {
+			109 110 114
+		}
+		target_trigger = {
+		}
+
+		available = {
+		}
+		modifier = {
+		}
+		
+		cost = 30
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_manpower = 5000
+			}
+			
+		}
+
+		complete_effect = {
+		}
+	}
+	CAL_sieze_idle_factories_decision = {
+		icon = generic_prepare_civil_war
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		days_remove = 50
+		allowed = {
+			original_tag = CAL
+		}
+		priority = 20
+
+		visible = {
+			
+		}
+		targets = {
+			118 4 113 112 111
+		}
+		target_trigger = {
+		}
+
+		available = {
+		}
+		modifier = {
+		}
+		
+		cost = 50
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+		}
+
+		complete_effect = {
+		}
+	}
+	CAL_appropiate_undeveloped_land_decision = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = 180 
+		days_remove = 35
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+		modifier = {
+		}
+		
+		cost = 20
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 10
+				date > 1936.1.1
+			}
+		}
+		remove_effect = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			
+		}
+
+		complete_effect = {
+		}
+	}
+	CAL_regulate_industry_desc = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = 20 
+		days_remove = 180
+		priority = 10
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+		modifier = {
+			stability_weekly = 0.0025
+			production_factory_efficiency_gain_factor = -0.2
+		}
+		
+		cost = 40
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 10
+				date > 1936.1.1
+			}
+		}
+		remove_effect = {
+		}
+
+		complete_effect = {
 		}
 	}
 }
