@@ -8,6 +8,15 @@ bookmarks = {
 		"WSH" = { history = "WSH_GREAT_COLLAPSE_DESC" }
 		"ORE" = { history = "ORE_GREAT_COLLAPSE_DESC" }
 		"IDH" = { history = "IDH_GREAT_COLLAPSE_DESC" }
+		"CAL" = { 
+			history = "CAL_GREAT_COLLAPSE_DESC" 
+			ideology = conservatism_ideology
+			ideas = {
+				CAL_great_depression_8
+				CAL_civil_unrest_4
+				CAL_joaquin_strikes
+			}
+		}
 		"---" = { history = "OTHER_GREAT_COLLAPSE_DESC" }
 		effect = {
 			randomize_weather = 12345 # <- Obligatory in every bookmark !

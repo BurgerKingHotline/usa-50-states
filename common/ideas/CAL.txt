@@ -1,0 +1,362 @@
+ideas = {
+	country = {
+		CAL_great_depression_1 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.6#-6
+				local_resources_factor = -0.1#-10
+				production_speed_buildings_factor = -0.1#-10
+				stability_factor = -0.8#-8
+				war_support_factor = -0.2#-4
+			}
+		}
+		CAL_great_depression_2 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.12#-6
+				local_resources_factor = -0.2#-10
+				production_speed_buildings_factor = -0.2#-10
+				stability_factor = -0.16#-8
+				war_support_factor = -0.4#-4
+			}
+		}
+		CAL_great_depression_3 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.18#-6
+				local_resources_factor = -0.3#-10
+				production_speed_buildings_factor = -0.3#-10
+				stability_factor = -0.24#-8
+				war_support_factor = -0.6#-4
+			}
+		}
+		CAL_great_depression_4 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.24#-6
+				local_resources_factor = -0.4#-10
+				production_speed_buildings_factor = -0.4#-10
+				stability_factor = -0.32#-8
+				war_support_factor = -0.8#-4
+			}
+		}
+		CAL_great_depression_5 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.30#-6
+				local_resources_factor = -0.5#-10
+				production_speed_buildings_factor = -0.5#-10
+				stability_factor = -0.40#-8
+				war_support_factor = -0.10#-4
+			}
+		}
+		CAL_great_depression_6 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.36#-6
+				local_resources_factor = -0.6#-10
+				production_speed_buildings_factor = -0.6#-10
+				stability_factor = -0.48#-8
+				war_support_factor = -0.12#-4
+			}
+		}
+		CAL_great_depression_7 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.42#-6
+				local_resources_factor = -0.7#-10
+				production_speed_buildings_factor = -0.7#-10
+				stability_factor = -0.56#-8
+				war_support_factor = -0.14#-4
+			}
+		}
+		CAL_great_depression_8 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.48
+				local_resources_factor = -0.8
+				production_speed_buildings_factor = -0.8
+				stability_factor = -0.64
+				war_support_factor = -0.16
+			}
+		}
+		CAL_great_depression_9 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.54
+				local_resources_factor = -0.9
+				production_speed_buildings_factor = -0.9
+				stability_factor = -0.72
+				war_support_factor = -0.18
+			}
+		}
+		CAL_great_depression_10 = {#WORST
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.60#-6
+				local_resources_factor = -0.95#-10
+				production_speed_buildings_factor = -0.95#-10
+				stability_factor = -0.8 #-8
+				war_support_factor = -0.20#-4
+			}
+		}
+		CAL_civil_unrest_1 = {
+			picture = SPR_political_violence
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.2
+				stability_factor = -0.1
+				war_support_factor = -0.8
+			}
+		}
+		CAL_civil_unrest_2 = {
+			picture = SPR_political_violence
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.4
+				stability_factor = -0.2
+				war_support_factor = -0.16
+			}
+		}
+		CAL_civil_unrest_3 = {
+			picture = SPR_political_violence
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.6
+				stability_factor = -0.3
+				war_support_factor = -0.24
+			}
+		}
+		CAL_civil_unrest_4 = {
+			picture = SPR_political_violence
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 0.8
+				stability_factor = -0.4
+				war_support_factor = -0.32
+			}
+		}
+		CAL_civil_unrest_5 = {
+			picture = SPR_political_violence
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_cost = 1
+				stability_factor = -0.5
+				war_support_factor = -0.4
+			}
+		}
+		CAL_longshoremen_strikes = {
+			picture = generic_production_bonus #generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				industrial_capacity_dockyard = -0.5
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				consumer_goods_factor = 0.2
+			}
+		}
+		CAL_francisco_general_strikes = {
+			picture = generic_production_bonus#generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				industrial_capacity_dockyard = -0.95
+				industrial_capacity_factory = -0.2
+				stability_factor = -0.2
+				war_support_factor = -0.2
+				consumer_goods_factor = 0.5
+			}
+		}
+		CAL_joaquin_strikes = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				consumer_goods_factor = 0.2
+				stability_factor = -0.2
+				war_supprt_factor = -0.2
+			}
+		}
+	}
+}

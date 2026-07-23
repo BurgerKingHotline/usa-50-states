@@ -1,1 +1,32 @@
-﻿
+﻿add_namespace = ffl_news
+
+
+news_event = {#Bloody Thursday
+	id = ffl_news.1
+	title = ffl_news.1.t
+	desc = ffl_news.1.desc
+	picture = GFX_news_event_ger_civil_war
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ffl_news.1.a
+	}
+}
+
+news_event = {#Upton Sinclair Wins Election
+	id = ffl_news.2
+	title = ffl_news.2.t
+	desc = ffl_news.2.desc
+	picture = GFX_news_event_ger_civil_war
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ffl_news.2.a
+	}
+}

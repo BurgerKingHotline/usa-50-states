@@ -1,17 +1,44 @@
-capital = 4
+set_country_flag = CAL_intro_tree
+set_country_flag = CAL_joaquin_strike
+set_country_flag = CAL_epic_election_tree
+#set_country_flag = CAL_ila_strike
+set_variable = { CAL_great_depression_value = 80 }
+set_variable = { CAL_sinclair_support_1934_gb = 20 }
+set_variable = { CAL_merriam_support_1934_gb = 30 }
+set_variable = { CAL_haight_support_1934_gb = 10 }
+set_variable = { CAL_haight_increase_1934_gb = 2 }
+set_variable = { CAL_merriam_increase_1934_gb = 4 }
+set_variable = { CAL_sinclair_increase_1934_gb = 2 }
+set_variable = { CAL_merriam_popularity_increase_1934_gb = 0.005 }
+set_variable = { CAL_sinclair_increase_1934_gb_small = 4 }
+set_variable = { CAL_sinclair_increase_1934_gb_large = 4 }
+
+capital = 118
+
+recruit_character = CAL_JAMES_ROLPH
+recruit_character = CAL_UPTON_SINCLAIR
+
 set_politics = {
-        ruling_party = democratic
-        last_election = "1936.1.1"
+        ruling_party = conservatism_ideology
+        last_election = "1930.11.6"
         election_frequency = 48
         elections_allowed = yes
-    }
-recruit_character = CALIFORNIA_GOV
+}
 set_popularities = {
-        democratic = 28
-        conservatism_ideology = 19
-        socialism_ideology = 23
-        populism_ideology = 23
-        neutrality = 2
+        democratic = 23
+        conservatism_ideology = 38
+        socialism_ideology = 24
+        populism_ideology = 4
+        neutrality = 6
         fascism = 3
         communism = 2
-    }
+}
+set_research_slots = 3
+set_stability = 0.1
+set_war_support = 0.15
+
+add_ideas = {
+        CAL_great_depression_8
+        CAL_joaquin_strikes
+        CAL_civil_unrest_4
+}

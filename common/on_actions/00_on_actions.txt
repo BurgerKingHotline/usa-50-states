@@ -1,0 +1,7 @@
+on_action = {
+	on_new_term_election = {
+		random_events = {
+			100 = california_events.6
+		}
+	}
+}

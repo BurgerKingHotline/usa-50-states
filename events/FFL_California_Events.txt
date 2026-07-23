@@ -1,0 +1,217 @@
+add_namespace = california_events
+
+country_event = {
+	id = california_events.1#Waterfront strike
+	title = california_events.1.t
+	desc = california_events.1.desc
+	picture = GFX_report_event_usa_election_generic
+
+	trigger = {
+		date > 1934.5.1
+	}
+	
+	option = { 
+		name = california_events.1.a
+		add_ideas = CAL_longshoremen_strikes
+		country_event = {
+			id = california_events.2
+			days = 84
+			random_hours = 12
+		}
+	}
+}
+country_event = {
+	id = california_events.2#General San Francisco Strike
+	title = california_events.2.t
+	desc = california_events.2.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	immediate = {
+		news_event = ffl_news.1#Bloody thursday
+		4 = {
+			add_manpower = -2
+		}
+		swap_ideas = {
+			remove_idea = CAL_longshoremen_strikes
+			add_idea = CAL_francisco_general_strikes
+		}
+	}
+	option = { #Send in National Guard
+		name = california_events.2.a
+		country_event = {
+			id = california_events.3
+			days = 3
+			random_days = 2
+			random_hours = 12
+		}
+	}
+	option = { #Cave to Demands
+		name = california_events.2.b
+		country_event = {
+			id = california_events.4
+			days = 3
+			random_days = 2
+			random_hours = 12
+		}
+	}
+	option = { #Negotiate
+		name = california_events.2.c
+		country_event = {
+			id = california_events.5
+			days = 3
+			random_days = 2
+			random_hours = 12
+		}
+	}
+}
+country_event = {
+	id = california_events.3#Send in National Guard
+	title = california_events.3.t
+	desc = california_events.3.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	option = { #Send in National Guard
+		name = california_events.3.a
+		remove_ideas = CAL_francisco_general_strikes
+	}
+}
+country_event = {
+	id = california_events.4#Do Nothing
+	title = california_events.4.t
+	desc = california_events.4.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	option = { #Do Nothing
+		name = california_events.4.a
+		remove_ideas = CAL_francisco_general_strikes
+	}
+}
+country_event = {
+	id = california_events.5#Negotiate
+	title = california_events.5.t
+	desc = california_events.5.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	option = { #Negotiate
+		name = california_events.5.a
+		remove_ideas = CAL_francisco_general_strikes
+	}
+}
+country_event = {
+	id = california_events.6#Governor Election 1934
+	title = california_events.6.t
+	desc = california_events.6.desc
+	picture = GFX_report_event_usa_election_generic
+	trigger = {
+		tag = CAL
+	}
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = CAL_intro_tree
+		clr_country_flag = CAL_epic_election_tree
+		set_country_flag = CAL_epic_path
+		
+	}
+	option = { #Negotiate
+		name = california_events.6.a
+		set_politics = {
+			ruling_party = socialism_ideology
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = socialism_ideology
+			popularity = 0.05
+		}
+		news_event = {
+			id = ffl_news.2
+		}
+	}
+	after = {
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = {
+	id = california_events.7#Disarm Joaquin
+	title = california_events.7.t
+	desc = california_events.7.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	option = {
+		name = california_events.7.a
+	}
+}
+country_event = {
+	id = california_events.8#Negotiate Joaquin
+	title = california_events.8.t
+	desc = california_events.8.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	option = {
+		name = california_events.8.a
+	}
+}
+country_event = {
+	id = california_events.9#Joaquin Workers Leave
+	title = california_events.9.t
+	desc = california_events.9.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	option = {
+		name = california_events.9.a
+		CAL_great_depression_level_down = yes
+	}
+}
+country_event = {
+	id = california_events.10#Joaquin Workers Win, Emboldend
+	title = california_events.10.t
+	desc = california_events.10.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	option = {
+		name = california_events.10.a
+		CAL_civil_unrest_level_up = yes
+	}
+}
+country_event = {
+	id = california_events.11#Murder of Brooke Hart
+	title = california_events.11.t
+	desc = california_events.11.desc
+	picture = GFX_report_event_usa_election_generic
+
+	trigger = {
+		date > 1933.11.1
+	}
+	option = {
+		name = california_events.11.a
+		country_event = {
+			id = california_events.12
+			days = 10
+			random_days = 5
+			random_hours = 12
+		}
+	}
+}
+country_event = {
+	id = california_events.12#Lynching of Thomas Harold THurmond and John M. Holmes
+	title = california_events.12.t
+	desc = california_events.12.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	option = {
+		name = california_events.12.a
+		CAL_civil_unrest_level_down = yes
+	}
+}
+
+
+
+

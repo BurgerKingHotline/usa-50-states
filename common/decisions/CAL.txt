@@ -1,0 +1,95 @@
+CAL_1934_gubernatorial_election = {
+	CAL_merriam_campaigning = {
+	    activation = {
+			always = yes
+    	}
+	    available = {
+			always = no
+	    }
+    	icon = mission_icon     # For GFX_decision_mission_icon
+	    is_good = no
+	    days_mission_timeout = 100
+    	selectable_mission = no
+		priority = 10
+	    complete_effect = {
+	    }
+    	timeout_effect = {
+			add_popularity = {
+				ideology = conservatism_ideology
+				popularity = CAL_merriam_popularity_increase_1934_gb
+			}
+		}
+
+	}
+	CAL_campaign_sinclair_1 = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = 30 
+		days_remove = 35
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+		
+		cost = 25
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+			socialism_ideology_drift = 0.01
+		}
+
+		complete_effect = {
+			add_to_variable = {
+				var = CAL_sinclair_increase_1934_gb_small
+				value = 5
+			}
+
+		}
+	}
+	CAL_campaign_sinclair_2 = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = 30 
+		days_remove = 35
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+		modifier = {
+			socialism_ideology_drift = 0.03
+		}
+		
+		cost = 50
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			add_to_variable = {
+				var = CAL_sinclair_increase_1934_gb_large
+				value = 10
+			}
+		}
+	}
+}

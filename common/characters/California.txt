@@ -1,15 +1,25 @@
 # Characters for California
 characters = {
-	CALIFORNIA_GOV = {
-		name = "James Rolph"
+	CAL_JAMES_ROLPH = {
+		name = "James Rolph Jr."
 		portraits = {
-			civilian = { large = "GFX_ABM_Portrait_James_Rolph" }
+			civilian = { large = "GFX_CAL_Portrait_James_Rolph" }
 		}
 		gender = male
 		country_leader = {
-			ideology = conservatism
-			expire = "1965.1.1"
-			desc = "Governor of California, 1931-1934"
+			ideology = conservatism_subideology
+			expire = "1934.11.6"
+			desc = CAL_james_rolph_desc
+		}
+	}
+	CAL_UPTON_SINCLAIR = {
+		name = "Upton Sinclair"
+		portraits = {}
+		gender = male
+		country_leader = {
+			ideology = socialism_subideology
+			expire = "1968.11.25"
+			desc = CAL_upton_sinclair_desc
 		}
 	}
 }
