@@ -1376,6 +1376,10 @@ CHG = {
 	color = rgb { 125 25 25 }
 	color_ui = rgb { 125 25 25 }
 }
+UMW = {
+	color = rgb { 75 75 50 }
+	color_ui = rgb { 25 20 5}
+}
 ZZZ = {
 	color = rgb { 0 0 0 }
 	color_ui = rgb { 0 0 0 }

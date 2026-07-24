@@ -1,0 +1,20 @@
+characters = {
+	UMW_Bill_Blizzard = {
+		name = "Bill Blizzard"
+		portraits = {
+			civilian = { large = "GFX_UMW_Portrait_Bill_Blizzard" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism_subideology
+			expire = "1965.1.1"
+		}
+		field_marshal = {
+			skill = 5
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 5
+		}
+	}
+}
