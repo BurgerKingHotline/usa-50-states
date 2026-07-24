@@ -504,5 +504,10 @@
  CHG_DEF:0 "the Free City of Chicago"
  CHG_ADJ:0 "Chicagoan"
 
+ # Mine Workers
+ UMW:0 "United Mine Workers"
+ UMW_DEF:0 "the United Mine Workers"
+ UMW_ADJ:0 "United Mine Workers"
+
  # ZZZ Placeholder
  ZZZ:0 ""

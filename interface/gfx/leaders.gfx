@@ -48,4 +48,8 @@ spriteTypes = {
 		name = "GFX_CHG_Portrait_Anton_Cermak"
 		texturefile = "gfx/interface/leaders/Illinois/Chicago/CHG_Anton_Cermak.dds"
 	}
+	spriteType = {
+		name = "GFX_UMW_Portrait_Bill_Blizzard"
+		texturefile = "gfx/interface/leaders/WestVirginia/WV_Portrait_Bill_Blizzard.dds"
+	}
 }

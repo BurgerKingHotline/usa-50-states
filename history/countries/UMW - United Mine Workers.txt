@@ -1,0 +1,15 @@
+capital = 49
+set_politics = {
+        ruling_party = conservatism_ideology
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
+recruit_character = UMW_Bill_Blizzard
+set_popularities = {
+    democratic = 3
+    conservatism_ideology = 42
+    socialism_ideology = 4
+    populism_ideology = 12
+    communism = 39
+}
