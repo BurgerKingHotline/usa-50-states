@@ -94,17 +94,162 @@ CAL_1934_gubernatorial_election_cat = {
 	}
 }
 CAL_economics_of_cooperation_cat = {
+	CAL_growing_costs_epic_mission = {
+		activation = {
+			has_completed_focus = CAL_the_epic_plan
+		}
+		allowed = {
+			original_tag = CAL
+		}
+		cancel_trigger = {
+			#always = no
+		}
+		days_re_enable = 0
+		priority = 50
+		days_mission_timeout = 90
+		available = {
+			always = no
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+			activate_mission = CAL_growing_costs_epic_mission
+			CAL_epic_costs_level_up = yes
+		}
+		complete_effect = {
+		}
+
+	}
+	CAL_sell_bonds_decision = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = 270 
+		days_remove = 35
+		priority = 49
+
+		visible = {
+			has_completed_focus = CAL_money_act
+			
+		}
+
+		available = {
+		}
+		modifier = {
+		}
+		
+		cost = CAL_sell_epic_bonds_cost
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 10
+				OR = {
+					has_idea = CAL_epic_plan_cost_7
+				}
+			}
+		}
+		remove_effect = {
+			CAL_epic_costs_level_down = yes
+		}
+
+		complete_effect = {
+		}
+
+	}
+	CAL_increase_exports_decision = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = 270 
+		days_remove = 180
+		priority = 49
+
+		visible = {
+			has_completed_focus = CAL_money_act
+			
+		}
+
+		available = {
+		}
+		modifier = {
+			min_export = 0.25
+		}
+		
+		cost = 50
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 10
+				OR = {
+					has_idea = CAL_epic_plan_cost_7
+				}
+			}
+		}
+		remove_effect = {
+		}
+
+		complete_effect = {
+			CAL_epic_costs_level_down = yes
+		}
+
+	}
+	CAL_depression_recovery_progress_mission = {
+		activation = {
+			has_completed_focus = CAL_the_epic_plan
+			CAL_has_depression_idea = yes
+		}
+		allowed = {
+			original_tag = CAL
+		}
+		cancel_trigger = {
+			#always = no
+		}
+		days_re_enable = 10
+		priority = 10
+		days_mission_timeout = 180
+		available = {
+			#always = no
+			check_variable = {
+				var = CAL_depression_recovery
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+			activate_mission = CAL_depression_recovery_progress_mission
+		}
+		complete_effect = {
+			CAL_great_depression_level_down = yes
+			subtract_from_variable = {
+				var = CAL_depression_recovery
+				value = 100
+			}
+		}
+
+	}
 	CAL_create_colonies_decision = {
 		icon = generic_prepare_civil_war
 		state_target = yes
 		on_map_mode = map_only
-		days_remove = 50
+		days_remove = 90
 		allowed = {
 			original_tag = CAL
 		}
 
 		visible = {
-			
+			has_completed_focus = CAL_land_colonies_act
 		}
 		targets = {
 			4 118 116 117 115
@@ -135,6 +280,11 @@ CAL_economics_of_cooperation_cat = {
 				}
 				add_manpower = 25000
 			}
+			add_to_variable = {
+				var = CAL_depression_recovery
+				value = 65
+				tooltip = add_65_to_depression_recovery_var_tt
+			}
 			
 		}
 
@@ -145,13 +295,13 @@ CAL_economics_of_cooperation_cat = {
 		icon = generic_prepare_civil_war
 		state_target = yes
 		on_map_mode = map_only
-		days_remove = 50
+		days_remove = 89
 		allowed = {
 			original_tag = CAL
 		}
 
 		visible = {
-			
+			has_completed_focus = CAL_land_colonies_act
 		}
 		targets = {
 			109 110 114
@@ -181,6 +331,11 @@ CAL_economics_of_cooperation_cat = {
 				}
 				add_manpower = 5000
 			}
+			add_to_variable = {
+				var = CAL_depression_recovery
+				value = 35
+				tooltip = add_35_to_depression_recovery_var_tt
+			}
 			
 		}
 
@@ -195,9 +350,10 @@ CAL_economics_of_cooperation_cat = {
 		allowed = {
 			original_tag = CAL
 		}
-		priority = 20
+		priority = 70
 
 		visible = {
+			has_completed_focus = CAL_production_act
 			
 		}
 		targets = {
@@ -211,7 +367,7 @@ CAL_economics_of_cooperation_cat = {
 		modifier = {
 		}
 		
-		cost = 50
+		cost = 100
 
 		fire_only_once = yes
 
@@ -226,6 +382,11 @@ CAL_economics_of_cooperation_cat = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			add_to_variable = {
+				var = CAL_depression_recovery
+				value = 75
+				tooltip = add_75_to_depression_recovery_var_tt
 			}
 			
 		}
@@ -242,8 +403,14 @@ CAL_economics_of_cooperation_cat = {
 		}
 		days_re_enable = 180 
 		days_remove = 35
+		priority = 69
 
 		visible = {
+			OR = {
+				has_completed_focus = CAL_production_act
+				has_completed_focus = CAL_land_colonies_act
+				always = yes
+			}
 			
 		}
 
@@ -271,7 +438,7 @@ CAL_economics_of_cooperation_cat = {
 		complete_effect = {
 		}
 	}
-	CAL_regulate_industry_desc = {
+	CAL_regulate_industry_descision = {
 
 		icon = generic_prepare_civil_war
 
@@ -280,9 +447,10 @@ CAL_economics_of_cooperation_cat = {
 		}
 		days_re_enable = 20 
 		days_remove = 180
-		priority = 10
+		priority = 55
 
 		visible = {
+			has_completed_focus = CAL_the_epic_plan
 			
 		}
 

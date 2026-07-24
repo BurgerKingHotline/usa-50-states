@@ -1,3 +1,5 @@
+load_oob = "CAL_ffl_1933"
+
 set_country_flag = CAL_intro_tree
 set_country_flag = CAL_joaquin_strike
 set_country_flag = CAL_epic_election_tree
@@ -12,6 +14,8 @@ set_variable = { CAL_sinclair_increase_1934_gb = 2 }
 set_variable = { CAL_merriam_popularity_increase_1934_gb = 0.005 }
 set_variable = { CAL_sinclair_increase_1934_gb_small = 4 }
 set_variable = { CAL_sinclair_increase_1934_gb_large = 4 }
+set_variable = { CAL_depression_recovery = 0}
+set_variable = { CAL_sell_epic_bonds_cost = 100 }
 
 capital = 118
 
@@ -41,4 +45,77 @@ add_ideas = {
         CAL_great_depression_8
         CAL_joaquin_strikes
         CAL_civil_unrest_4
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_technology = {
+			iw_small_airframe = 1
+			basic_small_airframe = 1
+			iw_medium_airframe = 1
+			basic_medium_airframe = 1
+			engines_1 = 1
+			engines_2 = 1
+			aa_lmg = 1
+			early_bombs = 1
+			aircraft_construction = 1
+			air_torpedoe_1 = 1
+			bba_early_transport_plane = 1
+		}
+	else = {
+		set_air_oob = "USA_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			cv_early_fighter = 1
+			early_bomber = 1
+			early_transport_plane = 1
+		}
+	}
+}
+set_technology = {
+	basic_naval_mines = 1
+	submarine_mine_laying = 1
+	early_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	early_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	early_ship_hull_carrier = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	#basic_medium_battery = 1
+	basic_heavy_battery = 1
+	basic_torpedo = 1
+	sonar = 1
+	basic_depth_charges = 1
+	basic_cruiser_armor_scheme = 1
+	mtg_transport = 1
+	#improved_airplane_launcher = 1
+	basic_dp_light_battery = 1
+}
+
+set_technology = {
+	infantry_weapons = 1
+	tech_trucks = 1
+	tech_support = 1		
+	gw_artillery = 1
+	fuel_silos = 1
+	marines = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
 }

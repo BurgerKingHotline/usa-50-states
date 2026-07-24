@@ -1,0 +1,14 @@
+CAL_has_depression_idea = {
+	OR = {
+		has_idea = CAL_great_depression_1
+		has_idea = CAL_great_depression_2
+		has_idea = CAL_great_depression_3
+		has_idea = CAL_great_depression_4
+		has_idea = CAL_great_depression_5
+		has_idea = CAL_great_depression_6
+		has_idea = CAL_great_depression_7
+		has_idea = CAL_great_depression_8
+		has_idea = CAL_great_depression_9
+		has_idea = CAL_great_depression_10
+	}
+}

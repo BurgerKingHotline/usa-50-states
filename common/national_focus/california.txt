@@ -908,6 +908,7 @@ focus_tree = {
 			focus = CAL_the_epic_plan
 		}
 		completion_reward = { 
+			unlock_decision_tooltip = CAL_sell_bonds_decision
 		}
 	}
 	focus = {
@@ -930,6 +931,7 @@ focus_tree = {
 			focus = CAL_form_legal_committee
 		}
 		completion_reward = { 
+			unlock_decision_category_tooltip = CAL_economics_of_cooperation_cat
 		}
 	}
 	focus = {
@@ -945,7 +947,8 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_the_epic_plan
 		}
-		completion_reward = { 
+		completion_reward = {
+			unlock_decision_tooltip = CAL_create_colonies_decision
 		}
 	}
 	focus = {
@@ -962,6 +965,7 @@ focus_tree = {
 			focus = CAL_the_epic_plan
 		}
 		completion_reward = { 
+			unlock_decision_tooltip = CAL_sieze_idle_factories_decision
 		}
 	}
 	focus = {

@@ -13,7 +13,7 @@ CAL_economics_of_cooperation_cat= {
 		tag = CAL
 	}
 	visible = {
-		always = yes
+		has_completed_focus = CAL_the_epic_plan
 	}
 	visible_when_empty = yes
 

@@ -80,7 +80,7 @@ CAL_great_depression_level_up = {
 
 #Important to put LOWEST first
 CAL_great_depression_level_down = {
-	#MAKE WORSE
+	#MAKE BETTER
 	custom_effect_tooltip = CAL_great_depression_down_tt
 	if = {
 		limit = { has_idea = CAL_great_depression_1 }
@@ -129,17 +129,10 @@ CAL_great_depression_level_down = {
 		}
 	}
 	if = {
-		limit = { has_idea = CAL_great_depression_7 }
-		swap_ideas = {
-			remove_idea = CAL_great_depression_7
-			add_idea = CAL_great_depression_8
-		}
-	}
-	if = {
 		limit = { has_idea = CAL_great_depression_8 }
 		swap_ideas = {
 			remove_idea = CAL_great_depression_8
-			add_idea = CAL_great_depression_9
+			add_idea = CAL_great_depression_7
 		}
 	}
 	if = {
@@ -156,11 +149,18 @@ CAL_great_depression_level_down = {
 			add_idea = CAL_great_depression_9
 		}
 	}
+#	if = {
+#		limit = { has_idea = CAL_great_depression_11 }
+#		swap_ideas = {
+#			remove_idea = CAL_great_depression_10
+#			add_idea = CAL_great_depression_9
+#		}
+#	}
 }
 
 CAL_civil_unrest_level_up = {
 	# level 5 not relevant. Cannot go above.
-	# MAKE BETTER
+	# MAKE WORSE
 	custom_effect_tooltip = CAL_level_up_civil_unrest_tt
 	if = {
 		limit = { has_idea = CAL_civil_unrest_1 }
@@ -192,10 +192,12 @@ CAL_civil_unrest_level_up = {
 	}
 	else_if = {
 		limit = { has_idea = CAL_civil_unrest_5 }
-		add_stability = -0.1
+		add_political_power = -50
 	}
 	else = {
-		add_stability = 0.05
+		add_ideas = {
+			CAL_civil_unrest_1
+		}
 	}
 }
 
@@ -243,5 +245,112 @@ CAL_civil_unrest_remove = {
 		CAL_civil_unrest_3
 		CAL_civil_unrest_4
 		CAL_civil_unrest_5
+	}
+}
+
+
+CAL_epic_costs_level_up = {
+	# level 5 not relevant. Cannot go above.
+	# MAKE WORSE
+	custom_effect_tooltip = CAL_level_up_epic_costs_tt
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_1 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_1
+			add_idea = CAL_epic_plan_cost_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = CAL_epic_plan_cost_2 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_2
+			add_idea = CAL_epic_plan_cost_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = CAL_epic_plan_cost_3 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_3
+			add_idea = CAL_epic_plan_cost_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = CAL_epic_plan_cost_4 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_4
+			add_idea = CAL_epic_plan_cost_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = CAL_epic_plan_cost_5 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_5
+			add_idea = CAL_epic_plan_cost_6
+		}
+	}
+	else_if = {
+		limit = { has_idea = CAL_epic_plan_cost_6 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_6
+			add_idea = CAL_epic_plan_cost_7
+		}
+	}
+	else = {
+		add_ideas = {
+			CAL_epic_plan_cost_1
+		}
+		
+	}
+}
+
+
+CAL_epic_costs_level_down = {
+	#MAKE BETTER
+	custom_effect_tooltip = CAL_civil_unrest_down_tt
+	if = {
+		limit = { has_idea =CAL_epic_plan_cost_1 }
+		remove_ideas = CAL_epic_plan_cost_1
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_2 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_2
+			add_idea = CAL_epic_plan_cost_1
+		}
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_3 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_3
+			add_idea = CAL_epic_plan_cost_2
+		}
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_4 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_4
+			add_idea = CAL_epic_plan_cost_3
+		}
+	}
+	if = {
+		limit = { has_idea =CAL_epic_plan_cost_5 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_5
+			add_idea = CAL_epic_plan_cost_4
+		}
+	}
+	if = {
+		limit = { has_idea =CAL_epic_plan_cost_6 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_6
+			add_idea = CAL_epic_plan_cost_5
+		}
+	}
+	if = {
+		limit = { has_idea =CAL_epic_plan_cost_7 }
+		swap_ideas = {
+			remove_idea = CAL_epic_plan_cost_7
+			add_idea = CAL_epic_plan_cost_6
+		}
 	}
 }

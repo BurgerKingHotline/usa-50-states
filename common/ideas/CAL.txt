@@ -1,5 +1,138 @@
 ideas = {
 	country = {
+		CAL_epic_plan_cost_1 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				political_power_cost = 0.1
+				political_power_factor = -0.05
+			}
+		}
+		CAL_epic_plan_cost_2 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.25
+				political_power_cost = 0.2
+				political_power_factor = -0.1
+			}
+		}
+		CAL_epic_plan_cost_3 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.40
+				political_power_cost = 0.3
+				political_power_factor = -0.15
+			}
+		}
+		CAL_epic_plan_cost_4 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.55
+				political_power_cost = 0.4
+				political_power_factor = -0.2
+			}
+		}
+		CAL_epic_plan_cost_5 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.70
+				political_power_cost = 0.5
+				political_power_factor = -0.25
+			}
+		}
+		CAL_epic_plan_cost_6 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.85
+				political_power_cost = 0.6
+				political_power_factor = -0.30
+			}
+		}
+		CAL_epic_plan_cost_7 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 1
+				political_power_cost = 0.7
+				political_power_factor = -0.35
+			}
+		}
 		CAL_great_depression_1 = {
 			picture = usa_great_depression_3
 			

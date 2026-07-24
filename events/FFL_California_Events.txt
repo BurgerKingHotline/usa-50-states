@@ -129,6 +129,7 @@ country_event = {
 		news_event = {
 			id = ffl_news.2
 		}
+		complete_national_focus = CAL_sinclair_elected
 	}
 	after = {
 		mark_focus_tree_layout_dirty = yes
