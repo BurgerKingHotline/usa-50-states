@@ -154,7 +154,11 @@ CAL_economics_of_cooperation_cat = {
 			}
 		}
 		remove_effect = {
-			CAL_epic_costs_level_down = yes
+			add_days_mission_timeout = {
+				mission = CAL_growing_costs_epic_mission
+				days = 65
+			}
+			#CAL_epic_costs_level_down = yes
 		}
 
 		complete_effect = {
@@ -200,7 +204,11 @@ CAL_economics_of_cooperation_cat = {
 		}
 
 		complete_effect = {
-			CAL_epic_costs_level_down = yes
+			add_days_mission_timeout = {
+				mission = CAL_growing_costs_epic_mission
+				days = 65
+			}
+			#CAL_epic_costs_level_down = yes
 		}
 
 	}

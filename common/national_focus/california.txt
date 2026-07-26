@@ -22,17 +22,23 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_declare_independence#recognize independence day
+		id = CAL_declare_independence#State Building
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
-		relative_position_id = CAL_intro_focus
-		x = 0
-		y = 2
+		offset = {
+			x = -2
+			y = 0
+			trigger = {
+				has_country_flag = CAL_epic_path
+			}
+		}
+		x = -8
+		y = 1
 		prerequisite = {
 			focus = CAL_intro_focus
+			focus = CAL_socialist_governor
 		}
 		allow_branch = {
-			has_country_flag = CAL_intro_tree
 		}
 		completion_reward = { 
 			CAL_civil_unrest_level_down = yes
@@ -44,7 +50,27 @@ focus_tree = {
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
-			has_country_flag = CAL_intro_tree
+		}
+		prerequisite = {
+			focus = CAL_declare_independence
+		}
+		x = 3
+		y = 2
+		completion_reward = { 
+			if = {
+				limit = {
+					CAL_has_civil_unrest_idea = yes
+				}
+				CAL_civil_unrest_level_down = yes
+			}
+		}
+	}
+	focus = {
+		id = CAL_new_currency
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 6
+		relative_position_id = CAL_declare_independence
+		allow_branch = {
 		}
 		prerequisite = {
 			focus = CAL_declare_independence
@@ -52,16 +78,20 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = { 
-			CAL_civil_unrest_level_down = yes
+			if = {
+				limit = {
+					CAL_has_civil_unrest_idea = yes
+				}
+				CAL_civil_unrest_level_down = yes
+			}
 		}
 	}
 	focus = {
-		id = CAL_stoke_patriotism
+		id = CAL_one_term_ammendment
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
-			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_declare_independence
@@ -69,50 +99,20 @@ focus_tree = {
 		x = -2
 		y = 1
 		completion_reward = { 
-			CAL_civil_unrest_level_down = yes
+			if = {
+				limit = {
+					CAL_has_civil_unrest_idea = yes
+				}
+				CAL_civil_unrest_level_down = yes
+			}
 		}
 	}
 	focus = {
-		id = CAL_meet_with_business_leaders
+		id = CAL_reassure_public
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_declare_independence
-		}
-		x = 4
-		y = 1
-		completion_reward = { 
-			CAL_civil_unrest_level_down = yes
-		}
-	}
-	focus = {
-		id = CAL_deputize_militias
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 6
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_declare_independence
-		}
-		x = -4
-		y = 1
-		completion_reward = { 
-			CAL_civil_unrest_level_down = yes
-		}
-	}
-	focus = {
-		id = CAL_save_dollar
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 6
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_declare_independence
@@ -120,14 +120,104 @@ focus_tree = {
 		x = 2
 		y = 1
 		completion_reward = { 
-			CAL_civil_unrest_level_down = yes
+			if = {
+				limit = {
+					CAL_has_civil_unrest_idea = yes
+				}
+				CAL_civil_unrest_level_down = yes
+			}
+		}
+	}
+	focus = {
+		id = CAL_stoke_patriotism#independence day
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 6
+		relative_position_id = CAL_declare_independence
+		allow_branch = {
+		}
+		prerequisite = {
+			focus = CAL_declare_independence
+		}
+		x = -3
+		y = 2
+		completion_reward = { 
+			if = {
+				limit = {
+					CAL_has_civil_unrest_idea = yes
+				}
+				CAL_civil_unrest_level_down = yes
+			}
+		}
+	}
+	focus = {
+		id = CAL_gold_standard
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 6
+		relative_position_id = CAL_declare_independence
+		allow_branch = {
+		}
+		prerequisite = {
+			focus = CAL_new_currency
+		}
+		mutually_exclusive = {
+			focus = CAL_fiat_currency
+		}
+		x = 1
+		y = 2
+		completion_reward = { 
+			if = {
+				limit = {
+					CAL_has_civil_unrest_idea = yes
+				}
+				CAL_civil_unrest_level_down = yes
+			}
+		}
+	}
+#	focus = {
+#		id = CAL_deputize_militias
+#		icon = GFX_goal_generic_allies_build_infantry
+#		cost = 6
+#		relative_position_id = CAL_declare_independence
+#		allow_branch = {
+#			has_country_flag = CAL_intro_tree
+#		prerequisite = {
+#			focus = CAL_declare_independence
+#		}
+#		x = -4
+#		y = 1
+#		completion_reward = { 
+#			CAL_civil_unrest_level_down = yes
+#		}
+#	}
+	focus = {
+		id = CAL_fiat_currency
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 6
+		relative_position_id = CAL_declare_independence
+		allow_branch = {
+		}
+		prerequisite = {
+			focus = CAL_new_currency
+		}
+		mutually_exclusive = {
+			focus = CAL_gold_standard
+		}
+		x = -1
+		y = 2
+		completion_reward = { 
+			if = {
+				limit = {
+					CAL_has_civil_unrest_idea = yes
+				}
+				CAL_civil_unrest_level_down = yes
+			}
 		}
 	}
 	focus = {
 		id = CAL_scramble_army
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
-		x = -11
+		x = -18
 		y = 1
 		completion_reward = { }
 	}
@@ -476,30 +566,26 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_the_republic_survives
+		id = CAL_the_republic_survives#declare republic, change it's name to republic of california, bear republic of california, or state of california
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
-			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_strengthen_da
+			focus = CAL_reassure_public
 		}
 		prerequisite = {
-			focus = CAL_deputize_militias
+			focus = CAL_fiat_currency
+			focus = CAL_gold_standard
 		}
 		prerequisite = {
-			focus = CAL_meet_with_business_leaders
-		}
-		prerequisite = {
-			focus = CAL_save_dollar
-		}
-		prerequisite = {
+			focus = CAL_one_term_ammendment
 			focus = CAL_stoke_patriotism
 		}
 		x = 0
-		y = 2
+		y = 3
 		completion_reward = { 
 			CAL_civil_unrest_remove = yes
 		}
@@ -509,19 +595,15 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
 		x = 0
-		y = 0
+		y = 1
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+			focus = CAL_intro_focus
+		}
 		allow_branch = {
-			has_country_flag = CAL_epic_election_tree
+			has_country_flag = CAL_intro_tree
 		}
 		available = {
-			always = no
-		}
-		offset = {
-			x = 0
-			y = 7
-			trigger = {
-				has_country_flag = CAL_intro_tree
-			}
 		}
 		completion_reward = { }
 	}
@@ -532,7 +614,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		allow_branch = {
-			has_country_flag = CAL_epic_election_tree
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_epic
@@ -547,7 +629,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		allow_branch = {
-			has_country_flag = CAL_epic_election_tree
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_epic
@@ -562,7 +644,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		allow_branch = {
-			has_country_flag = CAL_epic_election_tree
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_epic
@@ -577,7 +659,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		allow_branch = {
-			has_country_flag = CAL_epic_election_tree
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_give_what_they_can
@@ -593,7 +675,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		allow_branch = {
-			has_country_flag = CAL_epic_election_tree
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_epic_news
@@ -609,7 +691,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		allow_branch = {
-			has_country_flag = CAL_epic_election_tree
+			has_country_flag = CAL_intro_tree
 		}
 		available = {
 			always = no
@@ -631,20 +713,13 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = CAL_joaquin_strike
 		}
-		offset = {
-			trigger = {
-				has_country_flag = CAL_epic_path
-			}
-			x = 7
-			y = 0 
-		}
 		prerequisite = {
 			focus = CAL_intro_focus
 		}
 		bypass = {
 			always = yes
 		}
-		x = 8
+		x = 6
 		y = 1
 		completion_reward = { }
 	}

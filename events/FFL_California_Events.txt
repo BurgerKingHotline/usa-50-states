@@ -112,7 +112,6 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		clr_country_flag = CAL_intro_tree
-		clr_country_flag = CAL_epic_election_tree
 		set_country_flag = CAL_epic_path
 		
 	}
@@ -166,7 +165,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.9.a
-		CAL_great_depression_level_down = yes
 	}
 }
 country_event = {
@@ -178,7 +176,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.10.a
-		CAL_civil_unrest_level_up = yes
 	}
 }
 country_event = {

@@ -12,3 +12,12 @@ CAL_has_depression_idea = {
 		has_idea = CAL_great_depression_10
 	}
 }
+CAL_has_civil_unrest_idea = {
+	OR = {
+		has_idea = CAL_civil_unrest_1
+		has_idea = CAL_civil_unrest_2
+		has_idea = CAL_civil_unrest_3
+		has_idea = CAL_civil_unrest_4
+		has_idea = CAL_civil_unrest_5
+	}
+}

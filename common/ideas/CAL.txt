@@ -357,9 +357,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_cost = 0.2
-				stability_factor = -0.1
-				war_support_factor = -0.8
+				political_power_cost = 0.1
+				party_popularity_stability_factor = -0.05
+				stability_weekly =-0.02
 			}
 		}
 		CAL_civil_unrest_2 = {
@@ -376,9 +376,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_cost = 0.4
-				stability_factor = -0.2
-				war_support_factor = -0.16
+				political_power_cost = 0.2
+				party_popularity_stability_factor = -0.10
+				stability_weekly =-0.04
 			}
 		}
 		CAL_civil_unrest_3 = {
@@ -395,9 +395,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_cost = 0.6
-				stability_factor = -0.3
-				war_support_factor = -0.24
+				political_power_cost = 0.3
+				party_popularity_stability_factor = -0.15
+				stability_weekly =-0.06
 			}
 		}
 		CAL_civil_unrest_4 = {
@@ -414,9 +414,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_cost = 0.8
-				stability_factor = -0.4
-				war_support_factor = -0.32
+				political_power_cost = 0.4
+				party_popularity_stability_factor = -0.2
+				stability_weekly =-0.08
 			}
 		}
 		CAL_civil_unrest_5 = {
@@ -433,9 +433,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_cost = 1
-				stability_factor = -0.5
-				war_support_factor = -0.4
+				political_power_cost = 0.5
+				party_popularity_stability_factor = -0.25
+				stability_weekly =-0.1
 			}
 		}
 		CAL_longshoremen_strikes = {
