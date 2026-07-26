@@ -12,9 +12,23 @@ characters = {
 			desc = CAL_james_rolph_desc
 		}
 	}
+	CAL_FRANK_MERRIAM = {
+		name = "Frank Merriam"
+		portraits = {
+			civilian = { large = "GFX_CAL_Portrait_Frank_Merriam" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism_subideology
+			expire = "1934.11.6"
+			desc = CAL_james_rolph_desc
+		}
+	}
 	CAL_UPTON_SINCLAIR = {
 		name = "Upton Sinclair"
-		portraits = {}
+		portraits = {
+			civilian = { large = "GFX_CAL_Portrait_Upton_Sinlair" }
+		}
 		gender = male
 		country_leader = {
 			ideology = socialism_subideology

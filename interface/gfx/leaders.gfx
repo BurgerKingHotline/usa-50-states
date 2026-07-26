@@ -1,7 +1,15 @@
 spriteTypes = {
 	spriteType = {
 		name = "GFX_CAL_Portrait_James_Rolph"
-		texturefile = "gfx/interface/leaders/California/CAL_Portrait_James_Rolph_Jr_Crop.dds"
+		texturefile = "gfx/interface/leaders/California/CAL_Portrait_James_Rolph_Jr_AI.dds"
+	}
+	spriteType = {
+		name = "GFX_CAL_Portrait_Upton_Sinlair"
+		texturefile = "gfx/interface/leaders/California/CAL_Portrait_Upton_Sinclair_AI.dds"
+	}
+	spriteType = {
+		name = "GFX_CAL_Portrait_Frank_Merriam"
+		texturefile = "gfx/interface/leaders/California/CAL_Portrait_Frank_Merriam_AI.dds"
 	}
 	spriteType = {
 		name = "GFX_WSH_Portrait_Roland_H_Hartley"
