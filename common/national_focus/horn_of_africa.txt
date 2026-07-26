@@ -1,10 +1,10 @@
-
-
-
-
-
-
-
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
 
 focus_tree = {
 	id = horn_of_africa_tree
@@ -38,17 +38,29 @@ focus_tree = {
 	focus = {
 		id = HOA_develop_capitalstate
 		icon = GFX_focus_generic_industry_1
-		
+		#prerequisite = { focus = }
 
 		x = 3
 		y = 0
-		
+		#relative_position_id = 
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			
+			capital_scope = {
+				ETH_upgrade_state_category = yes 
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_the_state_bank_of_name 
@@ -59,11 +71,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_develop_capitalstate
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = HOA_state_bank_idea
+		}
 	}
 	focus = {
 		id = HOA_pave_the_roads
@@ -74,11 +89,27 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_develop_capitalstate
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_the_steam_locomotive
@@ -89,11 +120,27 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_pave_the_roads
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					NOT = { has_tech = basic_train }
+				}
+				set_technology = { 
+					basic_train = 1
+					popup = yes
+				}
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment_1
+				amount = 10 
+				producer = ETH
+			}
+		}
 	}
 	focus = {
 		id = HOA_the_adjective_regional_development_fund
@@ -105,11 +152,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_state_bank_of_name
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				custom_effect_tooltip = HOA_state_owned_industry_tt
+				add_to_variable = { ETH_state_development_production_speed = 0.15 }
+				add_to_variable = { ETH_state_development_local_building_slots_factor = 0.15 }		
+			}	
+		}
 	}
 	focus = {
 		id = HOA_the_adjective_industrial_fund
@@ -120,11 +174,29 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_state_bank_of_name
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_exploit_national_resources
@@ -135,11 +207,144 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_steam_locomotive
 		cost = 10
-		available = {}
+		available = {
+			IF = {
+				limit = {
+					original_tag = AFA
+				}
+				908  = { is_controlled_by = ROOT }
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = ORO
+				}
+				836  = { is_controlled_by = ROOT } 
+				
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = QEM
+				}
+				841  = { is_controlled_by = ROOT } 
+				
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = TIG
+				}
+				842  = { is_controlled_by = ROOT }
+				
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = BEG
+				}
+				840 = { is_controlled_by = ROOT }
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = HAR
+				}
+				835 = { is_controlled_by = ROOT }
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = SID
+				}
+				837 = { is_controlled_by = ROOT }
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = GBA
+				}
+				838 = { is_controlled_by = ROOT }
+			}
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					original_tag = AFA
+				}
+				add_resource = {
+					type = oil
+					amount = 8
+					state = 908  
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = ORO
+				}
+				add_resource = {
+					type = oil
+					amount = 8
+					state = 836  
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = QEM
+				}
+				add_resource = {
+					type = steel
+					amount = 8
+					state = 841  
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = TIG
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+					state = 842  
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = BEG
+				}
+				add_resource = {
+					type = steel
+					amount = 8
+					state = 840  
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = HAR
+				}
+				add_resource = {
+					type = oil
+					amount = 8
+					state = 835  
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = SID
+				}
+				add_resource = {
+					type = rubber
+					amount = 8
+					state = 837  
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					original_tag = GBA
+				}
+				add_resource = {
+					type = rubber
+					amount = 8
+					state = 838  
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_support_the_agrarians
@@ -150,11 +355,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_adjective_regional_development_fund
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				custom_effect_tooltip = HOA_support_the_agrarians_tt
+				add_to_variable = { ETH_state_development_production_speed = 0.10 }
+				add_to_variable = { ETH_state_development_local_building_slots_factor = 0.10 }		
+			}	
+		}
 	}
 	focus = {
 		id = HOA_promote_local_crafts
@@ -165,11 +377,25 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_adjective_regional_development_fund
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HOA_promote_local_crafts
+				bonus = 0.25
+				uses = 2
+				category = industry 
+			}
+			add_tech_bonus = {
+				name = HOA_promote_local_crafts
+				bonus = 0.5
+				uses = 1
+				category = support_tech
+			}
+		}
 	}
 	focus = {
 		id = HOA_use_the_natural_harbors
@@ -180,11 +406,26 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_promote_local_crafts
 		cost = 10
-		available = {}
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_the_capital_city_airport  
@@ -196,11 +437,25 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_promote_local_crafts  
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			capital_scope = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = { 
+				type = transport_plane_equipment
+				amount = 10 
+				producer = ROOT
+			}
+		}
 	}
 	focus = { 
 		id = HOA_a_steamboat_fleet
@@ -211,11 +466,20 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_use_the_natural_harbors
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HOA_a_steamboat_fleet
+				bonus = 0.5
+				uses = 2
+				category = dd_tech
+			}
+			navy_experience = 25
+		}
 	}
 	focus = {
 		id = HOA_improved_irrigation_systems
@@ -226,11 +490,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_use_the_natural_harbors
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				custom_effect_tooltip = HOA_improved_irrigation_systems_tt
+				add_to_variable = { ETH_state_development_production_speed = 0.15 }
+				add_to_variable = { ETH_state_development_local_building_slots_factor = 0.15 }		
+			}
+		}
 	}
 	focus = {
 		id = HOA_the_adjective_air_fleet
@@ -241,11 +512,32 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_capital_city_airport
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HOA_the_adjective_air_fleet
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+			add_tech_bonus = {
+				name = HOA_the_adjective_air_fleet
+				bonus = 0.5
+				uses = 1
+				category = medium_air
+			}
+			add_tech_bonus = {
+				name = HOA_the_adjective_air_fleet
+				bonus = 0.5
+				uses = 1
+				category = heavy_air
+			}
+			air_experience = 20
+		}
 	}
 	focus = {
 		id = HOA_state-funded_projects
@@ -256,11 +548,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_a_steamboat_fleet
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = HOA_state_funded_projects_idea
+		}
 	}
 	focus = {
 		id = HOA_the_grand_university_of_capital 
@@ -271,33 +566,39 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_state-funded_projects
 		cost = 10
-		available = {}
+		available = {  
+		}
 
 		search_filters = {} 
 
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 
-	
-	
-	
-	
-	
+	#   # ### #   ### ###  ##  ###  #   # 
+	## ##  #  #    #   #  #  # #  #  # #  
+	# # #  #  #    #   #  #### ###    #   
+	#   #  #  #    #   #  #  # #  #   #   
+	#   # ### ### ###  #  #  # #  #   #   
 
 	focus = {
 		id = HOA_the_adjective_armed_forces
 		icon = GFX_goal_generic_small_arms
-		
+		#prerequisite = { focus = }
 
 		x = 8 
 		y = 0
-		
+		#relative_position_id =
 		cost = 5
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			army_experience = 25
+		}
 	}
 	focus = {
 		id = HOA_warrior_tradition
@@ -308,11 +609,32 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_adjective_armed_forces
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			division_template = {
+				name = "East African Irregulars"
+				is_locked = yes
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+					irregular_infantry = { x = 0 y = 1 }
+					irregular_infantry = { x = 0 y = 2 }
+					irregular_infantry = { x = 1 y = 0 }
+					irregular_infantry = { x = 1 y = 1 }
+					irregular_infantry = { x = 1 y = 2 }	
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Irregular Infantry\" division_template = \"East African Irregulars\" start_experience_factor = 0.05 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = ROOT
+					count = 3
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_strengthen_the_irregulars
@@ -323,11 +645,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_warrior_tradition
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_units_to_division_template = {
+				template_name = "East African Irregulars" 
+				regiments = {
+					irregular_infantry = 0 
+					irregular_infantry = 1 
+				}
+			}
+			add_ideas = HOA_improved_irregulars_idea
+		}
 	}
 	focus = {
 		id = HOA_every_man_a_warrior
@@ -338,11 +670,23 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_warrior_tradition
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = HOA_every_man_a_warrior_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_technology = {
+				militia_tech = 1
+				popup = no
+			}	
+			
+		}
 	}
 	focus = {
 		id = HOA_names_finest
@@ -353,11 +697,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_strengthen_the_irregulars
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = HOA_our_finest_idea
+		}
 	}
 	focus = {
 		id = HOA_utilize_our_strengths
@@ -368,11 +715,42 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_strengthen_the_irregulars
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					OR = {
+						original_tag = AFA
+						original_tag = TIG
+						original_tag = SID
+					}
+				}
+				add_ideas = HOA_our_strength_fighting_idea
+			}
+			ELSE_IF = {
+				limit = {
+					OR = {
+						original_tag = ORO
+						original_tag = GBA
+						original_tag = BEG
+					}
+				}
+				add_ideas = HOA_our_strength_production_idea
+			}
+			ELSE_IF = {
+				limit = {
+					OR = {
+						original_tag = HAR
+						original_tag = QEM
+					}
+				}
+				add_ideas = HOA_our_strength_research_idea
+			}
+		}
 	}
 	focus = {
 		id = HOA_reform_the_conscription
@@ -383,11 +761,24 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_every_man_a_warrior
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.1
+			IF = {
+				limit = { 
+					NOT = { has_idea = extensive_conscription }
+					NOT = { has_idea = service_by_requirement }
+					NOT = { has_idea = all_adults_serve }
+					NOT = { has_idea = scraping_the_barrel }
+				}
+				add_ideas = extensive_conscription
+			}
+
+		}
 	}
 	focus = {
 		id = HOA_eyes_on_the_imperialists
@@ -398,11 +789,31 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_utilize_our_strengths
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = HOA_eyes_on_the_imperialists
+				cost_reduction = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = HOA_eyes_on_the_imperialists
+				cost_reduction = 0.25
+				uses = 1
+				category = air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = HOA_eyes_on_the_imperialists
+				cost_reduction = 0.25
+				uses = 1
+				category = naval_doctrine
+			}
+		}
 	}
 	focus = {
 		id = HOA_encourage_local_arms_production
@@ -413,11 +824,29 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_utilize_our_strengths
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_metal_beasts
@@ -428,11 +857,19 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_eyes_on_the_imperialists
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HOA_metal_beasts
+				bonus = 0.5
+				uses = 2
+				category = armor 
+			}
+		}
 	}
 	focus = {
 		id = HOA_the_roars_of_thunder
@@ -443,11 +880,20 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_eyes_on_the_imperialists
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HOA_the_roars_of_thunder
+				bonus = 0.5
+				uses = 2
+				category = artillery 
+				category = cat_anti_tank 
+			}
+		}
 	}
 	focus = {
 		id = HOA_develop_indigenous_models
@@ -458,11 +904,19 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_encourage_local_arms_production
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HOA_develop_indigenous_models
+				bonus = 0.25
+				uses = 2
+				category = infantry_weapons 
+			}
+		}
 	}
 	focus = {
 		id = HOA_the_steel_lions
@@ -473,11 +927,71 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_metal_beasts
 		cost = 10
-		available = {}
+		available = {
+			IF = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				has_tech = gwtank_chassis
+			}
+			IF = {
+				limit = {
+					NOT = {
+						has_dlc = "No Step Back"
+					}
+				}
+				has_tech = gwtank
+			}
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			
+			division_template = {
+				name = "Steel Lions"
+				is_locked = no
+				regiments = {
+					light_armor = { x = 0 y = 0 }
+					light_armor = { x = 0 y = 1 }
+					light_armor = { x = 0 y = 2 }
+				}
+			}
+
+			hidden_effect = {
+				IF = {
+					limit = {
+						has_dlc = "No Step Back"
+					}
+					create_equipment_variant = {
+						name = "Roaring Thunder"
+						type = light_tank_chassis_0
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_heavy_machine_gun
+							turret_type_slot = tank_light_one_man_tank_turret
+							suspension_type_slot = tank_bogie_suspension
+							armor_type_slot = tank_riveted_armor
+							engine_type_slot = tank_gasoline_engine
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 1
+							tank_nsb_armor_upgrade = 1
+						}
+						icon = "GFX_gwtank_medium"
+					}
+				}
+			}
+
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Steel Lions Brigade\" division_template = \"Steel Lions\" start_experience_factor = 0.05 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = ROOT
+					count = 1
+				}
+			}
+
+		}
 	}
 	focus = {
 		id = HOA_warfare_from_afar
@@ -488,11 +1002,22 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_roars_of_thunder
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_units_to_division_template = {
+				template_name = "East African Irregulars" 
+				support = {
+					artillery = 0 
+				}
+				regiments = {
+					artillery_brigade = 2 
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_modern_infantry
@@ -503,34 +1028,61 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_develop_indigenous_models
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			division_template = {
+				name = "Regular Infantry"
+				is_locked = no
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Regular Infantry Division\" division_template = \"Regular Infantry\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
+					owner = ROOT
+					count = 2
+				}
+			}
+		}
 	} 
 
-	
-	
-	
-	
-	
+	###   ##  #   ### ### ###  ##   ##  #   
+	#  # #  # #    #   #   #  #  # #  # #   
+	###  #  # #    #   #   #  #    #### #   
+	#    #  # #    #   #   #  #  # #  # #   
+	#     ##  ### ###  #  ###  ##  #  # ### 
 
 
 	focus = {
 		id = HOA_the_first_album
 		icon = GFX_focus_spr_masters_of_our_own_fate
-		
+		#prerequisite = { focus = }
 
 		x = 17
 		y = 0
-		
+		#relative_position_id =
 		cost = 10
-		available = {}
+		available = {
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.1
+		}
 	}
 	focus = {
 		id = HOA_a_loyal_subject
@@ -541,11 +1093,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_first_album 
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_autonomy_score = { 
+				value = 250  
+			}
+			add_stability = 0.05 
+		}
 
 	}
 	focus = {
@@ -557,11 +1116,16 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_first_album
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.15
+		}
 	}
 	focus = {
 		id = HOA_the_capital_railroad
@@ -572,11 +1136,49 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_a_loyal_subject
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+			IF = {
+				limit = {
+					is_subject = yes 
+				}
+				ROOT.OVERLORD = {
+					any_owned_state = {
+						any_neighbor_state = {
+							is_owned_by = ROOT
+						}
+					}
+				}
+			}
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					is_subject = yes 
+					any_owned_state = {
+						any_neighbor_state = {
+							is_owned_by = ROOT.OVERLORD
+						}
+					}
+				}
+				capital_scope = {
+					random_neighbor_state = {
+						limit = {
+							is_owned_by = ROOT.OVERLORD
+						}
+						build_railway = {
+		  					level = 1
+		  					start_state = THIS
+		  					target_state = PREV
+						}
+						
+					}
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_invite_foreign_settlers
@@ -587,11 +1189,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_a_loyal_subject
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			capital_scope = {
+				ETH_upgrade_state_category = yes 
+				add_manpower = 75000
+			}
+		}
 	}
 	focus = {
 		id = HOA_countryleader
@@ -602,11 +1211,48 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_political_stability
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_war_support	= 0.1
+			IF = {
+				limit = {
+					any_character = {
+						is_country_leader = yes
+						is_field_marshal = yes 
+					}
+
+				}
+				random_character = {
+					limit = {
+						is_country_leader = yes
+						is_field_marshal = yes 
+					}
+					add_attack = 1	
+				}
+				
+			}
+			ELSE = {
+				random_character = {
+					limit = {
+						is_country_leader = yes
+					}
+					add_field_marshal_role = {
+						traits = {  }
+						skill = 2
+						attack_skill = 2
+						defense_skill = 1
+						planning_skill = 2
+						logistics_skill = 1
+					}
+					add_random_trait = { old_guard brilliant_strategist inflexible_strategist trait_reckless irregulars_officer }
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_securing_the_adjective_future  
@@ -617,11 +1263,33 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_political_stability
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 75
+			every_other_country = {
+				limit = {
+					is_major = yes
+					any_owned_state = {
+						is_on_continent = africa
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = HOA_african_cooperation
+				}
+				ROOT = {
+					add_opinion_modifier = {
+						target = PREV
+						modifier = HOA_african_cooperation
+					}
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_improving_the_educational_system
@@ -632,11 +1300,63 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_capital_railroad
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.05
+			IF = {
+				limit = { is_subject = yes }
+				IF = {
+					limit = {
+						OVERLORD = {
+							has_government = neutrality
+						}
+					}
+					add_popularity = {
+						ideology = neutrality
+						popularity = 0.1
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						OVERLORD = {
+							has_government = communism
+						}
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.1
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						OVERLORD = {
+							has_government = fascism
+						}
+					}
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.1
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						OVERLORD = {
+							has_government = democratic
+						}
+					}
+					add_popularity = {
+						ideology = democratic
+						popularity = 0.1
+					}
+				}
+			}
+			add_ideas = HOA_education_idea
+		}
 	}
 	focus = {
 		id = HOA_construct_great_monuments
@@ -647,11 +1367,19 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_countryleader
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.15
+			capital_scope = {
+				ETH_upgrade_main_city = yes 
+			}	
+
+		}
 	}
 	focus = {
 		id = HOA_the_adjective_volunteer_force
@@ -662,11 +1390,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_securing_the_adjective_future
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = HOA_volunteers_idea
+			set_rule = {
+				can_send_volunteers = yes 
+			}
+		}
 	}
 	focus = {
 		id = HOA_military_cooperation
@@ -677,11 +1412,16 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_securing_the_adjective_future
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_command_power = 50
+			army_experience = 100
+		}
 	}
 	focus = {
 		id = HOA_that_which_is_rightfully_ours
@@ -692,11 +1432,19 @@ focus_tree = {
 		y = 2
 		relative_position_id = HOA_countryleader
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 75
+			add_timed_idea = {
+			 	idea = HOA_rightfully_ours_idea
+			 	days = 720
+			 } 
+		}
 	}
 	focus = {
 		id = HOA_commandos
@@ -707,11 +1455,23 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_adjective_volunteer_force
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			set_technology = {
+				tech_special_forces = 1
+			}
+			add_tech_bonus = {
+				name = HOA_commandos
+				bonus = 0.25
+				uses = 2
+				category = cat_special_forces_generic
+			}
+		}
 	}
 	focus = {
 		id = HOA_a_jagged_alliance
@@ -722,11 +1482,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_the_adjective_volunteer_force
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = HOA_jagged_alliance_idea
+		}
 	}
 	focus = {
 		id = HOA_observe_and_learn
@@ -737,11 +1501,22 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_military_cooperation
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = HOA_observe_and_learn
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+				category = air_doctrine
+				category = naval_doctrine
+			}
+		}
 	}
 	focus = {
 		id = HOA_foreign_investors
@@ -752,11 +1527,36 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_improving_the_educational_system
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HOA_foreign_investors
+				bonus = 0.25
+				uses = 1
+				category = industry 
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				
+			}
+		}
 	}
 	focus = {
 		id = HOA_research_exchange_programmes
@@ -767,11 +1567,35 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_improving_the_educational_system
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HOA_research_exchange_programmes
+				bonus = 0.25
+				uses = 2
+				category = industry 
+				category = electronics
+			}
+			IF = {
+				limit = {
+					is_subject = yes 
+				}
+				OVERLORD = {
+					add_tech_bonus = {
+						bonus = 0.25
+						uses = 2
+						category = industry 
+						category = electronics
+					}
+				}
+			}
+
+		}
 	}
 	focus = {
 		id = HOA_foreign_trained_officials
@@ -782,11 +1606,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_research_exchange_programmes
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 250
+		}
 	}
 	focus = {
 		id = HOA_countryadjective_loyalist_advisors
@@ -797,11 +1625,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_research_exchange_programmes
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_autonomy_score = { 
+				value = 750 
+				localization = HOA_countryadjective_loyalist_advisors
+			}
+		}
 	}
 	focus = {
 		id = HOA_lay_claim_to_the_danakil
@@ -812,11 +1647,44 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_that_which_is_rightfully_ours
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			every_state = {
+				limit = {
+					region = 273
+					NOT = {
+						is_owned_by = ROOT
+					}
+				}
+				add_claim_by = ROOT
+			}
+			every_state = {
+				limit = {
+					region = 273
+					OWNER = { 
+						capital_scope = { region = 273 }
+						is_subject = no
+						NOT = { tag = ROOT }
+					}
+					
+				}
+				OWNER = {
+					ROOT = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+							
+						}
+					}
+				}
+			}
+			
+		}
 	}
 	focus = {
 		id = HOA_push_for_the_highlands
@@ -827,11 +1695,42 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_that_which_is_rightfully_ours
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			every_state = {
+				limit = {
+					region = 17
+					NOT = {
+						is_owned_by = ROOT
+					}
+				}
+				add_claim_by = ROOT
+			}
+			every_state = {
+				limit = {
+					region = 17
+					OWNER = { 
+						capital_scope = { region = 17 }
+						is_subject = no
+						NOT = { tag = ROOT }
+					}
+				}
+				OWNER = {
+					ROOT = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+							
+						}
+					}
+				}
+			}
+		}
 	}
 	focus = {
 		id = HOA_secure_the_ogaden
@@ -842,11 +1741,45 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_that_which_is_rightfully_ours
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			every_state = {
+				limit = {
+					region = 274
+					NOT = {
+						is_owned_by = ROOT
+					}
+				}
+				add_claim_by = ROOT
+				
+			}
+			every_state = {
+				limit = {
+					region = 274
+					OWNER = { 
+						capital_scope = { region = 274 }
+						is_subject = no
+						NOT = { tag = ROOT }
+					}
+				}
+				OWNER = {
+					ROOT = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+							
+						}
+					}
+				}
+			}
+			
+			
+		}
 	}
 	focus = {
 		id = HOA_rallying_the_adjective_people
@@ -857,11 +1790,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_a_jagged_alliance
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = HOA_rallying_the_people_idea
+		}
 	}
 	focus = {
 		id = HOA_the_capital_school_of_technology
@@ -872,11 +1809,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_foreign_trained_officials
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 	focus = {
 		id = HOA_promote_countryadjective_nationalism
@@ -887,11 +1828,20 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_countryadjective_loyalist_advisors
 		cost = 10
-		available = {}
+		available = {
+			is_subject = yes 
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 100
+			add_autonomy_score = { 
+				value = 500 
+				localization = HOA_promote_countryadjective_nationalism
+			}
+		}
 	}
 	focus = {
 		id = HOA_crowning_of_the_negusa_nagast
@@ -902,11 +1852,32 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_push_for_the_highlands
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = HOA_control_ethiopia_tt
+				NOT = {
+					any_state = {
+						is_core_of = ETH
+						NOT = { is_controlled_by = ROOT }
+					}
+				}
+			}
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = ROOT 
+					is_core_of = ETH 
+				}
+				add_core_of = ROOT
+				remove_core_of = ETH 
+			}
+			
+		}
 	}
 	focus = {
 		id = HOA_proclaim_east-african_hegemony
@@ -917,11 +1888,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = HOA_crowning_of_the_negusa_nagast
 		cost = 10
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 		search_filters = {}
 
-		completion_reward = {}
+		completion_reward = {
+			unlock_decision_tooltip = form_the_horn_of_africa
+		}
 	}
 
 

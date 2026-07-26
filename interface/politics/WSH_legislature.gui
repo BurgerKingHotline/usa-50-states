@@ -1,0 +1,672 @@
+guiTypes = {
+	# =========================================================================
+	# TOP-LEVEL OPEN BUTTONS (Anchored to political_panel_display_button)
+	# =========================================================================
+	containerWindowType = {
+		name = "congress_button_container"
+		position = { x = 45 y = 11 }
+		size = { width = 100 height = 30 }
+		clipping = no
+		buttonType = {
+			name = "congress_button"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_congress_button"
+			clicksound = click_default
+			pdx_tooltip = "OPEN_CONGRESS_TT"
+		}
+	}
+	# =========================================================================
+	# CONGRESS SYSTEM: MAIN PANELS
+	# =========================================================================
+	containerWindowType = {
+		name = "congress_gui"
+		position = { x = 545 y = 44 }
+		size = { width = 387 height = 420 }
+		background = { name = "congress_panel_bg" quadTextureSprite = "GFX_tiled_bg" }
+		clipping = no
+		iconType = {
+			name = "title_header_icon"
+			spriteType = "GFX_congress_master_header"
+			position = { x = 0 y = -37 }
+		}
+		buttonType = {
+			name = "congress_close_button"
+			position = { x = 676 y = -33 }
+			quadTextureSprite = "GFX_closebutton"
+			buttonFont = "Main_14_black"
+			clicksound = click_default
+			pdx_tooltip = "CLOSE"
+		}
+		instantTextboxType = {
+			name = "congress_title"
+			position = { x = -50 y = -31 }
+			font = "hoi_24header"
+			text = "WSH_CONGRESS_TITLE"
+			maxWidth = 380
+			maxHeight = 20
+			format = center
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "election_countdown_bar_frame"
+			spriteType = "GFX_election_national_frame"
+			position = { x = 470 y = -16 }
+			centerposition = yes
+			pdx_tooltip = "ELECTION_COUNTDOWN_TT"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "election_countdown_bar"
+			spriteType = "GFX_election_national_bar"
+			position = { x = 470 y = -16 }
+			centerposition = yes
+			scale = 2.5
+			pdx_tooltip = "ELECTION_COUNTDOWN_TT"
+		}
+		iconType = {
+			name = "coalition_senate_majority_bar_frame"
+			spriteType = "GFX_demographic_bar_frame"
+			position = { x = 218 y = 48 }
+			pdx_tooltip = "COALITION_SENATE_TT"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "coalition_senate_majority_bar"
+			spriteType = "GFX_demographic_approval_bar"
+			position = { x = 218 y = 48 }
+			scale = 1.0
+			pdx_tooltip = "COALITION_SENATE_TT"
+		}
+		iconType = {
+			name = "coalition_house_majority_bar_frame"
+			spriteType = "GFX_demographic_bar_frame"
+			position = { x = 218 y = 235 }
+			pdx_tooltip = "COALITION_HOUSE_TT"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "coalition_house_majority_bar"
+			spriteType = "GFX_demographic_approval_bar"
+			position = { x = 218 y = 235 }
+			scale = 1.0
+			pdx_tooltip = "COALITION_HOUSE_TT"
+		}
+		instantTextboxType = {
+			name = "senate_section_label"
+			position = { x = 21 y = 45 }
+			font = "hoi_18mbs"
+			text = "WSH_SENATE_SECTION"
+			maxWidth = 345
+			maxHeight = 16
+			format = left
+		}
+		gridBoxType = {
+			name = "wsh_senate_diagram_container"
+			position = { x = 8 y = 60 }
+			size = { width = 290 height = 155 }
+			slotsize = { width = 100%% height = 1 }
+			max_slots_horizontal = 1
+			add_horizontal = no
+		}
+		instantTextboxType = {
+			name = "house_section_label"
+			position = { x = 21 y = 232 }
+			font = "hoi_18mbs"
+			text = "WSH_HOUSE_SECTION"
+			maxWidth = 345
+			maxHeight = 16
+			format = left
+		}
+		gridBoxType = {
+			name = "wsh_house_diagram_container"
+			position = { x = 10 y = 252 }
+			size = { width = 295 height = 175 }
+			slotsize = { width = 100%% height = 1 }
+			max_slots_horizontal = 1
+			add_horizontal = no
+		}
+	}
+	containerWindowType = {
+		name = "wsh_roster_entry"
+		size = { width = 300 height = 82 }
+		background = {
+			name = "bg"
+			quadTextureSprite = "GFX_tiled_window_transparent"
+			pdx_tooltip = "wsh_roster_entry_tooltip"
+		}
+		iconType = {
+			name = "roster_color_icon"
+			spriteType = "GFX_seat_icon"
+			position = { x = 4 y = 34 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "roster_badge_icon"
+			spriteType = "GFX_subideology_badge_large"
+			position = { x = 14 y = 12 }
+			scale = 0.62
+			pdx_tooltip = "FFL_WSH_ROSTER_DYNAMIC_TT"
+		}
+		instantTextboxType = {
+			name = "roster_name"
+			position = { x = 62 y = 10 }
+			font = "hoi_16mbs"
+			text = "[GetWSHRosterName]"
+			maxWidth = 136
+			maxHeight = 18
+			fixedsize = yes
+			pdx_tooltip = "FFL_WSH_ROSTER_DYNAMIC_TT"
+		}
+		instantTextboxType = {
+			name = "roster_seats"
+			position = { x = 62 y = 34 }
+			font = "hoi_16mbs"
+			text = "S: [?wsh_roster_senate_seats^roster_idx|Y0]  H: [?wsh_roster_house_seats^roster_idx|Y0]"
+			maxWidth = 136
+			maxHeight = 16
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "roster_stability_bar_frame"
+			spriteType = "GFX_demographic_bar_frame"
+			position = { x = 62 y = 59 }
+			scale = 0.88
+			pdx_tooltip = "ROSTER_STABILITY_TT"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "roster_stability_bar"
+			spriteType = "GFX_demographic_approval_bar"
+			position = { x = 62 y = 59 }
+			scale = 0.88
+			pdx_tooltip = "ROSTER_STABILITY_TT"
+		}
+		buttonType = {
+			name = "roster_coalition_button"
+			position = { x = 202 y = 25 }
+			quadTextureSprite = "GFX_button_94x31"
+			buttonFont = "hoi_16mbs"
+			buttonText = "[GetRosterCoalitionActionText]"
+			pdx_tooltip = "[GetRosterCoalitionActionTooltip]"
+		}
+	}
+	containerWindowType = {
+		name = "congress_roster_panel"
+		position = { x = 925 y = 44 }
+		size = { width = 335 height = 420 }
+		background = { name = "roster_bg" quadTextureSprite = "GFX_tiled_bg" }
+		instantTextboxType = {
+			name = "roster_title"
+			position = { x = 0 y = 13 }
+			font = "hoi_24header"
+			text = "WSH_LEGISLATIVE_BLOCS"
+			maxWidth = 335
+			format = center
+		}
+		containerWindowType = {
+			name = "wsh_roster_scroll_area"
+			position = { x = 10 y = 48 }
+			size = { width = 315 height = 314 }
+			verticalScrollbar = "right_vertical_slider"
+			margin = { top = 4 bottom = 4 }
+			smooth_scrolling = yes
+			scroll_wheel_factor = 40
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+			}
+			gridBoxType = {
+				name = "wsh_roster_grid"
+				position = { x = 4 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 300 height = 82 }
+				max_slots_horizontal = 1
+				add_horizontal = no
+				format = "UPPER_LEFT"
+			}
+		}
+		buttonType = {
+			name = "disband_coalition_button"
+			position = { x = 18 y = 372 }
+			quadTextureSprite = "GFX_button_148x34"
+			buttonText = "COALITION_DISBAND"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "disband_coalition_tt"
+		}
+		buttonType = {
+			name = "open_election_gui"
+			position = { x = 220 y = 373 }
+			quadTextureSprite = "GFX_button_94x31"
+			buttonFont = "hoi_16mbs"
+			buttonText = "Elections"
+			clicksound = click_default
+			pdx_tooltip = "OPEN_ELECTION_TT"
+		}
+	}
+	# --- CONGRESS DIAGRAM ENTRIES ---
+	containerWindowType = {
+		name = "wsh_senate_gui_seat"
+		position = { x = 40 y = 0 }
+		clipping = no
+		iconType = {
+			name = "wsh_senate_seat_icon"
+			spriteType = "GFX_seat_icon"
+			frame = 0
+			scale = 1.0
+			pdx_tooltip = "wsh_senate_seat_combined_tt"
+		}
+	}
+	containerWindowType = {
+		name = "wsh_house_gui_seat"
+		position = { x = 35 y = 0 }
+		clipping = no
+		iconType = {
+			name = "wsh_house_seat_icon"
+			spriteType = "GFX_seat_icon"
+			frame = 0
+			scale = 1.0
+			pdx_tooltip = "wsh_house_seat_combined_tt"
+		}
+	}
+	# --- CONGRESS COALITION OVERLAYS ---
+	containerWindowType = {
+		name = "coalition_bg_liberalism_window"
+		position = { x = 0 y = 5 }
+		size = { width = 195 height = 15 }
+		clipping = yes
+		iconType = {
+			name = "bg_icon"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "coalition_bg_conservatism_window"
+		position = { x = 0 y = 19 }
+		size = { width = 195 height = 15 }
+		clipping = yes
+		iconType = {
+			name = "bg_icon"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "coalition_bg_socialism_window"
+		position = { x = 0 y = 33 }
+		size = { width = 195 height = 15 }
+		clipping = yes
+		iconType = {
+			name = "bg_icon"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "coalition_bg_populism_window"
+		position = { x = 0 y = 47 }
+		size = { width = 195 height = 15 }
+		clipping = yes
+		iconType = {
+			name = "bg_icon"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "coalition_bg_communism_window"
+		position = { x = 0 y = 61 }
+		size = { width = 195 height = 15 }
+		clipping = yes
+		iconType = {
+			name = "bg_icon"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "coalition_bg_nationalism_window"
+		position = { x = 0 y = 75 }
+		size = { width = 195 height = 15 }
+		clipping = yes
+		iconType = {
+			name = "bg_icon"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "coalition_bg_authoritarianism_window"
+		position = { x = 0 y = 89 }
+		size = { width = 195 height = 15 }
+		clipping = yes
+		iconType = {
+			name = "bg_icon"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_coalition_pol_party_bg"
+			alwaystransparent = yes
+		}
+	}
+	# =========================================================================
+	# ELECTION SYSTEM: MAIN PANELS
+	# =========================================================================
+	containerWindowType = {
+		name = "universal_election_window"
+		position = { x = 545 y = 500 }
+		size = { width = 715 height = 480 }
+		background = {
+			name = "bg"
+			quadTextureSprite = "GFX_tiled_bg"
+			pdx_tooltip = "ELECTION_CAMPAIGN_PANEL_TT"
+		}
+		clipping = no
+		iconType = {
+			name = "title_header_icon"
+			spriteType = "GFX_congress_master_header"
+			position = { x = 0 y = -39 }
+		}
+		buttonType = {
+			name = "election_close_button"
+			position = { x = 676 y = -35 }
+			quadTextureSprite = "GFX_closebutton"
+			clicksound = click_default
+			pdx_tooltip = "CLOSE"
+		}
+		instantTextboxType = {
+			name = "title"
+			position = { x = -115 y = -31 }
+			font = "hoi_24header"
+			text = "ELECTION_NIGHT_TITLE"
+			maxWidth = 455
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "national_vote_subtitle"
+			position = { x = 20 y = 50 }
+			font = "hoi_18mbs"
+			text = "NATIONAL_PROJECTION"
+			maxWidth = 415
+			maxHeight = 20
+			format = left
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "national_vote_bar_frame"
+			spriteType = "GFX_election_national_frame"
+			position = { x = 470 y = -18 }
+			centerposition = yes
+			pdx_tooltip = "ELECTION_NATIONAL_APPROVAL_TT"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "national_vote_bar"
+			spriteType = "GFX_election_national_bar"
+			position = { x = 470 y = -18 }
+			centerposition = yes
+			scale = 2.5
+			pdx_tooltip = "ELECTION_NATIONAL_APPROVAL_TT"
+		}
+		instantTextboxType = {
+			name = "gov_percentage_text"
+			position = { x = 282 y = -29 }
+			text = "[?gov_national_vote_share|0]%"
+			font = "hoi_20bs"
+			format = center
+			maxWidth = 400
+			alwaystransparent = yes
+		}
+		containerWindowType = {
+			name = "demographic_ledger_container"
+			position = { x = 10 y = 112 }
+			size = { width = 440 height = 358 }
+			verticalScrollbar = "right_vertical_slider"
+			margin = {
+				top = 5
+				bottom = 5
+				left = 0
+				right = 0
+			}
+			clipping = yes
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				pdx_tooltip = "ELECTION_DEMOGRAPHIC_LEDGER_TT"
+			}
+			gridboxtype = {
+				name = "demographic_grid"
+				position = { x = 5 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 420 height = 35 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+		# --- ELECTION ACTION SUB-PANELS (Children of universal_election_window) ---
+		# Placeholder shown before a voter group is selected.
+		containerWindowType = {
+			name = "election_action_placeholder_window"
+			position = { x = 455 y = 0 }
+			size = { width = 250 height = 480 }
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_bg"
+				pdx_tooltip = "ELECTION_ACTION_PANEL_TT"
+			}
+			instantTextboxType = {
+				name = "placeholder_title"
+				position = { x = 20 y = 54 }
+				font = "hoi_20b"
+				text = "ELECTION_ACTION_PLACEHOLDER_TITLE"
+				maxWidth = 210
+				maxHeight = 28
+				format = center
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "placeholder_body"
+				position = { x = 24 y = 112 }
+				font = "hoi_18mbs"
+				text = "ELECTION_ACTION_PLACEHOLDER_BODY"
+				maxWidth = 202
+				maxHeight = 220
+				format = center
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "election_action_panel"
+			position = { x = 455 y = 0 }
+			size = { width = 250 height = 480 }
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_bg"
+				pdx_tooltip = "ELECTION_ACTION_PANEL_TT"
+			}
+			instantTextboxType = {
+				name = "action_title"
+				position = { x = 10 y = 28 }
+				font = "hoi_18mbs"
+				text = "CAMPAIGN_PANEL_TITLE"
+				maxWidth = 230
+				format = center
+			}
+			buttonType = {
+				name = "dropdown_toggle_btn"
+				position = { x = 21 y = 75 }
+				quadTextureSprite = "GFX_button_ELEC"
+				buttonText = "[GetSelectedActionName]"
+				buttonFont = "hoi_16mbs"
+				clicksound = click_default
+				pdx_tooltip = "FFL_ELECTION_ACTION_DROPDOWN_TT"
+			}
+			buttonType = {
+				name = "execute_action_btn"
+				position = { x = 200 y = 75 }
+				quadTextureSprite = "GFX_elec_check"
+				buttonFont = "hoi_16mbs"
+				clicksound = click_default
+				pdx_tooltip = "EXECUTE_ACTION_BTN"
+			}
+		}
+		containerWindowType = {
+			name = "action_info_container"
+			position = { x = 465 y = 120 }
+			size = { width = 230 height = 350 }
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_bg"
+				pdx_tooltip = "FFL_ELECTION_SELECTED_ACTION_TT"
+			}
+			instantTextboxType = {
+				name = "info_desc"
+				position = { x = 20 y = 20 }
+				font = "hoi_18mbs"
+				text = "[GetSelectedActionDesc]"
+				maxWidth = 193
+				maxHeight = 150
+				format = left
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "info_cost"
+				position = { x = 20 y = 160 }
+				font = "hoi_16mbs"
+				text = "[GetSelectedActionCost]"
+				maxWidth = 210
+				maxHeight = 60
+				format = left
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "info_effect"
+				position = { x = 20 y = 230 }
+				font = "hoi_16mbs"
+				text = "[GetSelectedActionEffect]"
+				maxWidth = 210
+				maxHeight = 60
+				format = left
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "dropdown_list_container"
+			position = { x = 465 y = 121 }
+			size = { width = 230 height = 350 }
+			verticalScrollbar = "right_vertical_slider"
+			margin = {
+				top = 35
+				bottom = 5
+				left = 23
+				right = 0
+			}
+			clipping = yes
+			background = {
+				name = "bg"
+				quadTextureSprite = "GFX_tiled_bg"
+				pdx_tooltip = "ELECTION_DROPDOWN_PANEL_TT"
+			}
+			gridboxtype = {
+				name = "action_dropdown_grid"
+				position = { x = 4 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 221 height = 35 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+		containerWindowType = {
+			name = "election_action_disabled_overlay_window"
+			position = { x = 455 y = 0 }
+			size = { width = 250 height = 480 }
+			iconType = {
+				name = "execute_action_btn_disabled"
+				position = { x = 200 y = 75 }
+				quadTextureSprite = "GFX_elec_check_disabled"
+				pdx_tooltip = "EXECUTE_ACTION_BLOCKED_TT"
+				alwaystransparent = yes
+			}
+		}
+	}
+	# --- ELECTION ENTRIES ---
+	containerWindowType = {
+		name = "demographic_entry"
+		size = { width = 448 height = 35 }
+		buttonType = {
+			name = "select_demographic_button"
+			position = { x = -4 y = 0 }
+			quadTextureSprite = "GFX_election_row_bg"
+			clicksound = click_default
+			pdx_tooltip = "select_demographic_button_tt"
+		}
+		instantTextboxType = {
+			name = "bloc_name"
+			position = { x = 10 y = 8 }
+			text = "[GetDemographicNameSelected]"
+			font = "hoi_16mbs"
+			maxWidth = 184
+			maxHeight = 20
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "momentum_arrow"
+			spriteType = "GFX_election_trend_icon"
+			position = { x = 197 y = 6 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "bloc_support_bar_frame"
+			spriteType = "GFX_demographic_bar_frame"
+			position = { x = 265 y = 11 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "bloc_support_bar"
+			spriteType = "GFX_demographic_approval_bar"
+			position = { x = 265 y = 11 }
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "bloc_support_text"
+			position = { x = 222 y = 8 }
+			text = "[?elec_bloc_support^bloc_idx|0]%"
+			font = "hoi_18mbs"
+			maxWidth = 42
+			maxHeight = 20
+			format = center
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "action_dropdown_entry"
+		size = { width = 221 height = 35 }
+		buttonType = {
+			name = "select_action_btn"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_button_ELEC"
+			buttonText = "[GetDropdownActionName]"
+			buttonFont = "hoi_16mbs"
+			clicksound = click_default
+			pdx_tooltip = "[GetDropdownActionTooltip]"
+		}
+	}
+	containerWindowType = {
+		name = "politics_panel_bg"
+		position = { x = 0 y = 0 }
+		size = { width = 717 height = 938 }
+		clipping = no
+		background = {
+			name = "main_bg_pol_panel"
+			position = { x = 543 y = 0 }
+			quadTextureSprite = "GFX_tiled_bg"
+			alwaystransparent = yes
+		}
+	}
+}

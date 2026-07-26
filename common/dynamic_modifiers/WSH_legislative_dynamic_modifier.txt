@@ -1,0 +1,4 @@
+WSH_legislative_control_modifier = {
+	enable = { always = yes }
+	political_power_gain = wsh_legislative_pp_gain
+}

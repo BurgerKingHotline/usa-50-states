@@ -6,13 +6,8 @@ set_politics = {
 	elections_allowed = yes
 }
 recruit_character = WASHINGTON_GOV
-WSH_calculate_party_seats = yes
-WSH_senate_gui_setup = yes
-WSH_house_gui_setup = yes
-WSH_senate_reload = yes
-WSH_house_reload = yes
-WSH_recalculate_all_seats = yes
-	set_popularities = {
+# Set party popularity BEFORE calculating seats
+set_popularities = {
 	democratic = 22
 	conservatism_ideology = 16
 	socialism_ideology = 20
@@ -21,5 +16,14 @@ WSH_recalculate_all_seats = yes
 	fascism = 5
 	communism = 15
 }
-# SECONDARY LEADER (dynamic)
+# Set required political variables and flags
+set_country_flag = uses_wsh_legislature
+set_country_flag = uses_universal_elections
+# SECONDARY LEADER (dynamic) - flag checked by uses_dual_leader_gui trigger
 set_country_flag = dual_leader_active
+# Initialize election arrays once
+init_universal_election_system = yes
+# Initialize static chamber coordinate arrays once
+WSH_senate_gui_setup = yes
+WSH_house_gui_setup = yes
+# Legislative apportionment and coalition arrays are initialized on_startup.

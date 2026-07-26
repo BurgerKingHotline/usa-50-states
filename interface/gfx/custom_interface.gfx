@@ -232,4 +232,21 @@ spriteTypes = { ## Defines custom textures used by countrypoliticsview.gui
 		name = "GFX_congress_header"
 		texturefile = "gfx/interface/congress/title_header.dds"
 	}
+	spriteType = {
+		name = "GFX_pol_view_lower_bg"
+		texturefile = "gfx/interface/pol_view_lower_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_pol_button_main"
+		texturefile = "gfx/interface/pol_gov_button.dds"
+	}
+	spriteType = {
+		name = "GFX_congress_master_header"
+		texturefile = "gfx/interface/congress/congress_master_header2.dds"
+	}
+	spriteType = {
+		name = "GFX_CHG_council_seat"
+		texturefile = "gfx/interface/congress/CHG_council_seat.png"
+		noOfFrames = 4
+	}
 }

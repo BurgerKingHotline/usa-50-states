@@ -559,6 +559,42 @@ march_through_estonia = {
 		remove_effect = {
 			FROM = { set_state_flag = vaps_loyal_state }
 			random_list = {
+				50 = {
+					effect_tooltip = {
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.1
+						}
+					}
+					hidden_effect = {
+						set_variable = { EST.vaps_from = FROM }	
+						country_event = EST_events.801
+					}
+				}
+				35 = {
+					effect_tooltip = {
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.15
+						}
+					}
+					hidden_effect = {
+						set_variable = { EST.vaps_from = FROM }	
+						country_event = EST_events.802
+					}
+				}
+				15 = {
+					effect_tooltip = {
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.2
+						}
+					}
+					hidden_effect = {
+						set_variable = { EST.vaps_from = FROM }	
+						country_event = EST_events.803
+					}
+				}
 			}
 		clr_country_flag = marching_in_state_flag
 		}
@@ -632,6 +668,48 @@ EST_convert_FIN_cat = {
 				set_state_flag = vaps_march_has_happened_here_flag
 			}
 			random_list = {
+				50 = {
+					effect_tooltip = {
+						FIN = {
+							add_popularity = {
+								ideology = fascism
+								popularity = 0.05
+							}
+						}
+					}
+					hidden_effect = {
+						set_variable = { FIN.vaps_from = FROM }	
+						FIN = { country_event = EST_events.801 }
+					}
+				}
+				35 = {
+					effect_tooltip = {
+						FIN = {
+							add_popularity = {
+								ideology = fascism
+								popularity = 0.1
+							}
+						}
+					}
+					hidden_effect = {
+						set_variable = { FIN.vaps_from = FROM }	
+						FIN = { country_event = EST_events.802 }
+					}
+				}
+				15 = {
+					effect_tooltip = {
+						FIN = {
+							add_popularity = {
+								ideology = fascism
+								popularity = 0.15
+							}
+						}
+					}
+					hidden_effect = {
+						set_variable = { FIN.vaps_from = FROM }	
+						FIN = { country_event = EST_events.803 }
+					}
+				}
 			}
 			clr_country_flag = marching_in_state_flag
 		}

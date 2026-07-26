@@ -10,35 +10,32 @@ joint_focus = {
 		y = 0
 		trigger = {
 			tag = IRQ
-			AND = {
-				NOT = { has_completed_focus = IRQ_promote_kurdish_culture }
-				NOT = { has_completed_focus = IRQ_ensure_sunni_dominance }
-			}
 		}
 	}
 
 	offset = {
-		x = 37
+		x = -26
 		y = 0
 		trigger = {
 			tag = IRQ
-			AND = {
-				has_completed_focus = IRQ_promote_kurdish_culture
-				NOT = { has_completed_focus = IRQ_ensure_sunni_dominance }
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = IRQ_promote_kurdish_culture
 		}
 	}
 
-
 	offset = {
-		x = 57
+		x = -6
 		y = 0
 		trigger = {
 			tag = IRQ
-			AND = {
-				NOT = { has_completed_focus = IRQ_promote_kurdish_culture }
-				has_completed_focus = IRQ_ensure_sunni_dominance
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = IRQ_ensure_sunni_dominance
 		}
 	}
 
@@ -108,13 +105,22 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		NOT = {
+			has_war_with = PER
+			has_war_with = IRQ
+			has_war_with = AFG
+			has_war_with = TUR
+		}
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -159,7 +165,7 @@ joint_focus = {
 
 		set_country_flag = SSB_is_saadabad_leader
 		add_dynamic_modifier = { modifier = SSB_saadabad_pact }
-		
+		# These checks may look unecessary/redundant. It's not, this is needed for the tooltip to look right.
 		if = {
 			limit = {
 				NOT = { has_dynamic_modifier = { modifier = SSB_saadabad_pact } }
@@ -206,14 +212,18 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -223,7 +233,19 @@ joint_focus = {
 
 	search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY}
 
-	completion_reward = {}
+	completion_reward = {
+		custom_effect_tooltip = SSB_spirit_tooltip
+		add_to_variable = {
+			var = SSB_war_support_factor
+			value = 0.05
+			tooltip = war_support_factor_tt
+		}
+		add_to_variable = {
+			var = SSB_production_speed_arms_factory_factor
+			value = 0.05
+			tooltip = production_speed_arms_factory_factor_tt
+		}
+	}
 }
 
 joint_focus = {
@@ -239,14 +261,18 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -256,7 +282,19 @@ joint_focus = {
 
 	search_filters = {FOCUS_FILTER_INTERNATIONAL_TRADE FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY}
 
-	completion_reward = {}
+	completion_reward = {
+		custom_effect_tooltip = SSB_spirit_tooltip
+		add_to_variable = {
+			var = SSB_production_speed_infrastructure_factor
+			value = 0.05
+			tooltip = production_speed_infrastructure_factor_tt
+		}
+		add_to_variable = {
+			var = SSB_stability_factor
+			value = 0.05
+			tooltip = stability_factor_tt
+		}
+	}
 }
 
 joint_focus = {
@@ -272,7 +310,11 @@ joint_focus = {
 
 	text_icon = SSB_AFG_focus_style
 
-	available = {}
+	available = {
+		tag = AFG
+		has_completed_focus = AFG_sugar_processing
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
@@ -289,7 +331,19 @@ joint_focus = {
 
 	joint_trigger = { SSB_basic_available_trigger = yes }
 
-	completion_reward = {}
+	completion_reward = {
+		custom_effect_tooltip = SSB_spirit_tooltip
+		add_to_variable = {
+			var = SSB_production_factory_max_efficiency_factor
+			value = 0.075
+			tooltip = production_factory_max_efficiency_factor_tt
+		}
+		add_to_variable = {
+			var = SSB_production_factory_efficiency_gain_factor
+			value = 0.075
+			tooltip = production_factory_efficiency_gain_factor_tt
+		}
+	}
 }
 
 joint_focus = {
@@ -305,14 +359,47 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		SSB_basic_available_trigger = yes
+		IRQ = {
+			has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			has_civil_war = no
+		}
+		AFG = {
+			has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			has_civil_war = no
+		}
+		PER = {
+			has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			has_civil_war = no
+		}
+		TUR = {
+			has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			has_civil_war = no
+		}
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+		custom_trigger_tooltip = {
+			tooltip = FOCUS_WILL_BYPASS_IF_UNAVAILABLE
+			OR = {
+				IRQ = { NOT = { has_dynamic_modifier = { modifier = SSB_saadabad_pact } } }
+				IRQ = { has_civil_war = yes }
+				AFG = { NOT = { has_dynamic_modifier = { modifier = SSB_saadabad_pact } } }
+				AFG = { has_civil_war = yes }
+				PER = { NOT = { has_dynamic_modifier = { modifier = SSB_saadabad_pact } } }
+				PER = { has_civil_war = yes }
+				TUR = { NOT = { has_dynamic_modifier = { modifier = SSB_saadabad_pact } } }
+				TUR = { has_civil_war = yes }
+			}
+		}
+		
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -338,7 +425,7 @@ joint_focus = {
 				level = 2
 				build_only_on_allied = no
 				fallback = yes
-				
+				#path = { 11829 11811 6871 3951 6808 9806 11784 11747 804 3862 3964 6977 6888 9761 6965 9860 876 10399 9858 10497 12318 12476 10811 3916 8123 3795 12046 2097 12855 829 5050 2065 8040 1982 8125 10922 10837 12818 12704 12748 8009 1888 10806 12871 8053 12788 1995 7916 10737 }
 
 				path = { 11829 11811 890 3905 6908 11747 804 11844 3807 3870 921 6977 9777 9761 6965 9860 876 11739 10497 12318 7530 10811 10106 1600 3795 2097 12855 829 5050 2065 1982 10922 10837 10768 10385 7602 7573 5073 1957 1888 10806 12871 8053 12788 1995 7916 10737 }
 
@@ -440,14 +527,18 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -457,7 +548,15 @@ joint_focus = {
 
 	search_filters = {FOCUS_FILTER_INTERNATIONAL_TRADE FOCUS_FILTER_STABILITY}
 
-	completion_reward = {}
+	completion_reward = {
+		add_ideas = SSB_saadabad_trade_agreement
+		custom_effect_tooltip = SSB_spirit_tooltip
+		add_to_variable = {
+			var = SSB_stability_factor
+			value = 0.05
+			tooltip = stability_factor_tt
+		}
+	}
 }
 
 joint_focus = {
@@ -473,7 +572,11 @@ joint_focus = {
 
 	text_icon = SSB_IRQ_focus_style
 
-	available = {}
+	available = {
+		tag = IRQ
+		has_completed_focus = IRQ_finish_the_berlin_baghdad_railway
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
@@ -490,7 +593,19 @@ joint_focus = {
 
 	search_filters = { FOCUS_FILTER_INTERNATIONAL_TRADE FOCUS_FILTER_INDUSTRY }
 
-	completion_reward = {}
+	completion_reward = {
+		custom_effect_tooltip = SSB_spirit_tooltip
+		add_to_variable = {
+			var = SSB_trade_opinion_factor
+			value = 0.3
+			tooltip = trade_opinion_factor_tt
+		}
+		add_to_variable = {
+			var = SSB_production_speed_infrastructure_factor
+			value = 0.06
+			tooltip = production_speed_infrastructure_factor_tt
+		}
+	}
 
 	completion_reward_joint_member = {
 		country_event = {
@@ -513,14 +628,18 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -530,7 +649,24 @@ joint_focus = {
 
 	search_filters = {FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_NAVY_XP}
 
-	completion_reward = {}
+	completion_reward = {
+		custom_effect_tooltip = SSB_spirit_tooltip
+		add_to_variable = {
+			var = SSB_experience_gain_army
+			value = 0.15
+			tooltip = experience_gain_army_tt
+		}
+		add_to_variable = {
+			var = SSB_experience_gain_air
+			value = 0.1
+			tooltip = experience_gain_air_tt
+		}
+		add_to_variable = {
+			var = SSB_experience_gain_navy
+			value = 0.05
+			tooltip = experience_gain_navy_tt
+		}
+	}
 
 	completion_reward_joint_originator = {
 		army_experience = 35
@@ -552,14 +688,18 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -621,7 +761,11 @@ joint_focus = {
 
 	text_icon = SSB_PER_focus_style
 
-	available = {}
+	available = {
+		tag = PER
+		has_completed_focus = PER_form_savak
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
@@ -638,7 +782,19 @@ joint_focus = {
 
 	search_filters = { FOCUS_FILTER_POLITICAL }
 
-	completion_reward = {}
+	completion_reward = {
+		custom_effect_tooltip = SSB_spirit_tooltip
+		add_to_variable = {
+			var = SSB_intelligence_agency_defense
+			value = 0.2
+			tooltip = intelligence_agency_defense_tt
+		}
+		add_to_variable = {
+			var = SSB_agency_upgrade_time
+			value = -0.2
+			tooltip = agency_upgrade_time_tt
+		}
+	}
 }
 
 joint_focus = {
@@ -654,14 +810,23 @@ joint_focus = {
 
 	text_icon = SSB_TUR_focus_style
 
-	available = {}
+	available = {
+		tag = TUR
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+		TUR = {
+			NOT = {
+				has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			}
+		}
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -670,7 +835,7 @@ joint_focus = {
 	search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 	completion_reward_joint_originator = {
-		TUR = { 
+		TUR = { # tag for tooltip purposes
 			add_tech_bonus = {
 				name = SSB_expand_turkeys_military_infrastructure
 				bonus = 1.0
@@ -719,14 +884,23 @@ joint_focus = {
 
 	text_icon = SSB_AFG_focus_style
 
-	available = {}
+	available = {
+		tag = AFG
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+		AFG = {
+			NOT = {
+				has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			}
+		}
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -735,7 +909,7 @@ joint_focus = {
 	search_filters = {}
 
 	completion_reward_joint_originator = {
-		AFG = { 
+		AFG = { # tag for tooltip purposes
 			custom_effect_tooltip = SSB_spirit_tooltip
 			add_to_variable = {
 				var = SSB_acclimatization_hot_climate_gain_factor
@@ -779,14 +953,23 @@ joint_focus = {
 
 	text_icon = SSB_IRQ_focus_style
 
-	available = {}
+	available = {
+		tag = IRQ
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+		IRQ = {
+			NOT = {
+				has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			}
+		}
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -795,7 +978,7 @@ joint_focus = {
 	search_filters = {FOCUS_FILTER_INDUSTRY}
 
 	completion_reward_joint_originator = {
-		IRQ = { 
+		IRQ = { # tag for tooltip purposes
 			custom_effect_tooltip = SSB_spirit_tooltip
 			add_to_variable = {
 				var = SSB_local_resources_factor
@@ -828,14 +1011,23 @@ joint_focus = {
 
 	text_icon = SSB_PER_focus_style
 
-	available = {}
+	available = {
+		tag = PER
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+		PER = {
+			NOT = {
+				has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			}
+		}
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -844,7 +1036,7 @@ joint_focus = {
 	search_filters = {FOCUS_FILTER_INDUSTRY}
 
 	completion_reward_joint_originator = {
-		PER = { 
+		PER = { # tag for tooltip purposes
 			custom_effect_tooltip = SSB_spirit_tooltip
 			add_to_variable = {
 				var = SSB_production_speed_arms_factory_factor
@@ -877,14 +1069,23 @@ joint_focus = {
 
 	text_icon = SSB_TUR_focus_style
 
-	available = {}
+	available = {
+		tag = TUR
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+		TUR = {
+			NOT = {
+				has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			}
+		}
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -894,7 +1095,9 @@ joint_focus = {
 
 	search_filters = {FOCUS_FILTER_INDUSTRY}
 
-	completion_reward = {}
+	completion_reward = {
+
+	}
 
 	completion_reward_joint_originator = {
 		TUR = {
@@ -974,14 +1177,23 @@ joint_focus = {
 
 	text_icon = SSB_PER_focus_style
 
-	available = {}
+	available = {
+		tag = PER
+		SSB_basic_available_trigger = yes
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+		PER = {
+			NOT = {
+				has_dynamic_modifier = { modifier = SSB_saadabad_pact }
+			}
+		}
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -1069,14 +1281,50 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		SSB_basic_available_trigger = yes
+		if = {
+			limit = { tag = PER }
+			OR = {
+				is_in_faction_with = AFG
+				is_in_faction_with = IRQ
+				is_in_faction_with = TUR
+			}
+		}
+		if = {
+			limit = { tag = IRQ }
+			OR = {
+				is_in_faction_with = AFG
+				is_in_faction_with = PER
+				is_in_faction_with = TUR
+			}
+		}
+		if = {
+			limit = { tag = AFG }
+			OR = {
+				is_in_faction_with = PER
+				is_in_faction_with = IRQ
+				is_in_faction_with = TUR
+			}
+		}
+		if = {
+			limit = { tag = TUR }
+			OR = {
+				is_in_faction_with = AFG
+				is_in_faction_with = IRQ
+				is_in_faction_with = PER
+			}
+		}
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -1094,7 +1342,24 @@ joint_focus = {
 
 	search_filters = {FOCUS_FILTER_MANPOWER}
 
-	completion_reward = {}
+	completion_reward = {
+		custom_effect_tooltip = SSB_spirit_tooltip
+		add_to_variable = {
+			var = SSB_conscription_factor
+			value = 0.05
+			tooltip = conscription_factor_tt
+		}
+		add_to_variable = {
+			var = SSB_army_defence_against_minor_factor
+			value = 0.05
+			tooltip = army_defence_against_minor_factor_tt
+		}
+		add_to_variable = {
+			var = SSB_army_defence_against_major_factor
+			value = 0.15
+			tooltip = army_defence_against_major_factor_tt
+		}
+	}
 }
 
 joint_focus = {
@@ -1110,14 +1375,50 @@ joint_focus = {
 
 	text_icon = SSB_AFG_IRQ_PER_TUR_focus_style
 
-	available = {}
+	available = {
+		SSB_basic_available_trigger = yes
+		if = {
+			limit = { tag = PER }
+			OR = {
+				is_in_faction_with = AFG
+				is_in_faction_with = IRQ
+				is_in_faction_with = TUR
+			}
+		}
+		if = {
+			limit = { tag = IRQ }
+			OR = {
+				is_in_faction_with = AFG
+				is_in_faction_with = PER
+				is_in_faction_with = TUR
+			}
+		}
+		if = {
+			limit = { tag = AFG }
+			OR = {
+				is_in_faction_with = PER
+				is_in_faction_with = IRQ
+				is_in_faction_with = TUR
+			}
+		}
+		if = {
+			limit = { tag = TUR }
+			OR = {
+				is_in_faction_with = AFG
+				is_in_faction_with = IRQ
+				is_in_faction_with = PER
+			}
+		}
+	}
 
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 0
@@ -1134,5 +1435,11 @@ joint_focus = {
 	}
 	search_filters = {FOCUS_FILTER_RESEARCH}
 
-	completion_reward = {}
+	completion_reward = {
+		add_to_tech_sharing_group = SSB_tech_sharing_group
+		country_event = {
+			id = PER_ssb_events.9
+			hours = 12
+		}
+	}
 }

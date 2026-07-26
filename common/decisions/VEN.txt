@@ -12,6 +12,7 @@ VEN_abc_islands = {
 			NOT = { has_war_with = USA }
 			NOT = { has_war_with = ENG }
 			NOT = { has_war_with = HOL }
+			695 = { is_owned_and_controlled_by = HOL }
 			HOL = { has_capitulated = yes }
 		}
 
@@ -29,6 +30,7 @@ VEN_abc_islands = {
 
 		visible = {
 			original_tag = VEN
+			695 = { is_owned_and_controlled_by = HOL }
 			NOT = { has_global_flag = ven_claims_abc_islands }
 		}
 

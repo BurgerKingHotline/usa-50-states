@@ -9,6 +9,10 @@ _toozers/*
 .vscode/*
 .github
 .github/*
+*.agents
+.agents/*
+*.codex
+.codex/*
 _population/__pycache__
 _population/__pycache__/*
 

@@ -18,6 +18,11 @@ BOL_bolivian_irredentism = {
 
 		available = {
 			controls_state = 506
+			506 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		}
 
 		state_target = yes
@@ -29,6 +34,9 @@ BOL_bolivian_irredentism = {
 
 		visible = { 
 			NOT = {
+				506 = {
+					is_core_of = ROOT
+				}
 			}
 			NOT = {
 				has_country_flag = BOL_restored_the_litoral_department_flag
@@ -49,9 +57,18 @@ BOL_bolivian_irredentism = {
 
 			IF = {
 				limit = {
+					506 = {
+						is_claimed_by = ROOT
+					}
+				}
+				506 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			506 = {
+				add_core_of = ROOT
+			}
 
 			ROOT = {
 				transfer_state = 506
@@ -87,6 +104,11 @@ BOL_bolivian_irredentism = {
 
 		available = {
 			controls_state = 940
+			940 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		}
 
 		state_target = yes
@@ -98,6 +120,9 @@ BOL_bolivian_irredentism = {
 
 		visible = { 
 			NOT = {
+				940 = {
+					is_core_of = ROOT
+				}
 			}
 			NOT = {
 				has_country_flag = BOL_restored_the_acre_state_flag
@@ -118,9 +143,18 @@ BOL_bolivian_irredentism = {
 
 			IF = {
 				limit = {
+					940 = {
+						is_claimed_by = ROOT
+					}
+				}
+				940 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			940 = {
+				add_core_of = ROOT
+			}
 
 			ROOT = {
 				transfer_state = 940
@@ -156,6 +190,11 @@ BOL_bolivian_irredentism = {
 
 		available = {
 			controls_state = 951
+			951 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		}
 
 		state_target = yes
@@ -167,6 +206,9 @@ BOL_bolivian_irredentism = {
 
 		visible = { 
 			NOT = {
+				951 = {
+					is_core_of = ROOT
+				}
 			}
 			NOT = {
 				has_country_flag = BOL_established_arican_department_flag
@@ -187,9 +229,18 @@ BOL_bolivian_irredentism = {
 
 			IF = {
 				limit = {
+					951 = {
+						is_claimed_by = ROOT
+					}
+				}
+				951 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			951 = {
+				add_core_of = ROOT
+			}
 
 			ROOT = {
 				transfer_state = 951

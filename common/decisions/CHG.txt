@@ -1,5 +1,46 @@
 CHG_council_choice = {
-    CHG_test = {
-        cost = 10000
-    }
+	CHG_debug_balanced_council = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes }
+		available = { is_debug = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { CHG_debug_council_balanced = yes }
+	}
+
+	CHG_debug_right_majority = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes }
+		available = { is_debug = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { CHG_debug_council_right_majority = yes }
+	}
+
+	CHG_debug_liberal_majority = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes }
+		available = { is_debug = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { CHG_debug_council_liberal_majority = yes }
+	}
+
+	CHG_debug_left_majority = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes }
+		available = { is_debug = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { CHG_debug_council_left_majority = yes }
+	}
+
+	CHG_restore_calculated_council = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes }
+		available = { is_debug = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { CHG_calculate_and_refresh_council = yes }
+	}
 }

@@ -1,0 +1,19 @@
+add_namespace = ffl_election
+
+country_event = {
+	id = ffl_election.1
+	title = ffl_election.1.t
+	desc = ffl_election.1.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = { name = ffl_election.1.a }
+}
+
+country_event = {
+	id = ffl_election.2
+	title = ffl_election.2.t
+	desc = ffl_election.2.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = { name = ffl_election.2.a }
+}

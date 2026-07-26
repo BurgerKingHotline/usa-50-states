@@ -433,6 +433,10 @@ MEX_category_military_issues = {
 		complete_effect = {
 			if = {
 				limit = {
+					304 = {
+						is_owned_by = "PAN"
+						is_controlled_by = ROOT
+					}
 					ROOT = {
 						has_war_with = "PAN"
 					}
@@ -573,6 +577,20 @@ MEX_category_military_issues = {
 
 		remove_effect = {
 			random_list = {
+				60 = { # Shipment gets through
+					army_experience = 20
+					add_equipment_to_stockpile = {
+						type = convoy_1
+						amount = 3
+					}
+					FROM = {
+						country_event = { id = mexico.50 }
+					}
+				}
+				40 = { # Sunk by Italians
+					navy_experience = 25
+					country_event = { id = mexico.51 }
+				}
 			}
 		}
 		
@@ -679,6 +697,20 @@ MEX_category_military_issues = {
 
 		remove_effect = {
 			random_list = {
+				60 = { # Shipment gets through
+					army_experience = 20
+					add_equipment_to_stockpile = {
+						type = convoy_1
+						amount = 3
+					}
+					FROM = {
+						country_event = { id = mexico.50 }
+					}
+				}
+				40 = { # Sunk by loyalists
+					navy_experience = 25
+					country_event = { id = mexico.51 }
+				}
 			}
 		}
 		
@@ -756,6 +788,7 @@ MEX_category_territorial_integration = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
 				NOT = {
+					313 = { is_core_of = ROOT }
 				}
 				GUA = {
 					is_subject_of = ROOT
@@ -806,6 +839,7 @@ MEX_category_territorial_integration = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
 				NOT = {
+					312 = { is_core_of = ROOT }
 				}
 				HON = {
 					is_subject_of = ROOT
@@ -856,6 +890,7 @@ MEX_category_territorial_integration = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
 				NOT = {
+					314 = { is_core_of = ROOT }
 				}
 				ELS = {
 					is_subject_of = ROOT
@@ -906,6 +941,7 @@ MEX_category_territorial_integration = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
 				NOT = {
+					317 = { is_core_of = ROOT }
 				}
 				NIC = {
 					is_subject_of = ROOT
@@ -956,6 +992,7 @@ MEX_category_territorial_integration = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
 				NOT = {
+					316 = { is_core_of = ROOT }
 				}
 				COS = {
 					is_subject_of = ROOT
@@ -1006,6 +1043,7 @@ MEX_category_territorial_integration = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
 				NOT = {
+					304 = { is_core_of = ROOT }
 				}
 				"PAN" = {
 					is_subject_of = ROOT
@@ -1055,6 +1093,7 @@ MEX_category_territorial_integration = {
 		visible = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			NOT = {
+				685 = { is_core_of = ROOT }
 			}
 		}
 		
@@ -1092,6 +1131,7 @@ MEX_category_territorial_integration = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
 				NOT = {
+					311 = { is_core_of = ROOT }
 				}
 				BLZ = {
 					is_subject_of = ROOT
@@ -1120,6 +1160,9 @@ MEX_category_territorial_integration = {
 			
 			add_state_core = 311
 
+			311 = {
+				set_state_name = "Belice"
+			}
 
 			hidden_effect = {
 				remove_state_claim = 311
@@ -1141,6 +1184,7 @@ MEX_category_territorial_integration = {
 		visible = {
 			has_completed_focus = MEX_focus_liberate_the_caribbean
 			NOT = {
+				315 = { is_core_of = ROOT }
 			}
 		}
 		
@@ -1176,6 +1220,7 @@ MEX_category_territorial_integration = {
 		visible = {
 			has_completed_focus = MEX_focus_liberate_the_caribbean
 			NOT = {
+				318 = { is_core_of = ROOT }
 			}
 		}
 		
@@ -1211,6 +1256,7 @@ MEX_category_territorial_integration = {
 		visible = {
 			has_completed_focus = MEX_focus_liberate_the_caribbean
 			NOT = {
+				319 = { is_core_of = ROOT }
 			}
 		}
 		

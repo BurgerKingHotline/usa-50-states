@@ -20,41 +20,41 @@
 
 	continuous_focus_position = { x = 20 y = 1000 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#	focus = {
+#		id = CHI_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
 	shared_focus = CHI_invite_foreign_investors
 
 	focus = {
@@ -69,9 +69,13 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+		
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -82,7 +86,10 @@
 		}
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 75 
+			add_stability = 0.05
+		}
 	}
 
 	focus = {
@@ -99,9 +106,15 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_idea = CHI_hyper_inflation_5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -112,7 +125,10 @@
 		}
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.1
+			CHI_hyper_inflation_level_up = yes
+		}
 	}
 
 	focus = {
@@ -129,9 +145,15 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_idea = CHI_hyper_inflation_5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -142,7 +164,10 @@
 		}
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.1
+			CHI_hyper_inflation_level_up = yes
+		}
 	}
 
 	focus = {
@@ -159,9 +184,13 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			has_hyper_inflation = yes
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -172,7 +201,9 @@
 		}
 
 		search_filters = { FOCUS_FILTER_CHI_INFLATION }
-		completion_reward = {}
+		completion_reward = {
+			CHI_hyper_inflation_level_down = yes 
+		}
 	}
 
 	focus = {
@@ -189,9 +220,13 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -202,7 +237,9 @@
 		}
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -219,9 +256,15 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_idea = CHI_hyper_inflation_5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -232,7 +275,10 @@
 		}
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {			
+			add_war_support = 0.1
+			CHI_hyper_inflation_level_up = yes
+		}
 	}
 
 	focus = {
@@ -250,9 +296,15 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_idea = CHI_hyper_inflation_5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -263,7 +315,10 @@
 		}
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.1
+			CHI_hyper_inflation_level_up = yes
+		}
 	}
 
 	focus = {
@@ -280,9 +335,16 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			amount_research_slots < 5
+			NOT = {
+				has_idea = CHI_hyper_inflation_5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -293,7 +355,10 @@
 		}
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+			CHI_hyper_inflation_level_up = yes
+		}
 	}
 
 	focus = {
@@ -310,9 +375,13 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -323,7 +392,9 @@
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+		}
 	}
 
 	focus = {
@@ -340,16 +411,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.1
+		}
 	}
 
 	focus = {
@@ -366,16 +443,31 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 
-		completion_reward = {}
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_major = yes
+					has_government = democratic
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_republicanism
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -393,15 +485,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_inter_party_coordination_council
+		}
 	}
 
 	focus = {
@@ -419,16 +517,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -446,16 +550,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -472,16 +582,34 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_idea = CHI_ineffective_bureaucracy
+				}
+				remove_ideas = CHI_ineffective_bureaucracy
+			} 
+			IF = {
+				limit = {
+					has_idea = CHI_ineffective_bureaucracy_warlord
+				}
+				remove_ideas = CHI_ineffective_bureaucracy_warlord
+			}
+			
+		}
 	}
 
 	focus = {
@@ -498,16 +626,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_executive_yuan
+		}
 	}
 
 	focus = {
@@ -525,16 +659,51 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CHI_executive_yuan
+				add_idea = CHI_legislative_yuan
+			}
+			IF = {
+				limit = {
+					NOT = {
+						has_character = CHI_kwong_jiang
+					}
+					NOT = {
+						original_tag = RNG
+					}
+				}
+
+				CHI = {
+					CHI_kwong_jiang = {
+						set_nationality = ROOT
+					}
+				}
+			}
+			IF = {
+				limit = {
+					NOT = {
+						original_tag = RNG
+					}
+				}
+				custom_effect_tooltip = available_political_advisor
+				CHI = { show_ideas_tooltip = CHI_kwong_jiang } 
+			}
+			
+		}
 	}
 
 	focus = {
@@ -551,16 +720,22 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -578,16 +753,22 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.1
+		}
 	}
 
 	focus = {
@@ -612,9 +793,13 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -625,7 +810,9 @@
 		}
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.05
+		}
 	}
 
 	focus = {
@@ -642,9 +829,14 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+			is_in_faction = no
+		}
 
-		bypass = {}
+		bypass = {
+			is_in_faction_with = PRC
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -654,7 +846,15 @@
 
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			CHI = {
+				set_rule = { can_create_factions = yes }
+				create_faction = chinese_united_front
+			}
+			PRC = {
+				country_event = generic.5
+			}
+		}
 	}
 
 	focus = {
@@ -677,9 +877,17 @@
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = { is_in_faction_with = JAP }
+			is_subject = no
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				has_war_with = JAP
+				has_war_with = MAN
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -689,7 +897,33 @@
 
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					MAN = {
+						OR = {
+							is_in_faction_with = JAP
+							is_puppet_of = JAP
+						}
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = MAN
+					expire = 0
+				}
+				else = {
+					create_wargoal = {
+						type = annex_everything
+						target = JAP
+						expire = 0
+					}	
+				}
+			}
+			hidden_effect = {
+				news_event = { id = wtt_news.35 days = 1}
+			}
+		}
 	}
 
 	focus = {
@@ -706,9 +940,42 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+			NOT = { has_government = communism }
+			any_country = {
+				OR = {
+					tag = YUN
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = XSM
+					tag = TIB
+					tag = PRC
+				}
+				has_government = communism
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				is_in_faction_with = PRC
+				NOT = { 
+					any_country = {
+						OR = {
+							tag = YUN
+							tag = SIK
+							tag = GXC
+							tag = SHX
+							tag = XSM
+							tag = TIB
+							tag = PRC
+						}
+						has_government = communism
+					}
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -718,7 +985,102 @@
 
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			if = {		
+				limit = {
+					SIK = {
+						has_government = communism
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = SIK
+					expire = 0
+				}
+			}
+			if = {		
+				limit = {
+					TIB = {
+						has_government = communism
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = TIB
+					expire = 0
+				}
+			}
+			if = {
+				limit = {
+					PRC = {
+						has_government = communism
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PRC
+						expire = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					YUN = {
+						has_government = communism
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = YUN
+						expire = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					SHX = {
+						has_government = communism
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = SHX
+						expire = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					GXC = {
+						has_government = communism
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = GXC
+						expire = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					XSM = {
+						has_government = communism
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = XSM
+						expire = 0
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -735,9 +1097,47 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+		}
 
-		bypass = {}
+		bypass = {
+			GXC = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+			YUN = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+			SHX = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+			XSM = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+			SIK = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -748,7 +1148,21 @@
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = GXC
+						tag = YUN
+						tag = SHX
+						tag = XSM
+						tag = SIK
+					}
+				}
+				country_event = { id = wtt_china.1 }
+			}
+			unlock_decision_category_tooltip = CHI_integrate_the_warlords
+		}
 	}
 
 	focus = {
@@ -765,15 +1179,23 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_idea = CHI_army_corruption_1
+			}		
+		}
 
-		bypass = {}
+		bypass = {
+			has_offensive_war_with = JAP
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_war_of_resistance
+		}
 	}
 
 	focus = {
@@ -790,16 +1212,23 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_war = yes
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			unlock_decision_category_tooltip = CHI_industrial_evacuations			
+			set_variable = { var = CHI_industrial_evacuations_amount_factor value = 0.75 } #Ratio for how many building are moved. Change CHI_industrial_evacuations_add_AF and CHI_industrial_evacuations_add_IC if you change the value
+		}
 	}
 
 	focus = {
@@ -816,15 +1245,35 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_idea = CHI_army_corruption_2
+			}
+			has_defensive_war = yes
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = CHI_war_of_resistance
+				}
+				swap_ideas = {
+					remove_idea = CHI_war_of_resistance
+					add_idea = CHI_war_of_resistance_2
+				}
+				else = {
+					add_ideas = CHI_war_of_national_liberation
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -841,15 +1290,21 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			has_war = yes
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			unlock_decision_tooltip = CHI_scorched_earth_tactics
+		}
 	}
 
 	focus = {
@@ -866,15 +1321,25 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				has_war_with = JAP
+				has_war_with = MAN
+			}
+			has_country_flag = CHI_lessons_of_war_completed
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_war_of_anti_imperialism
+		}
 	}
 
 	focus = {
@@ -895,16 +1360,22 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_forced_conscription
+		}
 	}
 
 	focus = {
@@ -921,15 +1392,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = CHI_50_cheaper_force_attack
+		}
 	}
 
 	focus = {
@@ -945,15 +1422,21 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_military_affairs_commission
+		}
 	}
 
 	focus = {
@@ -970,9 +1453,15 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			 613 = {
+			 	is_fully_controlled_by = ROOT
+			 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -982,7 +1471,82 @@
 
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = { has_full_control_of_state = 613 }
+				613 = { # Shanghai
+					set_building_level = {
+						type = bunker
+						province = {
+							id = 11913 #Nanjing
+							id = 11982 #Nothing
+							id = 10076 #Airbase
+							id = 12052
+							id = 7014 #Shanghai
+						}
+						level = 2
+						instant_build = yes
+					}
+
+					if = {
+						limit = {
+							any_province_building_level = {
+								province = {
+									id = 7014 #Shanghai
+								}
+								level < 3
+								building = bunker
+							}
+						}
+						set_building_level = {
+							type = bunker
+							province = {
+								id = 7014 #Shanghai
+							}
+							level = 3
+							instant_build = yes
+						}
+					}
+
+					if = {
+						limit = {
+							any_province_building_level = {
+								province = {
+									id = 7014 #Shanghai
+								}
+								level < 2
+								building = coastal_bunker
+							}
+						}
+						set_building_level = {
+							type = coastal_bunker
+							province = {
+								id = 7014 #Shanghai
+							}
+							level = 2
+							instant_build = yes
+						}
+					}					
+				}
+
+				#If not full control, only add forts in provinces bordering the enemy
+				#Only time to throw up some emergency stuff
+				else = {
+					613 = {
+						add_building_construction = {
+							type = bunker
+							province = {
+								all_provinces = yes
+								limit_to_border = yes
+							}
+							level = 1
+							instant_build = yes
+						}
+					}
+
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -999,9 +1563,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				any_enemy_country = {
+					has_full_control_of_state = 613
+				}
+			}
+			NOT = {
+				any_enemy_country = {
+					has_full_control_of_state = 606
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1011,7 +1588,128 @@
 
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = { has_full_control_of_state = 613 }
+				613 = { # Shanghai
+					set_building_level = {
+						type = bunker
+						province = {
+							id = 11913 #Nanjing
+							id = 11982 #Nothing
+							id = 10076 #Airbase
+							id = 12052
+							id = 7014 #Shanghai
+						}
+						level = 3
+						instant_build = yes
+					}
+
+					if = {
+						limit = {
+							any_province_building_level = {
+								province = {
+									id = 7014 #Shanghai
+								}
+								level < 4
+								building = bunker
+							}
+						}
+						set_building_level = {
+							type = bunker
+							province = {
+								id = 7014 #Shanghai
+							}
+							level = 4
+							instant_build = yes
+						}
+					}
+
+					if = {
+						limit = {
+							any_province_building_level = {
+								province = {
+									id = 7014 #Shanghai
+								}
+								level < 3
+								building = coastal_bunker
+							}
+						}
+						set_building_level = {
+							type = coastal_bunker
+							province = {
+								id = 7014 #Shanghai
+							}
+							level = 3
+							instant_build = yes
+						}
+					}					
+				}
+
+				#If not full control, only add forts in provinces bordering the enemy
+				#Only time to throw up some emergency stuff
+				else = {
+					613 = {
+						add_building_construction = {
+							type = bunker
+							province = {
+								all_provinces = yes
+								limit_to_border = yes
+							}
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { has_full_control_of_state = 606 }
+				606 = { # Anhui
+					set_building_level = {
+						type = bunker
+						province = {
+							id = 1099
+							id = 1171
+							id = 11937
+							id = 10044
+						}
+						level = 2
+						instant_build = yes
+					}								
+				}
+
+				#If not full control, only add forts in provinces bordering the enemy
+				#Only time to throw up some emergency stuff
+				else = {
+					606 = {
+						add_building_construction = {
+							type = bunker
+							province = {
+								all_provinces = yes
+								limit_to_border = yes
+							}
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { has_full_control_of_state = 600 }
+				600 = { # Jiangxi
+					set_building_level = {
+						type = bunker
+						province = {
+							id = 1153
+						}
+						level = 2
+						instant_build = yes
+					}								
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1028,15 +1726,21 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			unlock_decision_category_tooltip = CHI_army_reform
+		}
 	}
 
 	focus = {
@@ -1053,16 +1757,34 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+			IF = {
+				limit = {
+					NOT = { has_character = CHI_dai_li }
+				}
+				CHI = {
+					CHI_dai_li = {
+						set_nationality = ROOT
+					}
+				}
+			}
+			custom_effect_tooltip = available_political_advisor
+			CHI = { show_ideas_tooltip = CHI_dai_li }
+		}
 	}
 
 	focus = {
@@ -1079,16 +1801,26 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			unlock_decision_tooltip = {
+				decision = CHI_60_divisions_plan
+				show_effect_tooltip = yes 
+				show_modifiers = yes 
+			}
+		}
 	}
 
 	focus = {
@@ -1105,15 +1837,24 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			every_army_leader = {
+				add_planning = 1
+			}
+			add_ideas = CHI_whampoa_military_academy
+		}
 	}
 
 	focus = {
@@ -1129,16 +1870,27 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CHI_unified_industrial_planning
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+		}
 	}
 
 	focus = {
@@ -1155,16 +1907,25 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			OR = {			
+				has_war = no
+				has_stability > 0.7
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 
 	focus = {
@@ -1181,16 +1942,23 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			num_of_factories > 74
+			amount_research_slots < 5
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {}
+		completion_reward = {			
+			add_research_slot = 1
+		}
 	}
 
 	focus = {
@@ -1207,16 +1975,45 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			has_full_control_of_state = 607
+			has_full_control_of_state = 602
+			has_full_control_of_state = 605
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			607 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			602 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			605 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -1233,16 +2030,26 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_idea = CHI_hyper_inflation_5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			CHI_hyper_inflation_level_up = yes
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = CHI_mining_commission			
+		}
 	}
 
 	focus = {
@@ -1259,16 +2066,33 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			controls_state = 615
+			NOT = {
+				has_idea = CHI_hyper_inflation_5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			CHI_hyper_inflation_level_up = yes
+			615 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}			
+			}
+		}
 	}
 
 	focus = {
@@ -1285,9 +2109,15 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_idea = CHI_hyper_inflation_5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1309,7 +2139,26 @@
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			CHI_hyper_inflation_level_up = yes
+			random_owned_controlled_state = {
+				prioritize = { 1036 }
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = CHI_develop_the_hanyan_arsenal_AF
+			}
+		}
 	}
 
 	focus = {
@@ -1326,9 +2175,13 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1336,7 +2189,51 @@
 
 		
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}	
+
+			IF = {
+				limit = {
+					NOT = {
+						has_character = CHI_t_v_soong
+					}
+					NOT = {
+						original_tag = RNG
+					}
+				}
+				CHI = {
+					CHI_t_v_soong = {
+						set_nationality = ROOT
+					}
+				}
+			}
+			IF = {
+				limit = {
+					NOT = {
+						original_tag = RNG
+					}
+				}
+				custom_effect_tooltip = available_political_advisor
+				CHI = { show_ideas_tooltip = CHI_t_v_soong }
+			}
+			
+		}
 	}
 
 	focus = {
@@ -1353,16 +2250,22 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			has_hyper_inflation = yes
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_CHI_INFLATION }
-		completion_reward = {}
+		completion_reward = {
+			CHI_hyper_inflation_level_down = yes
+		}
 	}
 
 	focus = {
@@ -1379,16 +2282,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_grain_tax
+		}
 	}
 
 	focus = {
@@ -1405,16 +2314,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_hyper_inflation = yes
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_CHI_INFLATION }
-		completion_reward = {}
+		completion_reward = {
+			CHI_hyper_inflation_level_down = yes
+		}
 	}
 
 	focus = {
@@ -1431,16 +2346,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_hyper_inflation = yes
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_CHI_INFLATION }
-		completion_reward = {}
+		completion_reward = {
+			unlock_decision_tooltip = CHI_forced_loans
+		}
 	}
 
 }

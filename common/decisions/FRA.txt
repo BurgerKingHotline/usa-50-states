@@ -1794,6 +1794,28 @@ FRA_intervention_in_overseas_territories = {
 			set_country_flag = FRA_north_africa_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
+				20 = {
+					VIC = { country_event = LaR_france_vichy_notification_events.5 }
+					FRA_transfer_north_africa_effect = yes
+					every_owned_state = {
+						limit = {
+							is_controlled_by = ROOT
+							OR = {
+								state = 461
+								state = 462
+								state = 459
+								state = 513
+								state = 460
+								state = 458
+								state = 665
+							}
+						}
+						add_compliance = 5
+					}
+				}
+				80 = {
+
+				}
 			}
 		}
 		fire_only_once = yes
@@ -1846,6 +1868,23 @@ FRA_intervention_in_overseas_territories = {
 			set_country_flag = FRA_syria_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
+				30 = {
+					VIC = { country_event = LaR_france_vichy_notification_events.1 }
+					FRA_transfer_syria_effect = yes
+					every_owned_state = {
+						limit = {
+							is_controlled_by = ROOT
+							OR = {
+								state = 677
+								state = 680
+								state = 554
+								state = 553
+							}
+						}
+						add_compliance = 5
+					}
+				}
+				70 = {}
 			}
 		}
 		fire_only_once = yes
@@ -2055,6 +2094,28 @@ FRA_intervention_in_overseas_territories = {
 			set_country_flag = FRA_indochina_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
+				20 = {
+					VIC = { country_event = LaR_france_vichy_notification_events.2 }
+					FRA_transfer_indochina_effect = yes
+					every_owned_state = {
+						limit = {
+							is_controlled_by = ROOT
+							OR = {
+								state = 671
+								state = 670
+								state = 286
+								state = 741
+								state = 1017
+								state = 1066 
+								state = 1067 
+								state = 1068 
+								state = 1069 
+							}
+						}
+						add_compliance = 5
+					}
+				}
+				80 = {}
 			}
 		}
 		fire_only_once = yes
@@ -2097,6 +2158,10 @@ FRA_intervention_in_overseas_territories = {
 					state = 286
 					state = 741
 					state = 1017
+					state = 1066 
+					state = 1067 
+					state = 1068 
+					state = 1069 
 				}
 				CONTROLLER = {
 					NOT = {
@@ -2125,6 +2190,10 @@ FRA_intervention_in_overseas_territories = {
 						state = 286
 						state = 741
 						state = 1017
+						state = 1066 
+						state = 1067 
+						state = 1068 
+						state = 1069 
 					}
 					not = { is_controlled_by = ROOT }
 					CONTROLLER = {
@@ -2260,6 +2329,24 @@ FRA_intervention_in_overseas_territories = {
 			set_country_flag = FRA_central_africa_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
+				25 = {
+					VIC = { country_event = LaR_france_vichy_notification_events.3 }
+					FRA_transfer_central_africa_effect = yes
+					every_owned_state = {
+						limit = {
+							is_controlled_by = ROOT
+							OR = {
+								state = 772
+								state = 539
+								state = 773
+								state = 660
+								state = 774
+							}
+						}
+						add_compliance = 5
+					}
+				}
+				75 = {}
 			}
 		}
 		fire_only_once = yes
@@ -2473,6 +2560,27 @@ FRA_intervention_in_overseas_territories = {
 			set_country_flag = FRA_west_africa_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
+				25 = {
+					VIC = { country_event = LaR_france_vichy_notification_events.4 }
+					FRA_transfer_western_africa_effect = yes
+					every_owned_state = {
+						limit = {
+							is_controlled_by = ROOT
+							OR = {
+								state = 557
+								state = 272
+								state = 556
+								state = 780
+								state = 779
+								state = 778
+								state = 781
+								state = 776
+							}
+						}
+						add_compliance = 5
+					}
+				}
+				75 = {}
 			}
 		}
 		fire_only_once = yes
@@ -2679,6 +2787,14 @@ FRA_intervention_in_overseas_territories = {
 	FRA_promise_independence_to_madagascar = {
 		available = {  
 			NOT = {
+				543 = {
+					OR = {
+						is_controlled_by = ROOT
+						CONTROLLER = {
+							is_subject_of = ROOT
+						}
+					}
+				}
 			}
 		} 
 
@@ -2688,6 +2804,14 @@ FRA_intervention_in_overseas_territories = {
 			set_country_flag = FRA_madagascar_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
+				30 = {
+					VIC = { country_event = LaR_france_vichy_notification_events.6 }
+					transfer_state = 543
+					543 = {
+						add_compliance = 5
+					}
+				}
+				70 = {}
 			}
 		}
 		fire_only_once = yes
@@ -2699,6 +2823,14 @@ FRA_intervention_in_overseas_territories = {
 	FRA_prepare_coup_in_madagascar = {
 		available = { 
 			NOT = {
+				543 = {
+					OR = {
+						is_controlled_by = ROOT
+						CONTROLLER = {
+							is_subject_of = ROOT
+						}
+					}
+				}
 			}
 			has_intelligence_agency = yes
 		} 
@@ -2733,6 +2865,10 @@ FRA_decolonization = {
 				country_exists = SYR
 				country_exists = LEB
 			}
+			680 = { is_controlled_by = ROOT }
+			677 = { is_controlled_by = ROOT }
+			554 = { is_controlled_by = ROOT }
+			553 = { is_controlled_by = ROOT }
 		}
 
 		days_mission_timeout = 180
@@ -2767,6 +2903,11 @@ FRA_decolonization = {
 				country_exists = LAO
 				country_exists = VIN
 			}
+			671 = { is_controlled_by = ROOT }
+			670 = { is_controlled_by = ROOT }
+			286 = { is_controlled_by = ROOT }
+			741 = { is_controlled_by = ROOT }	
+			1017 = { is_controlled_by = ROOT }	
 		}
 
 		days_mission_timeout = 180
@@ -2798,11 +2939,18 @@ FRA_decolonization = {
 			NOT = {
 				country_exists = MAD
 			}
+			543 = { is_controlled_by = ROOT }
 		}
 
 		days_mission_timeout = 180
 
 		timeout_effect = {
+			543 = {
+				add_resistance_target = {
+					amount = 10
+					tooltip = FRA_promised_independence_tt
+				}
+			}
 		}
 	}
 	FRA_independence_for_north_africa_mission = {
@@ -2820,6 +2968,13 @@ FRA_decolonization = {
 				country_exists = ALG
 				country_exists = TUN
 			}
+			461 = { is_controlled_by = ROOT }
+			462 = { is_controlled_by = ROOT }
+			459 = { is_controlled_by = ROOT }
+			513 = { is_controlled_by = ROOT }
+			460 = { is_controlled_by = ROOT }
+			458 = { is_controlled_by = ROOT }
+			665 = { is_controlled_by = ROOT }	
 		}
 
 		days_mission_timeout = 180

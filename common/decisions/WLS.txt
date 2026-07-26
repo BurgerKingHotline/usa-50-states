@@ -45,9 +45,19 @@ political_actions = {
 
 			IF = {
 				limit = {
+					512 = {
+						is_claimed_by = ROOT
+					}
+				}
+				512 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			512 = {
+				add_core_of = ROOT
+				remove_core_of = WLA
+			}
 
 			ROOT = {
 				transfer_state = 512
@@ -57,9 +67,19 @@ political_actions = {
 
 			IF = {
 				limit = {
+					955 = {
+						is_claimed_by = ROOT
+					}
+				}
+				955 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			955 = {
+				add_core_of = ROOT
+				remove_core_of = WLA
+			}
 
 			ROOT = {
 				transfer_state = 955
@@ -69,9 +89,19 @@ political_actions = {
 
 			IF = {
 				limit = {
+					954 = {
+						is_claimed_by = ROOT
+					}
+				}
+				954 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			954 = {
+				add_core_of = ROOT
+				remove_core_of = WLA
+			}
 
 			ROOT = {
 				transfer_state = 954
@@ -81,9 +111,19 @@ political_actions = {
 
 			IF = {
 				limit = {
+					953 = {
+						is_claimed_by = ROOT
+					}
+				}
+				953 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			953 = {
+				add_core_of = ROOT
+				remove_core_of = WLA
+			}
 
 			ROOT = {
 				transfer_state = 953
@@ -156,9 +196,19 @@ political_actions = {
 
 			IF = {
 				limit = {
+					122 = {
+						is_claimed_by = ROOT
+					}
+				}
+				122 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			122 = {
+				add_core_of = ROOT
+				remove_core_of = WLS
+			}
 
 			ROOT = {
 				transfer_state = 122

@@ -69,6 +69,40 @@ POR_overseas_provinces = {
 			country_event = lar_portugal_overseas_provinces.2
 		}
 	}	
+
+	POR_timor_overseas_territory = {
+
+		icon = infiltrate_state
+
+		available = {
+			has_completed_focus = POR_revert_the_local_autonomy_policies
+			AND = {
+				POR = {
+					controls_state = 721
+				}
+				TML = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		days_remove = 420 
+		ai_will_do = {
+			factor = 2
+		}
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		visible = {
+			has_completed_focus = POR_revert_the_local_autonomy_policies
+		}
+		remove_effect = {			
+			country_event = lar_portugal_overseas_provinces.3
+		}
+	}	
+
 }
 
 POR_arms_purchases = {
@@ -2224,6 +2258,9 @@ POR_iberian_summit = {
 			}
 			if = {
 				limit = { tag = POR }
+				41 = {
+					owner = { country_event = { id = lar_portugal_iberian_summit.5 hours = 18 random_hours = 6 } }
+				}
 			}
 			else = {
 				POR = { 
@@ -2558,6 +2595,9 @@ POR_prospect_for_resources = {
 		visible = {
 			owns_state = 112
 			controls_state = 112
+			112 = {
+				NOT = {	has_state_flag = POR_lisbon_tungsten_developed_flag }
+			}
 		}
 
 		cost = 25
@@ -2569,6 +2609,13 @@ POR_prospect_for_resources = {
 		}
 
 		remove_effect = {
+			112 = {	set_state_flag = POR_lisbon_tungsten_developed_flag }
+			112 = {
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}
 		}
 
 		ai_will_do = {
@@ -2604,6 +2651,14 @@ POR_prospect_for_resources = {
 		visible = {
 			owns_state = 795
 			controls_state = 795
+			795 = {
+				NOT = {
+					has_state_flag = { 
+						flag = POR_santarem_chromium_developed_flag
+						value = 5
+					}
+				}
+			}
 		}
 
 		cost = 25
@@ -2615,6 +2670,31 @@ POR_prospect_for_resources = {
 
 		remove_effect = {
 			add_to_variable = { var = POR_santarem_chromium_duration value = 30 }
+			795 = {
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = POR_santarem_chromium_developed_flag
+						}
+					}
+					set_state_flag = {
+						flag = POR_santarem_chromium_developed_flag
+						value = 1
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = POR_santarem_chromium_developed_flag
+						value = 1
+					}
+				}
+			}
+			795 = {
+				add_resource = {
+					type = chromium
+					amount = 2
+				}
+			}
 		}
 
 		ai_will_do = {

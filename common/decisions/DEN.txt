@@ -3798,6 +3798,8 @@ DEN_overlord_category = {
 		visible = {	
 			has_country_flag = DEN_seized_jylland_flag
 			has_subject = DEN
+			99 = { is_fully_controlled_by = ROOT }
+			912 = { is_fully_controlled_by = ROOT }
 		}
 
 		fire_only_once = yes
@@ -3866,6 +3868,8 @@ DEN_overlord_category = {
 		visible = {	
 			has_subject = DEN
 			has_country_flag = DEN_overlord_installed_loyalist_flag
+			99 = { is_fully_controlled_by = DEN }
+			912 = { is_fully_controlled_by = DEN }
 		}
 
 		fire_only_once = yes
@@ -3905,6 +3909,8 @@ DEN_overlord_category = {
 				value < 0
 			}
 			NOT = { is_in_faction_with = DEN }
+			99 = { is_fully_controlled_by = ROOT }
+			912 = { is_fully_controlled_by = ROOT }
 		}
 
 		visible = {	
@@ -3918,6 +3924,12 @@ DEN_overlord_category = {
 		cost = 50
 
 		complete_effect = {
+			912 = {
+				if = {
+					limit = { is_owned_by = ROOT }
+					add_core_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -4351,6 +4363,9 @@ DEN_overlord_category = {
 		icon = GFX_decision_generic_operation
 		
 		available = {
+			337 = {
+				is_controlled_by = ENG
+			}
 			is_subject = no
 			NOT = {
 				has_war_with = ENG
@@ -4377,6 +4392,9 @@ DEN_overlord_category = {
 		visible = {
 			has_global_flag = ENG_occupied_DEN_faroes
 			has_subject = DEN
+			337 = {
+				is_fully_controlled_by = ENG
+			}
 			NOT = {
 				has_war_with = ENG
 			}
@@ -4392,6 +4410,9 @@ DEN_overlord_category = {
 		icon = generic_operation
 	
 		available = {
+			101 = {
+				is_owned_and_controlled_by = USA
+			}
 			NOT = {
 				has_war_with = USA
 				any_allied_country = {
@@ -4417,6 +4438,9 @@ DEN_overlord_category = {
 		visible = {
 			has_global_flag = USA_occupied_DEN_greenland
 			has_subject = DEN
+			101 = {
+				is_fully_controlled_by = USA
+			}
 			NOT = {
 				has_war_with = USA
 			}
@@ -4625,6 +4649,9 @@ DEN_fortification_category = {
 		}
 
 		available = {
+			37 = { 
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = {	
@@ -4638,6 +4665,17 @@ DEN_fortification_category = {
 		cost = DEN_decision_low_cost
 
 		remove_effect = {
+			37 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+				}
+			}
 		}
 	}
 	DEN_forts_in_fyn = {
@@ -4665,6 +4703,9 @@ DEN_fortification_category = {
 		}
 
 		available = {
+			911 = { 
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = {	
@@ -4678,6 +4719,17 @@ DEN_fortification_category = {
 		cost = DEN_decision_low_cost
 
 		remove_effect = {
+			911 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+				}
+			}
 		}
 	}
 	DEN_forts_in_norrejylland = {
@@ -4705,6 +4757,9 @@ DEN_fortification_category = {
 		}
 
 		available = {
+			99 = { 
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = {	
@@ -4718,6 +4773,17 @@ DEN_fortification_category = {
 		cost = DEN_decision_low_cost
 
 		remove_effect = {
+			99 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+				}
+			}
 		}
 	}
 	DEN_forts_in_sonderjylland = {
@@ -4745,6 +4811,9 @@ DEN_fortification_category = {
 		}
 
 		available = {
+			912 = { 
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = {	
@@ -4758,6 +4827,17 @@ DEN_fortification_category = {
 		cost = DEN_decision_low_cost
 
 		remove_effect = {
+			912 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+				}
+			}
 		}
 	}
 	DEN_coastal_forts_in_sjaelland = {
@@ -4785,6 +4865,9 @@ DEN_fortification_category = {
 		}
 
 		available = {
+			37 = { 
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = {	
@@ -4798,6 +4881,17 @@ DEN_fortification_category = {
 		cost = DEN_decision_low_cost
 
 		remove_effect = {
+			37 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+			}
 		}
 	}
 	DEN_coastal_forts_in_fyn = {
@@ -4825,6 +4919,9 @@ DEN_fortification_category = {
 		}
 
 		available = {
+			911 = { 
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = {	
@@ -4838,6 +4935,17 @@ DEN_fortification_category = {
 		cost = DEN_decision_low_cost
 
 		remove_effect = {
+			911 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+			}
 		}
 	}
 	DEN_coastal_forts_in_norrejylland = {
@@ -4865,6 +4973,9 @@ DEN_fortification_category = {
 		}
 
 		available = {
+			99 = { 
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = {	
@@ -4878,6 +4989,17 @@ DEN_fortification_category = {
 		cost = DEN_decision_low_cost
 
 		remove_effect = {
+			99 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+			}
 		}
 	}
 	DEN_coastal_forts_in_sonderjylland = {
@@ -4905,6 +5027,9 @@ DEN_fortification_category = {
 		}
 
 		available = {
+			912 = { 
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = {	
@@ -4918,6 +5043,17 @@ DEN_fortification_category = {
 		cost = DEN_decision_low_cost
 
 		remove_effect = {
+			912 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+				}
+			}
 		}
 	}
 }
@@ -4950,6 +5086,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 101
 			has_completed_focus = DEN_expand_the_industries 
+			101 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -4967,6 +5108,9 @@ DEN_development_category = {
 		cost = 101.DEN_develop_state_cost
 		
 		remove_effect = {
+			101 = {
+				DEN_develop_state_effect = yes
+			}
 			
 			multiply_variable = { 101.DEN_develop_state_cost = DEN_double_cost_increase }
 			
@@ -5001,6 +5145,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 910
 			has_completed_focus = DEN_expand_the_industries 
+			910 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5018,6 +5167,9 @@ DEN_development_category = {
 		cost = 910.DEN_develop_state_cost
 		
 		remove_effect = {
+			910 = {
+				DEN_develop_state_effect = yes
+			}
 			
 			multiply_variable = { 910.DEN_develop_state_cost = DEN_double_cost_increase }
 			
@@ -5052,6 +5204,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 337
 			has_completed_focus = DEN_expand_the_industries 
+			337 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5069,6 +5226,9 @@ DEN_development_category = {
 		cost = 337.DEN_develop_state_cost
 		
 		remove_effect = {
+			337 = {
+				DEN_develop_state_effect = yes
+			}
 			
 			multiply_variable = { 337.DEN_develop_state_cost = DEN_double_cost_increase }
 			
@@ -5096,6 +5256,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 124
 			has_completed_focus = DEN_expand_the_industries 
+			124 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5113,6 +5278,9 @@ DEN_development_category = {
 		cost = 124.DEN_develop_state_cost
 		
 		remove_effect = {
+			124 = {
+				DEN_develop_state_effect = yes
+			}
 			
 			multiply_variable = { 124.DEN_develop_state_cost = DEN_double_cost_increase }
 			
@@ -5144,6 +5312,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 100
 			has_completed_focus = DEN_expand_the_industries 
+			100 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5161,6 +5334,9 @@ DEN_development_category = {
 		cost = 100.DEN_develop_state_cost
 		
 		remove_effect = {
+			100 = {
+				DEN_develop_state_effect = yes
+			}
 			
 			multiply_variable = { 100.DEN_develop_state_cost = DEN_double_cost_increase }
 			
@@ -5189,6 +5365,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 99
 			has_completed_focus = DEN_modernize_agricultural_machinery
+			99 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5206,6 +5387,9 @@ DEN_development_category = {
 		cost = 99.DEN_develop_state_cost
 		
 		remove_effect = {
+			99 = {
+				DEN_develop_state_effect = yes
+			}
 			multiply_variable = { 99.DEN_develop_state_cost = DEN_double_cost_increase }
 		}
 	}
@@ -5232,6 +5416,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 912
 			has_completed_focus = DEN_modernize_agricultural_machinery
+			912 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5249,6 +5438,9 @@ DEN_development_category = {
 		cost = 912.DEN_develop_state_cost
 		
 		remove_effect = {
+			912 = {
+				DEN_develop_state_effect = yes
+			}
 			multiply_variable = { 912.DEN_develop_state_cost = DEN_double_cost_increase }
 		}
 	}
@@ -5275,6 +5467,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 37
 			has_completed_focus = DEN_modernize_industrial_machinery 
+			37 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5292,6 +5489,9 @@ DEN_development_category = {
 		cost = 37.DEN_develop_state_cost
 		
 		remove_effect = {
+			37 = {
+				DEN_develop_state_effect = yes
+			}
 			multiply_variable = { 37.DEN_develop_state_cost = DEN_double_cost_increase }
 		}
 	}
@@ -5318,6 +5518,11 @@ DEN_development_category = {
 			has_civil_war = no
 			has_full_control_of_state = 911
 			has_completed_focus = DEN_modernize_industrial_machinery 
+			911 = {
+				NOT = {
+					check_variable = { DEN_times_state_was_developed > 2}
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5335,6 +5540,9 @@ DEN_development_category = {
 		cost = 911.DEN_develop_state_cost
 		
 		remove_effect = {
+			911 = {
+				DEN_develop_state_effect = yes
+			}
 			multiply_variable = { 911.DEN_develop_state_cost = DEN_double_cost_increase }
 		}
 	}
@@ -6997,6 +7205,10 @@ DEN_swedish_steel_production_category = {
 		}
 
 		available = {
+			666 = { 
+				is_fully_controlled_by = ROOT
+				NOT = {	has_dynamic_modifier = { modifier = SWE_blown_up_mines }}
+			}
 			is_subject = no
 		}
 
@@ -7512,6 +7724,9 @@ DEN_return_occupied_territory_category = {
 		}
 		
 		available = {
+			337 = {
+				is_controlled_by = ENG
+			}
 			is_subject = no
 			NOT = {
 				has_war_with = ENG
@@ -7554,6 +7769,9 @@ DEN_return_occupied_territory_category = {
 		
 		visible = {
 			tag = DEN
+			337 = {
+				is_controlled_by = ENG
+			}
 			has_dlc = "Arms Against Tyranny"
 			has_global_flag = ENG_occupied_DEN_faroes
 		}
@@ -7571,6 +7789,9 @@ DEN_return_occupied_territory_category = {
 		}
 		
 		available = {
+			101 = {
+				is_owned_and_controlled_by = USA
+			}
 			is_subject = no
 			NOT = {
 				has_war_with = USA

@@ -977,7 +977,25 @@ foreign_politics = {
 			custom_trigger_tooltip = {
 				tooltip = JAP_sue_for_peace_TT
 				# South Korea
+				525 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1029 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1031 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1030 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
 				# North Korea
+				527 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1028 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
 				NOT = {
 					any_of = {
 						array = CHI.core_states
@@ -1071,7 +1089,25 @@ foreign_politics = {
 			custom_trigger_tooltip = {
 				tooltip = JAP_sue_for_peace_TT
 				# South Korea
+				525 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1029 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1031 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1030 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
 				# North Korea
+				527 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1028 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
 				NOT = {
 					any_of = {
 						array = CHI.core_states
@@ -1181,15 +1217,39 @@ foreign_politics = {
 			base = 15
 			modifier = {
 				# South Korea
+				525 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1029 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1031 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1030 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
 				# North Korea
+				527 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
+				1028 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
 				factor = 10
 			}
 			modifier = {
 				# Sakhalin
+				537 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
 				factor = 3
 			}
 			modifier = {
 				# Okinawa
+				526 = {
+					is_controlled_by_ROOT_or_ally = no
+				}
 				factor = 3
 			}
 		}
@@ -1347,56 +1407,164 @@ foreign_politics = {
 
 			IF = {
 				limit = {
+					566 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# Irkutsk
+				566 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 
 			IF = {
 				limit = {
+					564 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# Buryatia
+				564 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 			
 			IF = {
 				limit = {
+					563 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# Chita
+				563 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 
 			IF = {
 				limit = {
+					408 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# Vladivastok
+				408 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 
 			IF = {
 				limit = {
+					655 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# North Sakhalin
+				655 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 
 			IF = {
 				limit = {
+					574 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# Yakutsk
+				574 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 
 			IF = {
 				limit = {
+					569 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# Khakassia
+				569 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 
 			IF = {
 				limit = {
+					654 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# Oyrot Region
+				654 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 
 			IF = {
 				limit = {
+					409 = {
+						owner = {
+							OR = {
+								original_tag = FROM
+								is_subject_of = FROM
+								is_in_faction_with = FROM
+							}
+						}
+					}
 				}
 				# Khabarovsk
+				409 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
 			}
 
 		}
@@ -1868,6 +2036,10 @@ JAP_pacific_guardian = {
 					has_full_control_of_state = 671
 					has_full_control_of_state = 286
 					has_full_control_of_state = 741
+					has_full_control_of_state = 1066 
+					has_full_control_of_state = 1067 
+					has_full_control_of_state = 1068 
+					has_full_control_of_state = 1069 
 				}
 			}
 		}
@@ -2805,10 +2977,146 @@ JAP_colonial_independence = {
 		
 			has_completed_focus = JAP_liberate_manchuria
 			
+			609 = {
+				owner = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			610 = {
+				owner = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			716 = {
+				owner = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			715 = {
+				owner = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			328 = {
+				owner = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			717 = {
+				owner = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			714 = {
+				owner = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			761 = {
+				owner = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
 		}
 
 		available = {
 			is_faction_leader = yes
+			609 = {
+				is_fully_controlled_by = controller
+				CONTROLLER = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			610 = {
+				is_fully_controlled_by = controller
+				CONTROLLER = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			716 = {
+				is_fully_controlled_by = controller
+				CONTROLLER = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			715 = {
+				is_fully_controlled_by = controller
+				CONTROLLER = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			328 = {
+				is_fully_controlled_by = controller
+				CONTROLLER = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			717 = {
+				is_fully_controlled_by = controller
+				CONTROLLER = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			714 = {
+				is_fully_controlled_by = controller
+				CONTROLLER = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
+			761 = {
+				is_fully_controlled_by = controller
+				CONTROLLER = {
+					OR = {
+						is_puppet_of = JAP
+						original_tag = JAP
+					}
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -3064,6 +3372,11 @@ operations = {
 				has_non_aggression_pact_with = SOV
 				SOV = { is_puppet_of = JAP }
 			}
+			1028 = {
+				any_neighbor_state = {
+					is_controlled_by = SOV
+				}
+			}
 		}
 
 		visible = {
@@ -3105,6 +3418,14 @@ operations = {
 		war_with_on_remove = SOV
 
 		complete_effect = {
+			1028 = {
+				save_event_target_as = JAP_SOV_attacker_state
+				set_state_flag = border_incident_active
+			}
+			408 = {
+				save_event_target_as = JAP_SOV_defender_state
+				set_state_flag = border_incident_active
+			}
 			SOV = {
 				country_event = { id = japan_border_conflict.1 days = 1 }
 				activate_targeted_decision = { target = JAP decision = JAP_border_conflict_warning_SOV }
@@ -3260,6 +3581,12 @@ operations = {
 			hidden_effect = {
 				SOV = { remove_targeted_decision = { target = JAP decision = JAP_border_conflict_escalation_warning_SOV } }
 				SOV = {
+					1028 = {
+						clr_state_flag = border_incident_active
+					}
+					408 = {
+						clr_state_flag = border_incident_active
+					}
 				}
 			}
 		}
@@ -3273,6 +3600,17 @@ operations = {
 		allowed = { always = no } #Activated from effect
 
 		available = {
+			1028 = {
+				OR = {
+					is_fully_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+					CONTROLLER = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
 			divisions_in_border_state = {
 				state = 1028
 				border_state = 408
@@ -3333,6 +3671,8 @@ operations = {
 		allowed = { always = no } #Activated from effect
 
 		available = {
+			1028 = { has_border_war = no }
+			408 = { has_border_war = no }
 		}
 		
 		highlight_states = {
@@ -3515,6 +3855,8 @@ operations = {
 		complete_effect = {
 			if = {
 				limit = { original_tag = SOV }
+				408 = { save_event_target_as = their_state }
+				1028 = { save_event_target_as = our_state }
 				JAP = {
 					country_event = { id = japan_border_conflict.6 hours = 1 }
 					hidden_effect = {
@@ -3523,6 +3865,8 @@ operations = {
 			 	}
 			}
 			else = {
+				1028 = { save_event_target_as = our_state }
+				408 = { save_event_target_as = their_state }
 				SOV = {
 					country_event = { id = japan_border_conflict.5 hours = 1 }
 					hidden_effect = {
@@ -3542,10 +3886,22 @@ operations = {
 			declare_war_on = { target = FROM type = annex_everything }
 			if = {
 				limit = { original_tag = SOV }
+				1028 = {
+					clr_state_flag = border_incident_active
+				}
+				408 = {
+					clr_state_flag = border_incident_active
+				}
 				
 			}
 			else = {
 				FROM = {
+					1028 = {
+						clr_state_flag = border_incident_active
+					}
+					408 = {
+						clr_state_flag = border_incident_active
+					}
 				}
 			}
 		}
@@ -3716,12 +4072,21 @@ operations = {
 		visible = {
 			OR = {
 				AND = {
+					761 = {
+						is_owned_and_controlled_by = ROOT
+					}
 					is_subject = no
 				}
 				AND = {
 					any_subject_country = {
+						761 = {
+							is_owned_and_controlled_by = PREV
+						}
 					}
 				}
+			}
+			819 = {
+				is_owned_and_controlled_by = MON
 			}
 			NOT = {
 				has_global_flag = failed_to_assault_in_time_flag 
@@ -3735,6 +4100,11 @@ operations = {
 				is_in_faction_with = MON
 				has_non_aggression_pact_with = MON
 				MON = { is_puppet_of = ROOT }
+			}
+			761 = {
+				any_neighbor_state = {
+					is_controlled_by = MON
+				}
 			}
 		}
 
@@ -3758,6 +4128,14 @@ operations = {
 		war_with_on_remove = MON
 
 		complete_effect = {
+			761 = {
+				save_event_target_as = MAN_MON_attacker_state
+				set_state_flag = border_incident_active
+			}
+			819 = {
+				save_event_target_as = MAN_MON_defender_state
+				set_state_flag = border_incident_active
+			}
 			MON = {
 				country_event = { id = SEA_border_incidents_events.4 days = 1 }
 				activate_targeted_decision = { target = ROOT decision = JAP_tauran_border_conflict_warning_MON }
@@ -3808,6 +4186,9 @@ operations = {
 			hidden_effect = {
 				IF = {
 					limit = {
+						761 = {
+							is_owned_and_controlled_by = MAN
+						}
 						MAN = {
 							is_subject = no
 						}
@@ -3817,6 +4198,9 @@ operations = {
 				}
 				ELSE_IF = {
 					limit = {
+						761 = {
+							is_owned_and_controlled_by = MAN
+						}
 						MAN = {
 							is_subject_of = JAP
 						}
@@ -3826,6 +4210,9 @@ operations = {
 				}
 				ELSE_IF = {
 					limit = {
+						761 = {
+							is_owned_and_controlled_by = JAP
+						}
 					}
 					remove_targeted_decision = { target = JAP decision = JAP_tauran_border_conflict_warning_MON }
 					activate_targeted_decision = { target = JAP decision = JAP_border_conflict_escalation_warning_MON }
@@ -3932,6 +4319,12 @@ operations = {
 			hidden_effect = {
 				MON = { remove_targeted_decision = { target = ROOT decision = JAP_border_conflict_escalation_warning_MON } }
 				MON = {
+					761 = {
+						clr_state_flag = border_incident_active
+					}
+					819 = {
+						clr_state_flag = border_incident_active
+					}
 				}
 			}
 		}
@@ -3945,6 +4338,17 @@ operations = {
 		allowed = { always = no } #Activated from effect
 
 		available = {
+			761 = {
+				OR = {
+					is_fully_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+					CONTROLLER = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
 			divisions_in_border_state = {
 				state = 761
 				border_state = 819
@@ -4001,6 +4405,8 @@ operations = {
 		allowed = { always = no } #Activated from effect
 
 		available = {
+			819 = { has_border_war = no }
+			761 = { has_border_war = no }
 		}
 		
 		highlight_states = {
@@ -4059,6 +4465,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			655 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation2
 		}
 
@@ -4068,11 +4475,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_sea_establish_the_northern_resource_area
 				has_completed_focus = JAP_transformation_of_nature
 			}
+			655 = {
+				NOT = {
+					has_state_flag = north_sakhalin_oil_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			655 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4087,6 +4500,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			655 = {
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+				set_state_flag = north_sakhalin_oil_developed
+			}
 		}
 	}
 
@@ -4105,6 +4525,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			516 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation1
 		}
 
@@ -4114,11 +4535,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_sea_establish_the_northern_resource_area
 				has_completed_focus = JAP_transformation_of_nature
 			}
+			516 = {
+				NOT = {
+					has_state_flag = tunguska_coal_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			516 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4133,6 +4560,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			516 = {
+				add_resource = {
+					type = coal
+					amount = 26
+				}
+				set_state_flag = tunguska_coal_developed
+			}
 		}
 	}
 
@@ -4151,6 +4585,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			566 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation1
 		}
 
@@ -4160,11 +4595,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_sea_establish_the_northern_resource_area
 				has_completed_focus = JAP_transformation_of_nature
 			}
+			566 = {
+				NOT = {
+					has_state_flag = irkutsk_coal_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			566 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4179,6 +4620,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			566 = {
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+				set_state_flag = irkutsk_coal_developed
+			}
 		}
 	}
 
@@ -4209,6 +4657,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			623 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation3
 		}
 
@@ -4217,11 +4666,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			623 = {
+				NOT = {
+					has_state_flag = luzon_chromium_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			623 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4236,6 +4691,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			623 = {
+				add_resource = {
+					type = chromium
+					amount = 12
+				}
+				set_state_flag = luzon_chromium_developed
+			}
 		}
 	}
 
@@ -4253,6 +4715,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			627 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation4
 		}
 
@@ -4261,11 +4724,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			627 = {
+				NOT = {
+					has_state_flag = mindanao_steel_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			627 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4280,6 +4749,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			627 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				set_state_flag = mindanao_steel_developed
+			}
 		}
 	}
 
@@ -4297,6 +4773,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			625 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation3
 		}
 
@@ -4305,11 +4782,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			625 = {
+				NOT = {
+					has_state_flag = samar_steel_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			625 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4324,6 +4807,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			625 = {
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+				set_state_flag = samar_steel_developed
+			}
 		}
 	}
 
@@ -4341,6 +4831,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			725 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation4
 		}
 
@@ -4349,11 +4840,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			725 = {
+				NOT = {
+					has_state_flag = nauru_tungsten_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			725 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4368,6 +4865,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			725 = {
+				add_resource = {
+					type = tungsten
+					amount = 4
+				}
+				set_state_flag = nauru_tungsten_developed
+			}
 		}
 	}
 
@@ -4443,6 +4947,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			1021 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation2
 		}
 
@@ -4451,11 +4956,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			1021 = {
+				NOT = {
+					has_state_flag = singapore_aluminium_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			1021 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4470,6 +4981,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			1021 = {
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				set_state_flag = singapore_aluminium_developed
+			}
 		}
 	}
 
@@ -4487,6 +5005,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			672 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation3
 		}
 
@@ -4495,11 +5014,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			672 = {
+				NOT = {
+					has_state_flag = riau_oil_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			672 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 50
@@ -4514,6 +5039,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			672 = {
+				add_resource = {
+					type = oil
+					amount = 26
+				}
+				set_state_flag = riau_oil_developed
+			}
 		}
 	}
 
@@ -4531,6 +5063,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			334 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation3
 		}
 
@@ -4539,11 +5072,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			334 = {
+				NOT = {
+					has_state_flag = kalimantan_oil_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			334 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4558,6 +5097,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			334 = {
+				add_resource = {
+					type = oil
+					amount = 16
+				}
+				set_state_flag = kalimantan_oil_developed
+			}
 		}
 	}
 
@@ -4575,6 +5121,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			669 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation3
 		}
 
@@ -4583,11 +5130,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			669 = {
+				NOT = {
+					has_state_flag = west_papuan_oil_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			669 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4602,6 +5155,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			669 = {
+				add_resource = {
+					type = oil
+					amount = 14
+				}
+				set_state_flag = west_papuan_oil_developed
+			}
 		}
 	}
 
@@ -4619,6 +5179,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			335 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation5
 		}
 
@@ -4627,11 +5188,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_transformation_of_nature
 				has_completed_focus = JAP_sea_exploit_southern_resource_area
 			}
+			335 = {
+				NOT = {
+					has_state_flag = tuban_oil_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			335 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 30
@@ -4646,6 +5213,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			335 = {
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+				set_state_flag = tuban_oil_developed
+			}
 		}
 	}
 
@@ -4677,6 +5251,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			597 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation3
 		}
 
@@ -4686,11 +5261,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_develop_the_chinese_resources
 			}
 			
+			597 = {
+				NOT = {
+					has_state_flag = shandong_aluminium_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			597 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4705,6 +5286,13 @@ prospect_for_resources = {
 		}
 
 		complete_effect = {
+			597 = {
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				set_state_flag = shandong_aluminium_developed
+			}
 		}
 	}
 
@@ -4723,6 +5311,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			621 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation2
 		}
 
@@ -4732,11 +5321,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_develop_the_chinese_resources
 			}
 			
+			621 = {
+				NOT = {
+					has_state_flag = suiyuan_steel_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			621 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4751,6 +5346,13 @@ prospect_for_resources = {
 		}
 
 		complete_effect = {
+			621 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				set_state_flag = suiyuan_steel_developed
+			}
 		}	
 	}
 
@@ -4763,6 +5365,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			325 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation3
 		}
 
@@ -4772,11 +5375,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_develop_the_chinese_resources
 			}
 			
+			325 = {
+				NOT = {
+					has_state_flag = yunnan_aluminium_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			325 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4791,6 +5400,13 @@ prospect_for_resources = {
 		}
 
 		complete_effect = {
+			325 = {
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				set_state_flag = yunnan_aluminium_developed
+			}
 		}	
 	}
 
@@ -4803,6 +5419,7 @@ prospect_for_resources = {
 		}
 
 		available = {
+			605 = { is_controlled_by_ROOT_or_subject = yes }
 			has_tech = excavation3
 		}
 
@@ -4812,11 +5429,17 @@ prospect_for_resources = {
 				has_completed_focus = JAP_develop_the_chinese_resources
 			}
 			
+			605 = {
+				NOT = {
+					has_state_flag = sichuan_aluminium_developed
+				}
+			}
 		}
 
 		fire_only_once = no
 
 		cancel_trigger = {
+			605 = { is_controlled_by_ROOT_or_subject = no }
 		}
 
 		cost = 25
@@ -4831,6 +5454,13 @@ prospect_for_resources = {
 		}
 
 		complete_effect = {
+			605 = {
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				set_state_flag = sichuan_aluminium_developed
+			}
 		}	
 	}
 
@@ -5149,6 +5779,15 @@ JAP_kwantung_army_decisions = {
 				}
 			}
 			ELSE = {
+				608 = {
+					OWNER = {
+						country_event = {
+							id = china.1
+							days = 1
+							random_days = 3
+						}
+					}
+				}
 			}
 			add_named_threat = { threat = 2 name = JAP_intervene_in_china } # From threat = 1 to 2 due to no escalation tension
 
@@ -5237,6 +5876,15 @@ JAP_kwantung_army_decisions = {
 			NOT = {
 				has_completed_focus = JAP_subdue_the_kwantung_army
 			}
+			613 = {
+				OWNER = {
+					is_literally_china = yes
+					NOT = {
+						is_ally_with = ROOT
+						has_war_with = ROOT # In case someone other than CHI owns this for example 
+					}
+				}
+			}
 		}
 
 		cancel_if_not_visible = yes
@@ -5274,6 +5922,15 @@ JAP_kwantung_army_decisions = {
 				}
 			}
 			ELSE = {
+				613 = {
+					OWNER = {
+						country_event = {
+							id = SEA_japan_popup_events.19
+							days = 1
+							random_days = 3
+						}	
+					}
+				}
 			}
 			add_named_threat = { threat = 3 name = JAP_shanghai_ultimatum } 
 
@@ -8793,6 +9450,9 @@ JAP_the_propaganda_department_decisions = {
 		}
 	
 		available = {
+			761 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
 		}
 
 		#days_remove = 70
@@ -10601,6 +11261,10 @@ JAP_the_co_prosperity_sphere_decisions = {
 				state = 670
 				state = 741
 				state = 286
+				state = 1066 
+				state = 1067 
+				state = 1068 
+				state = 1069 
 			}
 		}
 
@@ -10625,7 +11289,33 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		available = {
 			
-
+			671 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			1017 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			670 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			741 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			286 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			1066 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			1067 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			1068 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			1069 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 		}
 
 		complete_effect = {
@@ -10641,6 +11331,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 							state = 671
 							state = 1017
 							state = 670
+							state = 1069 
 						}
 					}
 					transfer_state_to = VIN
@@ -10653,6 +11344,9 @@ JAP_the_co_prosperity_sphere_decisions = {
 						OR = {
 							state = 741
 							state = 286
+							state = 1066 
+							state = 1067 
+							state = 1068 
 						}
 					}
 					transfer_state_to = CAM
@@ -10718,6 +11412,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 				state = 671
 				state = 1017
 				state = 286
+				state = 1066 
 			}
 		}
 
@@ -10736,6 +11431,18 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		available = {
 			
+			671 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			1017 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			286 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			1066 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 
 		}
 
@@ -10752,6 +11459,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 							state = 671
 							state = 1017
 							state = 286
+							state = 1066
 						}
 					}
 					transfer_state_to = VIN
@@ -10807,6 +11515,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 		highlight_states = {
 			highlight_state_targets = {
 				state = 741
+				state = 1067
 			}
 		}
 
@@ -10825,6 +11534,9 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		available = {
 			
+			741 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 
 		}
 
@@ -10835,6 +11547,14 @@ JAP_the_co_prosperity_sphere_decisions = {
 			hidden_effect = {
 
 				# Cambodian States
+				741 = {
+					transfer_state_to = CAM
+					add_core_of = CAM
+				}
+				1067 = {
+					transfer_state_to = CAM
+					add_core_of = CAM
+				}
 
 				set_autonomy = {
 					target = CAM
@@ -10881,6 +11601,8 @@ JAP_the_co_prosperity_sphere_decisions = {
 		highlight_states = {
 			highlight_state_targets = {
 				state = 670
+				state = 1068 
+				state = 1069 
 			}
 		}
 
@@ -10902,6 +11624,17 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		available = {
 			
+			670 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+
+			1068 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+
+			1069 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 
 		}
 
@@ -10912,6 +11645,18 @@ JAP_the_co_prosperity_sphere_decisions = {
 			hidden_effect = {
 
 				# Laotian States
+				670 = {
+					transfer_state_to = LAO
+					add_core_of = LAO
+				}
+				1068 = {
+					transfer_state_to = LAO
+					add_core_of = LAO
+				}
+				1069 = {
+					transfer_state_to = LAO
+					add_core_of = LAO
+				}
 
 				set_autonomy = {
 					target = LAO
@@ -10976,6 +11721,9 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		available = {
 			
+			422 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 
 		}
 
@@ -10986,6 +11734,10 @@ JAP_the_co_prosperity_sphere_decisions = {
 			hidden_effect = {
 
 				# Sri Lankan States
+				422 = {
+					transfer_state_to = SRL
+					add_core_of = SRL
+				}
 
 				set_autonomy = {
 					target = SRL
@@ -11025,6 +11777,9 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		visible = { 
 			OR = {
+				721 = {
+					is_controlled_by = ROOT
+				}
 				AND = {
 					has_subject = TML
 					TML = {
@@ -11057,6 +11812,9 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 			IF = {
 				limit = {
+					721 = {
+						is_controlled_by = ROOT
+					}
 				}
 
 				hidden_effect = {
@@ -11084,6 +11842,16 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 				}
 
+				721 = {
+					create_unit = {
+					    division = "name = \"1. Colunas Negras\" division_template = \"Colunas Negras\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"2. Colunas Negras\" division_template = \"Colunas Negras\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+					    owner = ROOT
+					}
+				}
 			}	
 			ELSE_IF = {
 				limit = {
@@ -11120,6 +11888,16 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 					}
 
+					721 = {
+						create_unit = {
+						    division = "name = \"1. Colunas Negras\" division_template = \"Colunas Negras\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+						    owner = ROOT
+						}
+						create_unit = {
+						    division = "name = \"2. Colunas Negras\" division_template = \"Colunas Negras\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+						    owner = ROOT
+						}
+					}
 
 				}
 
@@ -11157,6 +11935,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 		}
 
 		visible = { 
+			655 = {
+				OR = {
+					is_owned_by = JAP
+					is_controlled_by = JAP
+				}
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		}
 	
 		available = {
@@ -11176,6 +11963,9 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		complete_effect = { 
 
+			655 = {
+				add_core_of = ROOT
+			}
 
 		}
 
@@ -12523,10 +13313,16 @@ JAP_the_peoples_state_decisions = {
 		}
 
 		visible = {
+			282 = {
+				is_capital = no
+			}
 			has_completed_focus = JAP_revoke_the_peace_preservation_law
 		}
 
 		available = {
+			282 = {
+				is_fully_controlled_by = ROOT
+			}
 			has_civil_war = no
 		}
 
@@ -15063,17 +15859,30 @@ BRM_burmah_oils_oil_fields = {
 
 		visible = {
 				
+			288 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 			
 			is_subject = no
 			has_capitulated = no
 
 			NOT = {
+				288 = {
+					has_dynamic_modifier = { modifier = BRM_blown_up_oil_fields }
+				}
 			}
 			
 		}
 
 		available = {
 			has_war = yes
+			288 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}	
+			}	
 		}
 
 		cost = 25
@@ -15081,6 +15890,9 @@ BRM_burmah_oils_oil_fields = {
 		cancel_trigger = {
 			OR = {
 				has_war = no
+				288 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
 			}
 		}
 
@@ -15100,6 +15912,9 @@ BRM_burmah_oils_oil_fields = {
 				add = 150
 			}
 			modifier = {
+				288 = {
+					state_is_fully_controlled_by_ROOT_or_subject = no
+				}
 				add = 100
 			}
 		}
@@ -15108,6 +15923,11 @@ BRM_burmah_oils_oil_fields = {
 
 		remove_effect = {
 
+			288 = {
+				add_dynamic_modifier = {
+					modifier = BRM_blown_up_oil_fields
+				}
+			}
 
 		}
 
@@ -15125,6 +15945,10 @@ BRM_burmah_oils_oil_fields = {
 
 		visible = {
 
+			288 = {
+				is_controlled_by_ROOT_or_subject = yes
+				has_dynamic_modifier = { modifier = BRM_blown_up_oil_fields }
+			}
 			
 			has_capitulated = no
 			is_subject = no 
@@ -15141,6 +15965,9 @@ BRM_burmah_oils_oil_fields = {
 		cost = 25
 
 		cancel_trigger = {
+			288 = {
+				is_controlled_by_ROOT_or_subject = no
+			}
 		}
 
 		ai_will_do = {
@@ -15168,6 +15995,11 @@ BRM_burmah_oils_oil_fields = {
 
 		remove_effect = {
 
+			288 = {
+				remove_dynamic_modifier = {
+					modifier = BRM_blown_up_oil_fields
+				}
+			}
 
 		}
 	}

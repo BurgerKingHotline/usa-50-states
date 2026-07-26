@@ -1,195 +1,181 @@
+# =============================================================================
+# CHICAGO CITY COUNCIL AND LEADERSHIP VOTE
+# =============================================================================
+# 50 seats, D'Hondt/highest-averages apportionment, deterministic ties.
+# Four visual blocs use sprite frames 0-3 (zero-based).
+# =============================================================================
+
+CHG_calculate_council_seats = {
+	set_variable = { chg_conservative_seats = 0 }
+	set_variable = { chg_populist_seats = 0 }
+	set_variable = { chg_liberal_seats = 0 }
+	set_variable = { chg_socialist_seats = 0 }
+	set_variable = { chg_communist_seats = 0 }
+	set_variable = { chg_fascist_seats = 0 }
+	set_variable = { chg_nonaligned_seats = 0 }
+	set_temp_variable = { chg_total_popularity = party_popularity@conservatism_ideology }
+	add_to_temp_variable = { chg_total_popularity = party_popularity@populism_ideology }
+	add_to_temp_variable = { chg_total_popularity = party_popularity@democratic }
+	add_to_temp_variable = { chg_total_popularity = party_popularity@socialism_ideology }
+	add_to_temp_variable = { chg_total_popularity = party_popularity@communism }
+	add_to_temp_variable = { chg_total_popularity = party_popularity@fascism }
+	add_to_temp_variable = { chg_total_popularity = party_popularity@neutrality }
+	set_temp_variable = { chg_apportion_i = 0 }
+	if = {
+		limit = { check_variable = { chg_total_popularity < 0.001 } }
+		set_variable = { chg_nonaligned_seats = 50 }
+		set_temp_variable = { chg_apportion_i = 50 }
+	}
+	while_loop_effect = {
+		limit = { check_variable = { chg_apportion_i < 50 } }
+		set_temp_variable = { chg_divisor = { value = chg_conservative_seats add = 1 } }
+		set_temp_variable = { chg_best_score = { value = party_popularity@conservatism_ideology divide = chg_divisor } }
+		set_temp_variable = { chg_winner = 0 }
+		set_temp_variable = { chg_divisor = { value = chg_populist_seats add = 1 } }
+		set_temp_variable = { chg_test_score = { value = party_popularity@populism_ideology divide = chg_divisor } }
+		if = { limit = { check_variable = { chg_test_score > chg_best_score } } set_temp_variable = { chg_winner = 1 } set_temp_variable = { chg_best_score = chg_test_score } }
+		set_temp_variable = { chg_divisor = { value = chg_liberal_seats add = 1 } }
+		set_temp_variable = { chg_test_score = { value = party_popularity@democratic divide = chg_divisor } }
+		if = { limit = { check_variable = { chg_test_score > chg_best_score } } set_temp_variable = { chg_winner = 2 } set_temp_variable = { chg_best_score = chg_test_score } }
+		set_temp_variable = { chg_divisor = { value = chg_socialist_seats add = 1 } }
+		set_temp_variable = { chg_test_score = { value = party_popularity@socialism_ideology divide = chg_divisor } }
+		if = { limit = { check_variable = { chg_test_score > chg_best_score } } set_temp_variable = { chg_winner = 3 } set_temp_variable = { chg_best_score = chg_test_score } }
+		set_temp_variable = { chg_divisor = { value = chg_communist_seats add = 1 } }
+		set_temp_variable = { chg_test_score = { value = party_popularity@communism divide = chg_divisor } }
+		if = { limit = { check_variable = { chg_test_score > chg_best_score } } set_temp_variable = { chg_winner = 4 } set_temp_variable = { chg_best_score = chg_test_score } }
+		set_temp_variable = { chg_divisor = { value = chg_fascist_seats add = 1 } }
+		set_temp_variable = { chg_test_score = { value = party_popularity@fascism divide = chg_divisor } }
+		if = { limit = { check_variable = { chg_test_score > chg_best_score } } set_temp_variable = { chg_winner = 5 } set_temp_variable = { chg_best_score = chg_test_score } }
+		set_temp_variable = { chg_divisor = { value = chg_nonaligned_seats add = 1 } }
+		set_temp_variable = { chg_test_score = { value = party_popularity@neutrality divide = chg_divisor } }
+		if = { limit = { check_variable = { chg_test_score > chg_best_score } } set_temp_variable = { chg_winner = 6 } set_temp_variable = { chg_best_score = chg_test_score } }
+		if = { limit = { check_variable = { chg_winner = 0 } } add_to_variable = { chg_conservative_seats = 1 } }
+		else_if = { limit = { check_variable = { chg_winner = 1 } } add_to_variable = { chg_populist_seats = 1 } }
+		else_if = { limit = { check_variable = { chg_winner = 2 } } add_to_variable = { chg_liberal_seats = 1 } }
+		else_if = { limit = { check_variable = { chg_winner = 3 } } add_to_variable = { chg_socialist_seats = 1 } }
+		else_if = { limit = { check_variable = { chg_winner = 4 } } add_to_variable = { chg_communist_seats = 1 } }
+		else_if = { limit = { check_variable = { chg_winner = 5 } } add_to_variable = { chg_fascist_seats = 1 } }
+		else = { add_to_variable = { chg_nonaligned_seats = 1 } }
+		add_to_temp_variable = { chg_apportion_i = 1 }
+	}
+	set_variable = { chg_right_bloc_seats = chg_conservative_seats }
+	add_to_variable = { chg_right_bloc_seats = chg_fascist_seats }
+	add_to_variable = { chg_right_bloc_seats = chg_nonaligned_seats }
+	set_variable = { chg_populist_bloc_seats = chg_populist_seats }
+	set_variable = { chg_liberal_bloc_seats = chg_liberal_seats }
+	set_variable = { chg_left_bloc_seats = chg_socialist_seats }
+	add_to_variable = { chg_left_bloc_seats = chg_communist_seats }
+}
+
+CHG_build_council_frame_array = {
+	clear_array = chg_city_council_layout_frame
+	# 0 right/establishment, 1 populist, 2 liberal, 3 socialist/communist.
+	set_temp_variable = { chg_i = 0 }
+	while_loop_effect = { limit = { check_variable = { chg_i < chg_right_bloc_seats } } add_to_array = { chg_city_council_layout_frame = 0 } add_to_temp_variable = { chg_i = 1 } }
+	set_temp_variable = { chg_i = 0 }
+	while_loop_effect = { limit = { check_variable = { chg_i < chg_populist_bloc_seats } } add_to_array = { chg_city_council_layout_frame = 1 } add_to_temp_variable = { chg_i = 1 } }
+	set_temp_variable = { chg_i = 0 }
+	while_loop_effect = { limit = { check_variable = { chg_i < chg_liberal_bloc_seats } } add_to_array = { chg_city_council_layout_frame = 2 } add_to_temp_variable = { chg_i = 1 } }
+	set_temp_variable = { chg_i = 0 }
+	while_loop_effect = { limit = { check_variable = { chg_i < chg_left_bloc_seats } } add_to_array = { chg_city_council_layout_frame = 3 } add_to_temp_variable = { chg_i = 1 } }
+}
+
+update_chg_candidate_votes = {
+	# Raw candidate affinity scores.
+	set_temp_variable = { chg_raw_horner = elec_bloc_support^4 }
+	add_to_temp_variable = { chg_raw_horner = elec_bloc_support^3 }
+	set_temp_variable = { chg_raw_thompson = elec_bloc_support^1 }
+	add_to_temp_variable = { chg_raw_thompson = elec_bloc_support^0 }
+	set_temp_variable = { chg_raw_fitzpatrick = elec_bloc_support^0 }
+	add_to_temp_variable = { chg_raw_fitzpatrick = elec_bloc_support^5 }
+	set_temp_variable = { chg_raw_cermak = elec_bloc_support^3 }
+	add_to_temp_variable = { chg_raw_cermak = elec_bloc_support^6 }
+	set_temp_variable = { chg_raw_total = chg_raw_horner }
+	add_to_temp_variable = { chg_raw_total = chg_raw_thompson }
+	add_to_temp_variable = { chg_raw_total = chg_raw_fitzpatrick }
+	add_to_temp_variable = { chg_raw_total = chg_raw_cermak }
+	if = { limit = { check_variable = { chg_raw_total < 1 } } set_temp_variable = { chg_raw_total = 1 } }
+	set_variable = { chg_vote_horner = { value = chg_raw_horner divide = chg_raw_total multiply = 100 clamp = { min = 0 max = 100 } } }
+	set_variable = { chg_vote_thompson = { value = chg_raw_thompson divide = chg_raw_total multiply = 100 clamp = { min = 0 max = 100 } } }
+	set_variable = { chg_vote_fitzpatrick = { value = chg_raw_fitzpatrick divide = chg_raw_total multiply = 100 clamp = { min = 0 max = 100 } } }
+	set_variable = { chg_vote_cermak = { value = 100 subtract = chg_vote_horner subtract = chg_vote_thompson subtract = chg_vote_fitzpatrick clamp = { min = 0 max = 100 } } }
+}
+
+CHG_resolve_leadership_vote = {
+	# Exact ties resolve in listed order: Horner, Thompson, Fitzpatrick, Cermak.
+	update_chg_candidate_votes = yes
+	set_temp_variable = { chg_candidate_winner = 0 }
+	set_temp_variable = { chg_candidate_best = chg_vote_horner }
+	if = { limit = { check_variable = { chg_vote_thompson > chg_candidate_best } } set_temp_variable = { chg_candidate_winner = 1 } set_temp_variable = { chg_candidate_best = chg_vote_thompson } }
+	if = { limit = { check_variable = { chg_vote_fitzpatrick > chg_candidate_best } } set_temp_variable = { chg_candidate_winner = 2 } set_temp_variable = { chg_candidate_best = chg_vote_fitzpatrick } }
+	if = { limit = { check_variable = { chg_vote_cermak > chg_candidate_best } } set_temp_variable = { chg_candidate_winner = 3 } set_temp_variable = { chg_candidate_best = chg_vote_cermak } }
+	set_variable = { chg_last_winner = chg_candidate_winner }
+	if = {
+		limit = { check_variable = { chg_candidate_winner = 0 } }
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		promote_character = CHG_Henry_Horner
+		add_popularity = { ideology = democratic popularity = 0.05 }
+	}
+	else_if = {
+		limit = { check_variable = { chg_candidate_winner = 1 } }
+		set_politics = { ruling_party = neutrality elections_allowed = yes }
+		promote_character = CHG_William_Hale_Thompson
+		add_popularity = { ideology = neutrality popularity = 0.05 }
+	}
+	else_if = {
+		limit = { check_variable = { chg_candidate_winner = 2 } }
+		set_politics = { ruling_party = socialism_ideology elections_allowed = yes }
+		promote_character = CHG_John_Fitzpatrick
+		add_popularity = { ideology = socialism_ideology popularity = 0.05 }
+	}
+	else = {
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		promote_character = CHG_Anton_Cermak
+		add_popularity = { ideology = democratic popularity = 0.05 }
+	}
+}
+
+CHG_update_governing_control = {
+	set_variable = { chg_governing_seats = 0 }
+	if = { limit = { has_government = conservatism_ideology } set_variable = { chg_governing_seats = chg_right_bloc_seats } }
+	else_if = { limit = { has_government = fascism } set_variable = { chg_governing_seats = chg_right_bloc_seats } }
+	else_if = { limit = { has_government = neutrality } set_variable = { chg_governing_seats = chg_right_bloc_seats } }
+	else_if = { limit = { has_government = populism_ideology } set_variable = { chg_governing_seats = chg_populist_bloc_seats } }
+	else_if = { limit = { has_government = democratic } set_variable = { chg_governing_seats = chg_liberal_bloc_seats } }
+	else = { set_variable = { chg_governing_seats = chg_left_bloc_seats } }
+	set_variable = { chg_has_majority = 0 }
+	if = { limit = { check_variable = { chg_governing_seats > 25 } } set_variable = { chg_has_majority = 1 } }
+}
+
+CHG_update_governance_modifier = {
+	set_variable = { chg_council_pp_gain = -0.10 }
+	if = { limit = { check_variable = { chg_has_majority = 1 } } set_variable = { chg_council_pp_gain = 0.10 } }
+	if = {
+		limit = { NOT = { has_dynamic_modifier = { modifier = CHG_council_governance_modifier } } }
+		add_dynamic_modifier = { modifier = CHG_council_governance_modifier }
+	}
+	force_update_dynamic_modifier = yes
+}
+
+CHG_refresh_council_display = {
+	CHG_build_council_frame_array = yes
+	update_chg_candidate_votes = yes
+	CHG_update_governing_control = yes
+}
+
+CHG_calculate_and_refresh_council = {
+	CHG_calculate_council_seats = yes
+	CHG_refresh_council_display = yes
+	CHG_update_governance_modifier = yes
+}
+
 CHG_city_council_setup = {
+	set_country_flag = uses_chg_council
+	set_country_flag = uses_universal_elections
 	clear_array = chg_city_council_x
 	clear_array = chg_city_council_y
 	clear_array = chg_city_council_frame
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 0 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 10 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 15 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 20 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 25 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 30 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 35 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 40 }
-
-	add_to_array = { chg_city_council_x = 20 }
-	add_to_array = { chg_city_council_y = 10 }
-
-	add_to_array = { chg_city_council_x = 10 }
-	add_to_array = { chg_city_council_y = 10 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 49 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 80 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 30 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 50 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 16 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 98 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 68 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 39 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 9 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 9 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 39 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 68 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 98 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 16 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 50 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 30 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 80 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 49 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 110 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 70 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 103 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 73 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 98 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 101 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_x = 0 }
-	add_to_array = { chg_city_council_y = 131 }
-
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
-	add_to_array = { chg_city_council_frame = 0 }
+	clear_array = chg_city_council_layout_frame
+	if = { limit = { NOT = { has_country_flag = universal_election_system_initialized } } init_universal_election_system = yes }
+	CHG_calculate_and_refresh_council = yes
 }

@@ -4,7 +4,8 @@ scripted_gui = {
         window_name = "CHG_leader_gui_window"
         dynamic_lists = {
             city_council_seat_container = {
-                array = chg_city_council_x
+				# The interface grid places a deterministic 10 x 5 rectangular council.
+                array = chg_city_council_layout_frame
                 change_scope = no
                 entry_container = chg_council_seat
                 index = chg_seat_index
@@ -12,9 +13,7 @@ scripted_gui = {
         }
         properties = {
             chg_council_seat_icon = {
-				x = chg_city_council_x^chg_seat_index
-				y = chg_city_council_y^chg_seat_index
-				frame = chg_city_council_frame^chg_seat_index
+				frame = chg_city_council_layout_frame^chg_seat_index
 			}
         }
     }

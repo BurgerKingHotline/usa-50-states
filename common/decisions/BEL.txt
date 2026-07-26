@@ -782,6 +782,30 @@ war_measures = {
 				original_tag_to_check = COG
 				has_war_with = ROOT
 			}
+			295 = {
+				OR = {
+					is_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			718 = {
+				OR = {
+					is_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			889 = {
+				OR = {
+					is_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+				}
+			}
 		}
 
 		visible = { 

@@ -1,0 +1,226 @@
+scripted_gui = {
+	universal_election_main_window = {
+		window_name = "universal_election_window"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			is_ai = no
+			OR = {
+				has_country_flag = uses_universal_elections
+				tag = WSH
+			}
+			has_country_flag = congress_visible
+			has_country_flag = election_gui_visible
+			has_variable = days_until_election
+
+		}
+		dynamic_lists = {
+			demographic_grid = {
+				array = elec_bloc_id
+				change_scope = no
+				entry_container = demographic_entry
+				index = bloc_idx
+			}
+			action_dropdown_grid = {
+				array = election_action_array
+				change_scope = no
+				entry_container = action_dropdown_entry
+				index = action_idx
+			}
+		}
+		properties = {
+			national_vote_bar = { frame = gov_national_vote_share_frame }
+			momentum_arrow = { frame = elec_bloc_momentum^bloc_idx }
+			bloc_support_bar = { frame = elec_bloc_frame^bloc_idx }
+		}
+		effects = {
+			election_close_button_click = {
+				clr_country_flag = election_gui_visible
+				set_variable = { election_dropdown_visibility = 0 }
+				clr_country_flag = election_dropdown_open
+				clr_country_flag = wsh_election_dropdown_open
+				clr_country_flag = election_demographic_selection_required
+				clear_variable = selected_bloc_idx
+			}
+			select_demographic_button_click = {
+				set_variable = { selected_bloc_idx = bloc_idx }
+				set_variable = { election_dropdown_visibility = 0 }
+				clr_country_flag = election_dropdown_open
+				clr_country_flag = election_demographic_selection_required
+				update_election_action_costs = yes
+			}
+			dropdown_toggle_btn_click = {
+				if = {
+					limit = { check_variable = { election_dropdown_visibility > 0 } }
+					set_variable = { election_dropdown_visibility = 0 }
+				}
+				else = {
+					set_variable = { election_dropdown_visibility = 1 }
+				}
+			}
+			execute_action_btn_click = {
+				if = {
+					limit = {
+						has_country_flag = is_in_election_season
+						check_variable = { election_actions_remaining > 0 }
+						OR = {
+							AND = { check_variable = { selected_electoral_action_idx = 1 } NOT = { check_variable = { political_power < var:action_1_cost_var } } }
+							AND = { check_variable = { selected_electoral_action_idx = 2 } NOT = { check_variable = { political_power < var:action_2_cost_var } } }
+							AND = { check_variable = { selected_electoral_action_idx = 3 } NOT = { check_variable = { command_power < var:action_3_cost_var } } }
+							AND = { check_variable = { selected_electoral_action_idx = 4 } NOT = { check_variable = { political_power < var:action_4_cost_var } } }
+							AND = { check_variable = { selected_electoral_action_idx = 5 } NOT = { check_variable = { political_power < var:action_5_cost_var } } has_stability > 0.05 }
+							AND = { check_variable = { selected_electoral_action_idx = 6 } NOT = { check_variable = { political_power < var:action_6_cost_var } } NOT = { check_variable = { command_power < 10 } } }
+							AND = { check_variable = { selected_electoral_action_idx = 7 } NOT = { check_variable = { political_power < var:action_7_cost_var } } has_stability > 0.02 }
+							AND = { check_variable = { selected_electoral_action_idx = 8 } NOT = { check_variable = { political_power < var:action_8_cost_var } } }
+						}
+					}
+					if = {
+						limit = { check_variable = { selected_electoral_action_idx = 1 } }
+						set_temp_variable = { applied_cost = action_1_cost_var }
+						multiply_temp_variable = { applied_cost = -1 }
+						add_political_power = var:applied_cost
+						set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx add = 2 clamp = { min = 1 max = 100 } } }
+					}
+					else_if = {
+						limit = { check_variable = { selected_electoral_action_idx = 2 } }
+						set_temp_variable = { applied_cost = action_2_cost_var }
+						multiply_temp_variable = { applied_cost = -1 }
+						add_political_power = var:applied_cost
+						random_list = {
+							70 = { set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx add = 6 clamp = { min = 1 max = 100 } } } }
+							30 = { set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx subtract = 4 clamp = { min = 1 max = 100 } } } }
+						}
+					}
+					else_if = {
+						limit = { check_variable = { selected_electoral_action_idx = 3 } }
+						set_temp_variable = { applied_cost = action_3_cost_var }
+						multiply_temp_variable = { applied_cost = -1 }
+						add_command_power = var:applied_cost
+						set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx add = 5 clamp = { min = 1 max = 100 } } }
+					}
+					else_if = {
+						limit = { check_variable = { selected_electoral_action_idx = 4 } }
+						set_temp_variable = { applied_cost = action_4_cost_var }
+						multiply_temp_variable = { applied_cost = -1 }
+						add_political_power = var:applied_cost
+						set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx add = 8 clamp = { min = 1 max = 100 } } }
+					}
+					else_if = {
+						limit = { check_variable = { selected_electoral_action_idx = 5 } }
+						set_temp_variable = { applied_cost = action_5_cost_var }
+						multiply_temp_variable = { applied_cost = -1 }
+						add_political_power = var:applied_cost
+						add_stability = -0.05
+						set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx add = 10 clamp = { min = 1 max = 100 } } }
+					}
+					else_if = {
+						limit = { check_variable = { selected_electoral_action_idx = 6 } }
+						set_temp_variable = { applied_cost = action_6_cost_var }
+						multiply_temp_variable = { applied_cost = -1 }
+						add_political_power = var:applied_cost
+						add_command_power = -10
+						set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx add = 7 clamp = { min = 1 max = 100 } } }
+					}
+					else_if = {
+						limit = { check_variable = { selected_electoral_action_idx = 7 } }
+						set_temp_variable = { applied_cost = action_7_cost_var }
+						multiply_temp_variable = { applied_cost = -1 }
+						add_political_power = var:applied_cost
+						add_stability = -0.02
+						set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx add = 8 clamp = { min = 1 max = 100 } } }
+					}
+					else_if = {
+						limit = { check_variable = { selected_electoral_action_idx = 8 } }
+						set_temp_variable = { applied_cost = action_8_cost_var }
+						multiply_temp_variable = { applied_cost = -1 }
+						add_political_power = var:applied_cost
+						random_list = {
+							50 = { set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx add = 5 clamp = { min = 1 max = 100 } } } }
+							50 = { set_variable = { elec_bloc_support^selected_bloc_idx = { value = elec_bloc_support^selected_bloc_idx subtract = 2 clamp = { min = 1 max = 100 } } } }
+						}
+					}
+					subtract_from_variable = { election_actions_remaining = 1 }
+					set_variable = { election_dropdown_visibility = 0 }
+					clr_country_flag = election_dropdown_open
+					refresh_election_and_legislature_state = yes
+				}
+			}
+			select_action_btn_click = {
+				set_variable = { selected_electoral_action_idx = election_action_array^action_idx }
+				set_variable = { election_dropdown_visibility = 0 }
+				clr_country_flag = election_dropdown_open
+				update_election_action_costs = yes
+			}
+		}
+		triggers = {
+			dropdown_toggle_btn_click_enabled = {
+				has_variable = selected_bloc_idx
+				check_variable = { selected_bloc_idx > -1 }
+				NOT = { has_country_flag = election_demographic_selection_required }
+			}
+			execute_action_btn_click_enabled = {
+				has_country_flag = is_in_election_season
+				check_variable = { election_actions_remaining > 0 }
+				OR = {
+					AND = { check_variable = { selected_electoral_action_idx = 1 } NOT = { check_variable = { political_power < var:action_1_cost_var } } }
+					AND = { check_variable = { selected_electoral_action_idx = 2 } NOT = { check_variable = { political_power < var:action_2_cost_var } } }
+					AND = { check_variable = { selected_electoral_action_idx = 3 } NOT = { check_variable = { command_power < var:action_3_cost_var } } }
+					AND = { check_variable = { selected_electoral_action_idx = 4 } NOT = { check_variable = { political_power < var:action_4_cost_var } } }
+					AND = { check_variable = { selected_electoral_action_idx = 5 } NOT = { check_variable = { political_power < var:action_5_cost_var } } has_stability > 0.05 }
+					AND = { check_variable = { selected_electoral_action_idx = 6 } NOT = { check_variable = { political_power < var:action_6_cost_var } } NOT = { check_variable = { command_power < 10 } } }
+					AND = { check_variable = { selected_electoral_action_idx = 7 } NOT = { check_variable = { political_power < var:action_7_cost_var } } has_stability > 0.02 }
+					AND = { check_variable = { selected_electoral_action_idx = 8 } NOT = { check_variable = { political_power < var:action_8_cost_var } } }
+				}
+			}
+			election_action_panel_visible = {
+				has_variable = selected_bloc_idx
+				check_variable = { selected_bloc_idx > -1 }
+				NOT = { has_country_flag = election_demographic_selection_required }
+			}
+			election_action_placeholder_window_visible = {
+				OR = {
+					has_country_flag = election_demographic_selection_required
+					NOT = {
+						AND = {
+							has_variable = selected_bloc_idx
+							check_variable = { selected_bloc_idx > -1 }
+						}
+					}
+				}
+			}
+			action_info_container_visible = {
+				has_variable = selected_bloc_idx
+				check_variable = { selected_bloc_idx > -1 }
+				NOT = { has_country_flag = election_demographic_selection_required }
+				NOT = { check_variable = { election_dropdown_visibility > 0 } }
+			}
+			dropdown_list_container_visible = {
+				has_variable = selected_bloc_idx
+				check_variable = { selected_bloc_idx > -1 }
+				NOT = { has_country_flag = election_demographic_selection_required }
+				check_variable = { election_dropdown_visibility > 0 }
+			}
+			election_action_disabled_overlay_window_visible = {
+				has_variable = selected_bloc_idx
+				check_variable = { selected_bloc_idx > -1 }
+				NOT = { has_country_flag = election_demographic_selection_required }
+				NOT = {
+					AND = {
+						has_country_flag = is_in_election_season
+						check_variable = { election_actions_remaining > 0 }
+						OR = {
+							AND = { check_variable = { selected_electoral_action_idx = 1 } NOT = { check_variable = { political_power < var:action_1_cost_var } } }
+							AND = { check_variable = { selected_electoral_action_idx = 2 } NOT = { check_variable = { political_power < var:action_2_cost_var } } }
+							AND = { check_variable = { selected_electoral_action_idx = 3 } NOT = { check_variable = { command_power < var:action_3_cost_var } } }
+							AND = { check_variable = { selected_electoral_action_idx = 4 } NOT = { check_variable = { political_power < var:action_4_cost_var } } }
+							AND = { check_variable = { selected_electoral_action_idx = 5 } NOT = { check_variable = { political_power < var:action_5_cost_var } } has_stability > 0.05 }
+							AND = { check_variable = { selected_electoral_action_idx = 6 } NOT = { check_variable = { political_power < var:action_6_cost_var } } NOT = { check_variable = { command_power < 10 } } }
+							AND = { check_variable = { selected_electoral_action_idx = 7 } NOT = { check_variable = { political_power < var:action_7_cost_var } } has_stability > 0.02 }
+							AND = { check_variable = { selected_electoral_action_idx = 8 } NOT = { check_variable = { political_power < var:action_8_cost_var } } }
+						}
+					}
+				}
+			}
+		}
+	}
+}

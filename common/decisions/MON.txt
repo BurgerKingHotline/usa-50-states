@@ -21,6 +21,9 @@ political_actions = {
 		}
 	
 		available = {
+			330 = {
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 
 		highlight_states = {
@@ -50,6 +53,9 @@ political_actions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			330 = {
+				set_state_name = 330_monarchist_name
+			}
 			set_province_name = {
 				id = 4801
 				name = 4801_monarchist_name
@@ -88,6 +94,9 @@ political_actions = {
 		}
 	
 		available = {
+			330 = {
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 
 		highlight_states = {
@@ -117,6 +126,9 @@ political_actions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			330 = {
+				set_state_name = 330_non_monarchist_name
+			}
 			set_province_name = {
 				id = 4801
 				name = 4801_non_monarchist_name
@@ -203,6 +215,9 @@ political_actions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			610 = {
+				set_state_name = state_610_modern_name
+			}
 			set_province_name = {
 				id = 11801
 				name = 11801_modern_name

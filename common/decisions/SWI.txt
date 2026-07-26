@@ -573,6 +573,34 @@ SWI_federal_council_decisions_category = {
 
 		remove_effect = {
 			random_list = {
+				33 = { #Influence succeeds
+					modifier = { 
+						factor = 1.2 #Better chance if it's an Alpine State
+						FROM = { is_alpine_state = yes }
+					}
+					modifier = {
+						factor = 1.2 #Better chance if tried once and failed. 
+						FROM = { has_state_flag = SWI_influence_failed } 
+					}
+					modifier = {
+						factor = 1.2 #Better chance if another state has a claim by Switzerland
+						FROM = {
+							OWNER = {
+								any_owned_state = {
+									NOT = { state = PREV.PREV }
+									is_claimed_by = ROOT
+								}
+							} 
+						}
+					}
+					ROOT = { country_event = { id = BBA_swiss_expansion.2 hours = 2 } } 
+					
+				}
+				66 = { #Influence failed
+					FROM = {
+						ROOT = { country_event = { id = BBA_swiss_expansion.1 hours = 3 } } 
+					}
+				} 
 			}
 
 			ROOT = { clr_country_flag = SWI_influencing_a_state }
@@ -2479,6 +2507,20 @@ SWI_absolute_neutrality_decisions_category = {
 				}
 			}
 			random_list = {
+				40 = { 
+
+					every_other_country = {
+						limit = {
+							SWI_is_country_to_balance = yes 
+							NOT = { tag = var:SWI.SWI_angriest_country }
+						}
+						SWI_add_medium_bad_opinion = yes 
+					}
+
+				}
+				60 = { #Play the Bond theme Bam bam bam bam bam bam bam bam baam bam baaam bam bam bam BAM BAM, BAM BAM BAAM
+
+				}
 			}
 			set_country_flag = SWI_has_done_backchannel_negotiations_once
 		}
@@ -3021,6 +3063,47 @@ SWI_absolute_neutrality_decisions_category = {
 				modifier = SWI_supporting_intelligence
 			}
 			random_list = {
+				50 = { #Opposing countries find out and are angry
+					modifier = { 
+						factor = 0.5 #Improve your chances if you have an agency. 
+						ROOT = { 
+							OR = {
+								has_idea = SWI_buero_ha_idea 
+								has_idea = SWI_federal_police_idea
+							}
+						}
+					}
+					modifier = {
+						factor = 0.5 #Improve your chances if everyone is happy with you 
+						NOT = {
+							any_other_country = {
+								SWI_is_country_to_balance = yes
+								has_opinion = {
+									target = ROOT 
+									value < 0 
+								}
+							}
+						}
+					}
+					every_other_country = {
+						limit = {
+							OR = {
+								SWI_is_fascist_to_balance = yes
+								AND = {
+									SWI_is_country_to_balance = yes
+									has_war_with = FROM
+								}
+							}
+						}
+						add_opinion_modifier = {
+							target = ROOT 
+							modifier = SWI_grave_breach_of_neutrality
+						}
+					}
+				}
+				50 = {
+					#Do nothing 
+				}
 			}				
 		}
 
@@ -3092,6 +3175,47 @@ SWI_absolute_neutrality_decisions_category = {
 				}
 			}
 			random_list = {
+				50 = { #Opposing countries find out and are angry
+					modifier = { 
+						factor = 0.5 #Improve your chances if you have an agency. 
+						ROOT = { 
+							OR = {
+								has_idea = SWI_buero_ha_idea 
+								has_idea = SWI_federal_police_idea
+							}
+						}
+					}
+					modifier = {
+						factor = 0.5 #Improve your chances if everyone is happy with you 
+						NOT = {
+							any_other_country = {
+								SWI_is_country_to_balance = yes
+								has_opinion = {
+									target = ROOT 
+									value < 0 
+								}
+							}
+						}
+					}
+					every_other_country = {
+						limit = {
+							OR = {
+								SWI_is_fascist_to_balance = yes
+								AND = {
+									SWI_is_country_to_balance = yes
+									has_war_with = FROM
+								}
+							}
+						}
+						add_opinion_modifier = {
+							target = ROOT 
+							modifier = SWI_grave_breach_of_neutrality
+						}
+					}
+				}
+				50 = {
+					#Do nothing 
+				}
 			}
 		}
 
@@ -3729,6 +3853,17 @@ SWI_absolute_neutrality_decisions_category = {
 
 		remove_effect = { 
 			random_list = {
+				35 = {
+					FROM = {
+						add_opinion_modifier = {
+							target = ROOT 
+							modifier = SWI_supporting_resistance
+						}
+					}
+				}
+				65 = {
+					#Nothing happens
+				}
 			}
 		}
 

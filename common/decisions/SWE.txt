@@ -1192,13 +1192,37 @@ SWE_politics = {
 			}
 			
 
+			208 = { #Luga
+				is_fully_controlled_by = ROOT
+			}
 
+			195 = { #Leningrad
+				is_fully_controlled_by = ROOT
+			}
 
+			61 = { #Meckleburg
+				is_fully_controlled_by = ROOT
+			}
 
+			59 = { #Hannover
+				is_fully_controlled_by = ROOT
+			}
 
+			274 = { #
+				is_fully_controlled_by = ROOT
+			}
 
+			359 = { #
+				is_fully_controlled_by = ROOT
+			}
 
+			320 = { #
+				is_fully_controlled_by = ROOT
+			}
 
+			694 = { #
+				is_fully_controlled_by = ROOT
+			}
 
 
 			has_country_leader_with_trait = SWE_the_great
@@ -1215,13 +1239,37 @@ SWE_politics = {
 		}
 
 		complete_effect = {
+			208 = { #Luga
+				add_core_of = ROOT
+			}
 
+			195 = { #Leningrad
+				add_core_of = ROOT
+			}
 
+			61 = { #Meckleburg
+				add_core_of = ROOT
+			}
 
+			59 = { #Hannover
+				add_core_of = ROOT
+			}
 
+			274 = { 
+				add_core_of = ROOT
+			}
 
+			359 = { 
+				add_core_of = ROOT
+			}
 
+			320 = { 
+				add_core_of = ROOT
+			}
 
+			694 = { 
+				add_core_of = ROOT
+			}
 
 			SWE = {
 
@@ -1327,9 +1375,21 @@ SWE_politics = {
 				 }
 			}
 
+			208 = { #Luga
+				is_fully_controlled_by = ROOT
+			}
 
+			195 = { #Leningrad
+				is_fully_controlled_by = ROOT
+			}
 
+			61 = { #Meckleburg
+				is_fully_controlled_by = ROOT
+			}
 
+			59 = { #Hannover
+				is_fully_controlled_by = ROOT
+			}
 
 		}
 		
@@ -1373,8 +1433,20 @@ SWE_politics = {
 					 }
 				}
 
+				59 = { #Hannover
+					add_compliance = 70
+				}
 
+				61 = {  
+					add_compliance = 70
+				}
+				208 = { #Luga
+					add_compliance = 70
+				}
 
+				195 = { #Leningrad
+					add_compliance = 70
+				}
 
 			}
 		}
@@ -1485,6 +1557,12 @@ SWE_mines = {
 
 		visible = {
 			NOT = {
+				666 = {
+					has_dynamic_modifier = { modifier = SWE_blown_up_mines }
+				}
+				918 = {
+					has_dynamic_modifier = { modifier = SWE_blown_up_mines }
+				}
 			}
 			has_capitulated = no
 		}
@@ -1512,7 +1590,23 @@ SWE_mines = {
 		days_remove = 20
 
 		remove_effect = {
+			666 = {
+				if = {
+					limit = { controller = { tag = SWE }}
+					add_dynamic_modifier = {
+						modifier = SWE_blown_up_mines
+					}
+				}
+			}
 
+			918 = {
+				if = {
+					limit = { controller = { tag = SWE } }
+					add_dynamic_modifier = {
+						modifier = SWE_blown_up_mines
+					}
+				}
+			}
 		}
 
 		ai_will_do = {
@@ -1531,7 +1625,13 @@ SWE_mines = {
 			controls_province = 3095 #Kiruna
 			controls_state = 918
 			OR = {
+				666 = {
+					has_dynamic_modifier = { modifier = SWE_blown_up_mines }
+				}
 
+				918 = {
+					has_dynamic_modifier = { modifier = SWE_blown_up_mines }
+				}
 			}
 			has_capitulated = no
 		}
@@ -1557,7 +1657,17 @@ SWE_mines = {
 		days_remove = 120
 
 		remove_effect = {
+			666 = {
+				remove_dynamic_modifier = {
+					modifier = SWE_blown_up_mines
+				}
+			}
 
+			918 = {
+				remove_dynamic_modifier = {
+					modifier = SWE_blown_up_mines
+				}
+			}
 		}
 	}
 }
@@ -1797,12 +1907,24 @@ SWE_rationing_policies = {
 				add_stability = -0.02
 				add_war_support = -0.01
 
+				141 = {
+					add_resource = {
+						type = rubber
+						amount = 8
+					}
+				}
 			}
 			else = {
 				clr_country_flag =  SWE_has_seized_civilian_tires 
 				add_stability = 0.02
 				add_war_support = 0.01
 
+				141 = {
+					add_resource = {
+						type = rubber
+						amount = -8
+					}
+				}
 			}
 			set_country_flag = SWE_civilian_tire_timeout
 			custom_effect_tooltip = SWE_rationing_cooldown
@@ -3034,8 +3156,20 @@ SWE_royalist_buildup = {
 			}
 			random_list = {
 				# Bad march
+				25 = {
+					country_event = { id = AAT_Sweden_nationalists.16 days = 1 }
+					event_option_tooltip = AAT_Sweden_nationalists.16.a
+				}
 				# Average march
+				50 = {
+					country_event = { id = AAT_Sweden_nationalists.17 days = 1 }
+					event_option_tooltip = AAT_Sweden_nationalists.17.a
+				}
 				# Good march
+				25 = {
+					country_event = { id = AAT_Sweden_nationalists.18 days = 1 }
+					event_option_tooltip = AAT_Sweden_nationalists.18.a
+				}
 			}
 		}
 	}

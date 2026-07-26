@@ -30,41 +30,41 @@
 
 	continuous_focus_position = { x = 50 y = 1350 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#	focus = {
+#		id = CHI_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
 
 	focus = {
 		id = CHI_secure_internal_politics
@@ -78,21 +78,28 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+			warlord_rule_all_parties = yes
+		}
 	}
 
-	
-	
-	
+	#########################
+	##### Nationalists ######
+	#########################
 
 	focus = {
 		id = CHI_cooperation_with_the_nationalists
@@ -119,15 +126,28 @@
 			}
 		}
 
-		available = {}
+		available = {
+			OR = {
+				is_subject = no
+				is_subject_of = event_target:WTT_current_china_leader
+			}
+			NOT = { has_war_with = CHI }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = CHI_cooperation_with_the_nationalists_effect_tooltip
+			CHI = { add_opinion_modifier = { modifier = CHI_cooperation_with_the_nationalists_positive target = ROOT } }
+			PRC = { add_opinion_modifier = { modifier = CHI_cooperation_with_the_nationalists_negative target = ROOT } }
+		}
 	}
 
 	focus = {
@@ -144,9 +164,13 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -174,7 +198,27 @@
 			}
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = CHI_anti_opposition_campaigns_effect_tooltip
+			if = {
+				limit = {
+					AND = {
+						has_completed_focus = CHI_cooperation_with_the_nationalists
+						NOT = { any_other_country = { has_completed_focus = CHI_cooperation_with_the_communists } }
+					}
+				} 
+				custom_effect_tooltip = CHI_anti_opposition_campaigns_effect_tooltip_no_communists
+			}
+			if = {
+				limit = {			
+					AND = {
+						has_completed_focus = CHI_cooperation_with_the_communists
+						NOT = { any_other_country = { has_completed_focus = CHI_cooperation_with_the_nationalists } }
+					}
+				}
+				custom_effect_tooltip = CHI_anti_opposition_campaigns_effect_tooltip_no_nationalists
+			}
+		}
 	}
 
 	focus = {
@@ -191,16 +235,29 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						CHI = { is_in_tech_sharing_group = CHI_technological_cooperation_tech_group } }
+				}
+				CHI = { add_to_tech_sharing_group = CHI_technological_cooperation_tech_group }
+			}
+			add_to_tech_sharing_group = CHI_technological_cooperation_tech_group
+		}
 	}
 
 	focus = {
@@ -217,16 +274,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -244,16 +307,22 @@
 			factor = 5
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = PRC_government_corruption
+		}
 	}
 
 	focus = {
@@ -271,15 +340,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_embrace_the_opium_trade
+		}
 	}
 
 	focus = {
@@ -296,16 +371,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1 
+			}
+		}
 	}
 
 	focus = {
@@ -322,15 +408,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = CHI_ineffective_bureaucracy_warlord
+		}
 	}
 
 	focus = {
@@ -351,15 +443,44 @@
 			}
 		}
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = is_not_supporting_someone_in_political_struggle
+				NOT = {
+					any_country = {
+						ROOT = { has_country_flag = warlord_supports_@PREV }
+					}
+				}
+			}
+			is_subject = no
+			NOT = { has_war_with = CHI }
+			if = {
+				limit = {
+					WTT_not_taking_over_national_leadership = no				
+				}
+				WTT_not_taking_over_national_leadership = yes
+			}
+			if = {
+				limit = {
+					WTT_not_china_leader_refused_to_give_up_national_leadership = no
+				}
+				WTT_not_china_leader_refused_to_give_up_national_leadership = yes
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = enable_power_struggle
+			WTT_setup_political_struggle = yes
+			WTT_add_ROOT_to_political_struggle = yes
+		}
 	}
 
 	focus = {
@@ -380,20 +501,39 @@
 			}
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+			OR = {
+				WTT_has_politcal_support_points_30 = yes
+				WTT_is_ROOT_current_leader_of_china = yes
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			load_focus_tree = china_nationalist_focus
+			set_cosmetic_tag = CHI_warlord_leader
+			every_state = {
+				limit = {
+					is_core_of = CHI
+				}
+				add_core_of = ROOT
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			CHI_no_longer_a_warlord_idea_removal = yes
+		}
 	}	
 
-	
-	
-	
+	#######################
+	##### Communists ######
+	#######################
 
 	focus = {
 		id = CHI_cooperation_with_the_communists
@@ -417,15 +557,50 @@
 			}
 		}
 
-		available = {}
+		available = {
+			OR = {
+				is_subject = no
+				is_subject_of = event_target:WTT_communist_china
+			}
+			NOT = { has_war_with = PRC }
+			NOT = { has_war_with = SOV }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = CHI_cooperation_with_the_communists_effect_tooltip
+			SOV = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_cooperation_with_the_communists_positive
+				}
+				add_ai_strategy = {
+					type = support
+					id = ROOT
+					value = 100
+				}
+			}
+			PRC = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_cooperation_with_the_communists_positive
+				}
+			}
+			CHI = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHI_cooperation_with_the_communists_negative
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -442,16 +617,27 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1 
+			}
+		}
 	}
 
 	focus = {
@@ -468,15 +654,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				is_subject = no
+				if = {
+					limit = { is_subject = yes }
+					OVERLORD = { has_government = communism }
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_timed_idea = { idea = CHI_ideological_education days = 1095 }
+		}
 	}
 
 	focus = {
@@ -493,16 +691,22 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_land_value_tax
+		}
 	}
 
 	focus = {
@@ -519,16 +723,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = PRC_government_corruption
+		}
 	}
 
 	focus = {
@@ -545,15 +755,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = CHI_ineffective_bureaucracy_warlord
+		}
 	}
 
 	focus = {
@@ -580,15 +796,52 @@
 			}
 		}
 
-		available = {}
+		available = {
+			communism > 0.4
+			if = {
+				limit = { NOT = { tag = SIK } }
+				any_neighbor_country = {
+					tag = event_target:WTT_communist_china
+				}
+			}			
+			NOT = { has_war_with = PRC }
+			NOT = { has_war_with = SOV }
+			SOV = { has_government = communism }			
+			is_subject = no
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			set_politics = { ruling_party = communism elections_allowed = no }
+			add_opinion_modifier = { target = SOV modifier = CHI_join_the_chinese_soviet }
+			SOV = { add_opinion_modifier = { target = ROOT modifier = CHI_join_the_chinese_soviet } }
+
+			if = {
+				limit = {
+					event_target:WTT_communist_china = {
+						NOT = { is_in_faction_with = ROOT }
+						is_in_faction = no
+					}
+				}
+				event_target:WTT_communist_china = {
+					set_rule = { can_create_factions = yes }
+					create_faction_from_template = {
+						template = faction_template_POR_popular_front_bloc
+						name = CHI_the_peoples_front
+					}
+					add_to_faction = event_target:WTT_communist_china
+					add_to_faction = ROOT
+					country_event = wtt_warlord_vs_prc.35
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -609,20 +862,38 @@
 			}
 		}
 
-		available = {}
+		available = {
+			has_opinion = {
+				target = SOU
+				value > 50
+			}
+			is_subject = no
+			NOT = { has_war_with = PRC }
+			NOT = { has_war_with = SOU }
+			SOU = { has_government = communism }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = CHI_the_yanan_incident_effect_tt
+			save_event_target_as = warlord
+			add_ideas = PRC_soviet_tribute_1
+			SOU = { country_event = { id = wtt_warlord_vs_prc.1 } }
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			CHI_no_longer_a_warlord_idea_removal = yes
+		}
 	}
 
-	
-	
-	
+	#############################
+	##### Opposition/Share ######
+	#############################
 
 	focus = {
 		id = CHI_opposition
@@ -643,15 +914,56 @@
 			}
 		}
 
-		available = {}
+		available = {
+			
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.05
+			CHI = { add_opinion_modifier = { modifier = CHI_opposition target = ROOT } }
+			if = {
+				limit = {
+					is_subject = yes
+					OVERLORD = {
+						is_literally_china = yes
+					}
+				}
+				OVERLORD = {
+					set_autonomy = { target = ROOT autonomy_state = autonomy_free }
+					create_wargoal = {
+						target = ROOT
+						type = puppet_wargoal_focus
+						expire = 0
+					}
+				}
+			}
+			if = {
+				limit = { is_faction_leader = yes }
+				every_country = {
+					limit = { is_literally_china = yes }
+					ROOT = { remove_from_faction = PREV }
+				}
+			}
+			else_if = {
+				limit = { any_country = { is_in_faction_with = ROOT is_literally_china = yes } }				
+				random_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						is_faction_leader = yes
+					}
+					remove_from_faction = ROOT
+				}
+			}
+					
+		}
 	}
 
 	focus = {
@@ -668,15 +980,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = CHI_institute_cross_border_raids_effect_tooltip
+			set_country_flag = CHI_institute_cross_border_raids
+		}
 	}
 
 
@@ -694,16 +1013,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_public_works
+		}
 	}
 
 	focus = {
@@ -720,16 +1045,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_labor_reform
+		}
 	}
 
 	focus = {
@@ -746,16 +1077,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_rural_militias
+		}
 	}
 
 	focus = {
@@ -772,16 +1109,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_war_taxes
+		}
 	}
 
 	focus = {
@@ -798,15 +1141,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+			NOT = { has_war_with = JAP }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			unlock_decision_category_tooltip = CHI_seek_japanese_support
+		}
 	}
 
 	focus = {
@@ -823,15 +1173,55 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_command_power = 30
+			IF = {
+				limit = {
+					any_character = {
+						is_country_leader = yes
+						is_field_marshal = yes 
+					}
+			
+				}
+				random_character = {
+					limit = {
+						is_country_leader = yes
+						is_field_marshal = yes 
+					}
+					add_attack = 1
+					add_defense = 1
+					add_random_trait = { old_guard brilliant_strategist cavalry_officer politically_connected career_officer infantry_officer war_hero }	
+				}
+			}
+			ELSE = {
+				random_character = {
+					limit = {
+						is_country_leader = yes
+					}
+					add_field_marshal_role = {
+						traits = {  }
+						skill = 2
+						attack_skill = 2
+						defense_skill = 2
+						planning_skill = 2
+						logistics_skill = 1
+					}
+					add_random_trait = { old_guard brilliant_strategist cavalry_officer politically_connected 	career_officer infantry_officer war_hero }
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -848,16 +1238,23 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.05
+		}
 	}
 
 	focus = {
@@ -875,15 +1272,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = CHI_provoke_border_clashes_effect_tooltip
+			set_country_flag = CHI_provoke_border_clashes
+		}
 	}
 
 	focus = {
@@ -901,15 +1305,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_defensive_posture
+		}
 	}
 
 	focus = {
@@ -926,9 +1336,13 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -937,7 +1351,9 @@
 		complete_tooltip = {
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_rapid_mobilization	
+		}
 	}
 
 	focus = {
@@ -955,20 +1371,47 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = CHI
+				}
+				add_core_of = ROOT
+			}
+			#Switch to dominant ideology or split into 2 focus
+			if = {
+				limit = {
+					OR = {
+						has_government = communism
+						communism > 0.5
+					}
+					NOT = { neutrality > 0.5 }
+				}
+				load_focus_tree = china_communist_focus
+			}
+			else = {
+				load_focus_tree = china_nationalist_focus
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			CHI_no_longer_a_warlord_idea_removal = yes
+		}
 	}
 
-	
-	
-	
+	#####################
+	##### Industry ######
+	#####################
 
 	focus = {
 		id = CHI_industrial_investment
@@ -983,9 +1426,13 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1006,7 +1453,25 @@
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = CHI_industrial_investment_IC
+			}
+		}
 	}
 
 	focus = {
@@ -1023,16 +1488,22 @@
 			factor = 10
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 
 	focus = {
@@ -1049,9 +1520,13 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1072,7 +1547,25 @@
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = CHI_local_arms_production_AF
+			}
+		}
 	}
 
 	focus = {
@@ -1089,16 +1582,22 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CHI_long_term_economic_planning
+		}
 	}
 
 	focus = {
@@ -1115,15 +1614,26 @@
 			factor = 2
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CHI_local_arms_development
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
 	}
 
 	focus = {
@@ -1140,18 +1650,35 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}
+
+			add_tech_bonus = {
+				name = CHI_heavy_weapons_development
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
 	}
 
-	
+	### WARLORD NATIONAL SPIRIT-RELATED FOCUSES ###
 
 	focus = {
 		id = CHI_strenghten_warlord_authority
@@ -1167,16 +1694,30 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_idea = CHI_warlord_state_idea
+				}
+				swap_ideas = {
+					remove_idea = CHI_warlord_state_idea
+					add_idea = CHI_warlord_state_idea_2
+				}	
+			}
+		}
 	}
 
 	focus = {
@@ -1199,16 +1740,25 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = {  }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CHI_warlord_state_idea_2
+				add_idea = CHI_warlord_state_idea_cav
+			}	
+		}
 	}
 
 	focus = {
@@ -1231,16 +1781,33 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = {  }
-		completion_reward = {}
+		completion_reward = {
+
+			swap_ideas = {
+				remove_idea = CHI_warlord_state_idea_2
+				add_idea = CHI_warlord_state_idea_mnt
+			}
+
+			add_tech_bonus = {
+				name = CHI_uplift_the_mountain_brigades
+				bonus = 0.75
+				uses = 1
+				category = mountaineers_tech
+			}	
+		}
 	}
 
 }

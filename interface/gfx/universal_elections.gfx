@@ -1,0 +1,45 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_election_trend_icon"
+		texturefile = "gfx/interface/elections/trend_arrows.dds"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_election_row_bg"
+		texturefile = "gfx/interface/elections/election_row_bg_2.png"
+	}
+	# --- DX11 LIMIT FIX ---
+	# Make this image 16,160px wide (160px per frame).
+	# We stretch it to 400px using 'scale = 2.5' in the .gui file.
+	spriteType = {
+		name = "GFX_election_national_bar"
+		texturefile = "gfx/interface/elections/bar_national_101.png"
+		noOfFrames = 101
+	}
+	# 150px per frame = 15,150px total. Fits naturally under DX11 limits.
+	spriteType = {
+		name = "GFX_demographic_approval_bar"
+		texturefile = "gfx/interface/elections/bar_small_101.png"
+		noOfFrames = 101
+	}
+	spriteType = {
+		name = "GFX_election_national_frame"
+		texturefile = "gfx/interface/elections/bar_national_frame.png"
+	}
+	spriteType = {
+		name = "GFX_demographic_bar_frame"
+		texturefile = "gfx/interface/elections/bar_small_frame.png"
+	}
+	spriteType = {
+		name = "GFX_button_ELEC"
+		texturefile = "gfx/interface/elections/elec_button.dds"
+	}
+	spriteType = {
+		name = "GFX_elec_check"
+		texturefile = "gfx/interface/elec_checkbox.dds"
+	}
+	spriteType = {
+		name = "GFX_elec_check_disabled"
+		texturefile = "gfx/interface/elec_checkbox_blank.dds"
+	}
+}

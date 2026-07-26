@@ -1,0 +1,47 @@
+on_actions = {
+	on_monthly = {
+		effect = {
+			every_country = {
+				limit = { tag = WSH }
+				set_country_flag = uses_wsh_legislature
+				set_country_flag = uses_universal_elections
+			}
+			every_country = {
+				limit = { has_country_flag = uses_universal_elections }
+				universal_monthly_election_tick_effect = yes
+			}
+		}
+	}
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = { tag = WSH }
+				set_country_flag = uses_wsh_legislature
+				set_country_flag = uses_universal_elections
+			}
+			every_country = {
+				limit = { has_country_flag = uses_universal_elections }
+				migrate_universal_election_system = yes
+				synchronize_election_lifecycle_on_load = yes
+			}
+			every_country = {
+				limit = { has_country_flag = uses_wsh_legislature }
+				create_coalitions_array_if_missing = yes
+				if = {
+					limit = { NOT = { has_variable = wsh_senate_gui_x^37 } }
+					WSH_senate_gui_setup = yes
+				}
+				if = {
+					limit = { NOT = { has_variable = wsh_house_gui_x^97 } }
+					WSH_house_gui_setup = yes
+				}
+				set_variable = { wsh_legislature_schema_version = 2 }
+				WSH_recalculate_all_seats = yes
+			}
+			every_country = {
+				limit = { has_country_flag = uses_chg_council }
+				CHG_calculate_and_refresh_council = yes
+			}
+		}
+	}
+}

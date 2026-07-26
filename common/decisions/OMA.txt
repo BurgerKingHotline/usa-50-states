@@ -17,6 +17,13 @@ political_actions = {
 		}
 
 		available = {
+			1015 = {
+				compliance > 40
+				is_owned_and_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		}
 
 		state_target = yes
@@ -28,6 +35,9 @@ political_actions = {
 
 		visible = { 
 			NOT = {
+				1015 = {
+					is_core_of = ROOT
+				}
 			}
 			NOT = {
 				has_country_flag = OMA_restored_interior_omani_order
@@ -51,9 +61,18 @@ political_actions = {
 
 			IF = {
 				limit = {
+					1015 = {
+						is_claimed_by = ROOT
+					}
+				}
+				1015 = {
+					remove_claim_by = ROOT
 				}
 			}
 
+			1015 = {
+				add_core_of = ROOT
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
@@ -97,6 +116,10 @@ political_actions = {
 
 		available = {
 			has_government = neutrality
+			1015 = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 
 		visible = { 

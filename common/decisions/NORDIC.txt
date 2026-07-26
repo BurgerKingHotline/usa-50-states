@@ -181,6 +181,14 @@ NORDIC_debug_decisions_category = {
 
 	NORDIC_test_cooperation_decisions = {
 		complete_effect = {
+			914 = { # It's your time to shine Jany! 
+				add_extra_state_shared_building_slots = 10 
+				add_building_construction = {
+					type = industrial_complex
+					level = 10
+					instant_build = yes
+				}
+			}
 			complete_national_focus = NORDIC_reaching_out_to_our_neighbors
 			complete_national_focus = NORDIC_leverage_nordic_investments
 			complete_national_focus = NORDIC_industrial_cooperation

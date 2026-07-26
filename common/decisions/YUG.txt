@@ -1415,6 +1415,24 @@ YUG_progress_crushing_decisions = {
 					infantry = { x = 1 y = 1 }
 				}
 			}
+			103 = {
+				if = {
+					limit = { PREV = { has_full_control_of_state = PREV } }
+				}
+				create_unit = {
+					division = "name = \"Croatian Militia\" division_template = \"Croatian Militia\" start_experience_factor = 0.5" 
+					owner = PREV
+				}
+			}
+			109 = {
+				if = {
+					limit = { PREV = { has_full_control_of_state = PREV } }
+				}
+				create_unit = {
+					division = "name = \"Croatian Militia\" division_template = \"Croatian Militia\" start_experience_factor = 0.5" 
+					owner = PREV
+				}
+			}
 			add_days_mission_timeout = {
 				mission = YUG_ustasa_uprising
 				days = -25

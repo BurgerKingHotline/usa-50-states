@@ -1,0 +1,33 @@
+WSH_debug_category = {
+	wsh_debug_wsh_balanced_seats = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { WSH_debug_seats_balanced = yes }
+	}
+
+	wsh_debug_wsh_conservative_majority = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { WSH_debug_seats_conservative_majority = yes }
+	}
+
+	wsh_debug_wsh_liberal_majority = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { WSH_debug_seats_liberal_majority = yes }
+	}
+
+	wsh_debug_wsh_left_majority = {
+		icon = generic_political_discourse
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = { WSH_debug_seats_left_majority = yes }
+	}
+}

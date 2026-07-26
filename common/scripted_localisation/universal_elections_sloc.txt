@@ -1,0 +1,315 @@
+﻿defined_text = {
+	name = GetDemographicNameSelected
+	text = {
+		trigger = {
+			has_variable = selected_bloc_idx
+			check_variable = { selected_bloc_idx > -1 }
+			check_variable = { bloc_idx = selected_bloc_idx }
+		}
+		localization_key = demographic_selected_format
+	}
+	text = { localization_key = "[GetDemographicName]" }
+}
+defined_text = {
+	name = GetDemographicDescription
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 0 } }
+		localization_key = demographic_desc_workers
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 1 } }
+		localization_key = demographic_desc_farmers
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 2 } }
+		localization_key = demographic_desc_military
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 3 } }
+		localization_key = demographic_desc_wealthy
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 4 } }
+		localization_key = demographic_desc_white_collar
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 5 } }
+		localization_key = demographic_desc_minorities
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 6 } }
+		localization_key = demographic_desc_women
+	}
+	text = { localization_key = demographic_desc_workers }
+}
+defined_text = {
+	name = GetDemographicName
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 0 } }
+		localization_key = demographic_workers
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 1 } }
+		localization_key = demographic_farmers
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 2 } }
+		localization_key = demographic_military
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 3 } }
+		localization_key = demographic_wealthy
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 4 } }
+		localization_key = demographic_white_collar
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 5 } }
+		localization_key = demographic_minorities
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^bloc_idx = 6 } }
+		localization_key = demographic_women
+	}
+	text = { localization_key = demographic_workers }
+}
+defined_text = {
+	name = GetSelectedDemographicTarget
+	text = {
+		trigger = { check_variable = { elec_bloc_id^selected_bloc_idx = 0 } }
+		localization_key = demographic_workers
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^selected_bloc_idx = 1 } }
+		localization_key = demographic_farmers
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^selected_bloc_idx = 2 } }
+		localization_key = demographic_military
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^selected_bloc_idx = 3 } }
+		localization_key = demographic_wealthy
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^selected_bloc_idx = 4 } }
+		localization_key = demographic_white_collar
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^selected_bloc_idx = 5 } }
+		localization_key = demographic_minorities
+	}
+	text = {
+		trigger = { check_variable = { elec_bloc_id^selected_bloc_idx = 6 } }
+		localization_key = demographic_women
+	}
+	text = { localization_key = demographic_workers }
+}
+defined_text = {
+	name = GetDropdownActionName
+	text = {
+		trigger = { check_variable = { election_action_array^action_idx = 1 } }
+		localization_key = action_1_name
+	}
+	text = {
+		trigger = { check_variable = { election_action_array^action_idx = 2 } }
+		localization_key = action_2_name
+	}
+	text = {
+		trigger = { check_variable = { election_action_array^action_idx = 3 } }
+		localization_key = action_3_name
+	}
+	text = {
+		trigger = { check_variable = { election_action_array^action_idx = 4 } }
+		localization_key = action_4_name
+	}
+	text = {
+		trigger = { check_variable = { election_action_array^action_idx = 5 } }
+		localization_key = action_5_name
+	}
+	text = {
+		trigger = { check_variable = { election_action_array^action_idx = 6 } }
+		localization_key = action_6_name
+	}
+	text = {
+		trigger = { check_variable = { election_action_array^action_idx = 7 } }
+		localization_key = action_7_name
+	}
+	text = {
+		trigger = { check_variable = { election_action_array^action_idx = 8 } }
+		localization_key = action_8_name
+	}
+	text = { localization_key = action_1_name }
+}
+
+defined_text = {
+	name = GetDropdownActionTooltip
+	text = { trigger = { check_variable = { election_action_array^action_idx = 1 } } localization_key = FFL_ELECTION_ACTION_1_DROPDOWN_TT }
+	text = { trigger = { check_variable = { election_action_array^action_idx = 2 } } localization_key = FFL_ELECTION_ACTION_2_DROPDOWN_TT }
+	text = { trigger = { check_variable = { election_action_array^action_idx = 3 } } localization_key = FFL_ELECTION_ACTION_3_DROPDOWN_TT }
+	text = { trigger = { check_variable = { election_action_array^action_idx = 4 } } localization_key = FFL_ELECTION_ACTION_4_DROPDOWN_TT }
+	text = { trigger = { check_variable = { election_action_array^action_idx = 5 } } localization_key = FFL_ELECTION_ACTION_5_DROPDOWN_TT }
+	text = { trigger = { check_variable = { election_action_array^action_idx = 6 } } localization_key = FFL_ELECTION_ACTION_6_DROPDOWN_TT }
+	text = { trigger = { check_variable = { election_action_array^action_idx = 7 } } localization_key = FFL_ELECTION_ACTION_7_DROPDOWN_TT }
+	text = { trigger = { check_variable = { election_action_array^action_idx = 8 } } localization_key = FFL_ELECTION_ACTION_8_DROPDOWN_TT }
+	text = { localization_key = FFL_ELECTION_ACTION_UNKNOWN_DROPDOWN_TT }
+}
+
+defined_text = {
+	name = GetSelectedActionName
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 1 } }
+		localization_key = action_1_name
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 2 } }
+		localization_key = action_2_name
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 3 } }
+		localization_key = action_3_name
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 4 } }
+		localization_key = action_4_name
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 5 } }
+		localization_key = action_5_name
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 6 } }
+		localization_key = action_6_name
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 7 } }
+		localization_key = action_7_name
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 8 } }
+		localization_key = action_8_name
+	}
+	text = { localization_key = action_1_name }
+}
+defined_text = {
+	name = GetSelectedActionDesc
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 1 } }
+		localization_key = action_1_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 2 } }
+		localization_key = action_2_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 3 } }
+		localization_key = action_3_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 4 } }
+		localization_key = action_4_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 5 } }
+		localization_key = action_5_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 6 } }
+		localization_key = action_6_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 7 } }
+		localization_key = action_7_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 8 } }
+		localization_key = action_8_desc
+	}
+	text = { localization_key = action_1_desc }
+}
+defined_text = {
+	name = GetSelectedActionCost
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 1 } }
+		localization_key = action_1_cost
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 2 } }
+		localization_key = action_2_cost
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 3 } }
+		localization_key = action_3_cost
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 4 } }
+		localization_key = action_4_cost
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 5 } }
+		localization_key = action_5_cost
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 6 } }
+		localization_key = action_6_cost
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 7 } }
+		localization_key = action_7_cost
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 8 } }
+		localization_key = action_8_cost
+	}
+	text = { localization_key = action_1_cost }
+}
+defined_text = {
+	name = GetSelectedActionEffect
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 1 } }
+		localization_key = action_1_eff
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 2 } }
+		localization_key = action_2_eff
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 3 } }
+		localization_key = action_3_eff
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 4 } }
+		localization_key = action_4_eff
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 5 } }
+		localization_key = action_5_eff
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 6 } }
+		localization_key = action_6_eff
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 7 } }
+		localization_key = action_7_eff
+	}
+	text = {
+		trigger = { check_variable = { selected_electoral_action_idx = 8 } }
+		localization_key = action_8_eff
+	}
+	text = { localization_key = action_1_eff }
+}
+
+
+defined_text = {
+	name = GetUniversalElectionWinnerName
+	text = { trigger = { check_variable = { last_election_winner_id = 0 } } localization_key = democratic }
+	text = { trigger = { check_variable = { last_election_winner_id = 1 } } localization_key = conservatism_ideology }
+	text = { trigger = { check_variable = { last_election_winner_id = 2 } } localization_key = socialism_ideology }
+	text = { trigger = { check_variable = { last_election_winner_id = 3 } } localization_key = communism }
+	text = { trigger = { check_variable = { last_election_winner_id = 4 } } localization_key = fascism }
+	text = { trigger = { check_variable = { last_election_winner_id = 5 } } localization_key = populism_ideology }
+	text = { trigger = { check_variable = { last_election_winner_id = 6 } } localization_key = neutrality }
+	text = { localization_key = neutrality }
+}

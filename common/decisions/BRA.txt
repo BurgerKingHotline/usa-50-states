@@ -165,8 +165,26 @@ BRA_ensure_support_cat = {
 			}
 			random_list = {
 				# Bad march
+				35 = {
+					country_event = { id = JUNO_brazil_events.10 days = 1 }
+					effect_tooltip = {
+						add_popularity = { ideology = fascism popularity = 0.01 }
+					}
+				}
 				# Average march
+				50 = {
+					country_event = { id = JUNO_brazil_events.11 days = 1 }
+					effect_tooltip = {
+						add_popularity = { ideology = fascism popularity = 0.03 }
+					}
+				}
 				# Good march
+				15 = {
+					country_event = { id = JUNO_brazil_events.12 days = 1 }
+					effect_tooltip = {
+						add_popularity = { ideology = fascism popularity = 0.05 }
+					}
+				}
 			}
 		}
 	}
@@ -433,11 +451,38 @@ BRA_cangaceiro_decision_cat = {
 			}
 		}
 		cancel_trigger = {
+			937 = { NOT = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}}
+			935 = { NOT = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}}
+			498 = { NOT = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}}
+			936 = { NOT = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}}
+			499 = { NOT = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}}
 		}
 		fire_only_once = no
 		is_good = no
 		timeout_effect = {
 			random_list = {
+				30 = {
+					modifier = {
+						factor = 0
+						AND = {
+							937 = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}
+							935 = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}
+							498 = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}
+							936 = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}
+							499 = { has_dynamic_modifier = { modifier = BRA_cangaceiro_state }}
+						}
+					}
+					set_country_flag = BRA_cangaceiro_spread_flag
+					event_option_tooltip = JUNO_brazil_events.150.c
+				}
+				30 = {
+					set_country_flag = BRA_cangaceiro_small_raid_flag
+					event_option_tooltip = JUNO_brazil_events.150.a
+				}
+				40 = {
+					set_country_flag = BRA_cangaceiro_big_raid_flag
+					event_option_tooltip = JUNO_brazil_events.150.b
+				}
 			}
 			country_event = {
 				id = JUNO_brazil_events.150
@@ -1278,6 +1323,9 @@ political_actions = {
 		}
 
 		visible = { 
+			942 = {
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 	
 		available = {
@@ -1314,6 +1362,10 @@ political_actions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			942 = {
+				set_state_name = 942_rondonia_name
+				add_extra_state_shared_building_slots = 3
+			}
 
 		}
 
