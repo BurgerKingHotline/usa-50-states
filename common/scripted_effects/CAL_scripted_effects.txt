@@ -204,7 +204,7 @@ CAL_civil_unrest_level_up = {
 
 CAL_civil_unrest_level_down = {
 	#MAKE Worse
-	custom_effect_tooltip = CAL_civil_unrest__down_tt
+	custom_effect_tooltip = CAL_civil_unrest_down_tt
 	if = {
 		limit = { has_idea =CAL_civil_unrest_1 }
 		remove_ideas = CAL_civil_unrest_1
@@ -252,7 +252,7 @@ CAL_civil_unrest_remove = {
 CAL_epic_costs_level_up = {
 	# level 5 not relevant. Cannot go above.
 	# MAKE WORSE
-	custom_effect_tooltip = CAL_level_up_epic_costs_tt
+	custom_effect_tooltip = CAL_epic_costs_level_up_tt
 	if = {
 		limit = { has_idea = CAL_epic_plan_cost_1 }
 		swap_ideas = {
@@ -295,12 +295,50 @@ CAL_epic_costs_level_up = {
 			add_idea = CAL_epic_plan_cost_7
 		}
 	}
+	else_if = {
+		limit = { has_idea = CAL_epic_plan_cost_7 }
+	}
+	else = {
+		add_ideas = {
+			CAL_epic_plan_cost_1
+		}
+	}
 }
-
+CAL_remove_epic_costs = {
+	custom_effect_tooltip = CAL_epic_costs_remove_tt
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_1 }
+		remove_ideas = CAL_epic_plan_cost_1
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_2 }
+		remove_ideas = CAL_epic_plan_cost_2
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_3 }
+		remove_ideas = CAL_epic_plan_cost_3
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_4 }
+		remove_ideas = CAL_epic_plan_cost_4
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_5 }
+		remove_ideas = CAL_epic_plan_cost_5
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_6 }
+		remove_ideas = CAL_epic_plan_cost_6
+	}
+	if = {
+		limit = { has_idea = CAL_epic_plan_cost_7 }
+		remove_ideas = CAL_epic_plan_cost_7
+	}
+}
 
 CAL_epic_costs_level_down = {
 	#MAKE BETTER
-	custom_effect_tooltip = CAL_civil_unrest_down_tt
+	custom_effect_tooltip = CAL_epic_costs_level_down_tt
 	if = {
 		limit = { has_idea =CAL_epic_plan_cost_1 }
 		remove_ideas = CAL_epic_plan_cost_1

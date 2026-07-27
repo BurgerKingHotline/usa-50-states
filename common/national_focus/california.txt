@@ -1276,11 +1276,10 @@ focus_tree = {
 #			focus = CAL_replace_sales_tax
 #		}
 		select_effect = {
-			CAL_epic_costs_level_down = yes
 
 		}
 		completion_reward = { 
-			CAL_epic_costs_level_down = yes
+			CAL_remove_epic_costs = yes
 			
 		}
 	}
