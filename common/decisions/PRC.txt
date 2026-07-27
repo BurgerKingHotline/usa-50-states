@@ -86,6 +86,42 @@ PRC_infiltrate_nationalist_areas = {
 					#Allow JAP, faction member or puppet to control 5 states at most before triggering civil war
 					count_triggers = {
 						amount = 5
+						612 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						621 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						615 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						609 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						611 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						610 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						715 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						328 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						527 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						525 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						717 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						714 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						595 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						596 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						597 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						598 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						600 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						601 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						602 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						603 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						605 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						606 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						607 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						608 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						613 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						614 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						620 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						744 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						746 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						1038 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						1034 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						1035 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						1036 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						1037 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						1039 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
+						1041 = { CONTROLLER = { is_JAP_or_ally_of_JAP = yes } }
 					}
 				}
 			}
@@ -96,6 +132,17 @@ PRC_infiltrate_nationalist_areas = {
 				NOT = {
 					count_triggers = {
 						amount = 3
+						283 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						597 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						598 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						607 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						608 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						614 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						615 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						621 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						746 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						744 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						1038 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 					}
 				}
 			}
@@ -103,71 +150,93 @@ PRC_infiltrate_nationalist_areas = {
 			#The more troops, the bigger chance
 			modifier = {
 				add = 10
+				283 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				597 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				598 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				607 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				608 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				614 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				615 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				621 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				744 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				746 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 			modifier = {
 				add = 10
+				1038 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 			}
 
 			#Sabotage is also nice
 			modifier = {
 				add = 3
+				283 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				597 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				598 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				607 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				608 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				614 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				615 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				621 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				744 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				746 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				1038 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 		}
 
@@ -185,6 +254,105 @@ PRC_infiltrate_nationalist_areas = {
 				faction_leader = { remove_from_faction = ROOT }
 			}
 			declare_war_on = { target = event_target:WTT_current_china_leader type = annex_everything }
+			283 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			597 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			598 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			607 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			608 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			614 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			615 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			621 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			744 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			746 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
+			1038 = {
+				if = {
+					limit = {
+						CONTROLLER = { tag = event_target:WTT_current_china_leader }
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 		}
 	}
 	
@@ -197,12 +365,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			283 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {			
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			283 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -226,15 +402,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						283 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				283 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				283 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -248,9 +437,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			283 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			283 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -263,12 +470,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			597 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			597 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -292,15 +507,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						597 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				597 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				597 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -314,9 +542,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			597 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			597 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 
@@ -329,12 +575,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			1038 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			1038 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -358,15 +612,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						1038 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				1038 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				1038 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -380,9 +647,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			1038 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			1038 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -395,12 +680,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			598 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			598 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -424,15 +717,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						598 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				598 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				598 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -446,9 +752,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			598 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			598 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -461,12 +785,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			607 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			607 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -490,15 +822,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						607 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				607 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				607 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -512,9 +857,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}
+			607 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			607 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -527,12 +890,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			608 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			608 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -556,15 +927,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						608 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				608 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				608 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -578,9 +962,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			608 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			608 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -593,12 +995,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			614 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			614 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -622,15 +1032,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						614 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				614 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				614 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -644,9 +1067,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			614 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			614 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -659,12 +1100,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			615 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			615 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -688,15 +1137,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						615 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				615 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				615 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -710,9 +1172,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			615 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			615 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -725,12 +1205,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			621 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			621 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -754,15 +1242,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						621 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				621 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				621 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -776,9 +1277,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			621 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			621 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -791,12 +1310,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			744 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			744 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -820,15 +1347,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						744 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				744 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				744 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -842,9 +1382,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			744 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			744 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -857,12 +1415,20 @@ PRC_infiltrate_nationalist_areas = {
 				has_completed_focus = PRC_infiltration
 				has_completed_focus = PRC_sea_infiltration
 			}
+			746 = {
+				CONTROLLER = {
+					tag = event_target:WTT_current_china_leader
+				}
+			}
 		}
 		
 		available = {
 			NOT = { has_war_with = event_target:WTT_current_china_leader }
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			746 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 		}
 
 		highlight_states = {
@@ -886,15 +1452,28 @@ PRC_infiltrate_nationalist_areas = {
 				factor = 0
 				OR = {
 					AND = {
+						746 = { has_state_flag = discovered_infiltration }
 						PRC_all_nationalist_area_infiltration_discovered = no
 					}
 				}
 			}
 			modifier = {
 				factor = 25
+				746 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value > 0
+					}
+				}
 			}
 			modifier = {
 				factor = 50 #Really want to get to troop level
+				746 = {
+					has_state_flag = {
+						flag = PRC_infiltration_@PREV
+						value = 2
+					}
+				}
 			}
 		}
 
@@ -908,9 +1487,27 @@ PRC_infiltrate_nationalist_areas = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			746 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			746 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 
@@ -979,6 +1576,14 @@ PRC_anti_japanese_expedition = {
 				NOT = {
 					count_triggers = {
 						amount = 2
+						609 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						610 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						611 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						612 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						714 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						715 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						761 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+						1043 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 					}
 				}
 			}
@@ -988,45 +1593,77 @@ PRC_anti_japanese_expedition = {
 				factor = 25
 				count_triggers = {
 					amount = 2
+					609 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					610 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					611 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					612 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					714 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					715 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					761 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					1043 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 				}
 			}
 			modifier = {
 				factor = 25
 				count_triggers = {
 					amount = 3
+					609 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					610 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					611 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					612 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					714 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					715 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					761 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					1043 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 				}
 			}
 			modifier = {
 				factor = 50
 				count_triggers = {
 					amount = 4
+					609 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					610 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					611 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					612 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					714 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					715 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					761 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
+					1043 = { PRC_infiltration_uprising_PREV_will_spawn_troops_in_state = yes }
 				}
 			}
 
 			#Sabotage is also nice
 			modifier = {
 				add = 3
+				609 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				610 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				611 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				612 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				714 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				715 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				761 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 			modifier = {
 				add = 3
+				1043 = { PRC_infiltration_uprising_PREV_will_sabotage_state = yes }
 			}
 		}
 
@@ -1062,14 +1699,134 @@ PRC_anti_japanese_expedition = {
 				declare_war_on = { target = MEN type = annex_everything }
 			}
 
+			609 = { #east_hebei
+				if = {
+					limit = {
+						CONTROLLER = {
+							OR = {
+								original_tag = MAN
+								original_tag = MEN
+								original_tag = JAP
+							}
+						}
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 
 			 
+			610 = { #jehol
+				if = {
+					limit = {
+						CONTROLLER = {
+							OR = {
+								original_tag = MAN
+								original_tag = MEN
+								original_tag = JAP
+							}
+						}
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 			 
+			611 = { #south_chahar
+				if = {
+					limit = {
+						CONTROLLER = {
+							OR = {
+								original_tag = MAN
+								original_tag = MEN
+								original_tag = JAP
+							}
+						}
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 			 
+			612 = { #chahar
+				if = {
+					limit = {
+						CONTROLLER = {
+							OR = {
+								original_tag = MAN
+								original_tag = MEN
+								original_tag = JAP
+							}
+						}
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 			 
+			714 = { #heilungkiang
+				if = {
+					limit = {
+						CONTROLLER = {
+							OR = {
+								original_tag = MAN
+								original_tag = MEN
+								original_tag = JAP
+							}
+						}
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 			 
+			715 = { #liaoning
+				if = {
+					limit = {
+						CONTROLLER = {
+							OR = {
+								original_tag = MAN
+								original_tag = MEN
+								original_tag = JAP
+							}
+						}
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 
+			761 = { #hulunbuir
+				if = {
+					limit = {
+						CONTROLLER = {
+							OR = {
+								original_tag = MAN
+								original_tag = MEN
+								original_tag = JAP
+							}
+						}
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 
+			1043 = { #pailinmiao
+				if = {
+					limit = {
+						CONTROLLER = {
+							OR = {
+								original_tag = MAN
+								original_tag = MEN
+								original_tag = JAP
+							}
+						}
+						PRC_is_infiltrated_by_PREV = yes
+					}
+					PRC_execute_infiltration_effects_for_PREV = yes
+				}
+			}
 		}
 	}
 	
@@ -1080,6 +1837,16 @@ PRC_anti_japanese_expedition = {
 			OR = {
 				has_completed_focus = PRC_anti_japanese_expedition
 				has_completed_focus = PRC_sea_anti_japanese_expedition
+			}
+			609 = {
+				CONTROLLER = {
+					NOT = { has_war_with = ROOT }
+					OR = {
+						original_tag = MAN
+						original_tag = MEN
+						original_tag = JAP
+					}
+				}
 			}
 		}
 
@@ -1092,6 +1859,9 @@ PRC_anti_japanese_expedition = {
 		available = {
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			609 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 			NOT = { has_war_with = JAP }
 			NOT = { has_war_with = MEN }
 			NOT = { has_war_with = MAN }
@@ -1107,6 +1877,7 @@ PRC_anti_japanese_expedition = {
 
 			modifier = {
 				factor = 0
+				609 = { has_state_flag = discovered_infiltration }
 				PRC_all_anti_japan_infiltration_discovered = no
 			}
 		}
@@ -1121,9 +1892,27 @@ PRC_anti_japanese_expedition = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			609 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			609 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -1134,6 +1923,16 @@ PRC_anti_japanese_expedition = {
 			OR = {
 				has_completed_focus = PRC_anti_japanese_expedition
 				has_completed_focus = PRC_sea_anti_japanese_expedition
+			}
+			610 = {
+				CONTROLLER = {
+					NOT = { has_war_with = ROOT }
+					OR = {
+						original_tag = MAN
+						original_tag = MEN
+						original_tag = JAP
+					}
+				}
 			}
 		}
 
@@ -1146,6 +1945,9 @@ PRC_anti_japanese_expedition = {
 		available = {
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			610 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 			NOT = { has_war_with = JAP }
 			NOT = { has_war_with = MEN }
 			NOT = { has_war_with = MAN }
@@ -1161,6 +1963,7 @@ PRC_anti_japanese_expedition = {
 
 			modifier = {
 				factor = 0
+				610 = { has_state_flag = discovered_infiltration }
 				PRC_all_anti_japan_infiltration_discovered = no
 			}
 		}
@@ -1175,9 +1978,27 @@ PRC_anti_japanese_expedition = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}
+			610 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			610 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -1188,6 +2009,16 @@ PRC_anti_japanese_expedition = {
 			OR = {
 				has_completed_focus = PRC_anti_japanese_expedition
 				has_completed_focus = PRC_sea_anti_japanese_expedition
+			}
+			611 = {
+				CONTROLLER = {
+					NOT = { has_war_with = ROOT }
+					OR = {
+						original_tag = MAN
+						original_tag = MEN
+						original_tag = JAP
+					}
+				}
 			}
 		}
 
@@ -1200,6 +2031,9 @@ PRC_anti_japanese_expedition = {
 		available = {
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			611 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 			NOT = { has_war_with = JAP }
 			NOT = { has_war_with = MEN }
 			NOT = { has_war_with = MAN }
@@ -1215,6 +2049,7 @@ PRC_anti_japanese_expedition = {
 
 			modifier = {
 				factor = 0
+				611 = { has_state_flag = discovered_infiltration }
 				PRC_all_anti_japan_infiltration_discovered = no
 			}
 		}
@@ -1229,9 +2064,27 @@ PRC_anti_japanese_expedition = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			611 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			611 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -1242,6 +2095,16 @@ PRC_anti_japanese_expedition = {
 			OR = {
 				has_completed_focus = PRC_anti_japanese_expedition
 				has_completed_focus = PRC_sea_anti_japanese_expedition
+			}
+			612 = {
+				CONTROLLER = {
+					NOT = { has_war_with = ROOT }
+					OR = {
+						original_tag = MAN
+						original_tag = MEN
+						original_tag = JAP
+					}
+				}
 			}
 		}
 
@@ -1254,6 +2117,9 @@ PRC_anti_japanese_expedition = {
 		available = {
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			612 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 			NOT = { has_war_with = JAP }
 			NOT = { has_war_with = MEN }
 			NOT = { has_war_with = MAN }
@@ -1269,6 +2135,7 @@ PRC_anti_japanese_expedition = {
 
 			modifier = {
 				factor = 0
+				612 = { has_state_flag = discovered_infiltration }
 				PRC_all_anti_japan_infiltration_discovered = no
 			}
 		}
@@ -1283,9 +2150,27 @@ PRC_anti_japanese_expedition = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			612 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			612 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -1296,6 +2181,16 @@ PRC_anti_japanese_expedition = {
 			OR = {
 				has_completed_focus = PRC_anti_japanese_expedition
 				has_completed_focus = PRC_sea_anti_japanese_expedition
+			}
+			714 = {
+				CONTROLLER = {
+					NOT = { has_war_with = ROOT }
+					OR = {
+						original_tag = MAN
+						original_tag = MEN
+						original_tag = JAP
+					}
+				}
 			}
 		}
 
@@ -1308,6 +2203,9 @@ PRC_anti_japanese_expedition = {
 		available = {
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			714 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 			NOT = { has_war_with = JAP }
 			NOT = { has_war_with = MEN }
 			NOT = { has_war_with = MAN }
@@ -1323,6 +2221,7 @@ PRC_anti_japanese_expedition = {
 
 			modifier = {
 				factor = 0
+				714 = { has_state_flag = discovered_infiltration }
 				PRC_all_anti_japan_infiltration_discovered = no
 			}
 		}
@@ -1337,9 +2236,27 @@ PRC_anti_japanese_expedition = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			714 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			714 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 	
@@ -1350,6 +2267,16 @@ PRC_anti_japanese_expedition = {
 			OR = {
 				has_completed_focus = PRC_anti_japanese_expedition
 				has_completed_focus = PRC_sea_anti_japanese_expedition
+			}
+			715 = {
+				CONTROLLER = {
+					NOT = { has_war_with = ROOT }
+					OR = {
+						original_tag = MAN
+						original_tag = MEN
+						original_tag = JAP
+					}
+				}
 			}
 		}
 
@@ -1362,6 +2289,9 @@ PRC_anti_japanese_expedition = {
 		available = {
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			715 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 			NOT = { has_war_with = JAP }
 			NOT = { has_war_with = MEN }
 			NOT = { has_war_with = MAN }
@@ -1377,6 +2307,7 @@ PRC_anti_japanese_expedition = {
 
 			modifier = {
 				factor = 0
+				715 = { has_state_flag = discovered_infiltration }
 				PRC_all_anti_japan_infiltration_discovered = no
 			}
 		}
@@ -1391,9 +2322,27 @@ PRC_anti_japanese_expedition = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			715 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			715 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 
@@ -1404,6 +2353,16 @@ PRC_anti_japanese_expedition = {
 			OR = {
 				has_completed_focus = PRC_anti_japanese_expedition
 				has_completed_focus = PRC_sea_anti_japanese_expedition
+			}
+			761 = {
+				CONTROLLER = {
+					NOT = { has_war_with = ROOT }
+					OR = {
+						original_tag = MAN
+						original_tag = MEN
+						original_tag = JAP
+					}
+				}
 			}
 		}
 
@@ -1416,6 +2375,9 @@ PRC_anti_japanese_expedition = {
 		available = {
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			761 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 			NOT = { has_war_with = JAP }
 			NOT = { has_war_with = MEN }
 			NOT = { has_war_with = MAN }
@@ -1431,6 +2393,7 @@ PRC_anti_japanese_expedition = {
 
 			modifier = {
 				factor = 0
+				761 = { has_state_flag = discovered_infiltration }
 				PRC_all_anti_japan_infiltration_discovered = no
 			}
 		}
@@ -1445,9 +2408,27 @@ PRC_anti_japanese_expedition = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			761 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			761 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 
@@ -1458,6 +2439,16 @@ PRC_anti_japanese_expedition = {
 			OR = {
 				has_completed_focus = PRC_anti_japanese_expedition
 				has_completed_focus = PRC_sea_anti_japanese_expedition
+			}
+			1043 = {
+				CONTROLLER = {
+					NOT = { has_war_with = ROOT }
+					OR = {
+						original_tag = MAN
+						original_tag = MEN
+						original_tag = JAP
+					}
+				}
 			}
 		}
 
@@ -1470,6 +2461,9 @@ PRC_anti_japanese_expedition = {
 		available = {
 			PRC_is_not_infiltrating_a_state = yes
 			has_equipment = { infantry_equipment > 499 }
+			1043 = {
+				PRC_can_increase_infiltration_in_state = yes
+			}
 			NOT = { has_war_with = JAP }
 			NOT = { has_war_with = MEN }
 			NOT = { has_war_with = MAN }
@@ -1485,6 +2479,7 @@ PRC_anti_japanese_expedition = {
 
 			modifier = {
 				factor = 0
+				1043 = { has_state_flag = discovered_infiltration }
 				PRC_all_anti_japan_infiltration_discovered = no
 			}
 		}
@@ -1499,9 +2494,27 @@ PRC_anti_japanese_expedition = {
 				type = infantry_equipment
 				amount = @INFILTRATION_INF_EQ_COST
 			}			
+			1043 = {
+				if = {
+					limit = {
+						NOT = { has_state_flag = PRC_infiltration_@ROOT }
+					}
+					set_state_flag = {
+						flag = PRC_infiltration_@ROOT
+						value = 0
+					}
+				}
+			}
 		}
 
 		remove_effect = {
+			1043 = {
+				PRC_infiltration_succesful_show_uprising_effect = yes
+				modify_state_flag = {
+					flag = PRC_infiltration_@ROOT
+					value = 1
+				}
+			}
 		}
 	}
 }
@@ -1599,6 +2612,10 @@ PRC_provoke_japan = {
 				}
 				JAP = {
 					random_list = {
+						25 = { country_event = wtt_prc.21 }# sabotage - military
+						25 = { country_event = wtt_prc.22 }# sabotage - civilian
+						25 = { country_event = wtt_prc.23 }# sabotage - infrastructure
+						25 = { country_event = wtt_prc.24 }# patrol ambushed
 					}
 				}
 			}
@@ -1610,6 +2627,10 @@ PRC_provoke_japan = {
 				}
 				MAN = {
 					random_list = {
+						25 = { country_event = wtt_prc.21 }# sabotage - military
+						25 = { country_event = wtt_prc.22 }# sabotage - civilian
+						25 = { country_event = wtt_prc.23 }# sabotage - infrastructure
+						25 = { country_event = wtt_prc.24 }# patrol ambushed
 					}
 				}
 			}
@@ -1624,10 +2645,12 @@ political_actions = {
 			event_target:WTT_communist_china = {
 				tag = ROOT
 			}
+			is_subject = no 
 			JAP = {
 				has_government = communism
-				not = {
+				NOT = {
 					has_war_with = ROOT
+					has_subject = ROOT
 				}
 				is_in_faction_with = ROOT
 				OR = {
@@ -1658,8 +2681,9 @@ political_actions = {
 			}
 			JAP = {
 				has_government = communism
-				not = {
+				NOT = {
 					has_war_with = ROOT
+					has_subject = ROOT
 				}
 				is_in_faction_with = ROOT
 				OR = {
@@ -1676,12 +2700,12 @@ political_actions = {
 					controls_state = 609
 				}
 			}
-		}
+		} 
 
-		cost = 25
+		cost = 75 
 
 		ai_will_do = {
-			factor = 1
+			base = 1
 		}
 
 		complete_effect = {
@@ -1715,6 +2739,21 @@ political_actions = {
 				NOT = {
 					count_triggers = {
 						amount = 7
+						595 = { is_controlled_by = ROOT }
+						596 = { is_controlled_by = ROOT }
+						597 = { is_controlled_by = ROOT }
+						598 = { is_controlled_by = ROOT }
+						600 = { is_controlled_by = ROOT }
+						601 = { is_controlled_by = ROOT }
+						602 = { is_controlled_by = ROOT }
+						603 = { is_controlled_by = ROOT }
+						605 = { is_controlled_by = ROOT }
+						606 = { is_controlled_by = ROOT }
+						607 = { is_controlled_by = ROOT }
+						608 = { is_controlled_by = ROOT }
+						613 = { is_controlled_by = ROOT }
+						614 = { is_controlled_by = ROOT }
+						620 = { is_controlled_by = ROOT }				
 					}
 				}
 			}
@@ -4154,16 +5193,14 @@ PRC_guerilla_suppression_sea_cat = {
 		target_trigger = {
 			FROM = {
 				OR = {
-					OR = {
-						has_dynamic_modifier = {
-							modifier = PRC_guerilla_cells_active_1
-						}
-						has_dynamic_modifier = {
-							modifier = PRC_guerilla_cells_active_2
-						}
-						has_dynamic_modifier = {
-							modifier = PRC_anti_japanese_base
-						}
+					has_dynamic_modifier = {
+						modifier = PRC_guerilla_cells_active_1
+					}
+					has_dynamic_modifier = {
+						modifier = PRC_guerilla_cells_active_2
+					}
+					has_dynamic_modifier = {
+						modifier = PRC_anti_japanese_base
 					}
 				}
 			}
@@ -5472,6 +6509,11 @@ PRC_border_wars_cat = {
 					controls_state = 1045
 				}
 			}
+			1045 = {
+				controller = {
+					is_literally_china = yes
+				}
+			}
 		}
 
 		highlight_states = {
@@ -5566,6 +6608,14 @@ PRC_border_wars_cat = {
 		days_mission_timeout = 275
 
 		cancel_trigger = {
+			1045 = {	
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
 		}
 
 		cancel_effect = {
@@ -5610,6 +6660,11 @@ PRC_border_wars_cat = {
 			NOT = {
 				any_allied_country = {
 					controls_state = 615
+				}
+			}
+			615 = {
+				controller = {
+					is_literally_china = yes
 				}
 			}
 		}
@@ -5704,6 +6759,14 @@ PRC_border_wars_cat = {
 		days_mission_timeout = 275
 
 		cancel_trigger = {
+			615 = {	
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
 		}
 
 		cancel_effect = {
@@ -5743,6 +6806,14 @@ PRC_border_wars_cat = {
 			NOT = {
 				any_allied_country = {
 					controls_state = 1032
+				}
+			}
+			1032 = {
+				controller = {
+					is_literally_china = yes
+					NOT = {
+						tag = ROOT
+					}
 				}
 			}
 		}
@@ -5838,6 +6909,14 @@ PRC_border_wars_cat = {
 		days_mission_timeout = 180
 
 		cancel_trigger = {
+			1032 = {	
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
 		}
 
 		cancel_effect = {
@@ -5910,13 +6989,10 @@ PRC_war_of_resistance_cat = {
 
 		timeout_effect = {
 
-			add_political_power = -25
-			add_stability = -0.05
-			add_war_support = -0.05
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			country_event = { id = SEA_PRC_misc_events.2 hours = 1 }
+			effect_tooltip = {
+				add_ideas = PRC_passive_revolutionaries_idea
+			}
 
 		}
 	}
@@ -6534,10 +7610,20 @@ political_actions = {
 		}
 
 		visible = {
+			1046 = {
+				has_dynamic_modifier = {
+					modifier = PRC_the_yulin_garrison
+				}
+			}
 		}
 
 		available = {
 			controls_state = 1046
+			1046 = {
+				has_dynamic_modifier = {
+					modifier = PRC_the_yulin_garrison
+				}
+			}
 		}
 
 		cancel_trigger = {
@@ -6570,6 +7656,9 @@ political_actions = {
 
 
 		remove_effect = {
+			1046 = {
+				remove_dynamic_modifier = { modifier = PRC_the_yulin_garrison }
+			}
 		}
 
 		cancel_effect = {

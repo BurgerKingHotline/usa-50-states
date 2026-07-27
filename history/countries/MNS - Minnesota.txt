@@ -8,10 +8,6 @@ set_politics = {
 }
 recruit_character = MINNESOTA_GOV
 
-set_balance_of_power = {
-    id = BRA_political_military_balance
-}
-
 set_popularities = {
     democratic = 25
     conservatism_ideology = 15

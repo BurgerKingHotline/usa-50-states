@@ -9,13 +9,20 @@ joint_focus = {
 
 	text_icon = GXC_GDC_focus_style
 
-	available = {}
+	available = {
+		OR = {
+			original_tag = GDC
+			original_tag = GXC
+		}
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 35
@@ -35,7 +42,22 @@ joint_focus = {
 		add_war_support = 0.05
 	}
 
-	completion_reward = {}
+	completion_reward = {
+		IF = {
+			limit = {
+				OR = {
+					tag = GXC
+					tag = GDC
+				}
+			}
+			add_political_power = 25
+			add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 1000 
+					producer = JAP
+				}	
+		}
+	}
 }
 
 joint_focus = {
@@ -54,13 +76,17 @@ joint_focus = {
 
 	text_icon = GXC_focus_style
 
-	available = {}
+	available = {
+		original_tag = GXC
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 35
@@ -79,7 +105,17 @@ joint_focus = {
 		add_stability = 0.05
 	}
 
-	completion_reward = {}
+	completion_reward = {
+		IF = {
+			limit = {
+				OR = {
+					tag = GXC
+					tag = GDC
+				}
+			}
+			add_political_power = 25	
+		}
+	}
 }
 
 joint_focus = {
@@ -98,13 +134,17 @@ joint_focus = {
 
 	text_icon = GDC_focus_style
 
-	available = {}
+	available = {
+		original_tag = GDC
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 35
@@ -122,7 +162,22 @@ joint_focus = {
 		}
 	}
 
-	completion_reward = {}
+	completion_reward = {
+		IF = {
+			limit = {
+				OR = {
+					tag = GXC
+					tag = GDC
+				}
+			}
+			ROOT = {
+				add_opinion_modifier = {
+					target = CHI
+					modifier = small_decrease
+				}
+			}	
+		}
+	}
 }
 
 joint_focus = {
@@ -141,13 +196,17 @@ joint_focus = {
 
 	text_icon = GXC_focus_style
 
-	available = {}
+	available = {
+		original_tag = GXC
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 35
@@ -165,7 +224,18 @@ joint_focus = {
 		add_ideas = GXC_scorched_earth_policy
 	}
 
-	completion_reward = {}
+	completion_reward = {
+		IF = {
+			limit = {
+				OR = {
+					tag = GXC
+					tag = GDC
+				}
+			}
+			add_political_power = 25
+			add_war_support = 0.05	
+		}
+	}
 }
 
 joint_focus = {
@@ -184,13 +254,17 @@ joint_focus = {
 
 	text_icon = GDC_focus_style
 
-	available = {}
+	available = {
+		original_tag = GDC
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 35
@@ -203,7 +277,22 @@ joint_focus = {
 		add_stability = 0.05
 	}
 
-	completion_reward = {}
+	completion_reward = {
+		IF = {
+			limit = {
+				OR = {
+					tag = GXC
+					tag = GDC
+				}
+			}
+			CHI = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = medium_decrease
+				}
+			}
+		}
+	}
 }
 
 joint_focus = {
@@ -223,13 +312,20 @@ joint_focus = {
 
 	text_icon = GXC_GDC_focus_style
 
-	available = {}
+	available = {
+		OR = {
+			original_tag = GDC
+			original_tag = GXC
+		}
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 35
@@ -265,7 +361,41 @@ joint_focus = {
 		}
 	}
 
-	completion_reward = {}
+	completion_reward = {
+	IF = {
+		limit = {
+			OR = {
+				tag = GXC
+				tag = GDC
+			}
+		}
+		hidden_effect = {
+			division_template = {
+				name = "Anti-Japanese Volunteers"
+				priority = 1
+				division_names_group = CHI_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+	   			 	infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			limit = { ROOT = { has_full_control_of_state = PREV } }
+			create_unit = {
+				division = "name = \"1. Anti-Japanese Volunteers\" division_template = \"Anti-Japanese Volunteers\" start_experience_factor = 0.3" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"2. Anti-Japanese Volunteers\" division_template = \"Anti-Japanese Volunteers\" start_experience_factor = 0.3" 
+				owner = ROOT
+			}
+		}
+		}
+	}
 }
 
 joint_focus = {
@@ -284,13 +414,20 @@ joint_focus = {
 
 	text_icon = GXC_GDC_focus_style
 
-	available = {}
+	available = {
+		OR = {
+			original_tag = GDC
+			original_tag = GXC
+		}
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		factor = 35
@@ -298,7 +435,24 @@ joint_focus = {
 
 	search_filters = {FOCUS_FILTER_POLITICAL}
 
-	completion_reward = {}
+	completion_reward = {
+		IF = {
+			limit = {
+				OR = {
+					tag = GXC
+					tag = GDC
+				}
+			}
+			add_political_power = 50	
+			IF = {
+				limit = {
+					has_idea = GXC_uneasy_minds_idea
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				remove_ideas = GXC_uneasy_minds_idea
+			}
+		}
+	}
 	completion_reward_joint_originator = {
 		CHI = {
 			country_event = {

@@ -397,6 +397,18 @@ CHL_industrial_decisions = {
 				CHL_mapuche_conflict_level_up = yes
 			}
 
+			950 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
 		} 
 
 	}
@@ -691,6 +703,12 @@ CHL_mapuche_reconcilliation_decisions = {
 
 			CHL_mapuche_conflict_level_down = yes
 
+			950 = {
+				add_dynamic_modifier = {
+					modifier = CHL_protecting_mapuche_lands_modifier
+					scope = CHL
+				}
+			}
 
 			hidden_effect = {
 				set_country_flag = CHL_protecting_mapuche_lands
@@ -2481,6 +2499,11 @@ CHL_nacista_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_expand_the_department_of_provinces
 			NOT = { has_country_flag = CHL_reintigrated_tacna_flag }
+			947 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		days_remove = 35 
@@ -2498,11 +2521,25 @@ CHL_nacista_decisions = {
 			
 			IF = {
 				limit = {
+					947 = {
+						is_claimed_by = ROOT
+					}
+				}
+				947 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					947 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				947 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -2543,6 +2580,11 @@ CHL_nacista_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_expand_the_department_of_provinces
 			NOT = { has_country_flag = CHL_intigrated_tierra_del_fuego_flag }
+			953 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		days_remove = 35 
@@ -2560,11 +2602,25 @@ CHL_nacista_decisions = {
 			
 			IF = {
 				limit = {
+					953 = {
+						is_claimed_by = ROOT
+					}
+				}
+				953 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					953 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				953 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -2627,6 +2683,12 @@ CHL_nacista_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_undo_colonialist_occupations
 			NOT = { has_country_flag = CHL_occupied_the_canal_flag }
+			685 = {
+				NOT = {
+					is_core_of = ROOT
+					is_owned_by = ROOT
+				}
+			}
 		} 
 
 		days_remove = 42 
@@ -2721,6 +2783,12 @@ CHL_nacista_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_undo_colonialist_occupations
 			NOT = { has_country_flag = CHL_occupied_belize_flag }
+			311 = {
+				NOT = {
+					is_core_of = ROOT
+					is_owned_by = ROOT
+				}
+			}
 		} 
 
 		days_remove = 42 
@@ -3867,7 +3935,23 @@ CHL_mapuche_nationalism_decisions = {
 				transfer_state = 951
 			}
 
+			951 = {
+				add_core_of = PRU
+			}
 
+			506 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 
 			add_political_power = -25
 			
@@ -4058,6 +4142,12 @@ CHL_mapuche_nationalism_decisions = {
 			NOT = { has_country_flag = CHL_integrated_falklands_flag }
 			NOT = {
 				AND = {
+					299 = {
+						is_core_of = ROOT
+					}
+					720 = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		} 
@@ -4077,25 +4167,59 @@ CHL_mapuche_nationalism_decisions = {
 			
 			IF = {
 				limit = {
+					299 = {
+						is_claimed_by = ROOT
+					}
+				}
+				299 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					720 = {
+						is_claimed_by = ROOT
+					}
+				}
+				720 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					299 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				299 = {
+					add_core_of = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					720 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				720 = {
+					add_core_of = ROOT
 				}
 			}
 
+			299 = {
+				transfer_state_to = ROOT
+			}
 
+			720 = {
+				transfer_state_to = ROOT
+			}
 
 			hidden_effect = {
 				set_country_flag = CHL_integrated_falklands_flag 
@@ -4167,17 +4291,45 @@ CHL_mapuche_nationalism_decisions = {
 
 			IF = {
 				limit = {
+					948 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				948 = { transfer_state_to = RAP }
+			}
+
+			IF = {
+				limit = {
+					270 = {
+						NOT = {
+							is_core_of = RAP
+						}
+					}
+				}
+				270 = {
+					add_core_of =  RAP
 				}
 			}
 
 			IF = {
 				limit = {
+					270 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
 				}
-			}
-
-			IF = {
-				limit = {
-				}
+				270 = { transfer_state_to = RAP }
 			}
 
 			IF = {
@@ -4463,6 +4615,7 @@ CHL_mapuche_nationalism_decisions = {
 
 		complete_effect = {
 
+			726 = { transfer_state_to = SAM }
 
 			IF = {
 				limit = {
@@ -5112,9 +5265,24 @@ CHL_mapuche_nationalism_decisions = {
 
 			IF = {
 				limit = {
+					649 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				649 = {
+					transfer_state_to = INC
 				}
 			}
 
+			649 = {
+				add_core_of = INC
+			}
 
 			IF = {
 				limit = {
@@ -5277,6 +5445,12 @@ CHL_mapuche_nationalism_decisions = {
 
 		complete_effect = {
 
+			317 = {
+				add_victory_points = {
+					province = 2075
+					value = 4
+				}	
+			}
 
 			every_state = {
 				limit = {
@@ -5720,15 +5894,45 @@ CHL_mapuche_nationalism_decisions = {
 
 			IF = {
 				limit = {
+					875 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				875 = {
+					transfer_state_to = INU
 				}
 			}
 
+			875 = {
+				add_core_of = INU
+			}
 
 			IF = {
 				limit = {
+					650 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				650 = {
+					transfer_state_to = INU
 				}
 			}
 
+			650 = {
+				add_core_of = INU
+			}
 
 			IF = {
 				limit = {
@@ -6051,6 +6255,16 @@ CHL_mapuche_nationalism_decisions = {
 
 		complete_effect = {
 
+			311 = {
+				add_victory_points = {
+					province = 2077
+					value = 2
+				}	
+				set_province_name = {
+				    id = 2077
+				    name = 2077_indigenous_city_name
+				}
+			}
 
 			every_state = {
 				limit = {
@@ -6434,16 +6648,52 @@ CHL_mapuche_nationalism_decisions = {
 
 			IF = {
 				limit = {
+					685 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				685 = {
+					transfer_state_to = IAS
 				}
 			}
 
 			IF = {
 				limit = {
+					695 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				695 = {
+					transfer_state_to = IAS
 				}
 			}
 
 			IF = {
 				limit = {
+					691 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				691 = {
+					transfer_state_to = IAS
 				}
 			}
 
@@ -6634,9 +6884,24 @@ CHL_mapuche_nationalism_decisions = {
 				transfer_state_to = BOL
 			} 
 
+			942 = {
+				add_core_of = BOL
+			}
 
 			IF = {
 				limit = {
+					942 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				942 = {
+					transfer_state_to = BOL
 				}
 			}
 
@@ -7999,19 +8264,58 @@ CHL_mapuche_nationalism_decisions = {
 
 			IF = {
 				limit = {
+					739 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				739 = {
+					transfer_state_to = CAN
 				}
 			}
 
 			IF = {
 				limit = {
+					331 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				331 = {
+					transfer_state_to = CAN
 				}
 			}
 
 			IF = {
 				limit = {
+					730 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				730 = {
+					transfer_state_to = CAN
 				}
 			}
 
+			730 = {
+				add_core_of = CAN
+			}
 
 			IF = {
 				limit = {
@@ -8959,6 +9263,11 @@ CHL_monarchist_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_return_to_the_continent
 			NOT = { has_country_flag = CHL_integrated_french_guyana_flag }
+			310 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		days_remove = 35 
@@ -8976,11 +9285,25 @@ CHL_monarchist_decisions = {
 			
 			IF = {
 				limit = {
+					310 = {
+						is_claimed_by = ROOT
+					}
+				}
+				310 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					310 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				310 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -9021,6 +9344,11 @@ CHL_monarchist_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_return_to_the_continent
 			NOT = { has_country_flag = CHL_integrated_st_pierre_flag }
+			730 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		days_remove = 14 
@@ -9038,11 +9366,25 @@ CHL_monarchist_decisions = {
 			
 			IF = {
 				limit = {
+					730 = {
+						is_claimed_by = ROOT
+					}
+				}
+				730 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					730 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				730 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -9083,6 +9425,11 @@ CHL_monarchist_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_return_to_the_continent
 			NOT = { has_country_flag = CHL_integrated_french_caribbean_flag }
+			694 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		days_remove = 35 
@@ -9100,11 +9447,25 @@ CHL_monarchist_decisions = {
 			
 			IF = {
 				limit = {
+					694 = {
+						is_claimed_by = ROOT
+					}
+				}
+				694 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					694 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				694 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -9145,6 +9506,11 @@ CHL_monarchist_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_return_to_the_continent
 			NOT = { has_country_flag = CHL_integrated_corsica_flag }
+			1 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		days_remove = 35 
@@ -9162,11 +9528,25 @@ CHL_monarchist_decisions = {
 			
 			IF = {
 				limit = {
+					1 = {
+						is_claimed_by = ROOT
+					}
+				}
+				1 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					1 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				1 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -9218,6 +9598,11 @@ CHL_monarchist_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_return_to_the_continent
 			NOT = { has_country_flag = CHL_integrated_northern_france_flag }
+			16 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		days_remove = 210 
@@ -9305,6 +9690,11 @@ CHL_monarchist_decisions = {
 			original_tag = CHL
 			has_completed_focus = CHL_return_to_the_continent
 			NOT = { has_country_flag = CHL_integrated_southern_france_flag }
+			20 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		days_remove = 210 
@@ -9402,6 +9792,27 @@ CHL_monarchist_decisions = {
 			NOT = { has_country_flag = CHL_integrated_rio_grande_do_sul_flag }
 			NOT = {
 				AND = {
+					502 = {
+						is_core_of = ROOT
+					}
+					503 = {
+						is_core_of = ROOT
+					}
+					944 = {
+						is_core_of = ROOT
+					}
+					510 = {
+						is_core_of = ROOT
+					}
+					946 = {
+						is_core_of = ROOT
+					}
+					945 = {
+						is_core_of = ROOT
+					}
+					300 = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		} 
@@ -9718,15 +10129,45 @@ CHL_monarchist_decisions = {
 
 			IF = {
 				limit = {
+					649 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				649 = {
+					transfer_state_to = INC
 				}
 			}
 
 			IF = {
 				limit = {
+					940 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				940 = {
+					transfer_state_to = INC
 				}
 			}
 
+			649 = {
+				add_core_of = INC
+			}
 
+			940 = {
+				add_core_of = INC
+			}
 
 			IF = {
 				limit = {
@@ -9869,6 +10310,12 @@ CHL_monarchist_decisions = {
 			NOT = { has_country_flag = CHL_integrated_falklands_flag }
 			NOT = {
 				AND = {
+					299 = {
+						is_core_of = ROOT
+					}
+					720 = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		} 
@@ -9888,25 +10335,59 @@ CHL_monarchist_decisions = {
 			
 			IF = {
 				limit = {
+					299 = {
+						is_claimed_by = ROOT
+					}
+				}
+				299 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					720 = {
+						is_claimed_by = ROOT
+					}
+				}
+				720 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					299 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				299 = {
+					add_core_of = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					720 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				720 = {
+					add_core_of = ROOT
 				}
 			}
 
+			299 = {
+				transfer_state_to = ROOT
+			}
 
+			720 = {
+				transfer_state_to = ROOT
+			}
 
 			hidden_effect = {
 				set_country_flag = CHL_integrated_falklands_flag 
@@ -10244,26 +10725,86 @@ CHL_monarchist_decisions = {
 
 			IF = {
 				limit = {
+					315 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				315 = {
+					transfer_state_to = HAI
 				}
 			}
 
 			IF = {
 				limit = {
+					689 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				689 = {
+					transfer_state_to = HAI
 				}
 			}
 
 			IF = {
 				limit = {
+					693 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				693 = {
+					transfer_state_to = HAI
 				}
 			}
 
 			IF = {
 				limit = {
+					690 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				690 = {
+					transfer_state_to = HAI
 				}
 			}
 
 			IF = {
 				limit = {
+					686 = {
+						OR = {
+							is_controlled_by = ROOT
+							any_country = {
+								is_subject_of = ROOT
+								controls_state = PREV
+							}
+						}
+					}
+				}
+				686 = {
+					transfer_state_to = HAI
 				}
 			}
 

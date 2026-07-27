@@ -1,0 +1,25 @@
+defined_text = {
+	name = GetCHGCouncilControl
+	text = {
+		trigger = { check_variable = { chg_has_majority = 1 } }
+		localization_key = CHG_COUNCIL_MAJORITY
+	}
+	text = { localization_key = CHG_COUNCIL_MINORITY }
+}
+defined_text = {
+	name = GetCHGElectionWinnerName
+	text = { trigger = { check_variable = { chg_last_winner = 0 } } localization_key = CHG_HENRY_HORNER_NAME }
+	text = { trigger = { check_variable = { chg_last_winner = 1 } } localization_key = CHG_WILLIAM_THOMPSON_NAME }
+	text = { trigger = { check_variable = { chg_last_winner = 2 } } localization_key = CHG_JOHN_FITZPATRICK_NAME }
+	text = { trigger = { check_variable = { chg_last_winner = 3 } } localization_key = CHG_ANTON_CERMAK_NAME }
+	text = { localization_key = CHG_NO_RESULT }
+}
+
+
+defined_text = {
+	name = GetCHGGoverningBlocName
+	text = { trigger = { OR = { has_government = conservatism_ideology has_government = fascism has_government = neutrality } } localization_key = CHG_BLOC_RIGHT }
+	text = { trigger = { has_government = populism_ideology } localization_key = CHG_BLOC_POPULIST }
+	text = { trigger = { has_government = democratic } localization_key = CHG_BLOC_LIBERAL }
+	text = { localization_key = CHG_BLOC_LEFT }
+}

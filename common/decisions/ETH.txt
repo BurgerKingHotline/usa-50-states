@@ -37,6 +37,9 @@ ETH_defeat_italy_category = {
 		
 		complete_effect = {
 			hidden_effect = {
+				550 = { add_compliance = 50 }
+				559 = { add_compliance = 50 }
+				844 = { add_compliance = 50 }
 			}
 			ITA = { country_event = ETH_events.1 }
 			custom_effect_tooltip = if_they_accept_tt
@@ -317,6 +320,32 @@ governments_in_exile = {
 		}
 		remove_effect = {
 			random_list = {
+				20 = { 
+					custom_effect_tooltip = ETH_low_fundraising_effect_tt
+					add_to_variable = { ETH_treasury = 5 }
+				}
+				40 = { 
+					custom_effect_tooltip = ETH_medium_fundraising_effect_tt
+					add_to_variable = { ETH_treasury = 15 }
+				}
+				20 = { 
+					modifier = {
+						factor = 0
+						has_country_flag = ETH_had__high_effect_flag
+					}
+					custom_effect_tooltip = ETH_high_fundraising_effect_tt
+					add_to_variable = { ETH_treasury = 20 }
+					set_country_flag = ETH_had_high_effect_flag
+				}
+				20 = { 
+					modifier = {
+						factor = 0
+						has_country_flag = ETH_had__high_effect_flag
+					}
+					custom_effect_tooltip = ETH_very_high_fundraising_effect_tt
+					add_to_variable = { ETH_treasury = 30 }
+					set_country_flag = ETH_had_high_effect_flag
+				}
 			}
 			country_event = {
 				id = BBA_ethiopia_exile_events.52
@@ -1119,6 +1148,7 @@ ETH_second_italo_ethiopian_war_category = {
 		allowed = { original_tag = ETH }    
 		available = { 
 			NOT = {
+				271 = { is_controlled_by = ROOT }
 			}
 		}
 		activation = { 
@@ -1155,6 +1185,7 @@ ETH_second_italo_ethiopian_war_category = {
 		icon = GFX_decision_generic_operation
 		allowed = { tag = ITA }    
 		available = { 
+			271 = { is_controlled_by = ROOT }
 		}
 		activation = { 
 			has_war = yes 
@@ -1193,6 +1224,7 @@ ETH_second_italo_ethiopian_war_category = {
 		allowed = { original_tag = ETH }    
 		available = { 
 			NOT = {
+				835 = { is_controlled_by = ROOT }
 			}
 		}
 		activation = { 
@@ -1219,6 +1251,7 @@ ETH_second_italo_ethiopian_war_category = {
 		icon = GFX_decision_generic_operation 
 		allowed = { tag = ITA }    
 		available = { 
+			835 = { is_controlled_by = ROOT } 
 		}
 		activation = { 
 			always = no 
@@ -2127,6 +2160,38 @@ ETH_improve_country_category = {
 		remove_effect = {
 			clr_country_flag = prospecting_ongoing_flag
 			random_list = {
+				20 = {
+					FROM = {
+						add_resource = {
+							type = oil
+							amount = 4
+						}
+					}
+				}
+				20 = {
+					FROM = {
+						add_resource = {
+							type = steel
+							amount = 10
+						}
+					}
+				}
+				20 = {
+					FROM = {
+						add_resource = {
+							type = chromium
+							amount = 6
+						}
+					}
+				}
+				20 = {
+					FROM = {
+						add_resource = {
+							type = aluminium
+							amount = 6
+						}
+					}
+				}
 			}
 		}
 	}
@@ -2189,6 +2254,26 @@ ETH_improve_country_category = {
 			add_to_variable = { ETH_japanese_invesment_states = 1 }
 			clr_country_flag = ETH_japanese_investments_flag
 			random_list = {
+				10 = {
+					FROM = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				10 = {
+					FROM = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory 
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
 			}
 		}
 
@@ -3298,6 +3383,21 @@ ETH_exploit_french_weakness_category = {
 			NOT = {268 = {is_owned_by = ETH}}
 		}
 		available = {			
+			268 = {
+				OWNER = {
+					any_country = {
+						original_tag = FRA 
+						exists = yes 
+						has_government= fascism
+					}
+					num_divisions_in_states = {
+						count = 0
+						states = { 268 }
+						types = {} 
+						exclude = {} 
+					}
+				}
+			}	
 			custom_trigger_tooltip = {
 				tooltip = ETH_france_divided_tt
 				any_country = {
@@ -3315,6 +3415,27 @@ ETH_exploit_french_weakness_category = {
 		}
 		cancel_trigger = {
 			NOT = {
+				268 = { 
+					OR = {
+						OWNER = {
+							original_tag = FRA
+							has_government = fascism
+						}
+						CONTROLLER = {
+							original_tag = FRA
+							has_government = fascism
+						}
+						OWNER = {
+							num_divisions_in_states = {
+								count = 0
+								states = { 268 }
+								types = {} 
+								exclude = {} 
+							}
+						}
+					}								
+									
+				}
 			}
 		}
 		days_remove = 5
@@ -3322,6 +3443,15 @@ ETH_exploit_french_weakness_category = {
 			custom_effect_tooltip = ETH_take_DJI_tt
 			custom_effect_tooltip = ETH_take_DJI_danger_tt
 			custom_effect_tooltip = ETH_take_DJI_cancel_tt
+			268 = {
+				OWNER = {
+					country_event = {
+						id = BBA_ethiopia_fascist_events.50
+						hours = 12
+					}
+				}
+				268 = { set_state_owner_to = ETH}
+			}			
 		}
 		ai_will_do = {
 			base = 100
@@ -3393,6 +3523,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			551 = { is_controlled_by = ETH}
 			is_or_will_be_gojjam = yes
 		}
 		available = {
@@ -3409,6 +3540,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			551 = {
+				add_core_of = ETH
+			}			
 		}
 		ai_will_do = {
 			base = 100
@@ -3421,6 +3555,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			886 = {is_controlled_by = ETH}
 			is_or_will_be_gojjam = yes
 		}
 		available = {
@@ -3437,6 +3572,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			886 = {
+				add_core_of = ETH
+			}			
 		}
 		ai_will_do = {
 			base = 100
@@ -3449,6 +3587,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			883 = {is_controlled_by = ETH}
 			is_or_will_be_gojjam = yes
 		}
 		available = {
@@ -3465,6 +3604,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			883 = {
+				add_core_of = ETH
+			}			
 		}
 		ai_will_do = {
 			base = 100
@@ -3478,6 +3620,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			269 = {is_controlled_by = ETH}
 			is_or_will_be_jimma = yes
 		}
 		available = {
@@ -3494,6 +3637,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			269 = {
+				add_core_of = ETH
+			}			
 		}
 		ai_will_do = {
 			base = 100
@@ -3506,6 +3652,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			884 = {is_controlled_by = ETH}
 			is_or_will_be_jimma = yes
 		}
 		available = {
@@ -3522,6 +3669,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			884 = {
+				add_core_of = ETH
+			}			
 		}	
 		ai_will_do = {
 			base = 100
@@ -3534,6 +3684,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			906 = {is_controlled_by = ETH}
 			is_or_will_be_jimma = yes
 		}
 		available = {
@@ -3550,6 +3701,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			906 = {
+				add_core_of = ETH
+			}			
 		}
 		ai_will_do = {
 			base = 100
@@ -3563,6 +3717,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			268 = {is_controlled_by = ETH}
 			NOT = { has_cosmetic_tag = jimma}
 			NOT = { has_cosmetic_tag = gojjam}
 		}
@@ -3580,6 +3735,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			268 = {
+				add_core_of = ETH
+			}			
 		}	
 		ai_will_do = {
 			base = 100
@@ -3592,6 +3750,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			293 = {is_controlled_by = ETH}
 			NOT = { has_cosmetic_tag = jimma}
 			NOT = { has_cosmetic_tag = gojjam}
 		}
@@ -3609,6 +3768,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			293 = {
+				add_core_of = ETH
+			}			
 		}	
 		ai_will_do = {
 			base = 100
@@ -3621,6 +3783,7 @@ ETH_italo-ethiopian_empire_decisions = {
 		allowed = {original_tag = ETH }
 		visible = {
 			original_tag = ETH 
+			659 = {is_controlled_by = ETH}
 			NOT = { has_cosmetic_tag = jimma}
 			NOT = { has_cosmetic_tag = gojjam}
 		}
@@ -3638,6 +3801,9 @@ ETH_italo-ethiopian_empire_decisions = {
 		}
 		days_remove = 30
 		remove_effect = {
+			659 = {
+				add_core_of = ETH
+			}			
 		}
 		ai_will_do = {
 			base = 100
@@ -3690,6 +3856,114 @@ ETH_consolidate_east_africa_category = {
 		allowed = { original_tag = ETH }
 		days_remove = 1
 		available = {
+			886 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			883 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			551 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			767 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			549 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			887 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			884 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			885 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			904 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			548 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			903 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			547 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			}
+			905 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			}
+			844 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			}
+			559 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			}
+			269 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			} 
+			268 = { 
+				AND = {
+					is_core_of = ETH  
+					is_controlled_by = ETH
+				}
+			} 
+			550 = { 
+				AND = {
+					is_core_of = ETH 
+					is_controlled_by = ETH
+				}
+			}
 		}
 		remove_effect = {
 			IF = {
@@ -3737,6 +4011,14 @@ ETH_improve_the_horn_of_africa_category = {
 					is_subject = no 
 					is_subject_of = ROOT 
 				}
+				NOT = { #The country does not have any owned states on any other continents than africa, to avoid colonial powers that have moved capitals being
+					any_owned_state = {
+						NOT = {
+							is_on_continent = africa
+						}
+					}
+				}
+				
 			}
 		}
 
@@ -3802,6 +4084,13 @@ ETH_improve_the_horn_of_africa_category = {
 					is_subject = no 
 					is_subject_of = ROOT 
 				}
+				NOT = { #The country does not have any owned states on any other continents than africa, to avoid colonial powers that have moved capitals being
+					any_owned_state = {
+						NOT = {
+							is_on_continent = africa
+						}
+					}
+				}
 			}
 		}
 
@@ -3862,6 +4151,13 @@ ETH_improve_the_horn_of_africa_category = {
 				OR = {
 					is_subject = no 
 					is_subject_of = ROOT 
+				}
+				NOT = { #The country does not have any owned states on any other continents than africa, to avoid colonial powers that have moved capitals being
+					any_owned_state = {
+						NOT = {
+							is_on_continent = africa
+						}
+					}
 				}
 			}
 		}
@@ -3934,6 +4230,13 @@ ETH_improve_the_horn_of_africa_category = {
 				OR = {
 					is_subject = no 
 					is_subject_of = ROOT 
+				}
+				NOT = { #The country does not have any owned states on any other continents than africa, to avoid colonial powers that have moved capitals being
+					any_owned_state = {
+						NOT = {
+							is_on_continent = africa
+						}
+					}
 				}
 			}
 		}

@@ -774,10 +774,28 @@ prospect_for_resources = {
 		available = {
 			has_tech = excavation3
 			num_of_civilian_factories_available_for_projects > 4
+			512 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			511 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			958 = {
+				is_owned_and_controlled_by = ROOT
+			}
 			has_completed_focus = ARG_yacimientos_petroliferos_fiscales
 		}
 
 		visible = {
+			512 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			511 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			958 = {
+				is_owned_and_controlled_by = ROOT
+			}
 			
 			NOT = {
 				has_country_flag = drill_for_oil_in_vaca_muerta_done
@@ -819,6 +837,24 @@ prospect_for_resources = {
 
 		remove_effect = {
 			set_country_flag = drill_for_oil_in_vaca_muerta_done
+			512 = {
+				add_resource = {
+					type = oil
+					amount = 10
+				}
+			}
+			511 = {
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+			}
+			958 = {
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
 		}
 	}
 
@@ -1310,6 +1346,8 @@ ARG_island_negotiations_decisions = {
 
 		available = {
 			has_completed_focus = ARG_argentine_island_sovereignty
+			299 = { is_controlled_by = ARG }
+			720 = { is_controlled_by = ARG }
 		} 
 
 		visible = { 
@@ -1350,6 +1388,8 @@ ARG_island_negotiations_decisions = {
 		}
 
 		available = {
+			299 = { is_controlled_by = ARG }
+			720 = { is_controlled_by = ARG }
 		} 
 
 		visible = { 

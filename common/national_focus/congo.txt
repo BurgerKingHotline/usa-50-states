@@ -1,10 +1,10 @@
-﻿
-
-
-
-
-
-
+﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
 
 focus_tree = {
 	id = congo_focus
@@ -38,19 +38,48 @@ focus_tree = {
 		x = 20
 		y = 0
 
-		
+		#prerequisite = { focus = CONGO_belgian_congo }
 
-		
+		#relative_position_id = CONGO_belgian_congo
 
 		search_filters = { FOCUS_FILTER_STABILITY }
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = COG_the_invisible_roof_tt
+				OR = {
+					has_idea = COG_the_invisible_roof
+					has_idea = COG_the_invisible_roof_lower_research_debuff
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			IF = {
+				limit = {
+					has_idea = COG_the_invisible_roof
+				}
+				swap_ideas = { 
+					remove_idea = COG_the_invisible_roof
+					add_idea = COG_the_invisible_roof_lower_stability_debuff
+				}	
+			}
+			ELSE_IF = {
+				limit = {
+					has_idea = COG_the_invisible_roof_lower_research_debuff
+				}
+				swap_ideas = {
+					remove_idea = COG_the_invisible_roof_lower_research_debuff
+					add_idea = COG_the_invisible_roof_lower_research_and_stability_debuff
+				}
+			}
+		}
 
 	}
 
@@ -61,19 +90,48 @@ focus_tree = {
 		x = 19
 		y = 1
 
-		
+		#prerequisite = { focus = CONGO_belgian_congo }
 
-		
+		#relative_position_id = CONGO_belgian_congo
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = COG_the_invisible_roof_tt
+				OR = {
+					has_idea = COG_the_invisible_roof
+					has_idea = COG_the_invisible_roof_lower_stability_debuff
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_idea = COG_the_invisible_roof
+				}
+				swap_ideas = {
+					remove_idea = COG_the_invisible_roof
+					add_idea = COG_the_invisible_roof_lower_research_debuff
+				}	
+			}
+			ELSE_IF = {
+				limit = {
+					has_idea = COG_the_invisible_roof_lower_stability_debuff
+				}
+				swap_ideas = {
+					remove_idea = COG_the_invisible_roof_lower_stability_debuff
+					add_idea = COG_the_invisible_roof_lower_research_and_stability_debuff
+				}
+			}
+		}
 
 	}
 
@@ -93,11 +151,48 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = COG_the_invisible_roof_tt
+				OR = {
+					has_idea = COG_the_invisible_roof
+					has_idea = COG_the_invisible_roof_lower_stability_debuff
+					has_idea = COG_the_invisible_roof_lower_research_debuff
+					has_idea = COG_the_invisible_roof_lower_research_and_stability_debuff
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_idea = COG_the_invisible_roof
+				}
+				remove_ideas = COG_the_invisible_roof
+			}
+			ELSE_IF = {
+				limit = {
+					has_idea = COG_the_invisible_roof_lower_research_debuff
+				}
+				remove_ideas = COG_the_invisible_roof_lower_research_debuff
+			}
+			ELSE_IF = {
+				limit = {
+					has_idea = COG_the_invisible_roof_lower_stability_debuff
+				}
+				remove_ideas = COG_the_invisible_roof_lower_stability_debuff
+			}
+			ELSE_IF = {
+				limit = {
+					has_idea = COG_the_invisible_roof_lower_research_and_stability_debuff
+				}
+				remove_ideas = COG_the_invisible_roof_lower_research_and_stability_debuff
+			}
+		}
 
 	}
 
@@ -108,19 +203,107 @@ focus_tree = {
 		x = 30
 		y = 9
 
-		
+		#prerequisite = { focus = CONGO_belgian_congo }
 
-		
+		#relative_position_id = CONGO_belgian_congo
 
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			OR = {
+				is_subject = no
+				AND = {
+					has_completed_focus = CONGO_congolese_generals
+					has_completed_focus = CONGO_jungle_fighting
+					has_completed_focus = CONGO_expand_ndolo_and_elisabethville_airports
+					has_completed_focus = CONGO_even_a_hospital_can_do_better
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			custom_effect_tooltip = COG_establish_the_anc_modifier_tt
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_establish_the_anc_locking_tt
+			hidden_effect = {
+				remove_dynamic_modifier = {
+					modifier = COG_force_publique	
+				}
+				add_dynamic_modifier = {
+					modifier = COG_armee_nationale_congolaise_modifier
+				}	
+
+				add_to_variable = { COG_armee_nationale_congolaise_modifier_supply_consumption_factor = -0.05 }
+				add_to_variable = { COG_armee_nationale_congolaise_modifier_army_core_defence_factor = 0.05 }
+				add_to_variable = { COG_armee_nationale_congolaise_modifier_acclimatization_hot_climate_gain_factor = 0.1 }
+				add_to_variable = { COG_armee_nationale_congolaise_modifier_equipment_capture_factor = 0.05 }
+				add_to_variable = { COG_armee_nationale_congolaise_modifier_resistance_target = -0.05 }
+
+				IF = {
+					limit = {
+						has_completed_focus = CONGO_force_publique
+					}
+					add_to_variable = { COG_armee_nationale_congolaise_modifier_conscription_factor = 0.02 }
+					add_to_variable = { COG_armee_nationale_congolaise_modifier_army_core_attack_factor = 0.02 }
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = CONGO_aviation_militaire_de_la_force_publique
+					}
+					add_to_variable = { COG_armee_nationale_congolaise_modifier_air_training_xp_gain_factor = 0.1 }
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = CONGO_expand_ndolo_and_elisabethville_airports
+					}
+					add_to_variable = { COG_armee_nationale_congolaise_modifier_production_speed_air_base_factor = 0.05 }
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = CONGO_modernize_force_publique
+					}
+					add_to_variable = {  COG_armee_nationale_congolaise_modifier_army_core_attack_factor = -0.02 }
+					add_to_variable = {  COG_armee_nationale_congolaise_modifier_army_core_defence_factor = -0.05 }
+					add_to_variable = {  COG_armee_nationale_congolaise_modifier_army_attack_factor = 0.02 }
+					add_to_variable = {  COG_armee_nationale_congolaise_modifier_army_defence_factor = 0.05 }
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = CONGO_congo_army
+					}
+					add_to_variable = { COG_armee_nationale_congolaise_modifier_conscription = 0.01 }
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = CONGO_expand_force_publique_recruitment
+					}
+					add_to_variable = { COG_armee_nationale_congolaise_modifier_conscription_factor = 0.03 }
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = CONGO_even_a_hospital_can_do_better
+					}
+					add_to_variable = { COG_armee_nationale_congolaise_modifier_experience_loss_factor = -0.05 }
+					add_to_variable = { COG_armee_nationale_congolaise_modifier_army_morale_factor = 0.03 }
+				}
+
+				set_global_flag = COG_force_publique_reformed_flag	 
+			}
+		}
 
 	}
 
@@ -139,11 +322,21 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			navy_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_navy = 0.02 tooltip = experience_gain_navy_tt }
+		}
 
 	}
 
@@ -162,11 +355,45 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+				is_coastal = yes
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}	
+					is_fully_controlled_by = ROOT
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_equipment_to_stockpile = { 
+				type = convoy
+				amount = 50
+				producer = ROOT
+			}	
+		}
 
 	}
 
@@ -193,13 +420,41 @@ focus_tree = {
 			}
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 
 		mutually_exclusive	= { focus = COG_brown_water_navy }
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			navy_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_mastery_bonus = {
+				name = COG_south_atlantic_navy
+				bonus = 0.1
+				days = 240
+				folder = naval
+			}
+
+			add_doctrine_cost_reduction = {
+				name = COG_south_atlantic_navy
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_spotting_chance = 0.1 tooltip = spotting_chance_tt }
+
+		}
 
 	}
 
@@ -218,13 +473,34 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+			has_tech = ToA_river_boats_tech	
+		}
 
 		mutually_exclusive	= { focus = COG_south_atlantic_navy }
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					NOT = {
+						has_tech = ToA_river_boats_tech	 
+					}
+				}
+				hidden_effect = { 
+					set_technology = { 
+						ToA_river_boats_tech = 1	
+						popup = no
+					} 
+				}
+				add_ideas = COG_brown_water_navy_idea
+			}
+
+		}
 
 	}
 
@@ -243,13 +519,32 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 
-		
+		#mutually_exclusive	= { focus = COG_brown_water_navy }
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			set_technology = {
+				coastal_defense_ships = 1
+				popup = no
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = COG_coastal_defence_fleet
+				bonus = 1.0
+				uses = 2
+				category = ca_tech
+				category = dd_tech
+			}
+		}
 
 	}
 
@@ -268,13 +563,39 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 
-		
+		#mutually_exclusive	= { focus = COG_brown_water_navy }
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			add_mastery_bonus = {
+				name = COG_supply_line_disruption_tactics
+				bonus = 0.1
+				days = 180
+				track = submarines
+			}
+
+			add_doctrine_cost_reduction = {
+				name = COG_supply_line_disruption_tactics
+				cost_reduction = 0.25
+				uses = 1
+				category = naval_doctrine
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = ss_tech
+			}	
+		}
 
 	}
 
@@ -293,13 +614,26 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 
-		
+		#mutually_exclusive	= { focus = COG_brown_water_navy }
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+			295 = {
+				is_owned_and_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			295 = {
+				add_dynamic_modifier = {
+					modifier = idea_COG_river_navy
+				}	
+			}
+		}
 
 	}
 
@@ -318,13 +652,41 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 
-		
+		#mutually_exclusive	= { focus = COG_brown_water_navy }
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+			890 = {
+				is_owned_and_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+			888 = {
+				is_owned_and_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+			889 = {
+				is_owned_and_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 890
+						state = 888
+						state = 889
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = idea_COG_river_navy
+				}	
+			}
+		}
 
 	}
 
@@ -343,13 +705,36 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 
-		
+		#mutually_exclusive	= { focus = COG_brown_water_navy }
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+			718 = {
+				is_owned_and_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+			538 = {
+				is_owned_and_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 718
+						state = 538
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = idea_COG_river_navy
+				}	
+			}
+		}
 
 	}
 
@@ -368,11 +753,26 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			air_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_air = 0.02 tooltip = experience_gain_air_tt }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = COG_gerard_greindl
+		}
 
 	}
 
@@ -393,11 +793,43 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = small_plane_airframe
+					seller_tags = { USA JAP ENG FRA ITA GER BEL SOV } 
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = medium_plane_airframe
+					seller_tags = { USA JAP ENG FRA ITA GER BEL SOV } 
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					NOT = {
+						has_idea = JUNO_license_air_idea
+					}
+				}
+				add_ideas = JUNO_license_air_idea
+			}
+
+		}
 
 	}
 
@@ -426,11 +858,16 @@ focus_tree = {
 			}
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = HUN_indigenous_designs
+		}
 
 	}
 
@@ -445,15 +882,24 @@ focus_tree = {
 
 		relative_position_id = COG_aeronautical_research_department
 
-		
+		#mutually_exclusive = { focus = COG_procure_foriegn_equipment }
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_recon_factor = 0.1 tooltip = recon_factor_tt }
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_ground_attack_factor = 0.05 tooltip = ground_attack_factor_tt }
+
+		}
 
 	}
 
@@ -468,17 +914,44 @@ focus_tree = {
 
 		relative_position_id = COG_scouting_the_terrain
 
-		
+		#mutually_exclusive = { focus = COG_procure_foriegn_equipment }
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
+
+		}
 
 	}
 
@@ -497,11 +970,21 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			army_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_experience_gain_army = 0.02 tooltip = experience_gain_army_tt }
+		}
 
 	}
 
@@ -520,11 +1003,21 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_equipment_capture_factor = -0.05 tooltip = equipment_capture_factor_tt }
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_resistance_target = 0.05 tooltip = resistance_target_tt }
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_army_org_factor = 0.05 tooltip = army_org_factor_tt }
+
+		}
 
 	}
 
@@ -543,11 +1036,21 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			every_army_leader = {
+				add_planning = 1
+				add_logistics = 1
+			}
+
+		}
 
 	}
 
@@ -566,11 +1069,38 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
+
+		}
 
 	}
 
@@ -589,11 +1119,53 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = COG_explosifs_congo_organization
+				
+				mio:COG_explosifs_congo_organization = {
+					add_mio_size = 4
+				}
+
+			}
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = COG_explosifs_congo
+			}
+
+		}
 
 	}
 
@@ -612,11 +1184,27 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			add_tech_bonus = {
+				name = COG_triga_i_project
+				bonus = 1.0
+				uses = 1
+				category = nuclear
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = COG_triga_i_project_ns
+
+		}
 
 	}
 
@@ -635,11 +1223,20 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_conscription_factor = 0.08 tooltip = conscription_factor_tt }
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_non_core_manpower = 0.02 tooltip = non_core_manpower_tt }
+
+		}
 
 	}
 
@@ -656,11 +1253,20 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_cas_damage_reduction = 0.05 tooltip = cas_damage_reduction_tt }
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_dig_in_speed_factor = 0.05 tooltip = dig_in_speed_factor_tt }
+
+		}
 
 	}
 
@@ -687,11 +1293,24 @@ focus_tree = {
 			}
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			add_war_support = -0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_army_org_factor = 0.05 tooltip = army_org_factor_tt }
+
+		}
 
 	}
 
@@ -712,11 +1331,23 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			add_war_support = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_COG_armee_nationale_congolaise_modifier_tt
+			add_to_variable = { COG_armee_nationale_congolaise_modifier_army_core_defence_factor = 0.05 tooltip = army_core_defence_factor_tt }
+
+		}
 
 	}
 
@@ -735,12 +1366,51 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_global_flag = COG_force_publique_reformed_flag
+		}
 	
-		completion_reward = {} 
+		completion_reward = {
 
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = para_tech
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt 	
+
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_potential_special_forces_tree = yes
+				add_doctrine_cost_reduction = {
+					name = COG_31e_brigade_parachutiste
+					cost_reduction = 0.5
+					uses = 2
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = paratrooper_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = COG_31e_brigade_parachutiste
+						bonus = 0.1
+						days = 240
+						sub_doctrine = paratroopers_1
+					}
+					add_mastery_bonus = {
+						name = COG_31e_brigade_parachutiste
+						bonus = 0.1
+						days = 240
+						sub_doctrine = paratroopers_2
+					}
+				}				
+			}
+		} 
 	}
 
 	focus = {
@@ -756,11 +1426,19 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = { 
+			has_global_flag = COG_force_publique_reformed_flag
+			NOT = {
+				has_completed_focus = COG_uniao_dos_povos_do_norte_de_angola
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = COG_peacekeeping_forces_idea
+		}
 
 	}
 
@@ -771,19 +1449,45 @@ focus_tree = {
 		x = 29
 		y = 0
 
-		
+		#prerequisite = { focus = CONGO_belgian_congo }
 
-		
+		#relative_position_id = CONGO_belgian_congo
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_HISTORICAL }
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+			NOT = {
+				has_country_leader = {
+					ruling_only = yes
+					character = COG_pierre_ryckmans
+				}	
+			}
+		}
 	
-		available = {}
+		available = {
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}	
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			COG_pierre_ryckmans = {
+				swap_country_leader_traits = {
+				    remove = pro_allied_governor_general
+				    add = pro_allied_governor_general_2
+				    ideology = oligarchism
+				}
+			}
+
+		}
 
 	}
 
@@ -802,11 +1506,26 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = COG_sabena_civilian_designer
+
+		}
 
 	}
 
@@ -825,11 +1544,53 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			OR = {
+				295 = {
+					is_owned_and_controlled_by = ROOT
+				}
+				889 = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					295 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+				295 = {
+					add_dynamic_modifier = {
+						modifier = COG_urban_area_investments_modifier
+						scope = COG
+					}	
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					889 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+				889 = {
+					add_dynamic_modifier = {
+						modifier = COG_urban_area_investments_modifier
+						scope = COG
+					}	
+				}
+			}
+
+		}
 
 	}
 
@@ -848,11 +1609,26 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = COG_joris_six
+
+		}
 
 	}
 
@@ -871,11 +1647,37 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_political_power = 75
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			hidden_effect = {
+				remove_trait = {
+				    character = COG_marcel_maquet
+				    slot = political_advisor
+				    trait = district_commisioner_of_leopoldville
+				}
+			}
+
+			add_trait = {
+			    character = COG_marcel_maquet
+			    slot = political_advisor
+			    trait = provincial_commisioner_of_leopoldville
+			}
+
+		}
 
 	}
 
@@ -894,11 +1696,52 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			889 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			IF = {
+				limit = {
+					889 = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}	
+					}
+				}
+				889 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}	
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}	
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = COG_auguste_tilkens
+
+		}
 
 	}
 
@@ -917,11 +1760,49 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			889 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			BEL = {
+				exists = yes
+				NOT = {
+					has_war_with = ROOT
+				}
+				has_civil_war = no
+			}
+			OR = {
+				is_subject_of = BEL
+				is_in_faction_with = BEL
+			}
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_political_power = 50
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			BEL = {
+				country_event = {
+					id = ww_congo.22
+					hours = 12
+					random_hours = 24
+				}
+			}
+
+		}
 
 	}
 
@@ -940,11 +1821,27 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			OR = {
+				has_country_leader = {
+					ruling_only = yes
+					character = COG_pierre_ryckmans
+				}
+				BEL = {
+					has_opinion = {
+						target = ROOT
+						value > 49
+					}	
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			add_ideas = COG_banque_du_congo_belge_idea
+		}
 
 	}
 
@@ -963,11 +1860,21 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			#has_country_leader = {
+			#	ruling_only = yes
+			#	character = COG_pierre_ryckmans
+			#}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			custom_effect_tooltip = COG_contract_the_empain_group_tt
+
+		}
 
 	}
 
@@ -986,11 +1893,63 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+			has_completed_focus = COG_form_the_gecamines
+		}
 	
-		available = {}
+		available = {
+			889 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			NOT = {
+				has_completed_focus = COG_form_the_gecamines
+			}
+			#has_country_leader = {
+			#	ruling_only = yes
+			#	character = COG_pierre_ryckmans
+			#}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					889 = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}	
+					}
+				}
+				889 = {
+					add_extra_state_shared_building_slots = 1 
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}	
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			889 = {
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}	
+				add_resource = {
+					type = tungsten
+					amount = 5
+				}
+				add_resource = {
+					type = chromium
+					amount = 4
+				}
+			}
+
+		}
 
 	}
 
@@ -1009,11 +1968,22 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = { 
+		}
 	
-		available = {}
+		available = {
+			AND = {
+				owns_state = 768
+				owns_state = 769
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = COG_banque_du_congo_belge_idea
+				add_idea = COG_banque_du_congo_belge_idea_2
+			}	
+		}
 
 	}
 
@@ -1034,11 +2004,25 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			#has_country_leader = {
+			#	ruling_only = yes
+			#	character = COG_pierre_ryckmans
+			#}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 
 	}
 
@@ -1059,11 +2043,44 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			#has_country_leader = {
+			#	ruling_only = yes
+			#	character = COG_pierre_ryckmans
+			#}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_owned_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT
+					}
+					is_controlled_by = ROOT
+				}
+				add_resistance = -5
+				add_compliance = 5
+			}
+
+		}
 
 	}
 
@@ -1082,11 +2099,39 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}
+			AND = {
+				owns_state = 768
+				owns_state = 769
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+			IF = {
+				limit = {
+					NOT = {
+						has_completed_focus = CONGO_ruanda_urundi
+					}
+				}
+				custom_effect_tooltip = COG_closer_cooperation_with_eugene_jungers_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = COG_eugene_jungers
+
+		}
 
 	}
 
@@ -1097,7 +2142,7 @@ focus_tree = {
 		x = 12
 		y = 0
 
-		
+		#prerequisite = { focus = COG_attempt_to_centralize_the_state focus = COG_allow_local_autonomy }
 
 		mutually_exclusive = { focus = COG_national_committee_for_liberation }
 
@@ -1115,11 +2160,44 @@ focus_tree = {
 			}
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			OR = {
+				is_subject = no
+				AND = {
+					has_global_flag = COG_evolue_in_politics
+					has_completed_focus = CONGO_chefs_coutumiers
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_war_support = -0.05
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					is_subject = yes
+				}
+				add_autonomy_score = { 
+					value = 150
+					localization = COG_found_the_congolese_national_movement
+				}
+			}	
+
+		}
 
 	}
 
@@ -1130,7 +2208,7 @@ focus_tree = {
 		x = 7
 		y = 0
 
-		
+		#prerequisite = { focus = COG_attempt_to_centralize_the_state focus = COG_allow_local_autonomy }
 
 		mutually_exclusive = { focus = COG_found_the_congolese_national_movement }
 
@@ -1148,11 +2226,36 @@ focus_tree = {
 			}
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			custom_effect_tooltip = COG_national_committee_for_liberation_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}	
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			country_event = {
+				id = ww_congo.28
+				hours = 0
+			}	
+
+		}
 
 	}
 
@@ -1171,11 +2274,23 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = COG_simon_kimbangu
+
+		}
 
 	}
 
@@ -1194,11 +2309,32 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			OR = {
+				is_subject = no
+				has_global_flag = COG_evolue_in_politics
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			IF = {
+				limit = {
+					is_subject = yes
+				}
+				add_autonomy_score = { 
+					value = 50
+					localization = COG_found_the_parti_solidaire_africain
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = COG_parti_solidaire_africain
+		}
 
 	}
 
@@ -1217,11 +2353,32 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			IF = {
+				limit = {
+					is_subject = yes
+				}
+				add_autonomy_score = { 
+					value = 150
+					localization = COG_progressive_congolese_students
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = COG_parti_solidaire_africain
+				add_idea = COG_parti_solidaire_africain_2
+			}	
+		}
 
 	}
 
@@ -1240,11 +2397,30 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					is_subject = yes
+				}
+				add_autonomy_score = { 
+					value = 100
+					localization = COG_alliance_de_bakongo
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = COG_alliance_de_bakongo_idea
+
+		}
 
 	}
 
@@ -1263,11 +2439,39 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_stability = -0.05
+			add_war_support = -0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}	
+
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					is_subject = yes
+				}
+				add_autonomy_score = { 
+					value = 150 
+					localization = COG_manifeste_convience_africaine
+				}	
+			}
+		}
 
 	}
 
@@ -1286,11 +2490,51 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			768 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			custom_effect_tooltip = COG_intore_infantry_recruitment
+			hidden_effect = {
+				delete_unit_template_and_units = {
+					division_template = "Intore"
+					disband = yes #if yes, will refund equipment/manpower.
+				}
+
+				division_template = {
+					name = "Intore"		
+					division_names_group = BEL_INF_01
+					template_counter = 94
+					is_locked = no
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+					}
+					support = {
+					}
+				}
+
+				768 = { 
+					create_unit = {
+					    division = "name = \"Intore\" division_template = \"Intore\" start_experience_factor = 1 start_equipment_factor = 0.5"
+					    owner = ROOT
+					}
+				}
+			}
+
+		}
 
 	}
 
@@ -1309,11 +2553,26 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+			#custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = COG_robert_de_muelenaere
+
+		}
 
 	}
 
@@ -1332,11 +2591,26 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = yes
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_timed_idea = {
+				idea = COG_force_publique_mutinies
+				days = 180
+			}	
+			custom_effect_tooltip = COG_endorse_force_publique_mutinies_tt
+
+			hidden_effect = {
+				set_country_flag = COG_force_publique_mutinies_have_happened
+			}
+
+		}
 
 	}
 
@@ -1355,11 +2629,18 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			NOT = {
+				has_government = fascism
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			add_ideas = COG_unionism_idea
+		}
 
 	}
 	focus = {
@@ -1377,11 +2658,50 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			NOT = {
+				has_government = fascism
+			}
+			USA = {
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}	
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}	
+				}
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+
+			}	
+
+		}
 
 	}
 
@@ -1400,11 +2720,22 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_idea = COG_unionism_idea 
+			NOT = {
+				has_government = fascism
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = COG_unionism_idea
+				add_idea = COG_unionism_idea_2
+			}	
+		}
 
 	}
 
@@ -1423,11 +2754,22 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_idea = COG_unionism_idea_2
+			NOT = {
+				has_government = fascism
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = COG_unionism_idea_2
+				add_idea = COG_unionism_idea_3
+			}	
+		}
 
 	}
 
@@ -1448,11 +2790,31 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_the_simba_movement_tt
+			hidden_effect = {
+				set_country_flag = COG_utilized_the_simbas_flag
+			}
+
+		}
 
 	}
 
@@ -1473,11 +2835,35 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}	
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_approach_the_disfavored_mwami_tt
+			hidden_effect = {
+				set_country_flag = COG_approached_the_mwami_flag 
+			}
+
+		}
 
 	}
 
@@ -1492,15 +2878,51 @@ focus_tree = {
 
 		relative_position_id = COG_the_simba_movement
 
-		
+		#mutually_exclusive = { focus = COG_approach_the_disfavored_mwami }
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_timed_idea = {
+			 	idea = COG_currying_favors_with_katangese_separatists
+			 	days = 180
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					889 = {
+						has_dynamic_modifier = {
+							modifier = COG_katanga_separatism_modifier
+						}	
+					}	
+				}
+				889 = {
+					remove_dynamic_modifier = {
+						modifier = COG_katanga_separatism_modifier
+					}
+					hidden_effect = {
+						add_dynamic_modifier = {
+							modifier = COG_state_loyal_to_free_congo_modifier
+						}	
+					}
+						
+				}
+			}
+
+		}
 
 	}
 
@@ -1521,11 +2943,93 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+			AND = {
+				SOV = {
+					OR = {
+						NOT = {
+							has_government = communism
+						}
+						exists = no
+					}
+				}
+				GER = {
+					OR = {
+						NOT = {
+							has_government = fascism
+						}
+						exists = no
+					}
+				}
+			}
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = SOV
+				exists = yes
+				has_government = communism
+				NOT = {
+					has_subject = ROOT
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_popularity = {
+				ideology = SOV
+				popularity = 0.05
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			random_country = {
+				limit = {
+					original_tag = SOV
+					has_government = communism
+				}
+				country_event = {
+					id = ww_congo.29
+					hours = 12
+					random_hours = 24
+				}	
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = if_they_accept
+			custom_effect_tooltip = COG_when_the_war_for_independence_starts_tt
+			effect_tooltip = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}	
+				add_offsite_building = {
+					type = arms_factory
+					level = 1
+				}	
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 500
+					producer = SOV
+				}	
+				add_equipment_to_stockpile = { 
+					type = support_equipment
+					amount = 250
+					producer = SOV
+				}
+				add_equipment_to_stockpile = { 
+					type = artillery_equipment
+					amount = 150
+					producer = SOV
+				}
+				add_manpower = 15000
+			}
+
+		}
 
 	}
 
@@ -1546,11 +3050,99 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+			AND = {
+				SOV = {
+					OR = {
+						NOT = {
+							has_government = communism
+						}
+						exists = no
+					}
+				}
+				GER = {
+					OR = {
+						NOT = {
+							has_government = fascism
+						}
+						exists = no
+					}
+				}
+			}
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = GER
+				exists = yes
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+				NOT = {
+					has_subject = ROOT
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_popularity = {
+				ideology = GER
+				popularity = 0.05
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			random_country = {
+				limit = {
+					original_tag = GER
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+					}
+				}
+				country_event = {
+					id = ww_congo.29
+					hours = 12
+					random_hours = 24
+				}	
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = if_they_accept
+			custom_effect_tooltip = COG_when_the_war_for_independence_starts_tt
+			effect_tooltip = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}	
+				add_offsite_building = {
+					type = arms_factory
+					level = 1
+				}	
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 500
+					producer = GER
+				}	
+				add_equipment_to_stockpile = { 
+					type = support_equipment
+					amount = 250
+					producer = GER
+				}
+				add_equipment_to_stockpile = { 
+					type = artillery_equipment
+					amount = 150
+					producer = GER
+				}
+				add_manpower = 15000
+			}
+
+		}
 
 	}
 
@@ -1569,11 +3161,28 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_approach_the_barotse_litunga_tt
+			hidden_effect = {
+				set_country_flag = COG_approached_the_litunga_flag 
+			}
+
+		}
 
 	}
 
@@ -1592,11 +3201,22 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_ideas = COG_anti_colonialist_propaganda_idea
+			custom_effect_tooltip = COG_slander_the_colonial_authorities_tt
+
+		}
 
 	}
 
@@ -1615,11 +3235,643 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country = {
+				original_tag = BEL
+				has_subject = ROOT
+			}
+			has_civil_war = no
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			custom_effect_tooltip = COG_strike_while_the_iron_is_hot_tt
+			hidden_effect = {
+
+				set_global_flag = COG_uprising_happened_flag
+
+				drop_cosmetic_tag = yes
+
+				IF = {
+					limit = {
+						is_subject = yes
+					}
+					
+					OVERLORD = {
+
+						set_country_flag = was_congos_overlord_when_cw_started_flag
+
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = autonomy_free
+							end_wars  = yes
+							end_civil_wars = yes
+						}
+
+					}
+
+				}
+
+				# Starts the war for independence depending on different factors
+				set_global_flag = CONGO_independence_war_ongoing
+				start_civil_war = {
+					ideology = neutrality
+					size = 0.1
+					army_ratio = 0.1
+					navy_ratio = 1
+					air_ratio = 0.4
+					capital = 295
+					states = { 295 888 538 }
+					keep_all_characters = yes
+					PREV = {  # Original country
+			            COG_pierre_ryckmans = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_marcel_maquet = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_robert_de_muelenaere = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_paul_ermens = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_emile_janssens = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_armand_huyghe = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_leopold_de_koninck = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_charles_tombeur = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_fredrik_olsen = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_eugene_jungers = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_auguste_tilkens = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_auguste_gilliaert = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_joseph_beernaert = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_frederic_vandewalle = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            COG_joris_six = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            BEL_albert_de_vleeschauwer = { # Character
+			                set_nationality = PREV.PREV
+			                # Transfers to breakaway
+			            }
+			            set_cosmetic_tag = COG_congo_stanleyville
+			        }
+			        PREV.PREV = {
+			        	promote_character = {
+			        		character = COG_pierre_ryckmans 
+			        		ideology = oligarchism 
+			        	}
+			        	set_cosmetic_tag = COG_belgian_congo	
+			        		
+			        	add_dynamic_modifier = {
+			        		modifier = COG_belgian_congo_colonial_dynamic_modifier
+			        	}	
+			        	
+		        		division_template = {
+		        		    name = "Division loyale de Léopoldville"
+		        		    is_locked = yes
+		        		    division_names_group = BEL_INF_01
+		        		    regiments = {
+		        		        infantry = { x = 0 y = 0 } 
+		        		        infantry = { x = 0 y = 1 } 
+		        		        infantry = { x = 1 y = 0 }
+		        		        infantry = { x = 1 y = 1 }
+		        		    }
+		        		} 
+		        		random_state = {
+		        			limit = {
+		        				state = 295
+		        			}
+		        			create_unit = {
+		        			    division = "name = \"Première Division Loyale de Léopoldville\" division_template = \"Division loyale de Léopoldville\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+		        			    owner = PREV 
+		        			}
+		        			create_unit = {
+		        			    division = "name = \"Deuxième Division Loyale de Léopoldville\" division_template = \"Division loyale de Léopoldville\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+		        			    owner = PREV 
+		        			}
+		        			create_unit = {
+		        			    division = "name = \"Troisième Division Loyale de Léopoldville\" division_template = \"Division loyale de Léopoldville\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+		        			    owner = PREV 
+		        			}
+		        			create_unit = {
+		        			    division = "name = \"Quatrième Division Loyale de Léopoldville\" division_template = \"Division loyale de Léopoldville\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+		        			    owner = PREV 
+		        			}
+		        		}
+			        	
+			        }
+			        IF = {
+			        	limit = {
+			        		PREV = {
+			        			has_completed_focus = COG_endorse_force_publique_mutinies
+			        		}
+			        	}
+			        	IF = {
+			        		limit = {
+			        			PREV = {
+			        				has_idea = COG_force_publique_mutinies
+			        			}
+			        		}
+			        		PREV = {
+			        			remove_ideas = COG_force_publique_mutinies
+			        		}
+			        	}
+			        	PREV.PREV = {
+			        		add_timed_idea = {
+			        			idea = COG_force_publique_mutinies
+			        			days = 84
+			        		}
+			        	}
+			        }
+			        ELSE = {
+			        	PREV.PREV = {
+			        		add_dynamic_modifier = {
+			        			modifier = COG_force_publique
+			        		}
+			        	}
+			        }
+
+			        random_country = {
+			        	limit = {
+			        		has_country_flag = was_congos_overlord_when_cw_started_flag
+			        	}
+			        	set_autonomy = {
+			        	    target = PREV
+			        	    autonomous_state = autonomy_colony
+			        	    end_wars = no
+			        	    end_civil_wars = no
+			        	}
+			        }
+			        PREV.PREV = {
+			        	set_politics = {
+			        		ruling_party = neutrality
+			        		elections_allowed = no
+			        	}	
+			        	add_popularity = {
+			        		ideology = neutrality
+			        		popularity = 0.5
+			        	}	
+			        }
+
+				}
+
+				delete_unit_template_and_units = {
+					division_template = "Division de Katanga"
+					disband = yes #if yes, will refund equipment/manpower.
+				}
+
+				division_template = {
+					name = "Division de Katanga"		
+					division_names_group = BEL_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+					}
+					support = {
+					}
+				}
+
+				889 = { 
+					create_unit = {
+					    division = "name = \"Première Division de Katanga\" division_template = \"Division de Katanga\" start_experience_factor = 0.4 start_equipment_factor = 0.8"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Deuxième Division de Katanga\" division_template = \"Division de Katanga\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+					    owner = ROOT
+					}
+				}
+
+				IF = {
+					limit = {
+						ROOT = {
+							has_government = neutrality
+						}
+					}
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+					}	
+				}
+
+				set_capital = {
+					state = 718
+					remember_old_capital = no
+				}
+
+				set_party_name = {
+					ideology = neutrality
+					long_name = house_of_agua_rosada_long
+					name = house_of_agua_rosada
+				}
+
+				add_country_leader_role = {
+					character =  COG_pedro_vii_alfonso
+					promote_leader = yes
+					country_leader = {
+						ideology = despotism
+						expire = "1969.1.1.1"
+						traits = { manikongo_of_kongo } 
+					}
+				}
+
+				add_country_leader_role = {
+					character =  RWA_yuhi_musinga
+					promote_leader = yes
+					country_leader = {
+						ideology = fascism_ideology
+						expire = "1969.1.1.1"
+						traits = { the_rwandan_collaborstionist_king } 
+					}
+				}	
+
+				718 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}	
+				}
+
+				delete_unit_template_and_units = {
+					division_template = "Division de L'Armée Nationale Congolaise"
+					disband = yes #if yes, will refund equipment/manpower.
+				}
+
+				division_template = {
+					name = "Division de L'Armée Nationale Congolaise"		
+					division_names_group = BEL_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+					}
+					support = {
+					}
+				}
+
+				random_state = { 
+					limit = {
+						is_fully_controlled_by = ROOT
+						is_owned_by = ROOT
+						is_core_of = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Première Division de L'Armée Nationale Congolaise\" division_template = \"Division de L'Armée Nationale Congolaise\" start_experience_factor = 0.4 start_equipment_factor = 0.8"
+					    owner = ROOT
+					}
+					create_unit = {
+					    division = "name = \"Deuxième Division de L'Armée Nationale Congolaise\" division_template = \"Division de L'Armée Nationale Congolaise\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+					    owner = ROOT
+					}
+				}
+
+				IF = {
+					limit = {
+						has_global_flag = COG_secured_kasai_militias_flag
+					}
+
+					delete_unit_template_and_units = {
+						division_template = "Division de L'Armée Sud-Kasaï"
+						disband = yes #if yes, will refund equipment/manpower.
+					}
+
+					division_template = {
+						name = "Division de L'Armée Sud-Kasaï"		
+						division_names_group = BEL_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						support = {
+						}
+					}
+
+					888 = { 
+						create_unit = {
+						    division = "name = \"Première Division de L'Armée Sud-Kasaï\" division_template = \"Division de L'Armée Sud-Kasaï\" start_experience_factor = 0.4 start_equipment_factor = 0.8"
+						    owner = ROOT
+						}
+						create_unit = {
+						    division = "name = \"Deuxième Division de L'Armée Sud-Kasaï\" division_template = \"Division de L'Armée Sud-Kasaï\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+						    owner = ROOT
+						}
+					}
+				}
+
+				IF = {
+					limit = {
+						has_country_flag = COG_will_get_german_aid_flag
+					}
+
+					add_offsite_building = {
+						type = industrial_complex
+						level = 1
+					}	
+					add_offsite_building = {
+						type = arms_factory
+						level = 1
+					}	
+					add_equipment_to_stockpile = { 
+						type = infantry_equipment
+						amount = 500
+						producer = GER
+					}	
+					add_equipment_to_stockpile = { 
+						type = support_equipment
+						amount = 250
+						producer = GER
+					}
+					add_equipment_to_stockpile = { 
+						type = artillery_equipment
+						amount = 150
+						producer = GER
+					}
+					add_manpower = 15000
+					
+				}
+
+				IF = {
+					limit = {
+						has_country_flag = COG_will_get_soviet_aid_flag
+					}
+
+					add_offsite_building = {
+						type = industrial_complex
+						level = 1
+					}	
+					add_offsite_building = {
+						type = arms_factory
+						level = 1
+					}	
+					add_equipment_to_stockpile = { 
+						type = infantry_equipment
+						amount = 500
+						producer = SOV
+					}	
+					add_equipment_to_stockpile = { 
+						type = support_equipment
+						amount = 250
+						producer = SOV
+					}
+					add_equipment_to_stockpile = { 
+						type = artillery_equipment
+						amount = 150
+						producer = SOV
+					}
+					add_manpower = 15000
+					
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = COG_approach_the_barotse_litunga
+					}
+					981 = {
+						add_core_of = ROOT
+					}
+					delete_unit_template_and_units = {
+						division_template = "Barotse Warriors"
+						disband = yes #if yes, will refund equipment/manpower.
+					}
+
+					division_template = {
+						name = "Barotse Warriors"		
+						division_names_group = BEL_INF_01
+						template_counter = 38
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						support = {
+						}
+					}
+
+					889 = { 
+						create_unit = {
+						    division = "name = \"The Litunga's Guards\" division_template = \"Barotse Warriors\" start_experience_factor = 0.4 start_equipment_factor = 0.7"
+						    owner = ROOT
+						}
+						create_unit = {
+						    division = "name = \"Barotse Warriors 'Mongu'\" division_template = \"Barotse Warriors\" start_experience_factor = 0.3 start_equipment_factor = 0.4"
+						    owner = ROOT
+						}
+					}
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = COG_approach_the_disfavored_mwami
+					}
+
+					add_popularity = {
+						ideology = neutrality
+						popularity = 0.05
+					}	
+					
+					delete_unit_template_and_units = {
+						division_template = "Rwandan Warriors"
+						disband = yes #if yes, will refund equipment/manpower.
+					}
+
+					division_template = {
+						name = "Rwandan Warriors"		
+						division_names_group = BEL_INF_01
+						template_counter = 38
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+						}
+						support = {
+						}
+					}
+
+					890 = { 
+						create_unit = {
+						    division = "name = \"The Mwami's Guards\" division_template = \"Rwandan Warriors\" start_experience_factor = 0.4 start_equipment_factor = 0.7"
+						    owner = ROOT
+						}
+						create_unit = {
+						    division = "name = \"Rwandan Warriors 'Kigali'\" division_template = \"Rwandan Warriors\" start_experience_factor = 0.3 start_equipment_factor = 0.4"
+						    owner = ROOT
+						}
+					}
+				}
+
+				IF = {
+					limit = {
+						has_completed_focus = COG_the_simba_movement
+					}
+
+					add_popularity = {
+						ideology = communism
+						popularity = 0.05
+					}	
+					
+					delete_unit_template_and_units = {
+						division_template = "Barriéres"
+						disband = yes #if yes, will refund equipment/manpower.
+					}
+
+					division_template = {
+						name = "Barriéres"		
+						division_names_group = BEL_INF_01
+						template_counter = 24
+						regiments = {
+							irregular_infantry = { x = 0 y = 0 }
+							irregular_infantry = { x = 0 y = 1 }
+							irregular_infantry = { x = 0 y = 2 }
+							irregular_infantry = { x = 1 y = 0 }
+							irregular_infantry = { x = 1 y = 1 }
+						}
+						support = {
+						}
+					}
+
+					718 = { 
+						create_unit = {
+						    division = "name = \"Division du Barriéres\" division_template = \"Barriéres\" start_experience_factor = 0.4 start_equipment_factor = 0.7"
+						    owner = ROOT
+						}
+					}
+
+					delete_unit_template_and_units = {
+						division_template = "Jeunesse"
+						disband = yes #if yes, will refund equipment/manpower.
+					}
+
+					division_template = {
+						name = "Jeunesse"		
+						division_names_group = BEL_INF_01
+						template_counter = 14
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+							militia = { x = 1 y = 0 }
+							militia = { x = 1 y = 1 }
+						}
+						support = {
+						}
+					}
+
+					718 = { 
+						create_unit = {
+						    division = "name = \"Division du Jeunesse\" division_template = \"Jeunesse\" start_experience_factor = 0.4 start_equipment_factor = 0.7"
+						    owner = ROOT
+						}
+					}
+
+					delete_unit_template_and_units = {
+						division_template = "Inyenzi"
+						disband = yes #if yes, will refund equipment/manpower.
+					}
+
+					division_template = {
+						name = "Inyenzi"		
+						division_names_group = BEL_INF_01
+						template_counter = 0
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						support = {
+						}
+					}
+
+					768 = { 
+						create_unit = {
+						    division = "name = \"Division du Inyenzi\" division_template = \"Inyenzi\" start_experience_factor = 0.4 start_equipment_factor = 0.7"
+						    owner = ROOT
+						}
+					}
+				}
+
+			}
+
+			hidden_effect = {
+				IF = {
+					limit = {
+						has_completed_focus = COG_approach_the_barotse_litunga
+						BAR = {
+							has_character = BAR_yeta_iii
+							exists = no
+						}
+					}
+					BAR = {
+						BAR_yeta_iii = {
+							remove_country_leader_role = {
+							    ideology = despotism
+							}
+							add_field_marshal_role = {
+								skill = 3
+								attack_skill = 2
+								defense_skill = 2
+								planning_skill = 3
+								logistics_skill = 3
+								traits = { organizer }
+							}
+							set_nationality = ROOT
+						}
+					}
+				}
+			}
+
+		}
 
 
 	}
@@ -1631,7 +3883,7 @@ focus_tree = {
 		x = 2
 		y = 5
 
-		
+		#prerequisite = { focus = COG_governor_general_pierre_ryckmans }
 
 		relative_position_id = COG_governor_general_pierre_ryckmans
 
@@ -1639,11 +3891,65 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}	
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_war_support = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_autonomy_score = { 
+				value = 100 
+				localization = COG_increased_powers_for_colonial_governors
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					BEL = {
+						is_in_faction_with = ENG
+						ENG = {
+							has_war = yes
+							NOT = {
+								has_war_with = ROOT
+							}
+						}
+					}
+				}
+				add_timed_idea = {
+					idea = COG_nationals_going_to_the_british_commonwealth
+					days = 365
+				}	
+				custom_effect_tooltip = generic_skip_one_line_tt
+				SAF = {
+					air_experience = 35
+					army_experience = 10
+					navy_experience = 5
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				ENG = {
+					air_experience = 25
+					army_experience = 5
+					navy_experience = 5
+				}
+			}
+
+		}
 
 	}
 
@@ -1662,11 +3968,42 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+			NOT = {
+				has_country_leader = {
+					ruling_only = yes
+					character = COG_pierre_ryckmans
+				}
+			}
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+			has_country_leader = {
+				ruling_only = yes
+				character = COG_pierre_ryckmans
+			}	
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			COG_pierre_ryckmans = {
+				add_country_leader_trait = COG_emergency_powers_trait
+			}
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+		}
 
 	}
 
@@ -1685,11 +4022,87 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			country_event = {
+				id = ww_congo.25
+				hours = 0
+			}	
+			effect_tooltip = {
+				IF = {
+					limit = {
+						has_idea = BEL_albert_de_vleeschauwer
+					}
+					remove_ideas = BEL_albert_de_vleeschauwer
+				}
+
+				every_other_country = {
+					limit = {
+						is_in_faction_with = COG
+					}
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = medium_increase
+					}	
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				IF = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					add_equipment_subsidy = {
+						cic = 1000
+						equipment_type = small_plane_airframe
+						seller_trigger = is_allied_seller_trigger
+					}
+					add_equipment_subsidy = {
+						cic = 1000
+						equipment_type = infantry_equipment
+						seller_trigger = is_allied_seller_trigger
+					}
+					add_equipment_subsidy = {
+						cic = 1000
+						equipment_type = artillery_equipment
+						seller_trigger = is_allied_seller_trigger
+					}
+					add_equipment_subsidy = {
+						cic = 1000
+						equipment_type = motorized_equipment
+						seller_trigger = is_allied_seller_trigger
+					}
+				}
+				ELSE = {
+					add_equipment_to_stockpile = { 
+						type = infantry_equipment
+						amount = 250
+						producer = USA
+					}	
+					add_equipment_to_stockpile = { 
+						type = artillery_equipment
+						amount = 50
+						producer = USA
+					}	
+				}
+			}
+
+		}
 
 	}
 
@@ -1708,11 +4121,61 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = USA
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}	
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = COG_american_investments_for_a_transport_hub
+				days = 420
+			}	
+			
+
+		}
 
 	}
 
@@ -1731,11 +4194,36 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = ENG
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}	
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_timed_idea = {
+				idea = COG_in_the_sterling_area
+				days = 365
+			}	
+
+		}
 
 	}
 
@@ -1756,11 +4244,92 @@ focus_tree = {
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = ENG
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}	
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_political_power = 75
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_make_use_of_the_british_proposal_tt
+
+			IF = {
+				limit = {
+					BEL = {
+						NOT = {
+							has_completed_focus = BEL_king_of_the_belgians
+						}
+					}
+				}
+				custom_effect_tooltip = COG_make_use_of_the_british_proposal_in_negotations
+			}
+			ELSE_IF = {
+				limit = {
+					BEL = {
+						has_completed_focus = BEL_king_of_the_belgians
+					}
+				}
+				IF = {
+					limit = {
+						COG = {
+							is_subject_of = BEL
+						}
+					}
+					BEL = {
+						set_autonomy = {
+							target = COG
+							autonomy_state = autonomy_free
+							freedom_level = 1
+							end_wars  = no
+							end_civil_wars = no
+						}
+					}
+					ENG = { add_to_faction = ROOT }
+				}
+				IF = {
+					limit = {
+						538 = {
+							is_owned_and_controlled_by = ROOT
+						}
+					}
+					give_resource_rights = { receiver = ENG state = 538 }
+				}
+				IF = {
+					limit = {
+						890 = {
+							is_owned_and_controlled_by = ROOT
+						}
+					}
+					give_resource_rights = { receiver = ENG state = 890 }
+				}
+			}
+
+		}
 
 	}
 
@@ -1781,11 +4350,32 @@ focus_tree = {
 	
 		cost = 5
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+			BEL = {
+				has_completed_focus = BEL_unfit_to_reign
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_timed_idea = {
+				idea = COG_ready_for_action
+				days = 840
+			}	
+
+		}
 
 	}
 
@@ -1800,17 +4390,54 @@ focus_tree = {
 
 		relative_position_id = COG_prepare_for_offensive_action
 
-		
+		#mutually_exclusive = { focus = COG_make_use_of_the_british_proposal }
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}		
+				}
+				prioritize = { 889 295 } 
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = HUN_recon_airplane_focus
+
+		}
 
 	}
 
@@ -1825,17 +4452,54 @@ focus_tree = {
 
 		relative_position_id = COG_prepare_for_offensive_action
 
-		
+		#mutually_exclusive = { focus = COG_make_use_of_the_british_proposal }
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP FOCUS_FILTER_HISTORICAL }
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+			AND = {
+				is_in_faction_with = SAF
+				is_in_faction_with = ENG
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_tech_bonus = {
+				name = COG_raf_and_saaf_cooperation
+				bonus = 0.25
+				uses = 2
+				category = air_equipment
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = COG_raf_and_saaf_cooperation
+				cost_reduction = 0.3
+				uses = 2
+				category = air_doctrine
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			air_experience = 50
+
+		}
 
 	}
 
@@ -1850,17 +4514,62 @@ focus_tree = {
 
 		relative_position_id = COG_congo_and_the_war_in_europe
 
-		
+		#mutually_exclusive = { focus = COG_make_use_of_the_british_proposal }
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	
 		cost = 10
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BEL
+				OR = {
+					has_subject = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war = yes
+				has_civil_war = no
+			}
+			796 = {
+				OWNER = {
+					has_war = no
+					NOT = {
+						OR = {
+							tag = ROOT
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+					controls_state = 796
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			custom_effect_tooltip = COG_occupy_cabinda_tt
+			random_country = {
+				limit = {
+					owns_state = 796
+				}
+				country_event = { 
+					id = ww_congo.26
+					days = 1
+					random_days = 2
+				}	
+			} 
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			796 = {
+				transfer_state_to = ROOT
+				add_core_of = ROOT
+			}
+
+		}
 
 	}
 
@@ -1871,7 +4580,7 @@ focus_tree = {
 		x = 0
 		y = 7
 
-		
+		#prerequisite = { focus = COG_attempt_to_centralize_the_state focus = COG_allow_local_autonomy }
 
 		mutually_exclusive = { focus = COG_the_lion_roars focus = COG_assemble_a_regency_council }
 
@@ -1885,11 +4594,44 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+			has_government = democratic
+			NOT = {
+				has_country_leader = {
+					ruling_only = yes
+					character = COG_joseph_kasa_vubu
+				}	
+			}
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			democratic > 0.40
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					NOT = {
+						has_government = democratic
+					}
+				}
+				country_event = {
+					id = ww_congo.39
+					hours = 0
+				}
+				custom_effect_tooltip = COG_kasa_vubus_first_cabinet_1_tt
+			}
+			ELSE = {
+				country_event = {
+					id = ww_congo.40
+					hours = 0
+				}
+				custom_effect_tooltip = COG_kasa_vubus_first_cabinet_2_tt
+			} 	
+
+		}
 			
 
 	}
@@ -1913,11 +4655,65 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			every_state = {
+				limit = {
+					NOT = {
+						OR = {
+							is_owned_by = ROOT
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+						}
+					}
+					OR = {
+						state = 538
+						state = 718
+						state = 890
+						state = 888
+						state = 295
+						state = 772
+						state = 796
+						state = 540
+					}
+				}
+				add_claim_by = ROOT
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_declaration_of_congolese_unity_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						owns_state = 538
+						owns_state = 718
+						owns_state = 890
+						owns_state = 888
+						owns_state = 295
+						owns_state = 772
+						owns_state = 796
+						owns_state = 540
+					}
+				}
+				country_event = {
+					id = ww_congo.41
+					hours = 6
+					random_hours = 12
+				}
+			}
+
+		}
 			
 
 	}
@@ -1929,7 +4725,7 @@ focus_tree = {
 		x = 8
 		y = 7
 
-		
+		#prerequisite = { focus = COG_attempt_to_centralize_the_state focus = COG_allow_local_autonomy }
 
 		mutually_exclusive = { focus = COG_kasa_vubus_first_cabinet focus = COG_assemble_a_regency_council }
 
@@ -1943,11 +4739,38 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			communism > 0.40
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					NOT = {
+						has_government = communism
+					}
+				}
+				country_event = {
+					id = ww_congo.32
+					hours = 0
+				}
+				custom_effect_tooltip = COG_the_lion_roars_1_tt
+			}
+			ELSE = {
+				country_event = {
+					id = ww_congo.33
+					hours = 0
+				}
+				custom_effect_tooltip = COG_the_lion_roars_2_tt
+			}
+			 	
+
+		}
 			
 
 	}
@@ -1971,11 +4794,47 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					amount_research_slots < 5
+				}
+				add_research_slot = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}	
+				}
+				prioritize = { 718 890 }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_resource = {
+					type = rubber
+					amount = 8
+				}	
+			}	
+
+		}
 			
 
 	}
@@ -1999,11 +4858,41 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_timed_idea = {
+				idea = COG_ten_years_plan_idea
+				days = 3650
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}	
+				}
+				prioritize = { 295 718 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}
+
+		}
 			
 
 	}
@@ -2027,11 +4916,28 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+
+		}
 			
 
 	}
@@ -2055,17 +4961,28 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 			
 
 	}
 
 	focus = {
-		id = COG_mend_the_linguistic_divides 
+		id = COG_mend_the_linguistic_divides # Those being between Kikongo, Lingala, Swahili and Tshiluba (and hundreds more)
 		icon = GFX_focus_CONGO_regional_specialization				
 			
 		x = 0
@@ -2083,11 +5000,22 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 			
 
 	}
@@ -2111,11 +5039,18 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_war = yes
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_ideas = COG_women_in_the_military_idea
+
+		}
 			
 
 	}
@@ -2139,11 +5074,29 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = COG_peoples_republic_of_congo
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_stability = 0.1
+			add_war_support = 0.05
+
+			custom_effect_tooltip =  generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 
 	}
 
@@ -2156,7 +5109,7 @@ focus_tree = {
 
 		prerequisite = { focus = COG_the_lion_roars }
 
-		
+		#mutually_exclusive = { focus = COG_found_the_congolese_national_movement }
 
 		relative_position_id = COG_the_lion_roars
 
@@ -2168,11 +5121,18 @@ focus_tree = {
 			base = 5
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_ideas = COG_the_arme_populaire_de_liberation_idea
+
+		}
 
 	}
 
@@ -2185,7 +5145,7 @@ focus_tree = {
 
 		prerequisite = { focus = COG_the_lion_roars focus = COG_kasa_vubus_first_cabinet }
 
-		
+		#mutually_exclusive = { focus = COG_found_the_congolese_national_movement }
 
 		relative_position_id = COG_the_lion_roars
 
@@ -2197,11 +5157,48 @@ focus_tree = {
 			base = 5
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			every_other_country = {
+				limit = {
+					NOT = {
+						has_government = ROOT
+					}
+					is_major = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nationalzied_foreign_assets_op_modifier
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}	
+			}
+
+		}
 
 	}
 
@@ -2214,7 +5211,7 @@ focus_tree = {
 
 		prerequisite = { focus = COG_nationalization_of_foreign_industrial_assets }
 
-		
+		#mutually_exclusive = { focus = COG_found_the_congolese_national_movement }
 
 		relative_position_id = COG_nationalization_of_foreign_industrial_assets
 
@@ -2226,11 +5223,55 @@ focus_tree = {
 			base = 5
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			889 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					889 = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}	
+					}
+				}
+				889 = {
+					add_extra_state_shared_building_slots = 1 
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}	
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			889 = {
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}	
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+
+		}
 
 	}
 
@@ -2243,7 +5284,7 @@ focus_tree = {
 
 		prerequisite = { focus = COG_form_the_gecamines }
 
-		
+		#mutually_exclusive = { focus = COG_found_the_congolese_national_movement }
 
 		relative_position_id = COG_form_the_gecamines
 
@@ -2255,11 +5296,24 @@ focus_tree = {
 			base = 5
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_ideas = COG_societe_nationale_chemins_du_congo_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = COG_transports_et_ports
+
+		}
 
 	}
 
@@ -2284,11 +5338,18 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_ideas = COG_cooperating_with_the_congolese_churches
+
+		}
 
 	}
 
@@ -2313,11 +5374,18 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_ideas = COG_strict_anti_clericalism_idea
+
+		}
 
 	}
 
@@ -2344,11 +5412,22 @@ focus_tree = {
 			base = 15
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			country_event = {
+				id = ww_congo.34
+				hours = 0
+			}
+
+		}
 
 	}
 
@@ -2380,11 +5459,20 @@ focus_tree = {
 			base = 5
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			custom_effect_tooltip = ETH_freedom_at_gunpoint_tt
+			COG_setup_freedom_at_gunpoint_array = yes
+
+		}
 
 	}
 
@@ -2407,11 +5495,68 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			every_other_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = africa
+					}
+					is_subject = yes
+					NOT = {
+						is_subject_of = ROOT
+					}
+				}
+				add_autonomy_score = { 
+					value = 300
+					localization = COG_pan_african_congress
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			hidden_effect = {
+				set_country_flag = COG_anti_colonialism_flag
+			}
+
+			every_state = {
+				limit = {  
+					OR = {
+						is_on_continent = africa 
+						is_core_of = EGY
+					}	
+					has_resistance = yes
+					NOT = {
+						OR = {
+							is_owned_by = ROOT
+							is_controlled_by = ROOT
+						}
+					}
+				}
+				add_resistance = 10
+				add_compliance = -10
+			}
+
+			hidden_effect = {
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_on_continent = africa
+						}
+					}
+					news_event = { id =  ww_congo.35 }
+				}
+			}
+
+		}
 
 	}
 
@@ -2434,11 +5579,26 @@ focus_tree = {
 			base = 10 
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_political_power = 100
+			add_command_power = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = ETH_african_independence_tt
+			COG_set_up_african_resistance_states = yes # build array
+			
+
+		}
 
 	}
 
@@ -2461,11 +5621,31 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					amount_research_slots < 5
+				}
+				add_research_slot = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}	
+			add_political_power = 75
+
+		}
 
 	}
 
@@ -2490,11 +5670,22 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_government = communism
+			#has_country_leader = {
+			#	ruling_only = yes
+			#	character = GHA_kwame_nkrumah
+			#}	 
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_country_leader_trait = COG_great_leader_trait
+
+		}
 
 	}
 
@@ -2515,11 +5706,25 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_government = communism
+			is_in_faction = no
+			is_subject = no
+			any_country = {
+				original_tag = SOV
+				has_government = communism
+				is_faction_leader = yes
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			SOU = { country_event = generic.2 }
+
+		}
 
 	}
 
@@ -2542,11 +5747,27 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					amount_research_slots < 5
+				}
+				add_research_slot = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = COG_pooled_technical_know_how
+
+		}
 
 	}
 
@@ -2569,11 +5790,41 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+			IF = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				ETH = {
+					NOT = {
+						has_completed_focus = ETH_organization_of_african_unity
+					}
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			custom_effect_tooltip = ETH_organization_of_african_unity_tt
+			add_political_power = 150
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = organization_of_african_unity_member_idea
+			set_country_flag = org_of_african_unity_founder
+			news_event = {
+				id = bba_africa_news.3
+				hours = 2
+			}
+
+			hidden_effect = {
+				set_country_flag = org_founder_is_authoritarian_flag
+			}
+
+		}
 
 	}
 
@@ -2594,11 +5845,33 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			custom_effect_tooltip = ETH_mutual_defense_tt			
+			every_other_country = {
+				limit = {
+					is_subject = no
+					has_idea = organization_of_african_unity_member_idea
+				}
+				country_event = {
+					id = BBA_african_union_events.15
+					hours = 1
+				}			
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_dynamic_modifier = {
+				modifier = african_union_defense_agreement_modifier
+			}
+
+		}
 
 	}
 
@@ -2619,11 +5892,34 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			custom_effect_tooltip = ETH_african_central_bank_tt
+			every_other_country = {
+				limit = {
+					has_idea = organization_of_african_unity_member_idea
+				}
+				country_event = {
+					id = BBA_african_union_events.4
+					hours = 1
+				}	
+			}
+			set_african_central_bank_variables = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_dynamic_modifier = {
+				modifier = african_union_central_bank_modifier
+			}
+			custom_effect_tooltip = ETH_african_central_bank_2_tt	
+
+		}
 
 	}
 
@@ -2647,11 +5943,36 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+
+			add_political_power = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = ETH_executive_council_tt
+			every_other_country = {
+				limit = {
+					has_idea = organization_of_african_unity_member_idea				
+				}
+				country_event = {
+					id = BBA_african_union_events.7
+					hours = 1
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_dynamic_modifier = {
+				modifier = african_union_executive_council_modifier
+			}	
+
+		}
 
 	}
 
@@ -2674,11 +5995,34 @@ focus_tree = {
 			base = 10
 		}
 	
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			has_government = communism
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			set_cosmetic_tag = ETH_African_Union
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_political_power = 150
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			hidden_effect = {
+				set_country_flag = org_leader_is_african_union
+			}
+			custom_effect_tooltip = ETH_african_union_tt
+			news_event = {
+				id = bba_africa_news.4
+				hours = 2
+			}
+
+		}
 
 	}
 
@@ -2703,11 +6047,41 @@ focus_tree = {
 			base = 2
 		}
 	 
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			is_subject = no
+			communism < 0.4
+			democratic < 0.4
+			NOT = {
+				has_country_flag = COG_monarchism_didnt_work_out_flag
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_assemble_a_regency_council_2_tt
+			hidden_effect = {
+				country_event = {
+					id = ww_congo.44
+					days = 35
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_assemble_a_regency_council_tt
+			 	
+
+		}
 			
 
 	}
@@ -2731,11 +6105,39 @@ focus_tree = {
 			base = 15
 		}
 	 
-		bypass = {}
+		bypass = {
+		}
 	
-		available = {}
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = { 
+			
+			IF = {
+				limit = {
+					has_government = fascism
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.05
+				}	
+			}
+			ELSE = {
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.05
+				}
+			}	
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_research_slot = 1
+
+		}
 			
 
 	}
@@ -2762,22 +6164,49 @@ focus_tree = {
 			has_country_flag = COG_kingdom_of_kongo_flag
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_political_power = 75
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			796 = {
+				add_claim_by = ROOT
+			}
+			540 = {
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = COG_kingdom_of_kongo
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 	}
 
 	focus = {
 		id = COG_the_nyim_of_kuba_focus
 		icon = GFX_focus_COG_the_nyim_of_kuba
 		prerequisite = { focus = COG_assemble_a_regency_council }
-		
+		#mutually_exclusive = { focus = wuw_HUN_government_of_national_unity }
 		x = 0
 		y = 2
 		relative_position_id = COG_assemble_a_regency_council
@@ -2795,22 +6224,40 @@ focus_tree = {
 			has_country_flag = COG_kingdom_of_kuba_flag
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_political_power = 75
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = COG_kingdom_of_kuba
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 	}
 
 	focus = {
 		id = COG_the_ma_loango_focus
 		icon = GFX_focus_COG_the_ma_loango
 		prerequisite = { focus = COG_assemble_a_regency_council }
-		
+		#mutually_exclusive = { focus = wuw_HUN_government_of_national_unity }
 		x = 0
 		y = 2
 		relative_position_id = COG_assemble_a_regency_council
@@ -2828,22 +6275,46 @@ focus_tree = {
 			has_country_flag = COG_kingdom_of_loango_flag
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_political_power = 75
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			772 = {
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = COG_kingdom_of_loango
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 	}
 
 	focus = {
 		id = COG_the_mwami_of_burundi_focus
 		icon = GFX_focus_COG_the_mwami_of_burundi
 		prerequisite = { focus = COG_assemble_a_regency_council }
-		
+		#mutually_exclusive = { focus = wuw_HUN_government_of_national_unity }
 		x = 0
 		y = 2
 		relative_position_id = COG_assemble_a_regency_council
@@ -2861,22 +6332,46 @@ focus_tree = {
 			has_country_flag = COG_kingdom_of_burundi_flag
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_political_power = 75
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			769 = {
+				add_core_of = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = COG_kingdom_of_burundi
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 	}
 
 	focus = {
 		id = COG_the_umwami_of_rwanda_focus
 		icon = GFX_focus_COG_the_umwami_of_rwanda
 		prerequisite = { focus = COG_assemble_a_regency_council }
-		
+		#mutually_exclusive = { focus = wuw_HUN_government_of_national_unity }
 		x = 0
 		y = 2
 		relative_position_id = COG_assemble_a_regency_council
@@ -2894,22 +6389,46 @@ focus_tree = {
 			has_country_flag = COG_kingdom_of_rwanda_flag
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_political_power = 75
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			768 = {
+				add_core_of = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = COG_kingdom_of_rwanda
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 	}
 
 	focus = {
 		id = COG_the_pro_german_mwami_focus
 		icon = GFX_focus_ger_oppose_hitler
 		prerequisite = { focus = COG_assemble_a_regency_council }
-		
+		#mutually_exclusive = { focus = wuw_HUN_government_of_national_unity }
 		x = 0
 		y = 2
 		relative_position_id = COG_assemble_a_regency_council
@@ -2927,15 +6446,48 @@ focus_tree = {
 			has_country_flag = COG_kingdom_of_mittelafrika_flag
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_political_power = 75
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			768 = {
+				add_core_of = ROOT
+				remove_dynamic_modifier = {
+					modifier = COG_rwandan_separatism_modifier
+				}		
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			769 = {
+				add_core_of = ROOT	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = COG_mittelafrikan_kingdom
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 	}
 
 	focus = {
@@ -2955,15 +6507,184 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					NOT = {
+						has_rule = can_send_volunteers	
+					}
+				}
+				set_rule = { 
+					can_send_volunteers = yes
+				}	
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			IF = {
+				limit = {
+					NOT = {
+						has_idea = COG_peacekeeping_forces_idea
+					}
+				}
+				add_ideas = COG_kongo_volunteer_force_idea
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+			}
+			
+			540 = {
+				add_core_of = ROOT
+			}
+			796 = {
+				add_core_of = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					ANG = {
+						exists = no
+					}
+					any_country = {
+						owns_state = 540
+						owns_state = 796
+						owns_state = 892
+						owns_state = 891
+					}
+				}
+				ANG = {
+					540 = {
+						transfer_state_to = PREV
+					}
+					796 = {
+						transfer_state_to = PREV
+					}
+					set_country_flag = COG_to_be_annexed_angola_flag
+					hidden_effect = {
+						delete_unit_template_and_units = {
+							division_template = "Kongo Separatist Militias"
+							disband = yes #if yes, will refund equipment/manpower.
+						}
+
+						division_template = {
+							name = "Kongo Separatist Militias"		
+							division_names_group = BEL_INF_01
+							template_counter = 54
+							is_locked = no
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+							}
+							support = {
+							}
+						}
+
+						540 = { 
+							create_unit = {
+							    division = "name = \"First Kongo Separatist Militia\" division_template = \"Kongo Separatist Militias\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+							    owner = ANG
+							}
+							create_unit = {
+							    division = "name = \"Second Kongo Separatist Militia\" division_template = \"Kongo Separatist Militias\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+							    owner = ANG
+							}
+						}
+						796 = {
+							create_unit = {
+							    division = "name = \"Third Kongo Separatist Militia\" division_template = \"Kongo Separatist Militias\" start_experience_factor = 0.2 start_equipment_factor = 0.5"
+							    owner = ANG
+							}
+						}
+					}
+				}
+				892 = {
+					OWNER = {
+						declare_war_on = {
+							target = ANG
+							type = annex_everything
+						}	
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					ANG = {
+						exists = yes
+						NOT = {
+							has_government = neutrality
+						}
+						owns_state = 540
+						owns_state = 892
+						owns_state = 891
+					}
+				}
+				ANG = {
+					start_civil_war = {
+					    ideology = neutrality
+					    size = 0.5
+					    capital = 540
+					    states = {
+					       540 796
+					    }
+					    keep_political_leader = yes
+					    keep_political_party_members = yes
+					    PREV.PREV = {
+					    	set_country_flag = COG_to_be_annexed_angola_flag
+					    }
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					ANG = {
+						exists = yes
+						has_government = neutrality
+						owns_state = 540
+						owns_state = 892
+						owns_state = 891
+					}
+				}
+				ANG = {
+					start_civil_war = {
+					    ideology = democratic
+					    size = 0.5
+					    capital = 540
+					    states = {
+					       540 796
+					    }
+					    keep_political_leader = yes
+					    keep_political_party_members = yes
+					    PREV.PREV = { 
+					    	set_country_flag = COG_to_be_annexed_angola_flag
+					    }
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_uniao_dos_povos_do_norte_de_angola_tt
+			set_country_flag = COG_time_until_annex_angola_rebellion
+
+		}
 	}
 
 	focus = {
@@ -2983,14 +6704,23 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_bundu_dia_kongo_idea
+
+		}
 	}
 
 	focus = {
@@ -3010,14 +6740,111 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_devout_catholic_kingdom_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					AND = {
+						has_dlc = "By Blood Alone"
+						ITA = {
+							exists = yes 
+							has_completed_focus = ITA_seek_papal_support
+						}
+					}
+				}
+				ITA = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = embraced_catholicism
+					}
+				}
+			}
+
+			IF = {
+				limit = {
+					AND = {
+						has_dlc = "La Resistance"
+						POR = {
+							has_completed_focus = POR_concordat_with_the_holy_see
+						}
+					}
+				}
+				POR = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = embraced_catholicism
+					}
+				}
+			}
+
+			IF = {
+				limit = {
+					AND = {
+						has_dlc = "La Resistance"
+						SPR = {
+							has_completed_focus = SPA_defenders_of_catholicism
+						}
+					}
+				}
+				SPR = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = embraced_catholicism
+					}
+				} 
+			}
+
+			IF = {
+				limit = {
+					AND = {
+						has_dlc = "Trial of Allegiance"
+						CHL = {
+							has_completed_focus = CHL_repeal_the_separation_of_church_an_state
+						}
+					}
+				}
+				CHL = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = embraced_catholicism
+					}
+				} 
+			}
+
+			IF = {
+				limit = {
+					AND = {
+						has_dlc = "Gotterdammerung"
+						HUN = {
+							has_completed_focus = wuw_HUN_a_roman_catholic_state
+						}
+					}
+				}
+				HUN = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = embraced_catholicism
+					}
+				} 
+			}
+
+		}
 	}
 
 	focus = {
@@ -3040,14 +6867,27 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_royal_council_of_kongo_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			COG_vast_uncentralized_nation_modifier_level_down = yes
+
+		}
 	}
 	focus = {
 		id = COG_bakongo_military_might
@@ -3069,14 +6909,30 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {} 
+		bypass = {
+
+		} 
 
 		cancel_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_war_support = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = COG_royal_council_of_kongo_idea
+				add_idea = COG_royal_council_of_kongo_2_idea
+			}	
+
+		}
 	}
 
 	focus = {
@@ -3098,15 +6954,42 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = COG_traditional_kuba_textiles
+
+		}
 	}
 
 	focus = {
@@ -3128,15 +7011,23 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_traditional_masks_and_armor_idea
+
+		}
 	}
 
 	focus = {
@@ -3158,15 +7049,23 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_children_of_woot_idea
+
+		}
 	}
 
 	focus = {
@@ -3190,15 +7089,25 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			COG_mbop_mabiinc_mambeky = {
+				add_country_leader_trait = COG_god_upon_the_earth_trait
+			}
+
+		}
 	}
 
 	focus = {
@@ -3220,15 +7129,42 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					NOT = {
+						has_idea = COG_children_of_woot_idea_conglomeration
+					}
+				}
+				swap_ideas = {
+					remove_idea = COG_children_of_woot_idea
+					add_idea = COG_children_of_woot_idea_trade
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					has_idea = COG_children_of_woot_idea_conglomeration
+				}
+				swap_ideas = {
+					remove_idea = COG_children_of_woot_idea_conglomeration
+					add_idea = COG_children_of_woot_idea_trade_conglomeration
+				}	
+			}	
+
+		}
 	}
 
 	focus = {
@@ -3250,15 +7186,43 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					NOT = {
+						has_idea = COG_children_of_woot_idea_trade
+					}
+				}
+				swap_ideas = {
+					remove_idea = COG_children_of_woot_idea
+					add_idea = COG_children_of_woot_idea_conglomeration
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					has_idea = COG_children_of_woot_idea_trade
+				}
+				swap_ideas = {
+					remove_idea = COG_children_of_woot_idea_trade
+					add_idea = COG_children_of_woot_idea_trade_conglomeration
+				}	
+			}
+			
+
+		}
 	}
 
 	focus = {
@@ -3280,15 +7244,34 @@ focus_tree = {
 			factor = 25
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+			772 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			772 = {
+				OWNER = {
+					country_event = {
+						id = ww_congo.10
+						days = 1
+						random_days = 2
+					}
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -3312,15 +7295,24 @@ focus_tree = {
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			COG_moe_poaty_iii = {
+				add_country_leader_trait = COG_popular_brooding_diviner_trait
+			}
+
+		}
 	}
 
 	focus = {
@@ -3344,15 +7336,22 @@ focus_tree = {
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = { 
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_loango_royal_council
+
+		}
 	}
 
 	focus = {
@@ -3374,15 +7373,52 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+			796 = { 
+				OWNER = {
+					NOT = {
+						OR = {
+							tag = ROOT
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+					controls_state = 796
+				}
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+		}
  
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			custom_effect_tooltip = COG_occupy_cabinda_tt
+			random_country = {
+				limit = {
+					owns_state = 796
+				}
+				country_event = { 
+					id = ww_congo.26
+					days = 1
+					random_days = 2
+				}	
+			} 
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			796 = {
+				transfer_state_to = ROOT
+				add_core_of = ROOT
+			}
+
+		}
 	}
 
 	focus = {
@@ -3404,15 +7440,22 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_bouvandji
+
+		}
 	}
 
 	focus = {
@@ -3434,15 +7477,84 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			custom_trigger_tooltip = {
+				tooltip = CONGO_jungle_industry_available_tt
+				OR = {
+					538 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					718 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					890 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					888 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					889 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					295 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					772 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					539 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					773 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+					297 = {
+						state_is_fully_controlled_by_ROOT_or_subject = yes
+					}
+				}
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			random_controlled_state = {
+				limit = {
+					OR = {
+						AND = {
+							is_core_of = ROOT
+							is_owned_by = ROOT
+							is_fully_controlled_by = ROOT
+						}
+					}
+					OR = {
+						state = 538
+						state = 718
+						state = 890
+						state = 888
+						state = 889
+						state = 295
+						state = 772
+						state = 539
+						state = 773
+						state = 297
+					}
+				}
+				prioritize = { 772 }
+				add_resource = {
+					type = rubber
+					amount = 22
+				}	
+			}
+
+		}
 	}
 
 	focus = {
@@ -3466,15 +7578,56 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+			OR = {
+				is_faction_leader = yes
+				is_in_faction = no
+			}
+			FRA = {
+				exists = yes
+				is_subject = no
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					FRA = {
+						is_faction_leader = yes
+					}
+				}
+				FRA = { country_event = generic.2 }
+			}
+			ELSE_IF = {
+				limit = {
+					FRA = {	
+						is_in_faction = no
+					}
+				}
+				FRA = {
+					country_event = {
+						id = ww_congo.50
+						hours = 12
+						random_hours = 24
+					}	
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -3498,15 +7651,56 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+			OR = {
+				is_faction_leader = yes
+				is_in_faction = no
+			}
+			POR = {
+				exists = yes
+				is_subject = no
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					POR = {
+						is_faction_leader = yes
+					}
+				}
+				POR = { country_event = generic.2 }
+			}
+			ELSE_IF = {
+				limit = {
+					POR = {	
+						is_in_faction = no
+					}
+				}
+				POR = {
+					country_event = {
+						id = ww_congo.50
+						hours = 12
+						random_hours = 24
+					}	
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -3528,11 +7722,30 @@ focus_tree = {
 			factor = 25
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+			769 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			769 = {
+				OWNER = {
+					country_event = {
+						id = ww_congo.53
+						days = 1
+						random_days = 2
+					}
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -3556,11 +7769,21 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+		}
 		
-		bypass = {}
+		bypass = {
+			
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			BRD_mwambutsa_iv = {
+				add_country_leader_trait = COG_embodiment_of_god_trait
+			}
+
+		}
 	}
 
 	focus = {
@@ -3582,11 +7805,44 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+			
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_war_support = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					NOT = {
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							is_owned_by = ROOT
+						}
+					}
+					OR = {
+						state = 769
+						state = 768
+						state = 546
+						state = 890
+						state = 548
+						state = 904
+						state = 771
+					}
+				}
+				add_claim_by = ROOT
+			}
+
+		}
 	}
 
 	focus = {
@@ -3607,13 +7863,65 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER }
 		
-		bypass = {}
+		bypass = {
+			
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			every_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT
+					}
+					OR = {
+						state = 769
+						state = 768
+						state = 546
+						state = 890
+						state = 548
+						state = 904
+						state = 771
+					}
+				}
+				add_core_of = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+					OR = {
+						state = 769
+						state = 768
+						state = 546
+						state = 890
+						state = 548
+						state = 904
+						state = 771
+					}
+				}
+				OWNER = {
+					ROOT = {
+						create_wargoal = {
+							type = take_core_state
+							target = PREV
+						}	
+					}
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -3635,11 +7943,42 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+			
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			every_state = {
+				limit = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+					OR = {
+						state = 770
+						state = 897
+					}
+				}
+				OWNER = {
+					ROOT = {
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+						}	
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_south_to_lake_malawi_tt
+
+		}
 	}
 
 	focus = {
@@ -3661,11 +8000,30 @@ focus_tree = {
 			factor = 25
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+			768 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			768 = {
+				OWNER = {
+					country_event = {
+						id = ww_congo.56
+						days = 1
+						random_days = 2
+					}
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -3685,9 +8043,20 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_command_power = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = COG_central_military_structure
+
+		}
 	}
 
 	focus = {
@@ -3707,9 +8076,41 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			every_state = {
+				limit = {
+					NOT = {
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							is_owned_by = ROOT
+						}
+					}
+					OR = {
+						state = 768
+						state = 769
+						state = 548
+						state = 546
+						state = 904
+						state = 547
+						state = 905
+						state = 903
+					}
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = COG_expansionism
+
+		}
 	}
 
 	focus = {
@@ -3733,9 +8134,21 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			every_army_leader = {
+				add_skill_level = 1
+				add_planning = 1
+				add_attack = 1
+				add_logistics = 1
+			}
+
+		}
 	}
 
 	focus = {
@@ -3759,9 +8172,16 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_cattle_chiefs
+
+		}
 	}
 
 	focus = {
@@ -3783,9 +8203,38 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = COG_cattle_chiefs
+				add_idea = COG_cattle_chiefs_2
+			}	
+
+		}
 	}
 
 	focus = {
@@ -3805,9 +8254,16 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_tutsi_warrior_training_idea
+
+		}
 	}
 
 	focus = {
@@ -3829,9 +8285,23 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_war_support = 0.15
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = {
+				decision = form_east_africa
+				show_effect_tooltip = yes
+			}	
+
+		}
 	}
 
 	focus = {
@@ -3851,15 +8321,39 @@ focus_tree = {
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			GER = {
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}	
+			}
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			GER = {
+				country_event = {
+					id = ww_congo.59
+					hours = 12
+					random_hours = 24
+				}	
+			}
+
+		}
 	}
 
 	focus = {
@@ -3879,15 +8373,78 @@ focus_tree = {
 			factor = 5
 		}
 
-		available = {}
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+			is_subject = no
+			GER = {
+				NOT = {
+					has_completed_focus = GER_monarchist_sentiment
+				}
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_war_support = 0.1
+			add_manpower = 20000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_invite_german_kasierist_exiles_tt
+			hidden_effect = {
+				every_possible_country = {
+					limit = {
+						has_character = GER_carl_friedrich_goerdeler
+					}
+					set_nationality = {
+					    target_country = ROOT
+					    character = GER_carl_friedrich_goerdeler
+					}	
+				}
+				IF = {
+					limit = {
+						NOT = {
+							has_global_flag = von_lettow_is_in_a_country
+						}
+					}
+					every_possible_country = {
+						limit = {
+							has_character = GER_paul_von_lettow_vorbeck
+						}
+						set_nationality = {
+						    target_country = ROOT
+						    character = GER_paul_von_lettow_vorbeck
+						}	
+					}
+				}
+				
+				every_possible_country = {
+					limit = {
+						has_character = GER_alfred_hugenberg
+					}
+					set_nationality = {
+					    target_country = ROOT
+					    character = GER_alfred_hugenberg
+					}	
+				}
+			}
+			
+			hidden_effect = {
+				set_global_flag = von_lettow_is_in_a_country
+			}
+
+		}
 	}
 
 	focus = {
@@ -3909,15 +8466,30 @@ focus_tree = {
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = COG_german_colonial_administration
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = COG_colonial_administration_tt
+
+		}
 	}
 
 	focus = {
@@ -3937,9 +8509,16 @@ focus_tree = {
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
@@ -3947,7 +8526,14 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+
+			swap_ideas = {
+				remove_idea = COG_german_colonial_administration
+				add_idea = COG_prussia_of_africa_idea
+			}	
+
+		}
 	}
 
 	focus = {
@@ -3969,15 +8555,104 @@ focus_tree = {
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			every_state = {
+				limit = {
+					OR = {
+						region = 272
+						region = 183
+						region = 184
+						region = 140
+					}
+					NOT = {
+						OR = {
+							is_owned_by = ROOT
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+						}
+					}
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					is_subject = no
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							OR = {
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						any_owned_state = {
+							OR = {
+								region = 272
+								region = 183
+								region = 184
+								region = 140
+							}
+						}
+					}
+					ROOT = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+						}
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					is_subject_of = GER
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							OR = {
+								is_in_faction_with = GER
+								is_subject_of = GER
+							}
+						}
+						any_owned_state = {
+							OR = {
+								region = 272
+								region = 183
+								region = 184
+								region = 140
+							}
+						}
+					}
+					GER = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+						}
+					}
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -3999,15 +8674,89 @@ focus_tree = {
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			every_state = {
+				limit = {
+					region = 217
+					NOT = {
+						OR = {
+							is_owned_by = ROOT
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+						}
+					}
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					is_subject = no
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							OR = {
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						any_owned_state = {
+							region = 217
+						}
+					}
+					ROOT = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+						}
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					is_subject_of = GER
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							OR = {
+								is_in_faction_with = GER
+								is_subject_of = GER
+							}
+						}
+						any_owned_state = {
+							region = 217
+						}
+					}
+					GER = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+						}
+					}
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -4029,15 +8778,99 @@ focus_tree = {
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			every_state = {
+				limit = {
+					OR = {
+						region = 223
+						region = 215
+					}
+					NOT = {
+						OR = {
+							is_owned_by = ROOT
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+						}
+					}
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					is_subject = no
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							OR = {
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						any_owned_state = {
+							OR = {
+								region = 223
+								region = 215
+							}
+						}
+					}
+					ROOT = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+						}
+					}
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					is_subject_of = GER
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							OR = {
+								is_in_faction_with = GER
+								is_subject_of = GER
+							}
+						}
+						any_owned_state = {
+							OR = {
+								region = 223
+								region = 215
+							}
+						}
+					}
+					GER = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+						}
+					}
+				}
+			}
+
+		}
 	}
 
 

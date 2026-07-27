@@ -27,14 +27,26 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			has_country_leader = { ruling_only = yes character = FRA_philippe_petain }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_country_leader_trait = emergency_powers
+			if = {
+				limit = {
+					has_idea = FRA_disjointed_government
+				}
+				remove_ideas = { FRA_disjointed_government }
+			}
+		}
 	}
 	focus = {
 		id = VIC_the_national_revolution
@@ -54,14 +66,20 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 	focus = {
 		id = VIC_long_term_economic_planning
@@ -81,14 +99,25 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = VIC_long_term_economic_planning
+				category = industry
+				uses = 2
+				bonus = 1
+			}
+		}
 	}
 	focus = {
 		id = VIC_aid_small_businesses
@@ -108,14 +137,36 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = VIC_venerate_the_craftsman
@@ -135,14 +186,20 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { FRA_venerate_the_craftsman }
+		}
 	}
 	focus = {
 		id = VIC_down_with_marianne
@@ -162,13 +219,22 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_timed_idea = { 
+				idea = FRA_down_with_marianne 
+				days = 730
+			}
+		}
 	}
 	focus = {
 		id = VIC_up_with_jean_darc
@@ -188,13 +254,22 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_timed_idea = { 
+				idea = FRA_up_with_jean_darc 
+				days = 730
+			}
+		}
 	}
 	focus = {
 		id = VIC_celebrate_motherhood
@@ -214,14 +289,20 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.05
+		}
 	}
 	focus = {
 		id = VIC_prosecute_the_losers
@@ -241,14 +322,20 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.05
+		}
 	}
 	focus = {
 		id = VIC_concessions_to_the_germans
@@ -268,14 +355,22 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			16 = {
+				is_controlled_by = GER
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_FRA_OCCUPATION_COST }
-		completion_reward = {}
+		completion_reward = {
+			unlock_decision_category_tooltip = VIC_concessions_to_the_germans
+		}
 	}
 	focus = {
 		id = VIC_mandatory_work_service
@@ -295,14 +390,21 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_FRA_OCCUPATION_COST }
-		completion_reward = {}
+		completion_reward = {
+			reduce_occupation_cost_effect = yes
+			add_ideas = { FRA_mandatory_work_service }
+		}
 	}
 	focus = {
 		id = VIC_a_nation_reborn
@@ -328,14 +430,20 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.1
+		}
 	}
 	focus = {
 		id = VIC_end_the_occupation
@@ -362,13 +470,40 @@
 				factor = 0
 			}
 		}
-		available = {}
+		available = {
+			16 = {
+				NOT = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			set_rule = {
+				can_join_factions = yes
+				can_not_declare_war = no
+				can_create_factions = yes
+			}
+			remove_occupation_cost_effect = yes
+			if = {
+				limit = {
+					has_idea = VIC_produce_aircraft_parts
+				}
+				remove_ideas = VIC_produce_aircraft_parts
+			}
+			GER = { 
+				country_event = lar_end_the_occupation.1 
+				if = { limit = { has_idea = VIC_aircraft_parts }
+					remove_ideas = VIC_aircraft_parts
+				}
+			}
+		}
 	}
 	focus = {
 		id = VIC_the_national_bureau_of_statistics
@@ -388,13 +523,19 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { FRA_national_bureau_of_statistics }
+		}
 	}
 
 	focus = {
@@ -415,13 +556,20 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { FRA_legionary_service_order }
+			hidden_effect = { add_named_threat = { threat = 10 name = VIC_the_legionary_service_order } }
+		}
 	}
 	focus = {
 		id = VIC_form_the_milice
@@ -441,13 +589,22 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_legionary_service_order
+				add_idea = FRA_milice
+			}
+		}
 	}
 	focus = {
 		id = VIC_anti_bolshevist_volunteers
@@ -467,13 +624,30 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			16 = { # Controller of paris is in a war against any communist major
+				CONTROLLER = {
+					NOT = {
+						tag = ROOT
+					}
+					NOT = { has_war_with = ROOT }
+					any_enemy_country = {
+						is_major = yes
+						has_government = communism
+					}
+				}
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { FRA_anti_bolshevist_volunteers }
+		}
 	}
 	focus = {
 		id = VIC_rebuild_the_military
@@ -493,13 +667,19 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+			num_of_military_factories > 34
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { FRA_rebuild_the_military }
+		}
 	}
 	focus = {
 		id = VIC_finish_the_naval_buildup
@@ -519,14 +699,37 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			navy_experience = 50
+			random_owned_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_core_of = ROOT
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = VIC_hidden_materials
@@ -546,13 +749,19 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { FRA_hidden_materials }
+		}
 	}
 	focus = {
 		id = VIC_analyze_our_defeat
@@ -572,14 +781,25 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = VIC_analyze_our_defeat
+				category = land_doctrine
+				uses = 2
+				cost_reduction = 0.5
+			}
+		}
 	}
 	focus = {
 		id = VIC_modernize_the_airforce
@@ -599,13 +819,26 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = VIC_modernize_the_airforce
+				category = light_fighter
+				category = cas_bomber
+				category = tactical_bomber
+				bonus = 2
+				uses = 2
+			}
+		}
 	}
 	focus = {
 		id = VIC_learn_from_the_enemy
@@ -625,13 +858,20 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_to_tech_sharing_group = VIC_learn_from_the_enemy
+			GER = { add_to_tech_sharing_group = VIC_learn_from_the_enemy }
+		}
 	}
 	focus = {
 		id = VIC_buy_from_the_enemy
@@ -652,13 +892,19 @@
 		ai_will_do = {
 			factor = 1
 		}
-		available = {}
+		available = {
+			
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { FRA_buy_from_the_enemy }
+		}
 	}
 
 }

@@ -296,6 +296,9 @@ political_actions = {
 		}
 	
 		available = {
+			611 = {
+				is_owned_and_controlled_by = ROOT
+			}
 			NOT = {
 				is_ally_with = CHI
 			}
@@ -391,6 +394,9 @@ political_actions = {
 		}
 	
 		available = {
+			1039 = {
+				is_owned_and_controlled_by = ROOT
+			}
 			capital_scope = {
 				NOT = {
 					state = 1039 # Kalgan 

@@ -1,0 +1,181 @@
+# =============================================================================
+# WSH AND CHG DEBUG SEAT PRESETS
+# =============================================================================
+# These effects bypass production apportionment intentionally.
+# They assign exact seat totals and rebuild only the visual display state.
+# Do not call WSH_recalculate_all_seats or CHG_calculate_council_seats here.
+# =============================================================================
+
+WSH_debug_reset_election_system = {
+	init_universal_election_system = yes
+}
+
+WSH_debug_refresh_forced_seats = {
+	WSH_refresh_legislature_display = yes
+	WSH_update_legislative_governance = yes
+}
+
+WSH_debug_seats_balanced = {
+	# Senate total: 38
+	set_variable = { wsh_conservative_senate_seats = 6 }
+	set_variable = { wsh_agrarian_senate_seats = 6 }
+	set_variable = { wsh_liberal_senate_seats = 6 }
+	set_variable = { wsh_socialist_senate_seats = 5 }
+	set_variable = { wsh_communist_senate_seats = 5 }
+	set_variable = { wsh_fascist_senate_seats = 5 }
+	set_variable = { wsh_nonaligned_senate_seats = 5 }
+
+	# House total: 98
+	set_variable = { wsh_conservative_house_seats = 14 }
+	set_variable = { wsh_agrarian_house_seats = 14 }
+	set_variable = { wsh_liberal_house_seats = 14 }
+	set_variable = { wsh_socialist_house_seats = 14 }
+	set_variable = { wsh_communist_house_seats = 14 }
+	set_variable = { wsh_fascist_house_seats = 14 }
+	set_variable = { wsh_nonaligned_house_seats = 14 }
+
+	WSH_debug_refresh_forced_seats = yes
+}
+
+WSH_debug_seats_conservative_majority = {
+	# Senate total: 38
+	set_variable = { wsh_conservative_senate_seats = 24 }
+	set_variable = { wsh_agrarian_senate_seats = 5 }
+	set_variable = { wsh_liberal_senate_seats = 3 }
+	set_variable = { wsh_socialist_senate_seats = 2 }
+	set_variable = { wsh_communist_senate_seats = 1 }
+	set_variable = { wsh_fascist_senate_seats = 1 }
+	set_variable = { wsh_nonaligned_senate_seats = 2 }
+
+	# House total: 98
+	set_variable = { wsh_conservative_house_seats = 58 }
+	set_variable = { wsh_agrarian_house_seats = 14 }
+	set_variable = { wsh_liberal_house_seats = 8 }
+	set_variable = { wsh_socialist_house_seats = 6 }
+	set_variable = { wsh_communist_house_seats = 3 }
+	set_variable = { wsh_fascist_house_seats = 3 }
+	set_variable = { wsh_nonaligned_house_seats = 6 }
+
+	WSH_debug_refresh_forced_seats = yes
+}
+
+WSH_debug_seats_liberal_majority = {
+	# Senate total: 38
+	set_variable = { wsh_conservative_senate_seats = 4 }
+	set_variable = { wsh_agrarian_senate_seats = 3 }
+	set_variable = { wsh_liberal_senate_seats = 23 }
+	set_variable = { wsh_socialist_senate_seats = 3 }
+	set_variable = { wsh_communist_senate_seats = 1 }
+	set_variable = { wsh_fascist_senate_seats = 1 }
+	set_variable = { wsh_nonaligned_senate_seats = 3 }
+
+	# House total: 98
+	set_variable = { wsh_conservative_house_seats = 10 }
+	set_variable = { wsh_agrarian_house_seats = 8 }
+	set_variable = { wsh_liberal_house_seats = 56 }
+	set_variable = { wsh_socialist_house_seats = 8 }
+	set_variable = { wsh_communist_house_seats = 4 }
+	set_variable = { wsh_fascist_house_seats = 4 }
+	set_variable = { wsh_nonaligned_house_seats = 8 }
+
+	WSH_debug_refresh_forced_seats = yes
+}
+
+WSH_debug_seats_left_majority = {
+	# Senate total: 38
+	set_variable = { wsh_conservative_senate_seats = 3 }
+	set_variable = { wsh_agrarian_senate_seats = 3 }
+	set_variable = { wsh_liberal_senate_seats = 4 }
+	set_variable = { wsh_socialist_senate_seats = 18 }
+	set_variable = { wsh_communist_senate_seats = 7 }
+	set_variable = { wsh_fascist_senate_seats = 1 }
+	set_variable = { wsh_nonaligned_senate_seats = 2 }
+
+	# House total: 98
+	set_variable = { wsh_conservative_house_seats = 8 }
+	set_variable = { wsh_agrarian_house_seats = 7 }
+	set_variable = { wsh_liberal_house_seats = 10 }
+	set_variable = { wsh_socialist_house_seats = 45 }
+	set_variable = { wsh_communist_house_seats = 18 }
+	set_variable = { wsh_fascist_house_seats = 3 }
+	set_variable = { wsh_nonaligned_house_seats = 7 }
+
+	WSH_debug_refresh_forced_seats = yes
+}
+
+CHG_debug_refresh_forced_seats = {
+	CHG_refresh_council_display = yes
+	CHG_update_governance_modifier = yes
+}
+
+CHG_debug_council_balanced = {
+	# Exact total: 50
+	set_variable = { chg_conservative_seats = 8 }
+	set_variable = { chg_fascist_seats = 2 }
+	set_variable = { chg_nonaligned_seats = 3 }
+	set_variable = { chg_populist_seats = 12 }
+	set_variable = { chg_liberal_seats = 13 }
+	set_variable = { chg_socialist_seats = 9 }
+	set_variable = { chg_communist_seats = 3 }
+
+	set_variable = { chg_right_bloc_seats = 13 }
+	set_variable = { chg_populist_bloc_seats = 12 }
+	set_variable = { chg_liberal_bloc_seats = 13 }
+	set_variable = { chg_left_bloc_seats = 12 }
+
+	CHG_debug_refresh_forced_seats = yes
+}
+
+CHG_debug_council_right_majority = {
+	# Exact total: 50
+	set_variable = { chg_conservative_seats = 24 }
+	set_variable = { chg_fascist_seats = 3 }
+	set_variable = { chg_nonaligned_seats = 3 }
+	set_variable = { chg_populist_seats = 7 }
+	set_variable = { chg_liberal_seats = 7 }
+	set_variable = { chg_socialist_seats = 4 }
+	set_variable = { chg_communist_seats = 2 }
+
+	set_variable = { chg_right_bloc_seats = 30 }
+	set_variable = { chg_populist_bloc_seats = 7 }
+	set_variable = { chg_liberal_bloc_seats = 7 }
+	set_variable = { chg_left_bloc_seats = 6 }
+
+	CHG_debug_refresh_forced_seats = yes
+}
+
+CHG_debug_council_liberal_majority = {
+	# Exact total: 50
+	set_variable = { chg_conservative_seats = 6 }
+	set_variable = { chg_fascist_seats = 1 }
+	set_variable = { chg_nonaligned_seats = 2 }
+	set_variable = { chg_populist_seats = 7 }
+	set_variable = { chg_liberal_seats = 28 }
+	set_variable = { chg_socialist_seats = 4 }
+	set_variable = { chg_communist_seats = 2 }
+
+	set_variable = { chg_right_bloc_seats = 9 }
+	set_variable = { chg_populist_bloc_seats = 7 }
+	set_variable = { chg_liberal_bloc_seats = 28 }
+	set_variable = { chg_left_bloc_seats = 6 }
+
+	CHG_debug_refresh_forced_seats = yes
+}
+
+CHG_debug_council_left_majority = {
+	# Exact total: 50
+	set_variable = { chg_conservative_seats = 5 }
+	set_variable = { chg_fascist_seats = 1 }
+	set_variable = { chg_nonaligned_seats = 2 }
+	set_variable = { chg_populist_seats = 6 }
+	set_variable = { chg_liberal_seats = 7 }
+	set_variable = { chg_socialist_seats = 21 }
+	set_variable = { chg_communist_seats = 8 }
+
+	set_variable = { chg_right_bloc_seats = 8 }
+	set_variable = { chg_populist_bloc_seats = 6 }
+	set_variable = { chg_liberal_bloc_seats = 7 }
+	set_variable = { chg_left_bloc_seats = 29 }
+
+	CHG_debug_refresh_forced_seats = yes
+}

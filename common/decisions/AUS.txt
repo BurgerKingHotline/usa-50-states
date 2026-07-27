@@ -2443,7 +2443,13 @@ AUS_subjugating_the_lands_of_old_category = {
 		}
 
 		remove_effect = {
+			804 = {
+				transfer_state_to = FROM
+			}
 
+			104 = {
+				transfer_state_to = FROM
+			}
 		}
 	}
 }

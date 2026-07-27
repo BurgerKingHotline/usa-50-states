@@ -23,11 +23,11 @@ focus_tree = {
 
 
 
-
-
-
-
-
+#######################
+#######################
+###### DEFENSIVE ######
+#######################
+#######################
 
 
 	focus = {
@@ -39,13 +39,21 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				has_war = yes
+				has_completed_focus = BEL_growing_threat_of_fascism
+			}
+		}
 	
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	
-		completion_reward = {}
+		completion_reward = {
+			add_dynamic_modifier = { modifier = BEL_neutrality_dynamic_modifier }	
+		}
 	}
 
 	focus = {
@@ -63,11 +71,64 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				has_war = yes
+				
+				has_completed_focus = BEL_growing_threat_of_fascism
+
+				AND = {
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = BEL_neutrality_dynamic_modifier
+						}
+					}
+					has_completed_focus = BEL_perpetual_neutrality
+				}
+				
+			}
+			
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_neutrality_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_neutrality_production_speed_infrastructure_factor = 0.1
+				tooltip = production_speed_infrastructure_factor_tt				
+			}	
+			add_to_variable = { 
+				BEL_neutrality_production_speed_arms_factory_factor = 0.1
+				tooltip = production_speed_arms_factory_factor_tt				
+			}	
+			add_to_variable = { 
+				BEL_neutrality_production_speed_industrial_complex_factor  = 0.1
+				tooltip = production_speed_industrial_complex_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_neutrality_enemy_justify_war_goal_time = 0.5
+				tooltip = enemy_justify_war_goal_time_tt				
+			}
+			add_to_variable = { 
+				BEL_neutrality_send_volunteers_tension = 1
+				tooltip = send_volunteers_tension_tt				
+			}
+			add_to_variable = { 
+				BEL_neutrality_lend_lease_tension = 1
+				tooltip = lend_lease_tension_tt
+			}
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_to_variable = { 
+					BEL_neutrality_embargo_threshold_factor = 1
+					tooltip = embargo_threshold_factor_tt				
+				}
+			}
+		}
 
 	}
 
@@ -86,9 +147,57 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = BEL_defensive_neutrality_dynamic_modifier
+						}
+						has_dynamic_modifier = { #tooltip reasons!
+							modifier = BEL_defensive_reorganization_dynamic_modifier
+						}
+					}
+				}
+
+				add_dynamic_modifier = { modifier = BEL_defensive_neutrality_dynamic_modifier }	
+
+				add_to_variable = { BEL_defensive_neutrality_production_speed_bunker_factor = 0.05 tooltip = production_speed_bunker_factor_tt }
+				add_to_variable = { BEL_defensive_neutrality_max_dig_in = 1 tooltip = max_dig_in_tt }
+			}
+
+			ELSE_IF = {
+				limit = { 
+					has_dynamic_modifier = {
+						modifier = BEL_defensive_neutrality_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
+
+				add_to_variable = { BEL_defensive_neutrality_production_speed_bunker_factor = 0.05 tooltip = production_speed_bunker_factor_tt }
+				add_to_variable = { BEL_defensive_neutrality_max_dig_in = 1 tooltip = max_dig_in_tt }
+
+			}
+
+			ELSE_IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_defensive_reorganization_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_reorganization_dynamic_modifier_tt
+
+				add_to_variable = { BEL_defensive_neutrality_production_speed_bunker_factor = 0.05 tooltip = production_speed_bunker_factor_tt }
+				add_to_variable = { BEL_defensive_neutrality_max_dig_in = 1 tooltip = max_dig_in_tt }
+			}
+			
+		}
 
 	}
 
@@ -107,11 +216,111 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			BEL = { 
+				OR = {
+					controls_province = 6598
+					controls_province = 516 
+				}
+			}
 
-		bypass = {}
+			custom_trigger_tooltip = {
+				tooltip = BEL_national_redoubt_at_antwerp_available_tt
+				OR = {
+					977 = { #Antwerpen
+						free_building_slots = {
+							building = bunker
+							size > 1
+							province = 6598
+						}
+					}
+
+					6 = { #Vlaanderen
+						free_building_slots = {
+							building = bunker
+							size > 0
+							province = 516
+						}
+					}
+				}
+			}
+			
+		}
+
+		bypass = {
+			OR = {
+				BEL = { 
+					NOT = {
+						controls_province = 6598
+						controls_province = 516 
+					}
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = BEL_national_redoubt_at_antwerp_bypass_tt
+					AND = {
+						977 = { #Antwerpen
+							free_building_slots = {
+								building = bunker
+								size < 2
+								province = 6598
+							}
+						}
+
+						6 = { #Vlaanderen
+							free_building_slots = {
+								building = bunker
+								size < 1
+								province = 516
+							}
+						}
+					}
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					6 = { #Vlaanderen
+						free_building_slots = {
+							building = bunker
+							size > 0
+							province = 516
+						}
+					}
+				}
+
+				6 = { #Vlaanderen
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province =  516
+					}
+				}	
+			}
+			IF = {
+				limit = {
+					977 = { #Antwerpen
+						free_building_slots = {
+							building = bunker
+							size > 1
+							province = 6598
+						}
+					}
+				}
+
+				977 = { #Antwerpen
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province =  6598
+					}
+				}	
+			}
+		}
 	}
 
 	focus = {
@@ -129,9 +338,21 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_defensive_neutrality_max_dig_in = 1
+				tooltip = max_dig_in_tt				
+			}	
+			add_to_variable = { 
+				BEL_defensive_neutrality_production_speed_bunker_factor = 0.05
+				tooltip = production_speed_bunker_factor_tt				
+			}	
+		}
 	}
 
 	focus = {
@@ -149,11 +370,141 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			OR = {
+				BEL = { controls_state = 34 }
 
-		bypass = {}
+				custom_trigger_tooltip = {
+					tooltip = BEL_fortify_liege_available_tt
+					OR = {
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size > 0
+								province = 11519
+							}
+						}
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size > 0
+								province = 3516
+							}
+						}
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size > 0
+								province = 13081
+							}
+						}
+					}
+				}
+			}
+		}
+
+		bypass = {
+			OR = {
+				NOT = { controls_state = 34 }
+
+				custom_trigger_tooltip = {
+					tooltip = BEL_fortify_liege_available_tt
+					AND = {
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size < 1
+								province = 11519
+							}
+						}
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size < 1
+								province = 3516
+							}
+						}
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size < 1
+								province = 13081
+							}
+						}
+					}
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			custom_effect_tooltip = BEL_fortify_liege_tt
+
+			hidden_effect = {
+				IF = {
+					limit = {
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size > 0
+								province = 11519
+							}
+						}
+					}
+
+					34 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 11519
+						}
+					}
+				}
+
+				IF = {
+					limit = {
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size > 0
+								province = 3516
+							}
+						}
+					}
+
+					34 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 3516
+						}
+					}
+				}
+
+				IF = {
+					limit = {
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size > 0
+								province = 13081
+							}
+						}
+					}
+
+					34 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 13081
+						}
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -171,9 +522,26 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_defensive_neutrality_max_dig_in = 1
+				tooltip = max_dig_in_tt				
+			}	
+			add_to_variable = { 
+				BEL_defensive_neutrality_production_speed_bunker_factor = 0.05
+				tooltip = production_speed_bunker_factor_tt				
+			}	
+			add_to_variable = { 
+				BEL_defensive_neutrality_land_bunker_effectiveness_factor = 0.05
+				tooltip = land_bunker_effectiveness_factor_tt				
+			}	
+		}
 
 	}
 
@@ -192,11 +560,63 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			BEL = { controls_province = 11519 }
 
-		bypass = {}
+			custom_trigger_tooltip = {
+				tooltip = BEL_eben_emael_fortress_available_tt
+				34 = {
+					free_building_slots = {
+						building = bunker
+						size > 1
+						province = 11519
+					}
+				}
+			}
+
+			
+		}
+
+		bypass = {
+
+			OR = {
+				NOT = { controls_province = 11519 }
+
+				custom_trigger_tooltip = {
+					tooltip = BEL_eben_emael_fortress_bypass_tt
+					34 = {
+						free_building_slots = {
+							building = bunker
+							size < 2
+							province = 11519
+						}
+					}
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					34 = {
+						free_building_slots = {
+							building = bunker
+							size > 1
+							province = 11519
+						}
+					}
+				}
+				34 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 11519
+					}
+				}
+			}
+		}
 
 	}
 
@@ -215,14 +635,25 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			has_war_with = FRA
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			country_event = {
+				id = ww_BEL_event_diplomatic.34
+				hours = 0
+			}
+
+			
+		}
 
 	}
 
@@ -242,9 +673,20 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_defensive_neutrality_bunker_max_level_terrain_limit = 1
+				tooltip = modifier_bunker_max_level_terrain_limit_tt				
+			}	
+			add_to_variable = { 
+				BEL_defensive_neutrality_coastal_bunker_max_level_terrain_limit = 1
+				tooltip = modifier_coastal_bunker_max_level_terrain_limit_tt			
+			}	
+		}
 
 	}
 
@@ -263,9 +705,35 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			NOT = { 
+				has_idea = BEL_lack_of_junior_officers_ns
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_mobilize_the_nation_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_mobilize_the_nation_dynamic_modifier }
+				else = {
+					custom_effect_tooltip = BEL_modify_mobilize_the_nation_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_mobilize_the_nation_conscription = 0.015
+						tooltip = conscription_tt				
+					}	 
+				}		 
+			}
+			add_timed_idea = { 
+				idea = BEL_lack_of_junior_officers_ns
+				days = 180
+			}
+		}
 	}
 
 	focus = {
@@ -281,12 +749,28 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					or = {
+						state = 6
+						state = 977
+						state = 34
+						state = 980
+					}
+				}
+				add_dynamic_modifier = {
+					scope = BEL
+					modifier = BEL_flooded_tank_barriers_dynamic_modifier
+				}
+			}
+		}
 
 	}
 
@@ -305,9 +789,85 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BEL_protect_against_france_available_tt
+				OR = {
+					34 = {
+						free_building_slots = {
+							building = bunker
+							size > 0
+							province = 9536
+						}
+					}
+					6 = {
+						free_building_slots = {
+							building = bunker
+							size > 0
+							province = 3576
+						}
+					}
+					6 = {
+						free_building_slots = {
+							building = bunker
+							size > 0
+							province = 6446
+						}
+					}
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					34 = {
+						free_building_slots = {
+							building = bunker
+							size > 0
+							province = 9536
+						}
+					}
+				}
+
+				34 = {
+					add_building_construction = { type = bunker province = 9536 level = 1 instant_build = yes }
+				}
+			}
+
+			IF = {
+				limit = {
+					6 = {
+						free_building_slots = {
+							building = bunker
+							size > 0
+							province = 3576
+						}
+					}
+				}
+
+				6 = {
+					add_building_construction = { type = bunker province = 3576 level = 1 instant_build = yes }
+				}
+			}
+
+			IF = {
+				limit = {
+					6 = {
+						free_building_slots = {
+							building = bunker
+							size > 0
+							province = 6446
+						}
+					}
+				}
+
+				6 = {
+					add_building_construction = { type = bunker province = 6446 level = 1 instant_build = yes }
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -323,12 +883,32 @@ focus_tree = {
 	
 		cost = 2
 
-		available = {}
+		available = {
+			controls_province = 3488
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			980 = {
+				damage_building = {
+					tags = dam_building
+					damage = 1 # levels of damage
+					province = 3488
+					repair_speed_modifier = -0.8
+				}
+
+				add_dynamic_modifier = {
+					scope = BEL
+					modifier = dam_blown_modifier
+					days = 360
+				}
+			}
+
+			
+		}
 
 	}
 
@@ -346,20 +926,40 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}	
+		completion_reward = {
+			hidden_effect = {
+				remove_dynamic_modifier = { modifier = BEL_defensive_neutrality_dynamic_modifier }
+				add_dynamic_modifier = { modifier = BEL_defensive_reorganization_dynamic_modifier }
+			}
+
+			custom_effect_tooltip = BEL_remove_defensive_neutrality_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_defensive_neutrality_max_dig_in = 2
+				tooltip = max_dig_in_tt				
+			}	
+			add_to_variable = { 
+				BEL_defensive_neutrality_production_speed_bunker_factor = 0.05
+				tooltip = production_speed_bunker_factor_tt				
+			}	
+			add_to_variable = { 
+				BEL_defensive_neutrality_land_bunker_effectiveness_factor = 0.05
+				tooltip = land_bunker_effectiveness_factor_tt				
+			}	
+		}	
 	}
 	
 
-
-
-
-
-
+#######################
+#######################
+######## ARMY #########
+#######################
+#######################
 
 	focus = {
 		id = BEL_defense_bill
@@ -376,11 +976,45 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_command_power = 50
+			army_experience = 25
+
+			IF = {
+				limit = {
+					has_completed_focus = BEL_repudiate_treaty_with_france
+				}
+
+				remove_dynamic_modifier = {
+					modifier = BEL_scars_of_ww1_dynamic_modifier
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = BEL_modify_scars_of_ww1_dynamic_modifier_tt
+				add_to_variable = { 
+					BEL_scars_of_ww1_production_speed_arms_factory_factor = 0.2
+					tooltip = production_speed_arms_factory_factor_tt
+				}
+				add_to_variable = { 
+					BEL_scars_of_ww1_conscription_factor = 0.10
+					tooltip = conscription_factor_tt
+				}
+				add_to_variable = { 
+					BEL_scars_of_ww1_war_support_factor = 0.15
+					tooltip = war_support_factor_tt
+				}	
+				add_to_variable = { 
+					BEL_scars_of_ww1_army_org_factor = 0.10
+					tooltip = army_org_factor_tt
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -398,11 +1032,17 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_dynamic_modifier = { modifier = BEL_royal_military_academy_dynamic_modifier }
+		}
 
 	}
 
@@ -419,11 +1059,18 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_royal_military_academy_army_org_factor = 0.1
+				tooltip = army_org_factor_tt				
+			}	 
+		}
 
 	}
 
@@ -440,9 +1087,16 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_royal_military_academy_initiative_factor = 0.15
+				tooltip = initiative_factor_tt				
+			}	
+		}
 
 	}
 
@@ -459,9 +1113,16 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_royal_military_academy_army_artillery_attack_factor = 0.1
+				tooltip = army_artillery_attack_factor_tt				
+			}	
+		}
 
 	}
 
@@ -480,11 +1141,85 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_doctrine_cost_reduction = {
+					name = BEL_resist_and_bite
+					cost_reduction = 0.25
+					uses = 2
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = BEL_resist_and_bite
+						bonus = 0.1
+						days = 240
+						sub_doctrine = rangers_1
+					}
+					add_mastery_bonus = {
+						name = BEL_resist_and_bite
+						bonus = 0.1
+						days = 240
+						sub_doctrine = rangers_2
+					}
+				}				
+				add_tech_bonus = {
+					name = BEL_resist_and_bite
+					bonus = 1
+					uses = 1
+					category = rangers_tech_cat
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_doctrine_cost_reduction = {
+					name = BEL_resist_and_bite
+					cost_reduction = 0.25
+					uses = 2
+					category = special_forces_doctrine
+				}
+				add_tech_bonus = {
+					name = BEL_resist_and_bite
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+				}
+				custom_effect_tooltip = mountaineer_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = BEL_resist_and_bite
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_1
+					}
+					add_mastery_bonus = {
+						name = BEL_resist_and_bite
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_2
+					}
+				}				
+			}
+			ELSE = {
+				add_tech_bonus = {
+					name = BEL_resist_and_bite
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+				}
+			}
+		}
 
 	}
 
@@ -502,9 +1237,16 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_royal_military_academy_army_attack_factor = 0.05
+				tooltip = army_attack_factor_tt				
+			}	
+		}
 
 	}
 
@@ -523,9 +1265,25 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BEL_anti_tank_guns
+				bonus = 1
+				uses = 2
+				category = cat_anti_tank	# optional 
+				# tecnology  = technology_id # optional
+			}
+			custom_effect_tooltip = BEL_anti_tank_guns_tt
+			hidden_effect = {
+				set_technology = {
+					SWE_bofors_antitank_gun = 1
+					popup = no
+				}
+			}
+		}
 
 	}
 
@@ -542,11 +1300,21 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 	
-		completion_reward = {}
+		completion_reward = {
+			army_experience = 50
+			add_doctrine_cost_reduction = { 
+				name = BEL_junior_officer_training
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine # optional 
+				# tecnology  = technology_id # optional
+			}
+		}
 
 	}
 
@@ -563,13 +1331,28 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH }
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_potential_special_forces_tree = yes
+				add_doctrine_cost_reduction = {
+					name = BEL_belgian_special_forces
+					cost_reduction = 0.25
+					uses = 1
+					category = special_forces_doctrine
+				}
+			}
+			show_unit_leaders_tooltip = BEL_eddy_blondeel
+		}
 
 	}
 
@@ -586,11 +1369,29 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 	
-		completion_reward = {}
+		completion_reward = {
+			every_army_leader = {
+				add_planning = 1
+				add_logistics = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_modify_royal_military_academy_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_royal_military_academy_army_leader_start_planning_level = 1
+				tooltip = army_leader_start_planning_level_tt				
+			}			
+			add_to_variable = { 
+				BEL_royal_military_academy_army_leader_start_logistics_level = 1
+				tooltip = army_leader_start_logistics_level_tt				
+			}	
+		}
 
 	}
 
@@ -607,9 +1408,46 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
+
+				mio:BEL_fonderie_royale_de_canons_liege_organization = {
+					add_mio_size = 2
+					add_mio_funds_gain_factor = 0.2
+					add_mio_research_bonus = 0.05
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				mio:BEL_vickers_armstrong_bel_organization = {
+					add_mio_size = 1
+
+					unlock_mio_trait_tooltip = BEL_mio_trait_fonderie_royale_canons
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				mio:BEL_renault_organization = {
+					add_mio_size = 1
+
+					unlock_mio_trait_tooltip = BEL_mio_trait_fonderie_royale_canons
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = fonderie_royale_de_canons_liege
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = vickers_armstrong_bel
+				custom_effect_tooltip = generic_skip_one_line_tt
+				
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = renault_bel
+			}
+		}
 
 	}
 
@@ -626,14 +1464,30 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = BEL_interpreters_ns
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_interpreters_tt
+
+			hidden_effect = {
+				every_other_country = {
+					limit = { 
+						is_in_faction_with = ROOT
+					}
+					add_ideas = BEL_interpreters_ns
+				}
+			}
+		}
 
 	}
 
@@ -652,9 +1506,39 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_academies_of_belgium_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_academies_of_belgium_dynamic_modifier }
+				add_to_variable = { 
+					BEL_academies_of_belgium_specialization_nuclear_speed_factor = 0.05
+					tooltip = specialization_nuclear_speed_factor_tt				
+				}	
+				else = {
+					custom_effect_tooltip = BEL_academies_of_belgium_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_academies_of_belgium_specialization_nuclear_speed_factor = 0.05
+						tooltip = specialization_nuclear_speed_factor_tt				
+					}	 
+				}		 
+			}
+
+			custom_effect_tooltip =	generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.25
+			}
+		}
 	}
 
 	focus = {
@@ -670,9 +1554,18 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = BEL_strategic_doctrine_development
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine # optional 
+				# tecnology  = technology_id # optional
+			}
+		}
 
 	}
 
@@ -692,9 +1585,17 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BEL_belgian_tank_development
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
 
 	}
 
@@ -711,12 +1612,27 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = BEL_doctrinal_innovations
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine # optional 
+				# tecnology  = technology_id # optional
+			}
+			add_doctrine_cost_reduction = {
+				name = BEL_doctrinal_innovations
+				cost_reduction = 0.5
+				uses = 1
+				category = special_forces_doctrine
+			}
+		}
 
 	}
 
@@ -737,12 +1653,42 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_academies_of_belgium_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_academies_of_belgium_dynamic_modifier }
+				add_to_variable = { 
+					BEL_academies_of_belgium_special_project_speed_factor = 0.1
+					tooltip = special_project_speed_factor_tt				
+				}	
+				else = {
+					custom_effect_tooltip = BEL_academies_of_belgium_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_academies_of_belgium_special_project_speed_factor = 0.1
+						tooltip = special_project_speed_factor_tt				
+					}	 
+				}		 
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}
+		}
 	}
 
 	focus = { 
@@ -760,9 +1706,35 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			NOT = { 
+				has_idea = BEL_lack_of_junior_officers_ns
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_mobilize_the_nation_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_mobilize_the_nation_dynamic_modifier }
+				else = {
+					custom_effect_tooltip = BEL_modify_mobilize_the_nation_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_mobilize_the_nation_conscription = 0.015
+						tooltip = conscription_tt				
+					}	 
+				}		 
+			}
+			add_timed_idea = { 
+				idea = BEL_lack_of_junior_officers_ns
+				days = 180
+			}
+		}
 
 	}
 
@@ -781,11 +1753,38 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
+
+				mio:BEL_fn_herstal_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.2
+					add_mio_research_bonus = 0.05
+
+					unlock_mio_trait_tooltip = BEL_mio_trait_outsourced_production
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = fn_herstal
+			}
+			
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt				
+			}
+		}
 
 	}
 
@@ -804,9 +1803,17 @@ focus_tree = {
 	
 		cost = 10
 		available_if_capitulated = yes
-		available = {}
+		available = {
+			6 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			6 = {
+				NOT = { is_fully_controlled_by = ROOT }
+			}
+		}
 		
 		bypass_effect = {
 			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
@@ -816,7 +1823,24 @@ focus_tree = {
 			}
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			6 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt				
+			}
+		}
 
 	}
 
@@ -834,13 +1858,53 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
+
+				IF = {
+					limit = { has_dlc = "La Resistance"}
+
+					mio:BEL_minerva_imperia_armored_car_organization = {
+						add_mio_size = 1
+						add_mio_funds_gain_factor = 0.2
+						add_mio_research_bonus = 0.05
+
+						unlock_mio_trait_tooltip = BEL_mio_trait_knight_engines
+					}
+					custom_effect_tooltip = generic_skip_one_line_tt
+				}
+
+				
+				mio:BEL_minerva_imperia_motorized_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.2
+					add_mio_research_bonus = 0.05
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = minerva_imperia_motorized
+			}
+			
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt				
+			}
+		}
 
 	}
 
@@ -859,22 +1923,26 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			has_war = yes
+		}
 
 		available_if_capitulated = yes
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = BEL_legacy_of_the_great_war_ns
+		}
 
 	}
 
-
-
-
-
-
+############################
+############################
+######## Political #########
+############################
+############################
 
 	focus = {
 		id = BEL_repudiate_treaty_with_france
@@ -891,9 +1959,121 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					has_completed_focus = BEL_defense_bill
+				}
+
+				remove_dynamic_modifier = {
+					modifier = BEL_scars_of_ww1_dynamic_modifier
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = BEL_modify_scars_of_ww1_dynamic_modifier_tt
+				add_to_variable = { 
+					BEL_scars_of_ww1_war_support_factor = 0.15
+					tooltip = war_support_factor_tt
+				}
+				add_to_variable = { 
+					BEL_scars_of_ww1_conscription_factor = 0.05
+					tooltip = conscription_factor_tt
+				}
+				add_to_variable = { 
+					BEL_scars_of_ww1_army_org_factor = 0.05
+					tooltip = army_org_factor_tt
+				}
+			}
+			
+
+			if = {
+				limit = {
+					FRA = {
+						has_guaranteed = BEL
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				if = {
+					limit = {
+						BEL = {
+							has_guaranteed = FRA
+						}
+					}
+					diplomatic_relation = { 
+						country = FRA 
+						relation = guarantee
+						active = no
+					}
+				}
+				FRA = {
+					diplomatic_relation = { 
+						country = BEL 
+						relation = guarantee
+						active = no
+					}
+				}
+				FRA = {	country_event = { id = ww_BEL_event_diplomatic.1 hours = 6 }	}
+			}
+			else_if = { #Just in case FRA already removed their guarantee but BEL hasn't
+				limit = {
+					BEL = {
+						has_guaranteed = FRA
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				diplomatic_relation = { 
+					country = FRA 
+					relation = guarantee
+					active = no
+				}
+			}
+			if = {
+				limit = {
+					ENG = {
+						has_guaranteed = BEL
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				if = {
+					limit = {
+						BEL = {
+							has_guaranteed = ENG
+						}
+					}
+					diplomatic_relation = { 
+						country = ENG 
+						relation = guarantee
+						active = no
+					}
+				}
+				ENG = {
+					diplomatic_relation = { 
+						country = BEL 
+						relation = guarantee
+						active = no
+					}
+				}
+				ENG = {	country_event = { id = ww_BEL_event_diplomatic.1 hours = 6 }	}
+			}
+			else_if = { #Just in case ENG already removed their guarantee but BEL hasn't
+				limit = {
+					BEL = {
+						has_guaranteed = ENG
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				diplomatic_relation = { 
+					country = ENG 
+					relation = guarantee
+					active = no
+				}
+			}
+		}
 
 	}
 
@@ -912,20 +2092,87 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			NOT ={
+				OR = {
+					has_war_with = FRA
+					has_war_with = ENG
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				has_war_with = FRA
+				has_war_with = ENG
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = { FRA = { exists = yes} }
+
+				FRA = {
+					add_ai_strategy = { 
+						type = dont_defend_ally_borders
+						id = BEL
+						value = -50
+					}
+
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = medium_increase
+					}
+				}
+
+				add_opinion_modifier = {
+					target = FRA
+					modifier = medium_increase
+				}
+				
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+
+			IF = {
+				limit = { ENG = { exists = yes} }
+
+				ENG = {
+					add_ai_strategy = { 
+						type = dont_defend_ally_borders
+						id = BEL
+						value = -50
+					}
+
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = medium_increase
+					}
+				}
+
+				add_opinion_modifier = {
+					target = ENG
+					modifier = medium_increase
+				}
+				
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_dyle_plan_tt
+			
+		}
 
 	}
 
 
-
-
-
-
-
+#############################
+#############################
+######## Historical #########
+#############################
+#############################
 
 	focus = {
 		id = BEL_government_resigns
@@ -938,11 +2185,27 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = ww_BEL_event_political.1 }
+			custom_effect_tooltip = BEL_modify_corruption_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_corruption_political_power_gain = 0.1
+				tooltip = political_power_gain_tt				
+			}	
+			add_to_variable = { 
+				BEL_corruption_production_speed_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_fascism_drift = -0.04
+				tooltip = fascism_drift_tt				
+			}
+		}
 
 	}
 
@@ -976,11 +2239,30 @@ focus_tree = {
 		}
 
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BEL_auto_complete_government_resigns_tt
+				always = no
+			}
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_government_resigns_complete_national_unity_tt
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = obsolete_focus_branches_visibility
+							option = HIDE
+						}
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
 
 	}
 
@@ -999,11 +2281,39 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_corruption_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_corruption_political_power_gain = 0.05
+				tooltip = political_power_gain_tt				
+			}	
+			add_to_variable = { 
+				BEL_corruption_stability_factor = 0.05
+				tooltip = stability_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_production_speed_buildings_factor = 0.10
+				tooltip = production_speed_buildings_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_fascism_drift = -0.04
+				tooltip = fascism_drift_tt				
+			}
+			IF = {
+				limit = {
+					NOT = { 
+						has_completed_focus = BEL_vandervelde_minority
+					}
+				 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_investigate_pm_tt
+			}
+		}
 
 	}
 
@@ -1024,11 +2334,16 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			has_idea = BEL_collapsing_government_ns
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = ww_BEL_event_political.3 }
+			custom_effect_tooltip = BEL_royal_intervention_tt
+		}
 	}
 
 	focus = {
@@ -1065,9 +2380,49 @@ focus_tree = {
 			}
 		}
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BEL_auto_complete_royal_intervention_tt
+				always = no
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_royal_intervention_complete_janson_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			effect_tooltip = {
+				add_country_leader_role = {
+				    character = BEL_paul_emile_janson
+				    promote_leader = yes
+				    country_leader = {
+				        ideology = conservatism
+				        expire = "1965.1.1.1"
+				        traits = { BEL_royal_appointee }
+				    }
+				}
+
+				set_party_name = {
+					ideology = democratic
+					long_name = BEL_liberal_party_long
+					name = BEL_liberal_party
+				}
+
+				remove_ideas = BEL_collapsing_government_ns 
+			}
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = obsolete_focus_branches_visibility
+							option = HIDE
+						}
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
 
 	}
 
@@ -1086,11 +2441,18 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_consumer_goods_factor = -0.1
+				tooltip = consumer_goods_factor_tt				
+			}	
+		}
 
 	}
 
@@ -1098,7 +2460,7 @@ focus_tree = {
 		id = BEL_economic_recovery
 		icon = GFX_focus_generic_economic_recovery
 	
-		
+		#prerequisite = { focus = BEL_paul_emile_janson }		
 		prerequisite = { focus = BEL_plan_de_man }						
 		prerequisite = { focus = BEL_dyle_plan }	
 
@@ -1111,11 +2473,15 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = { 
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = ww_BEL_event_political.4 }
+			add_ideas = BEL_economic_recovery_ns
+		}
 
 	}
 
@@ -1134,11 +2500,27 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = ww_BEL_event_political.5 }
+			custom_effect_tooltip = BEL_modify_corruption_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_corruption_political_power_gain = 0.05
+				tooltip = political_power_gain_tt				
+			}	
+			add_to_variable = { 
+				BEL_corruption_stability_factor = 0.05
+				tooltip = stability_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_fascism_drift = -0.02
+				tooltip = fascism_drift_tt				
+			}
+		}
 
 	}
 
@@ -1159,9 +2541,109 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = { 
+			is_subject = no
+			has_country_leader = { 
+				character = BEL_paul_henri_spaak
+				ruling_only = yes
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_idea = BEL_language_barriers_ns
+				}
+				remove_ideas = BEL_language_barriers_ns
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = BEL_benelux_union_faction
+			}
+
+			ELSE_IF = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+
+				leave_faction = yes
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				create_faction_from_template = {
+					template = faction_template_defensive_democratic
+					name = BEL_benelux_union_faction
+					icon = GFX_faction_logo_generic_13
+				}
+			}
+
+			ELSE = {
+				create_faction_from_template = {
+					template = faction_template_defensive_democratic
+					name = BEL_benelux_union_faction
+					icon = GFX_faction_logo_generic_13
+				}
+			}
+			
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_benelux_union_tt
+
+			hidden_effect = {
+				IF = {
+					limit = {
+						LUX = {
+							exists = yes
+							is_subject = no
+							is_in_faction = no
+							OR = {
+								has_government = democratic
+								has_government = neutrality
+							}
+						}
+					}
+
+					LUX = {
+						country_event = {
+							id = ww_BEL_event_diplomatic.20
+							hours = 6
+						}
+
+						set_country_flag = sent_eu_invitation_flag
+					}
+				}
+
+				IF = {
+					limit = {
+						HOL = {
+							exists = yes
+							is_subject = no
+							is_in_faction = no
+							OR = {
+								has_government = democratic
+								has_government = neutrality
+							}
+						}
+					}
+
+					HOL = {
+						country_event = {
+							id = ww_BEL_event_diplomatic.20
+							hours = 6
+						}
+
+						set_country_flag = sent_eu_invitation_flag
+					}
+				}
+			}						
+		}
 
 	}
 
@@ -1182,9 +2664,19 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = { 
+			has_country_leader = { 
+				character = BEL_hubert_pierlot
+				ruling_only = yes
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = BEL_language_barriers_ns
+			add_stability = 0.10
+			add_war_support = 0.10
+
+		}
 
 	}
 
@@ -1203,10 +2695,70 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			is_subject = no
+		}
 
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = BEL_european_union
+			}
+
+			ELSE_IF = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+
+				leave_faction = yes
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				create_faction_from_template = {
+					template = faction_template_european_unity
+					name = BEL_european_union
+					icon = GFX_faction_logo_eu
+				}
+			}
+
+			ELSE = {
+				create_faction_from_template = {
+					template = faction_template_european_unity
+					name = BEL_european_union
+					icon = GFX_faction_logo_eu
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_the_council_of_europe_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_european_community_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = european_union_leader
+
+			hidden_effect = {
+				IF = { 
+					limit = {
+						NOT = {
+							has_global_flag = HUN_otto_von_habsburg_has_joined_hungary_flag
+							has_global_flag = AUS_otto_von_habsburg_has_joined_austria_flag
+						}
+					}
+
+					country_event = {
+						id = ww_BEL_event_diplomatic.29
+						hours = 24
+					}
+					
+					news_event = { id = mtg_news.54 days = 1 }
+				}
+			}
+		}
 
 	}
 
@@ -1223,16 +2775,24 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			has_dynamic_modifier = { modifier = BEL_neutrality_dynamic_modifier }
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			country_event = {
+				id = ww_BEL_event_diplomatic.33
+				hours = 0
+			}
+		}
 	}
 
-
-
-
-
-
+#######################################
+#######################################
+######## Fascist- Nationalist #########
+#######################################
+#######################################
 
 	focus = {
 		id = BEL_degrelle
@@ -1280,9 +2840,66 @@ focus_tree = {
 			}
 		}
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BEL_auto_complete_royal_intervention_tt
+				always = no
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_royal_intervention_complete_degrelle_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			effect_tooltip = {
+				add_country_leader_role = {
+				    character = BEL_leon_degrelle
+				    promote_leader = yes
+				    country_leader = {
+				        ideology = rexism
+				        expire = "1965.1.1.1"
+				        traits = { BEL_belgian_inquisitor }
+				    }
+				}
+
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}	
+
+				remove_ideas = BEL_collapsing_government_ns
+
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.15
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				custom_effect_tooltip = BEL_modify_corruption_dynamic_modifier_tt
+				add_to_variable = { 
+					BEL_corruption_political_power_gain = 0.05
+					tooltip = political_power_gain_tt				
+				}	
+				add_to_variable = { 
+					BEL_corruption_stability_factor = 0.05
+					tooltip = stability_factor_tt				
+				}
+			}
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = obsolete_focus_branches_visibility
+							option = HIDE
+						}
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+
+		}
 
 	}
 
@@ -1321,9 +2938,29 @@ focus_tree = {
 			}
 		}
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_lucien_lippert_tt
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_stability = 0.05
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = obsolete_focus_branches_visibility
+							option = HIDE
+						}
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+		}
 
 	}
 
@@ -1342,9 +2979,17 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.5
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_timed_idea = { 
+				idea = BEL_dissolve_political_parties_ns 
+				days = 365
+			}
+
+		}
 	}
 
 	focus = {
@@ -1362,9 +3007,13 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.4
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = ww_BEL_event_political.6 }
+		}
 
 	}
 
@@ -1383,9 +3032,46 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.5
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = BEL
+					is_fully_controlled_by = BEL
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = BEL
+					is_fully_controlled_by = BEL
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
 
 	}
 
@@ -1402,9 +3088,13 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.5
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_dynamic_modifier = { modifier = BEL_rexist_legion_dynamic_modifier }
+		}
 
 	}
 
@@ -1425,9 +3115,40 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.6
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_rexist_legion_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_rexist_legion_conscription_factor = 0.15
+				tooltip = conscription_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_rexist_legion_land_night_attack = 0.05
+				tooltip = land_night_attack_tt				
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					LUX = {
+						exists = yes
+						NOT = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				create_wargoal = {
+				    type = annex_everything
+				    target = LUX
+				    expire = 0
+				}
+			}
+			8 = { add_core_of = ROOT }
+		}
 	}
 
 	focus = {
@@ -1443,9 +3164,27 @@ focus_tree = {
 	
 		cost = 5
 
-		available = {}
+		available = {
 	
-		completion_reward = {}
+		}
+	
+		completion_reward = {
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
+				
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = GER_daimler_benz_organization
+
+				mio:GER_daimler_benz_organization = {
+					add_mio_size = 2
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = BEL_daimler_benz
+			}
+		}
 
 	}
 
@@ -1462,9 +3201,25 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.8
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_rexist_legion_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_rexist_legion_army_org_factor = 0.05
+				tooltip = army_org_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_rexist_legion_army_infantry_attack_factor = 0.10
+				tooltip = army_infantry_attack_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_rexist_legion_army_infantry_defence_factor = -0.05
+				tooltip = army_infantry_defence_factor_tt				
+			}
+		}
 
 	}
 
@@ -1483,18 +3238,105 @@ focus_tree = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.9
+			980 = {
+				is_owned_and_controlled_by = BEL
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = BEL
+					is_fully_controlled_by = BEL
+					NOT = { state = 980 }
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = BEL
+					is_fully_controlled_by = BEL
+					NOT = { state = 980 }
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
+			}
+			IF = {
+				limit = {
+					980 = {
+						is_core_of = ROOT
+						is_fully_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}	
+					}
+				}
+				980 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}	
+				}
+			}
+			IF = {
+				limit = {
+					980 = {
+						is_core_of = ROOT
+						is_fully_controlled_by = ROOT
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}	
+					}
+				}
+				980 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}	
+				}
+			}
+			980 = {
+				increase_state_category = yes
+			}
+		}
 
 	}
 
 
-
-
-
-
-
+#######################################
+#######################################
+######## Fascist- Shared ##############
+#######################################
+#######################################
 
 
 focus = {
@@ -1512,9 +3354,14 @@ focus = {
 
 	cost = 10
 
-	available = {}
+	available = {
+		has_dynamic_modifier = { modifier = BEL_neutrality_dynamic_modifier }
+		fascism > 0.40
+	}
 
-	completion_reward = {}
+	completion_reward = {
+		remove_dynamic_modifier = {	modifier = BEL_neutrality_dynamic_modifier }
+	}
 }
 
 	focus = {
@@ -1532,10 +3379,67 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.40
+		}
 
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				send_embargo = FRA
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			else = {
+				add_opinion_modifier = {
+					target = FRA
+					modifier = BEL_embargoed_us
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			if = {
+				limit = {
+					LUX = { 
+						exists = yes
+						has_war = no 
+						OR = {
+							is_subject_of = ROOT
+							is_subject = no
+						}
+					}
+				}
+				LUX = { country_event = { id = ww_BEL_event_diplomatic.2 hours = 1 } }
+				effect_tooltip = {
+					custom_effect_tooltip = if_they_accept_tt
+					annex_country = { target = LUX }
+					add_named_threat = { threat = 2 name = BEL_luxembourg_war_goal }
+				}
+			}
+			else_if = {
+				limit = {
+					LUX = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = LUX
+					generator = { 8 }
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_war_support = 0.10
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.10
+			}
+		}
 
 	}
 
@@ -1554,9 +3458,17 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.50
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_consumer_goods_factor = -0.1
+				tooltip = consumer_goods_factor_tt				
+			}	
+		}
 
 	}
 
@@ -1575,9 +3487,22 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.50
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_royal_commander_in_chief_tt
+			custom_effect_tooltip = BEL_lambert_chardome_tt
+			clr_country_flag = BEL_leopold_flag
+			IF = {
+				limit = {
+					has_country_flag = BEL_leopold_flag
+				}	
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = BEL_legacy_of_the_soldier_king_tt
+			}
+		}
 
 	}
 
@@ -1596,10 +3521,18 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.50
+		}
 
 	
-		completion_reward = {}
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
 
 	}
 
@@ -1618,10 +3551,30 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.60
+		}
 
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_corruption_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_corruption_political_power_gain = 0.05
+				tooltip = political_power_gain_tt				
+			}	
+			add_to_variable = { 
+				BEL_corruption_stability_factor = 0.10
+				tooltip = stability_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_production_speed_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_fascism_drift = -0.05
+				tooltip = fascism_drift_tt				
+			}
+		}
 
 	}
 
@@ -1640,9 +3593,15 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			fascism > 0.60
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = BEL_traditional_family_values_ns
+			add_stability = 0.05
+			add_political_power = 100
+		}
 
 	}
 
@@ -1662,9 +3621,97 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					NOT = { 
+						has_completed_focus = BEL_support_the_rexists
+						has_completed_focus = BEL_support_the_vnv
+					}
+				}
+				custom_effect_tooltip = BEL_the_european_crusade_tt
+			}
+
+			IF = { 
+				limit = { 
+					NOT = { 
+						has_completed_focus = BEL_support_the_rexists
+						has_completed_focus = BEL_support_the_vnv
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_rexist_tt
+				add_to_variable = { 
+					BEL_european_crusade_conscription_factor = 0.10
+					tooltip = conscription_factor_tt
+				}
+				add_to_variable = { 
+					BEL_european_crusade_production_factory_max_efficiency_factor = 0.05
+					tooltip = production_factory_max_efficiency_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_supply_consumption_factor = -0.10
+					tooltip = supply_consumption_factor_tt				
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_vnv_tt
+				add_to_variable = { 
+					BEL_european_crusade_army_org_factor = 0.05
+					tooltip = army_org_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_army_attack_against_major_factor = 0.05
+					tooltip = army_attack_against_major_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_army_defence_against_major_factor = 0.05
+					tooltip = army_defence_against_major_factor_tt				
+				}
+			}
+			IF = {
+				limit = {
+					has_completed_focus = BEL_support_the_rexists
+				}
+				add_dynamic_modifier = { modifier = BEL_european_crusade_dynamic_modifier }
+				custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_tt
+				add_to_variable = { 
+					BEL_european_crusade_conscription_factor = 0.10
+					tooltip = conscription_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_production_factory_max_efficiency_factor = 0.05
+					tooltip = production_factory_max_efficiency_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_supply_consumption_factor = -0.10
+					tooltip = supply_consumption_factor_tt				
+				}
+			}
+			IF = {
+				limit = {
+					has_completed_focus = BEL_support_the_vnv
+				}
+				add_dynamic_modifier = { modifier = BEL_european_crusade_dynamic_modifier }
+				custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_tt
+				add_to_variable = { 
+					BEL_european_crusade_army_org_factor = 0.05
+					tooltip = army_org_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_army_attack_against_major_factor = 0.05
+					tooltip = army_attack_against_major_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_european_crusade_army_defence_against_major_factor = 0.05
+					tooltip = army_defence_against_major_factor_tt				
+				}
+			}
+		}
 
 	}
 
@@ -1683,17 +3730,24 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_european_crusade_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_european_crusade_research_speed_factor = 0.05
+				tooltip = research_speed_factor_tt				
+			}
+		}
 
 	}
 
-
-
-
-
-
+#############################################
+#############################################
+######## Fascist- Expansionist ##############
+#############################################
+#############################################
 
 	focus = {
 		id = BEL_support_the_vnv
@@ -1730,9 +3784,38 @@ focus = {
 			}
 		}
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_lucien_lippert_tt
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = BEL_fascism_vnv_long
+				name = BEL_fascism_vnv
+			}
+			custom_effect_tooltip = BEL_vnv_dominant_tt
+
+			hidden_effect = {
+				set_cosmetic_tag = BEL_vnv_dominant
+
+				
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = obsolete_focus_branches_visibility
+							option = HIDE
+						}
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+				
+			}
+		}
 
 	}
 
@@ -1751,12 +3834,18 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BEL_language_barriers_fas_nl_ns
+				remove_idea = BEL_language_barriers_ns	
+			}
+		}
 
 	}
 
@@ -1778,11 +3867,49 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			NOT = { 
+				has_dynamic_modifier = { modifier = BEL_neutrality_dynamic_modifier } 
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			LUX = {
+				exists = no
+			}
+
+			HOL = {
+				exists = no
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					LUX = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+				    type = annex_everything
+				    target = LUX
+				    expire = 0
+				}
+			}
+
+			IF = {
+				limit = {
+					HOL = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+				    type = annex_everything
+				    target = HOL
+				    expire = 0
+				}
+			}
+		}
 
 	}
 
@@ -1801,12 +3928,60 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			HOL = {
+				all_core_state = {
+					OR = {
+						controls_or_subject_of = yes
+						controller = {
+							original_tag = BEL
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+			}
+			LUX= {
+				all_core_state = {
+					OR = {
+						controls_or_subject_of = yes
+						controller = {
+							original_tag = BEL
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+			}
+			BEL = {
+				all_core_state = {
+					OR = {
+						controls_or_subject_of = yes
+						controller = {
+							original_tag = BEL
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+			}
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			8 = { add_core_of = ROOT }
+			# Netherlands
+			custom_effect_tooltip = form_eu_netherlands_coring_states_tt
+			hidden_effect = {
+				7 = { add_core_of = ROOT }
+				35 = { add_core_of = ROOT }
+				36 = { add_core_of = ROOT }
+			}
+			custom_effect_tooltip = BEL_dietsland_tt
+
+			hidden_effect = {
+				set_cosmetic_tag = BEL_greater_netherlands
+			}
+		}
 
 	}
 
@@ -1825,14 +4000,22 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = ww_BEL_event_diplomatic.5 hours = 0 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_demand_calais_tt
+		}
 
 	}
 
@@ -1849,11 +4032,46 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			OR = {
+				owns_state = 672 #Sumatra
+				owns_state = 335 #Java
+				owns_state = 334 #Kalimantan
+				owns_state = 673 #Sulawesi
+				owns_state = 667 #Lesser Sunda Islands
+				owns_state = 668 #Moluccas
+				owns_state = 669 #West Papua
+				owns_state = 738 #Aru Islands
+				owns_state = 309 #Suriname
+				owns_state = 695 #Curacao
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
-		completion_reward = {}
+		completion_reward = {
+
+			every_state = {
+				limit = {
+					OR = {
+						state = 672
+						state = 335
+						state = 334
+						state = 673
+						state = 667
+						state = 668
+						state = 669
+						state = 738
+						state = 309
+						state = 695
+					}
+				}
+
+				add_compliance = 25
+			}
+		}
 	}
 
 	focus = {
@@ -1871,9 +4089,24 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			29 = {
+				is_fully_controlled_by = BEL
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_burgundy_tt
+
+			add_ideas = BEL_burgundian_heritage_ns
+
+			29 = { add_core_of = ROOT }
+			
+			hidden_effect = {
+				set_cosmetic_tag = BEL_burgundy
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
 
 	}
 
@@ -1896,11 +4129,24 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			is_subject = no
+			is_in_faction = no
+			NOT = { 
+				has_dynamic_modifier = { modifier = BEL_neutrality_dynamic_modifier } 
+				has_war_with = GER
+				has_country_flag = BEL_tried_to_join_the_axis_flag 
+			}
+			GER = { has_government = fascism }
+		}
 
-		bypass = {}
+		bypass = {
+			is_in_faction_with = GER
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			GER = { country_event = { id = ww_BEL_event_diplomatic.30 hours = 6 } }
+		}
 
 	}
 
@@ -1923,9 +4169,22 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			is_subject = no
+			is_in_faction = no
+			NOT = { 
+				has_dynamic_modifier = { modifier = BEL_neutrality_dynamic_modifier } 
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction_from_template = {
+				template = faction_template_european_dominance
+				name = BEL_pride_of_the_golden_lion
+				icon = GFX_faction_logo_generic_fascist
+			}
+		}
 
 	}
 
@@ -1944,9 +4203,27 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_state_claim = 29
+			add_state_claim = 785
+			add_state_claim = 18
+			add_state_claim = 28
+			add_state_claim = 17
+			add_state_claim = 27
+			create_wargoal = {
+				type = take_claimed_state
+				target = FRA
+				expire = 0
+				generator = { 29 785 18 28 17 27 }
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_demand_further_gallic_concessions_tt
+		}
 
 	}
 
@@ -1965,17 +4242,50 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			AND = {
+				29 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				785 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				18 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				28 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				17 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				27 = {
+					is_owned_or_subject_trigger	= yes
+				}
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_belgica_tt
+
+			swap_ideas = {
+				remove_idea = BEL_burgundian_heritage_ns
+				add_idea = BEL_pax_belgica_ns
+			}
+			
+			hidden_effect = {
+				set_cosmetic_tag = BEL_beligca
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
 
 	}
 
-
-
-
-
-
+#####################################
+#####################################
+######## Defensive Democrat #########
+#####################################
+#####################################
 
 	focus = {
 		id = BEL_constitutional_crisis
@@ -2024,9 +4334,47 @@ focus = {
 			}
 		}
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				name = BEL_republic_party
+				long_name = BEL_republic_party_long
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_country_leader_role = {
+			    character = BEL_hubert_pierlot
+			    promote_leader = yes
+			    country_leader = {
+			        ideology = conservatism
+			        expire = "1965.1.1.1"
+			        traits = { BEL_determined_prime_minister }
+			    }
+			}
+
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.10
+			}
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = obsolete_focus_branches_visibility
+							option = HIDE
+						}
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+				set_cosmetic_tag = BEL_republican
+			}
+		}
 
 	}
 
@@ -2045,10 +4393,27 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
 	
-		completion_reward = {}
+		completion_reward = {
+			clr_country_flag = BEL_leopold_flag
+			BEL_charles_count_of_flanders_person = {
+				remove_trait = {
+					slot = political_advisor
+					trait = BEL_quiet_royal
+				}
+			}
+			BEL_charles_count_of_flanders_person = {
+ 				add_trait = { 
+ 					slot = political_advisor
+ 					trait = BEL_royal_regent
+ 				}
+ 			}
+ 			custom_effect_tooltip = generic_skip_one_line_tt
+ 			custom_effect_tooltip = BEL_kings_abdication_tt
+		}
 
 	}
 
@@ -2067,9 +4432,13 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = ww_BEL_event_political.7 }
+			custom_effect_tooltip = BEL_snap_election_tt
+		}
 
 	}
 
@@ -2088,9 +4457,16 @@ focus = {
 	
 		cost = 0
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BEL_auto_complete_snap_election_tt
+				always = no
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_royal_intervention_complete_pierlot_tt
+		}
 
 	}
 
@@ -2109,9 +4485,16 @@ focus = {
 	
 		cost = 0
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BEL_auto_complete_snap_election_tt
+				always = no
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_royal_intervention_complete_spaak_tt
+		}
 
 	}
 
@@ -2130,9 +4513,17 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_idea = BEL_language_barriers_ns
+				}
+				remove_ideas = BEL_language_barriers_ns
+			}
+		}
 
 	}
 
@@ -2151,10 +4542,21 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_corruption_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_corruption_production_speed_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_fascism_drift = -0.02
+				tooltip = fascism_drift_tt				
+			}
+		}
 
 	}
 
@@ -2171,11 +4573,96 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_neutrality_dynamic_modifier
+					}
+				}
+
+				remove_dynamic_modifier = {
+					modifier = BEL_neutrality_dynamic_modifier
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					any_country = {
+						original_tag = ENG
+						has_government = democratic
+						is_subject = no
+					}
+				}
+
+				ENG = {
+					country_event = {
+						id = ww_BEL_event_diplomatic.12
+						hours = 12
+					}
+					add_ai_strategy = { 
+						type = protect 
+						id = ROOT
+						value = 100
+					}
+				}
+
+				
+			}
+
+			ELSE_IF = {
+				limit = {
+					any_country = {
+						original_tag = FRA
+						has_government = democratic
+						is_subject = no
+					}
+				}
+
+				FRA = {
+					country_event = {
+						id = ww_BEL_event_diplomatic.12
+						hours = 12
+					}
+					add_ai_strategy = { 
+						type = protect 
+						id = ROOT
+						value = 100
+					}
+				}
+
+				
+			}
+
+			ELSE = {
+				random_other_country = {
+					limit = {
+						is_major = yes
+						has_government = democratic
+						is_subject = no
+					}
+
+					country_event = {
+						id = ww_BEL_event_diplomatic.12
+						hours = 12
+					}
+
+					add_ai_strategy = { 
+						type = protect 
+						id = ROOT
+						value = 100
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -2191,12 +4678,234 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			
+			custom_trigger_tooltip = {
+				tooltip = BEL_belgian_maginot_available_tt
+				AND = {
+					OR = {
+						controls_province = 3488
+						controls_province = 6537
+						controls_province = 11519
+						controls_province = 9574
+						controls_province = 11419
+						controls_province = 6598
+						controls_province = 6560
+					}
 
-		bypass = {}
+					OR = {
+						980 = {
+							free_building_slots = {
+								building = bunker
+								size > 2
+								province = 3488
+							}
+
+							free_building_slots = {
+								building = bunker
+								size > 2
+								province = 6537
+							}
+						}
+
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size > 2
+								province = 11519
+							}
+						}
+
+						977 = {
+							free_building_slots = {
+								building = bunker
+								size > 2
+								province = 9574
+							}
+
+							free_building_slots = {
+								building = bunker
+								size > 2
+								province = 11419
+							}
+
+							free_building_slots = {
+								building = bunker
+								size > 2
+								province = 6598
+							}
+						}
+
+						6 = {
+							free_building_slots = {
+								building = bunker
+								size > 2
+								province = 6560 
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		bypass = {
+			
+			custom_trigger_tooltip = {
+				tooltip = BEL_belgian_maginot_bypass_tt
+				OR = {
+					AND = {
+						NOT = { controls_province = 3488 }
+						NOT = { controls_province = 6537 }
+						NOT = { controls_province = 11519 }
+						NOT = { controls_province = 9574 }
+						NOT = { controls_province = 11419 }
+						NOT = { controls_province = 6598 }
+						NOT = { controls_province = 6560 }
+					}
+					AND = {
+						980 = {
+							free_building_slots = {
+								building = bunker
+								size < 3
+								province = 3488
+							}
+
+							free_building_slots = {
+								building = bunker
+								size < 3
+								province = 6537
+							}
+						}
+
+						34 = {
+							free_building_slots = {
+								building = bunker
+								size < 3
+								province = 11519
+							}
+						}
+
+						6 = {
+							free_building_slots = {
+								building = bunker
+								size < 3
+								province = 6560
+							}
+						}
+
+						977 = {
+							free_building_slots = {
+								building = bunker
+								size < 3
+								province = 9574
+							}
+
+							free_building_slots = {
+								building = bunker
+								size < 3
+								province = 11419
+							}
+
+							free_building_slots = {
+								building = bunker
+								size < 3
+								province = 6598
+							}
+						}
+					}
+				}
+			
+			}
+			
+		}
 		enable_automatic_bypass = no
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+				 	has_dynamic_modifier = {
+				 		modifier = BEL_defensive_neutrality_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
+				add_to_variable = { BEL_defensive_neutrality_army_core_defence_factor = 0.05 tooltip = army_core_defence_factor_tt }
+			}
+
+			ELSE_IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_defensive_reorganization_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_reorganization_dynamic_modifier_tt
+				add_to_variable = { BEL_defensive_neutrality_army_core_defence_factor = 0.05 tooltip = army_core_defence_factor_tt }
+			}
+
+			ELSE = {
+				add_dynamic_modifier = {
+					modifier = BEL_defensive_neutrality_dynamic_modifier
+				}
+
+				add_to_variable = { BEL_defensive_neutrality_army_core_defence_factor = 0.05 tooltip = army_core_defence_factor_tt }
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_belgian_maginot_tt
+
+			hidden_effect = {
+				980 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = {
+							id = 3488
+							id = 6537
+						}
+					}
+				}
+				
+				34 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = {
+							id = 11519
+						}
+					}
+				}
+
+				977 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = {
+							id = 9574
+							id = 11419
+							id = 6598
+						}
+					}
+				}
+
+				6 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = {
+							id = 6560
+						}
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -2228,11 +4937,55 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			any_country = {
+				original_tag = SOV
+				has_government = communism
+				is_subject = no
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				any_country = {
+					original_tag = SOV
+					exists = no
+					NOT = { has_government = communism }
+				}
+				has_capitulated = yes
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					SOV = {
+						exists = yes
+						has_government = communism
+					}
+				}
+
+				SOV = {
+					country_event = {
+						id = ww_BEL_event_diplomatic.12
+						hours = 12
+					}
+				}
+				
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = BEL_soviet_guarantee_tt
+
+			custom_effect_tooltip = if_they_accept_tt
+			event_option_tooltip = ww_BEL_event_diplomatic.13.a
+			
+		}
 
 	}
 
@@ -2249,9 +5002,72 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_facility_specialization = specialization_land }
+				}
+				if = {
+					limit = {
+						34 = { #WALLONIE
+							is_fully_controlled_by = ROOT
+							can_construct_building = land_facility
+						}
+					}
+					34 = {
+						add_building_construction = {
+							type = land_facility
+							level = 1
+							instant_build = yes
+							province = 9536
+						}
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						limit = {
+							can_construct_building = land_facility
+						}
+						construct_building_in_random_province = {
+							land_facility = 1
+						}
+					}
+				}
+			}
+
+			IF = {
+				limit = {
+				 	has_dynamic_modifier = {
+				 		modifier = BEL_defensive_neutrality_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
+				add_to_variable = { BEL_defensive_neutrality_production_speed_bunker_factor = 0.15 tooltip = production_speed_bunker_factor_tt }
+			}
+
+			ELSE_IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_defensive_reorganization_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_reorganization_dynamic_modifier_tt
+				add_to_variable = { BEL_defensive_neutrality_production_speed_bunker_factor = 0.15 tooltip = production_speed_bunker_factor_tt }
+			}
+
+			ELSE = {
+				add_dynamic_modifier = {
+					modifier = BEL_defensive_neutrality_dynamic_modifier
+				}
+
+				add_to_variable = { BEL_defensive_neutrality_production_speed_bunker_factor = 0.15 tooltip = production_speed_bunker_factor_tt }
+			}
+		}
 
 	}
 
@@ -2268,11 +5084,14 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = BEL_democratization_of_education_ns
+		}
 
 	}
 
@@ -2289,13 +5108,32 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
+				
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = SOV_kirov_organization
+
+				mio:SOV_kirov_organization = {
+					add_mio_size = 2
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = BEL_kirov
+			}
+			
+		}
 
 	}
 
@@ -2312,13 +5150,79 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			is_in_faction = no
+			is_subject = no
+		}
 
 		available_if_capitulated = yes
 	
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					any_country = {
+						original_tag = ENG
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				ENG = {
+					country_event = {
+						id = generic.2
+						hours = 12
+					}
+				}
+			}
+
+			ELSE_IF = {
+				limit = {
+					any_country = {
+						original_tag = FRA
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				FRA = {
+					country_event = {
+						id = generic.2
+						hours = 12
+					}
+				}
+			}
+
+			ELSE_IF = {
+				limit = {
+					any_country = {
+						original_tag = USA
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				USA = {
+					country_event = {
+						id = generic.2
+						hours = 12
+					}
+				}
+			}
+
+			ELSE = { #this likely won't happen, but, if it does
+				random_other_country = {
+					limit = {
+						has_government = democratic
+						is_faction_leader = yes
+						is_major = yes
+					}
+
+					country_event = {
+						id = generic.2
+						hours = 12
+					}
+				}
+			}
+		}
 
 	}
 
@@ -2335,11 +5239,86 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_consumer_goods_factor = -0.1
+				tooltip = consumer_goods_factor_tt				
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_war_support = 0.05
+			add_stability = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_neutrality_dynamic_modifier
+					}
+				}
+
+				remove_dynamic_modifier = {
+					modifier = BEL_neutrality_dynamic_modifier
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			IF = {
+				limit = {
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = BEL_defensive_neutrality_dynamic_modifier
+						}
+						has_dynamic_modifier = {
+							modifier = BEL_defensive_reorganization_dynamic_modifier
+						}
+					}
+				}
+
+				add_dynamic_modifier = {
+					modifier = BEL_defensive_neutrality_dynamic_modifier
+				}
+
+				add_to_variable = { BEL_defensive_neutrality_surrender_limit = 0.1 tooltip = surrender_limit_tt }
+				add_to_variable = { BEL_defensive_neutrality_training_time_factor = -0.25 tooltip = training_time_factor_tt }
+				add_to_variable = { BEL_defensive_neutrality_mobilization_speed = 0.1 tooltip = mobilization_speed_tt }
+			}
+
+			ELSE_IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_defensive_neutrality_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
+				add_to_variable = { BEL_defensive_neutrality_surrender_limit = 0.1 tooltip = surrender_limit_tt }
+				add_to_variable = { BEL_defensive_neutrality_training_time_factor = -0.25 tooltip = training_time_factor_tt }
+				add_to_variable = { BEL_defensive_neutrality_mobilization_speed = 0.1 tooltip = mobilization_speed_tt }
+			}
+
+			ELSE_IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_defensive_reorganization_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_reorganization_dynamic_modifier_tt
+				add_to_variable = { BEL_defensive_neutrality_surrender_limit = 0.1 tooltip = surrender_limit_tt }
+				add_to_variable = { BEL_defensive_neutrality_training_time_factor = -0.25 tooltip = training_time_factor_tt }
+				add_to_variable = { BEL_defensive_neutrality_mobilization_speed = 0.1 tooltip = mobilization_speed_tt }
+			}	
+		}
 
 	}
 
@@ -2358,11 +5337,33 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			any_country = {
+				original_tag = SOV
+				exists = yes
+				has_government = communism 
+			}
+
+			is_in_faction = no
+			is_subject = no
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					original_tag = SOV
+					exists = yes
+					has_government = communism 
+				}
+
+				country_event = {
+					id = generic.2
+					hours = 12
+				}
+			}
+		}
 
 	}
 
@@ -2379,17 +5380,42 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			has_facility_specialization = specialization_land
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					not = { is_special_project_completed = sp:sp_land_stronghold_network }
+				}
+				complete_special_project = sp:sp_land_stronghold_network
+			}
+
+			IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_defensive_reorganization_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = BEL_modify_defensive_reorganization_dynamic_modifier_tt
+			}		
+			ELSE = {
+				custom_effect_tooltip = BEL_modify_defensive_neutrality_dynamic_modifier_tt
+			}
+			
+			add_to_variable = { BEL_defensive_neutrality_land_bunker_effectiveness_factor = 0.1 tooltip = land_bunker_effectiveness_factor_tt }
+		}
 
 	}
 
-
-
-
-
-
+############################
+############################
+######## Communist #########
+############################
+############################
 
 	focus = {
 		id = BEL_vandervelde_minority
@@ -2433,9 +5459,26 @@ focus = {
 			}
 		}
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BEL_auto_complete_government_resigns_tt
+				always = no
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_government_resigns_complete_vandervelde_tt
+
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
 
 	}
 
@@ -2454,11 +5497,17 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			country_event = {
+				id = ww_BEL_event_political.8
+				hours = 0
+			}
+		}
 
 	}
 
@@ -2477,11 +5526,26 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+
+			add_political_power = 50
+
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_consumer_goods_factor = -0.1
+				tooltip = consumer_goods_factor_tt				
+			}	
+		}
 
 	}
 
@@ -2500,11 +5564,36 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_corruption_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_corruption_political_power_gain = 0.05
+				tooltip = political_power_gain_tt				
+			}	
+			add_to_variable = { 
+				BEL_corruption_stability_factor = 0.05
+				tooltip = stability_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_production_speed_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt				
+			}
+			add_to_variable = { 
+				BEL_corruption_fascism_drift = -0.05
+				tooltip = fascism_drift_tt				
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_dynamic_modifier = {
+				modifier = BEL_socialism_on_the_rise_dynamic_modifier
+			}
+		}
 	}
 
 	focus = {
@@ -2520,9 +5609,54 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			SPR_scw_in_progress = yes
+			any_country = {
+				original_tag = SPR
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+				exists = yes
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					any_country = {
+						original_tag = SPR
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+						exists = yes
+						has_civil_war = yes
+					}
+
+					SPR_scw_in_progress = yes
+				}
+				add_relation_rule_override = {
+					target = SPD
+					can_send_volunteers = yes
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_ideas = BEL_volunteer_effort1_ns
+			}
+
+			ELSE = { #this is for tooltip reasons before and after the scw
+				add_relation_rule_override = {
+					target = SPR
+					can_send_volunteers = yes
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_ideas = BEL_volunteer_effort1_ns
+			}
+		}
 	}
 
 	focus = {
@@ -2541,11 +5675,18 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+
+			custom_effect_tooltip = BEL_modify_socialism_on_the_rise_dynamic_modifier
+			add_to_variable = { BEL_socialism_on_the_rise_party_popularity_stability_factor = 0.1 tooltip = party_popularity_stability_factor_tt }
+			add_to_variable = { BEL_socialism_on_the_rise_communnism_drift = 0.03 tooltip = communism_drift_tt }
+			
+		}
 
 	}
 
@@ -2564,13 +5705,101 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			COG = {
+				is_subject_of = ROOT
+			}
+		}
 
 		available_if_capitulated = yes
 
-		bypass = {}
+		bypass = {
+			COG = {
+				NOT = { is_subject_of = ROOT }
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = { COG = { is_subject_of = BEL } }
+				COG = {
+					add_ideas = BEL_communism_in_congo
+
+					custom_effect_tooltip = generic_skip_one_line_tt
+					custom_effect_tooltip = generic_skip_one_line_tt
+
+					COG_cyrille_adoula = {
+						set_nationality = BEL
+						add_advisor_role = {
+							advisor = {
+								slot = political_advisor
+								cost = 150
+								idea_token = COG_cyrille_adoula
+								traits = {
+									COG_trade_unionist 
+								}
+								allowed = {}
+							}
+						}
+					}
+
+					hidden_effect = {
+						COG_cristophe_gbenye = {
+							add_country_leader_role = {
+								promote_leader = yes
+								country_leader = {
+									ideology = marxism
+									expire = "1980.1.1.1"
+									traits = { revolutionary_general } 
+								}
+							}
+						}
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+
+				IF = {
+					limit = {
+						COG = {
+							capital_scope = {
+								infrastructure < 5
+							}
+						}
+					}
+					COG = {
+						every_controlled_state = {
+							limit = { 
+								is_capital = yes 
+							}
+							add_building_construction = {
+								type = infrastructure
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+				}
+
+				ELSE = {
+					COG = {
+						random_controlled_state = {
+							limit = {
+								infrastructure < 5
+							}
+							add_building_construction = {
+								type = infrastructure
+								level = 1
+								instant_build = yes
+							}
+							
+						}
+					}
+				}
+				
+			}
+		}
 
 	}
 
@@ -2587,9 +5816,13 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			SPR_scw_in_progress = yes
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_spanish_intervention_tt
+		}
 
 	}
 
@@ -2608,11 +5841,80 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_state_claim = 295
+			add_state_claim = 888
+			add_state_claim = 889
+			add_state_claim = 890
+			add_state_claim = 718
+			add_state_claim = 538
+			add_state_claim = 768
+			add_state_claim = 769
+			add_state_claim = 796
+			add_state_claim = 540
+			add_state_claim = 891
+			add_state_claim = 892
+			add_state_claim = 772
+			add_state_claim = 539
+			add_state_claim = 297
+			add_state_claim = 773
+			add_state_claim = 660
+			add_state_claim = 774
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+
+			custom_effect_tooltip = BEL_contradictions_in_socialism_tt
+
+			hidden_effect = {
+				every_other_country = {
+					limit = {
+						OR = {
+							controls_state = 295
+							controls_state = 888
+							controls_state = 889
+							controls_state = 890
+							controls_state = 718
+							controls_state = 538
+							controls_state = 768
+							controls_state = 769
+							controls_state = 796
+							controls_state = 540
+							controls_state = 891
+							controls_state = 892
+							controls_state = 772
+							controls_state = 539
+							controls_state = 297
+							controls_state = 773
+							controls_state = 660
+							controls_state = 774
+						}
+						NOT = {
+							BEL = {
+								has_wargoal_against = {
+									target = PREV
+								}
+							}
+							is_subject_of = BEL
+						}
+					}
+
+					BEL = {
+						create_wargoal = {
+							type = take_claimed_state
+							target = PREV
+						}
+					}
+				}
+			}
+			
+			
+		}
 
 	}
 
@@ -2631,11 +5933,40 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = BEL_neutrality_dynamic_modifier
+					}
+				}
+
+				remove_dynamic_modifier = {
+					modifier = BEL_neutrality_dynamic_modifier
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			ELSE = {
+				effect_tooltip = {
+					remove_dynamic_modifier = {
+						modifier = BEL_neutrality_dynamic_modifier
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			custom_effect_tooltip = BEL_modify_socialism_on_the_rise_dynamic_modifier
+			add_to_variable = { BEL_socialism_on_the_rise_war_support_factor = 0.1 tooltip = war_support_factor_tt }
+			add_to_variable = { BEL_socialism_on_the_rise_production_speed_arms_factory_factor = 0.2 tooltip = production_speed_arms_factory_factor_tt }
+		}
 
 	}
 
@@ -2652,11 +5983,24 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					NOT = { has_idea = BEL_volunteer_effort2_ns}
+				}
+
+				add_ideas = BEL_volunteer_effort2_ns
+			}
+
+			set_rule = { 
+				can_send_volunteers = yes
+			}
+		}
 
 	}
 
@@ -2674,11 +6018,15 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_socialism_on_the_rise_dynamic_modifier
+			add_to_variable = { BEL_socialism_on_the_rise_research_speed_factor = 0.1 tooltip = research_speed_factor_tt }
+		}
 
 	}
 
@@ -2721,11 +6069,23 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+
+			custom_effect_tooltip = BEL_modify_socialism_on_the_rise_dynamic_modifier
+			add_to_variable = { BEL_socialism_on_the_rise_communnism_drift = 0.02 tooltip = communism_drift_tt }
+			add_to_variable = { BEL_socialism_on_the_rise_party_popularity_stability_factor = 0.1 tooltip = party_popularity_stability_factor_tt }
+			add_to_variable = { BEL_socialism_on_the_rise_stability_factor = 0.05 tooltip = stability_factor_tt }
+			add_to_variable = { BEL_socialism_on_the_rise_war_support_factor = 0.05 tooltip = war_support_factor_tt }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_raise_the_red_flag_tt
+			
+		}
 
 	}
 
@@ -2780,9 +6140,178 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			is_subject = no
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = BEL_european_union
+			}
+
+			ELSE_IF = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+
+				leave_faction = yes
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				create_faction_from_template = {
+					template = faction_template_european_unity
+					name = BEL_european_union
+					icon = GFX_faction_logo_eu
+				}
+			}
+
+			ELSE = {
+				create_faction_from_template = {
+					template = faction_template_european_unity
+					name = BEL_european_union
+					icon = GFX_faction_logo_eu
+				}
+			}
+			
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+				limit = {
+					ENG = {
+						exists = yes
+						is_subject = no
+						is_in_faction = no
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+				}
+
+				ENG = {
+					country_event = {
+						id = ww_BEL_event_diplomatic.20
+						hours = 6
+					}
+
+					set_country_flag = sent_eu_invitation_flag
+				}
+			}
+
+			IF = {
+				limit = {
+					FRA = {
+						exists = yes
+						is_subject = no
+						is_in_faction = no
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+				}
+
+				FRA = {
+					country_event = {
+						id = ww_BEL_event_diplomatic.20
+						hours = 6
+					}
+
+					set_country_flag = sent_eu_invitation_flag
+				}
+			}
+
+			IF = {
+				limit = {
+					LUX = {
+						exists = yes
+						is_subject = no
+						is_in_faction = no
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+				}
+
+				LUX = {
+					country_event = {
+						id = ww_BEL_event_diplomatic.20
+						hours = 6
+					}
+
+					set_country_flag = sent_eu_invitation_flag
+				}
+			}
+
+			IF = {
+				limit = {
+					HOL = {
+						exists = yes
+						is_subject = no
+						is_in_faction = no
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+				}
+
+				HOL = {
+					country_event = {
+						id = ww_BEL_event_diplomatic.20
+						hours = 6
+					}
+
+					set_country_flag = sent_eu_invitation_flag
+				}
+			}
+
+			IF = {
+				limit = {
+					SPR = {
+						exists = yes
+						is_subject = no
+						is_in_faction = no
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+				}
+
+				SPR = {
+					country_event = {
+						id = ww_BEL_event_diplomatic.20
+						hours = 6
+					}
+
+					set_country_flag = sent_eu_invitation_flag
+				}
+			}
+
+			hidden_effect = {
+				IF = { 
+					limit = {
+						NOT = {
+							has_global_flag = HUN_otto_von_habsburg_has_joined_hungary_flag
+							has_global_flag = AUS_otto_von_habsburg_has_joined_austria_flag
+						}
+					}
+
+					country_event = {
+						id = ww_BEL_event_diplomatic.29
+						hours = 24
+					}
+					
+				}
+			}
+		}
 
 	}
 
@@ -2799,17 +6328,26 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_european_community_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = european_union_leader
+
+			hidden_effect = {
+				news_event = { id = mtg_news.54 days = 1 }
+			}
+		}
 
 	}
 
-
-
-
-
-
+######################################
+######################################
+######## The King Surrenders #########
+######################################
+######################################
 
 	focus = {
 		id = BEL_the_king_surrenders
@@ -2820,11 +6358,41 @@ focus = {
 	
 		cost = 0
 
-		available = {}
+		available = {
+			always = no
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					COG = {
+						NOT = {
+							has_dynamic_modifier = {
+								modifier = COG_belgian_congo_colonial_dynamic_modifier
+							}	
+						}
+					}
+				}
+				COG = {
+					add_dynamic_modifier = { 
+						modifier = COG_belgian_congo_colonial_dynamic_modifier
+					}
+					custom_effect_tooltip = generic_skip_one_line_tt
+					custom_effect_tooltip = warning_this_idea_can_be_removed_tt
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = modify_COG_belgian_congo_colonial_dynamic_modifier_tt
+			add_to_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_cic_to_overlord_factor = 0.15 tooltip = cic_to_overlord_factor_tt }
+			add_to_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_mic_to_overlord_factor = 0.25 tooltip = mic_to_overlord_factor_tt }
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_the_king_surrenders_tt
+		}
 
 	}
 
@@ -2845,12 +6413,25 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
 
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_idea = BEL_the_kings_surrender_ns
+				}
+				remove_ideas = BEL_the_kings_surrender_ns
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			
+			add_stability = -0.25
+			add_war_support = 0.10
+       		clr_country_flag = BEL_leopold_flag
+		}
 
 	}
 
@@ -2871,12 +6452,39 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 
 	
-		completion_reward = {}
+		completion_reward = {
+			promote_character = {
+			 	character = BEL_king_leopold_iii 
+			 	ideology = despotism 
+			}
+
+			BEL_king_leopold_iii = {
+				add_trait = {
+				 trait = BEL_leopold_prisoner_king
+				 ideology = despotism
+				}
+			}
+
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+				name = BEL_leopold_party
+				long_name = BEL_leopold_party_long
+			}
+
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.10
+			}
+
+			remove_ideas = BEL_the_kings_surrender_ns
+		}
 
 	}
 
@@ -2893,11 +6501,15 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			is_government_in_exile = yes
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_government_in_exile_tt
+		}
 
 	}
 
@@ -2916,11 +6528,32 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				if = {
+					limit = {
+						has_intelligence_agency = no
+					}
+					create_intelligence_agency = yes
+				}
+				add_ideas = BEL_dame_blanche_ns
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.75
+					uses = 2
+					category = decryption_tech
+				}
+			}
+		}
 
 	}
 
@@ -2939,11 +6572,18 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 150
+			add_war_support = 0.10
+			add_legitimacy = 25
+			add_stability = 0.10
+			add_manpower = 5000
+		}
 
 	}
 
@@ -2962,11 +6602,17 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			add_offsite_building = { 
+				type = industrial_complex
+				level = 2 
+			}
+		}
 
 	}
 
@@ -2987,9 +6633,12 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_country_leader_trait = BEL_democratic_homecoming_trait
+		}
 
 	}
 
@@ -3010,9 +6659,47 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					has_completed_focus = BEL_kings_abdication
+				}
+
+				BEL_charles_count_of_flanders_person = {
+					remove_trait = {
+						slot = political_advisor
+						trait = BEL_quiet_royal
+					}
+				}
+				add_country_leader_role = {
+					character = BEL_charles_count_of_flanders_person
+					promote_leader = yes
+					country_leader = {
+						ideology = conservatism
+						expire = 1965.1.1.1
+						traits = { BEL_charles_king_of_belgians} 
+					}
+				}
+			}
+
+			ELSE = {
+				
+				add_country_leader_role = {
+					character = BEL_charles_count_of_flanders_person
+					promote_leader = yes
+					country_leader = {
+						ideology = conservatism
+						expire = 1965.1.1.1
+						traits = { BEL_royal_regent } 
+					}
+				}
+			}
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -3032,9 +6719,26 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			NOT = {
+				has_completed_focus = BEL_kings_abdication
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			add_country_leader_role = {
+				character = BEL_king_leopold_iii
+				promote_leader = yes
+				country_leader = {
+					ideology = conservatism
+					expire = 1965.1.1.1
+					traits = { BEL_leopold_unknown_sympathies } 
+				}
+			}
+
+			add_political_power = 200
+		}
 	}
 
 	focus = {
@@ -3052,12 +6756,49 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 
 	
-		completion_reward = {}
+		completion_reward = {
+			add_offsite_building = { 
+				type = industrial_complex
+				level = 2 
+			}
+
+			every_owned_state = {
+				limit = {
+					or = {
+						state = 6
+						state = 977
+						state = 34
+						state = 980
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = BEL_belgian_resistance_state_dynamic_modifier
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_secretaries_general_tt
+			every_other_country = {
+				limit = {
+					OR = {
+						controls_state = 6
+						controls_state = 977
+						controls_state = 34
+						controls_state = 980
+					}
+				}
+				country_event = {
+					id = ww_BEL_event_war.6
+					hours = 1
+				}	
+			}
+			
+		}
 
 	}
 
@@ -3074,11 +6815,18 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_belgian_resistance_state_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_belgian_resistance_resistance_damage_to_garrison_on_our_occupied_states = 0.2
+				tooltip = resistance_damage_to_garrison_on_our_occupied_states_tt				
+			}	
+		}
 
 	}
 
@@ -3095,11 +6843,35 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_lambert_chardome_tt
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_belgian_legion_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_belgian_legion_dynamic_modifier }
+				add_to_variable = { 
+					BEL_belgian_legion_army_infantry_attack_factor = 0.1
+					tooltip = army_infantry_attack_factor_tt				
+				}	 
+				else = {
+					custom_effect_tooltip = BEL_modify_belgian_legion_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_belgian_legion_army_infantry_attack_factor = 0.1
+						tooltip = army_infantry_attack_factor_tt				
+					}	 
+				}		 
+			}
+		}
 
 	}
 
@@ -3118,11 +6890,21 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_offsite_building = { 
+				type = arms_factory
+				level = 2 
+			}
+			add_offsite_building = { 
+				type = dockyard
+				level = 1 
+			}
+		}
 
 	}
 
@@ -3141,11 +6923,43 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_belgian_legion_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_belgian_legion_dynamic_modifier }
+				add_to_variable = { 
+					BEL_belgian_legion_exile_manpower_factor = 0.1
+					tooltip = exile_manpower_factor_tt				
+				}
+				add_to_variable = { 
+					BEL_belgian_legion_weekly_manpower = 250
+					tooltip = weekly_manpower_tt				
+				}	 
+				else = {
+					custom_effect_tooltip = BEL_modify_belgian_legion_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_belgian_legion_exile_manpower_factor = 0.1
+						tooltip = exile_manpower_factor_tt				
+					}	 
+					add_to_variable = { 
+						BEL_belgian_legion_weekly_manpower = 250
+						tooltip = weekly_manpower_tt				
+					}	 
+				}		 
+			}
+			add_manpower = 10000
+		}
 
 	}
 
@@ -3162,11 +6976,18 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_belgian_resistance_state_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_belgian_resistance_resistance_growth_on_our_occupied_states = 0.2
+				tooltip = resistance_growth_on_our_occupied_states_tt				
+			}	
+		}
 
 	}
 
@@ -3188,11 +7009,96 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					has_government = democratic
+				}
+
+				show_unit_leaders_tooltip = BEL_jean_baptise_piron
+			}
+
+			
+			
+			BEL_victor_van_strydonck_de_burkel = {
+				promote_leader = yes 
+			}
+
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_belgian_legion_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_belgian_legion_dynamic_modifier }
+				add_to_variable = { 
+					BEL_belgian_legion_army_core_attack_factor = 0.1
+					tooltip = army_core_attack_factor_tt				
+				}
+
+				add_to_variable = { 
+					BEL_belgian_legion_army_core_defence_factor = 0.1
+					tooltip = army_core_attack_factor_tt				
+				}	 
+				else = {
+					custom_effect_tooltip = BEL_modify_belgian_legion_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_belgian_legion_army_core_attack_factor = 0.1
+						tooltip = army_core_attack_factor_tt					
+					}
+
+					add_to_variable = { 
+						BEL_belgian_legion_army_core_defence_factor = 0.1
+						tooltip = army_core_attack_factor_tt				
+					}	 
+				}		 
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			division_template = {
+				name = "Division d'Infanterie"
+				is_locked = yes
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }	
+				}
+			}
+	
+			IF = {
+				limit = {
+					is_government_in_exile = yes
+				}
+				random_state = {
+					limit = {
+						OWNER = {
+							is_hosting_exile = ROOT
+							controls_state = PREV
+						}
+						is_in_home_area = yes
+					}
+					create_unit = {
+						division = "name = \"Division d'Infanterie\" division_template = \"Division d'Infanterie\" start_experience_factor = 0.6" 
+						owner = ROOT
+						count = 2
+					}
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = BEL_free_belgian_forces_tt
+			}
+		}
 
 	}
 
@@ -3211,11 +7117,19 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = BEL_king_law_freedom_ns
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.15
+			}
+
+		}
 
 	}
 
@@ -3234,11 +7148,19 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			BEL_king_leopold_iii = {
+				swap_country_leader_traits = {
+					remove = BEL_leopold_prisoner_king
+					add = BEL_leopold_king_of_the_belgians
+				}
+			}
+		}
 
 	}
 
@@ -3258,11 +7180,14 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_royal_commander_in_chief_tt
+		}
 
 	}
 
@@ -3279,11 +7204,16 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			COG = { 
+				country_event = { id = ww_congo.62 hours = 6 }
+			}
+		}
 
 	}
 
@@ -3300,19 +7230,46 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			is_government_in_exile = yes
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					is_government_in_exile = yes
+				}
+				random_state = {
+					limit = {
+						OWNER = {
+							is_hosting_exile = ROOT
+							controls_state = PREV
+						}
+						is_in_home_area = yes
+					}
+					create_unit = {
+						division = "name = \"Division d'Infanterie\" division_template = \"Division d'Infanterie\" start_experience_factor = 0.6" 
+						owner = ROOT
+						count = 3
+					}
+				}
+			}
+
+			ELSE = {
+				custom_effect_tooltip = BEL_expand_the_belgian_legion_tt
+			}
+		}
 	}
 
 
-
-
-
-
-
+#############################
+#############################
+######## Industrial #########
+#############################
+#############################
 
 	focus = {
 		id = BEL_monetary_reconstruction
@@ -3406,9 +7363,51 @@ focus = {
 			}
 		}
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_consumer_goods_factor = -0.15
+				tooltip = consumer_goods_factor_tt				
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = BEL
+					is_fully_controlled_by = BEL
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = BEL
+					is_fully_controlled_by = BEL
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}	
+		}
 
 	}
 
@@ -3427,11 +7426,36 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}		
+		bypass = {
+			NOT = { has_full_control_of_state = 34 }
+		}		
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					34 = {
+						is_core_of = ROOT
+						is_fully_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}	
+					}
+				}
+				34 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}	
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -3449,9 +7473,18 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_dynamic_modifier = {
+				modifier = BEL_gold_reserves_dynamic_modifier
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_unlock_gold_reserve_decisions_tt
+		}
 	}
 
 	focus = {
@@ -3469,9 +7502,15 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt			
+			add_dynamic_modifier = { modifier = BEL_social_partners_dynamic_modifier }
+		}
 	}
 
 	focus = {
@@ -3489,11 +7528,36 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			34 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			34 = {
+				NOT = { is_fully_controlled_by = ROOT } 
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			34 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				add_resource = {
+					type = coal
+					amount = 18
+				}
+			}
+			add_tech_bonus = {
+				name = BEL_revive_coal_mining
+				bonus = 0.5
+				uses = 2
+				category = excavation_tech
+			}
+		}
 
 	}
 
@@ -3512,9 +7576,18 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.05
+
+			custom_effect_tooltip = BEL_modify_social_partners_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_social_partners_production_factory_max_efficiency_factor  = 0.05
+				tooltip = production_factory_max_efficiency_factor_tt				
+			}
+		}
 
 	}
 
@@ -3534,11 +7607,63 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			34 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			34 = {
+				NOT = { is_fully_controlled_by = ROOT } 
+			}
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			34 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt	
+			if = {
+				limit = {
+					has_idea = BEL_cockerill_industrial
+				}
+				swap_ideas = {
+					remove_idea = BEL_cockerill_industrial
+					add_idea = BEL_cockerill_industrial_improved
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = BEL_cockerill_industrial
+						add_idea = BEL_cockerill_industrial_improved
+					}
+				}
+			}
+
+			custom_effect_tooltip = BEL_cockerill_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = BEL_modify_economic_downturn_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_economic_downturn_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt				
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			country_event = {
+				id = ww_BEL_event_misc.3
+				hours = 0
+			}
+		}
 
 	}
 
@@ -3557,9 +7682,30 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ITA_railway_innovations
+				ahead_reduction = 1.5
+				bonus = 0.5
+				uses = 1
+				category = train_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BEL_modify_social_partners_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_social_partners_production_speed_rail_way_factor  = 0.1
+				tooltip = production_speed_rail_way_factor_tt
+			}
+			add_to_variable = { 
+				BEL_social_partners_production_speed_supply_node_factor  = 0.1
+				tooltip = production_speed_supply_node_factor_tt
+			}
+
+		}
 
 	}
 
@@ -3578,9 +7724,22 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_stability = 0.10
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}			
+
+			custom_effect_tooltip = BEL_modify_social_partners_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_social_partners_production_factory_efficiency_gain_factor  = 0.1
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+		}
 
 	}
 
@@ -3599,9 +7758,12 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+		}
 
 	}
 
@@ -3621,9 +7783,51 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_academies_of_belgium_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_academies_of_belgium_dynamic_modifier }
+				add_to_variable = { 
+					BEL_academies_of_belgium_special_project_speed_factor = 0.05
+					tooltip = special_project_speed_factor_tt				
+				}	
+				add_to_variable = { 
+					BEL_academies_of_belgium_production_speed_facility_factor = 0.1
+					tooltip = production_speed_facility_factor_tt				
+				}	
+				else = {
+					custom_effect_tooltip = BEL_academies_of_belgium_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_academies_of_belgium_special_project_speed_factor = 0.05
+						tooltip = special_project_speed_factor_tt				
+					}	 
+					add_to_variable = { 
+						BEL_academies_of_belgium_production_speed_facility_factor = 0.1
+						tooltip = production_speed_facility_factor_tt				
+					}	
+				}		 
+			}
+
+			hidden_effect = {
+				IF = {
+					limit = {
+						has_country_flag = BEL_serious_waffle_flag
+					}
+
+					clr_country_flag = BEL_serious_waffle_flag
+					set_country_flag = BEL_wunder_waffle_flag
+				}
+			}
+		}
 
 	}
 
@@ -3642,9 +7846,20 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = { 
+					has_idea = export_focus
+				}
+				add_ideas = free_trade
+				else = { 
+					add_political_power = 100
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -3664,9 +7879,23 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			hidden_effect = {
+				remove_dynamic_modifier = { modifier = BEL_social_partners_dynamic_modifier }
+				add_dynamic_modifier = { modifier = BEL_engine_of_the_economy_dynamic_modifier }
+			}
+
+			add_stability = 0.10
+
+			custom_effect_tooltip = BEL_remove_social_partners_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_social_partners_production_factory_max_efficiency_factor  = 0.1
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+		}
 
 	}
 
@@ -3686,20 +7915,36 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+			hidden_effect = {
+				remove_dynamic_modifier = { modifier = BEL_engine_of_the_economy_dynamic_modifier }
+				add_dynamic_modifier = { modifier = BEL_belgian_miracle_dynamic_modifier }
+			}
+
+			custom_effect_tooltip = BEL_remove_engine_of_the_economy_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_social_partners_industrial_capacity_factory  = 0.2
+				tooltip = industrial_capacity_factory_tt
+			}	
+			add_to_variable = { 
+				BEL_social_partners_production_speed_buildings_factor  = 0.1
+				tooltip = production_speed_buildings_factor_tt
+			}	
+		}
 	}
 
 
-
-
-
-
-
+######################
+######################
+######## AIR #########
+######################
+######################
 
 	focus = {
 		id = BEL_belgian_air_force
@@ -3713,11 +7958,25 @@ focus = {
 
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			air_experience = 50
+
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				prioritize = { 34 } 
+				
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -3735,9 +7994,33 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_owned_and_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = BEL_develop_belgian_air_industry
+				bonus = 0.5
+				uses = 2
+				category = air_equipment
+			}
+		}
 
 	}
 
@@ -3756,9 +8039,39 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = available_scientist_one_line_tt
+				CHARACTER = BEL_alfred_renard
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:BEL_renard_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.1
+					add_mio_research_bonus = 0.05
+				}
+			}
+
+			ELSE_IF = {
+				limit = { NOT = { has_completed_focus = BEL_stampe_et_vertrongen }}
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = renard
+			}
+
+			ELSE = {
+				air_experience = 25
+			}
+			
+		}
 
 	}
 
@@ -3777,9 +8090,32 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:BEL_renard_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.1
+					add_mio_research_bonus = 0.05
+				}
+			}
+
+			ELSE_IF = {
+				limit = { NOT = { has_completed_focus = BEL_renard_constructions_aeronautiques }}
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = renard
+			}
+
+			ELSE = {
+				air_experience = 25
+			}
+		}
 
 	}
 
@@ -3799,9 +8135,12 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_relocate_air_production_tt
+		}
 
 	}
 
@@ -3819,11 +8158,14 @@ focus = {
 
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { BEL_pressurized_cabins_ns }
+		}
 
 	}
 
@@ -3842,11 +8184,36 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = small_plane_airframe
+					seller_tags = { USA ENG FRA ITA GER SOV HOL POL } 
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = large_plane_airframe
+					seller_tags = { USA ENG FRA ITA GER SOV HOL POL } 
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = medium_plane_airframe
+					seller_tags = { USA ENG FRA ITA GER SOV HOL POL } 
+				}
+			}
+			else = {
+				add_ideas = BEL_license_air_idea
+			}
+		}
 
 	}
 
@@ -3865,18 +8232,27 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			air_experience = 50
+			add_doctrine_cost_reduction = {
+				name = BEL_aviation_school
+				cost_reduction = 0.25
+				uses = 2
+				category = air_doctrine
+			}
+		}
 
 	}
 
 	focus = {
 		id = BEL_polish_licences
 		icon = GFX_focus_BEL_polish_licences
-
+#		Maybe use GFX_focus_generic_copy_plane_designs
 	
 		prerequisite = { focus = BEL_foreign_plane_purchases }
 
@@ -3889,11 +8265,14 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = BEL_license_POL_air_idea
+		}
 
 	}
 
@@ -3912,9 +8291,40 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { 
+						has_dynamic_modifier = { 
+							modifier = BEL_academies_of_belgium_dynamic_modifier
+						}
+					}
+				}
+				add_dynamic_modifier = { modifier = BEL_academies_of_belgium_dynamic_modifier }
+				add_to_variable = { 
+					BEL_academies_of_belgium_sp_tag_helicopter_speed_factor = 0.1
+					tooltip = sp_tag_helicopter_speed_factor_tt				
+				}	
+				add_to_variable = { 
+					BEL_academies_of_belgium_production_speed_air_facility_factor = 0.1
+					tooltip = production_speed_air_facility_factor_tt				
+				}	
+				else = {
+					custom_effect_tooltip = BEL_academies_of_belgium_dynamic_modifier_tt
+					add_to_variable = { 
+						BEL_academies_of_belgium_sp_tag_helicopter_speed_factor = 0.1
+						tooltip = sp_tag_helicopter_speed_factor_tt				
+					}	 
+					add_to_variable = { 
+						BEL_academies_of_belgium_production_speed_air_facility_factor = 0.1
+						tooltip = production_speed_air_facility_factor_tt				
+					}	
+				}		 
+			}
+		}
 
 	}
 
@@ -3933,9 +8343,17 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = BEL_air_doctrine
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
 
 	}
 
@@ -3952,19 +8370,22 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { BEL_legacy_of_the_belgian_airforce_ns }
+		}
 
 	}
 
-
-
-
-
-
+#######################
+#######################
+######## Navy #########
+#######################
+#######################
 
 	focus = {
 		id = BEL_re_establish_belgian_navy
@@ -3978,11 +8399,28 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			navy_experience = 25
+			6 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = BEL_re_establish_belgian_navy
+				bonus = 1
+				uses = 1 
+				category = dd_tech
+			}
+		}
 
 	}
 
@@ -4001,9 +8439,21 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			6 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = { BEL_re_build_the_fleet_ns }
+		}
 
 	}
 
@@ -4022,11 +8472,19 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+			is_in_faction = yes
+			has_war = yes
+		}
 
 		available_if_capitulated = yes
 	
-		completion_reward = {}
+		completion_reward = {
+			add_offsite_building = { 
+				type = dockyard 
+				level = 2 
+			}
+		}
 
 	}
 
@@ -4043,9 +8501,17 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+			has_completed_focus = BEL_social_partners
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = BEL_modify_social_partners_dynamic_modifier_tt
+			add_to_variable = { 
+				BEL_social_partners_resource_trade_cost_bonus_per_factory = 1
+				tooltip = resource_trade_cost_bonus_per_factory_tt				
+			}
+		}
 
 	}
 
@@ -4062,9 +8528,13 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			add_ideas = BEL_corvette_fleet_ns
+		}
 	}
 
 	focus = {
@@ -4082,9 +8552,26 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			977 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				add_idea = BEL_maritime_support_ns
+				remove_idea = BEL_re_build_the_fleet_ns	
+			}
+		}
 
 	}
 
@@ -4103,9 +8590,42 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny"}
+
+				mio:BEL_cockerill_shipyards_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.2
+					add_mio_research_bonus = 0.05
+				}
+			}
+
+			ELSE = {
+				add_doctrine_cost_reduction = {
+					name = BEL_cockerill_shipyards
+					cost_reduction = 0.5
+					uses = 1
+					category = naval_doctrine # optional 
+					# tecnology  = technology_id # optional
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			977 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 
@@ -4122,9 +8642,19 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			navy_experience = 25
+			add_doctrine_cost_reduction = {
+				name = BEL_antwerp_maritime_academy
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine # optional 
+				# tecnology  = technology_id # optional
+			}
+		}
 
 	}	
 
@@ -4141,9 +8671,18 @@ focus = {
 	
 		cost = 5
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = BEL_naval_doctrine
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine # optional 
+				# tecnology  = technology_id # optional
+			}
+		}
 
 	}
 
@@ -4160,9 +8699,12 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { BEL_convoy_protection_duties_ns }
+		}
 
 	}
 
@@ -4180,12 +8722,19 @@ focus = {
 	
 		cost = 10
 
-		available = {}
+		available = {
+		}
 	
 		search_filters = {  
 		}
 	
-		completion_reward = {}
+		completion_reward = {
+
+			swap_ideas = {
+				add_idea = BEL_maritime_phoenix_ns
+				remove_idea = BEL_maritime_support_ns	
+			}
+		}
 
 	}
 

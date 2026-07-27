@@ -22,6 +22,33 @@ HOL_obtain_foreign_colonial_investments = {
 				ENG = { has_war = no }
 				JAP = { has_war = no }
 			}
+			335 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
+			672 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
+			334 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
 			has_full_control_of_state = 695
 			has_full_control_of_state = 309
 		}
@@ -38,7 +65,10 @@ HOL_obtain_foreign_colonial_investments = {
 
 		visible = {
 			tag = HOL
-			has_completed_focus = HOL_obtain_foreign_colonial_investments
+			OR = {
+				has_completed_focus = HOL_obtain_foreign_colonial_investments
+				has_completed_focus = HOL_obtain_foreign_colonial_investments_taog
+			}
 		}
 
 		remove_effect = {
@@ -71,6 +101,33 @@ HOL_obtain_foreign_colonial_investments = {
 				ENG = { has_war = no }
 				JAP = { has_war = no }
 			}
+			335 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
+			672 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
+			334 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
 			has_full_control_of_state = 695
 			has_full_control_of_state = 309
 		}
@@ -87,7 +144,10 @@ HOL_obtain_foreign_colonial_investments = {
 
 		visible = {
 			tag = HOL
-			has_completed_focus = HOL_obtain_foreign_colonial_investments
+			OR = {
+				has_completed_focus = HOL_obtain_foreign_colonial_investments
+				has_completed_focus = HOL_obtain_foreign_colonial_investments_taog
+			}
 		}
 
 		remove_effect = {
@@ -126,10 +186,19 @@ HOL_obtain_foreign_colonial_investments = {
 
 		visible = {
 			tag = HOL
-			has_completed_focus = HOL_obtain_foreign_colonial_investments
+			OR = {
+				has_completed_focus = HOL_obtain_foreign_colonial_investments
+				has_completed_focus = HOL_obtain_foreign_colonial_investments_taog
+			}
 		}
 
 		remove_effect = {
+			695 = {
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
 			if = {
 				limit = {
 					check_variable = { var = west_indies_oil value = 4 compare = less_than }
@@ -139,6 +208,14 @@ HOL_obtain_foreign_colonial_investments = {
 			if = {
 				limit = {
 					check_variable = { var = west_indies_oil value = 4 compare = equals }
+				}
+				695 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
 				}
 			}
 			if = {
@@ -172,6 +249,33 @@ HOL_obtain_foreign_colonial_investments = {
 			}
 			NOT = { has_war_with = USA }
 			NOT = { has_war_with = ENG }
+			335 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
+			672 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
+			334 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					has_full_control_of_state = PREV
+				}
+			}
 		}
 
 		cost = 50
@@ -181,10 +285,31 @@ HOL_obtain_foreign_colonial_investments = {
 		days_remove = 120
 
 		visible = {
-			has_completed_focus = HOL_obtain_foreign_colonial_investments
+			OR = {
+				has_completed_focus = HOL_obtain_foreign_colonial_investments
+				has_completed_focus = HOL_obtain_foreign_colonial_investments_taog
+			}
 		}
 
 		remove_effect = {
+			335 = {
+				add_resource = {
+					type = oil
+					amount = 1
+				}
+			}
+			672 = {
+				add_resource = {
+					type = oil
+					amount = 1
+				}
+			}
+			334 = {
+				add_resource = {
+					type = oil
+					amount = 1
+				}
+			}
 			if = {
 				limit = {
 					check_variable = { var = east_indies_oil value = 2 compare = not_equals }
@@ -197,15 +322,39 @@ HOL_obtain_foreign_colonial_investments = {
 				limit = {
 					check_variable = { var = east_indies_oil value = 2 compare = equals }
 				}
+				335 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
 			if = {
 				limit = {
 					check_variable = { var = east_indies_oil value = 5 compare = equals }
 				}
+				672 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
 			if = {
 				limit = {
 					check_variable = { var = east_indies_oil value = 9 compare = equals }
+				}
+				334 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
 				}
 			}
 			if = {
@@ -235,6 +384,7 @@ HOL_prepare_the_inundation_lines = {
 
 		available = {
 			has_war = yes
+			7 = { is_fully_controlled_by = ROOT }
 		}
 
 		cost = 25
@@ -259,12 +409,75 @@ HOL_prepare_the_inundation_lines = {
 
 		visible = {
 			HOL = { has_completed_focus = HOL_prepare_the_inundation_lines }
+			7 = { is_fully_controlled_by = ROOT }
 			NOT = { has_global_flag = HOL_inundation_lines_flooded }
 		}
 
 		remove_effect = {
 			if = {
 				limit = {
+					7 = { is_fully_controlled_by = ROOT }
+				}
+				7 = {
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 9498
+							id = 391
+						}
+					}
+					damage_building = {
+					    type = infrastructure
+					    damage = 2
+					}
+					damage_building = {
+					    type = industrial_complex
+					    damage = 0.5
+					}
+					damage_building = {
+					    type = arms_factory
+					    damage = 0.5
+					}
+				}
+				35 = {
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 11456
+						}
+					}
+					damage_building = {
+					    type = infrastructure
+					    damage = 3
+					}
+					damage_building = {
+					    type = industrial_complex
+					    damage = 1.5
+					}
+					damage_building = {
+					    type = arms_factory
+					    damage = 1.5
+					}
+				}
+				36 = {
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 6241
+						}
+					}
+					damage_building = {
+					    type = infrastructure
+					    damage = 3
+					}
+					damage_building = {
+					    type = industrial_complex
+					    damage = 1.5
+					}
+					damage_building = {
+					    type = arms_factory
+					    damage = 1.5
+					}
 				}
 			}
 			set_global_flag = HOL_inundation_lines_flooded
@@ -285,6 +498,7 @@ HOL_prepare_the_inundation_lines = {
 		}
 
 		available = {
+			7 = { is_fully_controlled_by = ROOT }
 		}
 
 		cost = 25
@@ -308,10 +522,36 @@ HOL_prepare_the_inundation_lines = {
 
 		visible = {
 			HOL = { has_completed_focus = HOL_prepare_the_inundation_lines }
+			7 = { is_fully_controlled_by = ROOT }
 			has_global_flag = HOL_inundation_lines_flooded
 		}
 
 		remove_effect = {
+			7 = {
+				remove_province_modifier = {
+					static_modifiers = { flooded }
+					province = {
+						id = 9498
+						id = 391
+					}
+				}
+			}
+			35 = {
+				remove_province_modifier = {
+					static_modifiers = { flooded }
+					province = {
+						id = 11456
+					}
+				}
+			}
+			36 = {
+				remove_province_modifier = {
+					static_modifiers = { flooded }
+					province = {
+						id = 6241
+					}
+				}
+			}
 			clr_global_flag = HOL_inundation_lines_flooded
 			set_variable = {
 				var = HOL_inundation_lines_flooding_unhappiness_var
@@ -825,7 +1065,7 @@ HOL_gateway_to_europe_eng_category = {
 		ai_will_do = {
 			base = 0.03
 			modifier = {
-				factor = 2
+				factor = 5
 				is_historical_focus_on = yes
 			}
 			modifier = {
@@ -925,6 +1165,47 @@ HOL_gateway_to_europe_eng_category = {
 						date < 1939.08.01
 					}
 					random_list = {
+						10 = {
+							modifier = {
+								factor = 2
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 50 }
+						}
+						10 = {
+							modifier = {
+								factor = 2
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 55 }
+						}
+						10 = {
+							modifier = {
+								factor = 1.5
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 60 }
+						}
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 65 }
+						}
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 70 }
+						}
+						10 = {
+							modifier = {
+								factor = 0.8
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 75 }
+						}
+						10 = {
+							modifier = {
+								factor = 0.5
+								is_historical_focus_on = yes
+							}
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 80 }
+						}
 					}
 				}
 				if = {
@@ -1112,6 +1393,27 @@ HOL_gateway_to_europe_ger_category = {
 						date < 1939.08.01
 					}
 					random_list = {
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 50 }
+						}
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 55 }
+						}
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 60 }
+						}
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 65 }
+						}
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 70 }
+						}
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 75 }
+						}
+						10 = {
+							set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 80 }
+						}
 					}
 				}
 				if = {
@@ -1191,8 +1493,12 @@ HOL_gateway_to_europe_hol_category = {
 			factor = 0.1
 			modifier = {
 				factor = 10
-				is_historical_focus_on = yes
-				date > 1940.01.01
+				OR = {
+					HOL_check_plan_historical = yes
+					HOL_check_plan_colonial_alternate_democratic = yes
+					HOL_check_plan_continental_alternate_democratic = yes
+					HOL_check_plan_lead_the_minor_democracies = yes
+				}
 			}
 			modifier = {
 				factor = 0
@@ -1239,6 +1545,27 @@ HOL_gateway_to_europe_hol_category = {
 			add_to_variable = { var = gateway_to_europe_influence_pp_total value = 10 }
 			hidden_effect = {
 				random_list = {
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 20 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 25 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 30 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 35 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 40 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 45 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 50 }
+					}
 				}
 				if = {
 					limit = {
@@ -1317,8 +1644,12 @@ HOL_gateway_to_europe_hol_category = {
 			factor = 0.1
 			modifier = {
 				factor = 0
-				is_historical_focus_on = yes
-				date > 1940.01.01
+				OR = {
+					HOL_check_plan_historical = yes
+					HOL_check_plan_colonial_alternate_democratic = yes
+					HOL_check_plan_continental_alternate_democratic = yes
+					HOL_check_plan_lead_the_minor_democracies = yes
+				}
 			}
 			modifier = {
 				factor = 0
@@ -1365,6 +1696,27 @@ HOL_gateway_to_europe_hol_category = {
 			add_to_variable = { var = gateway_to_europe_influence_pp_total value = 10 }
 			hidden_effect = {
 				random_list = {
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 20 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 25 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 30 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 35 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 40 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 45 }
+					}
+					10 = {
+						set_country_flag = { flag = HOL_gateway_to_europe_ai_timer_flag value = 1 days = 50 }
+					}
 				}
 				if = {
 					limit = {
@@ -1801,9 +2153,9 @@ political_actions = {
 					is_subject_of = HOL
 					has_autonomy_state = autonomy_integrated_puppet
 					compare_autonomy_progress_ratio < 0.6
-					has_full_control_of_state = 335
+					has_full_control_of_state = 1058
 				}
-				has_full_control_of_state = 335
+				has_full_control_of_state = 1058
 			}
 		}
 
@@ -1813,6 +2165,12 @@ political_actions = {
 
 		visible = {
 			original_tag = HOL
+			if = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+				}
+				always = no
+			}
 		}
 
 		complete_effect = {
@@ -1837,7 +2195,7 @@ political_actions = {
 				}
 				add_compliance = 70
 			}
-			set_capital = { state = 335 }
+			set_capital = { state = 1058 }
 			hidden_effect = { news_event = { id = mtg_news.46 days = 1 } }
 		}
 	}
@@ -1935,3 +2293,54 @@ political_actions = {
 
 }
 
+foreign_influence = {
+	HOL_recall_conrad_helfrich = {
+		icon = GFX_decision_generic_naval
+
+		priority = 100
+
+		allowed = {
+			original_tag = HOL
+			has_dlc = "Thunder at Our Gates"
+		}
+
+		available = {
+			has_subject = INS
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		cost = 100
+
+		fire_only_once = yes
+
+		visible = {
+			original_tag = HOL
+			NOT = {
+				has_character = HOL_conrad_helfrich
+			}
+		}
+
+		complete_effect = {
+			INS = {
+				country_event = {
+					id = INS_political_events.19
+					hours = 4
+				}
+			}
+			effect_tooltip = {
+				INS = {
+					HOL_conrad_helfrich = {
+						set_nationality = HOL
+					}
+					add_autonomy_score = { 
+						value = 350 
+						localization = HOL_recall_conrad_helfrich
+					}
+				}
+			}
+		}
+	}
+}

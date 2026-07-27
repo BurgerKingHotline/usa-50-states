@@ -67,6 +67,14 @@ BUL_internal_factions = {
 		remove_effect = {
 			hidden_effect = {
 				random_list =  {
+					70 = {
+					}
+					20 = {
+						set_country_flag = BUL_a_royal_visit_extra_success_flag
+					}
+					10 = {
+						set_country_flag = BUL_a_royal_visit_failure_flag
+					}
 				}
 			}
 			country_event = { id = bftb_bulgaria_tsar_boris.1 }
@@ -2900,6 +2908,15 @@ BUL_internal_factions = {
 			set_country_flag = BUL_zveno_leaders_imprisoned_flag
 			hidden_effect = {
 				random_list = {
+					60 = {
+						country_event = { id = bftb_bulgaria_factions.53 hours = 4 random_hours = 2 }
+					}
+					30 = {
+						country_event = { id = bftb_bulgaria_factions.54 hours = 4 random_hours = 2 }
+					}
+					10 = {
+						country_event = { id = bftb_bulgaria_factions.55 hours = 4 random_hours = 2 }
+					}
 				}
 			}
 			effect_tooltip = {
@@ -2955,6 +2972,15 @@ BUL_internal_factions = {
 			set_country_flag = BUL_bs_leaders_imprisoned_flag
 			hidden_effect = {
 				random_list = {
+					60 = {
+						country_event = { id = bftb_bulgaria_factions.63 hours = 4 random_hours = 2 }
+					}
+					30 = {
+						country_event = { id = bftb_bulgaria_factions.64 hours = 4 random_hours = 2 }
+					}
+					10 = {
+						country_event = { id = bftb_bulgaria_factions.65 hours = 4 random_hours = 2 }
+					}
 				}
 			}
 			effect_tooltip = {
@@ -3010,6 +3036,15 @@ BUL_internal_factions = {
 			set_country_flag = BUL_bzns_leaders_imprisoned_flag
 			hidden_effect = {
 				random_list = {
+					60 = {
+						country_event = { id = bftb_bulgaria_factions.73 hours = 4 random_hours = 2 }
+					}
+					30 = {
+						country_event = { id = bftb_bulgaria_factions.74 hours = 4 random_hours = 2 }
+					}
+					10 = {
+						country_event = { id = bftb_bulgaria_factions.75 hours = 4 random_hours = 2 }
+					}
 				}
 			}
 			effect_tooltip = {
@@ -3065,6 +3100,15 @@ BUL_internal_factions = {
 			set_country_flag = BUL_nsm_leaders_imprisoned_flag
 			hidden_effect = {
 				random_list = {
+					60 = {
+						country_event = { id = bftb_bulgaria_factions.83 hours = 4 random_hours = 2 }
+					}
+					30 = {
+						country_event = { id = bftb_bulgaria_factions.84 hours = 4 random_hours = 2 }
+					}
+					10 = {
+						country_event = { id = bftb_bulgaria_factions.85 hours = 4 random_hours = 2 }
+					}
 				}
 			}
 			effect_tooltip = {
@@ -3571,6 +3615,15 @@ BUL_internal_factions = {
 		remove_effect = {
 			hidden_effect = {
 				random_list = {
+					70 = {#Success
+						country_event = { id = bftb_bulgaria_factions.50 hours = 4 random_hours = 2 }
+					}
+					20 = {#Extra success
+						country_event = { id = bftb_bulgaria_factions.51 hours = 4 random_hours = 2 }
+					}
+					10 = {#Failure
+						country_event = { id = bftb_bulgaria_factions.52 hours = 4 random_hours = 2 }
+					}
 				}
 			}
 			effect_tooltip = {
@@ -3643,6 +3696,15 @@ BUL_internal_factions = {
 		remove_effect = {		
 			hidden_effect = {
 				random_list = {
+					70 = {
+						country_event = { id = bftb_bulgaria_factions.60 hours = 4 random_hours = 2 }
+					}
+					20 = {
+						country_event = { id = bftb_bulgaria_factions.61 hours = 4 random_hours = 2 }
+					}
+					10 = {
+						country_event = { id = bftb_bulgaria_factions.62 hours = 4 random_hours = 2 }
+					}
 				}
 			}
 			effect_tooltip = {
@@ -3715,6 +3777,15 @@ BUL_internal_factions = {
 		remove_effect = {
 			hidden_effect = {
 				random_list = {
+					70 = {
+						country_event = { id = bftb_bulgaria_factions.70 hours = 4 random_hours = 2 }
+					}
+					20 = {
+						country_event = { id = bftb_bulgaria_factions.71 hours = 4 random_hours = 2 }
+					}
+					10 = {
+						country_event = { id = bftb_bulgaria_factions.72 hours = 4 random_hours = 2 }
+					}
 				}
 			}
 			effect_tooltip = {
@@ -3783,6 +3854,15 @@ BUL_internal_factions = {
 		remove_effect = {
 			hidden_effect = {
 				random_list = {
+					70 = {
+						country_event = { id = bftb_bulgaria_factions.80 hours = 4 random_hours = 2 }
+					}
+					20 = {
+						country_event = { id = bftb_bulgaria_factions.81 hours = 4 random_hours = 2 }
+					}
+					10 = {
+						country_event = { id = bftb_bulgaria_factions.82 hours = 4 random_hours = 2 }
+					}
 				}
 			}
 			effect_tooltip = {
@@ -4271,6 +4351,12 @@ BUL_macedonian_revolutionary_organizations = {
 
 		cancel_effect = {
 			clr_country_flag = BUL_macedonian_affairs_ongoing_flag
+			48 = {
+				remove_dynamic_modifier = { modifier = skirmishes_against_imro }
+			}
+			212 = {
+				remove_dynamic_modifier = { modifier = skirmishes_against_imro }
+			}
 		}
 
 		cost = 25
@@ -4278,6 +4364,12 @@ BUL_macedonian_revolutionary_organizations = {
 		complete_effect = {
 			set_country_flag = BUL_macedonian_affairs_ongoing_flag
 
+			48 = {
+				add_dynamic_modifier = { modifier = skirmishes_against_imro }
+			}
+			212 = {
+				add_dynamic_modifier = { modifier = skirmishes_against_imro }
+			}
 		}
 
 		remove_effect = {
@@ -4287,6 +4379,12 @@ BUL_macedonian_revolutionary_organizations = {
 			add_stability = 0.1
 			add_political_power = 70
 
+			48 = {
+				remove_dynamic_modifier = { modifier = skirmishes_against_imro }
+			}
+			212 = {
+				remove_dynamic_modifier = { modifier = skirmishes_against_imro }
+			}
 		}
 	}
 
@@ -4599,6 +4697,21 @@ BUL_macedonian_revolutionary_organizations = {
 			}
 			if = {
 				limit = {
+					106 = {	is_fully_controlled_by = ROOT }
+				}
+				106 = {
+					create_unit = {
+						division = "division_template = \"Makedonska Revolyutsionna Militsiya\" start_experience_factor = 0.4" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Makedonska Revolyutsionna Militsiya\" start_experience_factor = 0.4" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Makedonska Revolyutsionna Militsiya\" start_experience_factor = 0.4" 
+						owner = ROOT
+					}
 				}
 				every_state = {
 					limit = {
@@ -4849,12 +4962,60 @@ BUL_macedonian_revolutionary_organizations_foreign = {
 				OR = {
 					AND = {
 						has_country_flag = BUL_imro_awakened_in_macedonia_flag
+						106 = {
+							has_dynamic_modifier = { modifier = skirmishes_against_imro }
+							OR = {
+								NOT = { is_fully_controlled_by = ROOT }	
+								custom_trigger_tooltip = {
+									tooltip = BUL_destroy_imro_divisions_macedonia_foreign_tt
+									ROOT = {
+										divisions_in_state = {
+											type = infantry
+											size < 9
+											state = 106
+										}
+									}
+								}
+							}		
+						}
 					}
 					AND = {
 						has_country_flag = BUL_imro_awakened_in_central_macedonia_flag
+						731 = {
+							has_dynamic_modifier = { modifier = skirmishes_against_imro }
+							OR = {
+								NOT = { is_fully_controlled_by = ROOT }	
+								custom_trigger_tooltip = {
+									tooltip = BUL_destroy_imro_divisions_central_macedonia_foreign_tt
+									ROOT = {
+										divisions_in_state = {
+											type = infantry
+											size < 4
+											state = 731
+										}
+									}
+								}
+							}		
+						}
 					}
 					AND = {
 						has_country_flag = BUL_imro_awakened_in_thrace_flag
+						184 = {
+							has_dynamic_modifier = { modifier = skirmishes_against_imro }
+							OR = {
+								NOT = { is_fully_controlled_by = ROOT }	
+								custom_trigger_tooltip = {
+									tooltip = BUL_destroy_imro_divisions_thrace_foreign_tt
+									ROOT = {
+										divisions_in_state = {
+											type = infantry
+											size < 3
+											state = 184
+										}
+									}
+								}
+							}		
+						}
 					}
 				}
 			}
@@ -7717,6 +7878,14 @@ prospect_for_resources = {
 		visible = {
 			owns_state = 212
 			controls_state = 212
+			212 = {
+				NOT = {
+					has_state_flag = { 
+						flag = BUL_chromium_deposits_flag
+						value = 3
+					}
+				}
+			}
 			has_completed_focus = BUL_mineral_extraction_in_the_rhodopes
 		}
 
@@ -7729,6 +7898,31 @@ prospect_for_resources = {
 
 		remove_effect = {
 			add_to_variable = { var = BUL_plovdiv_chromium_duration value = 30 }
+			212 = {
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = BUL_chromium_deposits_flag
+						}
+					}
+					set_state_flag = {
+						flag = BUL_chromium_deposits_flag
+						value = 1
+					}
+				}
+				else = {
+					modify_state_flag = {
+						flag = BUL_chromium_deposits_flag
+						value = 1
+					}
+				}
+			}
+			212 = {
+				add_resource = {
+					type = chromium
+					amount = 3
+				}
+			}
 		}
 
 		complete_effect = {

@@ -1,0 +1,5 @@
+uses_dual_leader_gui = {
+	OR = {
+		has_country_flag = dual_leader_active
+	}
+}

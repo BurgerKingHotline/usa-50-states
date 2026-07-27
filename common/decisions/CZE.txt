@@ -155,6 +155,9 @@ debug_decisions = {
 	 			promote_character = yes
 			}
 			set_cosmetic_tag = CZE_fall_of_the_republic
+			73 = {
+				add_core_of = RUT
+			}
 			release_autonomy = {
     			target = RUT
     			autonomy_state = autonomy_integrated_puppet
@@ -282,6 +285,9 @@ debug_decisions = {
 	 			promote_character = yes
 			}
 			set_cosmetic_tag = CZE_fall_of_the_republic
+			73 = {
+				add_core_of = RUT
+			}
 			release_autonomy = {
     			target = RUT
     			autonomy_state = autonomy_integrated_puppet
@@ -563,6 +569,9 @@ debug_decisions = {
 					ROOT = { controls_state = 69 }
 				}
 				ROOT = {
+					69 = {
+						cancel_resistance = yes
+					}
 				}	
 			}
 			if = {
@@ -803,6 +812,14 @@ debug_decisions = {
 				regiments = {
 					paratrooper = { x = 0 y = 0 }
 					paratrooper = { x = 0 y = 1 }
+				}
+			}
+			64 = {
+				create_unit = {
+   					division = "name = \"test for raid\" division_template = \"DEBUG_MUN_test_raid_agaisnt_CZE test\" start_experience_factor = 1 start_equipment_factor = 1"
+    				owner = GER
+					prioritize_location = 9496
+    				count = 1
 				}
 			}
 		}	
@@ -1344,8 +1361,16 @@ political_actions = {
 			all_owned_state = {
 				is_controlled_by = ROOT
 			}
+			66 = {
+				is_controlled_by = ROOT
+			}
 		}
 		remove_effect = {
+			66 = {
+				owner = {
+					country_event = MUN_czech.1024
+				}
+			}
 		}
 	}
 }
@@ -3815,6 +3840,15 @@ CZE_the_second_fortification_program_category = {
 
 		available = {
 			has_completed_focus = CZE_the_second_fortification_program
+			69 = {
+				is_fully_controlled_by = ROOT
+			}
+			972 = {
+				is_fully_controlled_by = ROOT
+			}
+			74 = {
+				is_fully_controlled_by = ROOT
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
@@ -3822,6 +3856,21 @@ CZE_the_second_fortification_program_category = {
 
 		cancel_trigger = {
 			OR = {
+				69 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				972 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				74 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -3834,6 +3883,56 @@ CZE_the_second_fortification_program_category = {
 				has_country_flag = CZE_second_sudetenland_fortification_program_was_finished
 			}
 			OR = {
+				69 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				972 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				9 = {
+					any_province_building_level = {
+						province = {
+							id = 445
+							id = 494
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				74 = {
+					any_province_building_level = {
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				70 = {
+					any_province_building_level = {
+						province = {
+							id = 9539
+							id = 9692
+						}
+						building = bunker
+						level < 3
+					}
+				}
 			}
 		}
 
@@ -3873,11 +3972,37 @@ CZE_the_second_fortification_program_category = {
 			}
 			if = {
 				limit = {
+					69 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				69 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							level < 3
+						}
+					}
 				}
 			}
 
 			if = {
 				limit = { 
+					972 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				972 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							level < 3
+						}
+					}
 				}
 			}
 			if = {
@@ -3885,13 +4010,51 @@ CZE_the_second_fortification_program_category = {
 					controls_province = 494
 					controls_province = 445
 				}
-			}
-			if = {
-				limit = {
+				9 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 445
+							id = 494
+							level < 3
+						}
+					}
 				}
 			}
 			if = {
 				limit = {
+					74 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				74 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							level < 3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					70 = {
+						controls_or_subject_of = yes
+					}
+				}
+				70 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 9539
+							id = 9692
+							level < 3
+						}
+					}
 				}
 			}
 
@@ -3944,11 +4107,105 @@ CZE_the_second_fortification_program_category = {
 			NOT = {
 				has_country_flag = CZE_third_sudetenland_fortification_program_was_finished
 			}
+			69 = {
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+					}
+					building = bunker
+					level > 2
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+					}
+					building = bunker
+					level < 5
+				}
+			}
+			972 = {
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+					}
+					building = bunker
+					level > 2
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+					}
+					building = bunker
+					level < 5
+				}
+			}
+			9 = {
+				any_province_building_level = {
+					province = {
+						id = 445
+						id = 494
+					}
+					building = bunker
+					level > 2
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+					}
+					building = bunker
+					level < 5
+				}
+			}
+			74 = {
+				any_province_building_level = {
+					province = {
+						id = 421
+						id = 6485
+						id = 3414
+						id = 3583
+					}
+					building = bunker
+					level > 2
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+					building = bunker
+					level < 5
+				}
+			}
+			70 = {
+				any_province_building_level = {
+					province = {
+						id = 9539
+						id = 9692
+						#limit_to_border = yes
+					}
+					building = bunker
+					level > 2
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+					building = bunker
+					level < 5
+				}
+			}
 		}
 
 		available = {
 			has_tech = basic_fortification_tech
 			has_completed_focus = CZE_the_second_fortification_program
+			69 = {
+				is_fully_controlled_by = ROOT
+			}
+			972 = {
+				is_fully_controlled_by = ROOT
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
@@ -3956,6 +4213,16 @@ CZE_the_second_fortification_program_category = {
 
 		cancel_trigger = {
 			OR = {
+				69 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				972 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -3984,22 +4251,85 @@ CZE_the_second_fortification_program_category = {
 		remove_effect = {
 			if = {
 				limit = { controls_state = 69 }
+				69 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							all_provinces = yes
+							#limit_to_border = yes
+							level < 5
+						}
+					}
+				}
 			}
 
 			if = {
 				limit = { controls_state = 972 }
+				972 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							all_provinces = yes
+							#limit_to_border = yes
+							level < 5
+						}
+					}
+				}
 			}
 
 			if = {
 				limit = { controls_state = 9 }
+				9 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							id = 445
+							id = 494
+							#limit_to_border = yes
+							level < 5
+						}
+					}
+				}
 			}
 
 			if = {
 				limit = { controls_state = 74 }
+				74 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+							#limit_to_border = yes
+							level < 5
+						}
+					}
+				}
 			}
 
 			if = {
 				limit = { 
+					70 = {
+						controls_or_subject_of = yes
+					}
+				}
+				70 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							id = 9539
+							id = 9692
+							#limit_to_border = yes
+							level < 5
+						}
+					}
 				}
 			}
 
@@ -4053,10 +4383,118 @@ CZE_the_second_fortification_program_category = {
 			NOT = {
 				has_country_flag = CZE_fourth_sudetenland_fortification_program_was_finished
 			}
+			69 = {
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+					building = bunker
+					level > 4
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+					building = bunker
+					level < 7
+				}
+			}
+			972 = {
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+					building = bunker
+					level > 4
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+					building = bunker
+					level < 7
+				}
+			}
+			9 = {
+				any_province_building_level = {
+					province = {
+						id = 445
+						id = 494
+						#limit_to_border = yes
+					}
+					building = bunker
+					level > 4
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						id = 445
+						id = 494
+						#limit_to_border = yes
+					}
+					building = bunker
+					level < 7
+				}
+			}
+			74 = {
+				any_province_building_level = {
+					province = {
+						id = 421
+						id = 6485
+						id = 3414
+						id = 3583
+						#limit_to_border = yes
+					}
+					building = bunker
+					level > 4
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						#limit_to_border = yes
+					}
+					building = bunker
+					level < 7
+				}
+			}
+			70 = {
+				any_province_building_level = {
+					province = {
+						id = 9539
+						id = 9692
+						#limit_to_border = yes
+					}
+					building = bunker
+					level > 4
+				}
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						id = 9539
+						id = 9692
+						#limit_to_border = yes
+					}
+					building = bunker
+					level < 7
+				}
+			}
 		}
 
 		available = {
 			has_completed_focus = CZE_the_second_fortification_program
+			69 = {
+				is_fully_controlled_by = ROOT
+			}
+			74 = {
+				is_fully_controlled_by = ROOT
+			}
+			972 = {
+				is_fully_controlled_by = ROOT
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
@@ -4064,6 +4502,21 @@ CZE_the_second_fortification_program_category = {
 
 		cancel_trigger = {
 			OR = {
+				69 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				74 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				972 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -4092,21 +4545,84 @@ CZE_the_second_fortification_program_category = {
 		remove_effect = {
 			if = {
 				limit = { controls_state = 69 }
+				69 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
 			}
 			if = {
 				limit = { controls_state = 972 }
+				972 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							all_provinces = yes
+							#limit_to_border = yes
+							level < 7
+						}
+					}
+				}
 			}
 
 			if = {
 				limit = { controls_state = 9 }
+				9 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							id = 445
+							id = 494
+							#limit_to_border = yes
+							level < 7
+						}
+					}
+				}
 			}
 
 			if = {
 				limit = { controls_state = 74 }
+				74 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+							#limit_to_border = yes
+							level < 7
+						}
+					}
+				}
 			}
 
 			if = {
 				limit = {
+					70 = {
+						controls_or_subject_of = yes
+					}
+				}
+				70 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							id = 9539
+							id = 9692
+							#limit_to_border = yes
+							level < 7
+						}
+					}
 				}
 			}
 
@@ -4160,6 +4676,15 @@ CZE_the_second_fortification_program_category = {
 
 		available = {
 			has_completed_focus = CZE_the_second_fortification_program
+			9 = {
+				is_fully_controlled_by = ROOT
+			}
+			75 = {
+				is_fully_controlled_by = ROOT
+			}
+			70 = {
+				controls_or_subject_of = yes
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
@@ -4169,10 +4694,55 @@ CZE_the_second_fortification_program_category = {
 			NOT = {
 				has_country_flag = CZE_fortify_the_crossroads_no_double_dip
 			}
+			9 = {
+				any_province_building_level = {
+					province = {
+						id = 6418
+						id = 11542
+						id = 11556
+					}
+					building = bunker
+					level < 3
+				}
+			}
+			75 = {
+				any_province_building_level = {
+					province = {
+						id = 3569
+						id = 6562
+						id = 11511
+					}
+					building = bunker
+					level < 3
+				}
+			}
+			70 = {
+				controls_or_subject_of = yes
+				any_province_building_level = {
+					province = {
+						id = 541
+					}
+					building = bunker
+					level < 3
+				}
+			}
 		}
 
 		cancel_trigger = {
 			OR = {
+				9 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				75 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				70 = {
+					controls_or_subject_of = no
+				}
 			}
 		}
 
@@ -4215,14 +4785,70 @@ CZE_the_second_fortification_program_category = {
 			}
 			if = {
 				limit = { 
+					9 = {
+						controls_or_subject_of = yes
+					}
+				}
+				9 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 6418
+							id = 11542
+							id = 11556
+							level < 3
+						}
+					}
 				}
 			}
 			if = {
 				limit = { 
+					75 = {
+						controls_or_subject_of = yes
+					}
+				}
+				75 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 3569
+							id = 6562
+							id = 11511
+							level < 3
+						}
+					}
+					if = {
+						limit = {
+							free_building_slots = {
+								building = anti_air_building
+								size > 0
+							}
+						}
+						add_building_construction = {
+							type = anti_air_building
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
 			}
 			if = {
 				limit = { 
+					70 = {
+						controls_or_subject_of = yes
+					}
+				}
+				70 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 541
+							level < 3
+						}
+					}
 				}
 			}
 
@@ -4275,6 +4901,12 @@ CZE_the_second_fortification_program_category = {
 
 		available = {
 			has_completed_focus = CZE_the_second_fortification_program
+			9 = {
+				is_fully_controlled_by = ROOT
+			}
+			75 = {
+				is_fully_controlled_by = ROOT
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
@@ -4284,10 +4916,44 @@ CZE_the_second_fortification_program_category = {
 			NOT = {
 				has_country_flag = CZE_fortify_the_crossroads_no_double_dip
 			}
+			70 = {
+				controls_or_subject_of = no
+			}
+			9 = {
+				any_province_building_level = {
+					province = {
+						id = 6418
+						id = 11542
+						id = 11556
+					}
+					building = bunker
+					level < 3
+				}
+			}
+			75 = {
+				any_province_building_level = {
+					province = {
+						id = 3569
+						id = 6562
+					}
+					building = bunker
+					level < 3
+				}
+			}
 		}
 
 		cancel_trigger = {
 			OR = {
+				9 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				75 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -4331,10 +4997,53 @@ CZE_the_second_fortification_program_category = {
 			}
 			if = {
 				limit = { 
+					75 = {
+						controls_or_subject_of = yes
+					}
+				}
+				75 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 3569
+							id = 6562
+							level < 3
+						}
+					}
+					if = {
+						limit = {
+							free_building_slots = {
+								building = anti_air_building
+								size > 0
+							}
+						}
+						add_building_construction = {
+							type = anti_air_building
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
 			}
 			if = {
 				limit = { 
+					9 = {
+						controls_or_subject_of = yes
+					}
+				}
+				9 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 6418
+							id = 11542
+							id = 11556
+							limit_to_border = yes
+							level < 3
+						}
+					}
 				}
 			}
 
@@ -4389,16 +5098,50 @@ CZE_the_second_fortification_program_category = {
 
 		available = {
 			has_completed_focus = CZE_the_second_fortification_program
+			664 = {
+				controls_or_subject_of = yes
+			}
+			73 = { 
+			 	controls_or_subject_of = yes
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
 		}
 
 		visible = {
+			664 = {
+				controls_or_subject_of = yes
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					building = bunker
+					level < 3
+				}
+			}
+			73 = {
+				controls_or_subject_of = yes
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					building = bunker
+					level < 3
+				}
+			}
 		}
 
 		cancel_trigger = {
 			OR = {
+				664 = {
+					state_is_fully_controlled_by_ROOT_or_subject = no
+				}
+				73 = {
+					state_is_fully_controlled_by_ROOT_or_subject = no
+				}
 			}
 		}
 
@@ -4442,10 +5185,38 @@ CZE_the_second_fortification_program_category = {
 			}
 			if = {
 				limit = { 
+					664 = {
+						controls_or_subject_of = yes
+					}
+				}
+				664 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						level < 3
+					}
 				}
 			}
 			if = {
 				limit = { 
+					73 = {
+						controls_or_subject_of = yes
+					}
+				}
+				73 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 11691
+							id = 3548
+							level < 3
+						}
+					}
 				}
 			}
 
@@ -4498,6 +5269,9 @@ CZE_the_second_fortification_program_category = {
 
 		available = {
 			has_completed_focus = CZE_the_second_fortification_program
+			664 = {
+				controls_or_subject_of = yes
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
@@ -4507,10 +5281,29 @@ CZE_the_second_fortification_program_category = {
 			NOT = {
 				has_country_flag = CZE_fortify_the_hungarian_border_no_double_dip
 			}
+			664 = {
+				controls_or_subject_of = yes
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					building = bunker
+					level < 3
+				}
+			}
+			73 = {
+				controls_or_subject_of = no
+			}
 		}
 
 
 		cancel_trigger = {
+			664 = {
+				NOT = {
+					is_fully_controlled_by = ROOT
+				}
+			}	
 		}
 
 		cancel_effect = {
@@ -4553,10 +5346,38 @@ CZE_the_second_fortification_program_category = {
 			}
 			if = {
 				limit = { 
+					664 = {
+						controls_or_subject_of = yes
+					}
+				}
+				664 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						level < 3
+					}
 				}
 			}
 			if = {
 				limit = { 
+					73 = {
+						controls_or_subject_of = yes
+					}
+				}
+				73 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 11691
+							id = 3548
+							level < 3
+						}
+					}
 				}
 			}
 
@@ -4616,6 +5437,12 @@ CZE_the_second_fortification_program_category = {
 
 		available = {
 			has_completed_focus = CZE_the_second_fortification_program
+			72 = {
+				controls_or_subject_of = yes
+			}
+			71 = {
+				controls_or_subject_of = yes
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
@@ -4625,10 +5452,41 @@ CZE_the_second_fortification_program_category = {
 			NOT = {
 				has_country_flag = CZE_fortify_the_polish_border_no_double_dip
 			}
+			72 = {
+				controls_or_subject_of = yes
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					building = bunker
+					level < 3
+				}
+			}
+			71 = {
+				controls_or_subject_of = yes
+				any_province_building_level = {
+					province = {
+						id = 581
+						id = 3550
+						id = 3581
+						id = 6604
+						id = 11554
+					}
+					building = bunker
+					level < 3
+				}
+			}
 		}
 
 		cancel_trigger = {
 			OR = {
+				72 = {
+					state_is_fully_controlled_by_ROOT_or_subject = no
+				}
+				71 = {
+					state_is_fully_controlled_by_ROOT_or_subject = no
+				}
 			}
 		}
 
@@ -4671,10 +5529,41 @@ CZE_the_second_fortification_program_category = {
 			}
 			if = {
 				limit = { 
+					72 = {
+						controls_or_subject_of = yes
+					}
+				}
+				72 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						level < 3
+					}
 				}
 			}
 			if = {
 				limit = { 
+					71 = {
+						controls_or_subject_of = yes
+					}
+				}
+				71 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 581
+							id = 3550
+							id = 3581
+							id = 6604
+							id = 11554
+							level < 3
+						}
+					}
 				}
 			}
 
@@ -4734,6 +5623,12 @@ CZE_the_second_fortification_program_category = {
 
 		available = {
 			has_completed_focus = CZE_the_second_fortification_program
+			70 = {
+				controls_or_subject_of = yes
+			}
+			71 = {
+				controls_or_subject_of = yes
+			}
 			NOT = {
 				has_country_flag = CZE_fortification_decision_inprogress
 			}
@@ -4743,10 +5638,46 @@ CZE_the_second_fortification_program_category = {
 			NOT = {
 				has_country_flag = CZE_fortify_the_polish_border_no_double_dip
 			}
+			72 = {
+				NOT = {
+					controls_or_subject_of = yes
+				}
+			}
+			70 = {
+				controls_or_subject_of = yes
+				any_province_building_level = {
+					province = {
+						id = 3484
+						id = 11539
+					}
+					building = bunker
+					level < 3
+				}
+			}
+			71 = {
+				controls_or_subject_of = yes
+				any_province_building_level = {
+					province = {
+						id = 581
+						id = 3550
+						id = 3581
+						id = 6604
+						id = 11554
+					}
+					building = bunker
+					level < 3
+				}
+			}
 		}
 
 		cancel_trigger = {
 			OR = {
+				70 = {
+					state_is_fully_controlled_by_ROOT_or_subject = no
+				}
+				71 = {
+					state_is_fully_controlled_by_ROOT_or_subject = no
+				}
 			}
 		}
 
@@ -4788,10 +5719,41 @@ CZE_the_second_fortification_program_category = {
 			}
 			if = {
 				limit = { 
+					70 = {
+						controls_or_subject_of = yes
+					}
+				}
+				70 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 3484
+							id = 11539
+						}
+						level < 3
+					}
 				}
 			}
 			if = {
 				limit = { 
+					71 = {
+						controls_or_subject_of = yes
+					}
+				}
+				71 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 581
+							id = 3550
+							id = 3581
+							id = 6604
+							id = 11554
+							level < 3
+						}
+					}
 				}
 			}
 
@@ -5872,6 +6834,12 @@ CZE_autonomous_sentiment = {
 			add_stability = -0.05
 			add_war_support = -0.05
 
+			73 = {
+				add_dynamic_modifier = { 
+					modifier = CZE_nationalist_protests
+					days = 1095
+				}	
+			}
 			set_country_flag = CZE_failed_RUT_demands
 		}
 	}
@@ -5927,9 +6895,48 @@ CZE_central_european_federation = {
 			controls_state = 75
 			controls_state = 74
 			controls_state = 72
-			OR = {
+			70 = {
+				state_is_fully_controlled_by_ROOT_or_subject = yes
+			}
+			664 = {
+				state_is_fully_controlled_by_ROOT_or_subject = yes
+			}
+			71 = {
+				state_is_fully_controlled_by_ROOT_or_subject = yes
+			}
+			73 = {
+				state_is_fully_controlled_by_ROOT_or_subject = yes
 			}
 			OR = {
+				154 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
+				43 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
+				155 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
+				973 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
+				974 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
+			}
+			OR = {
+				975 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
+				4 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
+				976 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
+				152 = {
+					state_is_fully_controlled_by_ROOT_or_subject = yes
+				}
 			}
 		}
 
@@ -5942,41 +6949,103 @@ CZE_central_european_federation = {
 		remove_effect = {
 			custom_effect_tooltip = CZE_form_the_european_federation_HUN_tt
 			hidden_effect = {
+				154 = { add_core_of = ROOT }
+				43 = { add_core_of = ROOT }
+				155 = { add_core_of = ROOT }
+				974 = { add_core_of = ROOT }
+				973 = { add_core_of = ROOT }
 			}
 			custom_effect_tooltip = CZE_form_the_european_federation_AUS_tt
 			hidden_effect = {
+				975 = { add_core_of = ROOT }
+				4 = { add_core_of = ROOT }
+				976 = { add_core_of = ROOT }
+				152 = { add_core_of = ROOT }
 			}
 			custom_effect_tooltip = CZE_form_the_european_federation_POL_tt
 			hidden_effect = {
+				89 = { add_core_of = ROOT }
+				88 = { add_core_of = ROOT }
+				762 = { add_core_of = ROOT }
 			}
 			custom_effect_tooltip = CZE_form_the_european_federation_GER_tt
 			hidden_effect = {
+				67 = { add_core_of = ROOT }
+				66 = { add_core_of = ROOT }
+				53 = { add_core_of = ROOT }
 			}
 			custom_effect_tooltip = CZE_form_the_european_federation_ROM_tt
 			hidden_effect = {
+				76 = { add_core_of = ROOT }
+				83 = { add_core_of = ROOT }
+				82 = { add_core_of = ROOT }
+				84 = { add_core_of = ROOT }
 			}
 			custom_effect_tooltip = CZE_form_the_european_federation_YUG_tt
 			hidden_effect = {
+				102 = { add_core_of = ROOT }
+				45 = { add_core_of = ROOT }
+				764 = { add_core_of = ROOT }
 			}
 			hidden_effect = { #Make sure we still have our cores
 				if = {
 					limit = {
+						70 = {
+							NOT = {
+								is_core_of = ROOT
+							}
+						}
+					}
+					70 = {
+						add_core_of = ROOT
 					}
 				}
 				if = {
 					limit = {
+						71 = {
+							NOT = {
+								is_core_of = ROOT
+							}
+						}
+					}
+					71 = {
+						add_core_of = ROOT
 					}
 				}
 				if = {
 					limit = {
+						664 = {
+							NOT = {
+								is_core_of = ROOT
+							}
+						}
+					}
+					664 = {
+						add_core_of = ROOT
 					}
 				}
 				if = {
 					limit = {
+						73 = {
+							NOT = {
+								is_core_of = ROOT
+							}
+						}
+					}
+					73 = {
+						add_core_of = ROOT
 					}
 				}
 				if = {
 					limit = {
+						72 = {
+							NOT = {
+								is_core_of = ROOT
+							}
+						}
+					}
+					72 = {
+						add_core_of = ROOT
 					}
 				}
 			}

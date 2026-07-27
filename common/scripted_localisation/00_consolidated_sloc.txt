@@ -1,4 +1,3 @@
-### Consolidated Party Popularity, Coalitions & Congress Scripted Loc ###
 defined_text = {
 	name = GetPopIcon
 	text = {
@@ -122,15 +121,11 @@ defined_text = {
 	text = {
 		trigger = {
 			if = {
-				limit = {
-					NOT = {
-						check_variable = { coalition_stability_array^ideology_index_current = 0 }
-					}
-				}
+				limit = { has_variable = coalition_stability_array^ideology_index_current }
 				set_temp_variable = { coalition_stab = coalition_stability_array^ideology_index_current }
 			}
 			else = {
-				set_temp_variable = { coalition_stab = coalition_stability?0.5 }
+				set_temp_variable = { coalition_stab = 0.5 }
 			}
 		}
 		localization_key = party_pop_coalition_stability
@@ -143,15 +138,11 @@ defined_text = {
 			set_temp_variable = { coalition_partner = global.ideology_groups^ideology_index_current }
 			set_temp_variable = { coalition_pp = party_popularity@var:coalition_partner }
 			if = {
-				limit = {
-					NOT = {
-						check_variable = { coalition_stability_array^ideology_index_current = 0 }
-					}
-				}
+				limit = { has_variable = coalition_stability_array^ideology_index_current }
 				multiply_temp_variable = { coalition_pp = coalition_stability_array^ideology_index_current }
 			}
 			else = {
-				multiply_temp_variable = { coalition_pp = coalition_stability?0.5 }
+				multiply_temp_variable = { coalition_pp = 0.5 }
 			}
 		}
 		localization_key = party_pop_coalition_pp_gain
@@ -202,7 +193,6 @@ defined_text = {
 		localization_key = colour_authoritarianism
 	}
 }
-# --- Action Text Builders ---
 defined_text = {
 	name = GetCoalitionActionText_Liberalism
 	text = {
@@ -301,7 +291,6 @@ defined_text = {
 	}
 	text = { localization_key = COALITION_FORM }
 }
-# --- Action Tooltip Builders ---
 defined_text = {
 	name = GetCoalitionActionTooltip_Liberalism
 	text = {
@@ -470,7 +459,6 @@ defined_text = {
 	}
 	text = { localization_key = form_coalition_tt }
 }
-# --- NEW: Roster Panel -> Coalition Links ---
 defined_text = {
 	name = GetRosterCoalitionActionText
 	text = {
@@ -561,7 +549,6 @@ defined_text = {
 		localization_key = "[GetCoalitionActionTooltip_Authoritarianism]"
 	}
 }
-# --- Congress Fallbacks & Names ---
 defined_text = {
 	name = GetWSHSenateSeatName
 	text = { localization_key = "wsh_senate_seat_number_fallback" }
@@ -779,4 +766,318 @@ defined_text = {
 		localization_key = "wsh_roster_name_33"
 	}
 	text = { localization_key = "wsh_roster_name_unknown" }
+}
+defined_text = {
+	name = GetSubideologyDemographicBreakdown
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 1 }
+		}
+		localization_key = "conservatism_subideology_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 2 }
+		}
+		localization_key = "christian_democracy_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 3 }
+		}
+		localization_key = "populism_subideology_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 4 }
+		}
+		localization_key = "agrarian_populism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 5 }
+		}
+		localization_key = "liberalism_subideology_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 6 }
+		}
+		localization_key = "liberal_integrationism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 7 }
+		}
+		localization_key = "socialism_subideology_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 8 }
+		}
+		localization_key = "farmer_laborism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 9 }
+		}
+		localization_key = "marxism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 10 }
+		}
+		localization_key = "leninism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 11 }
+		}
+		localization_key = "stalinism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 12 }
+		}
+		localization_key = "anti_revisionism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 13 }
+		}
+		localization_key = "anarchist_communism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 14 }
+		}
+		localization_key = "buddhist_socialism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 15 }
+		}
+		localization_key = "fascism_ideology_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 16 }
+		}
+		localization_key = "nazism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 17 }
+		}
+		localization_key = "gen_nazism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 18 }
+		}
+		localization_key = "falangism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 19 }
+		}
+		localization_key = "rexism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 20 }
+		}
+		localization_key = "emperor_fascism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 21 }
+		}
+		localization_key = "integral_nationalism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 22 }
+		}
+		localization_key = "civil_nationalism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 23 }
+		}
+		localization_key = "despotism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 24 }
+		}
+		localization_key = "oligarchism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 25 }
+		}
+		localization_key = "anarchism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 26 }
+		}
+		localization_key = "moderatism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 27 }
+		}
+		localization_key = "centrism_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 28 }
+		}
+		localization_key = "japan_militarism_ideology_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 29 }
+		}
+		localization_key = "corporate_technocracy_voter_breakdown_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { wsh_roster_name_idx^roster_idx = 30 }
+		}
+		localization_key = "organical_statism_voter_breakdown_tt"
+	}
+	text = { localization_key = "generic_voter_breakdown_tt" }
+}
+
+# Washington roster tooltips must be resolved directly by scripted localization.
+defined_text = {
+	name = GetWSHRosterTooltip
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 1 } }
+		localization_key = "wsh_roster_tooltip_1"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 2 } }
+		localization_key = "wsh_roster_tooltip_2"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 3 } }
+		localization_key = "wsh_roster_tooltip_3"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 4 } }
+		localization_key = "wsh_roster_tooltip_4"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 5 } }
+		localization_key = "wsh_roster_tooltip_5"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 6 } }
+		localization_key = "wsh_roster_tooltip_6"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 7 } }
+		localization_key = "wsh_roster_tooltip_7"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 8 } }
+		localization_key = "wsh_roster_tooltip_8"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 9 } }
+		localization_key = "wsh_roster_tooltip_9"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 10 } }
+		localization_key = "wsh_roster_tooltip_10"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 11 } }
+		localization_key = "wsh_roster_tooltip_11"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 12 } }
+		localization_key = "wsh_roster_tooltip_12"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 13 } }
+		localization_key = "wsh_roster_tooltip_13"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 14 } }
+		localization_key = "wsh_roster_tooltip_14"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 15 } }
+		localization_key = "wsh_roster_tooltip_15"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 16 } }
+		localization_key = "wsh_roster_tooltip_16"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 17 } }
+		localization_key = "wsh_roster_tooltip_17"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 18 } }
+		localization_key = "wsh_roster_tooltip_18"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 19 } }
+		localization_key = "wsh_roster_tooltip_19"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 20 } }
+		localization_key = "wsh_roster_tooltip_20"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 21 } }
+		localization_key = "wsh_roster_tooltip_21"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 22 } }
+		localization_key = "wsh_roster_tooltip_22"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 23 } }
+		localization_key = "wsh_roster_tooltip_23"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 24 } }
+		localization_key = "wsh_roster_tooltip_24"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 25 } }
+		localization_key = "wsh_roster_tooltip_25"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 26 } }
+		localization_key = "wsh_roster_tooltip_26"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 27 } }
+		localization_key = "wsh_roster_tooltip_27"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 28 } }
+		localization_key = "wsh_roster_tooltip_28"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 29 } }
+		localization_key = "wsh_roster_tooltip_29"
+	}
+	text = {
+		trigger = { check_variable = { wsh_roster_name_idx^roster_idx = 30 } }
+		localization_key = "wsh_roster_tooltip_30"
+	}
+	text = { localization_key = "wsh_roster_tooltip_unknown" }
+}
+defined_text = {
+	name = GetWSHRosterStabilityTooltip
+	text = { localization_key = "wsh_roster_stability_dynamic_tt" }
 }

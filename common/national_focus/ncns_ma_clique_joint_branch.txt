@@ -26,7 +26,9 @@ joint_focus = {
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		base = 15 
@@ -61,13 +63,100 @@ joint_focus = {
 		}
 	}
 
-	available = {}
+	available = {
+		OR = {
+			original_tag = XSM
+			original_tag = NXM
+			original_tag = GSM
+			original_tag = KHM
+		}
+		NOT = {
+			has_country_flag = cast_off_ma_ties_or_became_china_flag 
+		}
+	}
 
 	completion_reward_joint_originator = {
 
 	}
 
-	completion_reward = {}
+	completion_reward = {
+		
+		custom_effect_tooltip = CHI_modify_ma_clique_collective_modifier_tt
+		add_to_variable = { CHI_ma_clique_collective_political_power_factor = 0.05 tooltip = political_power_factor_tt }
+		add_to_variable = { CHI_ma_clique_collective_production_speed_infrastructure_factor = 0.05 tooltip = production_speed_infrastructure_factor_tt }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					original_tag = XSM
+				}
+			}
+			add_opinion_modifier = {
+				target = XSM
+				modifier = MA_family_ties_opm 
+			}	
+		}
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					original_tag = NXM
+				}
+			}
+			add_opinion_modifier = {
+				target = NXM
+				modifier = MA_family_ties_opm 
+			}	
+		}
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					original_tag = GSM
+				}
+			}
+			add_opinion_modifier = {
+				target = GSM
+				modifier = MA_family_ties_opm 
+			}	
+		}
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					original_tag = KHM
+				}
+			}
+			add_opinion_modifier = {
+				target = KHM
+				modifier = MA_family_ties_opm 
+			}	
+		}
+
+	}
 
 	completion_reward_joint_member = {
 
@@ -93,13 +182,25 @@ joint_focus = {
 
 	text_icon = MA_focus_style
 
-	available = {}
+	available = {
+		OR = {
+			original_tag = XSM
+			original_tag = NXM
+			original_tag = GSM
+			original_tag = KHM
+		}
+		NOT = {
+			has_country_flag = cast_off_ma_ties_or_became_china_flag 
+		}
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		base = 5
@@ -107,7 +208,31 @@ joint_focus = {
 
 	search_filters = { }
 
-	completion_reward = {}
+	completion_reward = {
+
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					has_country_flag = cast_off_ma_ties_or_became_china_flag 
+				}
+			}
+			army_experience = 25
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		custom_effect_tooltip = CHI_modify_ma_clique_collective_modifier_tt
+		add_to_variable = { CHI_ma_clique_collective_conscription_factor = 0.05 tooltip = conscription_factor_tt }
+		add_to_variable = { CHI_ma_clique_collective_cavalry_defence_factor = 0.05 tooltip = cavalry_defence_factor_tt }
+		add_to_variable = { CHI_ma_clique_collective_army_core_defence_factor = 0.05 tooltip = army_core_defence_factor_tt }
+
+	}
 
 }
 
@@ -127,13 +252,25 @@ joint_focus = {
 
 	text_icon = MA_focus_style
 
-	available = {}
+	available = {
+		OR = {
+			original_tag = XSM
+			original_tag = NXM
+			original_tag = GSM
+			original_tag = KHM
+		}
+		NOT = {
+			has_country_flag = cast_off_ma_ties_or_became_china_flag 
+		}
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		base = 10
@@ -145,7 +282,41 @@ joint_focus = {
 		
 	}
 
-	completion_reward = {}
+	completion_reward = {
+		
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					has_country_flag = cast_off_ma_ties_or_became_china_flag 
+				}
+			}
+			custom_effect_tooltip = MA_strenghten_regional_trade_tt
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes 
+					}
+					is_capital = yes 
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
 
 }
 
@@ -166,13 +337,26 @@ joint_focus = {
 
 	text_icon = MA_focus_style
 
-	available = {}
+	available = {
+		is_subject = no
+		OR = {
+			original_tag = XSM
+			original_tag = NXM
+			original_tag = GSM
+			original_tag = KHM
+		}
+		NOT = {
+			has_country_flag = cast_off_ma_ties_or_became_china_flag 
+		}
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		base = 1
@@ -201,7 +385,112 @@ joint_focus = {
 
 	search_filters = { }
 
-	completion_reward = {}
+	completion_reward = {
+
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					has_country_flag = cast_off_ma_ties_or_became_china_flag 
+				}
+			}
+			add_political_power = 50
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = MA_promises_of_mutual_defense_tt
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					original_tag = XSM
+				}
+			}
+			IF = {
+				limit = {
+					XSM = {
+						is_subject = no
+					}
+				}
+				give_guarantee = XSM
+			}
+		}
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					original_tag = NXM
+				}
+			}
+			IF = {
+				limit = {
+					NXM = {
+						is_subject = no
+					}
+				}
+				give_guarantee = NXM
+			}
+		}
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					original_tag = GSM
+				}
+			}
+			IF = {
+				limit = {
+					GSM = {
+						is_subject = no
+					}
+				}
+				give_guarantee = GSM
+			}
+		}
+		IF = {
+			limit = {
+				OR = {
+					original_tag = XSM
+					original_tag = NXM
+					original_tag = GSM
+					original_tag = KHM
+				}
+				NOT = {
+					original_tag = KHM
+				}
+			}
+			IF = {
+				limit = {
+					KHM = {
+						is_subject = no
+					}
+				}
+				give_guarantee = KHM
+			}
+		}
+		
+	}
 
 }
 
@@ -221,13 +510,26 @@ joint_focus = {
 
 	text_icon = MA_focus_style
 
-	available = {}
+	available = {
+		is_subject = no
+		OR = {
+			original_tag = XSM
+			original_tag = NXM
+			original_tag = GSM
+			original_tag = KHM
+		}
+		NOT = {
+			has_country_flag = cast_off_ma_ties_or_became_china_flag 
+		}
+	}
 
     cancel_if_invalid = yes
     continue_if_invalid = no
     available_if_capitulated = no
 
-	bypass = {}
+	bypass = {
+
+	}
 
 	ai_will_do = {
 		base = 0

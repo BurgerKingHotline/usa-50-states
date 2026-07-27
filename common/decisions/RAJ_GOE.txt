@@ -79,10 +79,10 @@ RAJ_GOE_independence_movement = {
 			original_tag = RAJ
 			has_completed_focus = RAJ_promote_violence_against_the_british	
 		}
+		target_array = RAJ.owned_states_at_game_start
 		target_trigger = {			
 			FROM = {
 				has_resistance = yes
-				is_in_array = { RAJ.owned_states_at_game_start = THIS }
 				is_controlled_by = ROOT
 			}
 		}
@@ -169,12 +169,13 @@ RAJ_GOE_independence_movement = {
 			original_tag = RAJ
 			has_completed_focus = RAJ_protest_against_the_howell_monument	
 		}
+
+		target_array = RAJ.owned_states_at_game_start
+
 		target_trigger = {			
 			FROM = {
 				is_core_of = ROOT
-				is_in_array = { RAJ.owned_states_at_game_start = THIS }
 				is_controlled_by = ROOT
-
 			}
 		}
 		
@@ -720,6 +721,10 @@ political_actions = {
 				create_dynamic_country = {
 					original_tag = RAJ
 					save_event_target_as = west_britain_company
+					122 = {
+						event_target:west_britain_company = { transfer_state = PREV }
+						add_core_of = event_target:west_britain_company
+					}
 					every_state = {
 						limit = {
 							OR = {
@@ -3214,6 +3219,10 @@ RAJ_GOE_mughal_independence_category = {
 			clr_country_flag = RAJ_mughal_uprising_started
 			IF = {
 				limit = {
+					440 = { is_controlled_by = RAJ }
+					988 = { is_controlled_by = RAJ }
+					442 = { is_controlled_by = RAJ }
+					439 = { is_controlled_by = RAJ }
 				}
 				set_country_flag = RAJ_mughal_captured_states
 			}
@@ -3223,52 +3232,110 @@ RAJ_GOE_mughal_independence_category = {
 			#SOUTHERN INDIA
 			if = {
 				limit = {
+					429 = { is_controlled_by = RAJ } 
+					427 = { is_controlled_by = RAJ }
+					424 = { is_controlled_by = RAJ  }
+					425 = { is_controlled_by = RAJ  }
+					423 = { is_controlled_by = RAJ  }
+					982 = { is_controlled_by = RAJ  }
+					983 = { is_controlled_by = RAJ  }
 				}
 
+				429 = { set_state_flag = RAJ_mughal_captured_states } 
+				427 = { set_state_flag = RAJ_mughal_captured_states }
+				424 = { set_state_flag = RAJ_mughal_captured_states  }
+				425 = { set_state_flag = RAJ_mughal_captured_states  }
+				423 = { set_state_flag = RAJ_mughal_captured_states  }
+				982 = { set_state_flag = RAJ_mughal_captured_states  }
+				983 = { set_state_flag = RAJ_mughal_captured_states  }
 			}
 
 			#CENTARL WESTERN INDIA
 			if = {
 				limit = {
 
+					433 = { is_controlled_by = RAJ }
+					428 = { is_controlled_by = RAJ }
+					437 = { is_controlled_by = RAJ }
 
 				}
 
+				433 = { set_state_flag = RAJ_mughal_captured_states } 
+				428 = { set_state_flag = RAJ_mughal_captured_states } 
+				437 = { set_state_flag = RAJ_mughal_captured_states } 
 			}
 			#WESTERN INDIA
 			if = {
 				limit = {
+					443 = { is_controlled_by = RAJ } 
+					989 = { is_controlled_by = RAJ }
 				}
 
+				443 = { set_state_flag = RAJ_mughal_captured_states } 
+				989 = { set_state_flag = RAJ_mughal_captured_states } 
 			}
 
 			#EASTERN INDIA
 			if = {
 				limit = {
+					431  = { is_controlled_by = RAJ }  
+					985  = { is_controlled_by = RAJ }
+					430  = { is_controlled_by = RAJ }
+					432  = { is_controlled_by = RAJ }
+					990  = { is_controlled_by = RAJ }
+					434  = { is_controlled_by = RAJ }
 				}
 
+				431 = { set_state_flag = RAJ_mughal_captured_states } 
+				985 = { set_state_flag = RAJ_mughal_captured_states } 
+				430 = { set_state_flag = RAJ_mughal_captured_states } 
+				432 = { set_state_flag = RAJ_mughal_captured_states } 
+				990 = { set_state_flag = RAJ_mughal_captured_states } 
+				434 = { set_state_flag = RAJ_mughal_captured_states } 
 			}
 
 			#NORTHERN CENTRAL INDIA
 			if = {
 				limit = {
+					440  = { is_controlled_by = RAJ }  
+					986  = { is_controlled_by = RAJ }
+					439  = { is_controlled_by = RAJ }
 				}
 
+				440 = { set_state_flag = RAJ_mughal_captured_states } 
+				986 = { set_state_flag = RAJ_mughal_captured_states } 
+				439 = { set_state_flag = RAJ_mughal_captured_states }  
 			}
 
 			#NORTHEN INDIA
 			if = {
 				limit = {
+					441  = { is_controlled_by = RAJ }
+					787  = { is_controlled_by = RAJ }
 				}
 
+				441 = { set_state_flag = RAJ_mughal_captured_states } 
+				787 = { set_state_flag = RAJ_mughal_captured_states } 
 			}
 
 
 			#CENTRAL INDIA
 			if = {
 				limit = {
+					436  = { is_controlled_by = RAJ }  
+					984  = { is_controlled_by = RAJ }
+					426  = { is_controlled_by = RAJ }
+					438  = { is_controlled_by = RAJ }
+					435  = { is_controlled_by = RAJ }
+					991  = { is_controlled_by = RAJ }
 				}
 
+				436 = { set_state_flag = RAJ_mughal_captured_states } 
+				984 = { set_state_flag = RAJ_mughal_captured_states } 
+				426 = { set_state_flag = RAJ_mughal_captured_states } 
+				438 = { set_state_flag = RAJ_mughal_captured_states } 
+				435 = { set_state_flag = RAJ_mughal_captured_states } 
+				991 = { set_state_flag = RAJ_mughal_captured_states } 
 			}
 
 			RAJ = {
@@ -5280,9 +5347,23 @@ prospect_for_resources = {
 
 		visible = {
 			has_completed_focus = RAJ_exploit_the_frontier
+			288 = {
+				controller = {
+					is_ally_with = ROOT
+					OR = {
+						is_subject_of = ENG
+						is_subject = no
+					}
+				}
+			}
 		}
 
 		available = {
+			288 = {
+				controller = {
+					is_ally_with = ROOT
+				}
+			}
 		}
 
 		ai_will_do = {
@@ -5319,6 +5400,11 @@ prospect_for_resources = {
 			has_completed_focus = RAJ_exploit_the_frontier
 			owns_state = 423
 			controls_state = 423
+			423 = {
+				NOT = {
+					has_state_flag = southern_madras_rubber_developed
+				}
+			}
 		}
 
 		available = {
@@ -5367,6 +5453,15 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			423 = {
+				set_state_flag = southern_madras_rubber_developed
+			}
+			423 = {
+				add_resource = {
+					type = rubber
+					amount = 8
+				}
+			}
 		}
 	}
 
@@ -5382,6 +5477,11 @@ prospect_for_resources = {
 			has_completed_focus = RAJ_exploit_the_frontier
 			owns_state = 434
 			controls_state = 434
+			434 = {
+				NOT = {
+					has_state_flag = arunachal_pradesh_tungsten_developed
+				}
+			}
 		}
 
 		available = {
@@ -5431,6 +5531,15 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			434 = {
+				set_state_flag = arunachal_pradesh_tungsten_developed
+			}
+			434 = {
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
 		}
 	}
 
@@ -5446,6 +5555,11 @@ prospect_for_resources = {
 			has_completed_focus = RAJ_exploit_the_frontier
 			owns_state = 429
 			controls_state = 429
+			429 = {
+				NOT = {
+					has_state_flag = bombay_tungsten_developed
+				}
+			}
 		}
 
 		available = {
@@ -5495,6 +5609,15 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			429 = {
+				set_state_flag = bombay_tungsten_developed
+			}
+			429 = {
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
 		}
 	}
 
@@ -5510,6 +5633,11 @@ prospect_for_resources = {
 			has_completed_focus = RAJ_exploit_the_frontier
 			owns_state = 431
 			controls_state = 431
+			431 = {
+				NOT = {
+					has_state_flag = west_bengal_steel_developed
+				}
+			}
 		}
 
 		available = {
@@ -5559,6 +5687,15 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			431 = {
+				set_state_flag = west_bengal_steel_developed
+			}
+			431 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
 		}
 	}
 
@@ -5574,6 +5711,11 @@ prospect_for_resources = {
 			has_completed_focus = RAJ_exploit_the_frontier
 			owns_state = 426
 			controls_state = 426
+			426 = {
+				NOT = {
+					has_state_flag = orissa_mines_developed
+				}
+			}
 		}
 
 		available = {
@@ -5629,6 +5771,23 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			426 = {
+				set_state_flag = orissa_mines_developed
+			}
+			426 = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+			}
 		}
 	}
 
@@ -5644,6 +5803,11 @@ prospect_for_resources = {
 			has_completed_focus = RAJ_exploit_the_frontier
 			owns_state = 427
 			controls_state = 427
+			427 = {
+				NOT = {
+					has_state_flag = hyderabad_mines_developed
+				}
+			}
 		}
 
 		available = {
@@ -5699,6 +5863,19 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			427 = {
+				set_state_flag = hyderabad_mines_developed
+			}
+			427 = {
+				add_resource = {
+					type = chromium
+					amount = 12
+				}
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
 		}
 	}
 }
@@ -5727,6 +5904,537 @@ RAJ_work_with_local_leaders_cat = {
 				#Pick Reward
 				random_list = {
 					seed = random 
+					1 = { #INFRA + SLOT (Basic)
+						modifier = { #Completing these focuses disables the basic reward in exchange for better ones
+							factor = 0
+							OR = {
+								has_completed_focus = RAJ_concessions_to_the_industrialists
+								has_completed_focus = RAJ_empower_provincial_authorities
+							}
+						}
+						
+						if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									infrastructure < 5
+								}
+							}
+							log = "IF"
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									infrastructure < 5
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+								if = {
+									limit = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									}
+									add_extra_state_shared_building_slots = 1
+								}
+								log = "Shit built in [THIS.GetName]"
+							}
+						}
+						else_if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							log = "ELSE IF"
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}
+						else = {
+							log = "ELSE"
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}
+
+						#Manage vars for tooltips
+						add_to_variable = { RAJ_local_leaders_infra = 1 }
+					}
+					1 = { #INFRA + CIV
+						modifier = {
+							factor = 0
+							NOT = { has_completed_focus = RAJ_concessions_to_the_industrialists }
+							NOT = { has_completed_focus = RAJ_empower_provincial_authorities }
+						}
+						modifier = {
+							factor = 6
+							has_completed_focus = RAJ_concessions_to_the_industrialists
+						}
+						modifier = {
+							factor = 3.3
+							has_completed_focus = RAJ_empower_provincial_authorities
+						}
+
+						if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									infrastructure < 5
+								}
+							}
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									infrastructure < 5
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+
+						#Manage vars for tooltips
+						add_to_variable = { RAJ_local_leaders_civs = 1 }
+					}
+					1 = { #INFRA + MIL
+						modifier = {
+							factor = 0
+							NOT = { has_completed_focus = RAJ_concessions_to_the_industrialists }
+							NOT = { has_completed_focus = RAJ_empower_provincial_authorities }
+						}
+						modifier = {
+							factor = 4
+							has_completed_focus = RAJ_concessions_to_the_industrialists
+						}
+						modifier = {
+							factor = 3.3
+							has_completed_focus = RAJ_empower_provincial_authorities
+						}
+
+						if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									infrastructure < 5
+								}
+							}
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+									infrastructure < 5
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						else = {
+							random_owned_state = {
+								limit = {
+									is_fully_controlled_by = ROOT
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+
+						#Manage vars for tooltips
+						add_to_variable = { RAJ_local_leaders_mils = 1 }
+					}
+					1 = { #DEFENSES: AIR BASE + AA + RADAR
+						modifier = {
+							factor = 0
+							NOT = { has_completed_focus = RAJ_empower_provincial_authorities }
+						}
+						modifier = {
+							factor = 3.3
+							has_completed_focus = RAJ_empower_provincial_authorities
+						}
+
+						if = {
+							limit = {
+								any_owned_state = {
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = { #AA is not granted and you can have 1 supply Hub per province so this is the only reliable limiting factor
+										building = air_base
+										size > 0
+									}
+								}
+							}
+							random_owned_state = {
+								limit = {	
+									is_fully_controlled_by = ROOT
+									is_in_array = {
+										array = ROOT.owned_states_at_game_start
+										value = THIS
+									}
+									free_building_slots = { #AA is not granted and you can have 1 supply Hub per province so this is the only reliable limiting factor
+										building = air_base
+										size > 0
+									}
+								}
+								# AIR BASE
+								add_building_construction = {
+									type = air_base
+									level = 2
+									instant_build = yes
+								}
+								
+								# AA
+								if = {
+									limit = {
+										ROOT = { has_tech = interwar_antiair }
+										anti_air_building < 5
+									}
+									add_building_construction = {
+										type = anti_air_building
+										level = 1
+										instant_build = yes
+									}
+								}
+
+								# RADAR
+								if = {
+									limit = {
+										ROOT = { is_special_project_completed = sp:sp_air_radar }
+										OR = {
+											radar_station < 1
+											AND = {
+												ROOT = { has_tech = cavity_magnatron }
+												radar_station < 2
+											}
+											AND = {
+												ROOT = { has_tech = centimetric_radar }
+												radar_station < 4
+											}
+											AND = {
+												ROOT = { has_tech = monopulse_radar }
+												radar_station < 6
+											}
+										}
+									}
+									add_building_construction = {
+										type = radar_station
+										level = 1
+										instant_build = yes
+									}
+								}
+							}
+						}
+						else = {
+							random_owned_state = {
+								limit = {	
+									is_fully_controlled_by = ROOT
+									free_building_slots = { #AA is not granted and you can have 1 supply Hub per province so this is the only reliable limiting factor
+										building = air_base
+										size > 0
+									}
+								}
+								# AIR BASE
+								add_building_construction = {
+									type = air_base
+									level = 2
+									instant_build = yes
+								}
+								
+								# AA
+								if = {
+									limit = {
+										ROOT = { has_tech = interwar_antiair }
+										anti_air_building < 5
+									}
+									add_building_construction = {
+										type = anti_air_building
+										level = 1
+										instant_build = yes
+									}
+								}
+
+								# RADAR
+								if = {
+									limit = {
+										ROOT = { is_special_project_completed = sp:sp_air_radar }
+										OR = {
+											radar_station < 1
+											AND = {
+												ROOT = { has_tech = cavity_magnatron }
+												radar_station < 2
+											}
+											AND = {
+												ROOT = { has_tech = centimetric_radar }
+												radar_station < 4
+											}
+											AND = {
+												ROOT = { has_tech = monopulse_radar }
+												radar_station < 6
+											}
+										}
+									}
+									add_building_construction = {
+										type = radar_station
+										level = 1
+										instant_build = yes
+									}
+								}
+							}
+						}
+
+						#Manage vars for tooltips
+						add_to_variable = { RAJ_local_leaders_defenses = 1 }
+					}
 				}
 			}
 

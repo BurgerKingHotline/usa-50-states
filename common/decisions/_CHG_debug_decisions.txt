@@ -1,0 +1,237 @@
+CHG_council_choice = {
+	chg_debug_initialize_council = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { original_tag = CHG }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			CHG_city_council_setup = yes
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_refresh_council = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_force_election = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = universal_election_system_initialized }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_variable = { days_until_election = 1 }
+			universal_monthly_election_tick_effect = yes
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_resolve_leadership_vote = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			CHG_resolve_leadership_vote = yes
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_set_balanced_council = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_popularities = {
+				democratic = 25
+				conservatism_ideology = 20
+				socialism_ideology = 20
+				communism = 5
+				fascism = 5
+				populism_ideology = 15
+				neutrality = 10
+			}
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_set_right_majority = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_popularities = {
+				democratic = 12
+				conservatism_ideology = 45
+				socialism_ideology = 8
+				communism = 3
+				fascism = 10
+				populism_ideology = 7
+				neutrality = 15
+			}
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_set_liberal_majority = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_popularities = {
+				democratic = 62
+				conservatism_ideology = 9
+				socialism_ideology = 8
+				communism = 3
+				fascism = 3
+				populism_ideology = 8
+				neutrality = 7
+			}
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_set_left_majority = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_popularities = {
+				democratic = 10
+				conservatism_ideology = 8
+				socialism_ideology = 46
+				communism = 22
+				fascism = 2
+				populism_ideology = 7
+				neutrality = 5
+			}
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_set_populist_plurality = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_popularities = {
+				democratic = 18
+				conservatism_ideology = 15
+				socialism_ideology = 12
+				communism = 5
+				fascism = 5
+				populism_ideology = 35
+				neutrality = 10
+			}
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_force_horner = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_variable = { elec_bloc_support^0 = 5 }
+			set_variable = { elec_bloc_support^1 = 5 }
+			set_variable = { elec_bloc_support^2 = 5 }
+			set_variable = { elec_bloc_support^3 = 45 }
+			set_variable = { elec_bloc_support^4 = 45 }
+			set_variable = { elec_bloc_support^5 = 5 }
+			set_variable = { elec_bloc_support^6 = 5 }
+			CHG_resolve_leadership_vote = yes
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_force_thompson = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_variable = { elec_bloc_support^0 = 45 }
+			set_variable = { elec_bloc_support^1 = 45 }
+			set_variable = { elec_bloc_support^2 = 5 }
+			set_variable = { elec_bloc_support^3 = 5 }
+			set_variable = { elec_bloc_support^4 = 5 }
+			set_variable = { elec_bloc_support^5 = 5 }
+			set_variable = { elec_bloc_support^6 = 5 }
+			CHG_resolve_leadership_vote = yes
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_force_fitzpatrick = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_variable = { elec_bloc_support^0 = 45 }
+			set_variable = { elec_bloc_support^1 = 5 }
+			set_variable = { elec_bloc_support^2 = 5 }
+			set_variable = { elec_bloc_support^3 = 5 }
+			set_variable = { elec_bloc_support^4 = 5 }
+			set_variable = { elec_bloc_support^5 = 45 }
+			set_variable = { elec_bloc_support^6 = 5 }
+			CHG_resolve_leadership_vote = yes
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_force_cermak = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { has_country_flag = uses_chg_council }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			set_variable = { elec_bloc_support^0 = 5 }
+			set_variable = { elec_bloc_support^1 = 5 }
+			set_variable = { elec_bloc_support^2 = 5 }
+			set_variable = { elec_bloc_support^3 = 45 }
+			set_variable = { elec_bloc_support^4 = 5 }
+			set_variable = { elec_bloc_support^5 = 5 }
+			set_variable = { elec_bloc_support^6 = 45 }
+			CHG_resolve_leadership_vote = yes
+			CHG_calculate_and_refresh_council = yes
+		}
+	}
+
+	chg_debug_add_resources = {
+		icon = generic_political_discourse
+		visible = { is_debug = yes is_ai = no }
+		available = { always = yes }
+		fire_only_once = no
+		cost = 0
+		complete_effect = {
+			add_political_power = 500
+			add_command_power = 100
+		}
+	}
+}

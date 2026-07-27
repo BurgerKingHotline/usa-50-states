@@ -15,47 +15,47 @@
 
 
 
+#	focus = {
+#		id = SAF_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	
+	############################
+	#### WAR PREP SECTION ######
+	############################
 
 	focus = {
 		id = SAF_war_measures_act
@@ -69,16 +69,25 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				threat > 0.2
+				NOT = { has_government = democratic }
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 	
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+		}
 	}
 
 	focus = {
@@ -95,15 +104,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_emergency_workers
+		}
 	}
 
 	focus = {
@@ -120,15 +135,44 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_in_home_area = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes							
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	
 	focus = {
@@ -145,15 +189,24 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SAF_history_of_segregation
+				add_idea = SAF_history_of_segregation_2
+			}
+		}
 	}
 
 	focus = {
@@ -171,15 +224,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = SAF_history_of_segregation_2
+		}
 	}
 
 	focus = {
@@ -197,22 +256,31 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SAF_cheap_labor_2
+				add_idea = SAF_cheap_labor_3
+			}
+		}
 	}
 
 
-	
-	
-	
+	############################
+	# GO COMMONWEALTH SECTION ##
+	############################
 
 	focus = {
 		id = SAF_support_the_policy_of_appeasement
@@ -227,15 +295,28 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				is_subject_of = ENG
+				AND = {
+					has_global_flag = ENG_decolonized
+					is_in_faction_with = ENG
+				}
+			}
+			ENG = { has_war = no }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+		add_political_power = 120
+		}
 	}
 
 	focus = {
@@ -253,16 +334,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_in_tech_sharing_group = commonwealth_research
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			SAF = {
+   				modify_tech_sharing_bonus = {
+         			id = commonwealth_research
+         			bonus = 0.1  # we get 20% higher bonus from this group
+    			}
+			}
+		}
 	}
 
 	focus = {
@@ -279,16 +371,26 @@
 			factor = 2
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {			
+			swap_ideas = {
+				remove_idea = SAF_ossewabrandwag
+				add_idea = SAF_ossewabrandwag_2
+			}
+			remove_opinion_modifier = { target = ENG modifier = SAF_anti_british_sentiment }
+		}
 	}
 
 	focus = {
@@ -305,15 +407,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_joint_air_training_scheme
+		}
 	}
 
 	focus = {
@@ -330,15 +438,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_desert_equipment
+		}
 	}
 
 	focus = {
@@ -356,16 +470,22 @@
 			factor = 2
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_INDUSTRY }
 		
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = SAF_ossewabrandwag_2
+		}
 	}
 
 	focus = {
@@ -383,21 +503,31 @@
 			factor = 0
 		}
 
-		available = {}
+		available = {
+			NOT = { has_war_with = ENG }
+			ENG = { is_puppet = no }
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
-		completion_reward = {}
+		completion_reward = {
+		ENG = { custom_effect_tooltip = needs_approval 
+				country_event = tfv_south_africa.1
+				}
+		}
 	}
 
-	
-	
-	
+	############################
+	## SHARED POLITICS SECTION #
+	############################
 
 	focus = {
 		id = SAF_native_laws_amendment_act
@@ -413,16 +543,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_cheap_labor_1
+		}
 	}
 
 	focus = {
@@ -439,21 +575,30 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SAF_cheap_labor_1
+				add_idea = SAF_cheap_labor_2
+			}
+		}
 	}
 
-	
-	
-	
+	############################
+	#### GO FASCIST SECTION ####
+	############################
 
 	focus = {
 		id = SAF_abandon_westminster
@@ -474,22 +619,28 @@
 				NOT = { has_government = democratic }
 				factor = 100
 			}
-			modifier = {	
+			modifier = {	#makes it significantly more likely if player boosts non-democratic
 				democratic < 0.5
 				factor = 20
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_TFV_AUTONOMY}
 
-		completion_reward = {}
+		completion_reward = {
+			add_timed_idea = { idea = SAF_abandon_westminster days = 1095 }
+		}
 	}
 
 	focus = {
@@ -515,16 +666,25 @@
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SAF_abandon_westminster
+				add_idea = SAF_abandon_westminster_fascism
+			}
+		}
 	}
 
 	focus = {
@@ -541,16 +701,43 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				is_subject = no
+				if = {
+					limit = { NOT = { has_government = fascism } }
+					AND = {
+						has_autonomy_state = autonomy_dominion
+						compare_autonomy_progress_ratio > 0.65
+					}
+				}
+				if = {
+					limit = { has_government = fascism } 
+					AND = {
+						has_autonomy_state = autonomy_satellite
+						compare_autonomy_progress_ratio > 0.65
+					}
+				}
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_INDUSTRY }
 		
-		completion_reward = {}
+		completion_reward = {
+			army_experience = 15
+			swap_ideas = {
+				remove_idea = SAF_ossewabrandwag
+				add_idea = SAF_ossewabrandwag_fascism
+			}
+		}
 	}
 
 	focus = {
@@ -567,16 +754,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_POLITICAL }
 		
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+		}
 	}
 
 	focus = {
@@ -593,15 +786,21 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_TFV_AUTONOMY}
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_voortrekker_monument
+		}
 	}
 
 	focus = {
@@ -623,16 +822,93 @@
 			}
 		}
 
-		available = {}
+		available = {
+			fascism > 0.20
+			if = {
+				limit = { not = { has_government = fascism } }
+				compare_autonomy_state > autonomy_colony
+			}
+			if = {
+				limit = { has_government = fascism  }
+				compare_autonomy_state > autonomy_reichsprotectorate
+			}
+			controls_state = 541
+			controls_state = 893
+			controls_state = 894
+			controls_state = 895
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_INDUSTRY }
 		
-		completion_reward = {}
+		completion_reward = {
+			541 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = {
+						id = 7770
+						id = 4879
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2 
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					province = {
+						id = 2207
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+			893 = {
+				add_building_construction = {
+					type = bunker
+					province = {
+						id = 5154
+						id = 5189
+						id = 7605
+						id = 10963
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			895 = {
+				add_building_construction = {
+					type = bunker
+					province = {
+						id = 12519
+					
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -650,20 +926,58 @@
 			factor = 0.75
 			modifier = {
 				GER = { surrender_progress > 0.5 }
-				factor = 10 
+				factor = 10 #nopenopnenope
 			}
 		}
 
-		available = {}
+		available = {
+			OR = {
+				is_subject = no
+				if = {
+					limit = { NOT = { has_government = fascism } }
+					AND = {
+						has_autonomy_state = autonomy_dominion
+						compare_autonomy_progress_ratio > 0.75
+					}
+				}
+				if = {
+					limit = { has_government = fascism } 
+					AND = {
+						has_autonomy_state = autonomy_satellite
+						compare_autonomy_progress_ratio > 0.75
+					}
+				}
+			}
+			NOT = { has_war_together_with = ENG }
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_TFV_AUTONOMY}
 		
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				OVERLORD = {
+					set_autonomy = {
+						target = SAF
+						autonomy_state = autonomy_free
+					}
+				}
+			}
+			ENG = { remove_from_faction = ROOT }
+			set_rule = { can_create_factions = yes }
+			add_political_power = 70
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -680,9 +994,32 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			fascism > 0.25
+			controls_state = 541
+			OR = {
+				is_subject = no
+				if = {
+					limit = { NOT = { has_government = fascism } }
+					AND = {
+						has_autonomy_state = autonomy_dominion
+						compare_autonomy_progress_ratio > 0.80
+					}
+				}
+				if = {
+					limit = { has_government = fascism } 
+					AND = {
+						has_autonomy_state = autonomy_satellite
+						compare_autonomy_progress_ratio > 0.80
+					}
+				}
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+			has_government = fascism
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -701,7 +1038,47 @@
 
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = SAF_civil_war_tt
+			hidden_effect = {
+				set_capital = { state = 541 }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = democratic
+					size = 0.45
+					capital = 681
+					states = { 681 275 719 }
+				}
+				random_other_country = {
+					limit = {
+						original_tag = SAF
+						has_government = democratic
+					}
+					load_oob = "SAF_D_civil_war"
+					set_equipment_fraction = 0.7
+					add_popularity = {
+						ideology = democratic
+						popularity = 0.35
+					}
+				}
+				news_event = { hours = 6 id = news.262 }
+				
+				load_oob = "SAF_F_civil_war"
+				set_equipment_fraction = 0.8
+				
+				add_popularity = {
+					ideology = fascism
+					popularity = 1
+				}
+				random_country = {
+					limit = {
+						original_tag = GER
+						has_government = fascism
+					}
+					set_country_flag = saf_fascist_uprising # Affects GER ai_strategy
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -718,15 +1095,26 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ENG
+				expire = 0
+				generator = { 542 545 }
+			}
+		}
 	}
 
 	focus = {
@@ -744,16 +1132,26 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_TFV_AUTONOMY}
 		
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SAF_voortrekker_monument
+				add_idea = SAF_voortrekker_monument_2
+			}
+
+		}
 	}
 
 	focus = {
@@ -763,7 +1161,9 @@
 		x = -2
 		y = 5
 		relative_position_id = SAF_support_the_afrikaner_broederbond
-		available = {}
+		available = {
+			GER = { has_government = fascism }
+		}
 
 		cost = 10
 
@@ -771,16 +1171,25 @@
 			factor = 4
 		}
 
-		available = {}
+		available = {
+			
+			is_in_faction_with = GER
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 		
-		completion_reward = {}
+		completion_reward = {
+			GER = { add_to_tech_sharing_group = axis_research }
+			add_to_tech_sharing_group = axis_research
+		}
 	}
 
 	focus = {
@@ -797,16 +1206,29 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				NOT  = { ENG = { has_idea = ENG_king_edward } }
+				NOT = { ENG = { has_idea = ENG_king_edward_fascism } }
+				NOT = { ENG = { has_completed_focus = ENG_the_kings_party } }
+				ENG = { has_country_flag = ENG_king_died }
+				tooltip = SAF_a_king_for_our_people_trigger_tt					
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_STABILITY }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_king_edward
+		}
 	}
 
 
@@ -824,21 +1246,53 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			controls_state = 542
+			controls_state = 545
+			controls_state = 546
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = SAF_support_axis_interests_effect_tt
+			every_state = {
+				limit = {
+					is_controlled_by = ROOT
+					OR = {
+						state = 542
+						state = 545
+						state = 546
+						state = 540
+						state = 544
+						state = 896
+						state = 897
+						state = 295
+						state = 538
+						state = 718
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
-	
-	
-	
+	############################
+	### GO COMMUNIST SECTION ###
+	############################
 
 	focus = {
 		id = SAF_empower_the_workers
@@ -853,7 +1307,7 @@
 
 		ai_will_do = {
 			factor = 0.5
-			modifier = {	
+			modifier = {	#will make country more likely to go down this path if player boosts communism support
 				communism > 0.1
 				factor = 10
 			}
@@ -863,16 +1317,25 @@
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_TFV_AUTONOMY }
 
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = SAF_abandon_westminster
+				add_idea = SAF_abandon_westminster_communism
+			}
+		}
 	}
 
 	focus = {
@@ -889,15 +1352,50 @@
 			factor = 30
 		}
 
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = scw_in_progress_tt
+				AND = {
+					has_global_flag = spanish_civil_war
+					NOT = { has_global_flag = scw_over }
+				}
+			}
+			OR = {
+				has_government = communism
+				communism > 0.1
+			}
+			OR = {
+				is_subject = no
+				if = {
+					limit = { NOT = { has_government = fascism } }
+					AND = {
+						has_autonomy_state = autonomy_dominion
+						compare_autonomy_progress_ratio > 0.65
+					}
+				}
+				if = {
+					limit = { has_government = fascism } 
+					AND = {
+						has_autonomy_state = autonomy_satellite
+						compare_autonomy_progress_ratio > 0.65
+					}
+				}
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = tfv_south_africa.50 }
+			#event for nationalist/communist choice?
+		}
 	}
 
 	focus = {
@@ -914,16 +1412,28 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			communism > 0.1
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT} 
 
-		completion_reward = {}
+		completion_reward = {
+		add_political_power = 120
+		add_ideas =  SAF_black_volunteers
+		swap_ideas = {
+				remove_idea = SAF_ossewabrandwag
+				add_idea = SAF_ossewabrandwag_2
+			}
+		}
 	}
 	focus = {
 		id = SAF_equal_opportunity_employment
@@ -939,16 +1449,23 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_equal_opportunities
+			remove_ideas = SAF_ossewabrandwag_2
+		}
 	}
 
 	focus = {
@@ -965,16 +1482,34 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			communism > 0.35
+			OR = {
+				compare_autonomy_progress_ratio > 0.7
+				is_subject = no
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {	
+				ideology = communism
+				popularity = 0.15
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.263 }
+			}
+		}
 	}
 	focus = {
 		id = SAF_anti_colonialist_crusade
@@ -995,13 +1530,18 @@
 					SOV = { has_war_with = BEL }
 					SOV = { has_war_with = POR }
 				}
-				factor = 20 
+				factor = 20 #now is the time to strike!
 			}
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1012,7 +1552,22 @@
 		}
         search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.1
+			ENG = { 
+					remove_from_faction = SAF
+					add_opinion_modifier = { target = SAF modifier = SAF_anti_colonialist_crusaders }
+			 }
+			FRA = { 
+			 		add_opinion_modifier = { target = SAF modifier = SAF_anti_colonialist_crusaders } 
+			 }
+			BEL = { 
+			 		add_opinion_modifier = { target = SAF modifier = SAF_anti_colonialist_crusaders } 
+			 }
+			POR = { 
+			 		add_opinion_modifier = { target = SAF modifier = SAF_anti_colonialist_crusaders } 
+			 }
+		}
 	}
 
 	focus = {
@@ -1029,16 +1584,36 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				set_rule = { can_create_factions = yes }
+				create_faction_from_template = faction_template_SAF_faction_uotap
+				add_faction_initiative = 1
+			}
+			ELSE = {
+				set_rule = { can_create_factions = yes }
+				create_faction = SAF_faction_uotap
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.264 }
+			}
+		}
 	}
 	focus = {
 		id = SAF_liberate_portugese
@@ -1058,15 +1633,31 @@
 			}
 		}
 
-		available = {}
+		available = {
+			OR = {
+				ANG = { exists = no }
+				MZB = { exists = no }
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = POR
+				expire = 0
+				generator = { 540 544 }
+			}
+			
+		}
 	}
 	focus = {
 		id = SAF_liberate_belgian
@@ -1086,15 +1677,28 @@
 			}
 		}
 
-		available = {}
+		available = {
+			COG = { exists = no }
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = BEL
+				expire = 0
+				generator = { 538 718 295 }
+			}
+			
+		}
 	}
 	focus = {
 		id = SAF_liberate_british
@@ -1114,15 +1718,31 @@
 			}
 		}
 
-		available = {}
+		available = {
+			OR = {
+				KEN = { exists = no } 
+				ZIM = { exists = no }
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = ENG
+				expire = 0
+				generator = { 546 547 548 542 545 }
+			}
+			
+		}
 	}
 
 	
@@ -1142,7 +1762,7 @@
 			factor = 50
 			modifier = {
 				SOV = { surrender_progress > 0.75 }
-				factor = 0 
+				factor = 0 # let's not get into that...
 			}
 			modifier = {
 				has_opinion = { target = SOV value > 50 }
@@ -1150,9 +1770,15 @@
 			}
 		}
 
-		available = {}
+		available = {
+			SOV_comintern_joinable = yes 
+			is_subject = no
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+			is_in_faction_with = SOV
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1163,7 +1789,9 @@
 			
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			SOV = { country_event = { id = tfv_south_africa.20 } }
+		}
 	}
 	
 	focus = {
@@ -1180,16 +1808,22 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_support_the_world_revolution
+		}
 	}
 	focus = {
 		id = SAF_invite_soviet_advisers
@@ -1205,9 +1839,14 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			SOV = { exists = yes }
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1218,7 +1857,37 @@
 			
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_soviet_advisers
+			if = {
+				limit = {
+					has_doctrine = mass_assault
+				}
+				add_mastery_bonus = {
+					name = SAF_invite_soviet_advisers
+					bonus = 0.1
+					days = 180
+				grand_doctrine = mass_assault
+				}
+			}
+				else = {
+					add_mastery_bonus = {
+					name = SAF_invite_soviet_advisers
+					bonus = 0.05
+					days = 180
+				}
+			}
+			
+
+			
+			
+			add_doctrine_cost_reduction = {
+				name = SAF_invite_soviet_advisers
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 	focus = {
 		id = SAF_south_african_soviet_research_treaty
@@ -1234,9 +1903,17 @@
 			factor = 2
 		}
 
-		available = {}
+		available = {
+			SOV = { 
+				exists = yes
+				is_puppet = no
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1247,7 +1924,12 @@
 			
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			SOV = {
+				custom_effect_tooltip = needs_approval
+				country_event = { id = tfv_south_africa.40 } #tech sharing
+			}
+		}
 
 	}
 	focus = {
@@ -1264,9 +1946,32 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_global_flag = sov_yes_pact
+			FRA = {
+				has_capitulated = yes
+				exists = yes #otherwise Franco-British union might screw things up
+			}
+			543 = {
+				controller = { 
+					NOT = { has_government = communism }					
+				}
+			}
+			543 = {
+				controller = { 
+					NOT = { has_war_with = SAF }				
+				}
+			}
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
 		
-		bypass = {}
+		bypass = {
+			543 = {
+				controller = { 
+					has_war_with = SAF					
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1277,12 +1982,22 @@
 			
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			543 = {
+				controller = {
+					custom_effect_tooltip = needs_approval
+					country_event = { id = tfv_south_africa.30 hours = 12 }
+				}
+			}
+			hidden_effect = {
+				news_event = { id = news.265 }
+			}
+		}
 	}
 	
-	
-	
-	
+	############################
+	##### INDUSTRY SECTION #####
+	############################
 
 	focus = {
 		id = SAF_south_african_railways
@@ -1296,9 +2011,13 @@
 			factor = 15
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1306,7 +2025,28 @@
 
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					NOT = { has_tech = basic_train }
+				}
+				set_technology = { 
+					basic_train = 1
+					popup = yes
+				}
+			}
+			add_equipment_to_stockpile = { 
+				type = train_equipment_1
+				amount = 15 
+				producer = ENG
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = SAF_south_african_railways
+		}
 	}
 
 	focus = {
@@ -1323,9 +2063,13 @@
 			factor = 20
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1346,7 +2090,34 @@
 			}
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SAF_expand_the_mining_industry_IC
+			}
+			add_tech_bonus = {
+				name = SAF_expand_the_mining_industry
+				bonus = 1.0
+				uses = 1
+				technology = excavation1
+				technology = excavation2
+				technology = excavation3
+				technology = excavation4
+				technology = excavation5
+			}
+		}
 	}
 
 	focus = {
@@ -1363,16 +2134,27 @@
 			factor = 20
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = {  FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
-		completion_reward = {}
+		completion_reward = {			
+			add_tech_bonus = {
+				name = SAF_heavy_engineering
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
 	}
 
 	focus = {
@@ -1389,9 +2171,13 @@
 			factor = 20
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1441,7 +2227,67 @@
 			}
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SAF_infrastructure_effort_Inf
+				random_neighbor_state = { # done like this to prevent double selection of previous state
+					limit = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = SAF_infrastructure_effort_Inf2
+				}
+				random_neighbor_state = { # done like this to prevent double selection of previous state
+					limit = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = SAF_infrastructure_effort_Inf3
+				}
+				random_neighbor_state = { # done like this to prevent double selection of previous state
+					limit = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = SAF_infrastructure_effort_Inf4
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1458,9 +2304,13 @@
 			factor = 20
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1481,7 +2331,24 @@
 			}
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SAF_armament_effort_AF
+			}
+		}
 	}
 
 	focus = {
@@ -1498,16 +2365,27 @@
 			factor = 15
 		}
 
-		available = {}
+		available = {
+			controls_state = 275
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			275 = {
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1525,9 +2403,13 @@
 			factor = 10
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1548,7 +2430,24 @@
 			}
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SAF_pretoria_arms_AF
+			}
+		}
 	}
 
 	focus = {
@@ -1565,16 +2464,22 @@
 			factor = 15
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = SAF_gold_exports
+		}
 	}
 
 	focus = {
@@ -1591,16 +2496,22 @@
 			factor = 45
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 
 	focus = {
@@ -1617,16 +2528,40 @@
 			factor = 5
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = atomic_research
+					}
+				}
+				add_tech_bonus = {
+					name = SAF_establish_the_atomics_energy_board
+					bonus = 0.5
+					uses = 1
+					category = nuclear
+				}
+			}
+			else = {
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 0.75
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1643,16 +2578,22 @@
 			factor = 100
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 
 	focus = {
@@ -1669,22 +2610,37 @@
 			factor = 25
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+			has_war = yes
+			is_in_faction = yes
+			OR = {
+				num_of_factories > 50
+				any_other_country = {
+					is_in_faction_with = ROOT
+					num_of_factories > 50
+				}
+			}
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 
 
-	
-	
-	
+	############################
+	####### ARMY SECTION #######
+	############################
 
 	focus = {
 		id = SAF_special_service_battalion
@@ -1698,16 +2654,28 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				name = SAF_special_service_battalion
+				cost_reduction = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -1724,16 +2692,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_improve_the_three_oh_three
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
 	}
 
 	focus = {
@@ -1750,16 +2729,31 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_q_services_corps
+				bonus = 1.0
+				uses = 2
+				technology = motorised_infantry
+				technology = tech_logistics_company
+				technology = tech_logistics_company2
+				technology = tech_logistics_company3
+				technology = tech_logistics_company4
+			}
+		}
 	}
 
 	focus = {
@@ -1776,16 +2770,28 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				name = SAF__south_african_military_college
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -1802,16 +2808,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_expand_the_south_african_artillery
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
 	}
 
 	focus = {
@@ -1828,16 +2845,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_sa_engineer_corps
+				bonus = 1.0
+				uses = 1
+				category = support_tech
+			}
+		}
 	}
 
 	focus = {
@@ -1854,16 +2882,28 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {			
+			add_tech_bonus = {
+				name = SAF_equipment_effort
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
 	}
 
 	focus = {
@@ -1880,16 +2920,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {			
+			add_tech_bonus = {
+				name = SAF_mechanization_effort
+				bonus = 1.0
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+		}
 	}
 
 	focus = {
@@ -1906,16 +2957,37 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_south_african_special_forces
+				bonus = 1.0
+				uses = 1
+				category = para_tech
+				category = marine_tech
+				category = mountaineers_tech
+			}
+			if = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				add_doctrine_cost_reduction = {
+					cost_reduction = 0.5
+					uses = 2
+					category = special_forces_doctrine
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1932,22 +3004,33 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_armor_effort
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
 	}
 
 
-	
-	
-	
+	############################
+	####### AIR SECTION ########
+	############################
 
 	focus = {
 		id = SAF_commit_to_the_five_year_plan
@@ -1961,9 +3044,13 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1990,7 +3077,29 @@
 			}
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			air_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SAF_commit_to_the_five_year_plan_AB
+			}
+			add_doctrine_cost_reduction = {
+				name = SAF_commit_to_the_five_year_plan
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -2008,16 +3117,27 @@
 			factor = 0.4
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_improve_the_hawker_hartbees
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+		}
 	}
 
 	focus = {
@@ -2035,16 +3155,29 @@
 			factor = 0.6
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_replace_the_blenheim
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+				category = cas_bomber
+				category = naval_bomber
+			}
+		}
 	}
 
 	focus = {
@@ -2061,16 +3194,29 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			air_experience = 25
+
+			add_mastery_bonus = {
+				name = SAF_perfect_the_cab_rank_technique
+				bonus = 0.1
+				days = 180
+				track = heavy_aircraft
+			}
+		}
 	}
 
 	focus = {
@@ -2087,16 +3233,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_desert_air_force
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
 	}
 
 	focus = {
@@ -2113,16 +3270,27 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_secure_the_cape_sea_route
+				bonus = 1.0
+				uses = 1
+				category = naval_bomber
+			}
+		}
 	}
 
 	focus = {
@@ -2139,22 +3307,34 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			air_experience = 35
+			add_doctrine_cost_reduction = {
+				name = SAF_retain_experienced_pilots
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
 	}
 
 
-	
-	
-	
+	############################
+	###### NAVY SECTION ########
+	############################
 
 	focus = {
 		id = SAF_seaward_defence_force
@@ -2168,9 +3348,13 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2192,7 +3376,33 @@
 			}
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			navy_experience = 25
+			random_owned_controlled_state = {
+				prioritize = { 681 719 }
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = SAF_seaward_defence_force_DY
+			}			
+			add_doctrine_cost_reduction = {
+				name = SAF_seaward_defence_force
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -2210,16 +3420,29 @@
 			factor = 0.8
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_mastery_bonus = {
+				name = SAF_protect_the_trade
+				bonus = 0.1
+				days = 240
+				track = screens
+			}
+			
+		}
 	}
 
 	focus = {
@@ -2241,16 +3464,28 @@
 			}
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_mastery_bonus = {
+				name = SAF_disrupt_the_trade
+				bonus = 0.1
+				days = 240 
+				track = submarines
+			}
+			
+		}
 	}
 
 	focus = {
@@ -2267,9 +3502,13 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2301,7 +3540,38 @@
 			}
 		}
 
-		completion_reward = {}
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 681 }
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = SAF_expand_the_simons_town_base_DY
+			}
+			if = {
+				limit = { 681 = { is_controlled_by = ROOT } }
+				681 = {
+					add_building_construction = {
+						type = coastal_bunker
+						province = 12589
+						level = 2
+						instant_build = yes
+					}
+					set_state_flag = SAF_expand_the_simons_town_base_NB
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -2318,16 +3588,28 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_anti_submarine_tactics
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2348,16 +3630,28 @@
 			}
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = SAF_submarine_warfare
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = ss_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2375,16 +3669,34 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
         search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = SAF_prepare_overseas_offensive
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				name = SAF_prepare_overseas_offensive
+				bonus = 1.0
+				uses = 1
+				category = marine_tech
+				category = tp_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2402,14 +3714,43 @@
 			factor = 1
 		}
 
-		available = {}
+		available = {
+
+		}
 		
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_in_home_area = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes							
+						limit_to_naval_base = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 }		

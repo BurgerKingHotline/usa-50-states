@@ -1,0 +1,127 @@
+scripted_gui = {
+	wsh_legislature_button = {
+		window_name = "congress_button_container"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			is_ai = no
+			tag = WSH
+		}
+		effects = {
+			congress_button_click = {
+				if = {
+					limit = { has_country_flag = congress_visible }
+					clr_country_flag = congress_visible
+					clr_country_flag = election_gui_visible
+				}
+				else = {
+					set_country_flag = congress_visible
+					WSH_recalculate_all_seats = yes
+					WSH_refresh_legislature_display = yes
+				}
+			}
+		}
+	}
+
+	wsh_legislature_window = {
+		window_name = "congress_gui"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			is_ai = no
+			tag = WSH
+			has_country_flag = congress_visible
+		}
+		dynamic_lists = {
+			wsh_senate_diagram_container = {
+				array = wsh_senate_gui_x
+				change_scope = no
+				entry_container = wsh_senate_gui_seat
+				index = seat_idx
+			}
+			wsh_house_diagram_container = {
+				array = wsh_house_gui_x
+				change_scope = no
+				entry_container = wsh_house_gui_seat
+				index = house_idx
+			}
+		}
+		properties = {
+			election_countdown_bar = {
+				frame = election_countdown_frame
+			}
+			coalition_senate_majority_bar = {
+				frame = coalition_senate_majority_frame
+			}
+			coalition_house_majority_bar = {
+				frame = coalition_house_majority_frame
+			}
+			wsh_senate_seat_icon = {
+				x = wsh_senate_gui_x^seat_idx
+				y = wsh_senate_gui_y^seat_idx
+				frame = wsh_senate_gui_frame^seat_idx
+			}
+			wsh_house_seat_icon = {
+				x = wsh_house_gui_x^house_idx
+				y = wsh_house_gui_y^house_idx
+				frame = wsh_house_gui_frame^house_idx
+			}
+		}
+		effects = {
+			congress_close_button_click = {
+				clr_country_flag = congress_visible
+				clr_country_flag = election_gui_visible
+			}
+		}
+	}
+
+	wsh_legislature_roster_window = {
+		window_name = "congress_roster_panel"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			is_ai = no
+			tag = WSH
+			has_country_flag = congress_visible
+		}
+		dynamic_lists = {
+			wsh_roster_grid = {
+				array = wsh_roster_tokens
+				change_scope = no
+				entry_container = wsh_roster_entry
+				index = roster_idx
+			}
+		}
+		properties = {
+			roster_badge_icon = { frame = wsh_roster_frames^roster_idx }
+			roster_color_icon = { frame = wsh_roster_colors^roster_idx }
+			roster_stability_bar = { frame = roster_stability_frame^roster_idx }
+		}
+		effects = {
+			disband_coalition_button_click = {
+				if = {
+					limit = { has_coalition = yes }
+					end_coalition = yes
+					WSH_refresh_legislature_display = yes
+				}
+			}
+			open_election_gui_click = {
+				# Every opening begins in the unselected state. This prevents a
+				# selection retained by an earlier close path or an old save from
+				# exposing the action panel before the player clicks a row.
+				set_variable = { selected_bloc_idx = -1 }
+				set_variable = { election_dropdown_visibility = 0 }
+				clr_country_flag = election_dropdown_open
+				clr_country_flag = wsh_election_dropdown_open
+				set_country_flag = election_demographic_selection_required
+				set_country_flag = election_gui_visible
+				refresh_election_and_legislature_state = yes
+			}
+		}
+		triggers = {
+			disband_coalition_button_click = {
+				has_coalition = yes
+			}
+		}
+	}
+}

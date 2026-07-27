@@ -1,0 +1,235 @@
+guiTypes = {
+	containerWindowType = {
+		name = "CHG_leader_gui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 510 }
+		clipping = no
+
+		# Candidate portraits: four equal 120 px columns.
+		iconType = {
+			name = "henry_horner_portrait"
+			spriteType = "GFX_CHG_Portrait_Henry_Horner"
+			position = { x = 8 y = 4 }
+			scale = 0.70
+		}
+		iconType = {
+			name = "william_thompson_portrait"
+			spriteType = "GFX_CHG_Portrait_William_Hale_Thompson"
+			position = { x = 130 y = 4 }
+			scale = 0.70
+		}
+		iconType = {
+			name = "john_fitzpatrick_portrait"
+			spriteType = "GFX_CHG_Portrait_John_Fitzpatrick"
+			position = { x = 252 y = 4 }
+			scale = 0.70
+		}
+		iconType = {
+			name = "anton_cermak_portrait"
+			spriteType = "GFX_CHG_Portrait_Anton_Cermak"
+			position = { x = 374 y = 4 }
+			scale = 0.70
+		}
+
+		# Candidate names use two-line-safe boxes; affiliations and shares have their own rows.
+		instantTextboxType = {
+			name = "henry_horner_name"
+			position = { x = 8 y = 154 }
+			font = "hoi_18mbs"
+			text = "CHG_HENRY_HORNER_NAME"
+			maxWidth = 116
+			maxHeight = 34
+			fixedsize = yes
+			format = centre
+		}
+		instantTextboxType = {
+			name = "william_thompson_name"
+			position = { x = 130 y = 154 }
+			font = "hoi_18mbs"
+			text = "CHG_WILLIAM_THOMPSON_NAME"
+			maxWidth = 116
+			maxHeight = 34
+			fixedsize = yes
+			format = centre
+		}
+		instantTextboxType = {
+			name = "john_fitzpatrick_name"
+			position = { x = 252 y = 154 }
+			font = "hoi_18mbs"
+			text = "CHG_JOHN_FITZPATRICK_NAME"
+			maxWidth = 116
+			maxHeight = 34
+			fixedsize = yes
+			format = centre
+		}
+		instantTextboxType = {
+			name = "anton_cermak_name"
+			position = { x = 374 y = 154 }
+			font = "hoi_18mbs"
+			text = "CHG_ANTON_CERMAK_NAME"
+			maxWidth = 116
+			maxHeight = 34
+			fixedsize = yes
+			format = centre
+		}
+
+		instantTextboxType = {
+			name = "henry_horner_affiliation"
+			position = { x = 8 y = 191 }
+			font = "hoi_16mbs"
+			text = "CHG_HORNER_AFFILIATION"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "william_thompson_affiliation"
+			position = { x = 130 y = 191 }
+			font = "hoi_16mbs"
+			text = "CHG_THOMPSON_AFFILIATION"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "john_fitzpatrick_affiliation"
+			position = { x = 252 y = 191 }
+			font = "hoi_16mbs"
+			text = "CHG_FITZPATRICK_AFFILIATION"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "anton_cermak_affiliation"
+			position = { x = 374 y = 191 }
+			font = "hoi_16mbs"
+			text = "CHG_CERMAK_AFFILIATION"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+
+		instantTextboxType = {
+			name = "henry_horner_votes"
+			position = { x = 8 y = 213 }
+			font = "hoi_20b"
+			text = "VOTES_HENRY_HORNER"
+			maxWidth = 116
+			maxHeight = 22
+			format = centre
+		}
+		instantTextboxType = {
+			name = "william_thompson_votes"
+			position = { x = 130 y = 213 }
+			font = "hoi_20b"
+			text = "VOTES_WILLIAM_THOMPSON"
+			maxWidth = 116
+			maxHeight = 22
+			format = centre
+		}
+		instantTextboxType = {
+			name = "john_fitzpatrick_votes"
+			position = { x = 252 y = 213 }
+			font = "hoi_20b"
+			text = "VOTES_JOHN_FITZPATRICK"
+			maxWidth = 116
+			maxHeight = 22
+			format = centre
+		}
+		instantTextboxType = {
+			name = "anton_cermak_votes"
+			position = { x = 374 y = 213 }
+			font = "hoi_20b"
+			text = "VOTES_ANTON_CERMAK"
+			maxWidth = 116
+			maxHeight = 22
+			format = centre
+		}
+
+		instantTextboxType = {
+			name = "last_leadership_result"
+			position = { x = 15 y = 243 }
+			font = "hoi_16mbs"
+			text = "CHG_LAST_RESULT"
+			maxWidth = 470
+			maxHeight = 18
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "city_council_title"
+			position = { x = 15 y = 266 }
+			font = "hoi_20b"
+			text = "CHG_CITY_COUNCIL_TITLE"
+			maxWidth = 470
+			maxHeight = 22
+			format = center
+		}
+
+		containerWindowType = {
+			name = "city_council_chamber"
+			position = { x = 15 y = 292 }
+			size = { width = 470 height = 205 }
+			background = { name = "chamber_bg" quadTextureSprite = "GFX_tiled_window_transparent" }
+			clipping = yes
+
+			gridBoxType = {
+				name = "city_council_seat_container"
+				position = { x = 55 y = 8 }
+				size = { width = 360 height = 122 }
+				slotsize = { width = 36 height = 24 }
+				max_slots_horizontal = 10
+				add_horizontal = yes
+				format = "UPPER_LEFT"
+			}
+			instantTextboxType = {
+				name = "council_legend"
+				position = { x = 5 y = 134 }
+				font = "hoi_16mbs"
+				text = "CHG_COUNCIL_LEGEND"
+				maxWidth = 460
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "council_control"
+				position = { x = 5 y = 156 }
+				font = "hoi_16mbs"
+				text = "[GetCHGCouncilControl]"
+				maxWidth = 460
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "city_council_subtitle"
+				position = { x = 5 y = 180 }
+				font = "hoi_16mbs"
+				text = "CHG_CITY_COUNCIL_SUBTITLE"
+				maxWidth = 460
+				maxHeight = 18
+				format = center
+				alwaystransparent = yes
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "chg_council_seat"
+		size = { width = 36 height = 24 }
+		clipping = no
+		iconType = {
+			name = "chg_council_seat_icon"
+			spriteType = "GFX_CHG_council_seat"
+			frame = 0
+			position = { x = 8 y = 4 }
+			scale = 0.8
+		}
+	}
+}

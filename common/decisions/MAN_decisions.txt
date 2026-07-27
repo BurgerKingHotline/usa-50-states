@@ -573,6 +573,18 @@ MAN_banditry_category = {
 
 		timeout_effect = {
 			random_list = {
+				25 = {
+					country_event = wtt_manchukou_bandit_sabotage.21
+				}
+				25 = {
+					country_event = wtt_manchukou_bandit_sabotage.22
+				}
+				25 = {
+					country_event = wtt_manchukou_bandit_sabotage.23
+				}
+				25 = {
+					
+				}
 			}
 		}
 	}
@@ -1670,6 +1682,11 @@ prospect_for_resources = {
 				has_completed_focus = MAN_tsr_develop_aluminum_sources
 			}
 			controls_state = 328
+			328 = {
+				NOT = {
+					has_state_flag = kirin_aluminium_developed
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -1685,6 +1702,13 @@ prospect_for_resources = {
 			factor = 1
 		}
 		remove_effect = { 
+			328 = { set_state_flag = kirin_aluminium_developed } 
+			328 = {
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+			}
 		}	
 	}
 
@@ -1713,6 +1737,11 @@ prospect_for_resources = {
 				has_completed_focus = MAN_tsr_expand_showa_steel_works
 			}
 			controls_state = 716
+			716 = {
+				NOT = {
+					has_state_flag = liaotung_steel_developed
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -1725,6 +1754,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			716 = { set_state_flag = liaotung_steel_developed }
+			716 = {
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
 		}
 
 		ai_will_do = {
@@ -1756,6 +1792,11 @@ prospect_for_resources = {
 				has_completed_focus = MAN_tsr_expand_showa_steel_works
 			}
 			controls_state = 328
+			328 = {
+				NOT = {
+					has_state_flag = erdaojiang_steel_developed
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -1768,6 +1809,13 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			328 = { set_state_flag = erdaojiang_steel_developed }
+			328 = {
+				add_resource = {
+					type = steel
+					amount = 18
+				}
+			}
 		}
 
 		ai_will_do = {
@@ -2389,10 +2437,23 @@ MAN_march_on_beijing_decisions = {
 
 		available = {
 			has_completed_focus = MAN_tsr_the_new_beiyang_government
+			1039 = {
+				owner = {
+					NOT = {
+						has_war_with = MAN
+						is_in_faction_with = MAN
+						has_non_aggression_pact_with = MAN
+						is_puppet_of = MAN
+					}
+				}
+			}
 		}
 
 		visible = {
 			has_completed_focus = MAN_tsr_the_new_beiyang_government
+			610 = {
+				is_controlled_by = MAN
+			}
 		}
 
 		highlight_states = {
@@ -2473,6 +2534,9 @@ MAN_march_on_beijing_decisions = {
 		days_mission_timeout = 120
 
 		cancel_trigger = {
+			1039 = {	
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		cancel_effect = {
@@ -2498,6 +2562,19 @@ MAN_march_on_beijing_decisions = {
 
 		available = {
 			has_completed_focus = MAN_tsr_the_new_beiyang_government
+			608 = {
+				owner = {
+					NOT = {
+						has_war_with = MAN
+						is_in_faction_with = MAN
+						has_non_aggression_pact_with = MAN
+						is_puppet_of = MAN
+					}
+				}
+			}
+			609 = {
+				is_controlled_by = MAN
+			}
 		}
 
 		visible = {
@@ -2582,6 +2659,9 @@ MAN_march_on_beijing_decisions = {
 		days_mission_timeout = 120
 
 		cancel_trigger = {
+			608 = {	
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		cancel_effect = {
@@ -2607,6 +2687,19 @@ MAN_march_on_beijing_decisions = {
 
 		available = {
 			has_completed_focus = MAN_tsr_the_new_beiyang_government
+			614 = {
+				owner = {
+					NOT = {
+						has_war_with = MAN
+						is_in_faction_with = MAN
+						has_non_aggression_pact_with = MAN
+						is_puppet_of = MAN
+					}
+				}
+			}
+			608 = {
+				is_controlled_by = MAN
+			}
 		}
 
 		visible = {
@@ -2691,6 +2784,9 @@ MAN_march_on_beijing_decisions = {
 		days_mission_timeout = 120
 
 		cancel_trigger = {
+			614 = {	
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		cancel_effect = {

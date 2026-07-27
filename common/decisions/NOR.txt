@@ -198,6 +198,9 @@
 	NOR_test_mobile_gov = {
 		complete_effect = {
 			NOR_set_mobile_government_variables = yes 
+			110 = {
+				NOR_set_as_government_hq = yes 		
+			}
 			complete_national_focus = NOR_continue_nygaardsvold_government
 			complete_national_focus = NOR_weathering_the_storm_to_come
 			complete_national_focus = NOR_broken_gun_policies 
@@ -245,6 +248,11 @@
 	NOR_generate_militias = {
 		complete_effect = {
 			set_country_flag = NOR_going_dem_historical
+			110 = {
+				NOR_spawn_militias_in_state = yes 
+				NOR_spawn_militias_in_state = yes 
+				NOR_spawn_militias_in_state = yes 
+			}
 		}
 	}
 }
@@ -265,6 +273,12 @@ NOR_exile_decisions_category = { # Unique versions of normal in exile decisiosn 
 
 		available = {
 			has_capitulated = no 
+			110 = {
+				OR = {
+					is_fully_controlled_by = ROOT 
+					is_fully_controlled_by = FROM 
+				}
+			}
 			has_legitimacy > 75
 		}
 
@@ -2279,37 +2293,18 @@ NOR_fascist_preparation_decisions_category = {
 	}
 
 	NOR_invite_fascist_to_invade = {
+
+		cost = 75 
 		
 		visible = {
-			#if = {
-			#	limit = {
-			#		var:GLOBAL.platonic_fascist_bully = {
-			#			capital_scope = {
-			#				is_on_continent = europe 
-			#			}
-			#		}		
-			#	}
-			#	var:GLOBAL.platonic_fascist_bully = {
-			#		ROOT = {
-			#			NOT = { has_country_flag = NOR_already_asked_a_fascist@PREV } 
-			#		}
-			#	}
-			#}
-			#else = {
-			#	var:platonic_local_dangerous_fascist = {
-			#		ROOT = {
-			#			NOT = { has_country_flag = NOR_already_asked_a_fascist@PREV } 
-			#		}
-			#	}
-			#}
 		
-				any_country = {
-					original_tag = GER
-					has_government = fascism
-					ROOT = {
-						NOT = { has_country_flag = NOR_already_asked_a_fascist@PREV } 
-					}
+			any_country = {
+				original_tag = GER
+				has_government = fascism
+				ROOT = {
+					NOT = { has_country_flag = NOR_already_asked_a_fascist@PREV } 
 				}
+			}
 			
 			has_country_flag = NOR_going_fascist
 			has_completed_focus = NOR_nasjonal_samling

@@ -1588,6 +1588,12 @@ improving_our_army_category = {
 
 			hidden_effect = {
 				random_list =  {
+					50 = {
+						set_country_flag = JUNO_fighters_flag
+					}
+					50 = {
+						set_country_flag = JUNO_tactical_bomber_flag
+					}
 				}
 			}
 		}

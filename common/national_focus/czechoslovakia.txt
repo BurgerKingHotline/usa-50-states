@@ -17,45 +17,45 @@
 
 	shared_focus = HABSBURG_part_of_something_bigger
 
+#	focus = {
+#		id = CZE_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id =
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	
+	############################
+	##### Fortification focuses#
+	############################
 
 	focus = {
 		id = CZE_fortification_studies
@@ -73,16 +73,36 @@
 			}			
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+
+			army_experience = 10
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = CZE_fortification_focus
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_tech_bonus = {
+				name = CZE_fortification_studies
+				bonus = 0.25
+				uses = 1
+				category = cat_fortification
+			}
+		}
 	}
 
 	focus = {
@@ -107,15 +127,33 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 9 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			army_experience = 20
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			9 = {
+				add_building_construction = { type = bunker province = 6440 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6418 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6592 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 9414 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 3462 level = 3 instant_build = yes }
+			}
+
+		}
 	}
 
 	focus = {
@@ -144,16 +182,170 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { 
+				controls_state = 69 
+				controls_state = 972 
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			NOT = {			
+				69 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				972 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				9 = {
+					any_province_building_level = {
+						province = {
+							id = 445
+							id = 494
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				74 = {
+					any_province_building_level = {
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				70 = {
+					any_province_building_level = {
+						province = {
+							id = 9539
+							id = 9692
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
-		completion_reward = {}
+		completion_reward = {
+
+			army_experience = 20
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				add_idea = CZE_fortification_focus2
+				remove_idea = CZE_fortification_focus
+			}
+
+			if = {
+				limit = { controls_state = 69 }
+				69 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 3
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 972 }
+				972 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 3
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 9 }
+				9 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 445
+							id = 494
+							limit_to_border = yes
+							level < 3
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 74 }
+				74 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+							limit_to_border = yes
+							level < 3
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 70 }
+				70 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 9539
+							id = 9692
+							limit_to_border = yes
+							level < 3
+						}
+					}
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -182,16 +374,160 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { 
+				controls_state = 69 
+				controls_state = 972 
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			NOT = {			
+				69 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 5
+					}
+				}
+				9 = {
+					any_province_building_level = {
+						province = {
+							id = 445
+							id = 494
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 5
+					}
+				}
+				74 = {
+					any_province_building_level = {
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 5
+					}
+				}
+				70 = {
+					any_province_building_level = {
+						province = {
+							id = 9539
+							id = 9692
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 5
+					}
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
-		completion_reward = {}
+		completion_reward = {
+
+			army_experience = 20
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				add_idea = CZE_fortification_focus3
+				remove_idea = CZE_fortification_focus2
+			}	
+
+			if = {
+				limit = { controls_state = 69 }
+				69 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 5
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 972 }
+				972 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 5
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 9 }
+				9 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							id = 445
+							id = 494
+							limit_to_border = yes
+							level < 5
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 74 }
+				74 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+							limit_to_border = yes
+							level < 5
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 70 }
+				70 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							id = 9539
+							id = 9692
+							limit_to_border = yes
+							level < 5
+						}
+					}
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -220,16 +556,170 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { 
+				controls_state = 69 
+				controls_state = 972
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			NOT = {			
+				69 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 7
+					}
+				}
+				972 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 7
+					}
+				}
+				9 = {
+					any_province_building_level = {
+						province = {
+							id = 445
+							id = 494
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 7
+					}
+				}
+				74 = {
+					any_province_building_level = {
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 7
+					}
+				}
+				70 = {
+					any_province_building_level = {
+						province = {
+							id = 9539
+							id = 9692
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 7
+					}
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
-		completion_reward = {}
+		completion_reward = {
+
+			army_experience = 30
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				add_idea = CZE_fortification_focus4
+				remove_idea = CZE_fortification_focus3
+			}
+
+			if = {
+				limit = { controls_state = 69 }
+				69 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 972 }
+				972 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 9 }
+				9 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							id = 445
+							id = 494
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 74 }
+				74 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							id = 421
+							id = 6485
+							id = 3414
+							id = 3583
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { controls_state = 70 }
+				70 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							id = 9539
+							id = 9692
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
+			}	
+
+		}
 	}
 
 	focus = {
@@ -262,15 +752,40 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 664 }
+			CZE = { controls_state = 73 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {    
+
+			army_experience = 30
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			664 = {
+				add_building_construction = { type = bunker province = 3565 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 3716 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6561 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6573 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 9537 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 11679 level = 3 instant_build = yes }
+			}
+			
+			73 = {
+				add_building_construction = { type = bunker province = 11691 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 3548 level = 3 instant_build = yes }
+			}
+
+		}
 	}
 
 	focus = {
@@ -295,15 +810,39 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 71 }
+			CZE = { controls_state = 72 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			army_experience = 30
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			72 = {
+				add_building_construction = { type = bunker province = 9567 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 9551 level = 2 instant_build = yes }
+			}
+
+			71 = {      
+				add_building_construction = { type = bunker province = 581 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 3550 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 3581 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 6604 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 11554 level = 2 instant_build = yes }
+			}
+
+		}
 	}
 
 	focus = {
@@ -324,20 +863,47 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 9 }
+			CZE = { controls_state = 70 }
+			CZE = { controls_state = 75 }
+			CZE = { controls_state = 664 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+
+			army_experience = 20
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			664 = {
+				add_building_construction = { type = bunker province = 6573 level = 2 instant_build = yes }
+			}
+			70 = {
+				add_building_construction = { type = bunker province = 9692 level = 2 instant_build = yes }
+			}
+			75 = {
+				add_building_construction = { type = bunker province = 3569 level = 2 instant_build = yes }
+			}
+			9 = {
+				add_building_construction = { type = bunker province = 6418 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 11542 level = 3 instant_build = yes }
+			}
+
+		}
 	}
 
-	
-	
-	
+	###################################
+	######## INDUSTRIAL LEGACY ########
+	###################################
 
 	focus = {
 		id = CZE_industrial_legacy
@@ -356,16 +922,36 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CZE_industrial_legacy_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = CZE_industrial_legacy
+				bonus = 1
+				uses = 1
+				category = industry
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = CZE_csd
+		}
 	}
 
 	focus = {
@@ -395,16 +981,43 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 9 }
+			CZE = { controls_state = 75 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			75 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = CZE_emil_kolben_dod
+		}
 	}
 
 	focus = {
@@ -425,16 +1038,38 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 9 }
+			CZE = { controls_state = 75 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			75 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -455,16 +1090,47 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 9 }
+			CZE = { controls_state = 75 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			75 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = CZE_favor_czechs_3
+				bonus = 0.50
+				uses = 1
+				category = cat_production
+			}
+		}
 	}
 
 	focus = {
@@ -494,16 +1160,43 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 9 }
+			CZE = { controls_state = 70 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			70 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -524,16 +1217,43 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 9 }
+			CZE = { controls_state = 71 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			71 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -554,16 +1274,52 @@
 			}
 		}
 
-		available = {}
+		available = {
+			CZE = { controls_state = 9 }
+			CZE = { controls_state = 73 }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			73 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = CZE_bolster_domestic_construction
+				bonus = 0.25
+				uses = 1
+				category = construction_tech
+			}
+		}
 	}
 
 	focus = {
@@ -584,16 +1340,30 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = { has_idea = CZE_divided_nation }
+				remove_ideas = CZE_divided_nation
+			}
+			else = {
+				add_political_power = 150
+				add_stability = 0.1
+				add_war_support = 0.1
+			}
+		}
 	}
 
 	focus = {
@@ -622,16 +1392,27 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CZE_export_focus1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = CZE_frantisek_machnik_dod
+		}
 	}
 
 	focus = {
@@ -660,16 +1441,22 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = { remove_idea = CZE_export_focus1 add_idea = CZE_export_focus2  }
+		}
 	}
 
 	focus = {
@@ -698,26 +1485,32 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = { remove_idea = CZE_export_focus2 add_idea = CZE_export_focus3 }
+		}
 	}
 
-	
-	
-	
+	##################################
+	######## POLITICAL DIRECTION #####
+	##################################
 
 	focus = {
 		id = CZE_political_direction
 		icon = GFX_goal_generic_intelligence_exchange
-		x = 8
+		x = 9
 		y = 0
 		relative_position_id = CZE_industrial_legacy
 
@@ -731,16 +1524,22 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+		}
 	}
 
 	focus = {
@@ -748,7 +1547,7 @@
 		icon = GFX_focus_generic_soviet_politics
 		prerequisite = { focus = CZE_political_direction }
 		mutually_exclusive = { focus = CZE_democratic_bastion focus = CZE_go_right }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = CZE_political_direction
 
@@ -770,16 +1569,59 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}	
+			#allow communist reformer
+			# relations changes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_other_country = {
+				limit = { 
+					has_government = communism
+					num_of_factories > 30
+				}
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier =  FRA_leftist_rhetoric_communism
+				}
+			}
+			every_other_country = {
+				limit = { 
+					has_government = democratic
+					num_of_factories > 30
+				}
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = FRA_leftist_rhetoric_democratic
+				}
+			}
+			every_other_country = {
+				limit = { 
+					has_government = fascism
+					num_of_factories > 30
+				}
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier = FRA_leftist_rhetoric_fascism
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -800,16 +1642,33 @@
 			}
 		}
 
-		available = {}
+		available = {
+			
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = { has_idea = CZE_divided_nation }
+				remove_ideas = CZE_divided_nation
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+			}
+			add_ideas = CZE_czech_socialism
+		}
 	}
 
 	focus = {
@@ -830,16 +1689,26 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 
-		completion_reward = {}
+		completion_reward = {
+			add_war_support = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = CZE_communism_with_a_human_face
+		}
 	}
 
 	focus = {
@@ -860,16 +1729,22 @@
 			}
 		}
 
-		available = {}
+		available = {
+			communism > 0.2
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = communist_influence
+		}
 	}
 
 	focus = {
@@ -890,15 +1765,29 @@
 			}
 		}
 
-		available = {}
+		available = {
+			communism > 0.3
+			SOV_comintern_joinable = yes 
+			is_in_faction = no
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = SOV
+					has_war_with = CZE
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			is_in_faction_with = SOV
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			SOV = { country_event = { hours = 1 id = czech.1 } }
+		}
 	}
 
 	focus = {
@@ -919,15 +1808,21 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+			NOT = { can_declare_war_on = ROM }
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			SOV = { country_event = { hours = 1 id = czech.4 } }
+		}
 	}
 
 	focus = {
@@ -948,15 +1843,21 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+			NOT = { can_declare_war_on = POL }
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			SOV = { country_event = { hours = 1 id = czech.7 } }
+		}
 	}
 
 	focus = {
@@ -982,16 +1883,26 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 200
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = CZE_democratic_bastion
+		}
 	}
 
 	focus = {
@@ -1005,23 +1916,73 @@
 		cost = 2
 
 		ai_will_do = {
-			factor = 70
+			factor = 75
 			modifier = {
 				factor = 0.1
 				HABSBURG_joint_trigger = yes
 			}
 		}
 
-		available = {}
+		available = {
+			democratic > 0.75
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_WAR_SUPPORT }
 
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = { remove_idea = CZE_democratic_bastion add_idea = CZE_beacon_of_liberty }
+		}
+	}
+
+	focus = {
+		id = CZE_healing_a_divided_nation
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = CZE_beacon_of_liberty }
+		x = -1
+		y = 1
+		relative_position_id = CZE_beacon_of_liberty
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+				HABSBURG_joint_trigger = yes
+			}
+		}
+
+		available = {
+			democratic > 0.80
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = CZE_divided_nation }
+				remove_ideas = CZE_divided_nation
+			}
+			else = {
+				add_political_power = 150
+				add_stability = 0.1
+				add_war_support = 0.1
+			}
+		}
 	}
 
 	focus = {
@@ -1042,15 +2003,26 @@
 			}
 		}
 
-		available = {}
+		available = {
+			threat > 0.1
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				has_idea = extensive_conscription
+				has_idea = service_by_requirement
+				has_idea = all_adults_serve
+				has_idea = scraping_the_barrel
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = extensive_conscription
+		}
 	}
 
 	focus = {
@@ -1071,15 +2043,23 @@
 			}
 		}
 
-		available = {}
+		available = {
+			num_of_factories > 34
+			amount_research_slots < 5
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = CZE_war_college_effect_tt
+		}
 	}
 
 	focus = {
@@ -1087,7 +2067,7 @@
 		icon = GFX_focus_generic_strike_at_democracy1
 		prerequisite = { focus = CZE_political_direction }
 		mutually_exclusive = { focus = CZE_democratic_bastion focus = CZE_go_left }
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = CZE_political_direction
 
@@ -1109,15 +2089,56 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt 
+			every_other_country = {
+				limit = { 
+					has_government = fascism
+					num_of_factories > 30
+				}
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier =  FRA_right_wing_rhetoric_fascism
+				}
+			}
+			every_other_country = {
+				limit = { 
+					has_government = democratic
+					num_of_factories > 30
+				}
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = FRA_right_wing_rhetoric_democratic
+				}
+			}
+			every_other_country = {
+				limit = { 
+					has_government = communism
+					num_of_factories > 30
+				}
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier = FRA_right_wing_rhetoric_communism
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1138,16 +2159,22 @@
 			}
 		}
 
-		available = {}
+		available = {
+			fascism > 0.35
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+			add_timed_idea = { idea = CZE_czech_fascism days = 1095 }
+		}
 	}
 
 	focus = {
@@ -1168,15 +2195,21 @@
 			}
 		}
 
-		available = {}
+		available = {
+			fascism > 0.5
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = FRA_army_of_aggression_focus
+		}
 	}
 
 	focus = {
@@ -1197,15 +2230,28 @@
 			}
 		}
 
-		available = {}
+		available = {
+			GER = { exists = yes }
+			POL = {	exists = yes }
+			NOT = {
+				has_War_with = GER
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				POL = { exists = no }
+				has_war_with = POL
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			GER = { country_event = { hours = 1 id = czech.10 } }
+		}
 	}
 
 	focus = {
@@ -1231,15 +2277,42 @@
 			}
 		}
 
-		available = {}
+		available = {
+			fascism > 0.6
+		}
 
-		bypass = {}
+		bypass = {
+			NOT = {
+				owns_state = 70
+				owns_state = 71
+				owns_state = 73
+				owns_state = 664
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+
+			if = {
+				limit = {
+					has_idea = CZE_divided_nation
+				}
+				remove_ideas = CZE_divided_nation
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			add_timed_idea = { 
+				idea = CZE_czech_fascism_idea 
+				days = 1095 
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			country_event = { days = 6 random_days = 5 id = czech.14 }			
+		}
 	}
 	
 	focus = {
@@ -1265,15 +2338,24 @@
 			}
 		}
 
-		available = {}
+		available = {
+			fascism > 0.6
+			NOT = {
+				has_idea = CZE_divided_nation
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CZE_national_fascism_idea
+		}
 	}
 	
 	focus = {
@@ -1299,15 +2381,30 @@
 			}
 		}
 
-		available = {}
+		available = {
+			is_in_faction = no
+			GER = { has_government = fascism }
+			GER = { exists = yes }
+			GER = { is_subject = no }
+			has_army_manpower = { size > 249999 } 
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = CZE_german_minor_ally_tt
+			hidden_effect = {
+				GER = {
+					set_autonomy = { target = CZE autonomy_state = autonomy_satellite }
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1329,25 +2426,42 @@
 			}
 		}
 
-		available = {}
+		available = {
+			is_in_faction = no
+			GER = { has_government = fascism }
+			GER = { exists = yes }
+			GER = { is_subject = no }
+			has_army_manpower = { size > 299999 } 
+			NOT = {
+				GER = {
+					any_allied_country = {
+						has_war_with = CZE
+					}
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			is_in_faction_with = GER
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			GER = { country_event = { hours = 1 id = czech.16 } }
+		}
 	}
 
-	
-	
-	
+	#######################################
+	######### STRATEGY DECISIONS ##########
+	#######################################
 	
 	focus = {
 		id = CZE_strategy_decisions
 		icon = GFX_goal_generic_position_armies
-		x = 12
+		x = 13
 		y = 0
 		relative_position_id = CZE_political_direction
 
@@ -1361,16 +2475,22 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 150
+		}
 	}
 
 	focus = {
@@ -1400,15 +2520,26 @@
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = { has_war_with = GER }
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			GER = { add_opinion_modifier = { target = CZE modifier = CZE_german_leanings } }
+			add_political_power = 75
+			add_popularity = {
+				ideology = GER
+				popularity = 0.1
+			}	
+		}
 	}
 
 	focus = {
@@ -1430,15 +2561,23 @@
 			}
 		}
 
-		available = {}
+		available = {
+			GER = { exists = yes }
+			GER = { is_subject = no }
+			NOT = { has_war_with = GER }
+		}
 
-		bypass = {}
+		bypass = {
+			is_subject_of = GER
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			GER = { country_event = { hours = 1 id = czech.19 } }
+		}
 	}
 
 	focus = {
@@ -1461,15 +2600,32 @@
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				is_in_faction_with = HUN
+			}
+			HUN = { exists = yes }
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				has_war_with = HUN
+				HUN = { exists = no }
+				HUN = { is_subject_of = CZE}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = HUN
+				expire = 0
+			}
+		}
 	}
 
 	focus = {
@@ -1490,15 +2646,42 @@
 			}
 		}
 
-		available = {}
+		available = {
+			GER = { exists = yes }
+			GER = { is_subject = no }
+			NOT = { has_war_with = GER }
+			AND = {
+				owns_state = 69
+				owns_state = 74
+				owns_state = 972
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			69 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+			74 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+			972 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			GER = { country_event = { hours = 1 id = czech.22 } }
+		}
 	}
 
 	focus = {
@@ -1519,16 +2702,22 @@
 			}
 		}
 
-		available = {}
+		available = {
+			GER = { exists = yes }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CZE_german_millitary_cooperation_focus
+		}
 	}
 
 	focus = {
@@ -1558,15 +2747,56 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_stability = 0.05
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			ENG = {
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier =  CZE_trust_in_the_west
+				}
+			}
+			FRA = {
+				add_opinion_modifier = { 
+					target = ROOT 
+					modifier =  CZE_trust_in_the_west
+				}
+			
+			}
+			diplomatic_relation = {
+				country = YUG
+				relation = guarantee
+				active = no
+			}
+			ROM = {
+				diplomatic_relation = {
+					country = CZE
+					relation = guarantee
+					active = no
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = CZE_karel_englis
+		}
 	}
 
 	focus = {
@@ -1587,16 +2817,31 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			army_experience = 5
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.75
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -1617,16 +2862,23 @@
 			}
 		}
 
-		available = {}
+		available = {
+			num_of_factories > 34
+		}
 
-		bypass = {}
+		bypass = {
+			NOT = { amount_research_slots < 5 }
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = CZE_war_college_effect_tt	
+		}
 	}
 
 	focus = {
@@ -1648,16 +2900,38 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.5
+			}
+
+			add_ideas = generic_secret_weapons_ns
+
+			#add_tech_bonus = {
+			#	name = secret_bonus
+			#	bonus = 1.0
+			#	uses = 2 # was 3
+			#	category = electronics
+			#	category = jet_technology
+			#	category = rocketry
+			#}
+
+		}
 	}
 
 	focus = {
@@ -1679,16 +2953,47 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+
+			IF = {
+				limit = {
+					NOT = {
+						has_tech = atomic_research
+					}
+				}
+				add_tech_bonus = {
+					name = nuclear_bonus
+					bonus = 1.0
+					ahead_reduction = 1 # was 2
+					uses = 1
+					category = nuclear
+				}
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 0.75
+				}
+			}
+			ELSE = {
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 1
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -1710,15 +3015,25 @@
 			}
 		}
 
-		available = {}
+		available = {
+			is_in_faction = no
+		}
 
-		bypass = {}
+		bypass = {
+			is_in_faction_with = FRA
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction_from_template = {
+				template = faction_template_the_little_entente
+				name = CZE_little_entente
+			}
+		}
 	}
 
 	focus = {
@@ -1739,15 +3054,30 @@
 			}
 		}
 
-		available = {}
+		available = {
+			YUG = { is_in_faction = no }
+			YUG = { exists = yes }
+			YUG = { is_subject = no }
 
-		bypass = {}
+			CZE = { is_faction_leader = yes }
+		}
+
+		bypass = {
+			OR = {
+				YUG = {
+					is_in_faction = yes
+				}
+				is_in_faction_with = FRA
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			YUG = { country_event = { hours = 1 id = czech.25 } }
+		}
 	}
 
 	focus = {
@@ -1768,15 +3098,29 @@
 			}
 		}
 
-		available = {}
+		available = {
+			ROM = { is_in_faction = no }
+			ROM = { exists = yes }
+			ROM = { is_subject = no }			
+			CZE = { is_faction_leader = yes }
+		}
 
-		bypass = {}	
+		bypass = {
+			OR = {
+				ROM = {
+					is_in_faction = yes
+				}
+				is_in_faction_with = FRA
+			}
+		}	
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			ROM = { country_event = { hours = 1 id = czech.28 } }
+		}
 	}
 
 	focus = {
@@ -1805,15 +3149,29 @@
 			}
 		}
 
-		available = {}
+		available = {
+			is_in_faction = yes
+			is_faction_leader = yes
+		}
 
-		bypass = {}
+		bypass = {
+			is_in_faction = yes
+			is_faction_leader = no
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {}
+		completion_reward = {
+			add_to_tech_sharing_group = little_entente_research_group
+			every_country = {
+				limit = {
+					is_in_faction_with = CZE
+				}
+				add_to_tech_sharing_group = little_entente_research_group
+			}
+		}
 	}
 
 	focus = {
@@ -1842,15 +3200,27 @@
 			}
 		}
 
-		available = {}
+		available = {
+			is_in_faction = yes
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CZE_planning_bonus
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_ideas = CZE_planning_bonus
+			}
+		}
 	}
 
 	focus = {
@@ -1872,15 +3242,30 @@
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				is_in_faction_with = HUN
+			}
+			HUN = { exists = yes }
+			HUN = { is_subject = no }
+		}
 
-		bypass = {}
+		bypass = {
+			HUN = { exists = no }
+			HUN = { is_subject_of = CZE }
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = HUN
+				expire = 0
+			}
+		}
 	}
 
 	focus = {
@@ -1901,15 +3286,34 @@
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				is_in_faction_with = BUL
+			}
+			BUL = { exists = yes }
+			BUL = { is_subject = no }
+			OR = {
+				is_in_faction_with = ROM
+				has_subject = ROM
+				owns_state = 46
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BUL
+				expire = 0
+			}
+		}
 	}
 
 	focus = {
@@ -1931,15 +3335,25 @@
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				is_in_faction_with = HUN
+			}
+			HUN = { exists = yes }
+			HUN = { is_subject = no }
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			HUN = { country_event = { hours = 1 id = czech.32 } }
+		}
 	}
 
 	focus = {
@@ -1950,7 +3364,7 @@
 		y = 1
 		relative_position_id = CZE_strategy_decisions
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 60
@@ -1960,19 +3374,28 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			set_rule = {
+				can_send_volunteers = yes
+			}
+			add_ideas = CZE_state_sponsored_recruitment_idea_2
+		}
 	}
-	
-	
-	
+	#######################################
+	##### MILITARY RESEARCH INSTITUTE #####	
+	#######################################
 
 	focus = {
 		id = CZE_military_research_institute
@@ -1991,15 +3414,28 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			army_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.25
+			}
+		}
 	}
 
 	focus = {
@@ -2020,16 +3456,28 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_mountain_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = mountaineers_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2050,16 +3498,28 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_inf_and_artillery_advancement
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+			}
+		}
 	}
 
 	focus = {
@@ -2080,16 +3540,34 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_support_bonus #@#
+				bonus = 1.0
+				uses = 2
+				category = support_tech	
+			}
+			add_tech_bonus = {
+				name = CZE_support_bonus #@#
+				bonus = 1.0
+				uses = 1
+				technology = support_weapons2
+				technology = support_weapons3
+			}
+		}
 	}
 
 	focus = {
@@ -2110,16 +3588,28 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_inf_and_artillery_advancement_2 #@#
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = artillery
+			}
+		}
 	}
 
 	focus = {
@@ -2141,16 +3631,27 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -2171,16 +3672,26 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+			has_tech = motorised_infantry
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 3.0
+				technology = motorised_infantry
+			}
+		}
 	}
 
 	focus = {
@@ -2201,16 +3712,27 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
 	}
 
 	focus = {
@@ -2231,16 +3753,27 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_mechanization #@#
+				bonus = 1.0
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+		}
 	}
 
 	focus = {
@@ -2261,16 +3794,27 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
 	}
 
 	focus = {
@@ -2292,16 +3836,34 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.25
+			}
+		}
 	}
 
 	focus = {
@@ -2323,21 +3885,37 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CZE_war_college_idea
+			if = {
+				limit = {
+					NOT = { amount_research_slots > 4 }
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_research_slot = 1
+				custom_effect_tooltip = CZE_war_college_effect_tt
+			}
+		}
 	}
 
-	
-	
-	
+	#######################################
+	####### AERONAUTICAL INSTITUTE ########	
+	#######################################
 
 	focus = {
 		id = CZE_military_aeronautical_institute
@@ -2356,15 +3934,28 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			air_experience = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+		}
 	}
 
 	focus = {
@@ -2385,16 +3976,28 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_import_foreign_fighters #@#
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
+		}
 	}
 
 	focus = {
@@ -2416,16 +4019,27 @@
 			}
 		}
 
-		available = {}
+		available = {
+			
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_light_fighter_focus #@#
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+		}
 	}
 
 	focus = {
@@ -2447,16 +4061,27 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_heavy_fighter_focus #@#
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
 	}
 
 	focus = {
@@ -2477,15 +4102,26 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CZE_air_focus
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = CZE_alois_vicherek_advisor_idea_reform
+		}
 	}
 
 	focus = {
@@ -2508,16 +4144,27 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -2538,16 +4185,28 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_import_foreign_bombers #@#
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+				category = tactical_bomber
+			}
+		}
 	}
 
 	focus = {
@@ -2569,16 +4228,27 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_cas_focus #@#
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
 	}
 
 	focus = {
@@ -2600,26 +4270,37 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_tac_focus #@#
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
 	}
 
-	
-	
-	
+	#######################################
+	######### ACCESS TO THE SEA ###########	
+	#######################################
 
 	focus = {
 		id = CZE_access_to_the_sea
 		icon = GFX_goal_generic_occupy_states_coastal
-		x = 7
+		x = 8
 		y = 0
 		relative_position_id = CZE_military_aeronautical_institute
 
@@ -2633,15 +4314,35 @@
 			}
 		}
 
-		available = {}
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			navy_experience = 100
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = {
+				decision = CZE_recall_zdenko_hudecek
+				show_effect_tooltip = yes # default is no
+				show_modifiers = yes # default is no
+			} 
+		}
 	}
 
 	focus = {
@@ -2662,16 +4363,55 @@
 			}
 		}
 
-		available = {}
+		available = {
+			any_controlled_state = {
+				is_coastal = yes
+			}
+		}
 
-		bypass = {}
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		completion_reward = {}
+		completion_reward = {
+			navy_experience = 10
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 2
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -2692,15 +4432,21 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = CZE_naval_focus
+		}
 	}
 
 	focus = {
@@ -2721,16 +4467,26 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = bb_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2751,16 +4507,26 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = dd_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2781,16 +4547,26 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = ca_tech
+			}
+		}
 	}
 
 	focus = {
@@ -2813,16 +4589,40 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+			add_mastery_bonus = {
+				name = CZE_raiding_focus
+				bonus = 0.1
+				days = 240
+				track = screens
+			}
+			add_mastery_bonus = {
+				name = CZE_raiding_focus
+				bonus = 0.1
+				days = 240
+				track = submarines
+			}
+
+			add_doctrine_cost_reduction = {
+				name = CZE_raiding_focus
+				cost_reduction = 0.25
+				uses = 2
+				category = naval_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -2845,16 +4645,40 @@
 			}
 		}
 
-		available = {}
+		available = {
 
-		bypass = {}
+		}
+
+		bypass = {
+
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {}
+		completion_reward = {
+
+			add_mastery_bonus = {
+				name = CZE_capital_focus
+				bonus = 0.1
+				days = 240
+				track = carriers
+			}
+			add_mastery_bonus = {
+				name = CZE_capital_focus
+				bonus = 0.1
+				days = 240
+				track = capital_ships
+			}
+			add_doctrine_cost_reduction = {
+				name = CZE_capital_focus
+				cost_reduction = 0.25
+				uses = 2
+				category = naval_doctrine
+			}
+		}
 	}
 
 }

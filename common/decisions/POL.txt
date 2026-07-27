@@ -5,6 +5,11 @@ POL_danzig_decisions = {
 		icon = infiltrate_state
 
 		available = {
+			85 = {
+				NOT = {
+					has_dynamic_modifier = { modifier = unity_propaganda }
+				}
+			}
 		}
 
 		cost = 75
@@ -17,6 +22,12 @@ POL_danzig_decisions = {
 			political_power_gain = -0.1
 		}
 		complete_effect = {
+			85 = {
+				add_dynamic_modifier = {
+					modifier = unity_propaganda
+					days = 60
+				}
+			}
 		}
 	}
 
@@ -25,6 +36,11 @@ POL_danzig_decisions = {
 		icon = infiltrate_state
 
 		available = {
+			85 = {
+				NOT = {
+					has_dynamic_modifier = { modifier = military_appeasement }
+				}
+			}
 		}
 
 		custom_cost_trigger = {
@@ -44,6 +60,12 @@ POL_danzig_decisions = {
 			hidden_effect = {
 				add_command_power = -25
 				add_political_power = -50
+			}
+			85 = {
+				add_dynamic_modifier = {
+					modifier = military_appeasement
+					days = 60
+				}
 			}
 		}
 	}
@@ -74,6 +96,10 @@ POL_danzig_decisions = {
 				add_command_power = -50
 				add_political_power = -50
 			}
+			85 = {
+				add_resistance = -15
+				add_compliance = 10
+			}
 		}
 	}
 
@@ -82,6 +108,9 @@ POL_danzig_decisions = {
 		icon = infiltrate_state
 
 		available = {
+			85 = {
+				compliance > 40
+			}
 		}
 
 		custom_cost_trigger = {
@@ -102,6 +131,10 @@ POL_danzig_decisions = {
 			hidden_effect = {
 				add_command_power = -25
 				add_political_power = -75
+			}
+			85 = {
+				add_resistance = -5
+				POL_increase_danzig_control = yes
 			}
 		}
 	}
@@ -2060,6 +2093,11 @@ POL_reopen_the_maritime_and_colonial_league = {
 		}
 
 		available = {
+			543 = {
+				owner = {
+					is_in_faction_with = ROOT
+				}
+			}
 		}
 		
 		visible = {
@@ -2067,6 +2105,9 @@ POL_reopen_the_maritime_and_colonial_league = {
 				owns_state = 543
 			}
 			NOT = {
+				543 = {
+					has_state_flag = rejected_purchase_flag
+				}
 			}
 			MAD = { exists = no }
 		}
@@ -2077,9 +2118,15 @@ POL_reopen_the_maritime_and_colonial_league = {
 					state = 543
 					AND = {
 						state = 708
+						708 = {
+							owner = { is_in_faction_with = ROOT }
+						}
 					}
 					AND = {
 						state = 706
+						706 = {
+							owner = { is_in_faction_with = ROOT }
+						}
 					}
 				}
 			}
@@ -2100,6 +2147,12 @@ POL_reopen_the_maritime_and_colonial_league = {
 		}
 
 		complete_effect = {
+			543 = {
+				save_event_target_as = POL_colony_purchase
+				owner = {
+					country_event = { id = NSB_poland_events.4 } #Event where the owner gets to decide if they want to sell Madagascar (and Comoro and Reunion if they are owned)
+				}
+			}
 		}
 
 		ai_will_do = {
@@ -2117,6 +2170,11 @@ POL_reopen_the_maritime_and_colonial_league = {
 		}
 
 		available = {
+			701 = {
+				owner = {
+					is_in_faction_with = ROOT
+				}
+			}
 		}
 		
 		visible = {
@@ -2124,6 +2182,9 @@ POL_reopen_the_maritime_and_colonial_league = {
 				owns_state = 701
 			}
 			NOT = {
+				701 = {
+					has_state_flag = rejected_purchase_flag
+				}
 			}
 		}
 		
@@ -2148,6 +2209,12 @@ POL_reopen_the_maritime_and_colonial_league = {
 		}
 
 		complete_effect = {
+			701 = {
+				save_event_target_as = POL_colony_purchase
+				owner = {
+					country_event = { id = NSB_poland_events.5 }
+				}
+			}
 		}
 
 		ai_will_do = {

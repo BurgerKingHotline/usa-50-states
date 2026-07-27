@@ -1,0 +1,138 @@
+defined_text = {
+	name = GetWSHRosterTooltip
+	text = {
+		trigger = { check_variable = { roster_idx = 0 } }
+		localization_key = wsh_roster_tooltip_1
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 1 } }
+		localization_key = wsh_roster_tooltip_2
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 2 } }
+		localization_key = wsh_roster_tooltip_3
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 3 } }
+		localization_key = wsh_roster_tooltip_4
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 4 } }
+		localization_key = wsh_roster_tooltip_5
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 5 } }
+		localization_key = wsh_roster_tooltip_6
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 6 } }
+		localization_key = wsh_roster_tooltip_7
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 7 } }
+		localization_key = wsh_roster_tooltip_8
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 8 } }
+		localization_key = wsh_roster_tooltip_9
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 9 } }
+		localization_key = wsh_roster_tooltip_10
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 10 } }
+		localization_key = wsh_roster_tooltip_11
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 11 } }
+		localization_key = wsh_roster_tooltip_12
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 12 } }
+		localization_key = wsh_roster_tooltip_13
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 13 } }
+		localization_key = wsh_roster_tooltip_14
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 14 } }
+		localization_key = wsh_roster_tooltip_15
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 15 } }
+		localization_key = wsh_roster_tooltip_16
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 16 } }
+		localization_key = wsh_roster_tooltip_17
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 17 } }
+		localization_key = wsh_roster_tooltip_18
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 18 } }
+		localization_key = wsh_roster_tooltip_19
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 19 } }
+		localization_key = wsh_roster_tooltip_20
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 20 } }
+		localization_key = wsh_roster_tooltip_21
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 21 } }
+		localization_key = wsh_roster_tooltip_22
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 22 } }
+		localization_key = wsh_roster_tooltip_23
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 23 } }
+		localization_key = wsh_roster_tooltip_24
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 24 } }
+		localization_key = wsh_roster_tooltip_25
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 25 } }
+		localization_key = wsh_roster_tooltip_26
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 26 } }
+		localization_key = wsh_roster_tooltip_27
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 27 } }
+		localization_key = wsh_roster_tooltip_28
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 28 } }
+		localization_key = wsh_roster_tooltip_29
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 29 } }
+		localization_key = wsh_roster_tooltip_30
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 30 } }
+		localization_key = wsh_roster_tooltip_31
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 31 } }
+		localization_key = wsh_roster_tooltip_32
+	}
+	text = {
+		trigger = { check_variable = { roster_idx = 32 } }
+		localization_key = wsh_roster_tooltip_33
+	}
+	text = {
+		localization_key = wsh_roster_tooltip_fallback
+	}
+}

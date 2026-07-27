@@ -17,6 +17,12 @@ political_actions = {
 
 		visible = {
 			NOT = {
+				9 = {
+					is_core_of = ROOT
+				}
+				75 = {
+					is_core_of = ROOT
+				}
 			}
 		}
 
@@ -29,9 +35,25 @@ political_actions = {
 				}
 				fascism > 0.75
 			}
+			9 = {
+				is_fully_controlled_by = ROOT
+				compliance > 85
+				resistance < 15
+			}
+			75 = {
+				is_fully_controlled_by = ROOT
+				compliance > 85
+				resistance < 15
+			}
 		}
 
 		complete_effect = {
+			9 = {
+				add_core_of = ROOT
+			}
+			75 = {
+				add_core_of = ROOT
+			}
 		}
 	}
 }

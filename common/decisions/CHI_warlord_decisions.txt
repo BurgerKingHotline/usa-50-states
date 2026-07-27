@@ -468,10 +468,23 @@ SIC_xikang_offensive = {
 
 		available = {
 			has_completed_focus = SIC_push_back_the_tibetans
+			601 = {
+				owner = {
+					NOT = {
+						has_war_with = SIC
+						is_in_faction_with = SIC
+						has_non_aggression_pact_with = SIC
+						is_puppet_of = SIC
+					}
+				}
+			}
 		}
 
 		visible = {
 			has_completed_focus = SIC_push_back_the_tibetans
+			752 = {
+				is_controlled_by = SIC
+			}
 		}
 
 		highlight_states = {
@@ -560,12 +573,18 @@ SIC_xikang_offensive = {
 		days_mission_timeout = 240
 
 		cancel_trigger = {
+			601 = {	
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		cancel_effect = {
 			effect_tooltip = {
 				country_event = { id = tsr_sichuan_border_war.1 }
 				transfer_state = 601
+				601 = {
+					add_core_of = SIC
+				}
 			}
 		}
 

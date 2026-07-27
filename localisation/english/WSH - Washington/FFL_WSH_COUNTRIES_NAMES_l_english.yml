@@ -1,0 +1,10 @@
+﻿l_english:
+ # Washington
+ WSH:0 "Washington"
+ WSH_DEF:0 "Washington"
+ WSH_democratic:0 "Republic of Washington"
+ WSH_democratic_DEF:0 "The Republic of Washington"
+ WSH_communism:0 "Seattle General Commune"
+ WSH_communism_DEF:0 "The Seattle General Commune"
+ WSH_fascism:0 "Northwestern Legion"
+ WSH_fascism_DEF:0 "The Northwestern Legion"

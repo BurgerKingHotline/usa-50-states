@@ -1223,6 +1223,9 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_demand_the_vojvodina
+				45 = {
+					is_owned_and_controlled_by = ROOT
+				}
 			}
 		}
 
@@ -1274,6 +1277,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
 			}
 			NOT = { has_country_flag = HUN_reintigrated_south_slovakia_flag }
+			664 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1299,11 +1307,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					664 = {
+						is_claimed_by = ROOT
+					}
+				}
+				664 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					664 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				664 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1342,6 +1364,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
 			}
 			NOT = { has_country_flag = HUN_reintigrated_west_slovakia_flag }
+			70 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1367,11 +1394,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					70 = {
+						is_claimed_by = ROOT
+					}
+				}
+				70 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					70 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				70 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1410,6 +1451,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
 			}
 			NOT = { has_country_flag = HUN_reintigrated_east_slovakia_flag }
+			71 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1435,11 +1481,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					71 = {
+						is_claimed_by = ROOT
+					}
+				}
+				71 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					71 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				71 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1478,6 +1538,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
 			}
 			NOT = { has_country_flag = HUN_reintigrated_carpathia_flag }
+			73 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1503,11 +1568,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					73 = {
+						is_claimed_by = ROOT
+					}
+				}
+				73 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					73 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				73 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1546,6 +1625,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_revenge_for_1919
 			}
 			NOT = { has_country_flag = HUN_reintigrated_north_transylvania_flag }
+			76 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1571,11 +1655,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					76 = {
+						is_claimed_by = ROOT
+					}
+				}
+				76 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					76 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				76 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1614,6 +1712,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_revenge_for_1919
 			}
 			NOT = { has_country_flag = HUN_reintigrated_south_transylvania_flag }
+			84 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1639,11 +1742,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					84 = {
+						is_claimed_by = ROOT
+					}
+				}
+				84 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					84 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				84 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1682,6 +1799,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_revenge_for_1919
 			}
 			NOT = { has_country_flag = HUN_reintigrated_crisana_flag }
+			83 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1707,11 +1829,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					83 = {
+						is_claimed_by = ROOT
+					}
+				}
+				83 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					83 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				83 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1750,6 +1886,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_revenge_for_1919
 			}
 			NOT = { has_country_flag = HUN_reintigrated_banat_flag }
+			82 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1775,11 +1916,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					82 = {
+						is_claimed_by = ROOT
+					}
+				}
+				82 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					82 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				82 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1818,6 +1973,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
 			}
 			NOT = { has_country_flag = HUN_reintigrated_west_banat_flag }
+			764 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1843,11 +2003,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					764 = {
+						is_claimed_by = ROOT
+					}
+				}
+				764 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					764 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				764 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1886,6 +2060,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
 			}
 			NOT = { has_country_flag = HUN_reintigrated_vojvodina_flag }
+			45 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1911,11 +2090,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					45 = {
+						is_claimed_by = ROOT
+					}
+				}
+				45 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					45 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				45 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -1951,6 +2144,11 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			has_completed_focus = wuw_HUN_reaffirm_territorial_claims
 			NOT = { has_country_flag = HUN_reintigrated_burgenland_flag }
+			975 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -1973,11 +2171,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					975 = {
+						is_claimed_by = ROOT
+					}
+				}
+				975 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					975 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				975 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -2045,126 +2257,189 @@ HUN_territorial_revision_category = {
 				tooltip = wuw_HUN_the_kingdom_of_ukraine_required_states_tt
 				AND = {
 					OR = {
+						93 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 93
 						}
 					}
 					OR = {
+						199 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 199
 						}
 					}
 					OR = {
+						201 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 201
 						}
 					}
 					OR = {
+						202 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 202
 						}
 					}
 					OR = {
+						198 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 198
 						}
 					}
 					OR = {
+						834 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 834
 						}
 					}
 					OR = {
+						192 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 192
 						}
 					}
 					OR = {
+						203 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 203
 						}
 					}
 					OR = {
+						197 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 197
 						}
 					}
 					OR = {
+						193 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 193
 						}
 					}
 					OR = {
+						225 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 225
 						}
 					}
 					OR = {
+						259 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 259
 						}
 					}
 					OR = {
+						226 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 226
 						}
 					}
 					OR = {
+						196 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 196
 						}
 					}
 					OR = {
+						200 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 200
 						}
 					}
 					OR = {
+						227 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 227
 						}
 					}
 					OR = {
+						221 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 221
 						}
 					}
 					OR = {
+						228 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 228
 						}
 					}
 					OR = {
+						137 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 137
 						}
 					}
 					OR = {
+						218 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 218
 						}
 					}
 					OR = {
+						234 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 234
@@ -2306,6 +2581,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
 			}
 			NOT = { has_country_flag = HUN_reintigrated_croatia_flag }
+			109 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -2331,11 +2611,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					109 = {
+						is_claimed_by = ROOT
+					}
+				}
+				109 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					109 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				109 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -2374,6 +2668,11 @@ HUN_territorial_revision_category = {
 				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
 			}
 			NOT = { has_country_flag = HUN_reintigrated_dalmatia_flag }
+			103 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -2399,11 +2698,25 @@ HUN_territorial_revision_category = {
 			
 			IF = {
 				limit = {
+					103 = {
+						is_claimed_by = ROOT
+					}
+				}
+				103 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					103 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				103 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -2775,6 +3088,11 @@ HUN_the_empire_category = {
 			original_tag = HUN
 			has_completed_focus = wuw_HUN_demand_austrian_restoration
 			NOT = { has_country_flag = HUN_reannexed_burgenland_flag }
+			975 = {
+				NOT = {
+					is_owned_by = ROOT
+				}
+			}
 		} 
 
 		available = {
@@ -2802,14 +3120,31 @@ HUN_the_empire_category = {
 
 		remove_effect = {
 
+			975 = {
+				transfer_state_to = ROOT
+			}
 			
 			IF = {
 				limit = {
+					975 = {
+						is_claimed_by = ROOT
+					}
+				}
+				975 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					975 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				975 = {
+					add_core_of = ROOT
 				}
 			}
 
@@ -2851,6 +3186,21 @@ HUN_the_empire_category = {
 				AND = {
 					AUS = {
 						exists = no
+					}
+					4 = {
+						is_owned_by = ROOT
+					}
+					152 = {
+						is_owned_by = ROOT
+					}
+					153 = {
+						is_owned_by = ROOT
+					}
+					848 = {
+						is_owned_by = ROOT
+					}
+					976 = {
+						is_owned_by = ROOT
 					}
 				}
 			}
@@ -2930,6 +3280,15 @@ HUN_the_empire_category = {
 					ALB = {
 						exists = no
 					}
+					934 = {
+						is_owned_by = ROOT
+					}
+					44 = {
+						is_owned_by = ROOT
+					}
+					805 = {
+						is_owned_by = ROOT
+					}
 				}
 			}
 		}
@@ -2938,7 +3297,13 @@ HUN_the_empire_category = {
 
 		complete_effect = {
 
+			802 = {
+				add_core_of = ALB
+			}
 
+			970 = {
+				add_core_of = ALB
+			} 
 
 			every_state = {
 				limit = {
@@ -3001,6 +3366,9 @@ HUN_the_empire_category = {
 					exists = no
 				}
 				OR = {
+					10 = {
+						is_controlled_by = ROOT
+					}
 					any_country = {
 						is_subject_of = ROOT
 						controls_state = 10
@@ -3093,6 +3461,9 @@ HUN_the_empire_category = {
 					exists = no
 				}
 				OR = {
+					41 = {
+						is_controlled_by = ROOT
+					}
 					any_country = {
 						is_subject_of = ROOT
 						controls_state = 41
@@ -3176,6 +3547,27 @@ HUN_the_empire_category = {
 					CZE = {
 						exists = no
 					}
+					9 = {
+						is_owned_by = ROOT
+					}
+					75 = {
+						is_owned_by = ROOT
+					}
+					70 = {
+						is_owned_by = ROOT
+					}
+					71 = {
+						is_owned_by = ROOT
+					}
+					664 = {
+						is_owned_by = ROOT
+					}
+					73 = {
+						is_owned_by = ROOT
+					}
+					972 = {
+						is_owned_by = ROOT
+					}
 				}
 			}
 		}
@@ -3250,6 +3642,9 @@ HUN_the_empire_category = {
 						exists = no
 					}
 					OR = {
+						277 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 277
@@ -3345,6 +3740,9 @@ HUN_the_empire_category = {
 						exists = no
 					}
 					OR = {
+						109 = {
+							is_controlled_by = ROOT
+						}
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 109
@@ -3423,11 +3821,27 @@ HUN_the_empire_category = {
 
 			IF = {
 				limit = {
+					102 = {
+						NOT = {
+							is_core_of = AUS
+						}
+					}
+				}
+				102 = {
+					add_core_of = AUS
 				}
 			}
 
 			IF = {
 				limit = {
+					853 = {
+						NOT = {
+							is_core_of = AUS
+						}
+					}
+				}
+				853 = {
+					add_core_of = AUS
 				}
 			}
 
@@ -3436,6 +3850,12 @@ HUN_the_empire_category = {
 					AUS = {
 						is_subject_of = ROOT
 					}
+				}
+				102 = {
+					transfer_state_to = AUS
+				}
+				853 = {
+					transfer_state_to = AUS
 				}
 			}
 
@@ -3479,12 +3899,18 @@ HUN_the_empire_category = {
 					}
 					AND = {
 						OR = {
+							160 = {
+								is_controlled_by = ROOT
+							}
 							any_country = {
 								is_subject_of = ROOT
 								controls_state = 160
 							}
 						}
 						OR = {
+							159 = {
+								is_controlled_by = ROOT
+							}
 							any_country = {
 								is_subject_of = ROOT
 								controls_state = 159
@@ -3646,6 +4072,11 @@ political_actions = {
 
 			NOT = { has_country_flag = HUN_integrated_mecklenburg_flag }
 
+			61 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 
 		} 
 
@@ -3671,11 +4102,25 @@ political_actions = {
 			
 			IF = {
 				limit = {
+					61 = {
+						is_claimed_by = ROOT
+					}
+				}
+				61 = {
+					remove_claim_by = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					61 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				61 = {
+					add_core_of = ROOT
 				}
 			}
 

@@ -1,10 +1,10 @@
-﻿
-
-
-
-
-
-
+﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
 
 focus_tree = {
 	id = latvia_tree
@@ -23,47 +23,47 @@ focus_tree = {
 
 	continuous_focus_position = { x = 20 y = 1000 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#	focus = {
+#		id = LAT_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
 	shared_focus = BALTIC_rejoin_the_railways
 	shared_focus = BALTIC_restore_workers_republic
 	
-	
-	
-	
+	###############################################
+	#### SUSPEND THE CONSTITUTION (HISTORICAL) ####
+	###############################################
 	focus = {
 		id = LAT_suspend_the_constitution
 		icon = GFX_focus_LAT_suspend_constitution_of_latvia
@@ -103,19 +103,35 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 100
+			activate_mission_tooltip = LAT_perkonkrust_uprising
+
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				mark_focus_tree_layout_dirty = yes 
+			}
+		}
 	}
 	
-	
+	###APPEASE DEMOCRATS###
 	focus = {
 		id = LAT_appease_democrats
 		icon = GFX_focus_generic_treaty
@@ -130,16 +146,21 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = LAT_saeima_idea
+		}
 	}
 
 	focus = {
@@ -157,16 +178,32 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = LAT_alberts_kvesis
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = LAT_fricis_menders
+			swap_ideas = {
+				remove_idea = LAT_saeima_idea
+				add_idea = LAT_saeima_idea_dem_1
+			}
+			swap_ideas = {
+				remove_idea = democratic_opposition
+				add_idea = democratic_opposition_idea_1
+			}
+		}
 	}
 
 	focus = {
@@ -184,16 +221,25 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			show_ideas_tooltip = LAT_janis_balodis
+			swap_ideas = {
+				remove_idea = LAT_saeima_idea
+				add_idea = LAT_saeima_idea_neutral_1
+			}
+		}
 	}
 
 	focus = {
@@ -210,16 +256,22 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = LAT_chamber_of_professions
+		}
 	}
 	
 	focus = {
@@ -236,16 +288,28 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 100
+			if = {
+				limit = { NOT = { has_idea = LAT_farmers_party_idea } }
+				swap_ideas = {
+					remove_idea = LAT_saeima_idea_dem_1
+					add_idea = LAT_saeima_idea_dem_2
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -262,9 +326,12 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -290,7 +357,78 @@ focus_tree = {
 			}
 		}		
 
-		completion_reward = {}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -309,16 +447,50 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			democratic > 0.45
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				last_election = "1931.10.3"
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			promote_character = LAT_fricis_menders
+			effect_tooltip = {
+				swap_ruler_traits = {
+					remove = subservient_democrat add = subservient_democrat_democratic
+				}
+			}
+			remove_ideas = democratic_opposition_idea_1
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			hidden_effect = {
+				LAT_alberts_kvesis = {
+					remove_trait = {
+						trait = subservient_democrat
+						slot = political_advisor
+					}
+					add_trait = {
+						trait = subservient_democrat_democratic
+						slot = political_advisor
+					}	
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -336,16 +508,26 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = free_trade } }
+				add_ideas = free_trade
+			}
+			add_ideas = LAT_state_capitalism_idea
+		}
 	}
 
 	focus = {
@@ -364,19 +546,38 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = democratic_opposition_idea_1
+			if = {
+				limit = { has_idea = LAT_saeima_idea_dem_2 }
+				swap_ideas = {
+					remove_idea = LAT_saeima_idea_dem_2
+					add_idea = LAT_farmers_party_idea
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = LAT_saeima_idea_dem_1
+					add_idea = LAT_farmers_party_idea
+				}
+			}
+		}
 	}
 
-	
+	###BALODIS FOCUSES###
 	focus = {
 		id = LAT_nationalised_industry
 		icon = GFX_focus_generic_industry_2
@@ -392,16 +593,22 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			upgrade_economy_law = yes
+			add_ideas = LAT_nationalised_industry_idea
+		}
 	}
 
 	focus = {
@@ -419,16 +626,36 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_leader = {
+						character = LAT_karlis_ulmanis
+						ruling_only = yes
+					}
+				}
+				add_country_leader_trait = married_to_latvia
+			}
+			else_if = {
+				limit = {
+					has_government = fascism
+				}
+				add_country_leader_trait = LAT_military_dictator
+			}
+			remove_ideas = democratic_opposition
+		}
 	}
 
 	focus = {
@@ -445,16 +672,24 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = LAT_saeima_idea_neutral_1
+				add_idea = LAT_saeima_idea_military_1
+			}
+		}
 	}
 
 	focus = {
@@ -471,16 +706,24 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = LAT_saeima_idea_military_1
+				add_idea = LAT_saeima_idea_military_2
+			}
+		}
 	}
 
 	focus = {
@@ -498,19 +741,42 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_government = fascism
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			promote_character = LAT_janis_balodis
+			swap_ideas = {
+				remove_idea = LAT_saeima_idea_military_2
+				add_idea = LAT_saeima_idea_military_3
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_cosmetic_tag = BAL_UNIFIED
+						has_cosmetic_tag = OSTLAND
+					}
+				}
+				set_cosmetic_tag = LAT_MIL
+			}
+			remove_ideas = democratic_opposition
+			show_ideas_tooltip = LAT_karlis_ulmanis
+		}
 	}
 
-	
+	###Faction focuses###
 	focus = {
 		id = LAT_beyond_the_baltic
 		icon = GFX_focus_generic_concessions
@@ -537,9 +803,9 @@ focus_tree = {
 						has_war_with = ROOT
 						has_wargoal_against = ROOT
 					}
-				} 
+				} #AI should seek an alliance if they are in immediate danger
 			}
-			modifier = { 
+			modifier = { #Don't mess with history (unless ppl are ignoring you)
 				factor = 0
 				date < 1942.1.1
 				OR = {
@@ -559,16 +825,59 @@ focus_tree = {
 			}
 		}
 
-		available = {}
+		available = {
+			any_other_country = {
+				NOT = { has_war_with = ROOT }
+				is_faction_leader = yes
+				is_major = yes
+				has_government = democratic
+			}
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = ENG
+					has_war_with = ROOT
+				}
+			}
+			is_in_faction = no
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				is_in_faction_with = ENG
+				AND = {
+					is_in_faction = yes
+					any_other_country = {
+						is_faction_leader = yes
+						is_in_faction_with = ROOT
+						has_government = democratic
+					}
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = { 
+					ENG = {
+						is_faction_leader = yes
+						has_government = democratic
+						not = { has_war_with = ROOT }
+					}
+				}
+				ENG = { country_event = BALTIC_events.1 }
+			}
+			else = {
+				get_best_alliance_match_democratic_effect = yes
+				var:best_leader = {
+					country_event = BALTIC_events.1
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -596,20 +905,65 @@ focus_tree = {
 						has_war_with = ROOT
 						has_wargoal_against = ROOT
 					}
-				} 
+				} #AI should seek an alliance if they are in immediate danger
 			}
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+			any_other_country = {
+				NOT = { has_war_with = ROOT }
+				is_faction_leader = yes
+				is_major = yes
+				has_government = democratic
+			}
+			
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = ENG
+					has_war_with = ROOT
+				}
+			}
+			is_in_faction = no
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				is_in_faction_with = ENG
+				AND = {
+					is_in_faction = yes
+					any_other_country = {
+						is_faction_leader = yes
+						is_in_faction_with = ROOT
+						has_government = democratic
+					}
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = { 
+					ENG = {
+						is_faction_leader = yes
+						has_government = democratic
+						not = { has_war_with = ROOT }
+					}
+				}
+				ENG = { country_event = generic.2 }
+			}
+			else = {
+				get_best_alliance_match_democratic_effect = yes
+				var:best_leader = {
+					country_event = generic.2
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -629,7 +983,7 @@ focus_tree = {
 				factor = 0
 				OR = {
 					LIT = { is_ai = no }
-					EST = { is_ai = no } 
+					EST = { is_ai = no } #The AI shouldn't try to lead a Baltic faction if one of the Baltic nations is a player. Would lead to the player having to rush the focus.
 					AND = {
 						is_historical_focus_on = yes
 						has_game_rule = {
@@ -657,20 +1011,69 @@ focus_tree = {
 						has_war_with = ROOT
 						has_wargoal_against = ROOT
 					}
-				} 
+				} #AI should seek an alliance if they are in immediate danger
 			}
 		}
 
-		available = {}
+		available = {
+			is_subject = no
+			is_in_faction = no
+			OR = {
+				EST = { exists = yes }
+				LIT = { exists = yes }
+			}
+			OR = {
+				EST = { is_in_faction = no }
+				LIT = { is_in_faction = no }
+			}
+			EST = {
+				NOT = { has_completed_focus = EST_formalize_baltic_entente }
+			}
+			LIT = {
+				NOT = { has_completed_focus = LIT_formalize_baltic_entente }
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			OR = {
+				is_in_faction_with = EST
+				is_in_faction_with = LIT
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			set_country_flag = baltic_entente_leader_flag
+			if = {
+				limit = { 
+					EST = {
+						exists = yes 
+						is_in_faction = no 
+					} 
+				}
+				EST = {
+					country_event = { id = BALTIC_events.2 hours = 3 } #requests mutual guarantees which can eventually become a faction via decision
+				}
+			}
+			if = {
+				limit = { 
+					LIT = { 
+						exists = yes
+						is_in_faction = no 
+					} 
+				}
+				LIT = {
+					country_event = { id = BALTIC_events.2 hours = 3 }
+				}
+			}
+			set_country_flag = baltic_entente_flag
+			unlock_decision_tooltip = formalize_the_entente
+			unlock_decision_tooltip = abandon_the_entente
+		}
 	}
 
 	focus = {
@@ -687,16 +1090,29 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_country_flag = baltic_entente_flag
+			is_faction_leader = yes
+			OR = {
+				NOR = { is_in_faction = no }
+				SWE = { is_in_faction = no }
+				FIN = { is_in_faction = no }
+				DEN = { is_in_faction = no }
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			look_north_focus_effect = yes
+		}
 	}
 
 
@@ -715,19 +1131,33 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				NOT = {
+					is_in_faction_with = SOV
+				}
+				NOT = {
+					is_in_faction_with = GER
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			is_in_faction_with = SOV
+			is_in_faction_with = GER
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			country_event = { id = LAT_events.1 } #select who is the greatest threat and gain forts on their border
+		}
 	}
 
-	
+	####PARAMILITARIST BRANCH####
 	focus = {
 		id = LAT_empower_paramilitarists
 		icon = GFX_focus_generic_military_academy
@@ -742,16 +1172,22 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = LAT_paramilitary_idea
+		}
 	}
 
 	focus = {
@@ -769,16 +1205,29 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.1
+			}
+			swap_ideas = {
+				remove_idea = LAT_perkonkrust_idea
+				add_idea = LAT_perkonkrust_idea_neu_1
+			}
+			add_ideas = LAT_the_sun_shines_equally_idea
+		}
 	}
 
 	focus = {
@@ -795,16 +1244,27 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			fascism < 0.1
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			remove_mission = LAT_perkonkrust_uprising
+			remove_perkonkrust_effect = yes
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.1
+			}
+		}
 	}
 
 	focus = {
@@ -821,16 +1281,24 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = LAT_paramilitary_idea
+				add_idea = LAT_paramilitary_idea_1
+			}
+		}
 	}
 
 	focus = {
@@ -847,16 +1315,24 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = LAT_paramilitary_idea_1
+				add_idea = LAT_paramilitary_idea_2
+			}
+		}
 	}
 	
 	focus = {
@@ -874,16 +1350,27 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			fascism > 0.1
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			unlock_decision_category_tooltip = LAT_delay_perkonkrust_decisions
+			custom_effect_tooltip = LAT_perkonkrust_war_tt
+		}
 	}
 	
 	focus = {
@@ -900,16 +1387,31 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			fascism > 0.1
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			swap_ideas = {
+				remove_idea = LAT_perkonkrust_idea
+				add_idea = perkonkrust_fas_idea_1
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = LAT_gustavs_celminsh
+		}
 	}
 
 	focus = {
@@ -926,16 +1428,29 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			fascism > 0.1
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			swap_ideas = {
+				remove_idea = LAT_paramilitary_idea
+				add_idea = LAT_paramilitary_fasc_idea
+			}
+		}
 	}
 
 	focus = {
@@ -953,16 +1468,116 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			fascism > 0.2
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = LAT_militarisation_idea
+		}
 	}
 
 	focus = {
@@ -980,16 +1595,26 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			fascism > 0.35
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_ideas = LAT_neopaganism_idea
+		}
 	}
 
 	focus = {
@@ -1007,16 +1632,32 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			fascism < 0.5
+			NOT = { has_government = fascism }
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			remove_mission = LAT_perkonkrust_uprising
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.2
+			}
+
+			swap_ideas = {
+				remove_idea = perkonkrust_fas_idea_1
+				add_idea = LAT_anti_german_idea
+			}
+		}
 	}
 
 	focus = {
@@ -1042,16 +1683,63 @@ focus_tree = {
 			}
 		}
 
-		available = {}
+		available = {
+			fascism > 0.4
+			NOT = { has_war_with = GER }
+			is_subject = no
+			is_in_faction = no
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = GER
+					has_war_with = HUN	
+				}
+			}
+			GER = {
+				is_faction_leader = yes
+				has_government = fascism
+				is_subject = no
+			}
+			NOT = { has_government = democratic }
+		}
 
-		bypass = {}
+		bypass = {
+			is_in_faction_with = GER
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			remove_mission = LAT_perkonkrust_uprising
+			remove_perkonkrust_effect = yes
+			if = {
+				limit = {
+					GER = {
+						exists = yes
+						has_capitulated = no
+						has_government = fascism
+						is_faction_leader = yes
+					}
+				}
+				GER = { country_event = generic.2 }
+			}
+			else = {
+				get_best_alliance_match_fascism_effect = yes
+				var:best_leader = {
+					country_event = generic.2
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1070,16 +1758,48 @@ focus_tree = {
 			factor = 10
 		}
 
-		available = {}
+		available = {
+			fascism > 0.4
+			is_subject = no
+			NOT = { has_government = democratic }
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			GER = {
+				add_ai_strategy = {
+				   type = alliance
+				   id = LAT
+				   value = -200
+				}
+			}
+			LAT = {
+				add_ai_strategy = {
+				   type = alliance
+				   id = GER
+				   value = -200
+				}
+			}
+			custom_effect_tooltip = GER_wont_ally_tt
+			remove_mission = LAT_perkonkrust_uprising
+			remove_perkonkrust_effect = yes
+		}
 	}
 
 	focus = {
@@ -1096,16 +1816,21 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = BALTIC_forest_brothers_idea
+		}
 	}
 
 	focus = {
@@ -1123,16 +1848,21 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = LAT_multicultural_latvia_idea
+		}
 	}
 
 	focus = {
@@ -1149,16 +1879,76 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_government = fascism
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			division_template = {
+				name = "Ugonskrust Division"
+				division_names_group = LAT_INF_01
+				is_locked = no
+				priority = 0
+				regiments = { 
+					militia = { x = 0 y = 0 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 2 y = 0 }
+					militia = { x = 3 y = 0 }
+
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 2 y = 1 }
+					militia = { x = 3 y = 1 }
+
+					militia = { x = 0 y = 2 }
+					militia = { x = 1 y = 2 }
+					militia = { x = 2 y = 2 }
+					militia = { x = 3 y = 2 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				custom_effect_tooltip = LAT_free_the_ugonskrusts_tt
+				hidden_effect = {
+					create_unit = { 
+						division = "name = \"1. Ugonskrust Division\" division_template = \"Ugonskrust Division\" start_experience_factor = 0.5" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"2. Ugonskrust Division\" division_template = \"Ugonskrust Division\" start_experience_factor = 0.5" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"3. Ugonskrust Division\" division_template = \"Ugonskrust Division\" start_experience_factor = 0.5" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"4. Ugonskrust Division\" division_template = \"Ugonskrust Division\" start_experience_factor = 0.5" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"5. Ugonskrust Division\" division_template = \"Ugonskrust Division\" start_experience_factor = 0.5" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"6. Ugonskrust Division\" division_template = \"Ugonskrust Division\" start_experience_factor = 0.5" 
+						owner = ROOT
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1178,16 +1968,110 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				LIT = {
+					is_subject = no
+					exists = yes
+					NOT = {
+						is_in_faction_with = ROOT
+					}
+				}
+				EST = {
+					is_subject = no
+					exists = yes
+					NOT = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					LIT = {
+						is_subject = no
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				LIT = {
+					country_event = LAT_events.2
+				}
+			}
+			else_if = {
+				limit = {
+					LIT = {
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				LIT = {
+					every_owned_state = {
+						limit = {
+							is_core_of = LIT
+						}
+						add_claim_by = ROOT
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = LIT
+					}
+				}
+			}
+			if = {
+				limit = {
+					EST = {
+						is_subject = no
+						exists = yes
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				EST = {
+					country_event = LAT_events.2
+				}
+			}
+			else_if = {
+				limit = {
+					EST = {
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				EST = {
+					every_owned_state = {
+						limit = {
+							is_core_of = EST
+						}
+						add_claim_by = ROOT
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = EST
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1205,16 +2089,66 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				LIT = {
+					NOT = {
+						has_government = fascism
+						exists = no
+						is_subject = yes
+					}
+				}
+				EST = {
+					NOT = {
+						has_government = fascism
+						exists = no
+						is_subject = yes
+					}
+				}
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			LIT = {
+				OR = {
+					has_government = fascism
+					exists = no
+					is_subject = yes
+				}
+			}
+			EST = {
+				OR = {
+					has_government = fascism
+					exists = no
+					is_subject = yes
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					EST = {
+						has_government = fascism
+					}
+				}
+				EST = { country_event = LAT_events.3 }
+			}
+			if = {
+				limit = {
+					LIT = {
+						has_government = fascism
+					}
+				}
+				LIT = { country_event = LAT_events.3 }
+			}
+			unlock_decision_category_tooltip = promote_baltic_fascism_cat
+		}
 	}
 
 	focus = {
@@ -1231,13 +2165,138 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
-		bypass = {}
+		available = {
+			is_subject = no
+			OR = {
+				ROOT = { is_in_faction = no }	
+				ROOT = { is_faction_leader = yes }
+			}
+			OR = {
+				LIT = {
+					OR = {
+						has_government = fascism
+						exists = no
+						is_subject = yes
+					}
+				}
+				EST = {
+					OR = {
+						has_government = fascism
+						exists = no
+						is_subject = yes
+					}
+				}
+			}
+		}
+		bypass = {
+			LIT = {
+				OR = {
+					exists = no
+					is_subject = yes
+				}
+			}
+			EST = {
+				OR = {
+					exists = no
+					is_subject = yes
+				}
+			}
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {}
+		completion_reward = {
+
+				set_rule = {
+					can_create_factions = yes
+				}
+
+				if = {
+					limit = {
+						is_in_faction = no
+					}
+					IF = {
+						limit = {
+							has_dlc = "No Compromise, No Surrender"
+						}
+						create_faction_from_template = faction_template_BROTHERHOOD
+						add_faction_initiative = 1
+					}
+					ELSE = {
+						create_faction = BROTHERHOOD
+					}
+					if = {
+						limit = {
+							EST = {
+								has_government = fascism
+							}
+						}
+						EST = {
+							hidden_effect = {
+								 country_event = generic.5 
+								}	
+							custom_effect_tooltip = LAT_consecrate_the_brotherhood_custom_tt
+							}
+					}
+					else = {
+						create_wargoal = {
+							type = puppet_wargoal_focus
+							target = EST
+						}
+					}
+					if = {
+						limit = {
+							LIT = {
+								has_government = fascism
+							}
+						}
+						LIT = {
+							hidden_effect = {
+								 country_event = generic.5 
+							}
+							custom_effect_tooltip = LAT_consecrate_the_brotherhood_custom_tt
+						}	
+					}
+					else = {
+						create_wargoal = {
+							type = puppet_wargoal_focus
+							target = LIT
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							EST = {
+								has_government = fascism
+							}
+						}
+						effect_tooltip = {
+							EST = { country_event = generic.2 }
+						}
+					}
+					if = {
+						limit = {
+							LIT = {
+								has_government = fascism
+							}
+						}
+						effect_tooltip = {
+							LIT = { country_event = generic.2 }
+						}
+					}
+					hidden_effect = {
+						random_country = {
+							limit = {
+								is_in_faction_with = ROOT
+								is_faction_leader = yes
+							}
+							country_event = LAT_events.6
+						}
+					}
+				}		
+			}
 	}
 
 	focus = {
@@ -1254,16 +2313,25 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_idea = LAT_neopaganism_idea
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = LAT_state_romuva_idea_1
+				remove_idea = LAT_neopaganism_idea
+			}
+		}
 	}
 
 	focus = {
@@ -1281,16 +2349,25 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_idea = LAT_state_romuva_idea_1
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = LAT_state_romuva_idea_2
+				remove_idea = LAT_state_romuva_idea_1
+			}
+		}
 	}
 
 	focus = {
@@ -1307,16 +2384,25 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			has_idea = LAT_state_romuva_idea_2
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = LAT_state_romuva_idea_3
+				remove_idea = LAT_state_romuva_idea_2
+			}
+		}
 	}
 
 	focus = {
@@ -1334,16 +2420,113 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			OR = {
+				is_in_faction_with = GER
+				is_subject_of = GER
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {}
+		completion_reward = {
+			set_cosmetic_tag = OSTLAND
+				hidden_effect = {
+					## Coring ## 
+					# Estonia
+					13 = { add_core_of = ROOT }
+					191 = { add_core_of = ROOT }
+					811 = { add_core_of = ROOT }
+					812 = { add_core_of = ROOT }
+					813 = { add_core_of = ROOT }
+					# Lithuania
+					11 = { add_core_of = ROOT }
+					189 = { add_core_of = ROOT }
+					188 = { add_core_of = ROOT }
+					784 = { add_core_of = ROOT }
+					814 = { add_core_of = ROOT }
+					815 = { add_core_of = ROOT }
+				}
+			#Custom Tooltips to avoid listing every core in Estonia and Lithuania. 
+			custom_effect_tooltip = form_country_estonia_coring_states_tt
+			custom_effect_tooltip = form_country_lithuania_coring_states_tt
+			#Poland cores since we can't summarise them as adding all polish states as cores. 
+			784 = { add_core_of = ROOT }
+			96 = { add_core_of = ROOT }
+			95 = { add_core_of = ROOT }
+			94 = { add_core_of = ROOT }
+
+			if = { #Annexes any fascist Baltic states
+				limit = {
+					any_other_country = {
+						OR = {
+							original_tag = LIT
+							original_tag = EST
+						}
+						is_in_faction_with = ROOT
+					}
+				}
+				every_other_country = {
+					limit = {
+						OR = {
+							original_tag = LIT
+							original_tag = EST
+						}
+						is_in_faction_with = ROOT
+					}
+					country_event = { id = LAT_events.4 hours = 4 }
+				}
+			}
+			if = { #Asks Germany for control of Ostland
+				limit = {
+					any_other_country = {
+						is_in_faction_with = ROOT
+						OR = {
+							#Lithuania States
+							controls_state = 814
+							controls_state = 11
+							controls_state = 815
+							controls_state = 189
+							controls_state = 188
+							#Estonia States
+							controls_state = 811
+							controls_state = 812
+							controls_state = 13
+							controls_state = 813
+							controls_state = 191
+							#Belarus States
+							controls_state = 784
+							controls_state = 96
+							controls_state = 95
+							controls_state = 94
+						}
+					}
+				}
+				GER = {country_event = { id = LAT_events.5 hours = 6 } }
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					every_other_country = {
+						limit = {
+							is_baltic_country = yes
+							is_in_faction_with = ROOT
+						}
+					}
+					custom_effect_tooltip = annex_countries_tt 
+					set_state_controller =  784
+					set_state_controller = 96
+					set_state_controller = 95
+					set_state_controller = 94
+				}
+			}
+
+		}
 	}
 
 	focus = {
@@ -1361,16 +2544,108 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			NOT = { has_global_flag = form_baltic_federation_flag }
+			# Estonia
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = form_country_estonia_required_states_tt
+					controls_state = 13
+					controls_state = 191
+					controls_state = 811
+					controls_state = 812
+					controls_state = 813
+				}
+				EST = { has_government = fascism }
+				EST = { is_subject_of = ROOT }
+			}
+			# Lithuania
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = form_country_lithuania_required_states_tt
+					controls_state = 11
+					controls_state = 189
+					controls_state = 814
+					controls_state = 815
+				}
+				LIT = { has_government = fascism }
+				LIT = { is_subject_of = ROOT }
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			has_global_flag = form_baltic_federation_flag
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {}
+		completion_reward = {
+			hidden_effect = {
+				news_event = { id = wtt_news.60 hours = 6 }
+				set_global_flag = form_baltic_federation_flag
+				## coring ## 
+				# Estonia
+				13 = { add_core_of = ROOT }
+				191 = { add_core_of = ROOT }
+				811 = { add_core_of = ROOT }
+				812 = { add_core_of = ROOT }
+				813 = { add_core_of = ROOT }
+				# Lithuania
+				11 = { add_core_of = ROOT }
+				189 = { add_core_of = ROOT }
+				188 = { add_core_of = ROOT }
+				784 = { add_core_of = ROOT }
+				814 = { add_core_of = ROOT }
+				815 = { add_core_of = ROOT }
+	
+			}			
+		custom_effect_tooltip = form_country_estonia_coring_states_tt
+		custom_effect_tooltip = form_country_lithuania_coring_states_tt
+				#Poland
+			784 = { add_core_of = ROOT }
+			96 = { add_core_of = ROOT }
+			95 = { add_core_of = ROOT }
+			94 = { add_core_of = ROOT }
+
+			set_cosmetic_tag = BAL_UNIFIED
+			if = { #Annexes any fascist Baltic states
+				limit = {
+					any_other_country = {
+						OR = {
+							original_tag = LIT
+							original_tag = EST
+						}
+						is_in_faction_with = ROOT
+					}
+				}
+				every_other_country = {
+					limit = {
+						OR = {
+							original_tag = LIT
+							original_tag = EST
+						}
+						is_in_faction_with = ROOT
+					}
+					country_event = { id = LAT_events.4 hours = 5}
+				}
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					every_other_country = {
+						limit = {
+							OR = {
+								original_tag = LIT
+								original_tag = EST
+							}
+						is_in_faction_with = ROOT
+						}
+					}
+					custom_effect_tooltip = annex_countries_tt 
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1387,16 +2662,21 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = BALTIC_forest_brothers_reorganized_idea
+		}
 	}
 
 	focus = {
@@ -1418,19 +2698,42 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_major = yes
+			has_government = fascism
+			is_subject = no
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GER
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SWE
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = DEN
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = FIN
+			}
+		}
 	}
 	
-	
+	###RESISTANCE FOCUSES###
 
 	focus = {
 		id = LAT_ready_the_resistance
@@ -1447,16 +2750,34 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			if = {
+				limit = {
+					has_DLC = "Man the Guns"
+				}
+				has_capitulated = yes
+			}
+			if = {
+				limit = {
+					NOT = { has_DLC = "Man the Guns" }
+				}
+				surrender_progress > 0.5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
 	}
 
 	focus = {
@@ -1473,16 +2794,34 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			if = {
+				limit = {
+					has_DLC = "Man the Guns"
+				}
+				has_capitulated = yes
+			}
+			if = {
+				limit = {
+					NOT = { has_DLC = "Man the Guns" }
+				}
+				surrender_progress > 0.5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			add_ideas = { POL_influx_of_exiles }
+			add_offsite_building = { type = arms_factory level = 4 }
+		}
 	}
 
 	focus = {
@@ -1499,16 +2838,47 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			if = {
+				limit = {
+					has_DLC = "Man the Guns"
+				}
+				has_capitulated = yes
+			}
+			if = {
+				limit = {
+					NOT = { has_DLC = "Man the Guns" }
+				}
+				surrender_progress > 0.5
+			}
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
-		completion_reward = {}
+		completion_reward = {
+			if = {
+				limit = {
+					has_DLC = "La Resistance"
+				}
+				gain_random_agency_upgrade = yes
+				add_offsite_building = { type = industrial_complex level = 3 }
+			}
+			else = {
+				add_tech_bonus = {
+					name = underground_bonus
+					bonus = 0.75
+					uses = 2
+					category = electronics
+				}
+			}
+		}
 	}
 	
 	focus = {
@@ -1543,21 +2913,28 @@ focus_tree = {
 			}
 		}
 
-		available = {}
+		available = {
+			is_in_faction = no
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {}
+		completion_reward = {
+			custom_effect_tooltip = cave_to_enemies_tt
+			set_country_flag = cave_to_enemy_pressure_flag
+		}
 	}
 	
-	
-	
-	
+	################
+	###DEMOCRATIC###
+	################
 	focus = {
 		id = LAT_baltic_economic_union
 		icon = GFX_goal_generic_consumer_goods
@@ -1573,13 +2950,28 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_faction_leader = yes
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_ideas = { BALTIC_economic_union_1 }
+			every_other_country = {
+				limit = {
+					is_baltic_country = yes
+					is_in_faction_with = ROOT
+				}
+				hidden_effect = { country_event = BALTIC_entente_events.1 }
+				add_ideas = { BALTIC_economic_union_1 }
+			}
+		}
 	}
 	
 	focus = {
@@ -1596,13 +2988,28 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_faction_leader = yes
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_ideas = { LIT_baltic_defence_army }
+			every_other_country = {
+				limit = {
+					is_baltic_country = yes
+					is_in_faction_with = ROOT
+				}
+				hidden_effect = { country_event = BALTIC_entente_events.2 }
+				add_ideas = { LIT_baltic_defence_army }
+			}
+		}
 	}
 	
 	focus = {
@@ -1619,13 +3026,33 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_faction_leader = yes
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BALTIC_economic_union_2
+				remove_idea = BALTIC_economic_union_1
+			}
+			every_other_country = {
+				limit = {
+					is_baltic_country = yes
+					is_in_faction_with = ROOT
+				}
+				hidden_effect = { country_event = BALTIC_entente_events.3 }
+				swap_ideas = {
+					add_idea = BALTIC_economic_union_2
+					remove_idea = BALTIC_economic_union_1
+				}
+			}
+		}
 	}
 	
 	focus = {
@@ -1643,13 +3070,35 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_faction_leader = yes
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			remove_ideas = { 
+				LIT_baltic_defence_army
+				BALTIC_economic_union_2
+			}
+			add_ideas = { BALTIC_union_idea }
+			every_other_country = {
+				limit = {
+					is_baltic_country = yes
+					is_in_faction_with = ROOT
+				}
+				hidden_effect = { country_event = BALTIC_entente_events.4 }
+				remove_ideas = { 
+					LIT_baltic_defence_army
+					BALTIC_economic_union_2
+				}
+				add_ideas = { BALTIC_union_idea }
+			}
+		}
 	}
 	
 	focus = {
@@ -1667,13 +3116,131 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_faction_leader = yes
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BALTIC_union_idea_1
+				remove_idea = BALTIC_union_idea
+			}
+			division_template = {
+				name = "Baltic Entente Division"
+				priority = 1
+				division_names_group = LAT_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+		
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+		
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { PREV = { has_full_control_of_state = PREV } }
+				create_unit = {
+					division = "name = \"1 Baltic Entente Division\" division_template = \"Baltic Entente Division\" start_experience_factor = 0.9" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"2 Baltic Entente Division\" division_template = \"Baltic Entente Division\" start_experience_factor = 0.9" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"3 Baltic Entente Division\" division_template = \"Baltic Entente Division\" start_experience_factor = 0.9" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"4 Baltic Entente Division\" division_template = \"Baltic Entente Division\" start_experience_factor = 0.9" 
+					owner = PREV
+				}
+			}
+			every_other_country = {
+				limit = {
+					is_baltic_country = yes
+					is_in_faction_with = ROOT
+				}
+				swap_ideas = {
+					add_idea = BALTIC_union_idea_1
+					remove_idea = BALTIC_union_idea
+				}
+				custom_effect_tooltip = gain_baltic_entente_divisions_tt
+				hidden_effect = { 
+					country_event = BALTIC_entente_events.5
+					division_template = {
+						name = "Baltic Entente Division"
+						priority = 1
+						division_names_group = LAT_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"1 Baltic Entente Division\" division_template = \"Baltic Entente Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+						create_unit = {
+							division = "name = \"2 Baltic Entente Division\" division_template = \"Baltic Entente Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+						create_unit = {
+							division = "name = \"3 Baltic Entente Division\" division_template = \"Baltic Entente Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+						create_unit = {
+							division = "name = \"4 Baltic Entente Division\" division_template = \"Baltic Entente Division\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+				}
+			}
+			every_other_country = {
+				limit = {
+					is_baltic_country = yes
+					NOT = {
+						is_in_faction_with = ROOT
+					}
+				}
+				custom_effect_tooltip = gain_topple_tt
+				hidden_effect = {
+					create_wargoal = {
+						target = PREV
+						type = topple_government
+					}
+				}
+			}
+		}
 	}
 	
 	focus = {
@@ -1691,14 +3258,62 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {}
+		available = {
+			is_faction_leader = yes
+		}
 
-		bypass = {}
+		bypass = {
+			
+		}
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
-		completion_reward = {}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_baltic_country = yes
+					is_in_faction_with = ROOT
+				}
+				country_event = {
+					id = BALTIC_entente_events.6
+					days = 3
+				}
+			}
+			effect_tooltip = {
+				if = {
+					limit = {
+						any_other_country = {
+							is_baltic_country = yes
+							is_in_faction_with = ROOT
+						}
+					}
+					custom_effect_tooltip = if_they_accept_tt
+					every_other_country = {
+						limit = {
+							is_baltic_country = yes
+							is_in_faction_with = ROOT
+						}
+					}
+					custom_effect_tooltip = annex_countries_tt
+				}
+			}
+			every_other_country = {
+				limit = {
+					is_baltic_country = yes
+					NOT = {
+						is_in_faction_with = ROOT
+					}
+				}
+				custom_effect_tooltip = gain_annex_tt
+				hidden_effect = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
 	}
 	
-	
+	###END OF DEMOCRACY###
 }

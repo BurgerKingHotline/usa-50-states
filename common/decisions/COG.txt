@@ -50,16 +50,37 @@ political_actions = {
 
 			custom_effect_tooltip =  generic_skip_one_line_tt
 
+			295 = {
+				set_state_name = 295_autenticite_name
+			}
 			set_province_name = {
 				id = 5117
 				name = 5117_autenticite_name
 			}
 
+			538 = {
+				set_state_name = 538_autenticite_name
+			}
 			set_province_name = {
 				id = 988
 				name = 988_autenticite_name
 			}
 
+			888 = {
+				set_state_name = 888_autenticite_name
+				add_victory_points = {
+					province = 7716
+					value = 1
+				}
+				add_victory_points = {
+					province = 2024
+					value = 1
+				}	
+				add_victory_points = {
+					province = 4128
+					value = 1
+				}	
+			}
 			hidden_effect = {
 				set_province_name = {
 					id = 4128
@@ -75,16 +96,33 @@ political_actions = {
 				name = 2024_autenticite_name
 			}
 
+			718 = {
+				set_state_name = 718_autenticite_name
+			}
 			set_province_name = {
 				id = 1950
 				name = 1950_autenticite_name
 			}
 
+			890 = {
+				set_state_name = 890_autenticite_name
+			}
 			set_province_name = {
 				id = 4941
 				name = 4941_autenticite_name
 			}
 
+			889 = {
+				set_state_name = 889_autenticite_name
+				add_victory_points = {
+					province = 4515
+					value = 1
+				}
+				add_victory_points = {
+					province = 12907
+					value = 1
+				}
+			}
 			set_province_name = {
 				id = 191
 				name = 191_autenticite_name
@@ -494,6 +532,9 @@ political_actions = {
 
 		available = {
 			has_completed_focus = COG_the_ma_loango_focus
+			772 = {
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = { 
@@ -507,6 +548,14 @@ political_actions = {
 
 		complete_effect = {
 
+			772 = {
+				transfer_state_to = ROOT
+				add_core_of = ROOT
+				set_victory_points = {
+					province = 12975
+					value = 5
+				}	
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -522,6 +571,9 @@ political_actions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			772 = {
+				add_extra_state_shared_building_slots = 4
+			}
 
 			hidden_effect = {
 				set_country_flag = COG_moved_the_capital_to_loango_flag 
@@ -554,6 +606,9 @@ political_actions = {
 
 		available = {
 			has_completed_focus = COG_the_mwami_of_burundi_focus
+			769 = {
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = { 
@@ -567,6 +622,10 @@ political_actions = {
 
 		complete_effect = {
 
+			769 = {
+				transfer_state_to = ROOT
+				add_core_of = ROOT	
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -582,6 +641,9 @@ political_actions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			769 = {
+				add_extra_state_shared_building_slots = 4
+			}
 
 			hidden_effect = {
 				set_country_flag = COG_moved_the_capital_to_bujumbura_flag 
@@ -614,6 +676,9 @@ political_actions = {
 
 		available = {
 			has_completed_focus = COG_the_umwami_of_rwanda_focus
+			768 = {
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = { 
@@ -627,6 +692,10 @@ political_actions = {
 
 		complete_effect = {
 
+			768 = {
+				transfer_state_to = ROOT
+				add_core_of = ROOT
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -642,6 +711,9 @@ political_actions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			768 = {
+				add_extra_state_shared_building_slots = 4
+			}
 
 			hidden_effect = {
 				set_country_flag = COG_moved_the_capital_to_kigali_flag 
@@ -950,6 +1022,9 @@ COG_industrial_investment_decisions = {
 		available = {
 			has_completed_focus = CONGO_bakwanga_mine
 			has_tech = excavation2
+			888 = {
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		visible = { 
@@ -966,6 +1041,11 @@ COG_industrial_investment_decisions = {
 		cost = 50
 
 		cancel_trigger = {
+		    888 = {
+		       NOT = {
+		       	is_fully_controlled_by = ROOT
+		       }
+		    }
 		}
 
         cancel_effect = {
@@ -986,6 +1066,21 @@ COG_industrial_investment_decisions = {
 			
 			IF = {
 				limit = {
+					888 = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}	
+					}
+				}
+				888 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex 
+						level = 1
+						instant_build = yes
+					}	
 				}
 			}
 
@@ -1358,6 +1453,30 @@ war_measures = {
 				has_war_with = ROOT
 				original_tag = COG
 			}
+			295 = {
+				OR = {
+					is_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			718 = {
+				OR = {
+					is_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			889 = {
+				OR = {
+					is_controlled_by = ROOT
+					CONTROLLER = {
+						is_subject_of = ROOT
+					}
+				}
+			}
 		}
 
 		visible = { 
@@ -1497,6 +1616,16 @@ COG_ruanda_urundi_decisions = {
 
 		cancel_trigger = {
 			AND = {
+				768 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				769 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -1567,6 +1696,16 @@ COG_ruanda_urundi_decisions = {
 
 		cancel_trigger = {
 			AND = {
+				768 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				769 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -1587,10 +1726,42 @@ COG_ruanda_urundi_decisions = {
 			
 			IF = {
 				limit = {
+					768 = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				768 = { 
+					add_extra_state_shared_building_slots = 1 
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
 				}
 			}	
 			ELSE_IF = {
 				limit = {
+					769 = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				769 = { 
+					add_extra_state_shared_building_slots = 1 
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
 				}
 			}
 
@@ -1625,6 +1796,11 @@ COG_ruanda_urundi_decisions = {
 		visible = { 
 			has_idea = COG_eugene_jungers
 			owns_state = 768
+			768 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 			NOT = {
 				has_country_flag = COG_improved_ruandan_administration
 			}
@@ -1637,6 +1813,11 @@ COG_ruanda_urundi_decisions = {
 		cost = 25
 
 		cancel_trigger = {
+			768 = {
+				NOT = {
+					is_fully_controlled_by = ROOT
+				}
+			}
 		}
 
         cancel_effect = {
@@ -1651,6 +1832,10 @@ COG_ruanda_urundi_decisions = {
 
 		remove_effect = {
 
+			768 = {
+				add_resistance = -10
+				add_compliance = 10
+			}
 
 			hidden_effect = {
 				set_country_flag = COG_improved_ruandan_administration
@@ -1683,6 +1868,11 @@ COG_ruanda_urundi_decisions = {
 		visible = { 
 			has_idea = COG_eugene_jungers
 			owns_state = 769
+			769 = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
 			NOT = {
 				has_country_flag = COG_improved_urundian_administration
 			}
@@ -1695,6 +1885,11 @@ COG_ruanda_urundi_decisions = {
 		cost = 25
 
 		cancel_trigger = {
+			769 = {
+				NOT = {
+					is_fully_controlled_by = ROOT
+				}
+			}
 		}
 
         cancel_effect = {
@@ -1709,6 +1904,10 @@ COG_ruanda_urundi_decisions = {
 
 		remove_effect = {
 
+			769 = {
+				add_resistance = -10
+				add_compliance = 10
+			}
 
 			hidden_effect = {
 				set_country_flag = COG_improved_urundian_administration
@@ -1761,6 +1960,16 @@ COG_ruanda_urundi_decisions = {
 
 		cancel_trigger = {
 			AND = {
+				768 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				769 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -1817,6 +2026,15 @@ COG_the_empain_group_decisions = {
 	
 		available = {
 			AND = {
+				889 = {
+					is_owned_and_controlled_by = ROOT
+				}
+				888 = {
+					is_owned_and_controlled_by = ROOT
+				}
+				890 = {
+					is_owned_and_controlled_by = ROOT
+				}
 			}
 		}
 
@@ -1839,6 +2057,21 @@ COG_the_empain_group_decisions = {
 
 		cancel_trigger = {
 			AND = {
+				889 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				888 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				890 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -1857,6 +2090,21 @@ COG_the_empain_group_decisions = {
 			
 			IF = {
 				limit = {
+					889 = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+					}
+				}
+				889 = { 
+					add_extra_state_shared_building_slots = 1 
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
 				}
 			}	
 
@@ -1864,6 +2112,21 @@ COG_the_empain_group_decisions = {
 
 			IF = {
 				limit = {
+					888 = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+					}
+				}
+				888 = { 
+					add_extra_state_shared_building_slots = 1 
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
 				}
 			}	
 
@@ -1871,6 +2134,21 @@ COG_the_empain_group_decisions = {
 
 			IF = {
 				limit = {
+					890 = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+					}
+				}
+				890 = { 
+					add_extra_state_shared_building_slots = 1 
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
 				}
 			}
 
@@ -1899,6 +2177,12 @@ COG_the_empain_group_decisions = {
 	
 		available = {
 			AND = {
+				768 = {
+					is_owned_and_controlled_by = ROOT
+				}
+				769 = {
+					is_owned_and_controlled_by = ROOT
+				}
 			}
 		}
 
@@ -1920,6 +2204,16 @@ COG_the_empain_group_decisions = {
 
 		cancel_trigger = {
 			AND = {
+				768 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				769 = {
+					NOT = {
+						is_fully_controlled_by = ROOT
+					}
+				}
 			}
 		}
 
@@ -1935,9 +2229,29 @@ COG_the_empain_group_decisions = {
 
 		remove_effect = {
 			
+			768 = {
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = aluminium
+					amount = 2
+				}	
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			769 = {
+				add_resource = {
+					type = tungsten
+					amount = 4
+				}
+				add_resource = {
+					type = aluminium
+					amount = 1
+				}	
+			}
 
 			hidden_effect = {
 				set_country_flag = COG_invested_in_mirundi_flag
@@ -1963,6 +2277,9 @@ COG_the_empain_group_decisions = {
 		}
 	
 		available = {
+			718 = {
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 
 		visible = { 
@@ -1979,6 +2296,11 @@ COG_the_empain_group_decisions = {
 		cost = 50
 
 		cancel_trigger = {
+			718 = {
+				NOT = {
+					is_fully_controlled_by = ROOT
+				}
+			}
 		}
 
         cancel_effect = {
@@ -1994,6 +2316,20 @@ COG_the_empain_group_decisions = {
 
 		remove_effect = {
 			
+			718 = {
+				add_resource = {
+					type = tungsten
+					amount = 2
+				}
+				add_resource = {
+					type = aluminium
+					amount = 3
+				}	
+				add_resource = {
+					type = steel
+					amount = 2
+				}	
+			}
 
 			hidden_effect = {
 				set_country_flag = COG_founded_cominor_flag
@@ -2019,6 +2355,9 @@ COG_the_empain_group_decisions = {
 		}
 	
 		available = {
+			889 = {
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 
 		visible = { 
@@ -2035,6 +2374,11 @@ COG_the_empain_group_decisions = {
 		cost = 75
 
 		cancel_trigger = {
+			889 = {
+				NOT = {
+					is_fully_controlled_by = ROOT
+				}
+			}
 		}
 
         cancel_effect = {
@@ -2050,11 +2394,32 @@ COG_the_empain_group_decisions = {
 
 		remove_effect = {
 			
+			889 = {
+				add_resource = {
+					type = chromium
+					amount = 6
+				}	
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			IF = {
 				limit = {
+					889 = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}	
+					}
+				}
+				889 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}	
 				}
 			}
 
@@ -2082,6 +2447,9 @@ COG_the_empain_group_decisions = {
 		}
 	
 		available = {
+			718 = {
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 
 		visible = { 
@@ -2098,6 +2466,11 @@ COG_the_empain_group_decisions = {
 		cost = 50
 
 		cancel_trigger = {
+			718 = {
+				NOT = {
+					is_fully_controlled_by = ROOT
+				}
+			}
 		}
 
         cancel_effect = {

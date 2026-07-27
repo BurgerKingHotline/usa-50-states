@@ -170,12 +170,10 @@ disable_party_popularity_PP_gain = {
 }
 create_coalitions_array_if_missing = {
 	if = {
-		limit = {
-			NOT = {
-				check_variable = { coalitions_array^num = global.ideology_groups^num }
-			}
-		}
+		limit = { NOT = { check_variable = { coalitions_array^num = global.ideology_groups^num } } }
+		clear_array = coalitions_array
 		resize_array = { coalitions_array = global.ideology_groups^num }
+		for_each_loop = { array = coalitions_array set_variable = { coalitions_array^i = 1 } }
 		for_each_loop = {
 			array = coalitions_array
 			if = {
@@ -184,6 +182,12 @@ create_coalitions_array_if_missing = {
 				set_temp_variable = { break = 1 }
 			}
 		}
+	}
+	if = {
+		limit = { NOT = { check_variable = { coalition_stability_array^num = global.ideology_groups^num } } }
+		clear_array = coalition_stability_array
+		resize_array = { coalition_stability_array = global.ideology_groups^num }
+		for_each_loop = { array = coalition_stability_array set_variable = { coalition_stability_array^i = 0.5 } }
 	}
 }
 convert_coalition_partner_var_into_index = { # Hardcoded token check to bypass HOI4 math limitations
@@ -266,7 +270,7 @@ add_to_coalition = {
 				multiply_temp_variable = { temp = coalition_stability_array^coalition_partner_var }
 			}
 			else = {
-				multiply_temp_variable = { temp = coalition_stability?0.5 }
+				multiply_temp_variable = { temp = 0.5 }
 			}
 			add_to_variable = { coalition_pp_gain = temp }
 			hidden_effect = { force_update_dynamic_modifier = yes }
@@ -299,7 +303,7 @@ remove_from_coalition = {
 				multiply_temp_variable = { temp = coalition_stability_array^coalition_partner_var }
 			}
 			else = {
-				multiply_temp_variable = { temp = coalition_stability?0.5 }
+				multiply_temp_variable = { temp = 0.5 }
 			}
 			subtract_from_variable = { coalition_pp_gain = temp }
 			hidden_effect = {
@@ -333,6 +337,7 @@ end_coalition = {
 		}
 		clear_array = coalition_stability_array
 		resize_array = { coalition_stability_array = global.ideology_groups^num }
+		for_each_loop = { array = coalition_stability_array set_variable = { coalition_stability_array^i = 0.5 } }
 		clear_variable = coalition_pp_gain
 		hidden_effect = {
 			remove_dynamic_modifier = { modifier = party_popularity_dynamic_modifier_coalition }

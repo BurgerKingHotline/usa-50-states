@@ -22,10 +22,18 @@ economy_decisions = {
 			has_tech = excavation1
 			has_tech = excavation2
 			num_of_civilian_factories_available_for_projects > 1
+			100 = {
+				is_owned_and_controlled_by = ROOT
+				NOT = { has_state_flag = no_more_oil_flag }
+			}
 			has_completed_focus = ICE_off_shore_oil_drilling 
 		}
 
 		visible = { 
+			100 = {
+				is_owned_and_controlled_by = ROOT
+				NOT = { has_state_flag = no_more_oil_flag }
+			}
 			has_completed_focus = ICE_off_shore_oil_drilling 
 		}
 
@@ -72,10 +80,30 @@ economy_decisions = {
 		remove_effect = {
 			random_list = {
 				ICE_black_gold_success_chance = {
+					100 = {
+						add_resource = {
+							type = oil
+							amount = 4
+						}
+					}
 				}
 				ICE_black_gold_success_chance = {
+					100 = {
+						add_resource = {
+							type = oil
+							amount = 2
+						}
+					}
 				}
 				ICE_black_gold_runs_dry_chance = {
+					100 = {
+						add_resource = {
+							type = oil
+							amount = 8
+						}
+						custom_effect_tooltip = no_more_oil_tt
+						set_state_flag = no_more_oil_flag
+					}
 					country_event = {
 						id = iceland_events.26
 						hours = 0
@@ -99,6 +127,7 @@ ICE_infiltrate_the_british_isles_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ICE_uprising_scotland_tt
+				121 = { owner = { communism > ICE.communism_support_needed } }
 			}	
 			SCO = {	exists = no }		
 			ENG = {
@@ -141,6 +170,11 @@ ICE_infiltrate_the_british_isles_category = {
 							type = independence_wargoal
 						}
 					}
+					121 = {
+						teleport_armies = { 
+							# just teleport everyone home
+						}
+					}
 				}
 				SCO = {
 					division_template = {
@@ -153,6 +187,14 @@ ICE_infiltrate_the_british_isles_category = {
 						}
 						support = {
 							
+						}
+					}
+					121 = {
+						create_unit = {
+							division = "name = \"Workers' Militia\" division_template = \"Workers' Militias\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
+							owner = SCO
+							allow_spawning_on_enemy_provs = yes 
+							count = 1 
 						}
 					}
 					add_popularity = {
@@ -185,6 +227,7 @@ ICE_infiltrate_the_british_isles_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ICE_uprising_wales_tt
+				122 = { owner = { communism > ICE.communism_support_needed } }
 			}	
 			WLS = {	exists = no }		
 			ENG = {
@@ -228,6 +271,11 @@ ICE_infiltrate_the_british_isles_category = {
 							type = independence_wargoal
 						}
 					}
+					122 = {
+						teleport_armies = { 
+							# just teleport everyone home
+						}
+					}
 				}
 				WLS = {
 					division_template = {
@@ -240,6 +288,14 @@ ICE_infiltrate_the_british_isles_category = {
 						}
 						support = {
 							
+						}
+					}
+					122 = {
+						create_unit = {
+							division = "name = \"Workers' Militia\" division_template = \"Workers' Militias\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
+							owner = WLS
+							allow_spawning_on_enemy_provs = yes 
+							count = 1 
 						}
 					}
 					add_popularity = {
@@ -273,6 +329,7 @@ ICE_infiltrate_the_british_isles_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ICE_uprising_ni_tt
+				122 = { owner = { communism > ICE.communism_support_needed } }
 			}	
 			NIR = {	exists = no }	
 			ENG = {
@@ -316,6 +373,11 @@ ICE_infiltrate_the_british_isles_category = {
 							type = independence_wargoal
 						}
 					}
+					119 = {
+						teleport_armies = { 
+							# just teleport everyone home
+						}
+					}
 				}
 				NIR = {
 					division_template = {
@@ -328,6 +390,14 @@ ICE_infiltrate_the_british_isles_category = {
 						}
 						support = {
 							
+						}
+					}
+					119 = {
+						create_unit = {
+							division = "name = \"Workers' Militia\" division_template = \"Workers' Militias\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
+							owner = NIR
+							allow_spawning_on_enemy_provs = yes 
+							count = 1 
 						}
 					}
 					add_popularity = {
@@ -1303,6 +1373,9 @@ ICE_improve_the_viking_spirit = {
 				tooltip = ICE_has_best_spirit_idea
 				has_idea = ICE_viking_spirit_odin_freja_thor_aegir_fenrir
 			}
+			100 = {
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 
 		visible = {
@@ -1327,6 +1400,19 @@ ICE_improve_the_viking_spirit = {
 				add_idea = ICE_viking_spirit_modern_yggdrasil
 			}
 
+			100 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 			
 		}
 
@@ -1348,6 +1434,9 @@ ICE_improve_the_viking_spirit = {
 
 		available = {
 			has_completed_focus = ICE_the_viking_spirit
+			331 = {
+				is_controlled_by = ROOT
+			}
 		}
 
 		visible = {
@@ -1371,6 +1460,11 @@ ICE_improve_the_viking_spirit = {
 
 			IF = {
 				limit = {
+					331 = {
+						NOT = {
+							is_owned_by = ROOT
+						}
+					}
 				}
 				ROOT = {
 					transfer_state = 331
@@ -1379,14 +1473,43 @@ ICE_improve_the_viking_spirit = {
 
 			IF = {
 				limit = {
+					331 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				331 = {
+					add_core_of = ROOT
 				}
 			}
 
 			IF = {
 				limit = {
+					730 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				730 = {
+					add_core_of = ROOT
 				}
 			} 
 
+			331 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 			
 		}
 

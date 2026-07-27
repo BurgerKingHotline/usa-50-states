@@ -59,6 +59,19 @@ AFG_oil_concessions_category = {
 			}
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
+				267 = {
+					add_resource = {
+						type = oil
+						amount = 10
+					}
+					set_state_flag = AFG_oil_concession_here_flag
+				}
+				415 = {
+					add_resource = {
+						type = oil
+						amount = 10
+					}
+				}
 				give_resource_rights = {
 					receiver = FROM
 					state = 267
@@ -158,11 +171,43 @@ AFG_radical_students_category = {
 			effect_tooltip = {
 				ROOT = {
 					random_list = {
+						25 = { add_timed_idea = { idea = AFG_communist_graduates days = 365 } } 
+						25 = { add_timed_idea = { idea = AFG_democratic_graduates days = 365 } }
+						25 = { add_timed_idea = { idea = AFG_fascist_graduates days = 365 } }
+						25 = { add_timed_idea = { idea = AFG_neutrality_graduates days = 365 } }
 					}
 				}
 			}
 			hidden_effect = {
 				random_list = {
+					25 = { 
+						modifier = {
+							factor = 0
+							has_government = communism
+						}
+						set_country_flag = AFG_communist_students 
+					}
+					25 = { 
+						modifier = {
+							factor = 0
+							has_government = democratic
+						}
+						set_country_flag = AFG_democratic_students 
+					}
+					25 = { 
+						modifier = {
+							factor = 0
+							has_government = fascism
+						}
+						set_country_flag = AFG_fascist_students 
+					}
+					25 = { 
+						modifier = {
+							factor = 0
+							has_government = neutrality
+						}
+						set_country_flag = AFG_neutral_students 
+					}
 				}
 			}
 		}
@@ -639,6 +684,11 @@ AFG_cross_border_ties_category = {
 		
 		visible = {
 			has_completed_focus = AFG_protector_of_the_tajiks
+			742 = {
+				OWNER = {
+					has_war_with = AFG
+				}
+			}
 		}
 		state_target = yes
 		targets = { 742 }
@@ -1115,7 +1165,6 @@ AFG_shadows_of_the_emir_category = {
 		cancel_effect = {
 			hidden_effect = {
 				clr_country_flag = AFG_shadow_operation_in_progress
-				FROM = { set_state_flag = AFG_the_shadows_have_passed }
 			}
 		}
 	}	
@@ -1592,6 +1641,8 @@ AFG_kabul_conference_category = {
 	  				region = 237
 	  				region = 236
 	  				region = 238
+	  				region = 297 
+	  				region = 298
 	  			}
 	        }
 	    }
@@ -1982,6 +2033,14 @@ political_actions = {
 			}
 			IF = {
 				limit = {
+					439 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				439 = {
+					add_core_of = ROOT
 				}
 			}
 		}

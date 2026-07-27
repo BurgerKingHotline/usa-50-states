@@ -443,9 +443,15 @@ USA_congress = {
 	USA_statehood_for_alaska = {
 		icon = infiltrate_state
 		available = {
+			463 = {
+				not = { is_core_of = ROOT }
+			}
 			political_power_daily > 0.1
 		}
 		visible = {
+			463 = {
+				is_fully_controlled_by = USA
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -470,9 +476,15 @@ USA_congress = {
 	USA_statehood_for_hawaii = {
 		icon = infiltrate_state
 		available = {
+			629 = {
+				not = { is_core_of = ROOT }
+			}
 			political_power_daily > 0.1
 		}
 		visible = {
+			629 = {
+				is_fully_controlled_by = USA
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -496,9 +508,15 @@ USA_congress = {
 	USA_statehood_for_puerto_rico = {
 		icon = infiltrate_state
 		available = {
+			686 = {
+				not = { is_core_of = ROOT }
+			}
 			political_power_daily > 0.1
 		}
 		visible = {
+			686 = {
+				is_fully_controlled_by = USA
+			}
 		}
 		ai_will_do = {
 			factor = 1

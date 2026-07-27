@@ -2099,6 +2099,13 @@ SOV_propaganda_campaigns = {
 			SOV_propaganda_poster_slot_available = yes
 
 			controls_state = 219 #Moscow
+			219 = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
 		}
 
 		visible = {
@@ -2119,10 +2126,22 @@ SOV_propaganda_campaigns = {
 			SOV_pick_propaganda_campaign_slot_effect = yes
 			SOV_achievement_propaganda_counter_effect = yes
 
+			219 = { #Moscow
+				add_dynamic_modifier = { modifier = SOV_defend_moscow scope = SOV }
+				every_neighbor_state = {
+					add_dynamic_modifier = { modifier = SOV_defend_moscow scope = SOV }
+				}
+			}
 			custom_effect_tooltip = SOV_propaganda_defend_moscow_state_modifier_tt
 		}
 
 		remove_effect = {
+			219 = { #Moscow
+				remove_dynamic_modifier = { modifier = SOV_defend_moscow }
+				every_neighbor_state = {
+					remove_dynamic_modifier = { modifier = SOV_defend_moscow }
+				}
+			}
 
 			set_variable = { SOV_propaganda_campaign_to_remove = 5 }
 			SOV_reset_propaganda_campaign_slot_effect = yes
@@ -6716,6 +6735,12 @@ SOV_diplomacy_asia_decision_category = {
 				JAP = {
 					white_peace = FROM
 				}
+				537 = {
+					add_core_of = ROOT
+				}
+				555 = {
+					add_core_of = ROOT
+				}
 				transfer_state = 537
 				transfer_state = 555
 			}
@@ -6775,6 +6800,12 @@ SOV_diplomacy_asia_decision_category = {
 				JAP = {
 					white_peace = FROM
 				}
+				537 = {
+					add_core_of = ROOT
+				}
+				555 = {
+					add_core_of = ROOT
+				}
 				transfer_state = 537
 				transfer_state = 555
 				transfer_state = 536
@@ -6797,6 +6828,9 @@ SOV_diplomacy_asia_decision_category = {
 
 		visible = {
 			has_completed_focus = SOV_prepare_a_war_with_japan
+			655 = {
+				is_owned_and_controlled_by = ROOT
+			}
 			JAP = {
 				has_resources_rights = {
 					state = 655
@@ -6933,12 +6967,52 @@ SOV_diplomacy_asia_decision_category = {
 					}
 				}
 			}
+			619 = { #YARKAND - Minerals and Infra
+				add_resource = {
+					type = aluminium
+					amount = 3
+				}
+				add_resource = {
+					type = chromium
+					amount = 3
+				}
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			617 = { #URUMQI
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 			# Urumqi - Kashgar
 			build_railway = {
 				path = { 4709 4770 7702 4682 7949 2015 }
 			}
 
 			#Supply Hub in Kashgar
+			619 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 2015
+					instant_build = yes
+				}
+			}
 
 			clr_country_flag = SOV_sinkiang_investment_ongoing_flag
 			set_country_flag = SOV_sinkiang_prospection_flag
@@ -7052,12 +7126,56 @@ SOV_diplomacy_asia_decision_category = {
 					}
 				}
 			}
+			618 = { #DZUNGARIA - Minerals, oil and Infra
+				add_resource = {
+					type = aluminium
+					amount = 3
+				}
+				add_resource = {
+					type = tungsten
+					amount = 3
+				}
+				add_resource = {
+					type = oil
+					amount = 6
+				}
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 			SIK = { give_resource_rights = { receiver = SOV state = 618 } } # Grant Resource rights to SOV
+			617 = { #URUMQI - Infra
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 			# Urumqi - Altay
 			build_railway = {
 				path = { 4709 10674 1783 1844 12737 4823 }
 			}
 			#Supply Hub in Altay
+			618 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 4823
+					instant_build = yes
+				}
+			}
 
 			SIK = { add_ideas = SOV_expanded_exploitation_of_gold_mines }
 
@@ -7186,9 +7304,80 @@ SOV_diplomacy_asia_decision_category = {
 					}
 				}
 			}
+			617 = { #URUMQI - Mil
+				if = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			759 = { #KUNLUN SHAN - Infra + Air base + Forts
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						air_base < 9
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				else_if = {
+					limit = {
+						air_base < 10
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 10315
+						id = 2074
+						id = 1698
+						id = 4947
+					}
+					instant_build = yes
+				}
+			}
 			if = {  #DABANCHENG - Forts
 				limit = {
 					SIK = { has_full_control_of_state = 760 }
+				}
+				760 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = {
+							id = 1838
+							id = 4843
+						}
+						instant_build = yes
+					}
 				}
 			}
 
@@ -7332,6 +7521,114 @@ SOV_diplomacy_asia_decision_category = {
 					}
 				}
 			}
+			755 = { #HAIXI - Infra
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			756 = { #JIUQUAN - Infra + Oil
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+			}
+			604 = { #QINGHAI (Golmud) - Infra
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 7940
+					}
+					instant_build = yes
+				}
+			}
+			754 = { #GOLOG (Lanzhou) - Infra
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 12732
+					}
+					instant_build = yes
+				}
+			}
+			283 = { #GANSU - Infra + Air Base + Fort
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						air_base < 9
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				else_if = {
+					limit = {
+						air_base < 10
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 531
+					}
+					instant_build = yes
+				}
+			}
 
 			clr_country_flag = SOV_sinkiang_investment_ongoing_flag
 			set_country_flag = SOV_sinkiang_support_expansion_flag
@@ -7469,12 +7766,52 @@ SOV_soviet_aid_decision_category = {
 
 		timeout_effect = {
 			effect_tooltip = {
+				619 = { #YARKAND - Minerals and Infra
+					add_resource = {
+						type = aluminium
+						amount = 3
+					}
+					add_resource = {
+						type = chromium
+						amount = 3
+					}
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				617 = { #URUMQI
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
 				# Urumqi - Kashgar
 				build_railway = {
 					path = { 4709 4770 7702 4682 7949 2015 }
 				}
 
 				#Supply Hub in Kashgar
+				619 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 2015
+						instant_build = yes
+					}
+				}
 
 				custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sik
 			}
@@ -7515,12 +7852,56 @@ SOV_soviet_aid_decision_category = {
 
 		timeout_effect = {
 			effect_tooltip = {
+				618 = { #DZUNGARIA - Minerals, oil and Infra
+					add_resource = {
+						type = aluminium
+						amount = 3
+					}
+					add_resource = {
+						type = tungsten
+						amount = 3
+					}
+					add_resource = {
+						type = oil
+						amount = 6
+					}
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
 				give_resource_rights = { receiver = SOV state = 618 } # Grant Resource rights to SOV
+				617 = { #URUMQI - Infra
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
 				# Urumqi - Altay
 				build_railway = {
 					path = { 4709 10674 1783 1844 12737 4823 }
 				}
 				#Supply Hub in Altay
+				618 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 4823
+						instant_build = yes
+					}
+				}
 
 				add_ideas = SOV_expanded_exploitation_of_gold_mines
 				custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sik
@@ -7562,9 +7943,80 @@ SOV_soviet_aid_decision_category = {
 
 		timeout_effect = {
 			effect_tooltip = {
+				617 = { #URUMQI - Mil
+					if = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				759 = { #KUNLUN SHAN - Infra + Air base + Forts
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					if = {
+						limit = {
+							air_base < 9
+						}
+						add_building_construction = {
+							type = air_base
+							level = 2
+							instant_build = yes
+						}
+					}
+					else_if = {
+						limit = {
+							air_base < 10
+						}
+						add_building_construction = {
+							type = air_base
+							level = 1
+							instant_build = yes
+						}
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = {
+							id = 10315
+							id = 2074
+							id = 1698
+							id = 4947
+						}
+						instant_build = yes
+					}
+				}
 				if = {  #DABANCHENG - Forts
 					limit = {
 						has_full_control_of_state = 760
+					}
+					760 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = {
+								id = 1838
+								id = 4843
+							}
+							instant_build = yes
+						}
 					}
 				}
 				add_tech_bonus = {
@@ -7625,6 +8077,114 @@ SOV_soviet_aid_decision_category = {
 
 		timeout_effect = {
 			effect_tooltip = {
+				755 = { #HAIXI - Infra
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				756 = { #JIUQUAN - Infra + Oil
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					add_resource = {
+						type = oil
+						amount = 12
+					}
+				}
+				604 = { #QINGHAI (Golmud) - Infra
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = {
+							id = 7940
+						}
+						instant_build = yes
+					}
+				}
+				754 = { #GOLOG (Lanzhou) - Infra
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = {
+							id = 12732
+						}
+						instant_build = yes
+					}
+				}
+				283 = { #GANSU - Infra + Air Base + Fort
+					if = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					if = {
+						limit = {
+							air_base < 9
+						}
+						add_building_construction = {
+							type = air_base
+							level = 2
+							instant_build = yes
+						}
+					}
+					else_if = {
+						limit = {
+							air_base < 10
+						}
+						add_building_construction = {
+							type = air_base
+							level = 1
+							instant_build = yes
+						}
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = {
+							id = 531
+						}
+						instant_build = yes
+					}
+				}
 				custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sik
 			}
 		}
@@ -7679,12 +8239,52 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			619 = { #YARKAND - Minerals and Infra
+				add_resource = {
+					type = aluminium
+					amount = 3
+				}
+				add_resource = {
+					type = chromium
+					amount = 3
+				}
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			617 = { #URUMQI
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 			# Urumqi - Kashgar
 			build_railway = {
 				path = { 4709 4770 7702 4682 7949 2015 }
 			}
 
 			#Supply Hub in Kashgar
+			619 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 2015
+					instant_build = yes
+				}
+			}
 
 			set_country_flag = SOV_sinkiang_prospection_flag
 		}
@@ -7727,11 +8327,55 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			618 = { #DZUNGARIA - Minerals, oil and Infra
+				add_resource = {
+					type = aluminium
+					amount = 3
+				}
+				add_resource = {
+					type = tungsten
+					amount = 3
+				}
+				add_resource = {
+					type = oil
+					amount = 6
+				}
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			617 = { #URUMQI - Infra
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 			# Urumqi - Altay
 			build_railway = {
 				path = { 4709 10674 1783 1844 12737 4823 }
 			}
 			#Supply Hub in Altay
+			618 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 4823
+					instant_build = yes
+				}
+			}
 
 			set_country_flag = SOV_sinkiang_oil_prospection_flag
 		}
@@ -7784,6 +8428,114 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
+			755 = { #HAIXI - Infra
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			756 = { #JIUQUAN - Infra + Oil
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+			}
+			604 = { #QINGHAI (Golmud) - Infra
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 7940
+					}
+					instant_build = yes
+				}
+			}
+			754 = { #GOLOG (Lanzhou) - Infra
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 12732
+					}
+					instant_build = yes
+				}
+			}
+			283 = { #GANSU - Infra + Air Base + Fort
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						air_base < 9
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				else_if = {
+					limit = {
+						air_base < 10
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 531
+					}
+					instant_build = yes
+				}
+			}
 			set_country_flag = SOV_sinkiang_support_expansion_flag
 		}
 	}
@@ -10030,6 +10782,30 @@ SOV_kill_trotsky_dec_cat = {
 				clr_country_flag = SOV_attempting_to_kill_trotsky_flag
 				set_country_flag = SOV_raided_trotskys_villa_flag
 				random_list = {
+					50 = {
+						modifier = {
+							factor = 2
+							FROM = {
+								communism > 0.5
+							}
+						}
+						modifier = {
+							factor = 5
+							FROM = {
+								is_in_faction_with = ROOT
+							}
+						}
+						ROOT = { news_event = { id = nsb_news.100 } } #SUCCESS - Kill Trotsky and swap Trotskyite Plot NS
+					}
+					50 = {
+						modifier = {
+							factor = 0
+							FROM = {
+								is_subject_of = ROOT
+							}
+						}
+						ROOT = { news_event = { id = nsb_news.101 } } #FAILURE - Trotsky still alive
+					}
 				}
 			}
 			custom_effect_tooltip = SOV_raid_trotskys_villa_tt
@@ -10116,6 +10892,55 @@ SOV_kill_trotsky_dec_cat = {
 			hidden_effect = {
 				clr_country_flag = SOV_attempting_to_kill_trotsky_flag
 				random_list = {
+					50 = {
+						modifier = {
+							factor = 1.5
+							FROM = {
+								communism > 0.25
+							}
+						}
+						modifier = {
+							factor = 1.5
+							FROM = {
+								communism > 0.5
+							}
+						}
+						modifier = {
+							factor = 1.5
+							FROM = {
+								communism > 0.75
+							}
+						}
+						modifier = {
+							factor = 2
+							FROM = {
+								has_opinion = {
+									target = ROOT
+									value > 50
+								}
+							}
+						}
+						modifier = {
+							factor = 2.5
+							FROM = {
+								is_in_faction_with = ROOT
+							}
+						}
+						modifier = {
+							factor = 2
+							has_country_flag = SOV_raided_trotskys_villa_flag
+						}
+						ROOT = { news_event = { id = news.37 } } #SUCCESS - Kill Trotsky and swap Trotskyite Plot NS
+					}
+					50 = {
+						modifier = {
+							factor = 0.5
+							FROM = {
+								is_subject_of = ROOT
+							}
+						}
+						ROOT = { news_event = { id = news.38 } } #FAILURE - Trotsky still alive
+					}
 				}
 			}
 			custom_effect_tooltip = SOV_carefully_planned_assassination_tt
@@ -10173,13 +10998,10 @@ SOV_industry_relocation = {
 			}
 		}
 
-		state_target = yes
-
-		#targets = { core_states }
+		state_target = any_owned_state
 
 		target_trigger = {
 			FROM = {
-				is_owned_by = ROOT
 				is_core_of = ROOT
 				is_fully_controlled_by = ROOT
 				is_on_continent = europe
@@ -10391,6 +11213,7 @@ SOV_industry_relocation = {
 			has_completed_focus = SOV_move_industry_to_the_urals
 			controls_state = 195
 			controls_state = 569
+			195 = { has_state_flag = leningrad_aluminium_developed }
 			has_civil_war = no
 		}
 
@@ -10457,6 +11280,12 @@ SOV_industry_relocation = {
 					producer = SOV
 				}
 			}
+			195 = {
+				add_resource = {
+					type = aluminium
+					amount = -12
+				}
+			}
 			custom_effect_tooltip = SOV_industry_relocation_aluminium_plant_trains_tt
 		}
 
@@ -10471,6 +11300,12 @@ SOV_industry_relocation = {
 			if = {
 				limit = {
 					controls_state = 569
+				}
+				569 = {
+					add_resource = {
+						type = aluminium
+						amount = 12
+					}
 				}
 			}
 			custom_effect_tooltip = SOV_relocate_industry_from_leningrad_tt
@@ -10549,6 +11384,36 @@ SOV_infiltrate_foreign_atomic_programs_dec_cat = {
 				clr_country_flag = SOV_nuclear_espionage_ongoing_flag
 				FROM = { set_country_flag = SOV_nuclear_espionage_flag }
 				random_list = {
+					50 = {
+						modifier = {
+							factor = 1.5
+							FROM = {
+								communism > 0.15
+							}
+						}
+						modifier = {
+							factor = 1.5
+							FROM = {
+								communism > 0.25
+							}
+						}
+						modifier = {
+							factor = 2
+							FROM = {
+								communism > 0.5
+							}
+						}
+						ROOT = { country_event = NSB_soviet_atomic_bomb_project.1 } #SUCCESS - Get the bonus
+					}
+					50 = {
+						ROOT = {
+							country_event = NSB_soviet_atomic_bomb_project.2  #FAILURE - Get some penalties
+							set_variable = { SOV_aggrieved_country_atomic_spies = FROM }
+						}
+						FROM = {
+							country_event = NSB_soviet_atomic_bomb_project.3
+						}
+					}
 				}
 			}
 			custom_effect_tooltip = SOV_infiltrate_atomic_program_tt
@@ -11384,6 +12249,7 @@ SOV_great_patriotic_war = {
 		available = { #You succeed by having Leningrad being connected to the rest of the country at the end of the mission
 			custom_trigger_tooltip = {
 				tooltip = SOV_operation_iskra_ongoing_objective_tt
+				195 = { is_in_home_area = yes }
 			}
 		}
 
@@ -11401,6 +12267,7 @@ SOV_great_patriotic_war = {
 
 			if = {
 				limit = {
+					195 = { is_in_home_area = yes }
 				}
 				custom_effect_tooltip = SOV_operation_iskra_ongoing_success_tt
 				hidden_effect = {
@@ -11457,6 +12324,13 @@ SOV_great_patriotic_war = {
 		visible = {
 			has_war = yes
 			has_country_flag = SOV_order_227_flag
+			244 = {
+				controller = { has_war_with = ROOT }
+			}
+			208 = {
+				controller = { has_war_with = ROOT }
+			}
+			195 = { is_controlled_by = ROOT }
 		}
 
 		ai_hint_pp_cost = 15
@@ -11485,6 +12359,15 @@ SOV_great_patriotic_war = {
 		remove_effect = {
 			custom_effect_tooltip = SOV_operation_iskra_tt
 			hidden_effect = {
+				195 = {
+					ROOT = { add_to_array = { SOV_military_offensive_states = PREV } }
+				}
+				208 = {
+					ROOT = { add_to_array = { SOV_military_offensive_states = PREV } }
+				}
+				244 = {
+					ROOT = { add_to_array = { SOV_military_offensive_states = PREV } }
+				}
 				SOV_set_military_offensive_effect = yes
 
 				activate_mission = SOV_operation_iskra_ongoing
@@ -11581,16 +12464,30 @@ SOV_great_patriotic_war = {
 		activation = {
 			has_war = yes
 			has_civil_war = no
+			217 = {
+				is_controlled_by = ROOT
+				OR = {
+					any_neighbor_state = {
+						CONTROLLER = {
+							has_war_with = ROOT
+						}
+						OWNER = { tag = ROOT }
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
 		}
 
 		#Success
 		timeout_effect = {
 			add_stability = 0.05
 			add_war_support = 0.05
+			217 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.1
 		}
 		#Fail
 		complete_effect = {
+			217 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.2
 		}
 	}
@@ -11621,16 +12518,30 @@ SOV_great_patriotic_war = {
 			any_enemy_country = {
 				is_major = yes
 			}
+			195 = {
+				is_controlled_by = ROOT
+				OR = {
+					any_neighbor_state = {
+						CONTROLLER = {
+							has_war_with = ROOT
+						}
+						OWNER = { tag = ROOT }
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
 		}
 
 		#Success
 		timeout_effect = {
 			add_stability = 0.05
 			add_war_support = 0.05
+			195 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.3
 		}
 		#Fail
 		complete_effect = {
+			195 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.4
 		}
 	}
@@ -11658,16 +12569,30 @@ SOV_great_patriotic_war = {
 		activation = {
 			has_war = yes
 			has_civil_war = no
+			219 = {
+				is_controlled_by = ROOT
+				OR = {
+					any_neighbor_state = {
+						CONTROLLER = {
+							has_war_with = ROOT
+						}
+						OWNER = { tag = ROOT }
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
 		}
 
 		#Success
 		timeout_effect = {
 			add_stability = 0.05
 			add_war_support = 0.05
+			219 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.5
 		}
 		#Fail
 		complete_effect = {
+			219 = { save_event_target_as = soviet_city }
 			country_event = wtt_soviet_hold_city.6
 		}
 	}
@@ -12149,6 +13074,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				30 = { SOV_paranoia_very_low_increase_effect = yes }
+				50 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 		remove_effect = {
@@ -12191,6 +13119,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				50 = { SOV_paranoia_very_low_increase_effect = yes }
+				30 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 		remove_effect = {
@@ -12268,6 +13199,22 @@ SOV_soviet_civil_war_dec_cat = {
 				custom_effect_tooltip = SOV_assassinate_stalin_outcome_tt
 				hidden_effect = {
 					random_list = {
+						80 = {
+							retire_character = SOV_iosif_stalin
+							SOV_promote_to_country_leader_beriya = yes
+							news_event = {
+								id = NSB_soviet_communist_civil_war.009
+							}
+							subtract_from_variable = { SOV_paranoia_weekly_modifiers_amount = 2 } #Stalin will always have the Authority Undermined trait (+2 weekly Paranoia)
+							SOV_paranoia_modifier_update_gui_tooltip = yes #Update Paranoia UI
+							set_country_flag = SOV_assassinated_stalin_flag
+						}
+						20 = {
+							SOV_paranoia_very_high_increase_effect = yes
+							news_event = {
+								id = NSB_soviet_communist_civil_war.008
+							}
+						}
 					}
 					# TODO Create events
 				}
@@ -12277,6 +13224,20 @@ SOV_soviet_civil_war_dec_cat = {
 				custom_effect_tooltip = SOV_assassinate_stalin_outcome_tt
 				hidden_effect = {
 					random_list = {
+						50 = {
+							retire_character = SOV_iosif_stalin
+							SOV_promote_to_country_leader_beriya = yes
+							news_event = {
+								id = NSB_soviet_communist_civil_war.009
+							}
+							set_country_flag = SOV_assassinated_stalin_flag
+						}
+						50 = {
+							SOV_paranoia_very_high_increase_effect = yes
+							news_event = {
+								id = NSB_soviet_communist_civil_war.008
+							}
+						}
 					}
 				}
 			}
@@ -12549,10 +13510,14 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 		remove_effect = {
 			custom_effect_tooltip = SOV_secure_moscow_opposition_tt
+			219 = { set_state_flag = SOV_opposition_partisans_flag }
 			SOV_opposition_support_high_increase_effect = yes
 		}
 	}
@@ -12567,6 +13532,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		available = {
 			NOT = { has_decision = SOV_secure_moscow_opposition }
+			195 = { SOV_is_unaligned_state = yes  }
 		}
 		ai_will_do = {
 			base = 10
@@ -12592,10 +13558,14 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 		remove_effect = {
 			custom_effect_tooltip = SOV_secure_leningrad_opposition_tt
+			195 = { set_state_flag = SOV_opposition_partisans_flag }
 			SOV_opposition_support_high_increase_effect = yes
 		}
 	}
@@ -12801,6 +13771,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 		remove_effect = {
@@ -12901,6 +13874,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 		remove_effect = {
@@ -12993,6 +13969,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = {  }
+				60 = { SOV_paranoia_very_low_increase_effect = yes }
+				20 = { SOV_paranoia_low_increase_effect = yes }
 			}
 		}
 		remove_effect = {
@@ -13064,6 +14043,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				30 = { SOV_paranoia_low_increase_effect = yes }
+				40 = { SOV_paranoia_medium_increase_effect = yes }
+				30 = { SOV_paranoia_high_increase_effect = yes }
 			}
 		}
 		remove_effect = {
@@ -13138,6 +14120,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 		remove_effect = {
@@ -13207,6 +14192,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 		remove_effect = {
@@ -13259,6 +14247,15 @@ SOV_soviet_civil_war_dec_cat = {
 		remove_effect = {
 
 			random_list = {
+				40 = {
+					SOV_paranoia_low_decrease_effect = yes
+				}
+				50 = {
+					SOV_paranoia_medium_decrease_effect = yes
+				}
+				10 = {
+					SOV_paranoia_high_decrease_effect = yes
+				}
 			}
 			set_country_flag = SOV_dismissed_the_counter_revolution_flag
 			# SOV_increase_civil_war_timer_long = yes
@@ -13294,6 +14291,7 @@ SOV_soviet_civil_war_dec_cat = {
 		}
 		available = {
 			JAP = { exists = yes }
+			408 = { CONTROLLER = { original_tag = SOV } }
 			custom_trigger_tooltip = {
 				tooltip = SOV_not_has_conflict_with_japan
 				NOT = { JAP = { has_decision = JAP_test_the_soviets } }
@@ -13342,6 +14340,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 			JAP = {
 				country_event = {
@@ -13376,6 +14377,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		available = {
 			JAP = { exists = yes }
+			655 = { CONTROLLER = { original_tag = SOV } }
 			custom_trigger_tooltip = {
 				tooltip = SOV_not_has_conflict_with_japan
 				NOT = { JAP = { has_decision = JAP_test_the_soviets } }
@@ -13425,6 +14427,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 			JAP = {
 				country_event = {
@@ -13448,6 +14453,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		available = {
 			GER = { exists = yes }
+			229 = { CONTROLLER = { original_tag = SOV } }
 		}
 		ai_will_do = {
 			base = 150
@@ -13498,6 +14504,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				60 = { SOV_paranoia_very_low_increase_effect = yes }
+				30 = { SOV_paranoia_low_increase_effect = yes }
+				10 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 			GER = {
 				country_event = {
@@ -13565,6 +14574,9 @@ SOV_soviet_civil_war_dec_cat = {
 				custom_effect_tooltip = SOV_concessions_germany_ukraininan_oil_SCW_accept
 			}
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 		}
 	}
@@ -13589,6 +14601,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		available = {
 			ENG = { exists = yes }
+			206 = { CONTROLLER = { original_tag = SOV } }
 
 		}
 		ai_will_do = {
@@ -13617,6 +14630,9 @@ SOV_soviet_civil_war_dec_cat = {
 
 		complete_effect = {
 			random_list = {
+				20 = { SOV_paranoia_very_low_increase_effect = yes }
+				60 = { SOV_paranoia_low_increase_effect = yes }
+				20 = { SOV_paranoia_medium_increase_effect = yes }
 			}
 			ENG = {
 				country_event = {
@@ -13830,23 +14846,27 @@ SOV_soviet_civil_war_dec_cat = {
 		icon = {
 			key = SOV_place_hq
 			trigger = {
+				214  = { NOT = { has_state_flag = SOV_hq_state_selected } }
 			}
 		}
 		icon = {
 			key = SOV_place_hq_left_opposition
 			trigger = {
+				214 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_left_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_right_opposition
 			trigger = {
+				214 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_right_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_exiles
 			trigger = {
+				214 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_exiles = yes
 			}
 		}
@@ -13874,6 +14894,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		visible = {
 			SOV_display_civil_war_start_state = yes
+			214 = { is_owned_by = ROOT }
 		}
 
 		cost = 15
@@ -13920,18 +14941,21 @@ SOV_soviet_civil_war_dec_cat = {
 		icon = {
 			key = SOV_place_hq_left_opposition
 			trigger = {
+				192 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_left_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_right_opposition
 			trigger = {
+				192 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_right_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_exiles
 			trigger = {
+				192 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_exiles = yes
 			}
 		}
@@ -13943,6 +14967,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		visible = {
 			SOV_display_civil_war_start_state = yes
+			192 = { is_owned_by = ROOT }
 		}
 
 		cost = 30
@@ -13983,23 +15008,27 @@ SOV_soviet_civil_war_dec_cat = {
 		icon = {
 			key = SOV_place_hq
 			trigger = {
+				571  = { NOT = { has_state_flag = SOV_hq_state_selected } }
 			}
 		}
 		icon = {
 			key = SOV_place_hq_left_opposition
 			trigger = {
+				571 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_left_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_right_opposition
 			trigger = {
+				571 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_right_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_exiles
 			trigger = {
+				571 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_exiles = yes
 			}
 		}
@@ -14011,6 +15040,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		visible = {
 			SOV_display_civil_war_start_state = yes
+			571 = { is_owned_by = ROOT }
 		}
 
 		cost = 15
@@ -14051,23 +15081,27 @@ SOV_soviet_civil_war_dec_cat = {
 		icon = {
 			key = SOV_place_hq
 			trigger = {
+				405  = { NOT = { has_state_flag = SOV_hq_state_selected } }
 			}
 		}
 		icon = {
 			key = SOV_place_hq_left_opposition
 			trigger = {
+				405 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_left_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_right_opposition
 			trigger = {
+				405 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_right_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_exiles
 			trigger = {
+				405 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_exiles = yes
 			}
 		}
@@ -14079,6 +15113,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		visible = {
 			SOV_display_civil_war_start_state = yes
+			405 = { is_owned_by = ROOT }
 		}
 
 		cost = 15
@@ -14119,23 +15154,27 @@ SOV_soviet_civil_war_dec_cat = {
 		icon = {
 			key = SOV_place_hq
 			trigger = {
+				651  = { NOT = { has_state_flag = SOV_hq_state_selected } }
 			}
 		}
 		icon = {
 			key = SOV_place_hq_left_opposition
 			trigger = {
+				651 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_left_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_right_opposition
 			trigger = {
+				651 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_right_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_exiles
 			trigger = {
+				651 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_exiles = yes
 			}
 		}
@@ -14147,6 +15186,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		visible = {
 			SOV_display_civil_war_start_state = yes
+			651 = { is_owned_by = ROOT }
 		}
 
 		cost = 10
@@ -14187,23 +15227,27 @@ SOV_soviet_civil_war_dec_cat = {
 		icon = {
 			key = SOV_place_hq
 			trigger = {
+				563 = { NOT = { has_state_flag = SOV_hq_state_selected } }
 			}
 		}
 		icon = {
 			key = SOV_place_hq_left_opposition
 			trigger = {
+				563 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_left_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_right_opposition
 			trigger = {
+				563 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_right_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_exiles
 			trigger = {
+				563 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_exiles = yes
 			}
 		}
@@ -14215,6 +15259,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		visible = {
 			SOV_display_civil_war_start_state = yes
+			563 = { is_owned_by = ROOT }
 		}
 
 		cost = 10
@@ -14255,23 +15300,27 @@ SOV_soviet_civil_war_dec_cat = {
 		icon = {
 			key = SOV_place_hq
 			trigger = {
+				566 = { NOT = { has_state_flag = SOV_hq_state_selected } }
 			}
 		}
 		icon = {
 			key = SOV_place_hq_left_opposition
 			trigger = {
+				566 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_left_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_right_opposition
 			trigger = {
+				566 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_right_opposition = yes
 			}
 		}
 		icon = {
 			key = SOV_place_hq_exiles
 			trigger = {
+				566 = { has_state_flag = SOV_hq_state_selected }
 				SOV_is_exiles = yes
 			}
 		}
@@ -14283,6 +15332,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		visible = {
 			SOV_display_civil_war_start_state = yes
+			566 = { is_owned_by = ROOT }
 			has_game_rule = { rule = sov_fragmentation_status option = SOV_UTTERLY_FRAGMENTED }
 		}
 
@@ -16586,6 +17636,21 @@ political_actions = {
 					#Has somewhat won against CHI and JAP
 				count_triggers = {
 					amount = 10
+					595 = { is_controlled_by = FROM }
+					596 = { is_controlled_by = FROM }
+					597 = { is_controlled_by = FROM }
+					598 = { is_controlled_by = FROM }
+					600 = { is_controlled_by = FROM }
+					601 = { is_controlled_by = FROM }
+					602 = { is_controlled_by = FROM }
+					603 = { is_controlled_by = FROM }
+					605 = { is_controlled_by = FROM }
+					606 = { is_controlled_by = FROM }
+					607 = { is_controlled_by = FROM }
+					608 = { is_controlled_by = FROM }
+					613 = { is_controlled_by = FROM }
+					614 = { is_controlled_by = FROM }
+					620 = { is_controlled_by = FROM }
 				}
 			}
 
@@ -16661,6 +17726,21 @@ political_actions = {
 			modifier = {
 				add = 100
 				#Has won against CHI and JAP
+				595 = { is_controlled_by = FROM }
+				596 = { is_controlled_by = FROM }
+				597 = { is_controlled_by = FROM }
+				598 = { is_controlled_by = FROM }
+				600 = { is_controlled_by = FROM }
+				601 = { is_controlled_by = FROM }
+				602 = { is_controlled_by = FROM }
+				603 = { is_controlled_by = FROM }
+				605 = { is_controlled_by = FROM }
+				606 = { is_controlled_by = FROM }
+				607 = { is_controlled_by = FROM }
+				608 = { is_controlled_by = FROM }
+				613 = { is_controlled_by = FROM }
+				614 = { is_controlled_by = FROM }
+				620 = { is_controlled_by = FROM }
 			}
 			modifier = {
 				add = 50

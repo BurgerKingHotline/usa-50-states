@@ -641,6 +641,7 @@ infiltrate_belarus_decisions = {
 					else = {
 						if = {
 							limit = {
+								206 = { check_variable = { BALTIC_claims > 0 } }
 							}
 							add_to_variable = {
 								var = civil_war_size_var
@@ -649,6 +650,7 @@ infiltrate_belarus_decisions = {
 						}
 						if = {
 							limit = {
+								204 = { check_variable = { BALTIC_claims > 0 } }
 							}
 							add_to_variable = {
 								var = civil_war_size_var
@@ -657,6 +659,7 @@ infiltrate_belarus_decisions = {
 						}
 						if = {
 							limit = {
+								194 = { check_variable = { BALTIC_claims > 0 } }
 							}
 							add_to_variable = {
 								var = civil_war_size_var
@@ -665,6 +668,7 @@ infiltrate_belarus_decisions = {
 						}
 						if = {
 							limit = {
+								241 = { check_variable = { BALTIC_claims > 0 } }
 							}
 							add_to_variable = {
 								var = civil_war_size_var
@@ -673,6 +677,7 @@ infiltrate_belarus_decisions = {
 						}
 						if = {
 							limit = {
+								207 = { check_variable = { BALTIC_claims > 0 } }
 							}
 							add_to_variable = {
 								var = civil_war_size_var
@@ -761,6 +766,53 @@ BALTIC_forest_brother_resistance_cat = {
 
 		timeout_effect = {
 			random_list = {
+				25 = {
+					country_event = { id = BALTIC_events.11 }
+					modifier = {
+						factor = 0
+						has_country_flag = recent_forest_brothers_1
+					}
+				}
+				25 = {
+					hidden_effect = {
+						random_owned_state = {
+							limit = {
+								OR = {
+									arms_factory > 0
+									industrial_complex > 0
+								}
+							}
+							save_event_target_as = forest_brothers_raid_state_target
+						}
+					}
+					country_event = { id = BALTIC_events.12 }
+					modifier = {
+						factor = 0
+						has_country_flag = recent_forest_brothers_2
+					}
+				}
+				25 = {
+					hidden_effect = {
+						random_owned_state = {
+							limit = {
+								is_core_of = ROOT
+							}
+							save_event_target_as = forest_brothers_raid_state_target
+						}
+					}
+					country_event = { id = BALTIC_events.13 }
+					modifier = {
+						factor = 0
+						has_country_flag = recent_forest_brothers_3
+					}
+				}
+				25 = {
+					country_event = { id = BALTIC_events.14 }
+					modifier = {
+						factor = 0
+						has_country_flag = recent_forest_brothers_4
+					}
+				}
 			}
 			hidden_effect = {
 				clr_country_flag = recent_forest_brothers_1
