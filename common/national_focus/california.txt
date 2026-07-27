@@ -63,6 +63,8 @@ focus_tree = {
 				}
 				CAL_civil_unrest_level_down = yes
 			}
+			add_political_power = 25
+			add_stability = 0.025
 		}
 	}
 	focus = {
@@ -105,6 +107,7 @@ focus_tree = {
 				}
 				CAL_civil_unrest_level_down = yes
 			}
+			set_country_flag = CAL_one_term_governor_ammendment
 		}
 	}
 	focus = {
@@ -126,6 +129,7 @@ focus_tree = {
 				}
 				CAL_civil_unrest_level_down = yes
 			}
+			add_stability = 0.05
 		}
 	}
 	focus = {
@@ -147,6 +151,7 @@ focus_tree = {
 				}
 				CAL_civil_unrest_level_down = yes
 			}
+			set_country_flag = CAL_independence_day_official
 		}
 	}
 	focus = {
@@ -165,11 +170,12 @@ focus_tree = {
 		x = 1
 		y = 2
 		completion_reward = { 
-			if = {
-				limit = {
-					CAL_has_civil_unrest_idea = yes
-				}
-				CAL_civil_unrest_level_down = yes
+			add_popularity = {
+				ideology = conservatism_ideology
+				popularity = 0.05
+			}
+			add_ideas = {
+				CAL_gold_standard
 			}
 		}
 	}
@@ -205,11 +211,12 @@ focus_tree = {
 		x = -1
 		y = 2
 		completion_reward = { 
-			if = {
-				limit = {
-					CAL_has_civil_unrest_idea = yes
-				}
-				CAL_civil_unrest_level_down = yes
+			add_popularity = {
+				ideology = conservatism_ideology
+				popularity = -0.05
+			}
+			add_ideas = {
+				CAL_fiat_currency
 			}
 		}
 	}
@@ -217,7 +224,7 @@ focus_tree = {
 		id = CAL_scramble_army
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
-		x = -18
+		x = -19
 		y = 1
 		completion_reward = { }
 	}
@@ -572,6 +579,9 @@ focus_tree = {
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
 		}
+		available = {
+			has_country_flag = CAL_epic_path
+		}
 		prerequisite = {
 			focus = CAL_strengthen_da
 			focus = CAL_reassure_public
@@ -715,6 +725,13 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = CAL_intro_focus
+		}
+		offset = {
+			x = 0
+			y = -1
+			trigger = {
+				has_country_flag = CAL_epic_path
+			}
 		}
 		bypass = {
 			always = yes
@@ -935,6 +952,7 @@ focus_tree = {
 			focus = CAL_socialist_governor
 		}
 		completion_reward = { 
+			add_political_power = 100
 		}
 	}
 	focus = {
@@ -951,6 +969,7 @@ focus_tree = {
 			focus = CAL_socialist_governor
 		}
 		completion_reward = { 
+			add_political_power = 100
 		}
 	}
 	focus = {
@@ -966,7 +985,8 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_socialist_governor
 		}
-		completion_reward = { 
+		completion_reward = {
+			add_ideas = CAL_fishbowl_governorship 
 		}
 	}
 	focus = {
@@ -1063,6 +1083,11 @@ focus_tree = {
 			focus = CAL_production_act
 		}
 		completion_reward = { 
+			set_variable = {
+				var = CAL_sell_epic_bonds_cost
+				value = 50
+				tooltip = set_sell_bonds_cost_to_50_tt
+			}
 		}
 	}
 	focus = {
@@ -1085,6 +1110,7 @@ focus_tree = {
 			focus = CAL_production_act
 		}
 		completion_reward = { 
+			CAL_great_depression_level_down = yes
 		}
 	}
 	focus = {
@@ -1107,6 +1133,7 @@ focus_tree = {
 			focus = CAL_production_act
 		}
 		completion_reward = { 
+			CAL_epic_costs_level_down = yes
 		}
 	}
 	focus = {
@@ -1123,6 +1150,7 @@ focus_tree = {
 			focus = CAL_black_hand
 		}
 		completion_reward = { 
+			unlock_decision_tooltip = CAL_abosrb_failing_businessess_decision
 		}
 	}
 	focus = {
@@ -1143,6 +1171,9 @@ focus_tree = {
 			focus = CAL_death_tax
 		}
 		completion_reward = { 
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 	focus = {
@@ -1165,6 +1196,8 @@ focus_tree = {
 			focus = CAL_production_act
 		}
 		completion_reward = { 
+			add_stability = 0.05
+			add_war_support = 0.05
 		}
 	}
 	focus = {
@@ -1185,6 +1218,9 @@ focus_tree = {
 			focus = CAL_death_tax
 		}
 		completion_reward = { 
+			add_ideas = {
+				CAL_tax_the_rich
+			}
 		}
 	}
 	focus = {
@@ -1205,6 +1241,7 @@ focus_tree = {
 			focus = CAL_death_tax
 		}
 		completion_reward = { 
+			add_offsite_building = { type = industrial_complex level = 4}
 		}
 	}
 	focus = {
@@ -1238,7 +1275,13 @@ focus_tree = {
 #		prerequisite = {
 #			focus = CAL_replace_sales_tax
 #		}
+		select_effect = {
+			CAL_epic_costs_level_down = yes
+
+		}
 		completion_reward = { 
+			CAL_epic_costs_level_down = yes
+			
 		}
 	}
 	focus = {
@@ -1261,6 +1304,11 @@ focus_tree = {
 			focus = CAL_production_act
 		}
 		completion_reward = { 
+			add_to_variable = {
+				var = CAL_epic_costs_mission_time
+				value = 45
+				tooltip = add_35_days_to_epic_costs_mission
+			}
 		}
 	}
 	focus = {
@@ -1277,6 +1325,11 @@ focus_tree = {
 			focus = CAL_the_epic_plan
 		}
 		completion_reward = { 
+			country_event = {
+				id = california_events.14
+				random_hours = 6
+				days = 1
+			}
 		}
 	}
 	focus = {
@@ -1295,6 +1348,12 @@ focus_tree = {
 			focus = CAL_absorb_failing_businesses
 		}
 		completion_reward = { 
+			country_event = {
+				id = california_events.17
+				random_hours = 6
+				days = 1
+			}
+
 		}
 	}
 	focus = {
@@ -1311,6 +1370,11 @@ focus_tree = {
 			focus = CAL_black_hand
 		}
 		completion_reward = { 
+			country_event = {
+				id = california_events.15
+				random_hours = 6
+				days = 1
+			}
 		}
 	}
 	focus = {
@@ -1326,7 +1390,18 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_black_hand
 		}
+		modifier = {
+		}
 		completion_reward = { 
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = conservatism_ideology
+				popularity = -0.05
+			}
+			add_stability = 0.05
 		}
 	}
 	focus = {
@@ -1345,6 +1420,9 @@ focus_tree = {
 			has_country_flag = CAL_epic_path
 		}
 		completion_reward = { 
+			remove_idea = {
+				CAL_corporate_influence
+			}
 		}
 	}
 	focus = {
@@ -1363,6 +1441,7 @@ focus_tree = {
 			focus = CAL_absorb_failing_businesses
 		}
 		completion_reward = { 
+			add_research_slot = 1
 		}
 	}
 	focus = {
@@ -1381,6 +1460,11 @@ focus_tree = {
 			focus = CAL_absorb_failing_businesses
 		}
 		completion_reward = { 
+			country_event = {
+				id = california_events.16
+				random_hours = 6
+				days = 1
+			}
 		}
 	}
 	focus = {
@@ -1406,6 +1490,8 @@ focus_tree = {
 			focus = CAL_ban_advertising
 		}
 		completion_reward = { 
+			add_political_power = 100
+			add_stability = 0.1
 		}
 	}
 

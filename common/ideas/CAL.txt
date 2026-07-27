@@ -359,7 +359,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.1
 				party_popularity_stability_factor = -0.05
-				stability_weekly =-0.02
+				stability_weekly =-0.0002
 			}
 		}
 		CAL_civil_unrest_2 = {
@@ -378,7 +378,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.2
 				party_popularity_stability_factor = -0.10
-				stability_weekly =-0.04
+				stability_weekly =-0.0004
 			}
 		}
 		CAL_civil_unrest_3 = {
@@ -397,7 +397,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.3
 				party_popularity_stability_factor = -0.15
-				stability_weekly =-0.06
+				stability_weekly =-0.0006
 			}
 		}
 		CAL_civil_unrest_4 = {
@@ -416,7 +416,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.4
 				party_popularity_stability_factor = -0.2
-				stability_weekly =-0.08
+				stability_weekly =-0.0008
 			}
 		}
 		CAL_civil_unrest_5 = {
@@ -435,7 +435,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.5
 				party_popularity_stability_factor = -0.25
-				stability_weekly =-0.1
+				stability_weekly =-0.001
 			}
 		}
 		CAL_longshoremen_strikes = {
@@ -489,6 +489,95 @@ ideas = {
 				consumer_goods_factor = 0.2
 				stability_factor = -0.2
 				war_supprt_factor = -0.2
+			}
+		}
+		CAL_fishbowl_governorship = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				party_popularity_stability_factor = 0.1
+				political_power_factor = 0.15
+			}
+
+		}
+		CAL_corporate_influence = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				consumer_goods_factor = 0.25
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+
+		}
+		CAL_tax_the_rich = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				consumer_goods_factor = -0.25
+				political_power_cost = -0.1
+			}
+
+		}
+		CAL_fiat_currency = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = 0.25
+				cic_construction_boost = 0.05
+			}
+		}
+		CAL_gold_standard ={
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				stability_factor =0.2
+				party_popularity_stability_factor = 0.05
+				cic_construction_boost = -0.05
+				consumer_goods_factor = 0.1
 			}
 		}
 	}

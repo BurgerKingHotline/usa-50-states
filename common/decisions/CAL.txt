@@ -104,11 +104,11 @@ CAL_economics_of_cooperation_cat = {
 		cancel_trigger = {
 			#always = no
 		}
-		days_re_enable = 0
+		days_re_enable = 1
 		priority = 50
-		days_mission_timeout = 90
+		days_mission_timeout = CAL_epic_costs_mission_time
 		available = {
-			always = no
+			has_completed_focus = CAL_golden_rule
 		}
 		icon = generic_prepare_civil_war
 		timeout_effect = {
@@ -224,7 +224,7 @@ CAL_economics_of_cooperation_cat = {
 			#always = no
 		}
 		days_re_enable = 10
-		priority = 10
+		priority = 101
 		days_mission_timeout = 180
 		available = {
 			#always = no
@@ -375,7 +375,7 @@ CAL_economics_of_cooperation_cat = {
 		modifier = {
 		}
 		
-		cost = 100
+		cost = CAL_epic_sieze_factories_cost
 
 		fire_only_once = yes
 
@@ -395,6 +395,49 @@ CAL_economics_of_cooperation_cat = {
 				var = CAL_depression_recovery
 				value = 75
 				tooltip = add_75_to_depression_recovery_var_tt
+			}
+			
+		}
+
+		complete_effect = {
+		}
+	}
+	CAL_abosrb_failing_businessess_decision = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = 90 
+		days_remove = 35
+		priority = 68
+
+		visible = {
+			OR = {
+				has_completed_focus = CAL_absorb_failing_businesses
+			}
+			
+		}
+
+		available = {
+		}
+		modifier = {
+		}
+		
+		cost = 65
+
+		ai_will_do = {
+			factor = 8
+		}
+		remove_effect = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 			
 		}

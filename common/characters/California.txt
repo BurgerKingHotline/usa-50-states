@@ -20,8 +20,8 @@ characters = {
 		gender = male
 		country_leader = {
 			ideology = conservatism_subideology
-			expire = "1934.11.6"
-			desc = CAL_james_rolph_desc
+			expire = "1955.5.25"
+			desc = CAL_frank_merriam_desc
 		}
 	}
 	CAL_UPTON_SINCLAIR = {

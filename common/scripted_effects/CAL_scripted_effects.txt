@@ -295,12 +295,6 @@ CAL_epic_costs_level_up = {
 			add_idea = CAL_epic_plan_cost_7
 		}
 	}
-	else = {
-		add_ideas = {
-			CAL_epic_plan_cost_1
-		}
-		
-	}
 }
 
 
