@@ -3,4 +3,33 @@ spriteTypes = {
         name = "GFX_goal_goldfish_bowl"
         texturefile = "gfx/interface/mod_goals/goal_goldfish_bowl.dds"
     }
+    spriteType = {
+        name = "GFX_goal_make_appointments"
+        texturefile = "gfx/interface/mod_goals/goal_make_appointments.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_upton_sinclair_governor"
+        texturefile = "gfx/interface/mod_goals/goal_upton_sinclair_governor.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_form_legal_committe"
+        texturefile = "gfx/interface/mod_goals/goal_form_legal_committe.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_california_money_act"
+        texturefile = "gfx/interface/mod_goals/goal_california_money_act.dds"
+    } 
+    spriteType = {
+        name = "GFX_goal_black_hand"
+        texturefile = "gfx/interface/mod_goals/goal_black_hand.dds"
+    }  
+    spriteType = {
+        name = "GFX_goal_our_daily_bread"
+        texturefile = "gfx/interface/mod_goals/goal_our_daily_bread.dds"
+    }  
+    spriteType = {
+        name = "GFX_goal_bumblebee"
+        texturefile = "gfx/interface/mod_goals/goal_bumblebee.dds"
+    }  
+
 }
