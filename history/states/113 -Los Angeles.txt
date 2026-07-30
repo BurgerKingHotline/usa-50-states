@@ -49,6 +49,7 @@ state = {
 			arms_factory = 2
 			dockyard = 2
 			infrastructure = 4
+			fuel_silo = 1
 		}
 	}
 }

@@ -18,3 +18,16 @@ CAL_economics_of_cooperation_cat= {
 	visible_when_empty = yes
 
 }
+CAL_balance_of_power_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = CAL
+	}
+	
+	priority = 90
+	
+	visible = {
+		
+	}
+}

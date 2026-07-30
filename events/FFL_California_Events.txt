@@ -321,6 +321,59 @@ country_event = {
 		add_political_power = 10
 	}
 }
+country_event = {
+	id = california_events.19#Coup of the Republic
+	title = california_events.19.t
+	desc = california_events.19.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	option = {
+		name = california_events.19.a 
+		add_popularity = {
+			ideology = communism
+			popularity = 0.10
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = socialism_ideology
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = populism_ideology
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.02
+		}
+		set_politics = {
+			ruling_party = communism
+		}
+	}
+
+}
+country_event = {
+	id = california_events.20#Arrest Conspirators
+	title = california_events.20.t
+	desc = california_events.20.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	option = {
+		name = california_events.20.a 
+	}
+
+}
 
 
 

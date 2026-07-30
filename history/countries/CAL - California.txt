@@ -22,6 +22,9 @@ set_variable = { CAL_epic_sieze_factories_cost = 100 }
 
 capital = 118
 
+set_power_balance = {
+	id = CAL_bop_socdem_comm_balance
+}
 
 recruit_character = CAL_JAMES_ROLPH
 recruit_character = CAL_UPTON_SINCLAIR

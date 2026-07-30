@@ -11,7 +11,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_intro_focus
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 10
 		x = 0
 		y = 0
@@ -23,7 +23,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_declare_independence#State Building
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity 
 		cost = 5
 		offset = {
 			x = -2
@@ -46,7 +46,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_strengthen_da
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
@@ -69,7 +69,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_new_currency
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
@@ -90,7 +90,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_one_term_ammendment
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
@@ -112,7 +112,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_reassure_public
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
@@ -134,7 +134,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_stoke_patriotism#independence day
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
@@ -156,7 +156,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_gold_standard
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
@@ -197,7 +197,7 @@ focus_tree = {
 #	}
 	focus = {
 		id = CAL_fiat_currency
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
@@ -224,21 +224,35 @@ focus_tree = {
 		id = CAL_scramble_army
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
-		x = -19
-		y = 1
+		x = -6
+		y = 6
+		offset = {
+			x = -2
+			y = 2
+			trigger = {
+				has_country_flag = CAL_epic_path
+			}
+		}
 		completion_reward = { }
 	}
 	focus = {
 		id = CAL_scavenge_navy
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
-		x = -11
+		x = 6
 		y = 6
+		offset = {
+			x = 0
+			y = 2
+			trigger = {
+				has_country_flag = CAL_epic_path
+			}
+		}
 		completion_reward = { }
 	}
 	focus = {
 		id = CAL_recruit_admirals
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -250,7 +264,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_upgrade_nps
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -262,7 +276,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_assemble_marine_corp
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -274,7 +288,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_research_submarines
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -291,7 +305,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_improve_ports#Eureka, Oakland, San Diego
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -310,7 +324,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_research_battleships
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -329,7 +343,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_new_generation_fleet
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -351,7 +365,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_old_generation_fleet
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -373,7 +387,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_research_carriers
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -392,7 +406,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_research_cruisers
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		relative_position_id = CAL_scavenge_navy
 		prerequisite = {
@@ -574,7 +588,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_the_republic_survives#declare republic, change it's name to republic of california, bear republic of california, or state of california
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_national_unity
 		cost = 5
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
@@ -602,7 +616,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_epic
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
 		y = 1
@@ -619,7 +633,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_grassroots_campaign
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
 		y = 1
@@ -634,7 +648,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_epic_news
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = -2
 		y = 1
@@ -649,7 +663,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_give_what_they_can
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 2
 		y = 1
@@ -664,7 +678,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_room_for_an_author
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 1
 		y = 2
@@ -680,7 +694,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_plan_starvation
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = -1
 		y = 2
@@ -696,7 +710,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_sinclair_elected
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
 		y = 3
@@ -717,7 +731,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_joaquin_strike
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_production
 		cost = 5
 		relative_position_id = CAL_intro_focus
 		allow_branch = {
@@ -742,7 +756,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_negotiate_cawui
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_production
 		cost = 5
 		relative_position_id = CAL_joaquin_strike
 		allow_branch = {
@@ -767,7 +781,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_disarm_strikers
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_production
 		cost = 5
 		relative_position_id = CAL_joaquin_strike
 		allow_branch = {
@@ -792,7 +806,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_back_to_work
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_production
 		cost = 5
 		relative_position_id = CAL_joaquin_strike
 		allow_branch = {
@@ -926,7 +940,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_socialist_governor
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
 		y = 0
@@ -940,7 +954,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_make_appointments
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = -2
 		y = 1
@@ -957,7 +971,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_form_legal_committee
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = 2
 		y = 1
@@ -974,7 +988,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_gold_fish_bowl
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_goldfish_bowl
 		cost = 5
 		x = 0
 		y = 1
@@ -991,7 +1005,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_money_act
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_production
 		cost = 5
 		x = 0
 		y = 1
@@ -1008,7 +1022,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_the_epic_plan
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
 		y = 2
@@ -1031,7 +1045,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_land_colonies_act
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_construct_infrastructure
 		cost = 5
 		x = -2
 		y = 1
@@ -1043,12 +1057,13 @@ focus_tree = {
 			focus = CAL_the_epic_plan
 		}
 		completion_reward = {
+			upgrade_economy_law = yes
 			unlock_decision_tooltip = CAL_create_colonies_decision
 		}
 	}
 	focus = {
 		id = CAL_production_act
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_construct_civ_factory
 		cost = 5
 		x = 2
 		y = 1
@@ -1060,12 +1075,13 @@ focus_tree = {
 			focus = CAL_the_epic_plan
 		}
 		completion_reward = { 
+			upgrade_economy_law = yes
 			unlock_decision_tooltip = CAL_sieze_idle_factories_decision
 		}
 	}
 	focus = {
 		id = CAL_cam_education_department#California Money Act
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = 0
 		y = 2
@@ -1092,7 +1108,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_replace_sales_tax
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = -2
 		y = 2
@@ -1115,7 +1131,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_income_tax
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = 2
 		y = 2
@@ -1138,7 +1154,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_absorb_failing_businesses
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
 		y = 1
@@ -1155,7 +1171,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_georgist_ammendment
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = 2
 		y = 3
@@ -1178,7 +1194,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_establish_pensions
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = -4
 		y = 2
@@ -1202,7 +1218,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_tax_code_ammendment
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = 0
 		y = 3
@@ -1225,7 +1241,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_tax_utilites
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = -2
 		y = 3
@@ -1246,7 +1262,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_golden_rule
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_generic_political_pressure
 		cost = 5
 		x = 0
 		y = 4
@@ -1285,7 +1301,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_death_tax
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_democracy
 		cost = 5
 		x = 4
 		y = 2
@@ -1312,7 +1328,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_black_hand#the black hand of california, choose to spy or not
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism 
 		cost = 5
 		x = 10
 		y = 3
@@ -1333,7 +1349,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_ban_advertising
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = -3
 		y = 2
@@ -1357,7 +1373,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_confront_radio_stations#either sieze or ask for reasonable concessions
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = -2
 		y = 1
@@ -1378,7 +1394,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_expose_big_bussiness#expose business autocracy
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 2
 		y = 1
@@ -1405,7 +1421,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_kick_out_lobbyists#remove corporate interest from government
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 3
 		y = 2
@@ -1426,7 +1442,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_assemble_brain_trust
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_focus_research
 		cost = 5
 		x = -1
 		y = 2
@@ -1445,7 +1461,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_empower_unions
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 1
 		y = 2
@@ -1468,7 +1484,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_death_of_autocracy#Work With the Enemy? Decide whether or not EPIC cooperatives will work with private business or boycott them.
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
 		y = 3
