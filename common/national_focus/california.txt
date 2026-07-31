@@ -940,7 +940,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_socialist_governor
-		icon = GFX_goal_upton_sinclair_governor
+		icon = GFX_goal_CAL_upton_sinclair_governor
 		cost = 5
 		x = 0
 		y = 0
@@ -954,7 +954,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_make_appointments
-		icon = GFX_goal_make_appointments
+		icon = GFX_goal_CAL_make_appointments
 		cost = 5
 		x = -2
 		y = 1
@@ -971,7 +971,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_form_legal_committee
-		icon = GFX_goal_form_legal_committe
+		icon = GFX_goal_CAL_form_legal_committe
 		cost = 5
 		x = 2
 		y = 1
@@ -988,7 +988,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_gold_fish_bowl
-		icon = GFX_goal_goldfish_bowl
+		icon = GFX_goal_CAL_goldfish_bowl
 		cost = 5
 		x = 0
 		y = 1
@@ -1005,7 +1005,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_money_act
-		icon = GFX_goal_california_money_act
+		icon = GFX_goal_CAL_california_money_act
 		cost = 5
 		x = 0
 		y = 1
@@ -1022,7 +1022,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_the_epic_plan
-		icon = GFX_goal_bumblebee
+		icon = GFX_goal_CAL_bumblebee
 		cost = 5
 		x = 0
 		y = 2
@@ -1045,7 +1045,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_land_colonies_act#Our Daily Bread Instead?
-		icon = GFX_goal_our_daily_bread
+		icon = GFX_goal_CAL_our_daily_bread
 		cost = 5
 		x = -2
 		y = 1
@@ -1063,7 +1063,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_production_act
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_goal_CAL_production_act
 		cost = 5
 		x = 2
 		y = 1
@@ -1108,7 +1108,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_replace_sales_tax
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_burden_off_consumer
 		cost = 5
 		x = -2
 		y = 2
@@ -1131,7 +1131,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_income_tax
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_tax_the_rich
 		cost = 5
 		x = 2
 		y = 2
@@ -1194,7 +1194,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_establish_pensions
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_pensions
 		cost = 5
 		x = -4
 		y = 2
@@ -1301,7 +1301,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_death_tax
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_death_tax
 		cost = 5
 		x = 4
 		y = 2
@@ -1328,7 +1328,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_black_hand#the black hand of california, choose to spy or not
-		icon = GFX_goal_black_hand 
+		icon = GFX_goal_CAL_black_hand 
 		cost = 5
 		x = 10
 		y = 3
