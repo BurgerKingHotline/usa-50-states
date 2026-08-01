@@ -710,7 +710,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_sinclair_elected
-		icon = GFX_goal_upton_sinclair_governor
+		icon = GFX_goal_CAL_upton_socialist_governor_alternate
 		cost = 5
 		x = 0
 		y = 3
@@ -940,7 +940,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_socialist_governor
-		icon = GFX_goal_CAL_upton_sinclair_governor
+		icon = GFX_goal_CAL_upton_socialist_governor_alternate
 		cost = 5
 		x = 0
 		y = 0
@@ -1079,33 +1079,33 @@ focus_tree = {
 			unlock_decision_tooltip = CAL_sieze_idle_factories_decision
 		}
 	}
-	focus = {
-		id = CAL_cam_education_department#California Money Act
-		icon = GFX_goal_support_democracy
-		cost = 5
-		x = 0
-		y = 2
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_land_colonies_act
-		}
-		prerequisite = {
-			focus = CAL_money_act
-		}
-		prerequisite = {
-			focus = CAL_production_act
-		}
-		completion_reward = { 
-			set_variable = {
-				var = CAL_sell_epic_bonds_cost
-				value = 50
-				tooltip = set_sell_bonds_cost_to_50_tt
-			}
-		}
-	}
+#	focus = {
+#		id = CAL_cam_education_department#California Money Act
+#		icon = GFX_goal_support_democracy
+#		cost = 5
+#		x = 0
+#		y = 2
+#		relative_position_id = CAL_the_epic_plan
+#		allow_branch = {
+#			has_country_flag = CAL_epic_path
+#		}
+#		prerequisite = {
+#			focus = CAL_land_colonies_act
+#		}
+#		prerequisite = {
+#			focus = CAL_money_act
+#		}
+#		prerequisite = {
+#			focus = CAL_production_act
+#		}
+#		completion_reward = { 
+#			set_variable = {
+#				var = CAL_sell_epic_bonds_cost
+#				value = 50
+#				tooltip = set_sell_bonds_cost_to_50_tt
+#			}
+#		}
+#	}
 	focus = {
 		id = CAL_replace_sales_tax
 		icon = GFX_goal_CAL_burden_off_consumer
@@ -1152,23 +1152,23 @@ focus_tree = {
 			CAL_epic_costs_level_down = yes
 		}
 	}
-	focus = {
-		id = CAL_absorb_failing_businesses
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = 0
-		y = 1
-		relative_position_id = CAL_black_hand
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_black_hand
-		}
-		completion_reward = { 
-			unlock_decision_tooltip = CAL_abosrb_failing_businessess_decision
-		}
-	}
+#	focus = {
+#		id = CAL_absorb_failing_businesses#REMOVE
+#		icon = GFX_goal_support_communism
+#		cost = 5
+#		x = 0
+#		y = 1
+#		relative_position_id = CAL_black_hand
+#		allow_branch = {
+#			has_country_flag = CAL_epic_path
+#		}
+#		prerequisite = {
+#			focus = CAL_black_hand
+#		}
+#		completion_reward = { 
+#			unlock_decision_tooltip = CAL_abosrb_failing_businessess_decision
+#		}
+#	}
 	focus = {
 		id = CAL_georgist_ammendment
 		icon = GFX_goal_support_democracy
@@ -1182,7 +1182,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_establish_pensions
 			focus = CAL_replace_sales_tax
-			focus = CAL_cam_education_department
+			focus = CAL_ban_advertising
 			focus = CAL_income_tax
 			focus = CAL_death_tax
 		}
@@ -1229,7 +1229,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_establish_pensions
 			focus = CAL_replace_sales_tax
-			focus = CAL_cam_education_department
+			focus = CAL_ban_advertising
 			focus = CAL_income_tax
 			focus = CAL_death_tax
 		}
@@ -1252,7 +1252,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_establish_pensions
 			focus = CAL_replace_sales_tax
-			focus = CAL_cam_education_department
+			focus = CAL_ban_advertising
 			focus = CAL_income_tax
 			focus = CAL_death_tax
 		}
@@ -1349,18 +1349,22 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_ban_advertising
-		icon = GFX_goal_support_communism
+		icon = GFX_goal_CAL_ban_advertising
 		cost = 5
-		x = -3
+		x = 0
 		y = 2
-		relative_position_id = CAL_black_hand
+		relative_position_id = CAL_the_epic_plan
 		allow_branch = {
 			has_country_flag = CAL_epic_path
 		}
 		prerequisite = {
-			focus = CAL_confront_radio_stations
-			focus = CAL_expose_big_bussiness
-			focus = CAL_absorb_failing_businesses
+			focus = CAL_land_colonies_act
+		}
+		prerequisite = {
+			focus = CAL_money_act
+		}
+		prerequisite = {
+			focus = CAL_production_act
 		}
 		completion_reward = { 
 			country_event = {
@@ -1373,9 +1377,9 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_confront_radio_stations#either sieze or ask for reasonable concessions
-		icon = GFX_goal_support_communism
+		icon = GFX_goal_CAL_confront_radio_stations
 		cost = 5
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = CAL_black_hand
 		allow_branch = {
@@ -1396,7 +1400,7 @@ focus_tree = {
 		id = CAL_expose_big_bussiness#expose business autocracy
 		icon = GFX_goal_support_communism
 		cost = 5
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = CAL_black_hand
 		allow_branch = {
@@ -1423,13 +1427,13 @@ focus_tree = {
 		id = CAL_kick_out_lobbyists#remove corporate interest from government
 		icon = GFX_goal_support_communism
 		cost = 5
-		x = 3
+		x = 2
 		y = 2
 		relative_position_id = CAL_black_hand
 		prerequisite = {
 			focus = CAL_confront_radio_stations
 			focus = CAL_expose_big_bussiness
-			focus = CAL_absorb_failing_businesses
+			#focus = CAL_absorb_failing_businesses
 		}
 		allow_branch = {
 			has_country_flag = CAL_epic_path
@@ -1442,9 +1446,9 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_assemble_brain_trust
-		icon = GFX_focus_research
+		icon = GFX_goal_CAL_assemble_brain_trust
 		cost = 5
-		x = -1
+		x = -2
 		y = 2
 		relative_position_id = CAL_black_hand
 		allow_branch = {
@@ -1453,7 +1457,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_confront_radio_stations
 			focus = CAL_expose_big_bussiness
-			focus = CAL_absorb_failing_businesses
+			#focus = CAL_absorb_failing_businesses
 		}
 		completion_reward = { 
 			add_research_slot = 1
@@ -1463,7 +1467,7 @@ focus_tree = {
 		id = CAL_empower_unions
 		icon = GFX_goal_support_communism
 		cost = 5
-		x = 1
+		x = 0
 		y = 2
 		relative_position_id = CAL_black_hand
 		allow_branch = {
@@ -1472,7 +1476,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_confront_radio_stations
 			focus = CAL_expose_big_bussiness
-			focus = CAL_absorb_failing_businesses
+			#focus = CAL_absorb_failing_businesses
 		}
 		completion_reward = { 
 			country_event = {
@@ -1500,9 +1504,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = CAL_kick_out_lobbyists
-		}
-		prerequisite = {
-			focus = CAL_ban_advertising
 		}
 		completion_reward = { 
 			add_political_power = 100

@@ -51,5 +51,21 @@ spriteTypes = {
         name = "GFX_goal_CAL_tax_the_rich"
         texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_tax_the_rich.dds"
     }
+    spriteType = {
+        name = "GFX_goal_CAL_upton_socialist_governor_alternate"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_upton_socialist_governor_alternate.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_confront_radio_stations"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_confront_radio_stations.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_assemble_brain_trust"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_assemble_brain_trust.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_ban_advertising"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_ban_advertising.dds"
+    }
 
 }

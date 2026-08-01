@@ -1,0 +1,15 @@
+state = {
+	id = 127
+	name = "STATE_127"
+	provinces = {
+		4826 5356 9199
+	}
+	state_category = rural
+	manpower = 426000
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+	history = {
+		owner = ARZ
+		add_core_of = ARZ
+	}
+}

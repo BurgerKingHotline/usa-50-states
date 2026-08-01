@@ -1,11 +1,12 @@
 CAL_1934_gubernatorial_election = {
 	allowed = {
-		tag = CAL
+#		tag = CAL
+		always = no
 	}
 	visible = {
-		always = yes
+		always = no#yes
 	}
-	visible_when_empty = yes
+	visible_when_empty = no#yes
 
 }
 CAL_economics_of_cooperation_cat= {

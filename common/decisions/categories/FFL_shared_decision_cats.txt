@@ -1,0 +1,18 @@
+colorado_water_wars_cat = {
+		priority = 45
+		picture = GFX_decision_cat_picture_generic_promote_immigration_cat
+		icon = GFX_decision_SWI_support_humanitarian_efforts
+
+		allowed = {
+			AND = {
+				OR = {
+					tag = CAL
+					tag = NVD
+					tag = UTT
+					tag = ARZ
+				}
+			}
+		}
+		visible_when_empty = yes
+
+}
