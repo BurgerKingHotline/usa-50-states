@@ -12,14 +12,11 @@ characters = {
 			desc = "Governor of Washington, 1925-1933"
 		}
 	}
-}
-
-# Characters for Washington
-characters = {
+	
 	WASHINGTON_GOV_1933_DEM = {
-		name = "Roland H. Hartley"
+		name = "Clarence D. Martin"
 		portraits = {
-			civilian = { large = "GFX_WSH_Portrait_Roland_H_Hartley" }
+			civilian = { large = "GFX_WSH_Portrait_Clarence_D_Martin" }
 		}
 		gender = male
 		country_leader = {
