@@ -1,0 +1,18 @@
+state = {
+	id = 130
+	name = "STATE_130"
+	manpower = 17359
+	state_category = rural
+	history = { 
+		owner = CAL
+		add_core_of = CAL
+		victory_points = {
+			6512 1#Ukiah
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+	provinces = { 7815 6282 7861 3393 4699 7920 6512 3636 }
+}

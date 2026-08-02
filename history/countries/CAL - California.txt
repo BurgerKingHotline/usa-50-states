@@ -19,6 +19,12 @@ set_variable = { CAL_sell_epic_bonds_cost = 100 }
 set_variable = { CAL_epic_costs_mission_time = 75 }
 set_variable = { CAL_epic_sieze_factories_cost = 100 }
 
+country_event = {
+    id = california_events.21
+    days = 60
+    random_hours = 12
+    random_days = 10
+}
 
 capital = 118
 

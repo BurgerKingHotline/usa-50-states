@@ -1,0 +1,17 @@
+capital = 109
+recruit_character = JEF_JEFFERSON_GOV
+
+set_politics = {
+        ruling_party = populism_ideology
+        election_frequency = 48
+        elections_allowed = yes
+    }
+set_popularities = {
+        democratic = 13
+        conservatism_ideology = 25
+        socialism_ideology = 8
+        populism_ideology = 39
+        neutrality = 9
+        fascism = 5
+        communism = 1
+    }

@@ -1,3 +1,4 @@
+JEF = "countries/Jefferson.txt"
 WSH = "countries/Washington.txt"
 ORE = "countries/Oregon.txt"
 CAL = "countries/California.txt"

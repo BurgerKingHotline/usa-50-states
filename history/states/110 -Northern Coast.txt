@@ -1,7 +1,7 @@
 state = {
 	id = 110
 	name = "STATE_110"
-	manpower = 81472
+	manpower = 64113
 	state_category = rural
 	history = { 
 		owner = CAL
@@ -15,16 +15,13 @@ state = {
 		victory_points = {
 			3863 1#Crescent City
 		}
-		victory_points = {
-			6512 1#Ukiah
-		}
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
+			arms_factory = 1
 			7656 = {
 				naval_base = 4
 			}
 		}
 	}
-	provinces = { 2269 2616 3053 3145 3393 3636 3726 3863 4699 4905 5208 6159 6282 6512 7616 7656 7701 7780 7815 7861 7920 13014 }
+	provinces = { 2269 2616 3053 3145 3726 3863 4905 5208 6159 7616 7656 7701 7780 13014 }
 }

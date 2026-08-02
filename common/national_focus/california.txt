@@ -1439,7 +1439,7 @@ focus_tree = {
 			has_country_flag = CAL_epic_path
 		}
 		completion_reward = { 
-			remove_idea = {
+			remove_ideas = {
 				CAL_corporate_influence
 			}
 		}

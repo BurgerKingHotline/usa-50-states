@@ -10,6 +10,7 @@ country_event = {
 		tag = CAL
 		date > 1934.5.1
 	}
+	fire_only_once = yes
 	
 	option = { 
 		name = california_events.1.a
@@ -190,7 +191,7 @@ country_event = {
 	title = california_events.11.t
 	desc = california_events.11.desc
 	picture = GFX_report_event_usa_election_generic
-
+	fire_only_once = yes
 	trigger = {
 		tag = CAL
 		date > 1933.11.1
@@ -228,6 +229,7 @@ country_event = {
 		date > 1934.6.1
 		tag = CAL
 	}
+	fire_only_once = yes
 	option = {
 		name = california_events.13.a
 		add_manpower = -1
@@ -294,6 +296,7 @@ country_event = {
 	title = california_events.18.t
 	desc = california_events.18.desc
 	picture = GFX_report_event_usa_election_generic
+	fire_only_once = yes
 	trigger = { 
 		OR = {
 			date > 1933.6.10
@@ -373,6 +376,63 @@ country_event = {
 		name = california_events.20.a 
 	}
 
+}
+country_event = {
+	id = california_events.21#Jefferson Succeds :O
+	title = california_events.21.t
+	desc = california_events.21.desc
+	picture = GFX_report_event_usa_election_generic
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		109 = {
+			transfer_state_to = JEF
+			add_core_of = JEF
+			remove_core_of = CAL
+			add_claim_by = CAL
+		}
+		110 = {
+			transfer_state_to = JEF
+			add_core_of = JEF
+			remove_core_of = CAL
+			add_claim_by = CAL
+		}
+		JEF = {
+			load_oob = "JEFF_ffl"
+		}
+	}
+	option = {
+		name = california_events.21.a #issue ultimatum
+		country_event = {
+		    id = california_events.22
+		    days = 30
+		    random_hours = 12
+		}
+	}
+	option = {
+		name = california_events.21.b #let them secceed
+		add_stability = 0.05
+	}
+	after = {
+		news_event = ffl_news.3
+	}
+}
+country_event = {
+	id = california_events.22#Attack Jefferson
+	title = california_events.22.t
+	desc = california_events.22.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = california_events.22.a #invade
+		declare_war_on = {
+			target = JEF
+			type = annex_everything
+		}
+		news_event = ffl_news.4
+	}
 }
 
 
