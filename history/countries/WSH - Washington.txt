@@ -5,7 +5,7 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = yes
 }
-recruit_character = WASHINGTON_GOV
+recruit_character = WASHINGTON_GOV_1933_CON
 # Set party popularity BEFORE calculating seats
 set_popularities = {
 	democratic = 22

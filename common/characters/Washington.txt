@@ -1,6 +1,6 @@
 # Characters for Washington
 characters = {
-	WASHINGTON_GOV = {
+	WASHINGTON_GOV_1933_CON = {
 		name = "Roland H. Hartley"
 		portraits = {
 			civilian = { large = "GFX_WSH_Portrait_Roland_H_Hartley" }
@@ -8,6 +8,22 @@ characters = {
 		gender = male
 		country_leader = {
 			ideology = conservatism
+			expire = "1965.1.1"
+			desc = "Governor of Washington, 1925-1933"
+		}
+	}
+}
+
+# Characters for Washington
+characters = {
+	WASHINGTON_GOV_1933_DEM = {
+		name = "Roland H. Hartley"
+		portraits = {
+			civilian = { large = "GFX_WSH_Portrait_Roland_H_Hartley" }
+		}
+		gender = male
+		country_leader = {
+			ideology = democratic
 			expire = "1965.1.1"
 			desc = "Governor of Washington, 1925-1933"
 		}

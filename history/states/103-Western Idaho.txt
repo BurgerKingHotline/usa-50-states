@@ -12,5 +12,6 @@ state = {
 		victory_points = { 419 1 } # Weiser and Payette, ID
 		victory_points = { 1320 1 } # Caldwell, ID
 		victory_points = { 5796 1 } # Emmett, ID
+		victory_points = { 5870 10 } # Boise, ID
 	}
 }
