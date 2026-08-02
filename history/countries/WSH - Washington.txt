@@ -3,9 +3,12 @@ set_politics = {
 	ruling_party = democratic
 	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 recruit_character = WASHINGTON_GOV_1933_CON
+recruit_character = WASHINGTON_GOV_1933_DEM
+add_ideas = WSH_uncertain_succession
+country_event = { id = WSH_hartley.1 days = 1 }
 # Set party popularity BEFORE calculating seats
 set_popularities = {
 	democratic = 22

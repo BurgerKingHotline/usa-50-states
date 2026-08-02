@@ -1,0 +1,72 @@
+WSH_hartley_governance_cat = {
+
+	WSH_issue_short_term_warrants = {
+		icon = generic_political_discourse
+		visible = { has_country_flag = WSH_state_insolvency }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = 40
+			add_to_variable = { WSH_business_approval = -2 }
+			add_stability = -0.01
+		}
+	}
+	WSH_suspend_nonessential_construction = {
+		icon = generic_construction
+		visible = { has_country_flag = WSH_state_insolvency }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_professional_approval = -2 }
+		}
+	}
+	WSH_renegotiate_state_contracts = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_state_insolvency }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_business_approval = -3 }
+			add_political_power = 30
+		}
+	}
+	WSH_collect_delinquent_property_taxes = {
+		icon = generic_political_address
+		visible = { has_country_flag = WSH_state_insolvency }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = 50
+			add_to_variable = { WSH_legislature_approval = -2 }
+			add_stability = -0.01
+		}
+	}
+	WSH_consolidate_state_agencies = {
+		icon = generic_operation
+		visible = { has_country_flag = WSH_state_insolvency }
+		available = { always = yes }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_professional_approval = -3 }
+			add_political_power = 25
+		}
+	}
+	WSH_guarantee_selected_banks = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_state_insolvency }
+		available = { always = yes }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_business_approval = 4 }
+			add_stability = 0.03
+		}
+	}
+}

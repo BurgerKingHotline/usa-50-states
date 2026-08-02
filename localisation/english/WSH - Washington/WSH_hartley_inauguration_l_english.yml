@@ -1,0 +1,55 @@
+﻿l_english:
+
+ # National Spirits
+ WSH_uncertain_succession: "Uncertain Succession"
+ WSH_uncertain_succession_desc: "The federal government is gone, but Washington's own election of 1932 was never certified. Until a Governor is lawfully seated, county officials, courts, and the Legislature are working from conflicting instructions."
+ WSH_lawful_transfer_underway: "Lawful Transfer Underway"
+ WSH_lawful_transfer_underway_desc: "State offices, records, treasury accounts, appointments, and emergency responsibilities are being transferred to the new administration. It will take time before the machinery of government runs smoothly again."
+ WSH_continuity_of_government: "Continuity of Government"
+ WSH_continuity_of_government_desc: "Olympia has proven that a lawful government can be seated and sustained even after Washington D.C. fell silent. The Republic of Washington governs on its own authority now."
+
+ # Focus Tree
+ WSH_governorship_must_continue: "The Governorship Must Continue"
+ WSH_governorship_must_continue_desc: "Federal dissolution has not invalidated Washington's state elections. County officials, courts, and legislators alike are demanding a lawful transfer of power to whoever actually won in 1932."
+ WSH_lawful_transfer: "A Lawful Transfer"
+ WSH_lawful_transfer_desc: "Certification alone does not make a government. Offices, records, and emergency powers must actually change hands - and how that happens will shape the character of the new administration."
+ WSH_oath_of_continuity: "The Oath of Continuity"
+ WSH_oath_of_continuity_desc: "Governor Hartley must decide, in the taking of his oath, exactly what he believes survived the collapse of the United States: its Constitution, its laws, or simply its offices."
+
+ # WSH_hartley.1
+ WSH_hartley.1.t: "The Governorship Must Continue"
+ WSH_hartley.1.desc: "Washington D.C. is gone, but Olympia is not. The state's 1932 election was never certified before the federal government dissolved, and for weeks the Governor's office has sat empty by default rather than by law.\n\nCounty auditors keep sending ballots nobody will count. The State Supreme Court has quietly begun drafting an opinion no one asked it for. In the Legislature, members from both parties agree on exactly one thing: this cannot continue.\n\nSomeone has to finish what the election started."
+ WSH_hartley.1.a: "Begin Certification"
+
+ # WSH_hartley.2
+ WSH_hartley.2.t: "The Election Is Certified"
+ WSH_hartley.2.desc: "The count is finished, the challenges are exhausted, and the Secretary of State has certified a winner. Whatever comes next, it will have the law behind it."
+ WSH_hartley.2.a: "Roland H. Hartley Has Prevailed"
+ WSH_hartley.2.b: "Martin Retains the Governorship"
+
+ # WSH_hartley.3
+ WSH_hartley.3.t: "A Lawful Transfer"
+ WSH_hartley.3.desc: "Certification settled the question of who won. It did not move a single file cabinet. The outgoing administration's appointees still hold the treasury keys, still sit at the department desks, and still answer the phones in the Governor's office.\n\nHartley must decide how quickly - and how completely - to make Olympia his own."
+ WSH_hartley.3.a: "Retain Experienced Officials"
+ WSH_hartley.3.b: "Install Hartley Loyalists"
+ WSH_hartley.3.c: "Require Legislative Approval"
+
+ # WSH_hartley.4
+ WSH_hartley.4.t: "The Oath of Continuity"
+ WSH_hartley.4.desc: "Before he can be sworn in, Hartley must settle what, exactly, he is swearing to uphold. The old federal Constitution is a dead letter. Washington's own constitution, ratified in 1889, never stopped being law - but nothing says it must be treated that way now."
+ WSH_hartley.4.a: "Preserve the State Constitution"
+ WSH_hartley.4.b: "Assume Emergency Sovereignty"
+ WSH_hartley.4.c: "Preserve Existing Law Provisionally"
+
+ # WSH_hartley.5
+ WSH_hartley.5.t: "Governor of the Republic"
+ WSH_hartley.5.desc: "Roland H. Hartley takes the oath on the steps of the Legislative Building in Olympia. Whatever Washington is now, it is not ungoverned. The treasury has a signature on its ledgers again, the National Guard has a commander-in-chief, and the courts have someone to answer to.\n\nThe hard part - actually governing what's left - starts tomorrow."
+ WSH_hartley.5.a: "Long Live the Republic of Washington"
+
+ # Decision Category
+ WSH_hartley_transition_cat: "Political Transition"
+ WSH_hartley_transition_cat_desc: "Decisions surrounding the certification and transfer of Washington's governorship."
+
+ # Decisions
+ WSH_certify_state_election: "Certify the Election"
+ WSH_certify_state_election_desc: "Push the Secretary of State's office and the county auditors to finish certifying the 1932 gubernatorial election, whatever the outcome turns out to be."

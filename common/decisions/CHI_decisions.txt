@@ -4042,7 +4042,7 @@ foreign_support = {
 		available = {	
 			OR = {
 				434 = {
-					CONTROLLER = {
+					controller = {
 						NOT = {
 							has_war_with = CHI
 						}
@@ -4050,7 +4050,7 @@ foreign_support = {
 					}
 				}
 				601 = {
-					CONTROLLER = {
+					controller = {
 						OR = {
 							has_completed_focus = CHI_the_hump
 							has_completed_focus = CHI_sea_the_hump

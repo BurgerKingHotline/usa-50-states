@@ -1,0 +1,91 @@
+WSH_hartley_governance_cat = {
+
+	WSH_occupy_federal_courthouse = {
+		icon = generic_operation
+		visible = { has_country_flag = WSH_unclaimed_federal_assets }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = 25
+			add_to_variable = { WSH_legislature_approval = -1 }
+		}
+	}
+	WSH_secure_postal_facilities = {
+		icon = generic_operation
+		visible = { has_country_flag = WSH_unclaimed_federal_assets }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_professional_approval = 1 }
+		}
+	}
+	WSH_inventory_federal_warehouses = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_unclaimed_federal_assets }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_business_approval = 1 }
+			add_political_power = 15
+		}
+	}
+	WSH_assume_customs_operations = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_unclaimed_federal_assets }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = 30
+			add_to_variable = { WSH_business_approval = 1 }
+		}
+	}
+	WSH_transfer_forestry_administration = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_unclaimed_federal_assets }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_professional_approval = 1 }
+		}
+	}
+	WSH_seize_abandoned_communications_equipment = {
+		icon = generic_operation
+		visible = { has_country_flag = WSH_unclaimed_federal_assets }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_military_approval = 1 }
+			add_to_variable = { WSH_legislature_approval = -1 }
+		}
+	}
+	WSH_negotiate_with_federal_employees = {
+		icon = generic_political_discourse
+		visible = { has_country_flag = WSH_unclaimed_federal_assets }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_professional_approval = 2 }
+			add_to_variable = { WSH_labor_approval = 1 }
+		}
+	}
+	WSH_submit_ownership_to_supreme_court = {
+		icon = generic_political_address
+		visible = { has_country_flag = WSH_unclaimed_federal_assets }
+		available = { always = yes }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.03
+			add_to_variable = { WSH_legislature_approval = 2 }
+		}
+	}
+}

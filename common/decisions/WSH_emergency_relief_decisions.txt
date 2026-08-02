@@ -1,0 +1,103 @@
+WSH_hartley_governance_cat = {
+
+	WSH_fund_emergency_kitchens = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_labor_approval = 2 }
+		}
+	}
+	WSH_sponsor_cooperative_farms = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_labor_approval = 2 }
+			add_to_variable = { WSH_business_approval = -1 }
+		}
+	}
+	WSH_create_municipal_commissaries = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_legislature_approval = 1 }
+		}
+	}
+	WSH_halt_selected_evictions = {
+		icon = generic_political_address
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_business_approval = -1 }
+		}
+	}
+	WSH_employ_workers_on_state_roads = {
+		icon = generic_construction
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_labor_approval = 2 }
+			add_political_power = -15
+		}
+	}
+	WSH_reopen_closed_public_buildings = {
+		icon = generic_construction
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_professional_approval = 1 }
+		}
+	}
+	WSH_clear_or_recognize_hoovervilles = {
+		icon = generic_political_discourse
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_conservative_approval = 2 }
+			add_to_variable = { WSH_labor_approval = -2 }
+		}
+	}
+	WSH_negotiate_unemployed_citizens_league = {
+		icon = generic_political_discourse
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_labor_approval = 3 }
+			add_to_variable = { WSH_conservative_approval = -2 }
+		}
+	}
+	WSH_suppress_unauthorized_demonstrations = {
+		icon = generic_prepare_civil_war
+		visible = { has_country_flag = WSH_mass_unemployment }
+		available = { always = yes }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.03
+			add_to_variable = { WSH_labor_approval = -4 }
+			add_war_support = 0.02
+		}
+	}
+}

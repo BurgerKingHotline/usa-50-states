@@ -11,6 +11,8 @@ _toozers/*
 .github/*
 *.agents
 .agents/*
+*.claude
+.claude/*
 *.codex
 .codex/*
 _population/__pycache__
@@ -19,3 +21,6 @@ _population/__pycache__/*
 *.zip
 
 text.txt
+.drawio
+*.wrekt
+.wrekt/*

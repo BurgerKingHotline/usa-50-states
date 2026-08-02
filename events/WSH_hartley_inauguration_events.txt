@@ -1,0 +1,167 @@
+add_namespace = WSH_hartley
+
+# 1. Opening event - fires day one, sets up the problem, does not resolve it
+country_event = {
+	id = WSH_hartley.1
+	title = WSH_hartley.1.t
+	desc = WSH_hartley.1.desc
+	picture = GFX_report_event_usa_election_generic
+
+	trigger = {
+		tag = WSH
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = WSH_hartley.1.a #Begin Certification
+		set_country_flag = WSH_certification_tension
+		add_stability = -0.02
+	}
+	after = {
+		complete_national_focus = WSH_governorship_must_continue
+	}
+}
+
+# 3. Certification outcome - Hartley is the canonical/AI default path
+country_event = {
+	id = WSH_hartley.2
+	title = WSH_hartley.2.t
+	desc = WSH_hartley.2.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	option = { #Roland H. Hartley Has Prevailed
+		name = WSH_hartley.2.a
+		ai_chance = { factor = 85 }
+		set_politics = { ruling_party = conservatism_ideology elections_allowed = yes }
+		retire_country_leader = yes
+		promote_character = WASHINGTON_GOV_1933_CON
+		set_country_flag = WSH_hartley_certified
+		clr_country_flag = WSH_certification_underway
+		swap_ideas = {
+			remove_idea = WSH_uncertain_succession
+			add_idea = WSH_lawful_transfer_underway
+		}
+		add_stability = 0.05
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.03
+		}
+	}
+	option = { #Martin Retains the Governorship - noncanonical branch
+		name = WSH_hartley.2.b
+		ai_chance = { factor = 15 }
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		retire_country_leader = yes
+		promote_character = WASHINGTON_GOV_1933_DEM
+		set_country_flag = WSH_martin_holds_office
+		clr_country_flag = WSH_certification_underway
+		remove_ideas = WSH_uncertain_succession
+		add_popularity = {
+			ideology = socialism_ideology
+			popularity = 0.05
+		}
+		add_stability = -0.05
+	}
+}
+
+# 6. Transfer event - the first meaningful player choice
+country_event = {
+	id = WSH_hartley.3
+	title = WSH_hartley.3.t
+	desc = WSH_hartley.3.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Retain Experienced Officials
+		name = WSH_hartley.3.a
+		ai_chance = { factor = 40 }
+		add_stability = 0.02
+		add_political_power = -10
+		swap_ideas = {
+			remove_idea = WSH_lawful_transfer_underway
+			add_idea = WSH_continuity_of_government
+		}
+	}
+	option = { #Install Hartley Loyalists
+		name = WSH_hartley.3.b
+		ai_chance = { factor = 30 }
+		add_political_power = 25
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.03
+		}
+		set_country_flag = WSH_loyalist_appointments
+	}
+	option = { #Require Legislative Approval
+		name = WSH_hartley.3.c
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_legislative_transfer_oversight
+		add_stability = 0.03
+	}
+}
+
+# 7. Oath event - defines what survived the old United States
+country_event = {
+	id = WSH_hartley.4
+	title = WSH_hartley.4.t
+	desc = WSH_hartley.4.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Preserve the State Constitution - historical/canonical default
+		name = WSH_hartley.4.a
+		ai_chance = { factor = 70 }
+		set_country_flag = WSH_constitutional_continuity
+		add_stability = 0.05
+	}
+	option = { #Assume Emergency Sovereignty
+		name = WSH_hartley.4.b
+		ai_chance = { factor = 15 }
+		set_country_flag = WSH_emergency_sovereignty
+		set_variable = { WSH_authoritarian_risk = 1 }
+		add_political_power = 25
+	}
+	option = { #Preserve Existing Law Provisionally
+		name = WSH_hartley.4.c
+		ai_chance = { factor = 15 }
+		set_country_flag = WSH_provisional_law
+	}
+	after = {
+		country_event = {
+			id = WSH_hartley.5
+			days = 3
+			random_days = 2
+		}
+	}
+}
+
+# 8. Final inauguration event
+country_event = {
+	id = WSH_hartley.5
+	title = WSH_hartley.5.t
+	desc = WSH_hartley.5.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		if = {
+			limit = { has_idea = WSH_lawful_transfer_underway }
+			remove_ideas = WSH_lawful_transfer_underway
+		}
+		add_ideas = WSH_continuity_of_government
+		set_country_flag = WSH_inauguration_complete
+	}
+	option = {
+		name = WSH_hartley.5.a
+		add_stability = 0.05
+	}
+}

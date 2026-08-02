@@ -1,0 +1,11 @@
+WSH_hartley_transition_cat = {
+	icon = generic_political_pressure
+
+	allowed = {
+		always = yes
+	}
+
+	visible = {
+		tag = WSH
+	}
+}

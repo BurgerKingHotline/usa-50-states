@@ -1,0 +1,196 @@
+add_namespace = WSH_hartley
+
+# 10. Treasury opening event - fires on completion of WSH_empty_treasury_focus
+country_event = {
+	id = WSH_hartley.10
+	title = WSH_hartley.10.t
+	desc = WSH_hartley.10.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Cut Expenditure
+		name = WSH_hartley.10.a
+		ai_chance = { factor = 40 }
+		set_country_flag = WSH_treasury_cut_expenditure
+		add_to_variable = { WSH_business_approval = 3 }
+		add_to_variable = { WSH_labor_approval = -3 }
+		add_stability = 0.02
+	}
+	option = { #Issue Emergency Bonds
+		name = WSH_hartley.10.b
+		ai_chance = { factor = 35 }
+		set_country_flag = WSH_treasury_emergency_bonds
+		add_political_power = 25
+		add_to_variable = { WSH_legislature_approval = 2 }
+		add_to_variable = { WSH_professional_approval = 2 }
+	}
+	option = { #Seek Private Credit
+		name = WSH_hartley.10.c
+		ai_chance = { factor = 25 }
+		set_country_flag = WSH_treasury_private_credit
+		add_political_power = 30
+		add_to_variable = { WSH_business_approval = 5 }
+		add_to_variable = { WSH_legislature_approval = -3 }
+	}
+}
+
+# 20. National Guard opening event - fires on completion of WSH_command_of_the_guard
+country_event = {
+	id = WSH_hartley.20
+	title = WSH_hartley.20.t
+	desc = WSH_hartley.20.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Confirm Civilian State Command
+		name = WSH_hartley.20.a
+		ai_chance = { factor = 40 }
+		set_country_flag = WSH_guard_constitutional
+		add_stability = 0.03
+		add_to_variable = { WSH_legislature_approval = 3 }
+		add_to_variable = { WSH_military_approval = -2 }
+	}
+	option = { #Grant Hartley Emergency Command
+		name = WSH_hartley.20.b
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_guard_executive
+		add_political_power = 20
+		add_to_variable = { WSH_military_approval = 3 }
+		add_to_variable = { WSH_legislature_approval = -3 }
+	}
+	option = { #Create a Joint Defense Board
+		name = WSH_hartley.20.c
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_guard_joint_board
+		add_stability = 0.03
+		add_to_variable = { WSH_military_approval = 1 }
+		add_to_variable = { WSH_legislature_approval = 1 }
+		add_political_power = -15
+	}
+}
+
+# 30. Federal property opening event - fires on completion of WSH_federal_estate
+country_event = {
+	id = WSH_hartley.30
+	title = WSH_hartley.30.t
+	desc = WSH_hartley.30.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Assume Custodianship
+		name = WSH_hartley.30.a
+		ai_chance = { factor = 40 }
+		set_country_flag = WSH_property_custodianship
+		add_stability = 0.03
+		add_political_power = -10
+		add_to_variable = { WSH_legislature_approval = 2 }
+	}
+	option = { #Nationalize the Assets
+		name = WSH_hartley.30.b
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_property_nationalization
+		add_political_power = 30
+		add_stability = -0.03
+		add_to_variable = { WSH_professional_approval = -3 }
+	}
+	option = { #Transfer Assets Individually
+		name = WSH_hartley.30.c
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_property_individual_transfer
+		add_political_power = -5
+		add_stability = 0.02
+		add_to_variable = { WSH_legislature_approval = 2 }
+	}
+}
+
+# 40. Relief opening event - fires on completion of WSH_relief_cannot_wait
+country_event = {
+	id = WSH_hartley.40
+	title = WSH_hartley.40.t
+	desc = WSH_hartley.40.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #County Relief Grants
+		name = WSH_hartley.40.a
+		ai_chance = { factor = 25 }
+		set_country_flag = WSH_relief_county_grants
+		add_political_power = 15
+		add_stability = -0.01
+		add_to_variable = { WSH_legislature_approval = 2 }
+	}
+	option = { #State Public Works
+		name = WSH_hartley.40.b
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_relief_public_works
+		add_to_variable = { WSH_labor_approval = 3 }
+		add_stability = 0.02
+		add_political_power = -10
+	}
+	option = { #Recognize Cooperative Relief
+		name = WSH_hartley.40.c
+		ai_chance = { factor = 25 }
+		set_country_flag = WSH_relief_cooperative
+		add_to_variable = { WSH_labor_approval = 4 }
+		add_political_power = 10
+		add_war_support = 0.01
+	}
+	option = { #Relief Through Approved Charities
+		name = WSH_hartley.40.d
+		ai_chance = { factor = 20 }
+		set_country_flag = WSH_relief_charities
+		add_to_variable = { WSH_conservative_approval = 4 }
+		add_political_power = 20
+		add_to_variable = { WSH_labor_approval = -3 }
+	}
+}
+
+# 50. Convergence event - fires on completion of WSH_first_republican_budget
+country_event = {
+	id = WSH_hartley.50
+	title = WSH_hartley.50.t
+	desc = WSH_hartley.50.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = WSH_guard_joint_board
+				has_country_flag = WSH_property_individual_transfer
+				has_country_flag = WSH_relief_county_grants
+			}
+			add_ideas = WSH_legislative_compromise_government
+			set_country_flag = WSH_hartley_government_legislative_compromise
+		}
+		else_if = {
+			limit = { has_country_flag = WSH_treasury_cut_expenditure }
+			add_ideas = WSH_constitutional_conservative_government
+			set_country_flag = WSH_hartley_government_constitutional_conservative
+		}
+		else_if = {
+			limit = { has_country_flag = WSH_treasury_emergency_bonds }
+			add_ideas = WSH_emergency_development_government
+			set_country_flag = WSH_hartley_government_emergency_development
+		}
+		else = {
+			add_ideas = WSH_corporate_reconstruction_government
+			set_country_flag = WSH_hartley_government_corporate_reconstruction
+		}
+		set_country_flag = WSH_next_election_preparations
+	}
+	option = {
+		name = WSH_hartley.50.a
+		add_stability = 0.05
+	}
+}

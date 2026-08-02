@@ -7,12 +7,12 @@ characters = {
 		}
 		gender = male
 		country_leader = {
-			ideology = conservatism
+			ideology = conservatism_subideology
 			expire = "1965.1.1"
 			desc = "Governor of Washington, 1925-1933"
 		}
 	}
-	
+
 	WASHINGTON_GOV_1933_DEM = {
 		name = "Clarence D. Martin"
 		portraits = {
@@ -20,7 +20,7 @@ characters = {
 		}
 		gender = male
 		country_leader = {
-			ideology = democratic
+			ideology = liberalism
 			expire = "1965.1.1"
 			desc = "Governor of Washington, 1925-1933"
 		}
