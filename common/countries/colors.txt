@@ -1,4 +1,20 @@
 #reload countrycolors
+NVJ = {
+	color = rgb { 255 222 173 }
+	color_ui = rgb { 255 222 173 }
+}
+SCA = {
+	color = rgb { 91 37 18 }
+	color_ui = rgb { 91 37 18 }
+}
+WMA = {
+	color = rgb { 100 100 0 }
+	color_ui = rgb { 100 100 0 }
+}
+TON = {
+	color = rgb { 96 92 47 }
+	color_ui = rgb { 96 92 47 }
+}
 JEF = {
 	color = rgb {130 130 180 }
 	color_ui = rgb {130 130 180 }

@@ -1,3 +1,7 @@
+TON = "countries/Tohono Oodham.txt"
+SCA = "countries/San Carlos Apache.txt"
+WMA = "countries/White Mountain Apache.txt"
+NVJ = "countries/Navajo.txt"
 JEF = "countries/Jefferson.txt"
 WSH = "countries/Washington.txt"
 ORE = "countries/Oregon.txt"

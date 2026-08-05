@@ -488,7 +488,7 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.2
 				stability_factor = -0.2
-				war_supprt_factor = -0.2
+				war_support_factor = -0.2
 			}
 		}
 		CAL_fishbowl_governorship = {
@@ -543,7 +543,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.25
 				political_power_factor = -0.25
-				monthly_population = -0.25
+				consumer_goods_factor = 0.25
 				conservatism_ideology_drift = 0.01
 			}
 
@@ -619,6 +619,23 @@ ideas = {
 				party_popularity_stability_factor = 0.05
 				cic_construction_boost = -0.05
 				consumer_goods_factor = 0.1
+			}
+		}
+		CAL_sunshine_state ={
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = cal_sunshine_state
+			
+			modifier = {
+				monthly_population = 0.2
+				stability_factor = 0.1
+				war_stability_factor = 0.1
 			}
 		}
 	}

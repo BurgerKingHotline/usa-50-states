@@ -5,11 +5,12 @@ state = {
 		1165 2762 5425 8760 180 4824 6330 3185 424 8953 8898 4316 8796 722 8866 370 3225 5720 675 8824 2922
 	}
 	state_category = rural
-	manpower = 426000
+	manpower = 43000
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 	history = {
-		owner = ARZ
-		add_core_of = ARZ
+		owner = NVJ
+		add_core_of = NVJ
+		add_claim_by = ARZ
 	}
 }

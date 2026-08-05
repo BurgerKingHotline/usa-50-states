@@ -1,4 +1,4 @@
-﻿capital = 291 # Baghdad
+﻿capital = 1# Baghdad
 
 oob = "IRQ_1936"
 

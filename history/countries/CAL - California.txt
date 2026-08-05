@@ -1,3 +1,6 @@
+
+capital = 118
+
 load_oob = "CAL_ffl_1933"
 
 set_country_flag = CAL_intro_tree
@@ -17,9 +20,6 @@ set_variable = { CAL_depression_recovery = 0}
 set_variable = { CAL_sell_epic_bonds_cost = 100 }
 set_variable = { CAL_epic_costs_mission_time = 75 }
 set_variable = { CAL_epic_sieze_factories_cost = 100 }
-
-
-capital = 118
 
 set_power_balance = {
 	id = CAL_bop_socdem_comm_balance
@@ -49,9 +49,10 @@ set_stability = 0.45
 set_war_support = 0.15
 
 add_ideas = {
-        CAL_great_depression_8
-		CAL_widespread_strikes
-		CAL_corporate_influence
+    CAL_great_depression_8
+	CAL_widespread_strikes
+	CAL_corporate_influence
+	CAL_sunshine_state
 }
 
 if = {
