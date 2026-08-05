@@ -1,6 +1,6 @@
-CAL_1934_gubernatorial_election = {
+CAL_1934_gubernatorial_election_cat = {
 	allowed = {
-#		tag = CAL
+		tag = CAL
 		always = no
 	}
 	visible = {

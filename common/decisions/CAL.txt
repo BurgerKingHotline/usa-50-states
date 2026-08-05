@@ -260,7 +260,7 @@ CAL_economics_of_cooperation_cat = {
 			has_completed_focus = CAL_land_colonies_act
 		}
 		targets = {
-			4 118 116 117 115
+			4 118 116 117 115 114 113 112 111
 
 		}
 		target_trigger = {
@@ -299,13 +299,14 @@ CAL_economics_of_cooperation_cat = {
 		complete_effect = {
 		}
 	}
-	CAL_create_colonies_small_decision = {
+	CAL_create_colonies_small_decision = {#Want to get rid of this decision
 		icon = generic_prepare_civil_war
 		state_target = yes
 		on_map_mode = map_only
 		days_remove = 89
 		allowed = {
 			original_tag = CAL
+			always = no
 		}
 
 		visible = {

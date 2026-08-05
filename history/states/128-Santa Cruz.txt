@@ -4,12 +4,28 @@ state = {
 	provinces = { #Pima, santa cruz, cuchise, graham, greenlee 
 		4981 4688 9432 9418 3932 9311 2196 4555 2379 9456 2473 5482 553 6403 4862 9401 9414 9439 9431 381 6471 9412 2273 6459 6787 6474 9485 2939 3336 9469 2344 9433 3184 65 
 	}
-	state_category = rural
-	manpower = 426000
+	state_category = city
+	manpower = 146769
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 	history = {
 		owner = ARZ
 		add_core_of = ARZ
+		victory_points = {
+			9401 3#tuscon
+		}
+		victory_points = {
+			381 1#bisbee
+		}
+		victory_points = {
+			5482 1#douglas
+		}
+		victory_points = {
+			2939 1#nogales
+		}
+		buildings = {
+			industrial_complex = 2
+			infrastructure = 3
+		}
 	}
 }

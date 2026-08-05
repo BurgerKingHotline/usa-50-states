@@ -1,0 +1,18 @@
+state = {
+	id = 131
+	name = "STATE_131"
+	manpower = 31016
+	state_category = large_town
+	history = { 
+		owner = ARZ
+		add_core_of = ARZ
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		victory_points = {
+			4496 2 #globe, miami
+		}
+	}
+	provinces = { 3092 2942 4496 3864 }
+}
