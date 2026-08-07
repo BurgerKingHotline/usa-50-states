@@ -764,7 +764,7 @@ prospect_for_resources = {
 		icon = oil 
 
 		allowed = {
-
+			original_tag = ARG
 		}
 		highlight_states = {
 			highlight_state_targets = {

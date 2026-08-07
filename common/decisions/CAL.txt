@@ -1,4 +1,4 @@
-CAL_1934_gubernatorial_election = {
+CAL_1934_gubernatorial_election_cat = {
 	CAL_merriam_campaigning_mission = {
 	    activation = {
 			always = yes

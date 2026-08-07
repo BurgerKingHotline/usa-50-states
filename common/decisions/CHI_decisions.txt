@@ -3940,6 +3940,7 @@ foreign_support = {
 	}
 	CHI_expand_the_ledo_road = {
 		icon = generic_construction
+		allowed = { always = no } # USA50States: vanilla China geography is absent
 		available = {
 			any_country_with_original_tag_of = {
 				tooltip = TRIGGER_ANY_COUNTRY_STARTS
@@ -4039,6 +4040,7 @@ foreign_support = {
 	}
 	CHI_expand_the_airlift = {
 		icon = generic_construction
+		allowed = { always = no } # USA50States: vanilla China geography is absent
 		available = {	
 			OR = {
 				434 = {
