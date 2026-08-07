@@ -1,12 +1,15 @@
 on_actions = {
 	on_monthly = {
 		effect = {
-			every_country = {
+			# on_monthly already executes once in each country's scope.
+			# Do NOT wrap this in every_country or the election timer is decremented
+			# once per existing country, causing multiple elections in one monthly pulse.
+			if = {
 				limit = { tag = WSH }
 				set_country_flag = uses_wsh_legislature
 				set_country_flag = uses_universal_elections
 			}
-			every_country = {
+			if = {
 				limit = { has_country_flag = uses_universal_elections }
 				universal_monthly_election_tick_effect = yes
 			}

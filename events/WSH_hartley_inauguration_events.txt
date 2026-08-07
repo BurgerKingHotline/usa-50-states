@@ -36,7 +36,7 @@ country_event = {
 	option = { #Roland H. Hartley Has Prevailed
 		name = WSH_hartley.2.a
 		ai_chance = { factor = 85 }
-		set_politics = { ruling_party = conservatism_ideology elections_allowed = yes }
+		set_politics = { ruling_party = conservatism_ideology elections_allowed = no }
 		retire_country_leader = yes
 		promote_character = WASHINGTON_GOV_1933_CON
 		set_country_flag = WSH_hartley_certified
@@ -54,7 +54,7 @@ country_event = {
 	option = { #Martin Retains the Governorship - noncanonical branch
 		name = WSH_hartley.2.b
 		ai_chance = { factor = 15 }
-		set_politics = { ruling_party = democratic elections_allowed = yes }
+		set_politics = { ruling_party = democratic elections_allowed = no }
 		retire_country_leader = yes
 		promote_character = WASHINGTON_GOV_1933_DEM
 		set_country_flag = WSH_martin_holds_office

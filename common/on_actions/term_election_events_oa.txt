@@ -1,7 +1,12 @@
 on_actions = {
 	on_new_term_election = {
-		random_events = {
-			100 = california_events.6
+		effect = {
+			# This event is California-specific. Previously it was fired for every
+			# country's vanilla term election.
+			if = {
+				limit = { tag = CAL }
+				country_event = { id = california_events.6 }
+			}
 		}
 	}
 }
