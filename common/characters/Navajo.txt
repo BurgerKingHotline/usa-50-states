@@ -1,0 +1,15 @@
+
+characters = {
+	NAV_CHIEF = {
+		name = "Navajo Chief"
+		portraits = {
+			civilian = { large = "GFX_CLO_Portrait_Billy_Adams" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism_subideology
+			expire = "1965.1.1"
+			desc = "Governor of Colorado, 1927-1933"
+		}
+	}
+}

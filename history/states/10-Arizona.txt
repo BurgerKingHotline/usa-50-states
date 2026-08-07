@@ -2,14 +2,31 @@ state = {
 	id = 10
 	name = "STATE_10"
 	provinces = { #Coconino, navajo, apache, gilan
-		2942 2815 9022 1547 4532 8937 5707 1135 3092 4496 3864 5160 412 1853 6533 8693 1415 2083 4768 3202 4848 904 8975 4258 2121 6277 9052 3733 3411 1030 3392 1978
+		2815 9022 1547 8937 5707 5160 1853 6533 8693 1415 2083 4768 3202 4848 904 8975 4258 2121 6277 9052 3733 3411 1030 3392 1978
 	}
-	state_category = rural
-	manpower = 10
+	state_category = large_town
+	manpower = 53031
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 	history = {
 		owner = ARZ
 		add_core_of = ARZ
+		victory_points = {
+			8937 1#Flagstaff
+		}
+		victory_points = {
+			2121 1#Winslow
+		}
+		victory_points = {
+			9052 1#Holbrook
+		}
+		victory_points = {
+			1030 1#St. Johns
+		}
+		buildings = {
+			arms_factory = 1
+			industrial_complex = 1
+			infrastructure = 2
+		}
 	}
 }

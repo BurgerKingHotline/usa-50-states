@@ -1,0 +1,18 @@
+capital = 125
+set_politics = {
+        ruling_party = conservatism_ideology
+        last_election = "1936.1.1"
+        election_frequency = 48
+        elections_allowed = yes
+    }
+recruit_character = TON_CHIEF
+set_popularities = {
+        democratic = 11
+        conservatism_ideology = 55
+        socialism_ideology = 1
+        populism_ideology = 1
+        neutrality = 30
+        fascism = 1
+        communism = 1
+    }
+#recruit_character = ABK_kirilli_bechvaya

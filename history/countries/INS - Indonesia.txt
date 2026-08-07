@@ -1,4 +1,4 @@
-﻿capital = 1058 #Jakarta
+﻿capital = 1#Jakarta
 
 oob = "INS_1936"
 

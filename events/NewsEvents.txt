@@ -30,7 +30,7 @@ news_event = {#Upton Sinclair Wins Election
 		name = ffl_news.2.a
 	}
 }
-news_event = {#Jefferson Succeeds
+news_event = {#Jefferson Secedes
 	id = ffl_news.3
 	title = ffl_news.3.t
 	desc = ffl_news.3.desc
@@ -57,6 +57,22 @@ news_event = {#California Invades Jefferson
 	
 	option = {
 		name = ffl_news.4.a
+	}
+}
+
+news_event = {#Start of the Colorado Water Wars
+	id = ffl_news.5
+	title = ffl_news.5.t
+	desc = ffl_news.5.desc
+	picture = GFX_news_event_ger_civil_war
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ffl_news.5.a#A colorado war without colorado?
+		
 	}
 }
 

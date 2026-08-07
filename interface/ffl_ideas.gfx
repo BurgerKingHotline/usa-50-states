@@ -1,0 +1,10 @@
+spriteTypes = {	
+	SpriteType = {
+		name = "GFX_idea_cal_corporate_influence"
+		texturefile = "gfx/interface/ideas/california/idea_cal_corporate_influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_cal_sunshine_state"
+		texturefile = "gfx/interface/ideas/california/idea_cal_sunshine_state.dds"
+	}
+}

@@ -1,7 +1,9 @@
+
+capital = 118
+
 load_oob = "CAL_ffl_1933"
 
 set_country_flag = CAL_intro_tree
-set_country_flag = CAL_joaquin_strike
 set_country_flag = CAL_epic_election_tree
 #set_country_flag = CAL_ila_strike
 set_variable = { CAL_great_depression_value = 80 }
@@ -18,15 +20,6 @@ set_variable = { CAL_depression_recovery = 0}
 set_variable = { CAL_sell_epic_bonds_cost = 100 }
 set_variable = { CAL_epic_costs_mission_time = 75 }
 set_variable = { CAL_epic_sieze_factories_cost = 100 }
-
-country_event = {
-    id = california_events.21
-    days = 60
-    random_hours = 12
-    random_days = 10
-}
-
-capital = 118
 
 set_power_balance = {
 	id = CAL_bop_socdem_comm_balance
@@ -52,13 +45,14 @@ set_popularities = {
         communism = 2
 }
 set_research_slots = 3
-set_stability = 0.7
+set_stability = 0.45
 set_war_support = 0.15
 
 add_ideas = {
-        CAL_great_depression_8
-        CAL_joaquin_strikes
-        CAL_civil_unrest_5
+    CAL_great_depression_8
+	CAL_widespread_strikes
+	CAL_corporate_influence
+	CAL_sunshine_state
 }
 
 if = {

@@ -1,0 +1,16 @@
+state = {
+	id = 132
+	name = "STATE_132"
+	manpower = 20941
+	state_category = rural
+	history = { 
+		owner = NVJ
+		add_core_of = NVJ
+		add_claim_by = NWM
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+	provinces = { 2247 8907 5691 8874 1765 2132 }
+}

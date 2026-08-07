@@ -28,6 +28,9 @@ state = {
 		victory_points = {
 			1743 1#Bridgeport
 		}
+		victory_points = {
+			8895 1#Barstow
+		}
 		buildings = {
 			infrastructure = 1
 			industrial_complex = 1
