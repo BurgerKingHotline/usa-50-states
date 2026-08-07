@@ -1553,7 +1553,6 @@ if = {
 			special_type_slot_1 = empty
 		}
 		obsolete = yes
-		icon = GFX_GER_cv_fighter1_medium
 	}
 	create_equipment_variant = {
 		name = "Bf 109 D"

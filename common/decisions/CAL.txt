@@ -1,4 +1,4 @@
-CAL_1934_gubernatorial_election_cat = {
+CAL_1934_gubernatorial_election = {
 	CAL_merriam_campaigning_mission = {
 	    activation = {
 			always = yes
@@ -415,10 +415,7 @@ CAL_economics_of_cooperation_cat = {
 		priority = 68
 
 		visible = {
-			OR = {
-				has_completed_focus = CAL_absorb_failing_businesses
-			}
-			
+			always = no
 		}
 
 		available = {
