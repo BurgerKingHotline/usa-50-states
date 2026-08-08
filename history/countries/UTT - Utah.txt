@@ -16,3 +16,4 @@ set_popularities = {
         communism = 5
     }
 #recruit_character = ABK_kirilli_bechvaya
+load_oob = "UTT_1933"

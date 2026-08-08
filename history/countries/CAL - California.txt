@@ -1,7 +1,7 @@
 
 capital = 118
 
-load_oob = "CAL_ffl_1933"
+load_oob = "CAL_1933"
 
 set_country_flag = CAL_intro_tree
 set_country_flag = CAL_epic_election_tree

@@ -636,6 +636,7 @@ ideas = {
 				monthly_population = 0.2
 				stability_factor = 0.1
 				war_stability_factor = 0.1
+				#production_lack_of_resource_penalty_factor = -1
 			}
 		}
 	}
