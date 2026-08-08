@@ -3940,6 +3940,7 @@ foreign_support = {
 	}
 	CHI_expand_the_ledo_road = {
 		icon = generic_construction
+		allowed = { always = no } # USA50States: vanilla China geography is absent
 		available = {
 			any_country_with_original_tag_of = {
 				tooltip = TRIGGER_ANY_COUNTRY_STARTS
@@ -4039,10 +4040,11 @@ foreign_support = {
 	}
 	CHI_expand_the_airlift = {
 		icon = generic_construction
+		allowed = { always = no } # USA50States: vanilla China geography is absent
 		available = {	
 			OR = {
 				434 = {
-					CONTROLLER = {
+					controller = {
 						NOT = {
 							has_war_with = CHI
 						}
@@ -4050,7 +4052,7 @@ foreign_support = {
 					}
 				}
 				601 = {
-					CONTROLLER = {
+					controller = {
 						OR = {
 							has_completed_focus = CHI_the_hump
 							has_completed_focus = CHI_sea_the_hump

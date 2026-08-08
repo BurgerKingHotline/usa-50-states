@@ -1,0 +1,4 @@
+CHG_council_governance_modifier = {
+	enable = { always = yes }
+	political_power_gain = chg_council_pp_gain
+}

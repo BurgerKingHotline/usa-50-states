@@ -415,10 +415,7 @@ CAL_economics_of_cooperation_cat = {
 		priority = 68
 
 		visible = {
-			OR = {
-				has_completed_focus = CAL_absorb_failing_businesses
-			}
-			
+			always = no
 		}
 
 		available = {

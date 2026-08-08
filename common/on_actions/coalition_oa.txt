@@ -29,7 +29,8 @@ on_actions = {
 	}
 	on_monthly = {
 		effect = {
-			every_country = {
+			# on_monthly is already in the current country's scope.
+			if = {
 				limit = {
 					has_country_flag = coalitions_system_active
 					has_dynamic_modifier = { modifier = party_popularity_dynamic_modifier }

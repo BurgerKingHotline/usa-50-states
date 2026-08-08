@@ -1004,23 +1004,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_money_act
-		icon = GFX_goal_CAL_california_money_act
-		cost = 5
-		x = 0
-		y = 1
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_the_epic_plan
-		}
-		completion_reward = { 
-			unlock_decision_tooltip = CAL_sell_bonds_decision
-		}
-	}
-	focus = {
 		id = CAL_the_epic_plan
 		icon = GFX_goal_CAL_bumblebee
 		cost = 5
@@ -1039,8 +1022,25 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_form_legal_committee
 		}
-		completion_reward = { 
+		completion_reward = {
 			unlock_decision_category_tooltip = CAL_economics_of_cooperation_cat
+		}
+	}
+	focus = {
+		id = CAL_money_act
+		icon = GFX_goal_CAL_california_money_act
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = CAL_the_epic_plan
+		allow_branch = {
+			has_country_flag = CAL_epic_path
+		}
+		prerequisite = {
+			focus = CAL_the_epic_plan
+		}
+		completion_reward = {
+			unlock_decision_tooltip = CAL_sell_bonds_decision
 		}
 	}
 	focus = {
@@ -1409,9 +1409,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_black_hand
 		}
-		modifier = {
-		}
-		completion_reward = { 
+		completion_reward = {
 			add_popularity = {
 				ideology = socialism_ideology
 				popularity = 0.05

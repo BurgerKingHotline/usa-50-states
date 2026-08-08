@@ -1,0 +1,91 @@
+WSH_hartley_governance_cat = {
+
+	WSH_inspect_state_armories = {
+		icon = generic_army_support
+		visible = { has_country_flag = WSH_divided_chain_of_command }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_military_approval = 2 }
+			add_stability = 0.01
+		}
+	}
+	WSH_confirm_officer_commissions = {
+		icon = generic_army_support
+		visible = { has_country_flag = WSH_divided_chain_of_command }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_military_approval = 3 }
+			add_to_variable = { WSH_legislature_approval = -1 }
+		}
+	}
+	WSH_recall_available_guardsmen = {
+		icon = generic_army_support
+		visible = { has_country_flag = WSH_divided_chain_of_command }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_military_approval = 2 }
+			add_political_power = 20
+		}
+	}
+	WSH_secure_rail_junctions = {
+		icon = generic_operation
+		visible = { has_country_flag = WSH_divided_chain_of_command }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_business_approval = 1 }
+		}
+	}
+	WSH_protect_hydroelectric_facilities = {
+		icon = generic_operation
+		visible = { has_country_flag = WSH_divided_chain_of_command }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.02
+			add_to_variable = { WSH_professional_approval = 1 }
+		}
+	}
+	WSH_guard_seattle_tacoma_ports = {
+		icon = generic_operation
+		visible = { has_country_flag = WSH_divided_chain_of_command }
+		available = { always = yes }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_business_approval = 2 }
+			add_to_variable = { WSH_labor_approval = -1 }
+		}
+	}
+	WSH_absorb_former_federal_personnel = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_divided_chain_of_command }
+		available = { always = yes }
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_military_approval = 2 }
+			add_political_power = -15
+		}
+	}
+	WSH_establish_domestic_deployment_rules = {
+		icon = generic_political_address
+		visible = { has_country_flag = WSH_divided_chain_of_command }
+		available = { always = yes }
+		cost = 100
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_legislature_approval = 2 }
+			add_stability = 0.02
+		}
+	}
+}

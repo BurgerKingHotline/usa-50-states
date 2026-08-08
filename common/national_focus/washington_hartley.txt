@@ -1,0 +1,552 @@
+focus_tree = {
+	id = washington_hartley_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = WSH
+		}
+	}
+
+	focus = {
+		id = WSH_governorship_must_continue
+		icon = GFX_goal_generic_national_unity
+		cost = 1
+		x = 0
+		y = 0
+		available = {
+			NOT = {
+				OR = {
+					has_country_flag = WSH_hartley_certified
+					has_country_flag = WSH_martin_holds_office
+				}
+			}
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			set_country_flag = WSH_certification_underway
+			unlock_decision_tooltip = WSH_certify_state_election
+		}
+	}
+
+	focus = {
+		id = WSH_lawful_transfer
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = WSH_governorship_must_continue
+		prerequisite = {
+			focus = WSH_governorship_must_continue
+		}
+		available = {
+			has_country_flag = WSH_hartley_certified
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			country_event = {
+				id = WSH_hartley.3
+				days = 1
+			}
+		}
+	}
+
+	focus = {
+		id = WSH_oath_of_continuity
+		icon = GFX_goal_support_democracy
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = WSH_lawful_transfer
+		prerequisite = {
+			focus = WSH_lawful_transfer
+		}
+		available = {
+			has_country_flag = WSH_hartley_certified
+			NOT = { has_country_flag = WSH_inauguration_complete }
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			country_event = {
+				id = WSH_hartley.4
+				days = 1
+			}
+		}
+	}
+
+	# ============================================================
+	# BRANCH 1: THE EMPTY TREASURY
+	# ============================================================
+
+	focus = {
+		id = WSH_empty_treasury_focus
+		icon = GFX_goal_generic_trade
+		cost = 5
+		x = -7
+		y = 1
+		relative_position_id = WSH_oath_of_continuity
+		prerequisite = {
+			focus = WSH_oath_of_continuity
+		}
+		available = {
+			has_country_flag = WSH_inauguration_complete
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_state_insolvency
+			country_event = {
+				id = WSH_hartley.10
+				days = 1
+			}
+		}
+	}
+
+	focus = {
+		id = WSH_balanced_budget_government
+		icon = GFX_goal_generic_defence
+		cost = 5
+		x = -4
+		y = 1
+		relative_position_id = WSH_empty_treasury_focus
+		prerequisite = {
+			focus = WSH_empty_treasury_focus
+		}
+		available = {
+			has_country_flag = WSH_treasury_cut_expenditure
+		}
+		mutually_exclusive = { focus = WSH_emergency_credit_state }
+		mutually_exclusive = { focus = WSH_corporate_credit_compact }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_balanced_budget_government_idea
+			set_country_flag = WSH_treasury_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_emergency_credit_state
+		icon = GFX_goal_generic_construction2
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = WSH_empty_treasury_focus
+		prerequisite = {
+			focus = WSH_empty_treasury_focus
+		}
+		available = {
+			has_country_flag = WSH_treasury_emergency_bonds
+		}
+		mutually_exclusive = { focus = WSH_balanced_budget_government }
+		mutually_exclusive = { focus = WSH_corporate_credit_compact }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_emergency_credit_state_idea
+			set_country_flag = WSH_treasury_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_corporate_credit_compact
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = WSH_empty_treasury_focus
+		prerequisite = {
+			focus = WSH_empty_treasury_focus
+		}
+		available = {
+			has_country_flag = WSH_treasury_private_credit
+		}
+		mutually_exclusive = { focus = WSH_balanced_budget_government }
+		mutually_exclusive = { focus = WSH_emergency_credit_state }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_corporate_credit_compact_idea
+			set_country_flag = WSH_treasury_resolved
+		}
+	}
+
+	# ============================================================
+	# BRANCH 2: COMMAND OF THE NATIONAL GUARD
+	# ============================================================
+
+	focus = {
+		id = WSH_command_of_the_guard
+		icon = GFX_goal_generic_army_doctrines
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = WSH_oath_of_continuity
+		prerequisite = {
+			focus = WSH_oath_of_continuity
+		}
+		available = {
+			has_country_flag = WSH_inauguration_complete
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_divided_chain_of_command
+			country_event = {
+				id = WSH_hartley.20
+				days = 1
+			}
+		}
+	}
+
+	focus = {
+		id = WSH_constitutional_guard
+		icon = GFX_goal_generic_fortify_city
+		cost = 5
+		x = -3
+		y = 1
+		relative_position_id = WSH_command_of_the_guard
+		prerequisite = {
+			focus = WSH_command_of_the_guard
+		}
+		available = {
+			has_country_flag = WSH_guard_constitutional
+		}
+		mutually_exclusive = { focus = WSH_executive_guard }
+		mutually_exclusive = { focus = WSH_independent_general_staff }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_constitutional_guard_idea
+			set_country_flag = WSH_guard_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_executive_guard
+		icon = GFX_goal_generic_position_armies
+		cost = 5
+		x = -1
+		y = 1
+		relative_position_id = WSH_command_of_the_guard
+		prerequisite = {
+			focus = WSH_command_of_the_guard
+		}
+		available = {
+			has_country_flag = WSH_guard_executive
+		}
+		mutually_exclusive = { focus = WSH_constitutional_guard }
+		mutually_exclusive = { focus = WSH_independent_general_staff }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_executive_guard_idea
+			set_country_flag = WSH_guard_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_independent_general_staff
+		icon = GFX_goal_generic_army_artillery2
+		cost = 5
+		x = 1
+		y = 1
+		relative_position_id = WSH_command_of_the_guard
+		prerequisite = {
+			focus = WSH_command_of_the_guard
+		}
+		available = {
+			has_country_flag = WSH_guard_joint_board
+		}
+		mutually_exclusive = { focus = WSH_constitutional_guard }
+		mutually_exclusive = { focus = WSH_executive_guard }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_independent_general_staff_idea
+			set_country_flag = WSH_guard_resolved
+		}
+	}
+
+	# ============================================================
+	# BRANCH 3: CUSTODY OF FEDERAL PROPERTY
+	# ============================================================
+
+	focus = {
+		id = WSH_federal_estate
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
+		x = 3
+		y = 1
+		relative_position_id = WSH_oath_of_continuity
+		prerequisite = {
+			focus = WSH_oath_of_continuity
+		}
+		available = {
+			has_country_flag = WSH_inauguration_complete
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_unclaimed_federal_assets
+			country_event = {
+				id = WSH_hartley.30
+				days = 1
+			}
+		}
+	}
+
+	focus = {
+		id = WSH_legal_custodianship
+		icon = GFX_goal_generic_improve_relations
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = WSH_federal_estate
+		prerequisite = {
+			focus = WSH_federal_estate
+		}
+		available = {
+			has_country_flag = WSH_property_custodianship
+		}
+		mutually_exclusive = { focus = WSH_state_nationalization }
+		mutually_exclusive = { focus = WSH_fragmented_ownership }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_legal_custodianship_idea
+			set_country_flag = WSH_property_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_state_nationalization
+		icon = GFX_goal_generic_soviet_construction
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = WSH_federal_estate
+		prerequisite = {
+			focus = WSH_federal_estate
+		}
+		available = {
+			has_country_flag = WSH_property_nationalization
+		}
+		mutually_exclusive = { focus = WSH_legal_custodianship }
+		mutually_exclusive = { focus = WSH_fragmented_ownership }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_state_nationalization_idea
+			set_country_flag = WSH_property_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_fragmented_ownership
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = WSH_federal_estate
+		prerequisite = {
+			focus = WSH_federal_estate
+		}
+		available = {
+			has_country_flag = WSH_property_individual_transfer
+		}
+		mutually_exclusive = { focus = WSH_legal_custodianship }
+		mutually_exclusive = { focus = WSH_state_nationalization }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_fragmented_ownership_idea
+			set_country_flag = WSH_property_resolved
+		}
+	}
+
+	# ============================================================
+	# BRANCH 4: EMERGENCY RELIEF APPROPRIATIONS
+	# ============================================================
+
+	focus = {
+		id = WSH_relief_cannot_wait
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 7
+		y = 1
+		relative_position_id = WSH_oath_of_continuity
+		prerequisite = {
+			focus = WSH_oath_of_continuity
+		}
+		available = {
+			has_country_flag = WSH_inauguration_complete
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_mass_unemployment
+			country_event = {
+				id = WSH_hartley.40
+				days = 1
+			}
+		}
+	}
+
+	focus = {
+		id = WSH_public_works_administration
+		icon = GFX_goal_generic_construct_civilian
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = WSH_relief_cannot_wait
+		prerequisite = {
+			focus = WSH_relief_cannot_wait
+		}
+		available = {
+			has_country_flag = WSH_relief_public_works
+		}
+		mutually_exclusive = { focus = WSH_cooperative_relief_network }
+		mutually_exclusive = { focus = WSH_county_relief_system }
+		mutually_exclusive = { focus = WSH_restricted_relief }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_public_works_administration_idea
+			set_country_flag = WSH_relief_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_cooperative_relief_network
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = WSH_relief_cannot_wait
+		prerequisite = {
+			focus = WSH_relief_cannot_wait
+		}
+		available = {
+			has_country_flag = WSH_relief_cooperative
+		}
+		mutually_exclusive = { focus = WSH_public_works_administration }
+		mutually_exclusive = { focus = WSH_county_relief_system }
+		mutually_exclusive = { focus = WSH_restricted_relief }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_cooperative_relief_network_idea
+			set_country_flag = WSH_relief_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_county_relief_system
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		x = 4
+		y = 1
+		relative_position_id = WSH_relief_cannot_wait
+		prerequisite = {
+			focus = WSH_relief_cannot_wait
+		}
+		available = {
+			has_country_flag = WSH_relief_county_grants
+		}
+		mutually_exclusive = { focus = WSH_public_works_administration }
+		mutually_exclusive = { focus = WSH_cooperative_relief_network }
+		mutually_exclusive = { focus = WSH_restricted_relief }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_county_relief_system_idea
+			set_country_flag = WSH_relief_resolved
+		}
+	}
+
+	focus = {
+		id = WSH_restricted_relief
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 5
+		x = 6
+		y = 1
+		relative_position_id = WSH_relief_cannot_wait
+		prerequisite = {
+			focus = WSH_relief_cannot_wait
+		}
+		available = {
+			has_country_flag = WSH_relief_charities
+		}
+		mutually_exclusive = { focus = WSH_public_works_administration }
+		mutually_exclusive = { focus = WSH_cooperative_relief_network }
+		mutually_exclusive = { focus = WSH_county_relief_system }
+		allow_branch = {
+		}
+		completion_reward = {
+			add_ideas = WSH_restricted_relief_idea
+			set_country_flag = WSH_relief_resolved
+		}
+	}
+
+	# ============================================================
+	# CONVERGENCE: THE FIRST REPUBLICAN BUDGET
+	# ============================================================
+
+	focus = {
+		id = WSH_first_republican_budget
+		icon = GFX_goal_generic_major_alliance
+		cost = 10
+		x = 0
+		y = 3
+		relative_position_id = WSH_oath_of_continuity
+		prerequisite = {
+			focus = WSH_balanced_budget_government
+			focus = WSH_emergency_credit_state
+			focus = WSH_corporate_credit_compact
+		}
+		prerequisite = {
+			focus = WSH_constitutional_guard
+			focus = WSH_executive_guard
+			focus = WSH_independent_general_staff
+		}
+		prerequisite = {
+			focus = WSH_legal_custodianship
+			focus = WSH_state_nationalization
+			focus = WSH_fragmented_ownership
+		}
+		prerequisite = {
+			focus = WSH_public_works_administration
+			focus = WSH_cooperative_relief_network
+			focus = WSH_county_relief_system
+			focus = WSH_restricted_relief
+		}
+		available = {
+			has_country_flag = WSH_inauguration_complete
+		}
+		allow_branch = {
+		}
+		completion_reward = {
+			remove_ideas = WSH_state_insolvency
+			remove_ideas = WSH_divided_chain_of_command
+			remove_ideas = WSH_unclaimed_federal_assets
+			remove_ideas = WSH_mass_unemployment
+			set_country_flag = WSH_first_republican_budget_passed
+			country_event = {
+				id = WSH_hartley.50
+				days = 1
+			}
+		}
+	}
+
+	continuous_focus_position = {
+		x = 0
+		y = 10000
+	}
+	default = no
+}

@@ -1,0 +1,58 @@
+ideas = {
+	country = {
+		WSH_uncertain_succession = {
+			picture = SPR_political_violence #placeholder gfx, swap for a WSH-specific piece if one gets made
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			on_add = {
+				set_variable = { WSH_legislature_approval = -5 }
+				set_variable = { WSH_business_approval = -5 }
+				set_variable = { WSH_professional_approval = -5 }
+			}
+			on_remove = {
+				set_variable = { WSH_legislature_approval = 0 }
+				set_variable = { WSH_business_approval = 0 }
+				set_variable = { WSH_professional_approval = 0 }
+			}
+			modifier = {
+				stability_factor = -0.10
+				political_power_factor = -0.10
+			}
+		}
+		WSH_lawful_transfer_underway = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		WSH_continuity_of_government = {
+			picture = usa_great_depression_3
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.05
+				resistance_target = -0.05
+			}
+		}
+	}
+}

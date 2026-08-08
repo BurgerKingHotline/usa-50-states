@@ -1,0 +1,11 @@
+WSH_hartley_governance_cat = {
+	icon = generic_national_focus
+
+	allowed = {
+		always = yes
+	}
+
+	visible = {
+		tag = WSH
+	}
+}

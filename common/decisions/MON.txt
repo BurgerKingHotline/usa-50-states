@@ -12,7 +12,8 @@ political_actions = {
 			base = 50
 		}
 	
-		allowed = {  
+		allowed = {
+			original_tag = MON
 		}
 
 		visible = { 
@@ -82,7 +83,8 @@ political_actions = {
 			base = 50
 		}
 	
-		allowed = {  
+		allowed = {
+			original_tag = MON
 		}
 
 		visible = { 

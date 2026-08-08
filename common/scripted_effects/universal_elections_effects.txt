@@ -184,13 +184,13 @@ resolve_generic_party_election_effect = {
 	if = { limit = { check_variable = { party_popularity@populism_ideology > election_winner_score } } set_temp_variable = { election_winner_id = 5 } set_temp_variable = { election_winner_score = party_popularity@populism_ideology } }
 	if = { limit = { check_variable = { party_popularity@neutrality > election_winner_score } } set_temp_variable = { election_winner_id = 6 } set_temp_variable = { election_winner_score = party_popularity@neutrality } }
 	set_variable = { last_election_winner_id = election_winner_id }
-	if = { limit = { check_variable = { election_winner_id = 0 } } set_politics = { ruling_party = democratic elections_allowed = yes } }
-	else_if = { limit = { check_variable = { election_winner_id = 1 } } set_politics = { ruling_party = conservatism_ideology elections_allowed = yes } }
-	else_if = { limit = { check_variable = { election_winner_id = 2 } } set_politics = { ruling_party = socialism_ideology elections_allowed = yes } }
-	else_if = { limit = { check_variable = { election_winner_id = 3 } } set_politics = { ruling_party = communism elections_allowed = yes } }
-	else_if = { limit = { check_variable = { election_winner_id = 4 } } set_politics = { ruling_party = fascism elections_allowed = yes } }
-	else_if = { limit = { check_variable = { election_winner_id = 5 } } set_politics = { ruling_party = populism_ideology elections_allowed = yes } }
-	else = { set_politics = { ruling_party = neutrality elections_allowed = yes } }
+	if = { limit = { check_variable = { election_winner_id = 0 } } set_politics = { ruling_party = democratic elections_allowed = no } }
+	else_if = { limit = { check_variable = { election_winner_id = 1 } } set_politics = { ruling_party = conservatism_ideology elections_allowed = no } }
+	else_if = { limit = { check_variable = { election_winner_id = 2 } } set_politics = { ruling_party = socialism_ideology elections_allowed = no } }
+	else_if = { limit = { check_variable = { election_winner_id = 3 } } set_politics = { ruling_party = communism elections_allowed = no } }
+	else_if = { limit = { check_variable = { election_winner_id = 4 } } set_politics = { ruling_party = fascism elections_allowed = no } }
+	else_if = { limit = { check_variable = { election_winner_id = 5 } } set_politics = { ruling_party = populism_ideology elections_allowed = no } }
+	else = { set_politics = { ruling_party = neutrality elections_allowed = no } }
 }
 
 resolve_universal_election_effect = {

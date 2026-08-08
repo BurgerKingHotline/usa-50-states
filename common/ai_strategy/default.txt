@@ -845,12 +845,6 @@ default_area_priority = {
 
 	ai_strategy = {
 		type = area_priority
-		id = scandinavia
-		value = 0
-	}
-
-	ai_strategy = {
-		type = area_priority
 		id = north_america
 		value = 100
 	}
@@ -879,24 +873,6 @@ default_area_priority = {
 		value = 10
 	}
 
-	ai_strategy = {
-		type = area_priority
-		id = suez
-		value = 50
-	}
-
-	ai_strategy = {
-		type = area_priority
-		id = pacific
-		value = 50
-	}
-
-	ai_strategy = {
-		type = area_priority
-		id = oceania
-		value = 75
-	}
-
 }
 
 default_area_priority_non_africa = {
@@ -914,11 +890,6 @@ default_area_priority_non_africa = {
         type = area_priority
         id = africa
         value = -70
-    }
-    ai_strategy = {
-        type = area_priority
-        id = suez
-        value = -40
     }
 }
 

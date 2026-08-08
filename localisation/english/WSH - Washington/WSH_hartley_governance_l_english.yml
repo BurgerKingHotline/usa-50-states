@@ -1,0 +1,261 @@
+﻿l_english:
+
+ # ============================================================
+ # FOCUS TREE
+ # ============================================================
+
+ # Branch 1: The Empty Treasury
+ WSH_empty_treasury_focus: "The Empty Treasury"
+ WSH_empty_treasury_focus_desc: "Washington entered 1933 with collapsing tax revenue, banks in distress, and a fifth of its working people idle. The old federal government is gone, and with it every dollar of relief money that used to flow west from Washington City. Whatever Olympia spends now, Olympia alone must find."
+ WSH_balanced_budget_government: "Balanced Budget Government"
+ WSH_balanced_budget_government_desc: "Hartley holds the line. The ledgers will balance if it takes every ounce of his stubbornness to make them, whatever that costs the men standing in the bread lines."
+ WSH_emergency_credit_state: "Emergency Credit State"
+ WSH_emergency_credit_state_desc: "The Republic borrows against its own future rather than let its people go without. Warrants and bonds will buy time - if the Legislature can be made to accept the debt they represent."
+ WSH_corporate_credit_compact: "Corporate Credit Compact"
+ WSH_corporate_credit_compact_desc: "Seattle's banks and lumber interests are prepared to finance the Republic's recovery, on terms of their own choosing. Hartley must decide how much of Olympia's independence that financing is worth."
+
+ # Branch 2: Command of the National Guard
+ WSH_command_of_the_guard: "Command of the Guard"
+ WSH_command_of_the_guard_desc: "With no War Department left to answer to, the Washington National Guard is a state force in fact as well as name for the first time in its history. Someone must tell its officers, in writing, who they now serve."
+ WSH_constitutional_guard: "Constitutional Guard"
+ WSH_constitutional_guard_desc: "The Guard answers to the Governor only as the Governor answers to the Legislature and the courts. It is the slower arrangement, and Hartley has decided it is also the only one that will still look like Washington in five years."
+ WSH_executive_guard: "Executive Guard"
+ WSH_executive_guard_desc: "Hartley now commands the Guard directly, without the delay of legislative consultation. Olympia has a security apparatus answerable to one office, and one office alone."
+ WSH_independent_general_staff: "Independent General Staff"
+ WSH_independent_general_staff_desc: "Command is shared between the Governor's office, the Legislature, and the Guard's own senior officers. No single hand controls Washington's soldiers - which the officers who now sit on the Joint Defense Board consider a decided improvement."
+
+ # Branch 3: Custody of Federal Property
+ WSH_federal_estate: "The Federal Estate"
+ WSH_federal_estate_desc: "Post offices, courthouses, forests, and warehouses that belonged to a government which no longer exists now belong, as a practical matter, to whoever is willing to hold the keys. Washington cannot function without them, and no court has yet said they are hers to take."
+ WSH_legal_custodianship: "Legal Custodianship"
+ WSH_legal_custodianship_desc: "Washington guards the federal estate without declaring ownership of it. It is the slower path to a working government, but the one least likely to be challenged by whatever authority eventually asks for these properties back."
+ WSH_state_nationalization: "State Nationalization"
+ WSH_state_nationalization_desc: "Olympia has simply declared the federal estate to be the state's. It is a faster route to a functioning government - and a precedent that will not be forgotten by the men who used to run these offices."
+ WSH_fragmented_ownership: "Fragmented Ownership"
+ WSH_fragmented_ownership_desc: "Counties, cities, corporations, and state agencies have each laid claim to whatever federal property sat nearest their own interests. It is a slower and messier settlement, but one that keeps the question out of Olympia's hands and in the courts and county seats where, Hartley suspects, it may be easier to manage."
+
+ # Branch 4: Emergency Relief Appropriations
+ WSH_relief_cannot_wait: "Relief Cannot Wait"
+ WSH_relief_cannot_wait_desc: "Hoovervilles have grown up along the tideflats of Seattle and the riverbanks of Spokane. The Unemployed Citizens League runs cooperative farms and commissaries better than the county poor departments do. Whatever Olympia decides about relief, it must decide soon."
+ WSH_public_works_administration: "Public Works Administration"
+ WSH_public_works_administration_desc: "The state puts the unemployed to work building roads, bridges, and public buildings, and borrows heavily to pay for it. It is the most direct answer to idle hands that Olympia has to offer."
+ WSH_cooperative_relief_network: "Cooperative Relief Network"
+ WSH_cooperative_relief_network_desc: "Olympia recognizes the Unemployed Citizens League's cooperative farms, commissaries, and barter exchanges as a legitimate part of the state's relief effort, rather than a rival to it. It costs the treasury little and the state a great deal of the initiative."
+ WSH_county_relief_system: "County Relief System"
+ WSH_county_relief_system_desc: "Relief is left largely to the counties, with the state's role limited to modest grants-in-aid. Results will vary as widely as the counties themselves do, but no county auditor can say Olympia dictated the terms."
+ WSH_restricted_relief: "Restricted Relief"
+ WSH_restricted_relief_desc: "Relief is channeled through churches and approved charitable societies rather than through the state directly. It costs the treasury the least of any option on the table, and it will satisfy the fewest of the people standing in line."
+
+ # Convergence
+ WSH_first_republican_budget: "The First Republican Budget"
+ WSH_first_republican_budget_desc: "The treasury has a policy, the Guard has a commander, the federal estate has a custodian, and relief has a shape. It remains only to write all four decisions into a single budget and call it the government of the Republic of Washington."
+
+ # ============================================================
+ # EVENT WSH_hartley.10 - The Books Do Not Balance
+ # ============================================================
+
+ WSH_hartley.10.t: "The Books Do Not Balance"
+ WSH_hartley.10.desc: "The state treasurer's office has finished its accounting, and the news is bad. Tax revenue has collapsed alongside property values and payrolls, three banks in Tacoma alone have failed since January, and the county relief rolls grow longer every week that the state does nothing.\n\nWashington cannot maintain its ordinary services while also assuming the emergency responsibilities the old federal government once carried. Governor Hartley must decide how the Republic will pay its way - or whether it can afford to pay its way at all."
+ WSH_hartley.10.a: "Cut Expenditure"
+ WSH_hartley.10.b: "Issue Emergency Bonds"
+ WSH_hartley.10.c: "Seek Private Credit"
+
+ # ============================================================
+ # EVENT WSH_hartley.20 - Whose Orders Remain Lawful?
+ # ============================================================
+
+ WSH_hartley.20.t: "Whose Orders Remain Lawful?"
+ WSH_hartley.20.desc: "A delegation of National Guard officers has requested an audience with the Governor. Their questions are plain enough: does Hartley's authority extend to command of the Guard, what becomes of commissions once issued under federal law, who owns the rifles and trucks in the armories, and under what rules, if any, the Guard may be used against Washington's own citizens.\n\nThey are the kind of questions that used to be answered in Washington City. They will have to be answered in Olympia now."
+ WSH_hartley.20.a: "Confirm Civilian State Command"
+ WSH_hartley.20.b: "Grant Hartley Emergency Command"
+ WSH_hartley.20.c: "Create a Joint Defense Board"
+
+ # ============================================================
+ # EVENT WSH_hartley.30 - Property Without a Government
+ # ============================================================
+
+ WSH_hartley.30.t: "Property Without a Government"
+ WSH_hartley.30.desc: "Post offices still sort mail nobody is paying them to sort. Customs officers in Seattle still collect duties for a treasury that no longer exists to receive them. National forests, fisheries stations, and survey offices sit unattended or held together by clerks and rangers working without a paycheck.\n\nWashington cannot govern its own territory while pretending this property belongs to nobody. Hartley must decide how the Republic will take custody of what the federal government left behind."
+ WSH_hartley.30.a: "Assume Custodianship"
+ WSH_hartley.30.b: "Nationalize the Assets"
+ WSH_hartley.30.c: "Transfer Assets Individually"
+
+ # ============================================================
+ # EVENT WSH_hartley.40 - Petitioners at the Capitol
+ # ============================================================
+
+ WSH_hartley.40.t: "Petitioners at the Capitol"
+ WSH_hartley.40.desc: "The steps of the Legislative Building have not been this crowded since certification. Unemployed Citizens League delegates, county commissioners, church relief societies, and a delegation of Seattle business owners have each arrived with their own plan for what Olympia should do about the idle hundreds of thousands.\n\nThey cannot all be satisfied, and Hartley does not have the treasury to try. He must choose which of Washington's competing visions of relief becomes state policy."
+ WSH_hartley.40.a: "County Relief Grants"
+ WSH_hartley.40.b: "State Public Works"
+ WSH_hartley.40.c: "Recognize Cooperative Relief"
+ WSH_hartley.40.d: "Relief Through Approved Charities"
+
+ # ============================================================
+ # EVENT WSH_hartley.50 - The First Republican Budget
+ # ============================================================
+
+ WSH_hartley.50.t: "The First Republican Budget"
+ WSH_hartley.50.desc: "Treasury policy, command of the Guard, custody of the federal estate, and the shape of relief have each been settled in turn. What remains is to bind the four decisions into a single budget, the first the Republic of Washington has ever written for itself.\n\nIt will not satisfy everyone who helped write it. It is, nonetheless, a government - the coalition Roland Hartley now governs with, for better or worse, until Washington votes again."
+ WSH_hartley.50.a: "The Republic Has a Budget"
+
+ # ============================================================
+ # NATIONAL SPIRITS - crisis spirits
+ # ============================================================
+
+ WSH_state_insolvency: "State Insolvency"
+ WSH_state_insolvency_desc: "Tax revenue has not kept pace with the state's obligations since long before the federal government dissolved, and Olympia has inherited responsibilities no state treasury was ever built to carry. Every department is spending against a budget that does not exist."
+ WSH_divided_chain_of_command: "Divided Chain of Command"
+ WSH_divided_chain_of_command_desc: "National Guard officers hold commissions issued under an authority that no longer exists, and no one has told them clearly who they answer to now. Units drill without confidence that their orders, or their commanders, are lawful."
+ WSH_unclaimed_federal_assets: "Unclaimed Federal Assets"
+ WSH_unclaimed_federal_assets_desc: "Post offices, courthouses, warehouses, and survey stations built and staffed by a government that no longer exists sit in a kind of legal limbo, maintained by clerks who are not certain who, if anyone, still pays their wages."
+ WSH_mass_unemployment: "Mass Unemployment"
+ WSH_mass_unemployment_desc: "A fifth of Washington's working people have no work, and the Hoovervilles along the Seattle tideflats and the Spokane riverbanks grow larger by the month. The Unemployed Citizens League organizes more effectively than the counties do."
+
+ # ============================================================
+ # NATIONAL SPIRITS - treasury outcomes
+ # ============================================================
+
+ WSH_balanced_budget_government_idea: "Balanced Budget Government"
+ WSH_balanced_budget_government_idea_desc: "Hartley has cut the state's obligations to match its revenue, whatever the cost to relief. Business confidence in Olympia's fiscal discipline is real. So is the resentment building in the relief lines."
+ WSH_emergency_credit_state_idea: "Emergency Credit State"
+ WSH_emergency_credit_state_idea_desc: "The Republic now carries a growing debt in short-term warrants and emergency bonds, but its relief rolls and construction projects are funded because of it. The Legislature has not stopped arguing about the wisdom of the arrangement."
+ WSH_corporate_credit_compact_idea: "Corporate Credit Compact"
+ WSH_corporate_credit_compact_idea_desc: "Seattle's banking houses and lumber combines have financed the Republic's recovery, and their representatives now sit unusually close to the Governor's office. Labor organizers call it what they believe it to be: a state government on private retainer."
+
+ # ============================================================
+ # NATIONAL SPIRITS - Guard command outcomes
+ # ============================================================
+
+ WSH_constitutional_guard_idea: "Constitutional Guard"
+ WSH_constitutional_guard_idea_desc: "The National Guard answers to the Governor within limits set by the Legislature and the courts, exactly as Washington's constitution intended. It is the slower arrangement in a crisis, but the one that has kept the Guard out of Washington's politics."
+ WSH_executive_guard_idea: "Executive Guard"
+ WSH_executive_guard_idea_desc: "The Guard answers to Hartley alone, without the delay of legislative consultation. It responds faster than it ever has - and legislators of both parties have begun to ask, quietly, what stops a future governor from using that same authority against them."
+ WSH_independent_general_staff_idea: "Independent General Staff"
+ WSH_independent_general_staff_idea_desc: "The Joint Defense Board splits command of the Guard between the Governor's office, the Legislature, and the Guard's own senior officers. It has made the officer corps a political constituency in its own right."
+
+ # ============================================================
+ # NATIONAL SPIRITS - federal property outcomes
+ # ============================================================
+
+ WSH_legal_custodianship_idea: "Legal Custodianship"
+ WSH_legal_custodianship_idea_desc: "Washington holds the former federal estate in trust rather than claiming it outright. It is a position other governments, present and future, find easy to recognize - even if it has left post offices and courthouses running on borrowed authority for longer than Olympia would like."
+ WSH_state_nationalization_idea: "State Nationalization"
+ WSH_state_nationalization_idea_desc: "The former federal estate is now, by state declaration, the property of Washington outright. Olympia has working post offices, courthouses, and warehouses to show for it, and a great many aggrieved former federal officials who have not accepted the declaration quietly."
+ WSH_fragmented_ownership_idea: "Fragmented Ownership"
+ WSH_fragmented_ownership_idea_desc: "Counties, cities, corporations, and state agencies have each taken custody of whatever federal property sat nearest their own interests. Olympia's authority over the old federal estate is, as a result, more theoretical than real."
+
+ # ============================================================
+ # NATIONAL SPIRITS - relief outcomes
+ # ============================================================
+
+ WSH_public_works_administration_idea: "Public Works Administration"
+ WSH_public_works_administration_idea_desc: "Thousands of Washington's unemployed now draw wages building roads, bridges, and public buildings for the state. The debt taken on to pay them is considerable, and growing."
+ WSH_cooperative_relief_network_idea: "Cooperative Relief Network"
+ WSH_cooperative_relief_network_idea_desc: "The Unemployed Citizens League's cooperative farms, commissaries, and barter exchanges now operate with the state's blessing rather than against its indifference. Olympia spends little on relief as a result - and the League's local councils have become a durable political force of their own."
+ WSH_county_relief_system_idea: "County Relief System"
+ WSH_county_relief_system_idea_desc: "Relief remains chiefly a county responsibility, with the state offering modest grants-in-aid rather than direct administration. King County's relief looks nothing like Klickitat County's, and neither county commission much minds."
+ WSH_restricted_relief_idea: "Restricted Relief"
+ WSH_restricted_relief_idea_desc: "Relief flows through churches and approved charitable societies rather than through the state directly. It is the least expensive arrangement the treasury could ask for, and the one the Unemployed Citizens League trusts least."
+
+ # ============================================================
+ # NATIONAL SPIRITS - resulting Hartley governments
+ # ============================================================
+
+ WSH_constitutional_conservative_government: "Constitutional Conservative Government"
+ WSH_constitutional_conservative_government_desc: "Hartley has built a government of legal continuity and fiscal restraint: a balanced budget, a Guard firmly subordinate to elected authority, and relief kept deliberately limited. It is the government Washington's conservative establishment hoped for, and the one its unemployed trust least."
+ WSH_emergency_development_government: "Emergency Development Government"
+ WSH_emergency_development_government_desc: "Hartley has built a government of borrowed money and built roads: bond-financed relief, a strengthened executive, and the state's hand on the strategic property it once shared with Washington City. It is expensive, and it is working, for now."
+ WSH_corporate_reconstruction_government: "Corporate Reconstruction Government"
+ WSH_corporate_reconstruction_government_desc: "Hartley has built a government financed by Seattle's banks and lumber combines, with business interests seated close to power and labor concessions kept deliberately narrow. Private capital is rebuilding the Republic - on terms private capital largely wrote itself."
+ WSH_legislative_compromise_government: "Legislative Compromise Government"
+ WSH_legislative_compromise_government_desc: "Hartley has built a government that answers to the Legislature, the counties, and a Guard that no single office fully commands. It is slower and more contentious than the alternatives, and it is the government the broadest coalition of Washingtonians actually agreed to."
+
+ # ============================================================
+ # DECISION CATEGORY
+ # ============================================================
+
+ WSH_hartley_governance_cat: "First-Year Governance"
+ WSH_hartley_governance_cat_desc: "Decisions surrounding the treasury, the National Guard, the federal estate, and relief in Hartley's first year as Governor of the Republic of Washington."
+
+ # ============================================================
+ # DECISIONS - The Empty Treasury
+ # ============================================================
+
+ WSH_issue_short_term_warrants: "Issue Short-Term State Warrants"
+ WSH_issue_short_term_warrants_desc: "Authorize the treasurer to issue short-term warrants against expected revenue, buying the state's departments a few months of breathing room."
+ WSH_suspend_nonessential_construction: "Suspend Nonessential Construction"
+ WSH_suspend_nonessential_construction_desc: "Halt every state building project that is not already underway, freeing funds for more urgent obligations at the cost of construction jobs the state itself was providing."
+ WSH_renegotiate_state_contracts: "Renegotiate State Contracts"
+ WSH_renegotiate_state_contracts_desc: "Reopen the state's existing supply and service contracts and press vendors for better terms, at the risk of straining relationships Olympia will need again."
+ WSH_collect_delinquent_property_taxes: "Collect Delinquent Property Taxes"
+ WSH_collect_delinquent_property_taxes_desc: "Direct county assessors to pursue years of unpaid property taxes more aggressively than they have dared to during the worst of the collapse."
+ WSH_consolidate_state_agencies: "Consolidate State Agencies"
+ WSH_consolidate_state_agencies_desc: "Merge overlapping state boards and commissions into single departments, trimming payroll at the cost of the patronage appointments those boards once provided."
+ WSH_guarantee_selected_banks: "Guarantee Selected Banks"
+ WSH_guarantee_selected_banks_desc: "Extend a limited state guarantee to a handful of the soundest surviving banks, steadying deposits at the risk of the treasury's own credit."
+
+ # ============================================================
+ # DECISIONS - Command of the Guard
+ # ============================================================
+
+ WSH_inspect_state_armories: "Inspect State Armories"
+ WSH_inspect_state_armories_desc: "Order a full inventory of arms, ammunition, and equipment held in the state's armories, so that Olympia finally knows what it actually commands."
+ WSH_confirm_officer_commissions: "Confirm Officer Commissions"
+ WSH_confirm_officer_commissions_desc: "Formally reissue every National Guard officer's commission under state rather than federal authority, settling a question that has hung over the officer corps since the collapse."
+ WSH_recall_available_guardsmen: "Recall Available Guardsmen"
+ WSH_recall_available_guardsmen_desc: "Call Guardsmen scattered by the collapse back to their units, restoring the Guard's paper strength if not yet its readiness."
+ WSH_secure_rail_junctions: "Secure Rail Junctions"
+ WSH_secure_rail_junctions_desc: "Post Guard detachments at Washington's principal rail junctions, guaranteeing that freight and passengers keep moving whatever else fails."
+ WSH_protect_hydroelectric_facilities: "Protect Hydroelectric Facilities"
+ WSH_protect_hydroelectric_facilities_desc: "Assign the Guard to guard the state's hydroelectric dams and switching stations against sabotage, accident, or simple neglect."
+ WSH_guard_seattle_tacoma_ports: "Guard Seattle and Tacoma Ports"
+ WSH_guard_seattle_tacoma_ports_desc: "Station Guard units at the working waterfronts of Seattle and Tacoma, reassuring shippers at the cost of further souring relations with dockworkers already suspicious of khaki uniforms on the piers."
+ WSH_absorb_former_federal_personnel: "Absorb Former Federal Personnel"
+ WSH_absorb_former_federal_personnel_desc: "Offer state commissions to former federal military personnel stranded in Washington by the collapse, adding trained men to the Guard's rolls."
+ WSH_establish_domestic_deployment_rules: "Establish Rules for Domestic Deployment"
+ WSH_establish_domestic_deployment_rules_desc: "Write formal rules governing when and how the Guard may be used within Washington's own borders, closing a gap that has made both legislators and labor leaders uneasy."
+
+ # ============================================================
+ # DECISIONS - The Federal Estate
+ # ============================================================
+
+ WSH_occupy_federal_courthouse: "Occupy the Federal Courthouse"
+ WSH_occupy_federal_courthouse_desc: "Place state personnel in the former federal courthouse, keeping its docket and its records moving under Olympia's authority."
+ WSH_secure_postal_facilities: "Secure Postal Facilities"
+ WSH_secure_postal_facilities_desc: "Guarantee the wages and authority of postal clerks currently sorting mail for a government that no longer pays them."
+ WSH_inventory_federal_warehouses: "Inventory Federal Warehouses"
+ WSH_inventory_federal_warehouses_desc: "Send state auditors through every federal warehouse in the state to catalogue what remains inside them before it is quietly carried off."
+ WSH_assume_customs_operations: "Assume Customs Operations"
+ WSH_assume_customs_operations_desc: "Direct state officials to take over customs collection at Puget Sound's ports, claiming duties that would otherwise go uncollected entirely."
+ WSH_transfer_forestry_administration: "Transfer Forestry Administration"
+ WSH_transfer_forestry_administration_desc: "Move the former federal forest rangers and their stations onto the state payroll, keeping Washington's timberlands patrolled and its fire lookouts staffed."
+ WSH_seize_abandoned_communications_equipment: "Seize Abandoned Communications Equipment"
+ WSH_seize_abandoned_communications_equipment_desc: "Claim the telegraph and wireless equipment left behind in abandoned federal offices for the state's own use."
+ WSH_negotiate_with_federal_employees: "Negotiate with Federal Employees"
+ WSH_negotiate_with_federal_employees_desc: "Open formal talks with the clerks, rangers, and inspectors still working federal posts without federal pay, offering them a path onto the state's own payroll."
+ WSH_submit_ownership_to_supreme_court: "Submit Ownership to the Supreme Court"
+ WSH_submit_ownership_to_supreme_court_desc: "Ask the Washington Supreme Court to rule formally on the state's claim to the federal estate, trading speed for a judgment no one can easily challenge afterward."
+
+ # ============================================================
+ # DECISIONS - Emergency Relief Appropriations
+ # ============================================================
+
+ WSH_fund_emergency_kitchens: "Fund Emergency Kitchens"
+ WSH_fund_emergency_kitchens_desc: "Grant state funds to the municipal soup kitchens already feeding the unemployed in Seattle, Spokane, and Tacoma."
+ WSH_sponsor_cooperative_farms: "Sponsor Cooperative Farms"
+ WSH_sponsor_cooperative_farms_desc: "Provide seed, tools, and state land to the cooperative farms the Unemployed Citizens League has organized outside the cities."
+ WSH_create_municipal_commissaries: "Create Municipal Commissaries"
+ WSH_create_municipal_commissaries_desc: "Establish state-backed commissaries in Washington's largest cities, trading labor and barter goods for staple food directly."
+ WSH_halt_selected_evictions: "Halt Selected Evictions"
+ WSH_halt_selected_evictions_desc: "Direct county sheriffs to delay enforcement of evictions against unemployed families wherever the law allows discretion."
+ WSH_employ_workers_on_state_roads: "Employ Workers on State Roads"
+ WSH_employ_workers_on_state_roads_desc: "Put unemployed men to work on state highway crews, funded by borrowing the treasury has not yet found a way to avoid."
+ WSH_reopen_closed_public_buildings: "Reopen Closed Public Buildings"
+ WSH_reopen_closed_public_buildings_desc: "Reopen shuttered courthouses, schools, and public halls closed for lack of funds, restoring services county officials have been demanding back."
+ WSH_clear_or_recognize_hoovervilles: "Clear or Recognize Hooverville Settlements"
+ WSH_clear_or_recognize_hoovervilles_desc: "Decide, settlement by settlement, whether the shantytowns along the tideflats and riverbanks are to be tolerated as informal relief or cleared as public nuisances."
+ WSH_negotiate_unemployed_citizens_league: "Negotiate with the Unemployed Citizens League"
+ WSH_negotiate_unemployed_citizens_league_desc: "Open direct talks with the Unemployed Citizens League's leadership, treating the organization as a partner in relief rather than a rival to the state."
+ WSH_suppress_unauthorized_demonstrations: "Suppress Unauthorized Demonstrations"
+ WSH_suppress_unauthorized_demonstrations_desc: "Direct state and local authorities to break up unemployment marches and demonstrations held without a permit, restoring order at the cost of the goodwill of the men marching."

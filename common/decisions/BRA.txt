@@ -1319,7 +1319,8 @@ political_actions = {
 			base = 50
 		}
 	
-		allowed = {  
+		allowed = {
+			original_tag = BRA
 		}
 
 		visible = { 

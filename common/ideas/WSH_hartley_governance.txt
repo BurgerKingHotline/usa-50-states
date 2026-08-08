@@ -1,0 +1,402 @@
+ideas = {
+	country = {
+
+		# ============================================================
+		# CRISIS SPIRITS - added when each branch opens, removed when
+		# The First Republican Budget resolves the governing coalition
+		# ============================================================
+
+		WSH_state_insolvency = {
+			picture = usa_great_depression_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		WSH_divided_chain_of_command = {
+			picture = SPR_political_violence
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.05
+				army_morale_factor = -0.05
+				war_support_factor = -0.03
+			}
+		}
+		WSH_unclaimed_federal_assets = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = 0.02
+				stability_factor = -0.03
+			}
+		}
+		WSH_mass_unemployment = {
+			picture = usa_great_depression_3
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = -0.07
+				war_support_factor = 0.03
+				political_power_factor = -0.03
+			}
+		}
+
+		# ============================================================
+		# TREASURY OUTCOMES
+		# ============================================================
+
+		WSH_balanced_budget_government_idea = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				stability_factor = -0.03
+				war_support_factor = 0.03
+			}
+		}
+		WSH_emergency_credit_state_idea = {
+			picture = usa_great_depression_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.08
+				political_power_factor = -0.05
+				war_support_factor = -0.02
+			}
+		}
+		WSH_corporate_credit_compact_idea = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				political_power_factor = -0.05
+				stability_factor = -0.05
+			}
+		}
+
+		# ============================================================
+		# NATIONAL GUARD COMMAND OUTCOMES
+		# ============================================================
+
+		WSH_constitutional_guard_idea = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.03
+				army_org_factor = -0.03
+			}
+		}
+		WSH_executive_guard_idea = {
+			picture = SPR_political_violence
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+				political_power_factor = -0.03
+				stability_factor = -0.02
+			}
+		}
+		WSH_independent_general_staff_idea = {
+			picture = usa_great_depression_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = -0.05
+				army_org_factor = 0.03
+			}
+		}
+
+		# ============================================================
+		# FEDERAL PROPERTY OUTCOMES
+		# ============================================================
+
+		WSH_legal_custodianship_idea = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				production_speed_buildings_factor = -0.03
+			}
+		}
+		WSH_state_nationalization_idea = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.08
+				stability_factor = -0.05
+				resistance_target = 0.03
+			}
+		}
+		WSH_fragmented_ownership_idea = {
+			picture = usa_great_depression_3
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.02
+				political_power_factor = -0.02
+				production_speed_buildings_factor = -0.02
+			}
+		}
+
+		# ============================================================
+		# RELIEF OUTCOMES
+		# ============================================================
+
+		WSH_public_works_administration_idea = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.08
+				political_power_factor = -0.03
+			}
+		}
+		WSH_cooperative_relief_network_idea = {
+			picture = usa_great_depression_3
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.03
+				war_support_factor = 0.03
+				consumer_goods_factor = -0.02
+			}
+		}
+		WSH_county_relief_system_idea = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.02
+				production_speed_buildings_factor = -0.02
+			}
+		}
+		WSH_restricted_relief_idea = {
+			picture = usa_great_depression_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = -0.05
+				war_support_factor = 0.03
+			}
+		}
+
+		# ============================================================
+		# RESULTING HARTLEY GOVERNMENTS - set by WSH_hartley.50, one
+		# only. Carries the approval dashboard forward from the
+		# transition-era variables set on WSH_uncertain_succession.
+		# ============================================================
+
+		WSH_constitutional_conservative_government = {
+			picture = usa_great_depression_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			on_add = {
+				set_variable = { WSH_legislature_approval = 5 }
+				set_variable = { WSH_business_approval = 5 }
+				set_variable = { WSH_professional_approval = 3 }
+				set_variable = { WSH_military_approval = 0 }
+				set_variable = { WSH_labor_approval = -5 }
+				set_variable = { WSH_conservative_approval = 8 }
+			}
+			on_remove = {
+				set_variable = { WSH_military_approval = 0 }
+				set_variable = { WSH_labor_approval = 0 }
+				set_variable = { WSH_conservative_approval = 0 }
+			}
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.03
+			}
+		}
+		WSH_emergency_development_government = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			on_add = {
+				set_variable = { WSH_legislature_approval = -3 }
+				set_variable = { WSH_business_approval = -2 }
+				set_variable = { WSH_professional_approval = 2 }
+				set_variable = { WSH_military_approval = 5 }
+				set_variable = { WSH_labor_approval = 3 }
+				set_variable = { WSH_conservative_approval = -3 }
+			}
+			on_remove = {
+				set_variable = { WSH_military_approval = 0 }
+				set_variable = { WSH_labor_approval = 0 }
+				set_variable = { WSH_conservative_approval = 0 }
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.08
+				political_power_factor = 0.05
+			}
+		}
+		WSH_corporate_reconstruction_government = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			on_add = {
+				set_variable = { WSH_legislature_approval = -2 }
+				set_variable = { WSH_business_approval = 8 }
+				set_variable = { WSH_professional_approval = 3 }
+				set_variable = { WSH_military_approval = 0 }
+				set_variable = { WSH_labor_approval = -6 }
+				set_variable = { WSH_conservative_approval = 2 }
+			}
+			on_remove = {
+				set_variable = { WSH_military_approval = 0 }
+				set_variable = { WSH_labor_approval = 0 }
+				set_variable = { WSH_conservative_approval = 0 }
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				stability_factor = -0.03
+			}
+		}
+		WSH_legislative_compromise_government = {
+			picture = usa_great_depression_3
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			on_add = {
+				set_variable = { WSH_legislature_approval = 8 }
+				set_variable = { WSH_business_approval = 0 }
+				set_variable = { WSH_professional_approval = 2 }
+				set_variable = { WSH_military_approval = -2 }
+				set_variable = { WSH_labor_approval = 3 }
+				set_variable = { WSH_conservative_approval = 0 }
+			}
+			on_remove = {
+				set_variable = { WSH_military_approval = 0 }
+				set_variable = { WSH_labor_approval = 0 }
+				set_variable = { WSH_conservative_approval = 0 }
+			}
+			modifier = {
+				stability_factor = 0.03
+				political_power_factor = -0.02
+			}
+		}
+	}
+}
