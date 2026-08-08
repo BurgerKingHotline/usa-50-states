@@ -22,23 +22,17 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_declare_independence#State Building
+		id = CAL_declare_independence#State Building#declare republic, change it's name to republic of california, bear republic of california, or state of california
 		icon = GFX_goal_generic_national_unity 
 		cost = 5
-		offset = {
-			x = -2
-			y = 0
-			trigger = {
-				has_country_flag = CAL_epic_path
-			}
-		}
-		x = -8
+		x = 0
 		y = 1
 		prerequisite = {
 			focus = CAL_intro_focus
 			focus = CAL_socialist_governor
 		}
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		completion_reward = { 
 			CAL_civil_unrest_level_down = yes
@@ -50,6 +44,7 @@ focus_tree = {
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_declare_independence
@@ -73,6 +68,7 @@ focus_tree = {
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_declare_independence
@@ -94,6 +90,7 @@ focus_tree = {
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_declare_independence
@@ -116,6 +113,7 @@ focus_tree = {
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_declare_independence
@@ -138,6 +136,7 @@ focus_tree = {
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_declare_independence
@@ -160,6 +159,7 @@ focus_tree = {
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_new_currency
@@ -201,6 +201,7 @@ focus_tree = {
 		cost = 6
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
 			focus = CAL_new_currency
@@ -225,10 +226,10 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
 		x = -6
-		y = 6
+		y = 10
 		offset = {
-			x = -2
-			y = 2
+			x = 0
+			y = -2
 			trigger = {
 				has_country_flag = CAL_epic_path
 			}
@@ -240,10 +241,10 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		x = 6
-		y = 6
+		y = 10
 		offset = {
 			x = 0
-			y = 2
+			y = -2
 			trigger = {
 				has_country_flag = CAL_epic_path
 			}
@@ -587,11 +588,12 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_the_republic_survives#declare republic, change it's name to republic of california, bear republic of california, or state of california
+		id = CAL_hold_elections#declare republic, change it's name to republic of california, bear republic of california, or state of california
 		icon = GFX_goal_generic_national_unity
 		cost = 5
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
+			has_country_flag = CAL_intro_tree
 		}
 		available = {
 			has_country_flag = CAL_epic_path
@@ -618,11 +620,11 @@ focus_tree = {
 		id = CAL_epic
 		icon = GFX_goal_support_communism
 		cost = 5
-		x = 0
+		x = -5
 		y = 1
-		relative_position_id = CAL_intro_focus
+		relative_position_id = CAL_hold_elections
 		prerequisite = {
-			focus = CAL_intro_focus
+			focus = CAL_hold_elections
 		}
 		allow_branch = {
 			has_country_flag = CAL_intro_tree

@@ -192,10 +192,11 @@ country_event = {
 	desc = california_events.11.desc
 	picture = GFX_report_event_usa_election_generic
 	fire_only_once = yes
-	trigger = {
-		tag = CAL
-		date > 1933.11.1
-	}
+	is_triggered_only = yes
+	#trigger = {
+	#	tag = CAL
+	#	date > 1933.11.1
+	#}
 	option = {
 		name = california_events.11.a
 		add_manpower = -1
@@ -218,6 +219,7 @@ country_event = {
 		add_manpower = -2
 		name = california_events.12.a
 		CAL_civil_unrest_level_down = yes
+		news_event = ffl_news.4
 	}
 }
 country_event = {
@@ -408,12 +410,11 @@ country_event = {
 		    days = 30
 		    random_hours = 12
 		}
+		news_event = ffl_news.6
 	}
 	option = {
-		name = california_events.21.b #let them secceed
+		name = california_events.21.b #let them secede
 		add_stability = 0.05
-	}
-	after = {
 		news_event = ffl_news.3
 	}
 }
@@ -446,7 +447,6 @@ country_event = {
 	}
 	option = {
 		name = california_events.23.a
-		news_event = ffl_news.5
 		declare_war_on = {
 			target = ARZ
 			type = annex_everything
@@ -461,7 +461,31 @@ country_event = {
 		}
 	}
 }
-
+country_event = {
+	id = california_events.24#Jefferson in chaos start decision
+	title = california_events.24.t
+	desc = california_events.24.desc
+	picture = GFX_report_event_usa_election_generic
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		109 = {
+			remove_core_of = CAL
+			add_claim_by = CAL
+		}
+		110 = {
+			remove_core_of = CAL
+			add_claim_by = CAL
+		}
+		116 = {
+			remove_core_of = CAL
+			add_claim_by = CAL
+		}
+	}
+	option = {
+		name = california_events.24.a #oh dear
+	}
+}
 
 
 

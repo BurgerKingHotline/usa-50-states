@@ -6,6 +6,7 @@ state = {
 	history = { 
 		owner = CAL
 		add_core_of = CAL
+		add_core_of = JEF
 		victory_points = {
 			7656 2#Eureka
 		}

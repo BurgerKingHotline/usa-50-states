@@ -1,3 +1,13 @@
+CAL_things_are_getting_worse_cat = {
+	allowed = {
+		tag = CAL
+	}
+	visible = {
+		always = yes
+	}
+	visible_when_empty = yes
+
+} 
 CAL_1934_gubernatorial_election_cat = {
 	allowed = {
 		tag = CAL
@@ -29,6 +39,6 @@ CAL_balance_of_power_category = {
 	priority = 90
 	
 	visible = {
-		
+		has_completed_focus = CAL_socialist_governor
 	}
 }

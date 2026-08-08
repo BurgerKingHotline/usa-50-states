@@ -20,6 +20,20 @@ set_variable = { CAL_depression_recovery = 0}
 set_variable = { CAL_sell_epic_bonds_cost = 100 }
 set_variable = { CAL_epic_costs_mission_time = 75 }
 set_variable = { CAL_epic_sieze_factories_cost = 100 }
+set_variable = { CAL_jefferson_escalation = 0 }
+set_variable = { CAL_ila_escalation = 0 }
+set_variable = { CAL_joaquin_escalation = 0 }
+set_variable = { CAL_brooke_escalation = 0 }
+set_variable = { CAL_brooke_event_chance = 20 }
+set_variable = { CAL_joaquin_event_chance = 20 }
+set_variable = { CAL_jefferson_event_chance = 20 }
+set_variable = { CAL_ila_event_chance = 20 }
+#add_to_array = {
+#	array = brooke_events_array
+#	value = this.id
+#}
+#set_variable = { brooke_events_array^0 = 11 }
+#set_variable = { brooke_events_array^1 = 12 }
 
 set_power_balance = {
 	id = CAL_bop_socdem_comm_balance
@@ -53,6 +67,7 @@ add_ideas = {
 	CAL_widespread_strikes
 	CAL_corporate_influence
 	CAL_sunshine_state
+	CAL_great_collapse
 }
 
 if = {
@@ -126,4 +141,11 @@ if = {
 	set_technology = {
 		gwtank_chassis = 1
 	}
+}
+
+country_event = {
+	id = california_events.24
+	random_days = 12
+	days = 10
+	random_hours = 12
 }

@@ -1,3 +1,67 @@
+CAL_things_are_getting_worse_cat = {
+	CAL_things_are_getting_worse_mission = {
+		activation = {
+			has_idea = CAL_great_collapse
+		}
+		allowed = {
+			original_tag = CAL
+		}
+		cancel_trigger = {
+			#always = no
+			NOT = {
+				has_idea = CAL_great_collapse
+			}
+		}
+		days_re_enable = 1
+		priority = 50
+		days_mission_timeout = 45
+		available = {
+			has_completed_focus = CAL_golden_rule
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+			activate_mission = CAL_things_are_getting_worse_mission
+			random_list = {
+				CAL_brooke_event_chance = {
+					if = {
+						limit = {
+							check_variable = {
+								CAL_brooke_escalation = 0
+							}
+						}
+						country_event = california_events.11
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_brooke_escalation = 1
+							}
+						}
+						country_event = california_events.12
+						set_variable = {
+							CAL_brooke_event_chance = 0
+						}
+					}
+				}
+				CAL_joaquin_event_chance = {
+					
+				}
+				CAL_jefferson_event_chance = {
+					
+				}
+				CAL_ila_event_chance = {
+					
+				}
+				1 = {
+					country_event = california_events.13
+				}
+			}
+		}
+		complete_effect = {
+		}
+
+	}
+}
 CAL_1934_gubernatorial_election_cat = {
 	CAL_merriam_campaigning_mission = {
 	    activation = {

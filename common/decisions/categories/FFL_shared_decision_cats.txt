@@ -12,6 +12,7 @@ colorado_water_wars_cat = {
 					tag = ARZ
 				}
 			}
+			always = no
 		}
 		visible_when_empty = yes
 

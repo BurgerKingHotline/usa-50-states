@@ -600,7 +600,8 @@ ideas = {
 			modifier = {
 				stability_factor = -0.1
 				political_power_factor = 0.25
-				cic_construction_boost = 0.05
+				consumer_goods_factor = -0.25
+				#cic_construction_boost = 0.05
 			}
 		}
 		CAL_gold_standard ={
@@ -616,8 +617,8 @@ ideas = {
 			
 			modifier = {
 				stability_factor =0.2
-				party_popularity_stability_factor = 0.05
-				cic_construction_boost = -0.05
+				#party_popularity_stability_factor = 0.05
+				cic_construction_boost = 0.05
 				consumer_goods_factor = 0.1
 			}
 		}
@@ -634,9 +635,24 @@ ideas = {
 			
 			modifier = {
 				monthly_population = 0.2
-				stability_factor = 0.1
-				war_stability_factor = 0.1
-				#production_lack_of_resource_penalty_factor = -1
+				production_lack_of_resource_penalty_factor = -0.2
+				surrender_limit = 0.2
+			}
+		}
+		CAL_great_collapse ={
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = cal_sunshine_state
+			
+			modifier = {
+				stability_weekly = -0.005
+				war_support_weekly = -0.005
 			}
 		}
 	}
