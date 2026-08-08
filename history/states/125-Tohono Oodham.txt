@@ -12,5 +12,8 @@ state = {
 		owner = TON
 		add_core_of = TON
 		add_claim_by = ARZ
+		victory_points = {
+			4266 1#Sells
+		}
 	}
 }

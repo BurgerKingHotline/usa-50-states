@@ -12,5 +12,8 @@ state = {
 		owner = WMA
 		add_core_of = WMA
 		add_claim_by = ARZ
+		victory_points = {
+			9168 1#Whiteriver
+		}
 	}
 }

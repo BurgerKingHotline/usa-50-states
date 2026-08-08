@@ -1,0 +1,15 @@
+state = {
+	id = 137
+	name = "STATE_137"
+	provinces = {
+		1357 2163 7864 4896 1572 5901 8187 3255 41 6799 1264 3274 1035 153 5530 3030 7747 2182 400 7894 443 5553 144 264 4581 1317 942 4531
+	}
+	history = {
+		owner = NVD
+		add_core_of = NVD
+	}
+	state_category = rural
+	manpower = 23064
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

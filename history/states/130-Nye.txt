@@ -1,0 +1,20 @@
+state = {
+	id = 130
+	name = "STATE_130"
+	manpower = 19062
+	state_category = rural
+	history = { 
+		owner = NVD
+		add_core_of = NVD
+		victory_points = {
+			8702 1#Las Vegas
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+	provinces = { 
+		155 2211 8603 6806 3886 992 3000 954 4770 8448 114 1192 1930 255 4371 6155 8319 8382 6446 219 5981 8473 4686 1207 1740 238 1968 749 603 1581 8602 8563 3426 1238 1071 6272 6583 8702 8668 2899 8741 6385 6445 1423
+	}
+}

@@ -1,0 +1,21 @@
+state = {
+	id = 138
+	name = "STATE_138"
+	provinces = {
+		13038 13043 5160 412 6388 1835 4768 1135 8937 5707 4532 8996 3543 9039 6444 904 4848 3202 4258 8975 3885 6216 2454 4042 8960 2113 318 13040 1089 3268 2083 618 1483 5263 809 6343 13042 1242 4955 8794 890 4988 1997 4727 8693 1415
+	}
+	history = {
+		owner = ARZ
+		add_core_of = ARZ
+		victory_points = {
+			8937 1#Flagstaff
+		}
+		victory_points = {
+			9039 1#Jerome
+		}
+	}
+	state_category = town
+	manpower = 48106
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

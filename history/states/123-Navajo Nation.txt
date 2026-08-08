@@ -12,5 +12,8 @@ state = {
 		owner = NVJ
 		add_core_of = NVJ
 		add_claim_by = ARZ
+		victory_points = {
+			8898 1#Tseghanoodzani
+		}
 	}
 }

@@ -12,5 +12,8 @@ state = {
 		owner = SCA
 		add_core_of = SCA
 		add_claim_by = ARZ
+		victory_points = {
+			5356 1#Peridot
+		}
 	}
 }
