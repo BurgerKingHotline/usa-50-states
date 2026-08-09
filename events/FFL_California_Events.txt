@@ -396,10 +396,6 @@ country_event = {
 			transfer_state_to = JEF
 			set_demilitarized_zone = no
 		}
-		116 = {
-			transfer_state_to = JEF
-			set_demilitarized_zone = no
-		}
 		JEF = {
 			load_oob = "JEFF_ffl"
 		}
@@ -432,9 +428,6 @@ country_event = {
 			set_demilitarized_zone = yes
 		}
 		110 = {
-			set_demilitarized_zone = yes
-		}
-		116 = {
 			set_demilitarized_zone = yes
 		}
 		name = california_events.22.a #
@@ -482,11 +475,6 @@ country_event = {
 			force_enable_resistance = CAL
 			start_resistance = yes
 		}
-		116 = {
-			remove_core_of = CAL
-			force_enable_resistance = CAL
-			start_resistance = yes
-		}
 	}
 }
 country_event = {
@@ -504,11 +492,6 @@ country_event = {
 			add_compliance = -30
 		}
 		110 = {
-			add_manpower = -5000
-			add_resistance = 75
-			add_compliance = -30
-		}
-		116 = {
 			add_manpower = -5000
 			add_resistance = 75
 			add_compliance = -30
