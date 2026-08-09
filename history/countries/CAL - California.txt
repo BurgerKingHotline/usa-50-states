@@ -38,10 +38,12 @@ set_variable = { CAL_ila_event_chance = 20 }
 set_power_balance = {
 	id = CAL_bop_socdem_comm_balance
 }
-
+#leaders
 recruit_character = CAL_JAMES_ROLPH
 recruit_character = CAL_UPTON_SINCLAIR
 recruit_character = CAL_FRANK_MERRIAM
+#advisors
+recruit_character = CAL_EARL_WARREN
 
 set_politics = {
         ruling_party = conservatism_ideology

@@ -14,7 +14,7 @@ CAL_things_are_getting_worse_cat = {
 		}
 		days_re_enable = 1
 		priority = 50
-		days_mission_timeout = 15#45
+		days_mission_timeout = 45#45
 		available = {
 			has_completed_focus = CAL_golden_rule
 		}

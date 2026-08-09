@@ -36,4 +36,24 @@ characters = {
 			desc = CAL_upton_sinclair_desc
 		}
 	}
+	CAL_EARL_WARREN = {
+		name = "Earl Warren"
+		portraits = {
+			civilian = { large = "GFX_CAL_Portrait_Upton_Sinlair" }
+		}
+		gender = male
+		advisor = {
+			slot = political_advisor
+			idea_token = CAL_earl_warren
+			allowed = {
+				original_tag = CAL
+			}
+			traits = {
+				conformist_attorney
+			}
+			visible = {
+				has_completed_focus = CAL_strengthen_da
+			}
+		}
+	}
 }

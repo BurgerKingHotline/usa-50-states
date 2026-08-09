@@ -35,7 +35,6 @@ country_event = {
 		4 = {
 			add_manpower = -2
 		}
-		CAL_civil_unrest_level_down = yes
 		swap_ideas = {
 			remove_idea = CAL_longshoremen_strikes
 			add_idea = CAL_francisco_general_strikes
@@ -498,7 +497,17 @@ country_event = {
 		}
 	}
 }
-
+country_event = {
+	id = california_events.26#Introduction event. James rolph
+	title = california_events.26.t
+	desc = california_events.26.desc
+	picture = GFX_report_event_usa_election_generic
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.26.a #That's Why They Call Him 'Sunny'
+	}
+}
 
 
 

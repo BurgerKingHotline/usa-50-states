@@ -19,6 +19,15 @@ focus_tree = {
 			has_country_flag = CAL_intro_tree
 		}
 		completion_reward = {
+			country_event = {
+				id = california_events.26
+				days = 1
+				random_days = 2
+				random_hours = 12
+			}
+		}
+		ai_will_do = {
+			base = 11
 		}
 	}
 	focus = {
@@ -34,14 +43,16 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
 		}
+		ai_will_do = {
+			base = 11
+		}
 		completion_reward = { 
-			CAL_civil_unrest_level_down = yes
 		}
 	}
 	focus = {
 		id = CAL_strengthen_da
 		icon = GFX_goal_generic_national_unity
-		cost = 6
+		cost = 5
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
@@ -49,23 +60,19 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_declare_independence
 		}
+		ai_will_do = {
+			base = 11
+		}
 		x = 3
 		y = 2
 		completion_reward = { 
-			if = {
-				limit = {
-					CAL_has_civil_unrest_idea = yes
-				}
-				CAL_civil_unrest_level_down = yes
-			}
-			add_political_power = 25
-			add_stability = 0.025
+			activate_advisor = CAL_earl_warren
 		}
 	}
 	focus = {
 		id = CAL_new_currency
 		icon = GFX_goal_generic_national_unity
-		cost = 6
+		cost = 9
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
@@ -73,15 +80,15 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_declare_independence
 		}
+		ai_will_do = {
+			base = 11
+		}
 		x = 0
 		y = 1
+		select_effect = {
+			add_political_power = -100
+		}
 		completion_reward = { 
-			if = {
-				limit = {
-					CAL_has_civil_unrest_idea = yes
-				}
-				CAL_civil_unrest_level_down = yes
-			}
 		}
 	}
 	focus = {
@@ -95,22 +102,21 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_declare_independence
 		}
+		ai_will_do = {
+			base = 11
+		}
 		x = -2
 		y = 1
 		completion_reward = { 
-			if = {
-				limit = {
-					CAL_has_civil_unrest_idea = yes
-				}
-				CAL_civil_unrest_level_down = yes
-			}
+			custom_effect_tooltip = california_one_term_ammendment
 			set_country_flag = CAL_one_term_governor_ammendment
+			add_stability = 0.1
 		}
 	}
 	focus = {
 		id = CAL_reassure_public
 		icon = GFX_goal_generic_national_unity
-		cost = 6
+		cost = 4
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
@@ -118,22 +124,23 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_declare_independence
 		}
+		ai_will_do = {
+			base = 11
+		}
 		x = 2
 		y = 1
 		completion_reward = { 
-			if = {
-				limit = {
-					CAL_has_civil_unrest_idea = yes
-				}
-				CAL_civil_unrest_level_down = yes
-			}
 			add_stability = 0.05
+			add_popularity = {
+				ideology = conservatism_ideology
+				popularity = 0.05
+			}
 		}
 	}
 	focus = {
 		id = CAL_stoke_patriotism#independence day
 		icon = GFX_goal_generic_national_unity
-		cost = 6
+		cost = 4
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
@@ -141,22 +148,21 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_declare_independence
 		}
+		ai_will_do = {
+			base = 11
+		}
 		x = -3
 		y = 2
 		completion_reward = { 
-			if = {
-				limit = {
-					CAL_has_civil_unrest_idea = yes
-				}
-				CAL_civil_unrest_level_down = yes
-			}
+			custom_effect_tooltip = california_independence_day
 			set_country_flag = CAL_independence_day_official
+			add_war_support = 0.1
 		}
 	}
 	focus = {
 		id = CAL_gold_standard
 		icon = GFX_goal_generic_national_unity
-		cost = 6
+		cost = 2
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
@@ -166,6 +172,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = CAL_fiat_currency
+		}
+		ai_will_do = {
+			base = 11
 		}
 		x = 1
 		y = 2
@@ -198,7 +207,7 @@ focus_tree = {
 	focus = {
 		id = CAL_fiat_currency
 		icon = GFX_goal_generic_national_unity
-		cost = 6
+		cost = 2
 		relative_position_id = CAL_declare_independence
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
@@ -208,6 +217,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = CAL_gold_standard
+		}
+		ai_will_do = {
+			base = 11
 		}
 		x = -1
 		y = 2
@@ -226,10 +238,10 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
 		x = -6
-		y = 10
+		y = 9
 		offset = {
 			x = 0
-			y = -2
+			y = -1
 			trigger = {
 				has_country_flag = CAL_epic_path
 			}
@@ -241,10 +253,10 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		x = 6
-		y = 10
+		y = 9
 		offset = {
 			x = 0
-			y = -2
+			y = -1
 			trigger = {
 				has_country_flag = CAL_epic_path
 			}
@@ -595,11 +607,13 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
 		}
-		available = {
-			has_country_flag = CAL_epic_path
+		ai_will_do = {
+			base = 11
 		}
 		prerequisite = {
 			focus = CAL_strengthen_da
+		}
+		prerequisite = {
 			focus = CAL_reassure_public
 		}
 		prerequisite = {
@@ -608,12 +622,16 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = CAL_one_term_ammendment
+		}
+		prerequisite = {
 			focus = CAL_stoke_patriotism
 		}
 		x = 0
 		y = 3
 		completion_reward = { 
-			CAL_civil_unrest_remove = yes
+			remove_ideas = {
+				CAL_great_collapse
+			}
 		}
 	}
 	focus = {
@@ -649,22 +667,7 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_epic_news
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = -2
-		y = 1
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_epic
-		}
-		relative_position_id = CAL_epic
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_give_what_they_can
+		id = CAL_room_for_an_author
 		icon = GFX_goal_support_communism
 		cost = 5
 		x = 2
@@ -679,33 +682,16 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_room_for_an_author
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = 1
-		y = 2
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_give_what_they_can
-			focus = CAL_grassroots_campaign
-		}
-		relative_position_id = CAL_epic
-		completion_reward = { }
-	}
-	focus = {
 		id = CAL_plan_starvation
 		icon = GFX_goal_support_communism
 		cost = 5
-		x = -1
-		y = 2
+		x = -2
+		y = 1
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
-			focus = CAL_epic_news
-			focus = CAL_grassroots_campaign
+			focus = CAL_epic
 		}
 		relative_position_id = CAL_epic
 		completion_reward = { }
@@ -715,7 +701,7 @@ focus_tree = {
 		icon = GFX_goal_CAL_upton_socialist_governor_alternate
 		cost = 5
 		x = 0
-		y = 3
+		y = 2
 		allow_branch = {
 			has_country_flag = CAL_intro_tree
 		}
@@ -723,9 +709,8 @@ focus_tree = {
 			always = no
 		}
 		prerequisite = {
-			focus = CAL_give_what_they_can
-			focus = CAL_epic_news
 			focus = CAL_plan_starvation
+			focus = CAL_grassroots_campaign
 			focus = CAL_room_for_an_author
 		}
 		relative_position_id = CAL_epic
@@ -1464,7 +1449,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_empower_unions
+		id = CAL_hollywood_problem
 		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
@@ -1500,7 +1485,7 @@ focus_tree = {
 			focus = CAL_assemble_brain_trust
 		}
 		prerequisite = {
-			focus = CAL_empower_unions
+			focus = CAL_hollywood_problem
 		}
 		prerequisite = {
 			focus = CAL_kick_out_lobbyists
