@@ -14,7 +14,7 @@ CAL_things_are_getting_worse_cat = {
 		}
 		days_re_enable = 1
 		priority = 50
-		days_mission_timeout = 45
+		days_mission_timeout = 15#45
 		available = {
 			has_completed_focus = CAL_golden_rule
 		}
@@ -30,6 +30,10 @@ CAL_things_are_getting_worse_cat = {
 							}
 						}
 						country_event = california_events.11
+						add_to_variable = {
+							var = CAL_brooke_escalation
+							value = 1
+						}
 					}
 					else_if = {
 						limit = { 
@@ -44,12 +48,125 @@ CAL_things_are_getting_worse_cat = {
 					}
 				}
 				CAL_joaquin_event_chance = {
+					if = {
+						limit = {
+							check_variable = {
+								CAL_joaquin_escalation = 0
+							}
+						}
+						country_event = california_events.7
+						add_to_variable = {
+							var = CAL_jefferson_escalation
+							value = 1
+						}
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_joaquin_escalation = 1
+							}
+						}
+						add_to_variable = {
+							var = CAL_jefferson_escalation
+							value = 1
+						}
+						country_event = california_events.8
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_joaquin_escalation = 2
+							}
+						}
+						country_event = california_events.9
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_joaquin_escalation = 3
+							}
+						}
+						country_event = california_events.10
+						set_variable = {
+							CAL_joaquin_event_chance = 0
+						}
+					}
 					
 				}
 				CAL_jefferson_event_chance = {
+					if = {
+						limit = {
+							check_variable = {
+								CAL_jefferson_escalation = 0
+							}
+						}
+						country_event = california_events.25
+						add_to_variable = {
+							var = CAL_jefferson_escalation
+							value = 1
+						}
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_jefferson_escalation = 1
+							}
+						}
+						add_to_variable = {
+							var = CAL_jefferson_escalation
+							value = 1
+						}
+						country_event = california_events.22
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_jefferson_escalation = 2
+							}
+						}
+						country_event = california_events.21
+						set_variable = {
+							CAL_jefferson_event_chance = 0
+						}
+					}
 					
 				}
 				CAL_ila_event_chance = {
+					if = {
+						limit = {
+							check_variable = {
+								CAL_ila_escalation = 0
+							}
+						}
+						country_event = california_events.1
+						add_to_variable = {
+							var = CAL_ila_escalation
+							value = 1
+						}
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_ila_escalation = 1
+							}
+						}
+						add_to_variable = {
+							var = CAL_ila_escalation
+							value = 1
+						}
+						country_event = california_events.2
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_ila_escalation = 2
+							}
+						}
+						country_event = california_events.3
+						set_variable = {
+							CAL_ila_event_chance = 0
+						}
+					}
 					
 				}
 				1 = {

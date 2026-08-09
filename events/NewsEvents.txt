@@ -76,7 +76,7 @@ news_event = {#Start of the Colorado Water Wars
 	}
 }
 
-news_event = {#jefferson ultimatum
+news_event = {#Sunny Jim Dies
 	id = ffl_news.6
 	title = ffl_news.6.t
 	desc = ffl_news.6.desc
@@ -87,7 +87,7 @@ news_event = {#jefferson ultimatum
 	is_triggered_only = yes
 	
 	option = {
-		name = ffl_news.6.a#war in the cascades
+		name = ffl_news.6.a#bye bye governor
 		
 	}
 }

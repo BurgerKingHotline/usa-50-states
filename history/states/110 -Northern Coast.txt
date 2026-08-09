@@ -1,7 +1,7 @@
 state = {
 	id = 110
 	name = "STATE_110"
-	manpower = 81472
+	manpower = 50283
 	state_category = rural
 	history = { 
 		owner = CAL
@@ -16,9 +16,6 @@ state = {
 		victory_points = {
 			3863 1#Crescent City
 		}
-		victory_points = {
-			6512 1#Ukiah
-		}
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
@@ -27,5 +24,5 @@ state = {
 			}
 		}
 	}
-	provinces = { 2269 2616 3053 3145 3726 3863 4905 5208 6159 7616 7656 7701 7780 13014 7815 6282 7861 3393 4699 7920 6512 3636 }#7815 is where Mendecino starts
+	provinces = { 2269 2616 3053 3145 3726 3863 4905 5208 6159 7616 7656 7701 7780 13014 }#7815 is where Mendecino starts
 }

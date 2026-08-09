@@ -15,12 +15,12 @@ country_event = {
 	option = { 
 		name = california_events.1.a
 		add_ideas = CAL_longshoremen_strikes
-		country_event = {
-			id = california_events.2
-			days = 84
-			random_hours = 12
-		}
-		CAL_great_depression_level_up = yes
+#		country_event = {
+#			id = california_events.2
+#			days = 84
+#			random_hours = 12
+#		}
+		#CAL_great_depression_level_up = yes
 	}
 }
 country_event = {
@@ -44,34 +44,34 @@ country_event = {
 	}
 	option = { #Send in National Guard
 		name = california_events.2.a
-		country_event = {
-			id = california_events.3
-			days = 3
-			random_days = 2
-			random_hours = 12
-		}
+#		country_event = {
+#			id = california_events.3
+#			days = 3
+#			random_days = 2
+#			random_hours = 12
+#		}
 	}
-	option = { #Cave to Demands
-		name = california_events.2.b
-		country_event = {
-			id = california_events.4
-			days = 3
-			random_days = 2
-			random_hours = 12
-		}
-	}
-	option = { #Negotiate
-		name = california_events.2.c
-		country_event = {
-			id = california_events.5
-			days = 3
-			random_days = 2
-			random_hours = 12
-		}
-	}
+#	option = { #Cave to Demands
+#		name = california_events.2.b
+#		country_event = {
+#			id = california_events.4
+#			days = 3
+#			random_days = 2
+#			random_hours = 12
+#		}
+#	}
+#	option = { #Negotiate
+#		name = california_events.2.c
+#		country_event = {
+#			id = california_events.5
+#			days = 3
+#			random_days = 2
+#			random_hours = 12
+#		}
+#	}
 }
 country_event = {
-	id = california_events.3#Send in National Guard
+	id = california_events.3#National Guard ILA
 	title = california_events.3.t
 	desc = california_events.3.desc
 	picture = GFX_report_event_usa_election_generic
@@ -79,7 +79,7 @@ country_event = {
 	is_triggered_only = yes
 	option = { #Send in National Guard
 		name = california_events.3.a
-		CAL_civil_unrest_level_up = yes
+#		CAL_civil_unrest_level_up = yes
 		remove_ideas = CAL_francisco_general_strikes
 	}
 }
@@ -123,7 +123,7 @@ country_event = {
 		set_country_flag = CAL_epic_path
 		
 	}
-	option = { #Negotiate
+	option = {
 		name = california_events.6.a
 		set_politics = {
 			ruling_party = socialism_ideology
@@ -143,7 +143,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.7#Disarm Joaquin
+	id = california_events.7#Strikes Start, Joaquin
 	title = california_events.7.t
 	desc = california_events.7.desc
 	picture = GFX_report_event_usa_election_generic
@@ -154,7 +154,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.8#Negotiate Joaquin
+	id = california_events.8#Pixley Murders, Joaquin
 	title = california_events.8.t
 	desc = california_events.8.desc
 	picture = GFX_report_event_usa_election_generic
@@ -165,7 +165,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.9#Joaquin Workers Leave
+	id = california_events.9#Valley Wide Strike, Joaquin
 	title = california_events.9.t
 	desc = california_events.9.desc
 	picture = GFX_report_event_usa_election_generic
@@ -176,7 +176,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.10#Joaquin Workers Win, Emboldend
+	id = california_events.10#Massacre, Joaquin
 	title = california_events.10.t
 	desc = california_events.10.desc
 	picture = GFX_report_event_usa_election_generic
@@ -236,6 +236,7 @@ country_event = {
 		name = california_events.13.a
 		add_manpower = -1
 		retire_country_leader = yes
+		news_event = ffl_news.6
 	}
 }
 country_event = {
@@ -380,7 +381,7 @@ country_event = {
 
 }
 country_event = {
-	id = california_events.21#Jefferson Secedes :O
+	id = california_events.21#Jefferson War?
 	title = california_events.21.t
 	desc = california_events.21.desc
 	picture = GFX_report_event_usa_election_generic
@@ -389,28 +390,27 @@ country_event = {
 	immediate = {
 		109 = {
 			transfer_state_to = JEF
-			add_core_of = JEF
-			remove_core_of = CAL
-			add_claim_by = CAL
+			set_demilitarized_zone = no
 		}
 		110 = {
 			transfer_state_to = JEF
-			add_core_of = JEF
-			remove_core_of = CAL
-			add_claim_by = CAL
+			set_demilitarized_zone = no
+		}
+		116 = {
+			transfer_state_to = JEF
+			set_demilitarized_zone = no
 		}
 		JEF = {
 			load_oob = "JEFF_ffl"
 		}
 	}
 	option = {
-		name = california_events.21.a #issue ultimatum
-		country_event = {
-		    id = california_events.22
-		    days = 30
-		    random_hours = 12
+		name = california_events.21.a #invade
+		declare_war_on = {
+			target = JEF
+			type = annex_everything
 		}
-		news_event = ffl_news.6
+		news_event = ffl_news.4
 	}
 	option = {
 		name = california_events.21.b #let them secede
@@ -419,7 +419,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.22#Attack Jefferson
+	id = california_events.22#Militias in Jefferson
 	title = california_events.22.t
 	desc = california_events.22.desc
 	picture = GFX_report_event_usa_election_generic
@@ -428,12 +428,16 @@ country_event = {
 	immediate = {
 	}
 	option = {
-		name = california_events.22.a #invade
-		declare_war_on = {
-			target = JEF
-			type = annex_everything
+		109 = {
+			set_demilitarized_zone = yes
 		}
-		news_event = ffl_news.4
+		110 = {
+			set_demilitarized_zone = yes
+		}
+		116 = {
+			set_demilitarized_zone = yes
+		}
+		name = california_events.22.a #
 	}
 }
 country_event = {
@@ -443,8 +447,6 @@ country_event = {
 	picture = GFX_report_event_usa_election_generic
 	is_triggered_only = yes
 	fire_only_once = yes
-	immediate = {
-	}
 	option = {
 		name = california_events.23.a
 		declare_war_on = {
@@ -468,22 +470,49 @@ country_event = {
 	picture = GFX_report_event_usa_election_generic
 	fire_only_once = yes
 	is_triggered_only = yes
-	immediate = {
+	option = {
+		name = california_events.24.a #The Long Neglected
 		109 = {
 			remove_core_of = CAL
-			add_claim_by = CAL
+			force_enable_resistance = CAL
+			start_resistance = yes
 		}
 		110 = {
 			remove_core_of = CAL
-			add_claim_by = CAL
+			force_enable_resistance = CAL
+			start_resistance = yes
 		}
 		116 = {
 			remove_core_of = CAL
-			add_claim_by = CAL
+			force_enable_resistance = CAL
+			start_resistance = yes
 		}
 	}
+}
+country_event = {
+	id = california_events.25#Severe Violence In Jefferson
+	title = california_events.25.t
+	desc = california_events.25.desc
+	picture = GFX_report_event_usa_election_generic
+	fire_only_once = yes
+	is_triggered_only = yes
 	option = {
-		name = california_events.24.a #oh dear
+		name = california_events.25.a #Spiraling out of control
+		109 = {
+			add_manpower = -5000
+			add_resistance = 75
+			add_compliance = -30
+		}
+		110 = {
+			add_manpower = -5000
+			add_resistance = 75
+			add_compliance = -30
+		}
+		116 = {
+			add_manpower = -5000
+			add_resistance = 75
+			add_compliance = -30
+		}
 	}
 }
 

@@ -10,7 +10,6 @@ state = {
 	history = {
 		owner = CAL
 		add_core_of = CAL
-		add_core_of = JEF
 		victory_points = {
 			4855 1#Auburn
 		}

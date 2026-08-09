@@ -145,7 +145,7 @@ if = {
 
 country_event = {
 	id = california_events.24
-	random_days = 12
-	days = 10
+	random_days = 1#2
+	days = 1#0
 	random_hours = 12
 }
