@@ -7,4 +7,12 @@ spriteTypes = {
 		name = "GFX_idea_cal_sunshine_state"
 		texturefile = "gfx/interface/ideas/california/idea_cal_sunshine_state.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_cal_general_strikes"
+		texturefile = "gfx/interface/ideas/california/idea_cal_agricultural_strikes.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_cal_great_depression"
+		texturefile = "gfx/interface/ideas/california/idea_cal_great_depression.dds"
+	}
 }

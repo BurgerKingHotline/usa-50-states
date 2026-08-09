@@ -64,7 +64,7 @@ focus_tree = {
 			base = 11
 		}
 		x = 3
-		y = 2
+		y = 1
 		completion_reward = { 
 			activate_advisor = CAL_earl_warren
 		}
@@ -102,11 +102,14 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_declare_independence
 		}
+		prerequisite = {
+			focus = CAL_strengthen_da
+		}
 		ai_will_do = {
 			base = 11
 		}
-		x = -2
-		y = 1
+		x = 2
+		y = 3
 		completion_reward = { 
 			custom_effect_tooltip = california_one_term_ammendment
 			set_country_flag = CAL_one_term_governor_ammendment
@@ -127,7 +130,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 11
 		}
-		x = 2
+		x = -3
 		y = 1
 		completion_reward = { 
 			add_stability = 0.05
@@ -148,11 +151,14 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_declare_independence
 		}
+		prerequisite = {
+			focus = CAL_reassure_public
+		}
 		ai_will_do = {
 			base = 11
 		}
-		x = -3
-		y = 2
+		x = -2
+		y = 3
 		completion_reward = { 
 			custom_effect_tooltip = california_independence_day
 			set_country_flag = CAL_independence_day_official
@@ -238,7 +244,7 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
 		x = -6
-		y = 9
+		y = 10
 		offset = {
 			x = 0
 			y = -1
@@ -253,7 +259,7 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_battleship
 		cost = 5
 		x = 6
-		y = 9
+		y = 10
 		offset = {
 			x = 0
 			y = -1
@@ -611,12 +617,6 @@ focus_tree = {
 			base = 11
 		}
 		prerequisite = {
-			focus = CAL_strengthen_da
-		}
-		prerequisite = {
-			focus = CAL_reassure_public
-		}
-		prerequisite = {
 			focus = CAL_fiat_currency
 			focus = CAL_gold_standard
 		}
@@ -627,7 +627,7 @@ focus_tree = {
 			focus = CAL_stoke_patriotism
 		}
 		x = 0
-		y = 3
+		y = 4
 		completion_reward = { 
 			remove_ideas = {
 				CAL_great_collapse
@@ -635,7 +635,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_epic
+		id = CAL_democratic_convention
 		icon = GFX_goal_support_communism
 		cost = 5
 		x = -5
@@ -649,10 +649,16 @@ focus_tree = {
 		}
 		available = {
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.05
+			}
+
+		}
 	}
 	focus = {
-		id = CAL_grassroots_campaign
+		id = CAL_campaign_century
 		icon = GFX_goal_support_communism
 		cost = 5
 		x = 0
@@ -661,10 +667,15 @@ focus_tree = {
 			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
-			focus = CAL_epic
+			focus = CAL_democratic_convention
 		}
-		relative_position_id = CAL_epic
-		completion_reward = { }
+		relative_position_id = CAL_democratic_convention
+		completion_reward = { 
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.05
+			}
+		}
 	}
 	focus = {
 		id = CAL_room_for_an_author
@@ -676,10 +687,15 @@ focus_tree = {
 			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
-			focus = CAL_epic
+			focus = CAL_democratic_convention
 		}
-		relative_position_id = CAL_epic
-		completion_reward = { }
+		relative_position_id = CAL_democratic_convention
+		completion_reward = { 
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.05
+			}
+		}
 	}
 	focus = {
 		id = CAL_plan_starvation
@@ -691,10 +707,15 @@ focus_tree = {
 			has_country_flag = CAL_intro_tree
 		}
 		prerequisite = {
-			focus = CAL_epic
+			focus = CAL_democratic_convention
 		}
-		relative_position_id = CAL_epic
-		completion_reward = { }
+		relative_position_id = CAL_democratic_convention
+		completion_reward = { 
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.05
+			}
+		}
 	}
 	focus = {
 		id = CAL_sinclair_elected
@@ -710,11 +731,13 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = CAL_plan_starvation
-			focus = CAL_grassroots_campaign
+			focus = CAL_campaign_century
 			focus = CAL_room_for_an_author
 		}
-		relative_position_id = CAL_epic
-		completion_reward = { }
+		relative_position_id = CAL_democratic_convention
+		completion_reward = { 
+			add_political_power = 100
+		}
 	}
 	focus = {
 		id = CAL_joaquin_strike
@@ -935,6 +958,9 @@ focus_tree = {
 			has_country_flag = CAL_epic_path
 		}
 		prerequisite = {
+		}
+		bypass_effect = {
+			add_political_power = 100
 		}
 		completion_reward = { 
 		}
@@ -1314,6 +1340,38 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = CAL_foreign_focus_socialist
+		icon = GFX_goal_support_communism 
+		cost = 5
+		x = -10
+		y = 3
+		relative_position_id = CAL_socialist_governor
+		allow_branch = {
+			has_country_flag = CAL_epic_path
+		}
+		prerequisite = {
+			focus = CAL_the_epic_plan
+		}
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = CAL_support_united_mine_workers
+		icon = GFX_goal_support_communism 
+		cost = 5
+		x = -1
+		y = 1
+		relative_position_id = CAL_foreign_focus_socialist
+		allow_branch = {
+			has_country_flag = CAL_epic_path
+		}
+		prerequisite = {
+			focus = CAL_foreign_focus_socialist
+		}
+		completion_reward = { 
+		}
+	}
+	focus = {
 		id = CAL_black_hand#the black hand of california, choose to spy or not
 		icon = GFX_goal_CAL_black_hand 
 		cost = 5
@@ -1385,7 +1443,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_expose_big_bussiness#expose business autocracy
-		icon = GFX_goal_support_communism
+		icon = GFX_goal_CAL_expose_big_business
 		cost = 5
 		x = 1
 		y = 1

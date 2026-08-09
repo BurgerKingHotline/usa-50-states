@@ -134,7 +134,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_1 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -155,7 +155,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_2 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -176,7 +176,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_3 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -197,7 +197,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_4 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -218,7 +218,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_5 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -239,7 +239,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_6 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -260,7 +260,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_7 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -281,7 +281,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_8 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -302,7 +302,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_9 = {
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -323,7 +323,7 @@ ideas = {
 			}
 		}
 		CAL_great_depression_10 = {#WORST
-			picture = usa_great_depression_3
+			picture = cal_great_depression
 			
 			allowed = {
 				always = no
@@ -518,7 +518,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = generic_production_bonus
+			picture = cal_general_strikes
 			
 			modifier = {
 				consumer_goods_factor = 0.2
@@ -538,7 +538,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = GFX_idea_cal_corporate_influence
+			picture = cal_corporate_influence
 			
 			modifier = {
 				political_power_cost = 0.25
@@ -558,7 +558,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = generic_production_bonus
+			picture = cal_corporate_influence
 			
 			modifier = {
 				consumer_goods_factor = 0.2
