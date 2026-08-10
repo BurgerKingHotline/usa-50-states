@@ -44,7 +44,7 @@ characters = {
 		gender = male
 		advisor = {
 			slot = political_advisor
-			idea_token = CAL_earl_warren
+			idea_token = cal_earl_warren
 			allowed = {
 				original_tag = CAL
 			}
@@ -53,6 +53,24 @@ characters = {
 			}
 			visible = {
 				has_completed_focus = CAL_strengthen_da
+			}
+		}
+	}
+	CAL_GEORGE_PATTON = {
+		name = "George S. Patton"
+		portraits = {
+			civilian = { large = "GFX_CAL_Portrait_Upton_Sinlair" }
+		}
+		gender = male
+		advisor = {
+			slot = army_chief
+			idea_token = cal_george_patton
+			allowed = {
+				original_tag = CAL
+			}
+			traits = {
+			}
+			visible = {
 			}
 		}
 	}

@@ -44,6 +44,7 @@ recruit_character = CAL_UPTON_SINCLAIR
 recruit_character = CAL_FRANK_MERRIAM
 #advisors
 recruit_character = CAL_EARL_WARREN
+recruit_character = CAL_GEORGE_PATTON
 
 set_politics = {
         ruling_party = conservatism_ideology

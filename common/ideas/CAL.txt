@@ -655,5 +655,61 @@ ideas = {
 				war_support_weekly = -0.005
 			}
 		}
+		CAL_speed_saves_lives = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = cal_sunshine_state
+			
+			modifier = {
+				army_speed_factor = 0.1
+				motorized_equipment = {
+					industrial_capacity_factory = 0.3
+				}
+			}
+		}
+		CAL_intergrated_air_support = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = cal_sunshine_state
+			
+			modifier = {
+				air_cas_efficiency = 0.1
+				air_cas_present_factor = 0.1
+			}
+		}
+	}
+	tank_manufacturer = {
+
+		designer = yes
+
+		patton_manufactorer_cal = {
+
+			picture = generic_tank_manufacturer_2
+
+			allowed = {
+				original_tag = CAN
+				has_dlc = "Together for Victory"
+			}
+
+			research_bonus = {
+				armor = 0.05
+			}
+
+			traits = { medium_tank_manufacturer }
+
+			# quite the useless tanks the vickers 6-ton
+		}
 	}
 }
