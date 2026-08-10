@@ -4,7 +4,7 @@ country_event = {
 	id = california_events.1#Waterfront strike
 	title = california_events.1.t
 	desc = california_events.1.desc
-	picture = GFX_report_event_usa_election_generic
+	picture = GFX_cal_waterfront_strikes
 
 	trigger = {
 		tag = CAL
@@ -27,7 +27,7 @@ country_event = {
 	id = california_events.2#General San Francisco Strike
 	title = california_events.2.t
 	desc = california_events.2.desc
-	picture = GFX_report_event_usa_election_generic
+	picture = GFX_cal_waterfront_strikes
 
 	is_triggered_only = yes
 	immediate = {
@@ -73,7 +73,7 @@ country_event = {
 	id = california_events.3#National Guard ILA
 	title = california_events.3.t
 	desc = california_events.3.desc
-	picture = GFX_report_event_usa_election_generic
+	picture = GFX_cal_waterfront_strikes
 
 	is_triggered_only = yes
 	option = { #Send in National Guard
@@ -86,7 +86,7 @@ country_event = {
 	id = california_events.4#Do Nothing
 	title = california_events.4.t
 	desc = california_events.4.desc
-	picture = GFX_report_event_usa_election_generic
+	picture = GFX_cal_waterfront_strikes
 
 	is_triggered_only = yes
 	option = { #Do Nothing
