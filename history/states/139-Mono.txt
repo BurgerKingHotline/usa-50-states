@@ -1,0 +1,24 @@
+state = {
+	id = 139
+	name = "STATE_139"
+	provinces = {
+		4861 2653 8680 367 5605 1649 8575 3868 2476 55 8464 2124 1470 1743 2982
+	}
+	history = {
+		owner = CAL
+		add_core_of = CAL
+		victory_points = {
+			55 1 #Independence
+		}
+		victory_points = {
+			1743 1#Bridgeport
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	state_category = wasteland
+	manpower = 7915
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.000
+}

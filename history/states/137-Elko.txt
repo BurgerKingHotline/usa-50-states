@@ -7,8 +7,11 @@ state = {
 	history = {
 		owner = NVD
 		add_core_of = NVD
+		buildings = {
+			infrastructure = 1
+		}
 	}
-	state_category = rural
+	state_category = wasteland
 	manpower = 23064
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000

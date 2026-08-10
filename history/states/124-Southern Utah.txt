@@ -5,11 +5,14 @@ state = {
 		1484 303 1152 1775 8640 8449 3186 4647 8545 3521 1924 738 4491 13034 6076 2313 3139
 	}
 	manpower = 14440
-	state_category = rural
+	state_category = wasteland
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 	history = {
 		owner = UTT
 		add_core_of = UTT
+		buildings = {
+			infrastructure = 1
+		}
 	}
 }

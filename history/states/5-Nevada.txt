@@ -13,8 +13,13 @@ state = {
 		victory_points = {
 			2981 2#Carson City
 		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 1
+		}
 	}
-	state_category = rural
+	state_category = town
 	manpower = 48932
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000

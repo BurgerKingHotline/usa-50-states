@@ -10,7 +10,7 @@ state = {
 			8702 1#Las Vegas
 		}
 		buildings = {
-			infrastructure = 3
+			infrastructure = 2
 			industrial_complex = 1
 		}
 	}

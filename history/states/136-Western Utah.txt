@@ -5,11 +5,14 @@ state = {
 		985 2721 3882 8284 207 8334 8407 1920 1600 8559 1564 2170 282 626 8436 1478 5725 139 8251 1958
 	}
 	manpower = 38898
-	state_category = rural
+	state_category = pastoral
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 	history = {
 		owner = UTT
 		add_core_of = UTT
+		buildings = {
+			infrastructure = 1
+		}
 	}
 }

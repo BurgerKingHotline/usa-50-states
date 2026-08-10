@@ -1,9 +1,11 @@
 state = {
 	id = 112
 	name = "STATE_112"
-	manpower = 118674
-	state_category = large_town
-	provinces = { 179 2380 8991 9037 }
+	manpower = 214924
+	state_category = large_city
+	provinces = { #6595
+		8954 2441 2990 8952 9004 6263 5515 6596 2701 5864 9051 2645 9062 3493 9068 4487 4548 5004 8952 8944 8921 179 2380 8991 9037
+	}#179 is where orange county begins
 	history = {
 		owner = CAL
 		add_core_of = CAL
@@ -13,9 +15,16 @@ state = {
 		victory_points = {
 			179 3#Santa Ana
 		}
+		victory_points = {
+			8952 1#San Bernardino
+		}
+		victory_points = {
+			2441 1#Riverside
+		}
 		buildings = {
 			infrastructure = 3
-			industrial_complex = 2
+			industrial_complex = 5
+			arms_factory = 1
 		}
 	}
 }
