@@ -245,6 +245,9 @@ focus_tree = {
 		cost = 5
 		x = -6
 		y = 10
+		allow_branch = {
+			always = no
+		}
 		offset = {
 			x = 0
 			y = -1
@@ -260,6 +263,12 @@ focus_tree = {
 		cost = 5
 		x = 6
 		y = 10
+		allow_branch = {
+			always = no
+		}
+		available = {
+			always = no
+		}
 		offset = {
 			x = 0
 			y = -1
@@ -1343,7 +1352,7 @@ focus_tree = {
 		id = CAL_foreign_focus_socialist
 		icon = GFX_goal_support_communism 
 		cost = 5
-		x = -10
+		x = -12
 		y = 3
 		relative_position_id = CAL_socialist_governor
 		allow_branch = {
@@ -1359,7 +1368,7 @@ focus_tree = {
 		id = CAL_support_united_mine_workers
 		icon = GFX_goal_support_communism 
 		cost = 5
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = CAL_foreign_focus_socialist
 		allow_branch = {
@@ -1369,6 +1378,191 @@ focus_tree = {
 			focus = CAL_foreign_focus_socialist
 		}
 		completion_reward = { 
+			UMW = {
+				country_event = california_events.27
+				add_equipment_to_stockpile = {
+				    type = infantry_equipment
+				    amount = 1000
+				    producer = CAL
+				}
+				add_equipment_to_stockpile = {
+				    type = support_equipment
+				    amount = 100
+				    producer = CAL
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_support_farmer_labor_rebellion
+		icon = GFX_goal_support_communism 
+		cost = 5
+		x = -4
+		y = 1
+		relative_position_id = CAL_foreign_focus_socialist
+		allow_branch = {
+			has_country_flag = CAL_epic_path
+		}
+		prerequisite = {
+			focus = CAL_foreign_focus_socialist
+		}
+		completion_reward = { 
+			MNS = {
+				country_event = california_events.27
+				add_equipment_to_stockpile = {
+				    type = infantry_equipment
+				    amount = 1000
+				    producer = CAL
+				}
+				add_equipment_to_stockpile = {
+				    type = support_equipment
+				    amount = 100
+				    producer = CAL
+				}
+			}
+		}
+	}
+	focus = {
+		id = CAL_secure_water_sources
+		icon = GFX_goal_support_communism 
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = CAL_foreign_focus_socialist
+		allow_branch = {
+			has_country_flag = CAL_epic_path
+		}
+		available = {
+			date > 1935.1.1
+			has_army_manpower = {
+				size > 100000
+			}
+		}
+		prerequisite = {
+			focus = CAL_foreign_focus_socialist
+		}
+		completion_reward = { 
+			create_wargoal = {
+				type = annex_everything
+				target = ARZ
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = NVD
+			}
+		}
+	}
+	focus = {
+		id = CAL_crush_religious_extremists
+		icon = GFX_goal_support_communism 
+		cost = 5
+		x = 4
+		y = 1
+		relative_position_id = CAL_foreign_focus_socialist
+		allow_branch = {
+			has_country_flag = CAL_epic_path
+		}
+		available = {
+			date > 1935.1.1
+			has_army_manpower = {
+				size > 100000
+			}
+			any_neighbor_country = {
+				tag = UTT
+			}
+		}
+		prerequisite = {
+			focus = CAL_foreign_focus_socialist
+		}
+		completion_reward = { 
+			create_wargoal = {
+				type = annex_everything
+				target = UTT
+			}
+		}
+	}
+	focus = {
+		id = CAL_liberate_cascadia
+		icon = GFX_goal_support_communism 
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = CAL_foreign_focus_socialist
+		allow_branch = {
+			has_country_flag = CAL_epic_path
+		}
+		available = {
+			date > 1937.1.1
+			has_army_manpower = {
+				size > 125000
+			}
+		}
+		prerequisite = {
+			focus = CAL_foreign_focus_socialist
+		}
+		completion_reward = { 
+			create_wargoal = {
+				type = annex_everything
+				target = ORE
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = WSH
+			}
+		}
+	}
+	focus = {
+		id = CAL_final_push_east
+		icon = GFX_goal_support_communism 
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = CAL_foreign_focus_socialist
+		available = {
+			NOT = {
+				OR = {
+					country_exists = ARZ
+					country_exists = NVD
+					country_exists = UTT
+					country_exists = ARZ
+					country_exists = ORE
+					country_exists = WSH
+				}
+			}
+		}
+		allow_branch = {
+			has_country_flag = CAL_epic_path
+		}
+		prerequisite = {
+			focus = CAL_liberate_cascadia
+		}
+		prerequisite = {
+			focus = CAL_secure_water_sources
+		}
+		prerequisite = {
+			focus = CAL_crush_religious_extremists
+		}
+		completion_reward = { 
+			create_wargoal = {
+				type = annex_everything
+				target = IDH
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = NVJ
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = WMA
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SCA
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TON
+			}
 		}
 	}
 	focus = {
@@ -1552,6 +1746,266 @@ focus_tree = {
 			add_political_power = 100
 			add_stability = 0.1
 		}
+	}
+
+	#ARMY
+	
+	focus = {
+		id = CAL_building_an_army
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 6
+		y = 10
+		offset = {
+			x = 0
+			y = -1
+			trigger = {
+				has_country_flag = CAL_epic_path
+			}
+		}
+		completion_reward = { 
+			army_experience = 50
+		}
+	}
+	focus = {
+		id = CAL_pattons_guidance
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 1
+		x = -7
+		y = 1
+		prerequisite = {
+			focus = CAL_building_an_army
+		}
+		relative_position_id = CAL_building_an_army
+		mutually_exclusive = {
+			focus = CAL_sideline_patton
+		}
+		completion_reward = { 
+		}
+	}
+	focus = {
+		id = CAL_battlefield_of_the_press
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = -6
+		y = 1
+		prerequisite = {
+			focus = CAL_pattons_guidance
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { 
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = CAL_armor_doctrine
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CAL_pattons_guidance
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { 
+			set_grand_doctrine = mobile_warfare
+			#I want to set it so that it gives bonus for mobile warfare grand doctrine but idk how
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.9
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = CAL_build_tank_factories
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = -3
+		y = 2
+		prerequisite = {
+			focus = CAL_armor_doctrine
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_mobile_artillery
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = CAL_armor_doctrine
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = CAL_motorized_infantry
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 1
+		y = 3
+		prerequisite = {
+			focus = CAL_mobile_artillery
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_master_blitzkrieg
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 0
+		y = 4
+		prerequisite = {
+			focus = CAL_speed_saves_lives
+		}
+		prerequisite = {
+			focus = CAL_motorized_infantry
+		}
+		prerequisite = {
+			focus = CAL_intergrate_air_support
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_speed_saves_lives
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = -2
+		y = 3
+		prerequisite = {
+			focus = CAL_build_tank_factories
+			focus = CAL_develop_tanks
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_develop_tanks
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = CAL_armor_doctrine
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_medium_armor
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_light_armor
+			}
+		}
+	}
+	focus = {
+		id = CAL_establish_airforce
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = CAL_pattons_guidance
+			focus = CAL_sideline_patton
+		}
+		relative_position_id = CAL_building_an_army
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_long_destruction
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = CAL_establish_airforce
+		}
+		relative_position_id = CAL_building_an_army
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_support_from_above
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = -2
+		y = 3
+		prerequisite = {
+			focus = CAL_establish_airforce
+		}
+		relative_position_id = CAL_building_an_army
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_control_the_skies
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 2
+		y = 3
+		prerequisite = {
+			focus = CAL_establish_airforce
+		}
+		relative_position_id = CAL_building_an_army
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_infantry_of_the_air
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 10
+		y = 3
+		prerequisite = {
+			focus = CAL_control_the_skies
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_intergrate_air_support
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 3
+		y = 3
+		prerequisite = {
+			focus = CAL_armor_doctrine
+		}
+		prerequisite = {
+			focus = CAL_support_from_above
+		}
+		relative_position_id = CAL_pattons_guidance
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_sideline_patton
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 5
+		x = 7
+		y = 1
+		mutually_exclusive = {
+			focus = CAL_pattons_guidance
+		}
+		prerequisite = {
+			focus = CAL_building_an_army
+		}
+		relative_position_id = CAL_building_an_army
+		available = {
+			always = no
+		}
+		completion_reward = { }
 	}
 
 	continuous_focus_position = {

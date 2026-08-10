@@ -508,6 +508,18 @@ country_event = {
 		name = california_events.26.a #That's Why They Call Him 'Sunny'
 	}
 }
+country_event = {
+	id = california_events.27#California Support
+	title = california_events.27.t
+	desc = california_events.27.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.27.a 
+	}
+}
+
 
 
 
