@@ -145,7 +145,7 @@ country_event = {
 	id = california_events.7#Strikes Start, Joaquin
 	title = california_events.7.t
 	desc = california_events.7.desc
-	picture = GFX_report_event_usa_election_generic
+	picture = GFX_san_joaquin_picture
 
 	is_triggered_only = yes
 	option = {
@@ -156,7 +156,7 @@ country_event = {
 	id = california_events.8#Pixley Murders, Joaquin
 	title = california_events.8.t
 	desc = california_events.8.desc
-	picture = GFX_report_event_usa_election_generic
+	picture = GFX_san_joaquin_picture
 
 	is_triggered_only = yes
 	option = {
@@ -167,7 +167,7 @@ country_event = {
 	id = california_events.9#Valley Wide Strike, Joaquin
 	title = california_events.9.t
 	desc = california_events.9.desc
-	picture = GFX_report_event_usa_election_generic
+	picture = GFX_san_joaquin_picture
 
 	is_triggered_only = yes
 	option = {
@@ -178,7 +178,7 @@ country_event = {
 	id = california_events.10#Massacre, Joaquin
 	title = california_events.10.t
 	desc = california_events.10.desc
-	picture = GFX_report_event_usa_election_generic
+	picture = GFX_san_joaquin_picture
 
 	is_triggered_only = yes
 	option = {
