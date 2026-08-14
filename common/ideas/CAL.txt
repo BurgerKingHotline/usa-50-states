@@ -687,9 +687,9 @@ ideas = {
 			
 			modifier = {
 				army_speed_factor = 0.1
-				motorized_equipment = {
-					industrial_capacity_factory = 0.3
-				}
+				#motorized_equipment = {
+				#	industrial_capacity_factory = 0.3
+				#}
 			}
 		}
 		CAL_intergrated_air_support = {

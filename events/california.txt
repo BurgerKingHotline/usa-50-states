@@ -14,12 +14,16 @@ country_event = {
 	
 	option = { 
 		name = california_events.1.a
-		add_ideas = CAL_longshoremen_strikes
-#		country_event = {
-#			id = california_events.2
-#			days = 84
-#			random_hours = 12
-#		}
+		#add_ideas = CAL_longshoremen_strikes
+		country_event = {
+			id = california_events.2
+			days = 84
+			random_hours = 12
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.01
+		}
 		#CAL_great_depression_level_up = yes
 	}
 }
@@ -31,34 +35,53 @@ country_event = {
 
 	is_triggered_only = yes
 	immediate = {
-		news_event = ffl_news.1#Bloody thursday
-		4 = {
-			add_manpower = -2
-		}
-		swap_ideas = {
-			remove_idea = CAL_longshoremen_strikes
-			add_idea = CAL_francisco_general_strikes
-		}
-		CAL_great_depression_level_up = yes
+		#hidden_effect = {
+		#	news_event = ffl_news.1#Bloody thursday
+		#}
+		#swap_ideas = {
+		#	remove_idea = CAL_longshoremen_strikes
+		#	add_idea = CAL_francisco_general_strikes
+		#}
+		#CAL_great_depression_level_up = yes
 	}
 	option = { #Send in National Guard
 		name = california_events.2.a
-#		country_event = {
-#			id = california_events.3
-#			days = 3
-#			random_days = 2
-#			random_hours = 12
-#		}
+		4 = {
+			add_manpower = -2
+		}
+		add_stability = -0.02
+		random_list = {
+			60 = {
+				country_event = {
+					id = california_events.3#success
+					days = 3
+					random_days = 2
+					random_hours = 12
+				}
+			}
+			40 = {
+				country_event = {
+					id = california_events.3#Failure
+					days = 3
+					random_days = 2
+					random_hours = 12
+				}
+			}
+		}
 	}
-#	option = { #Cave to Demands
-#		name = california_events.2.b
-#		country_event = {
-#			id = california_events.4
-#			days = 3
-#			random_days = 2
-#			random_hours = 12
-#		}
-#	}
+	option = { #Do Nothing
+		name = california_events.2.b
+		4 = {
+			add_manpower = -2
+		}
+		add_stability = -0.02
+		country_event = {
+			id = california_events.5
+			days = 3
+			random_days = 2
+			random_hours = 12
+		}
+	}
 #	option = { #Negotiate
 #		name = california_events.2.c
 #		country_event = {
@@ -70,7 +93,7 @@ country_event = {
 #	}
 }
 country_event = {
-	id = california_events.3#National Guard ILA
+	id = california_events.3#Success National Guard
 	title = california_events.3.t
 	desc = california_events.3.desc
 	picture = GFX_report_event_cal_waterfront_strikes
@@ -78,12 +101,22 @@ country_event = {
 	is_triggered_only = yes
 	option = { #Send in National Guard
 		name = california_events.3.a
-#		CAL_civil_unrest_level_up = yes
-		remove_ideas = CAL_francisco_general_strikes
+		add_stability = 0.05
+		4 = {
+			add_manpower = -43
+		}
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.02
+		}
 	}
 }
 country_event = {
-	id = california_events.4#Do Nothing
+	id = california_events.4#Failure
 	title = california_events.4.t
 	desc = california_events.4.desc
 	picture = GFX_cal_waterfront_strikes
@@ -91,21 +124,45 @@ country_event = {
 	is_triggered_only = yes
 	option = { #Do Nothing
 		name = california_events.4.a
-		CAL_civil_unrest_level_up = yes
-		remove_ideas = CAL_francisco_general_strikes
+		add_stability = -0.05
+		4 = {
+			add_manpower = -443
+		}
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = -0.05
+		}
+		country_event = {
+			id = california_events.5
+			days = 3
+			random_days = 2
+			random_hours = 12
+		}
+
 	}
 }
 country_event = {
-	id = california_events.5#Negotiate
+	id = california_events.5#San Francisco Commune
 	title = california_events.5.t
 	desc = california_events.5.desc
 	picture = GFX_cal_waterfront_strikes
-
+	fire_only_once = yes
 	is_triggered_only = yes
-	option = { #Negotiate
+	option = { 
 		name = california_events.5.a
-		CAL_civil_unrest_level_up = yes
-		remove_ideas = CAL_francisco_general_strikes
+		4 = {
+			set_demilitarized_zone = yes
+			add_manpower = -12443
+		}
+		add_stability = -0.05
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		news_event = {
+			id = ffl_news.6
+		}
+
 	}
 }
 country_event = {
@@ -146,10 +203,20 @@ country_event = {
 	title = california_events.7.t
 	desc = california_events.7.desc
 	picture = GFX_report_event_san_joaquin_picture
-
-	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		date > 1933.8.1
+	}
 	option = {
 		name = california_events.7.a
+		country_event = {
+			id = california_events.8
+			days = 2
+			random_days = 4
+			hours = 12
+			random_hours = 12
+		}
+		add_stability = -0.05
 	}
 }
 country_event = {
@@ -160,11 +227,47 @@ country_event = {
 
 	is_triggered_only = yes
 	option = {
-		name = california_events.8.a
+		name = california_events.8.a#negotiate
+		117 = {
+			add_manpower = -4
+		}
+		random_list = {
+			7 = {
+				country_event = {
+					id = california_events.9
+					days = 2
+					random_days = 4
+					hours = 12
+					random_hours = 12
+				}
+			}
+			3 = {
+				country_event = {
+					id = california_events.10
+					days = 2
+					random_days = 4
+					hours = 12
+					random_hours = 12
+				}
+			}
+		}
+	}
+	option = {
+		name = california_events.8.a#disarm
+		country_event = {
+			id = california_events.31
+			days = 2
+			random_days = 4
+			hours = 12
+			random_hours = 12
+		}
+		117 = {
+			add_manpower = -4
+		}
 	}
 }
 country_event = {
-	id = california_events.9#Valley Wide Strike, Joaquin
+	id = california_events.9#Negotiation Success
 	title = california_events.9.t
 	desc = california_events.9.desc
 	picture = GFX_report_event_san_joaquin_picture
@@ -175,7 +278,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.10#Massacre, Joaquin
+	id = california_events.10#Negotation Failure
 	title = california_events.10.t
 	desc = california_events.10.desc
 	picture = GFX_report_event_san_joaquin_picture
@@ -191,14 +294,14 @@ country_event = {
 	desc = california_events.11.desc
 	picture = GFX_report_event_cal_hart_lynch
 	fire_only_once = yes
-	is_triggered_only = yes
-	#trigger = {
-	#	tag = CAL
-	#	date > 1933.11.1
-	#}
+	trigger = {
+		tag = CAL
+		date > 1933.11.1
+	}
 	option = {
 		name = california_events.11.a
 		add_manpower = -1
+		add_political_power = -10
 		country_event = {
 			id = california_events.12
 			days = 10
@@ -206,19 +309,32 @@ country_event = {
 			random_hours = 12
 		}
 	}
+	option = {
+		name = california_events.11.b
+		add_manpower = -1
+		add_stability = 0.01
+	}
 }
 country_event = {
 	id = california_events.12#Lynching of Thomas Harold THurmond and John M. Holmes
 	title = california_events.12.t
 	desc = california_events.12.desc
 	picture = GFX_report_event_cal_hart_lynch
-
+	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		add_manpower = -2
 		name = california_events.12.a
-		CAL_civil_unrest_level_down = yes
-		news_event = ffl_news.4
+		add_stability = -0.01
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.03
+		}
+		add_to_variable = {
+			id = CAL_conservative_banner_bonus
+			value = 1
+			tooltip = add_1_to_cal_conservative_banner
+		}
 	}
 }
 country_event = {
@@ -235,7 +351,6 @@ country_event = {
 		name = california_events.13.a
 		add_manpower = -1
 		retire_country_leader = yes
-		news_event = ffl_news.6
 	}
 }
 country_event = {
@@ -565,17 +680,19 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.31#brooke hart final death
+	id = california_events.31#Disarm the Workers - Joaquin
 	title = california_events.31.t
 	desc = california_events.31.desc
-	picture = GFX_report_event_generic_rifles
+	picture = GFX_report_event_san_joaquin_picture
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = california_events.31.a 
+		117 = {
+			add_manpower = -45
+		}
 	}
 }
-
 
 
 

@@ -1,6 +1,7 @@
 CAL_things_are_getting_worse_cat = {
 	allowed = {
 		tag = CAL
+		always = no
 	}
 	visible = {
 		has_country_flag = CAL_intro_tree

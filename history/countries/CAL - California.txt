@@ -20,6 +20,12 @@ set_variable = { CAL_depression_recovery = 0}
 set_variable = { CAL_sell_epic_bonds_cost = 100 }
 set_variable = { CAL_epic_costs_mission_time = 75 }
 set_variable = { CAL_epic_sieze_factories_cost = 100 }
+set_variable = { CAL_socialist_banner_bonus = 0 }
+set_variable = { CAL_jefferson_banner_bonus = 0 }
+set_variable = { CAL_conservative_banner_bonus = 0 }
+
+
+
 set_variable = { CAL_jefferson_escalation = 0 }
 set_variable = { CAL_ila_escalation = 0 }
 set_variable = { CAL_joaquin_escalation = 0 }
@@ -67,11 +73,11 @@ set_war_support = 0.15
 
 add_ideas = {
     #CAL_great_depression_8
-	#CAL_widespread_strikes
-	#CAL_corporate_influence
+	CAL_widespread_strikes
+	CAL_corporate_influence
 	CAL_great_depression_simple
 	CAL_sunshine_state
-	CAL_great_collapse
+	#CAL_great_collapse
 }
 
 if = {
