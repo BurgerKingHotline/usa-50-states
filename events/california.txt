@@ -551,7 +551,30 @@ country_event = {
 		add_to_faction = ARZ
 	}
 }
-
+country_event = {
+	id = california_events.30#Democratic Convention
+	title = california_events.30.t
+	desc = california_events.30.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	trigger = {
+		date > 1934.6.1
+	}
+	option = {
+		name = california_events.30.a 
+	}
+}
+country_event = {
+	id = california_events.31#brooke hart final death
+	title = california_events.31.t
+	desc = california_events.31.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.31.a 
+	}
+}
 
 
 

@@ -1,5 +1,24 @@
 ideas = {
 	country = {
+		CAL_great_depression_simple = {
+			picture = cal_great_depression
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.50
+				local_resources_factor = -0.50
+				stability_factor = -0.1
+			}
+		}
 		CAL_epic_plan_cost_1 = {
 			picture = usa_great_depression_3
 			

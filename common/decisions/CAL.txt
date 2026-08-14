@@ -51,7 +51,7 @@ CAL_things_are_getting_worse_cat = {
 					if = {
 						limit = {
 							check_variable = {
-								CAL_joaquin_escalation = 0
+								CAL_joaquin_escalation = 0 
 							}
 						}
 						country_event = california_events.7
@@ -100,7 +100,7 @@ CAL_things_are_getting_worse_cat = {
 								CAL_jefferson_escalation = 0
 							}
 						}
-						country_event = california_events.25
+						country_event = california_events.24
 						add_to_variable = {
 							var = CAL_jefferson_escalation
 							value = 1
@@ -116,12 +116,24 @@ CAL_things_are_getting_worse_cat = {
 							var = CAL_jefferson_escalation
 							value = 1
 						}
-						country_event = california_events.22
+						country_event = california_events.25
 					}
 					else_if = {
 						limit = { 
 							check_variable = {
 								CAL_jefferson_escalation = 2
+							}
+						}
+						add_to_variable = {
+							var = CAL_jefferson_escalation
+							value = 1
+						}
+						country_event = california_events.22
+					}
+					else_if = {
+						limit = { 
+							check_variable = {
+								CAL_jefferson_escalation = 3
 							}
 						}
 						country_event = california_events.21

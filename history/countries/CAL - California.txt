@@ -69,8 +69,9 @@ add_ideas = {
     #CAL_great_depression_8
 	#CAL_widespread_strikes
 	#CAL_corporate_influence
+	CAL_great_depression_simple
 	CAL_sunshine_state
-	#CAL_great_collapse
+	CAL_great_collapse
 }
 
 if = {
