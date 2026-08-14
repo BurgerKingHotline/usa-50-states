@@ -519,6 +519,42 @@ country_event = {
 		name = california_events.27.a 
 	}
 }
+country_event = {
+	id = california_events.28#California Civil War
+	title = california_events.28.t
+	desc = california_events.28.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.28.a 
+        start_civil_war = {
+            ideology = socialism_ideology
+            states = {
+                4 113 114 112 111
+            }
+			size = 0.4
+        }
+	}
+}
+country_event = {
+	id = california_events.29#Civilwar expands
+	title = california_events.29.t
+	desc = california_events.29.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.29.a 
+		create_faction = "California Defense"
+		add_to_faction = NVD
+		add_to_faction = ARZ
+	}
+}
+
+
+
+
 
 
 

@@ -1,6 +1,7 @@
 CAL_things_are_getting_worse_cat = {
 	allowed = {
-		tag = CAL
+		#tag = CAL
+		always = no
 	}
 	visible = {
 		always = yes
