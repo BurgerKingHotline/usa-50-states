@@ -548,9 +548,15 @@ country_event = {
 	option = {
 		109 = {
 			set_demilitarized_zone = yes
+			add_resistance = 85
+			add_compliance = -30
+			add_manpower = -1000
 		}
 		110 = {
 			set_demilitarized_zone = yes
+			add_resistance = 85
+			add_compliance = -30
+			add_manpower = -1000
 		}
 		name = california_events.22.a #
 	}
@@ -607,16 +613,25 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
-		name = california_events.25.a #Spiraling out of control
+		name = california_events.25.a #national guard
+	}
+	option = {
+		name = california_events.25.b #nothing
+	}
+	after = {
 		109 = {
-			add_manpower = -5000
+			add_manpower = -10000
 			add_resistance = 75
 			add_compliance = -30
 		}
 		110 = {
-			add_manpower = -5000
+			add_manpower = -10000
 			add_resistance = 75
 			add_compliance = -30
+		}
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = -0.05
 		}
 	}
 }
@@ -629,6 +644,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.26.a #That's Why They Call Him 'Sunny'
+		add_stability = 0.01
 	}
 }
 country_event = {
