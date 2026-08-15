@@ -17,6 +17,7 @@ ideas = {
 				consumer_goods_factor = 0.50
 				local_resources_factor = -0.50
 				stability_factor = -0.1
+				socialism_ideology_drift = 0.02
 			}
 		}
 		CAL_epic_plan_cost_1 = {
@@ -543,7 +544,7 @@ ideas = {
 				consumer_goods_factor = 0.2
 				industrial_capacity_factory = -0.2
 				industrial_capacity_dockyard = -0.2
-				socialism_ideology_drift = 0.01
+				communism_drift = 0.01
 			}
 
 		}
@@ -563,7 +564,7 @@ ideas = {
 				political_power_cost = 0.25
 				political_power_factor = -0.25
 				consumer_goods_factor = 0.25
-				conservatism_ideology_drift = 0.01
+				conservatism_ideology_drift = 0.02
 			}
 
 		}
