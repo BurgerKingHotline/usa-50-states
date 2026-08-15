@@ -1637,7 +1637,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_expose_big_bussiness#expose business autocracy
-		icon = GFX_goal_CAL_expose_big_business
+		icon = GFX_goal_support_communism
 		cost = 5
 		x = 1
 		y = 1
