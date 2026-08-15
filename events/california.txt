@@ -235,8 +235,8 @@ country_event = {
 			7 = {
 				country_event = {
 					id = california_events.9
-					days = 2
-					random_days = 4
+					days = 12
+					random_days = 10
 					hours = 12
 					random_hours = 12
 				}
@@ -244,8 +244,8 @@ country_event = {
 			3 = {
 				country_event = {
 					id = california_events.10
-					days = 2
-					random_days = 4
+					days = 12
+					random_days = 10
 					hours = 12
 					random_hours = 12
 				}
@@ -253,10 +253,10 @@ country_event = {
 		}
 	}
 	option = {
-		name = california_events.8.a#disarm
+		name = california_events.8.b#disarm
 		country_event = {
 			id = california_events.31
-			days = 2
+			days = 4
 			random_days = 4
 			hours = 12
 			random_hours = 12
@@ -286,6 +286,14 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.10.a
+		add_political_power = -50
+		country_event = {
+			id = california_events.31
+			days = 4
+			random_days = 4
+			hours = 12
+			random_hours = 12
+		}
 	}
 }
 country_event = {
@@ -529,7 +537,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.22#Militias in Jefferson
+	id = california_events.22#Militias in Jefferson - civilwar
 	title = california_events.22.t
 	desc = california_events.22.desc
 	picture = GFX_report_event_cal_jefferson
@@ -571,7 +579,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.24#Jefferson in chaos start decision
+	id = california_events.24#Jefferson in chaos start decision - civilwar
 	title = california_events.24.t
 	desc = california_events.24.desc
 	picture = GFX_report_event_cal_jefferson
@@ -592,7 +600,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.25#Severe Violence In Jefferson
+	id = california_events.25#Severe Violence In Jefferson - civilwar
 	title = california_events.25.t
 	desc = california_events.25.desc
 	picture = GFX_report_event_cal_jefferson
@@ -691,6 +699,145 @@ country_event = {
 		117 = {
 			add_manpower = -45
 		}
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+	}
+}
+country_event = {
+	id = california_events.32#No One Likes Merriam
+	title = california_events.32.t
+	desc = california_events.32.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	trigger = {
+		has_country_leader = CAL_FRANK_MERRIAM
+	}
+	option = {
+		name = california_events.32.a 
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = -0.05
+		}
+	}
+}
+country_event = {
+	id = california_events.33#Collectives Arming Themselves - Civilwar
+	title = california_events.33.t
+	desc = california_events.33.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.33.a 
+	}
+}
+country_event = {
+	id = california_events.34#Dehumanization of Socialist by Press - Civilwar
+	title = california_events.34.t
+	desc = california_events.34.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.34.a 
+	}
+}
+country_event = {
+	id = california_events.35#Anti Asian Hate Rising - Civilwar
+	title = california_events.35.t
+	desc = california_events.35.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.35.a 
+	}
+}
+country_event = {
+	id = california_events.36#John clinton porter of frank l shaw - Civilwar
+	title = california_events.36.t
+	desc = california_events.36.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	trigger = {
+		date > 1933.6.1
+	}
+	option = {
+		name = california_events.36.a#frank l shaw
+		add_popularity = {
+			ideology = neutrality
+			popularity = 3
+		}
+	}
+	option = {
+		name = california_events.36.b#john clinton porter
+		add_popularity = {
+			ideology = populism_ideology
+			popularity = 3
+		}
+	}
+	option = {
+		name = california_events.36.c#george e. cryer
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 3
+		}
+	}
+	option = {
+		name = california_events.36.d#w. dempster
+		add_popularity = {
+			ideology = socialism_ideology
+			popularity = 3
+		}
+	}
+}
+country_event = {
+	id = california_events.37#Patton promises to prevent socialist election - Civilwar
+	title = california_events.37.t
+	desc = california_events.37.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.37.a 
+		add_stability = -0.1
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+	}
+}
+country_event = {
+	id = california_events.38#George Creel Assassinated - Civilwar
+	title = california_events.38.t
+	desc = california_events.38.desc
+	picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	trigger = {
+		date > 1934.1.1
+	}
+	option = {
+		name = california_events.38.a 
+		add_popularity = {
+			ideology = fascism
+			popularity = 1
+		}
+	}
+	option = {
+		name = california_events.38.b
+		add_popularity = {
+			ideology = communism
+			popularity = 1
+		}
+	}
+	after = {
+		add_manpower = -1
 	}
 }
 
