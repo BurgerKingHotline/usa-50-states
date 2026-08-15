@@ -72,7 +72,6 @@ news_event = {#Commune of San Francisco - California
 	
 	option = {
 		name = ffl_news.5.a
-		
 	}
 }
 

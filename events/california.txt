@@ -510,16 +510,18 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	immediate = {
-		109 = {
-			transfer_state_to = JEF
-			set_demilitarized_zone = no
-		}
-		110 = {
-			transfer_state_to = JEF
-			set_demilitarized_zone = no
-		}
-		JEF = {
-			load_oob = "JEFF_ffl"
+		hidden_effect = {
+			109 = {
+				transfer_state_to = JEF
+				set_demilitarized_zone = no
+			}
+			110 = {
+				transfer_state_to = JEF
+				set_demilitarized_zone = no
+			}
+			JEF = {
+				load_oob = "JEFF_ffl"
+			}
 		}
 	}
 	option = {
@@ -528,12 +530,17 @@ country_event = {
 			target = JEF
 			type = annex_everything
 		}
+		add_war_support = 0.05
 		news_event = ffl_news.4
 	}
 	option = {
 		name = california_events.21.b #let them secede
-		add_stability = 0.05
+		add_stability = -0.20
+		add_war_support = -0.20
 		news_event = ffl_news.3
+		ai_chance = {
+			base = 0
+		}
 	}
 }
 country_event = {
