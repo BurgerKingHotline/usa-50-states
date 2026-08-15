@@ -1,4 +1,12 @@
 spriteTypes = {
+	spriteType = { 
+		name = "GFX_news_event_san_francisco_commune"
+		texturefile = "gfx/event_pictures/news_events/ffl_news_event_san_francisco_commune.dds"
+	}
+	spriteType = { 
+		name = "GFX_news_event_jefferson"
+		texturefile = "gfx/event_pictures/news_events/ffl_news_event_jefferson.dds"
+	}
     spriteType = {
         name = "GFX_report_event_san_joaquin_picture"
         texturefile = "gfx/event_pictures/california/report_event_cal_san_joaquin.dds"

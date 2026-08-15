@@ -5,7 +5,7 @@ news_event = {#Frank Merriam Wins - California
 	id = ffl_news.1
 	title = ffl_news.1.t
 	desc = ffl_news.1.desc
-	picture = GFX_news_event_ger_civil_war
+	picture = GFX_report_event_election_vote
 	
 	major = yes
 	
@@ -20,7 +20,7 @@ news_event = {#Upton Sinclair Wins Election - California
 	id = ffl_news.2
 	title = ffl_news.2.t
 	desc = ffl_news.2.desc
-	picture = GFX_news_event_ger_civil_war
+	picture = GFX_report_event_election_vote
 	
 	major = yes
 	
@@ -34,7 +34,7 @@ news_event = {#Jefferson Secedes - California
 	id = ffl_news.3
 	title = ffl_news.3.t
 	desc = ffl_news.3.desc
-	picture = GFX_news_event_ger_civil_war
+	picture = GFX_news_event_jefferson
 	
 	major = yes
 	
@@ -49,7 +49,7 @@ news_event = {#California Invades Jefferson - California
 	id = ffl_news.4
 	title = ffl_news.4.t
 	desc = ffl_news.4.desc
-	picture = GFX_news_event_ger_civil_war
+	picture = GFX_news_event_jefferson
 	
 	major = yes
 	
@@ -64,7 +64,7 @@ news_event = {#Commune of San Francisco - California
 	id = ffl_news.5
 	title = ffl_news.5.t
 	desc = ffl_news.5.desc
-	picture = GFX_news_event_ger_civil_war
+	picture = GFX_news_event_san_francisco_commune
 	
 	major = yes
 	
