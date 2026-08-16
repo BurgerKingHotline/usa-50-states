@@ -66,7 +66,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		completion_reward = { 
-			activate_advisor = CAL_earl_warren
+			activate_advisor = cal_earl_warren
 		}
 	}
 	focus = {
