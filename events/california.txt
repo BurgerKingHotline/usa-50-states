@@ -160,9 +160,8 @@ country_event = {
 			popularity = 0.05
 		}
 		news_event = {
-			id = ffl_news.6
+			id = ffl_news.5
 		}
-
 	}
 }
 country_event = {
@@ -521,6 +520,7 @@ country_event = {
 			}
 			JEF = {
 				load_oob = "JEFF_ffl"
+				inherit_technology = CAL
 			}
 		}
 	}
@@ -602,11 +602,13 @@ country_event = {
 		name = california_events.24.a #The Long Neglected
 		109 = {
 			remove_core_of = CAL
+			add_claim_by = CAL
 			force_enable_resistance = CAL
 			start_resistance = yes
 		}
 		110 = {
 			remove_core_of = CAL
+			add_claim_by = CAL
 			force_enable_resistance = CAL
 			start_resistance = yes
 		}
@@ -680,7 +682,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.28#California Civil War
+	id = california_events.28#California civilwar civil war
 	title = california_events.28.t
 	desc = california_events.28.desc
 	picture = GFX_report_event_generic_rifles
@@ -688,17 +690,31 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.28.a 
-        start_civil_war = {
-            ideology = socialism_ideology
-            states = {
-                4 113 114 112 111
-            }
-			size = 0.4
-        }
+		111 = {
+			set_demilitarized_zone = yes
+		}
+		114 = {
+			set_demilitarized_zone = yes
+		}
+		143 = {
+			set_demilitarized_zone = yes
+		}
+		113 = {
+			set_demilitarized_zone = yes
+		}
+		144 ={
+			set_demilitarized_zone = yes
+		}
+		141 = {
+			set_demilitarized_zone = yes
+		}
+		4 = {
+			set_demilitarized_zone = yes
+		}
 	}
 }
 country_event = {
-	id = california_events.29#Civilwar expands
+	id = california_events.29#Civilwar civil war starts
 	title = california_events.29.t
 	desc = california_events.29.desc
 	picture = GFX_report_event_generic_rifles
@@ -706,9 +722,50 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.29.a 
-		create_faction = "California Defense"
-		add_to_faction = NVD
-		add_to_faction = ARZ
+		111 = {
+			set_demilitarized_zone = no
+			transfer_state_to = CAS
+		}
+		114 = {
+			set_demilitarized_zone = no
+			transfer_state_to = CAS
+		}
+		143 = {
+			set_demilitarized_zone = no
+			transfer_state_to = CAS
+		}
+		113 = {
+			set_demilitarized_zone = no
+			transfer_state_to = CAS
+		}
+		144 ={
+			set_demilitarized_zone = no
+			transfer_state_to = CAS
+		}
+		141 = {
+			set_demilitarized_zone = no
+			transfer_state_to = CAS
+		}
+		4 = {
+			set_demilitarized_zone = no
+			transfer_state_to = CAS
+		}
+	}
+	after = {
+		hidden_effect = {
+			CAS = {
+				inherit_technology = CAL
+				load_oob = "CAS_ffl"
+				every_owned_state = {
+					add_core_of = CAS
+					remove_core_of = CAL
+						add_claim_by = CAL
+				}
+			}
+			every_owned_state = {
+				add_claim_by = CAS
+			}
+		}
 	}
 }
 country_event = {
@@ -855,7 +912,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.36#John clinton porter of frank l shaw - Civilwar
+	id = california_events.36#LA Mayor - Civilwar
 	title = california_events.36.t
 	desc = california_events.36.desc
 	picture = GFX_report_event_generic_rifles

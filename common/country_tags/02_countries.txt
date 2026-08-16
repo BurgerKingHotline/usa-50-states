@@ -1,3 +1,4 @@
+CAS = "countries/California Soviet.txt"
 TON = "countries/Tohono Oodham.txt"
 SCA = "countries/San Carlos Apache.txt"
 WMA = "countries/White Mountain Apache.txt"

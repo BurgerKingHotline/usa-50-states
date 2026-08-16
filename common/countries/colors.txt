@@ -1,4 +1,8 @@
 #reload countrycolors
+CAS = {
+	color = rgb { 185 50 30 }
+	color_ui = rgb { 185 50 30 }
+}
 NVJ = {
 	color = rgb { 255 222 173 }
 	color_ui = rgb { 255 222 173 }
