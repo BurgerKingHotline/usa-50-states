@@ -1,10 +1,10 @@
 state = {
-	id = 112
-	name = "STATE_112"
+	id = 143
+	name = "STATE_143"
 	manpower = 214924
 	state_category = large_city
 	provinces = { #6595
-		179 2380 8991 9037 5046 8995
+		8954 2441 2990 8952 9004 6263 5515 6596 2701 5864 9051 2645 9062 3493 9068 4487 4548 5004 8944 8921 5820 2496 8894
 	}#179 is where orange county begins
 	history = {
 		owner = CAL
@@ -25,9 +25,6 @@ state = {
 			infrastructure = 3
 			industrial_complex = 5
 			arms_factory = 1
-			8995 = {
-				naval_base = 5
-			}
 		}
 	}
 }

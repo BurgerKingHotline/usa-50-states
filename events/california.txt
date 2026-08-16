@@ -912,7 +912,7 @@ country_event = {
 	id = california_events.38#George Creel Assassinated - Civilwar
 	title = california_events.38.t
 	desc = california_events.38.desc
-	picture = GFX_report_event_generic_rifles
+	#picture = GFX_report_event_generic_rifles
 	fire_only_once = yes
 	trigger = {
 		date > 1934.1.1
@@ -921,14 +921,14 @@ country_event = {
 		name = california_events.38.a 
 		add_popularity = {
 			ideology = fascism
-			popularity = 1
+			popularity = 0.01
 		}
 	}
 	option = {
 		name = california_events.38.b
 		add_popularity = {
 			ideology = communism
-			popularity = 1
+			popularity = 0.01
 		}
 	}
 	after = {

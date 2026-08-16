@@ -1,13 +1,9 @@
 state = {
-	id = 113
-	name = "STATE_113"
+	id = 144
+	name = "STATE_144"
 	manpower = 2263468
 	state_category = megalopolis
-	provinces = { 657 897 3485 3720 3779 4556 5540 5848 5969 6737 6810 8843 8943 8913 }
-	resources = {
-		aluminium = 15
-		oil = 90
-	}
+	provinces = { 8965 8974 5548 8934 8943 10398 10399 10397 }
 	history = {
 		owner = CAL
 		add_core_of = CAL

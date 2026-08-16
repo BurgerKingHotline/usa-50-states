@@ -1,8 +1,8 @@
 state = {
-	id = 4
-	name = "STATE_4"
+	id = 140
+	name = "STATE_140"
 	provinces = {
-		8224 8247 8258 4722 8309 8318
+		3526 6707 8313 5827 6212 8367 3691 8368 1553 8384 4318
 	}
 
 	history = {
@@ -10,21 +10,18 @@ state = {
 		add_core_of = CAL
 
 		victory_points = {
-			8224 35 #San Francisco 65
+			3526 6#San Jose
 		}
 		victory_points = {
-			8247 2#Burlingame
-		}
-		victory_points = {
-			8258 2 #Palo Alto, San Mateo
+			8367 2#Santa Cruz
 		}
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 4
 			arms_factory = 2
 			dockyard = 4
-			8224 = {
-				naval_base = 8
+			6707 = {
+				naval_base = 3
 			}
 		}
 	}
