@@ -759,12 +759,15 @@ country_event = {
 				every_owned_state = {
 					add_core_of = CAS
 					remove_core_of = CAL
-						add_claim_by = CAL
+					add_claim_by = CAL
 				}
+				set_country_flag = CAL_civilwar_flag
 			}
 			every_owned_state = {
 				add_claim_by = CAS
 			}
+			set_country_flag = CAL_civilwar_flag
+			load_oob = "CAL_civilwar"
 		}
 	}
 }

@@ -1,0 +1,217 @@
+
+division_template = {
+	name = "Californian Guard"	
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	regimental_support = {
+		field_guns = { x = 0 y = 0}
+		field_guns = { x = 1 y = 0}
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Anti-Communist Militia"	
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Golden State Vanguard"	
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Cavalry Militia"	
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+	}
+}
+units = {
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5120
+		division_template = "Californian Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8485
+		division_template = "Californian Guard"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 3797
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 4180
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8995
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8891
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 4391
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8162
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 6221
+		division_template = "Cavalry Militia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5120
+		division_template = "Cavalry Militia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2079
+		division_template = "Cavalry Militia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 123
+		division_template = "Cavalry Militia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5220
+		division_template = "Golden State Vanguard"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.3
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 179
+		division_template = "Golden State Vanguard"
+		start_experience_factor = 0
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 4724
+		division_template = "Golden State Vanguard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2380
+		division_template = "Golden State Vanguard"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+	}
+}

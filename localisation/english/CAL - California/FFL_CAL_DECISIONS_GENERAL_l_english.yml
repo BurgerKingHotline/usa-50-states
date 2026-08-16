@@ -5,3 +5,5 @@
  CAL_economics_of_cooperation_cat_desc:0 "Blah blha [?CAL_depression_recovery]"
  CAL_merriam_campaigning:0 "Merriam Campaigning"
  CAL_merriam_campaigning_desc:0 "[?CAL_merriam_increase_1934_gb]%"
+ CAL_civilwar_cat:0 "Storm Over California"
+ CAL_civilwar_cat_desc:0 "As California plunges into deeper and deepr violence militias are forming to protect local communities, protect unions, or even to control towns. These militias have general ideological loyalties, whether it be to secede, to push through a socialist-progressive economic project, or to maintain the conservative status quo. Should war ever break out inside the state, these militias would undoubtedly be called into action...\n         The strength and number of these militias may ebb and flow based on particular events, choices, or focuses taken.\n         Additionally there are a panoply of political actions we can take, to strengthen our faction.\n\n§2----xxxx----Conservatives Strength----xxxx----\n§T[?CAL_conservative_banner_bonus]\n\n§R----xxxx----Socialists Strength----xxxx----\n§T[?CAL_socialist_banner_bonus]\n\n§O----xxxx----Seperatists Strength----xxxx----\n§T[?CAL_jefferson_banner_bonus]"

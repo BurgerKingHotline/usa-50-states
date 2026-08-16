@@ -10,6 +10,17 @@ CAL_things_are_getting_worse_cat = {
 	visible_when_empty = yes
 
 } 
+CAL_civilwar_cat = {
+	allowed = {
+		tag = CAL
+	}
+	available = {
+		NOT = {
+			has_country_flag = CAL_civilwar_flag
+		}
+	}
+	visible_when_empty = yes
+}
 CAL_1934_gubernatorial_election_cat = {
 	allowed = {
 		tag = CAL
