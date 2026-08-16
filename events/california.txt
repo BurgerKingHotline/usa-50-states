@@ -24,6 +24,11 @@ country_event = {
 			ideology = communism
 			popularity = 0.01
 		}
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 1
+			tooltip = add_1_to_socialist_banner_bonus_tt
+		}
 		#CAL_great_depression_level_up = yes
 	}
 }
@@ -113,6 +118,11 @@ country_event = {
 			ideology = neutrality
 			popularity = 0.02
 		}
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = -4
+			tooltip = subtract_4_from_socialist_banner_bonus_tt
+		}
 	}
 }
 country_event = {
@@ -138,6 +148,11 @@ country_event = {
 			random_days = 2
 			random_hours = 12
 		}
+		subtract_from_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 2
+			tooltip = subract_2_from_conservative_banner_bonus_tt
+		}
 
 	}
 }
@@ -152,7 +167,7 @@ country_event = {
 		name = california_events.5.a
 		4 = {
 			set_demilitarized_zone = yes
-			add_manpower = -12443
+			add_manpower = -1443
 		}
 		add_stability = -0.05
 		add_popularity = {
@@ -161,6 +176,11 @@ country_event = {
 		}
 		news_event = {
 			id = ffl_news.5
+		}
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 4
+			tooltip = add_4_to_socialist_banner_bonus_tt
 		}
 	}
 }
@@ -216,6 +236,11 @@ country_event = {
 			random_hours = 12
 		}
 		add_stability = -0.05
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 1
+			tooltip = add_1_to_socialist_banner_bonus_tt
+		}
 	}
 }
 country_event = {
@@ -264,6 +289,13 @@ country_event = {
 			add_manpower = -4
 		}
 	}
+	after = {
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 1
+			tooltip = add_1_to_socialist_banner_bonus_tt
+		}
+	}
 }
 country_event = {
 	id = california_events.9#Negotiation Success
@@ -274,6 +306,12 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.9.a
+		subtract_from_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 2
+			tooltip = subtract_2_from_socialist_banner_bonus_tt
+		}
+		add_stability = 0.05
 	}
 }
 country_event = {
@@ -338,9 +376,9 @@ country_event = {
 			popularity = 0.03
 		}
 		add_to_variable = {
-			id = CAL_conservative_banner_bonus
+			var = CAL_conservative_banner_bonus
 			value = 1
-			tooltip = add_1_to_cal_conservative_banner
+			tooltip = add_1_to_cal_conservative_banner_tt
 		}
 	}
 }
@@ -566,6 +604,11 @@ country_event = {
 			add_manpower = -1000
 		}
 		name = california_events.22.a #
+		add_to_variable = {
+			var = CAL_jefferson_banner_bonus
+			value = 2
+			tooltip = add_2_to_jefferson_banner_bonus_tt
+		}
 	}
 }
 country_event = {
@@ -619,6 +662,11 @@ country_event = {
 			random_days = 22
 			random_hours = 12
 		}
+		add_to_variable = {
+			var = CAL_jefferson_banner_bonus
+			value = 2
+			tooltip = add_2_to_jefferson_banner_bonus_tt
+		}
 	}
 }
 country_event = {
@@ -630,9 +678,24 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.25.a #national guard
+		add_to_variable = {
+			var = CAL_jefferson_banner_bonus
+			value = -2
+			tooltip = subtract_2_to_jefferson_banner_bonus_tt
+		}
+		add_to_variable = {
+			var = CAL_conservative_banner_bonus
+			value = -2
+			tooltip = subract_2_to_conservative_banner_bonus_tt
+		}
 	}
 	option = {
 		name = california_events.25.b #nothing
+		add_to_variable = {
+			var = CAL_jefferson_banner_bonus
+			value = 2
+			tooltip = add_2_to_jefferson_banner_bonus_tt
+		}
 	}
 	after = {
 		109 = {
@@ -815,6 +878,8 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.31.a 
+		add_stability = -0.05
+		add_war_support = 0.05
 		117 = {
 			add_manpower = -45
 		}
@@ -825,6 +890,16 @@ country_event = {
 		add_popularity = {
 			ideology = neutrality
 			popularity = 0.05
+		}
+		add_to_variable = {
+			var = CAL_conservative_banner_bonus
+			value = 2
+			tooltip = add_2_to_cal_conservative_banner_tt
+		}
+		subtract_from_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 2
+			tooltip = subtract_2_from_socialist_banner_bonus_tt
 		}
 	}
 }
@@ -871,6 +946,11 @@ country_event = {
 		}
 		add_war_support = -0.05
 		add_manpower = -10000
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 4
+			tooltip = add_4_to_socialist_banner_bonus_tt
+		}
 	}
 }
 country_event = {
@@ -1019,7 +1099,7 @@ country_event = {
 		}
 	}
 	after = {
-		113 = {
+		144 = {
 			add_manpower = -117#long island area mainly, and downtown
 			damage_building = {
 				type = infrastructure
