@@ -2,7 +2,7 @@ state = {
 	id = 116
 	name = "STATE_116"
 	manpower = 173196
-	state_category = large_city
+	state_category = large_town
 	provinces = { 1578 2152 3190 3715 4299 4519 7977 7988 4583 5705 7940 5316 414 4723 7999 7986 8003 7928 6696 6511 3896 7899 7906 13027 5270 3924 7998 1604 7943 1863 2280 3742 4855 8029 1725 13029 7815 6282 7861 3393 4699 7920 6512 3636 }#7815 is where Mendecino starts
 	resources = {
 		coal = 15
@@ -41,9 +41,9 @@ state = {
 			7906 1#Quincy
 		}
 		buildings = {
-			infrastructure = 2
-			industrial_complex = 4
-			arms_factory = 2
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
 		}
 	}
 }

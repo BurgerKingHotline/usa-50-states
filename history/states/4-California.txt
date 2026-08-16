@@ -20,16 +20,16 @@ state = {
 		}
 		buildings = {
 			infrastructure = 4
-			industrial_complex = 4
-			arms_factory = 2
-			dockyard = 4
+			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 5
 			8224 = {
 				naval_base = 8
 			}
 		}
 	}
 	state_category = megalopolis
-	manpower = 1615442
+	manpower = 634394
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 }

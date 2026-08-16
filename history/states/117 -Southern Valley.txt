@@ -2,7 +2,7 @@ state = {
 	id = 117
 	name = "STATE_117"
 	manpower = 339926
-	state_category = large_city
+	state_category = large_town
 	provinces = { 8412 8439 2619 3100 8424 4659 4290 5244 1464 8485 1715 2149 4391 8595 81 8513 2663 2540 2675 8776 3126 230 8662 918 6779 3728 8457 4066 3232 4291 8527 8509 3017 8544 1664  915 5485 4724 5401 5644 8697 4180 1851 8736 4265 13033 8512 6176 8604 3754 8615 5331 4537 }
 	resources = {
 		oil = 30
@@ -27,7 +27,7 @@ state = {
 		}
 		buildings = {
 			infrastructure = 3
-			industrial_complex = 5
+			industrial_complex = 2
 			fuel_silo = 1
 		}
 	}

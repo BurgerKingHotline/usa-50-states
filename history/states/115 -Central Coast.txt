@@ -2,7 +2,7 @@ state = {
 	id = 115
 	name = "STATE_115"
 	manpower = 99796
-	state_category = large_town
+	state_category = rural
 	provinces = { 123 135 1311 1463 3381 3480 3926 3975 4698 5187 5220 5336 5351 5601 5781 6151 6221 6353 6790 8422 8452 8483 8516 8587 8829 8586 8618 10394 10395 10396 }
 	history = {
 		owner = CAL
@@ -21,7 +21,7 @@ state = {
 		}
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 3
+			industrial_complex = 1
 		}
 	}
 }

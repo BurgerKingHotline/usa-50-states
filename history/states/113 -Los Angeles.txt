@@ -1,9 +1,9 @@
 state = {
 	id = 113
 	name = "STATE_113"
-	manpower = 2263468
-	state_category = megalopolis
-	provinces = { 657 897 3485 3720 3779 4556 5540 5848 5969 6737 6810 8843 8943 8913 }
+	manpower = 830412
+	state_category = metropolis
+	provinces = { 657 897 3485 3720 3779 4556 5540 5848 5969 6737 6810 8843 8913 }
 	resources = {
 		aluminium = 15
 		oil = 90
@@ -15,38 +15,15 @@ state = {
 			657 2#San Buenaventura
 		}
 		victory_points = {
-			8974 15 #Long Beach 14
-		}
-		victory_points = {
-			5548 50#Los Angeles 100
-		}
-		victory_points = {
-			5820 2#Pomona
-		}
-		victory_points = {
-			8943 6#Pasadena
-		}
-		victory_points = {
-			2496 4#Alhambra
-		}
-		victory_points = {
 			8913 4#Santa Monica
 		}
 		victory_points = {
 			6737 6#Glendale
 		}
-		victory_points = {
-			8934 5#Hollywood
-		}
 		buildings = {
-			8965 = {
-				naval_base = 10
-			}
-			industrial_complex = 5
+			industrial_complex = 3
 			arms_factory = 3
-			dockyard = 3
 			infrastructure = 4
-			fuel_silo = 1
 		}
 	}
 }
