@@ -16,7 +16,7 @@ CAL_civilwar_cat = {
 	}
 	available = {
 		NOT = {
-			has_country_flag = CAL_civilwar_flag
+			has_global_flag = CAL_civilwar_flag
 		}
 	}
 	visible_when_empty = yes

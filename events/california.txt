@@ -195,10 +195,11 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		clr_country_flag = CAL_intro_tree
-		set_country_flag = CAL_epic_path
+		#set_country_flag = CAL_epic_path
+		set_global_flag = CAL_civilwar_flag
 		
 	}
-	option = {
+	option = {#Sinclair Wins
 		name = california_events.6.a
 		set_politics = {
 			ruling_party = socialism_ideology
@@ -213,8 +214,39 @@ country_event = {
 		}
 		mark_focus_tree_layout_dirty = yes
 	}
+	option = {#Merriam
+		name = california_events.6.b
+		set_politics = {
+			ruling_party = conservatism_ideology
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.05
+		}
+		news_event = {
+			id = ffl_news.1
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+	#after = {
+	#	complete_national_focus = CAL_socialist_governor
+	#}
 	after = {
-		complete_national_focus = CAL_socialist_governor
+		country_event = {
+			id = california_events.22
+			days = 2
+			random_days = 2
+			random_hours = 12
+			hours = 12
+		}
+		country_event = {
+			id = california_events.28
+			days = 10
+			random_days = 12
+			hours = 12
+			random_hours = 12
+		}
 	}
 }
 country_event = {
@@ -712,13 +744,13 @@ country_event = {
 			ideology = conservatism_ideology
 			popularity = -0.05
 		}
-		country_event = { 
-			id = california_events.22
-			days = 140
-			hours = 12
-			random_days = 22
-			random_hours = 12
-		}
+		#country_event = { 
+		#	id = california_events.22
+		#	days = 140
+		#	hours = 12
+		#	random_days = 22
+		#	random_hours = 12
+		#}
 	}
 }
 country_event = {
@@ -774,10 +806,15 @@ country_event = {
 		4 = {
 			set_demilitarized_zone = yes
 		}
+		country_event = {
+			id = california_events.29
+			days = 30
+			random_hours = 24
+		}
 	}
 }
 country_event = {
-	id = california_events.29#Civilwar civil war starts
+	id = california_events.29#Civilwar starts civil war starts civilwarstarts
 	title = california_events.29.t
 	desc = california_events.29.desc
 	picture = GFX_report_event_generic_rifles
@@ -813,6 +850,7 @@ country_event = {
 			set_demilitarized_zone = no
 			transfer_state_to = CAS
 		}
+		country_event = { california_events.21 }
 	}
 	after = {
 		hidden_effect = {
@@ -826,12 +864,47 @@ country_event = {
 				}
 				set_country_flag = CAL_civilwar_flag
 			}
+			declare_war_on = {
+				target = CAL
+				type = annex_everything
+			}
 			every_owned_state = {
 				add_claim_by = CAS
 			}
 			set_country_flag = CAL_civilwar_flag
 			load_oob = "CAL_civilwar"
 		}
+		118 = {
+			create_unit = {
+				division = "name = \"National Militia\" division_template = \"National Guard\" start_experience_factor = 0.5"
+				#division = "name = \"National Militia\" division_template = \"National Guard\" start_experience_factor = 0.5"
+				owner = CAL
+				count = CAL_conservative_banner_bonus
+			}
+		}
+		hidden_effect = {
+			143 = {
+				create_unit = {
+					division = "name = \"National Militia\" division_template = \"National Guard\" start_experience_factor = 0.5"
+					#division = "name = \"National Militia\" division_template = \"National Guard\" start_experience_factor = 0.5"
+					owner = CAS
+					count = CAL_socialist_banner_bonus
+				}
+			}
+			110 = {
+				create_unit = {
+					division = "name = \"National Militia\" division_template = \"National Guard\" start_experience_factor = 0.5"
+					#division = "name = \"National Militia\" division_template = \"National Guard\" start_experience_factor = 0.5"
+					owner = JEF
+					count = CAL_jefferson_banner_bonus
+				}
+			}
+		}
+		declare_war_on = {
+			target = CAS
+			type = annex_everything
+		}
+		#country_event = { california_events.40 }
 	}
 }
 country_event = {
@@ -1108,12 +1181,22 @@ country_event = {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
+country_event = {
+	id = california_events.40#spawn in militias
+	title = california_events.40.t
+	desc = california_events.40.desc
+	picture = GFX_news_event_long_beach_earthquake
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.40.a 
+		118 = {
+			create_unit = {
+				division = "name = \"National Militia\" division_template = \"National Guard\" start_experience_factor = 0.5"
+				#division = "name = \"National Militia\" division_template = \"National Guard\" start_experience_factor = 0.5"
+				owner = CAL
+				count = CAL_conservative_banner_bonus
+			}
+		}
+	}
+}
