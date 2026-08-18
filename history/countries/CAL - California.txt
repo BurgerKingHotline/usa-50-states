@@ -42,9 +42,9 @@ set_variable = { CAL_ila_event_chance = 20 }
 #set_variable = { brooke_events_array^0 = 11 }
 #set_variable = { brooke_events_array^1 = 12 }
 
-set_power_balance = {
-	id = CAL_bop_socdem_comm_balance
-}
+#set_power_balance = {
+#	id = CAL_bop_socdem_comm_balance
+#}
 #leaders
 recruit_character = CAL_JAMES_ROLPH
 recruit_character = CAL_UPTON_SINCLAIR

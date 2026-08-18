@@ -5,10 +5,10 @@ country_event = {
 	title = california_events.1.t
 	desc = california_events.1.desc
 	picture = GFX_report_event_cal_waterfront_strikes
-
+	is_triggered_only = yes
 	trigger = {
-		tag = CAL
-		date > 1934.5.1
+		#tag = CAL
+		#date > 1934.5.1
 	}
 	fire_only_once = yes
 	
@@ -267,7 +267,10 @@ country_event = {
 			hours = 12
 			random_hours = 12
 		}
-		add_stability = -0.05
+		swap_ideas = {
+			remove_idea = CAL_widespread_strikes
+			add_idea = CAL_widespread_strikes_2
+		}
 		add_to_variable = {
 			var = CAL_socialist_banner_bonus
 			value = 1
@@ -1009,7 +1012,7 @@ country_event = {
 	id = california_events.33#Collectives Arming Themselves - Civilwar
 	title = california_events.33.t
 	desc = california_events.33.desc
-	picture = GFX_report_event_generic_rifles
+	picture = GFX_report_event_cal_default
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
@@ -1040,7 +1043,7 @@ country_event = {
 	id = california_events.34#Dehumanization of Socialist by Press - Civilwar
 	title = california_events.34.t
 	desc = california_events.34.desc
-	picture = GFX_report_event_generic_rifles
+	picture = GFX_report_event_cal_default
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
@@ -1065,7 +1068,7 @@ country_event = {
 	id = california_events.35#Anti Asian Hate Rising - Civilwar
 	title = california_events.35.t
 	desc = california_events.35.desc
-	picture = GFX_report_event_generic_rifles
+	picture = GFX_report_event_cal_default
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
@@ -1300,14 +1303,33 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.46#great depression gets even worse!
+	id = california_events.46#government can't keep up
 	title = california_events.46.t
 	desc = california_events.46.desc
+	picture = GFX_report_event_cal_default
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {#chaos
+		name = california_events.46.a 
+		add_ideas = {
+			CAL_militarized_society
+		}
+	}
+}
+country_event = {
+	id = california_events.47#Great Depression gets worse
+	title = california_events.47.t
+	desc = california_events.47.desc
 	picture = GFX_report_event_cal_greatdepressionvagrants
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {#back
-		name = california_events.46.a 
+	option = {#chaos
+		name = california_events.47.a 
+		swap_ideas = {
+			remove_idea = CAL_great_depression_simple
+			add_idea = CAL_great_depression_worse_simple
+		}
 	}
 }
+
 

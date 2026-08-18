@@ -17,7 +17,25 @@ ideas = {
 				consumer_goods_factor = 0.30
 				local_resources_factor = -0.50
 				stability_factor = -0.1
-				socialism_ideology_drift = 0.02
+			}
+		}
+		CAL_great_depression_worse_simple = {
+			picture = cal_great_depression
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.50
+				local_resources_factor = -0.7
+				stability_factor = -0.2
 			}
 		}
 		CAL_epic_plan_cost_1 = {
@@ -541,12 +559,31 @@ ideas = {
 			picture = cal_general_strikes
 			
 			modifier = {
-				consumer_goods_factor = 0.3
+				consumer_goods_factor = 0.1
 				industrial_capacity_factory = -0.2
 				industrial_capacity_dockyard = -0.2
-				communism_drift = 0.01
+				weekly_manpower = -10
+				stability_weekly = -0.001
+			}
+		}
+		CAL_widespread_strikes_2 = {
+			allowed = {
+				always = no
 			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = cal_general_strikes
+			
+			modifier = {
+				consumer_goods_factor = 0.2
+				industrial_capacity_factory = -0.4
+				industrial_capacity_dockyard = -0.4
+				weekly_manpower = -100
+				stability_weekly = -0.01
+			}
 		}
 		CAL_corporate_influence = {
 			
@@ -563,7 +600,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.25
 				political_power_factor = -0.25
-				consumer_goods_factor = 0.30
+				consumer_goods_factor = 0.10
 				conservatism_ideology_drift = 0.02
 			}
 
@@ -707,6 +744,22 @@ ideas = {
 			modifier = {
 				air_cas_efficiency = 0.1
 				air_cas_present_factor = 0.1
+			}
+		}
+		CAL_militarized_society = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			picture = cal_sunshine_state
+			
+			modifier = {
+				recruitable_population_factor = -0.35
+				resistance_target = 0.3
 			}
 		}
 	}

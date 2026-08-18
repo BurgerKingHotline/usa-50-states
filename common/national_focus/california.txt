@@ -41,7 +41,13 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
-			country_event = { id = california_events.43 }
+			country_event = { 
+				id = california_events.43 
+				days = 7
+				random_days = 7
+				hours = 12
+				random_hours = 12
+			}
 		}
 	}
 	focus = {
@@ -404,7 +410,7 @@ focus_tree = {
 			focus = CAL_declare_independence
 		}
 		prerequisite = {
-			focus = CAL_reassure_public
+			#focus = CAL_reassure_public
 		}
 		ai_will_do = {
 			base = 11
