@@ -1,4 +1,32 @@
 spriteTypes = {
+    spriteType = {
+        name = "GFX_report_event_cal_uptonsinclair"
+        texturefile = "gfx/event_pictures/california/report_event_cal_uptonsinclair.dds"
+    }
+    spriteType = {
+        name = "GFX_report_event_cal_raymondhaight"
+        texturefile = "gfx/event_pictures/california/report_event_cal_raymondhaight.dds"
+    }
+    spriteType = {
+        name = "GFX_report_event_cal_merriaminaguration"
+        texturefile = "gfx/event_pictures/california/report_event_cal_merriaminaguration.dds"
+    }
+    spriteType = {
+        name = "GFX_report_event_cal_lasangeles"
+        texturefile = "gfx/event_pictures/california/report_event_cal_lasangeles.dds"
+    }
+    spriteType = {
+        name = "GFX_report_event_cal_greatdepressionvagrants"
+        texturefile = "gfx/event_pictures/california/report_event_cal_greatdepressionvagrants.dds"
+    }
+    spriteType = {
+        name = "GFX_report_event_cal_frankmerriam"
+        texturefile = "gfx/event_pictures/california/report_event_cal_frankmerriam.dds"
+    }
+    spriteType = {
+        name = "GFX_report_event_cal_default"
+        texturefile = "gfx/event_pictures/california/report_event_cal_default.dds"
+    }
 	spriteType = {
 		name = "GFX_news_event_san_francisco_commune"
 		texturefile = "gfx/event_pictures/news_events/ffl_news_event_san_francisco_commune.dds"
