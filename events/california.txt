@@ -188,15 +188,15 @@ country_event = {
 	id = california_events.6#Governor Election 1934
 	title = california_events.6.t
 	desc = california_events.6.desc
-	picture = GFX_report_event_usa_election_generic
+	#picture = GFX_report_event_usa_election_generic
 	trigger = {
 		tag = CAL
 	}
 	is_triggered_only = yes
 	immediate = {
-		clr_country_flag = CAL_intro_tree
+		clr_country_flag = calbeforecivilwar
 		#set_country_flag = CAL_epic_path
-		set_global_flag = CAL_civilwar_flag
+		set_global_flag = california_civilwar_flag
 		
 	}
 	option = {#Sinclair Wins
@@ -619,7 +619,9 @@ country_event = {
 	desc = california_events.22.desc
 	picture = GFX_report_event_cal_jefferson
 	is_triggered_only = yes
-	fire_only_once = yes
+	trigger = {
+		date > 1933.11.1
+	}
 	immediate = {
 	}
 	option = {
@@ -687,13 +689,13 @@ country_event = {
 			force_enable_resistance = CAL
 			start_resistance = yes
 		}
-		country_event = { 
-			id = california_events.25
-			days = 140
-			hours = 12
-			random_days = 22
-			random_hours = 12
-		}
+		#country_event = { 
+		#	id = california_events.25
+		#	days = 140
+		#	hours = 12
+		#	random_days = 22
+		#	random_hours = 12
+		#}
 		add_to_variable = {
 			var = CAL_jefferson_banner_bonus
 			value = 2
@@ -707,7 +709,9 @@ country_event = {
 	desc = california_events.25.desc
 	picture = GFX_report_event_cal_jefferson
 	fire_only_once = yes
-	is_triggered_only = yes
+	trigger = {
+		date > 1933.7.1
+	}
 	option = {
 		name = california_events.25.a #national guard
 		add_to_variable = {
@@ -782,12 +786,13 @@ country_event = {
 	desc = california_events.28.desc
 	picture = GFX_report_event_generic_rifles
 	fire_only_once = yes
-	is_triggered_only = yes
+	trigger = {
+		date > 1933.11.1
+	}
 	option = {
 		name = california_events.28.a 
-		111 = {
-			set_demilitarized_zone = yes
-		}
+		add_stability = -0.1
+		add_war_support = 0.1
 		114 = {
 			set_demilitarized_zone = yes
 		}
@@ -800,16 +805,21 @@ country_event = {
 		144 ={
 			set_demilitarized_zone = yes
 		}
-		141 = {
-			set_demilitarized_zone = yes
+		if = {
+			limit = {
+				has_country_flag = oaklandsecured
+			}
+			111 = {
+				set_demilitarized_zone = yes
+			}
+		}
+		else = {
+			141 = {
+				set_demilitarized_zone = yes
+			}
 		}
 		4 = {
 			set_demilitarized_zone = yes
-		}
-		country_event = {
-			id = california_events.29
-			days = 30
-			random_hours = 24
 		}
 	}
 }
@@ -850,7 +860,7 @@ country_event = {
 			set_demilitarized_zone = no
 			transfer_state_to = CAS
 		}
-		country_event = { california_events.21 }
+		#country_event = { california_events.21 }
 	}
 	after = {
 		hidden_effect = {
@@ -914,7 +924,8 @@ country_event = {
 	picture = GFX_report_event_generic_rifles
 	fire_only_once = yes
 	trigger = {
-		date > 1934.6.1
+		date > 1933.6.1
+		#date > 1934.6.1
 	}
 	option = {
 		name = california_events.30.a 
@@ -939,6 +950,9 @@ country_event = {
 				random_days = 12
 				random_hours = 12
 			}
+		}
+		country_event = {
+			id = california_events.41
 		}
 	}
 }
@@ -980,19 +994,15 @@ country_event = {
 	id = california_events.32#No One Likes Merriam
 	title = california_events.32.t
 	desc = california_events.32.desc
-	picture = GFX_report_event_generic_rifles
-	fire_only_once = yes
-	trigger = {
-		has_country_leader = {
-			character = CAL_FRANK_MERRIAM
-		}
-	}
+	#picture = GFX_report_event_generic_rifles
+	#fire_only_once = yes
+	is_triggered_only = yes
 	option = {
 		name = california_events.32.a 
-		add_popularity = {
-			ideology = conservatism_ideology
-			popularity = -0.05
-		}
+		country_event = { id = california_events.43 }
+	}
+	option = {
+		name = california_events.32.b
 	}
 }
 country_event = {
@@ -1010,7 +1020,7 @@ country_event = {
 				hours = 12
 				random_hours = 12
 				random_days = 31
-				days = 31
+				days = 5
 			}
 		}
 		add_popularity = {
@@ -1041,13 +1051,13 @@ country_event = {
 				hours = 12
 				random_hours = 12
 				random_days = 31
-				days = 31
+				days = 5
 			}
 		}
 		add_stability = -0.05
 		add_popularity = {
-			ideology = neutrality
-			popularity = 0.05
+			ideology = socialism_ideology
+			popularity = -0.05
 		}
 	}
 }
@@ -1128,24 +1138,16 @@ country_event = {
 	#picture = GFX_report_event_generic_rifles
 	fire_only_once = yes
 	trigger = {
-		date > 1934.1.1
+		date > 1933.5.1
+		#date > 1934.1.1
 	}
 	option = {
 		name = california_events.38.a 
-		add_popularity = {
-			ideology = fascism
-			popularity = 0.01
-		}
-	}
-	option = {
-		name = california_events.38.b
-		add_popularity = {
-			ideology = communism
-			popularity = 0.01
-		}
-	}
-	after = {
 		add_manpower = -1
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.03
+		}
 	}
 }
 country_event = {
@@ -1200,3 +1202,111 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = california_events.41#Commonwealth Party Splits Vote
+	title = california_events.41.t
+	desc = california_events.41.desc
+	#picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.41.a 
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		set_party_name = {
+			ideology = democratic
+			long_name = CAL_haight_party_long
+			name = CAL_haight_party
+		}
+	}
+}
+country_event = {
+	id = california_events.42#Were to place next factory
+	title = california_events.42.t
+	desc = california_events.42.desc
+	#picture = GFX_report_event_generic_rifles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = california_events.42.a 
+		141 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+			}
+		}
+		set_country_flag = oaklandsecured
+	}
+	option = {
+		name = california_events.42.b 
+		111 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+			}
+		}
+	}
+}
+country_event = {
+	id = california_events.43#Californian Election
+	title = california_events.43.t
+	desc = california_events.43.desc
+	#picture = GFX_report_event_generic_rifles
+	is_triggered_only = yes
+	option = {#tell me about merriam
+		name = california_events.43.a 
+		country_event = { id = california_events.32 }
+	}
+	option = {#tell me about sinclair
+		name = california_events.43.b
+		country_event = { id = california_events.44 }
+	}
+	option = {#tell me about haight
+		name = california_events.43.c 
+		country_event = { id = california_events.45 }
+	}
+	option = {#thanks
+		name = california_events.43.d 
+	}
+}
+country_event = {
+	id = california_events.44#tell me about sinclair
+	title = california_events.44.t
+	desc = california_events.44.desc
+	#picture = GFX_report_event_generic_rifles
+	is_triggered_only = yes
+	option = {#back
+		name = california_events.44.a 
+		country_event = { id = california_events.43 }
+	}
+	option = {#exit
+		name = california_events.44.b 
+	}
+}
+country_event = {
+	id = california_events.45#tell me about haight
+	title = california_events.45.t
+	desc = california_events.45.desc
+	#picture = GFX_report_event_generic_rifles
+	is_triggered_only = yes
+	option = {#back
+		name = california_events.45.a 
+		country_event = { id = california_events.43 }
+	}
+	option = {#exit
+		name = california_events.45.b 
+	}
+}
+country_event = {
+	id = california_events.46#great depression gets even worse!
+	title = california_events.46.t
+	desc = california_events.46.desc
+	#picture = GFX_report_event_generic_rifles
+	is_triggered_only = yes
+	option = {#back
+		name = california_events.46.a 
+	}
+}
+

@@ -16,7 +16,7 @@ focus_tree = {
 		x = 0
 		y = 0
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 			country_event = {
@@ -38,9 +38,10 @@ focus_tree = {
 			focus = CAL_intro_focus
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			country_event = { id = california_events.43 }
 		}
 	}
 	focus = {
@@ -51,9 +52,11 @@ focus_tree = {
 		y = 3
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_sinclairs_vision_soc
+			focus = CAL_pattons_plan_con
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -66,9 +69,13 @@ focus_tree = {
 		y = 2
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_declare_new_elections
+		}
+		mutually_exclusive = {
+			focus = CAL_sinclairs_vision_soc
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -80,10 +87,14 @@ focus_tree = {
 		x = 2
 		y = 3
 		relative_position_id = CAL_intro_focus
+		mutually_exclusive = {
+			focus = CAL_recruitment_campaign_con
+		}
 		prerequisite = {
+			focus = CAL_pattons_plan_con
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -95,10 +106,14 @@ focus_tree = {
 		x = 4
 		y = 3
 		relative_position_id = CAL_intro_focus
+		mutually_exclusive = {
+			focus = CAL_build_tanks_con
+		}
 		prerequisite = {
+			focus = CAL_pattons_plan_con
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -111,9 +126,12 @@ focus_tree = {
 		y = 4
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_battlefield_of_the_press
+			focus = CAL_build_tanks_con
+			focus = CAL_recruitment_campaign_con
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -126,11 +144,17 @@ focus_tree = {
 		y = 4
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_battlefield_of_the_press
+			focus = CAL_build_tanks_con
+			focus = CAL_recruitment_campaign_con
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			country_event = { 
+				id = california_events.42
+			}
 		}
 	}
 	focus = {
@@ -141,9 +165,13 @@ focus_tree = {
 		y = 5
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_our_industrial_connections_con
+		}
+		prerequisite = {
+			focus = CAL_politicize_the_military_con
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -156,9 +184,13 @@ focus_tree = {
 		y = 2
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_declare_new_elections
+		}
+		mutually_exclusive = {
+			focus = CAL_pattons_plan_con
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -171,9 +203,10 @@ focus_tree = {
 		y = 3
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_sinclairs_vision_soc
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -186,9 +219,10 @@ focus_tree = {
 		y = 3
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_sinclairs_vision_soc
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -201,9 +235,12 @@ focus_tree = {
 		y = 4
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_room_for_an_author_soc
+			focus = CAL_union_support_soc
+			focus = CAL_battlefield_of_the_press
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -216,9 +253,12 @@ focus_tree = {
 		y = 4
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_room_for_an_author_soc
+			focus = CAL_union_support_soc
+			focus = CAL_battlefield_of_the_press
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -231,9 +271,13 @@ focus_tree = {
 		y = 5
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
+			focus = CAL_plan_starvation_soc
+		}
+		prerequisite = {
+			focus = CAL_protect_ourselves_soc
 		}
 		allow_branch = {
-			has_country_flag = beforecivilwar
+			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
 		}
@@ -1970,6 +2014,9 @@ focus_tree = {
 			trigger = {
 				has_country_flag = CAL_epic_path
 			}
+		}
+		allow_branch = {
+			always = no
 		}
 		completion_reward = { 
 			army_experience = 50

@@ -3,7 +3,7 @@ capital = 118
 
 load_oob = "CAL_1933"
 
-set_country_flag = beforecivilwar
+set_country_flag = calbeforecivilwar
 #set_country_flag = CAL_intro_tree
 #set_country_flag = CAL_epic_election_tree
 #set_country_flag = CAL_ila_strike
@@ -157,15 +157,15 @@ if = {
 
 country_event = {
 	id = california_events.24
-	random_days = 31#2
+	random_days = 12#2
 	hours = 12
-	days = 31#0
+	days = 12#0
 	random_hours = 12
 }
 country_event = {
 	id = california_events.33
 	random_days = 31#2
-	days = 75#0
+	days = 31#0
 	hours = 12
 	random_hours = 12
 }

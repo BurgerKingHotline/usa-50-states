@@ -4,6 +4,8 @@
 
  CAL_democratic_party: "Democratic"
  CAL_democratic_party_long: "Democratic Party"
+ CAL_haight_party_long: "Commonwealth-Progressive Party"
+ CAL_haight_party: "Common-Prog"
  CAL_conservatism_ideology_party: "Republican"
  CAL_conservatism_ideology_party_long: "Republican Party"
  CAL_populism_ideology_party: "A.E.L."
