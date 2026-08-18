@@ -174,9 +174,9 @@ country_event = {
 			ideology = communism
 			popularity = 0.05
 		}
-		news_event = {
-			id = ffl_news.5
-		}
+		#news_event = {
+		#	id = ffl_news.5
+		#}
 		add_to_variable = {
 			var = CAL_socialist_banner_bonus
 			value = 4
@@ -200,9 +200,9 @@ country_event = {
 	}
 	option = {#Sinclair Wins
 		name = california_events.6.a
-		news_event = {
-			id = ffl_news.2
-		}
+		#news_event = {
+		#	id = ffl_news.2
+		#}
 		mark_focus_tree_layout_dirty = yes
 	}
 	after = {
@@ -571,13 +571,13 @@ country_event = {
 			type = annex_everything
 		}
 		add_war_support = 0.05
-		news_event = ffl_news.4
+		#news_event = ffl_news.4
 	}
 	option = {
 		name = california_events.21.b #let them secede
 		add_stability = -0.20
 		add_war_support = -0.20
-		news_event = ffl_news.3
+		#news_event = ffl_news.3
 		ai_chance = {
 			base = 0
 		}
@@ -1351,9 +1351,9 @@ country_event = {
 	}
 	option = {
 		name = california_events.48.a
-		news_event = {
-			id = ffl_news.2
-		}
+		#news_event = {
+		#	id = ffl_news.2
+		#}
 	}
 	after = {
 		mark_focus_tree_layout_dirty = yes
