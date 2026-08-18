@@ -746,20 +746,22 @@ ideas = {
 				air_cas_present_factor = 0.1
 			}
 		}
-		CAL_militarized_society = {
+		CAL_disorganized_military = {
 			allowed = {
 				always = no
 			}
 
 			allowed_civil_war = {
-				always = no
+				always = yes
 			}
 
 			picture = cal_sunshine_state
 			
 			modifier = {
 				recruitable_population_factor = -0.35
-				resistance_target = 0.3
+				offence = -0.2
+				defence = -0.2
+				country_lock_all_division_template = yes
 			}
 		}
 	}

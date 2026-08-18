@@ -57,7 +57,7 @@ set_politics = {
         ruling_party = conservatism_ideology
         last_election = "1930.11.6"
         election_frequency = 48
-        elections_allowed = yes
+        elections_allowed = no
 }
 set_popularities = {
         democratic = 25#Democrats - Maurice Harrison
@@ -69,7 +69,7 @@ set_popularities = {
         communism = 4#Socialist Party Of America - Bill Busick
 }
 set_research_slots = 3
-set_stability = 0.45
+set_stability = 0.55
 set_war_support = 0.15
 
 add_ideas = {
@@ -78,6 +78,7 @@ add_ideas = {
 	CAL_corporate_influence
 	CAL_great_depression_simple
 	CAL_sunshine_state
+	CAL_disorganized_military
 	#CAL_great_collapse
 }
 
@@ -156,16 +157,16 @@ if = {
 }
 
 country_event = {
+	id = california_events.46
+	random_days = 6#2
+	hours = 12
+	days = 6#0
+	random_hours = 12
+}
+country_event = {
 	id = california_events.24
 	random_days = 12#2
 	hours = 12
 	days = 12#0
-	random_hours = 12
-}
-country_event = {
-	id = california_events.33
-	random_days = 31#2
-	days = 31#0
-	hours = 12
 	random_hours = 12
 }
