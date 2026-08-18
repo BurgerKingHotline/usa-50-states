@@ -1,0 +1,17 @@
+capital = 144
+set_politics = {
+        ruling_party = socialism_ideology
+        elections_allowed = no
+}
+set_popularities = {
+        democratic = 25#Democrats - Upton
+        conservatism_ideology = 32#Republican Party - Sunny Jim, Frank Merriam
+        socialism_ideology = 18#Democrats - Upton
+        populism_ideology = 8#Asiatic Exclusion League - Walter McArthur
+        neutrality = 11#Republican Party - Sunny Jim, Frank Merriam
+        fascism = 2#Friends of Progress - Robert Noble
+        communism = 4#Socialist Party Of America - Bill Busick
+}
+set_research_slots = 3
+set_stability = 0.55
+set_war_support = 0.15
