@@ -16,7 +16,7 @@ focus_tree = {
 		x = 0
 		y = 0
 		allow_branch = {
-			has_country_flag = CAL_intro_tree
+			has_country_flag = beforecivilwar
 		}
 		completion_reward = {
 			country_event = {
@@ -26,8 +26,216 @@ focus_tree = {
 				random_hours = 12
 			}
 		}
-		ai_will_do = {
-			base = 11
+	}
+	focus = {
+		id = CAL_declare_new_elections
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+			focus = CAL_intro_focus
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_battlefield_of_the_press
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 0
+		y = 3
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_pattons_plan_con
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 2
+		y = 2
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_build_tanks_con
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 2
+		y = 3
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_recruitment_campaign_con
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 4
+		y = 3
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_politicize_the_military_con
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 3
+		y = 4
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_our_industrial_connections_con
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 1
+		y = 4
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_rig_the_election_con
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 2
+		y = 5
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_sinclairs_vision_soc
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = -2
+		y = 2
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_union_support_soc
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = -2
+		y = 3
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_room_for_an_author_soc
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = -4
+		y = 3
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_plan_starvation_soc
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = -3
+		y = 4
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_protect_ourselves_soc
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = -1
+		y = 4
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_secure_la_soc
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = -2
+		y = 5
+		relative_position_id = CAL_intro_focus
+		prerequisite = {
+		}
+		allow_branch = {
+			has_country_flag = beforecivilwar
+		}
+		completion_reward = {
 		}
 	}
 	focus = {
@@ -117,7 +325,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_reassure_public
+		id = CAL_reassure_public_no
 		icon = GFX_goal_generic_national_unity
 		cost = 4
 		relative_position_id = CAL_declare_independence
@@ -1784,7 +1992,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_battlefield_of_the_press
+		id = CAL_battlefield_of_the_press_no
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 5
 		x = -6

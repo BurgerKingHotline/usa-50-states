@@ -3,8 +3,9 @@ capital = 118
 
 load_oob = "CAL_1933"
 
-set_country_flag = CAL_intro_tree
-set_country_flag = CAL_epic_election_tree
+set_country_flag = beforecivilwar
+#set_country_flag = CAL_intro_tree
+#set_country_flag = CAL_epic_election_tree
 #set_country_flag = CAL_ila_strike
 set_variable = { CAL_great_depression_value = 80 }
 set_variable = { CAL_sinclair_support_1934_gb = 20 }
