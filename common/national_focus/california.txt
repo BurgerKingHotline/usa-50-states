@@ -30,7 +30,7 @@ focus_tree = {
 	focus = {
 		id = CAL_declare_new_elections
 		icon = GFX_goal_CAL_republicandemocratparties
-		cost = 10
+		cost = 2
 		x = 0
 		y = 1
 		relative_position_id = CAL_intro_focus
@@ -53,7 +53,7 @@ focus_tree = {
 	focus = {
 		id = CAL_battlefield_of_the_press
 		icon = GFX_goal_CAL_newspaper
-		cost = 10
+		cost = 5
 		x = 0
 		y = 3
 		relative_position_id = CAL_intro_focus
@@ -70,7 +70,7 @@ focus_tree = {
 	focus = {
 		id = CAL_pattons_plan_con
 		icon = GFX_goal_CAL_pattonsigma
-		cost = 10
+		cost = 1
 		x = 2
 		y = 2
 		relative_position_id = CAL_intro_focus
@@ -84,12 +84,17 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			add_war_support = 0.01
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.01
+			}
 		}
 	}
 	focus = {
 		id = CAL_build_tanks_con
 		icon = GFX_goal_CAL_build_tanks
-		cost = 10
+		cost = 4
 		x = 2
 		y = 3
 		relative_position_id = CAL_intro_focus
@@ -105,7 +110,7 @@ focus_tree = {
 	focus = {
 		id = CAL_moscows_man_con
 		icon = GFX_goal_CAL_joseph_stalin
-		cost = 10
+		cost = 4
 		x = 4
 		y = 3
 		relative_position_id = CAL_intro_focus
@@ -116,12 +121,17 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			add_political_power = 20
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = -0.02
+			}
 		}
 	}
 	focus = {
 		id = CAL_save_democracy_con
 		icon = GFX_goal_CAL_defend_democracy
-		cost = 10
+		cost = 5
 		x = 3
 		y = 4
 		relative_position_id = CAL_intro_focus
@@ -134,12 +144,14 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			add_stability = -0.1
+			add_war_support = 0.15
 		}
 	}
 	focus = {
 		id = CAL_our_industrial_connections_con
 		icon = GFX_goal_CAL_industrial_connections
-		cost = 10
+		cost = 5
 		x = 1
 		y = 4
 		relative_position_id = CAL_intro_focus
@@ -184,7 +196,7 @@ focus_tree = {
 	focus = {
 		id = CAL_sinclairs_vision_soc
 		icon = GFX_goal_CAL_sinclairsigma
-		cost = 10
+		cost = 1
 		x = -2
 		y = 2
 		relative_position_id = CAL_intro_focus
@@ -198,12 +210,17 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			add_political_power = 10
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.01
+			}
 		}
 	}
 	focus = {
 		id = CAL_union_support_soc
 		icon = GFX_goal_CAL_rose
-		cost = 10
+		cost = 4
 		x = -2
 		y = 3
 		relative_position_id = CAL_intro_focus
@@ -219,7 +236,7 @@ focus_tree = {
 	focus = {
 		id = CAL_room_for_an_author_soc
 		icon = GFX_goal_CAL_nazi
-		cost = 10
+		cost = 4
 		x = -4
 		y = 3
 		relative_position_id = CAL_intro_focus
@@ -230,12 +247,21 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			add_political_power = 20
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.02
+			}
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.02
+			}
 		}
 	}
 	focus = {
 		id = CAL_plan_starvation_soc
 		icon = GFX_goal_CAL_starvation
-		cost = 10
+		cost = 5
 		x = -3
 		y = 4
 		relative_position_id = CAL_intro_focus
@@ -248,12 +274,16 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.05
+			}
 		}
 	}
 	focus = {
 		id = CAL_protect_ourselves_soc
 		icon = GFX_goal_CAL_execution_capitalist
-		cost = 10
+		cost = 5
 		x = -1
 		y = 4
 		relative_position_id = CAL_intro_focus

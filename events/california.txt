@@ -1225,7 +1225,7 @@ country_event = {
 		name = california_events.42.a 
 		141 = {
 			add_building_construction = {
-				type = industrial_complex
+				type = arms_factory
 				level = 2
 			}
 		}
@@ -1235,7 +1235,7 @@ country_event = {
 		name = california_events.42.b 
 		111 = {
 			add_building_construction = {
-				type = industrial_complex
+				type = arms_factory
 				level = 2
 			}
 		}
