@@ -52,7 +52,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_battlefield_of_the_press
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_newspaper
 		cost = 10
 		x = 0
 		y = 3
@@ -88,7 +88,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_build_tanks_con
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_build_tanks
 		cost = 10
 		x = 2
 		y = 3
@@ -120,7 +120,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_save_democracy_con
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_defend_democracy
 		cost = 10
 		x = 3
 		y = 4
@@ -202,7 +202,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_union_support_soc
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_rose
 		cost = 10
 		x = -2
 		y = 3
@@ -234,7 +234,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_plan_starvation_soc
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_starvation
 		cost = 10
 		x = -3
 		y = 4

@@ -1,5 +1,25 @@
 spriteTypes = {
     spriteType = {
+        name = "GFX_goal_CAL_rose"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_rose.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_newspaper"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_newspaper.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_starvation"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_starvation.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_build_tanks"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_build_tanks.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_defend_democracy"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_defend_democracy.dds"
+    }
+    spriteType = {
         name = "GFX_goal_CAL_nazi"
         texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_nazi.dds"
     }
