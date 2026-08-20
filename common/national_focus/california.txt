@@ -93,9 +93,6 @@ focus_tree = {
 		x = 2
 		y = 3
 		relative_position_id = CAL_intro_focus
-		mutually_exclusive = {
-			focus = CAL_recruitment_campaign_con
-		}
 		prerequisite = {
 			focus = CAL_pattons_plan_con
 		}
@@ -106,15 +103,12 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_recruitment_campaign_con
-		icon = GFX_goal_support_democracy
+		id = CAL_moscows_man_con
+		icon = GFX_goal_CAL_joseph_stalin
 		cost = 10
 		x = 4
 		y = 3
 		relative_position_id = CAL_intro_focus
-		mutually_exclusive = {
-			focus = CAL_build_tanks_con
-		}
 		prerequisite = {
 			focus = CAL_pattons_plan_con
 		}
@@ -125,7 +119,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_politicize_the_military_con
+		id = CAL_save_democracy_con
 		icon = GFX_goal_support_democracy
 		cost = 10
 		x = 3
@@ -134,7 +128,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_battlefield_of_the_press
 			focus = CAL_build_tanks_con
-			focus = CAL_recruitment_campaign_con
+			focus = CAL_moscows_man_con
 		}
 		allow_branch = {
 			has_country_flag = calbeforecivilwar
@@ -144,7 +138,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_our_industrial_connections_con
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_industrial_connections
 		cost = 10
 		x = 1
 		y = 4
@@ -152,7 +146,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_battlefield_of_the_press
 			focus = CAL_build_tanks_con
-			focus = CAL_recruitment_campaign_con
+			focus = CAL_moscows_man_con
 		}
 		allow_branch = {
 			has_country_flag = calbeforecivilwar
@@ -165,16 +159,21 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_rig_the_election_con
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_rig_elections
 		cost = 10
 		x = 2
 		y = 5
 		relative_position_id = CAL_intro_focus
+		available = {
+			has_completed_focus = CAL_battlefield_of_the_press
+			has_completed_focus = CAL_build_tanks_con
+			has_completed_focus = CAL_moscows_man_con
+		}
 		prerequisite = {
 			focus = CAL_our_industrial_connections_con
 		}
 		prerequisite = {
-			focus = CAL_politicize_the_military_con
+			focus = CAL_save_democracy_con
 		}
 		allow_branch = {
 			has_country_flag = calbeforecivilwar
@@ -219,7 +218,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_room_for_an_author_soc
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_nazi
 		cost = 10
 		x = -4
 		y = 3
@@ -276,6 +275,11 @@ focus_tree = {
 		x = -2
 		y = 5
 		relative_position_id = CAL_intro_focus
+		available = {
+			has_completed_focus = CAL_room_for_an_author_soc
+			has_completed_focus = CAL_union_support_soc
+			has_completed_focus = CAL_battlefield_of_the_press
+		}
 		prerequisite = {
 			focus = CAL_plan_starvation_soc
 		}
