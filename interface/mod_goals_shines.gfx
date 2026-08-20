@@ -29,13 +29,106 @@ spriteTypes = {
 			animationtexturescale = { x = 1.0 y = 1.0 } 
 		}
 		legacy_lazy_load = no
-	} 
+	}
 	SpriteType = {
-		name = "GFX_goal_CAL_rose_shine"
-		texturefile = "gfx/interface/goals/goal_CAL_rose.dds"
+		name = "GFX_goal_CAL_pattonsigma_shine"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_pattonsigma.dds"
 				effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_rose.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_pattonsigma.dds"
+			animationtexturefile = "gfx/interface/mod_goals/california_goal_icons/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_pattonsigma.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_CAL_sinclairsigma_shine"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_sinclairsigma.dds"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_sinclairsigma.dds"
+			animationtexturefile = "gfx/interface/mod_goals/california_goal_icons/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_sinclairsigma.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_CAL_securela_shine"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_securela.dds"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_securela.dds"
+			animationtexturefile = "gfx/interface/mod_goals/california_goal_icons/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_securela.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_CAL_republicandemocratparties_shine"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_republicandemocratparties.dds"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_republicandemocratparties.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -48,7 +141,100 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_rose.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_republicandemocratparties.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_CAL_execution_capitalist_shine"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_execution_capitalist.dds"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_execution_capitalist.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_execution_capitalist.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_CAL_intro_focus_shine"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_intro_focus.dds"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_intro_focus.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_intro_focus.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_goal_CAL_rose_shine"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_rose.dds"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_rose.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_rose.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -63,10 +249,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_goal_CAL_newspaper_shine"
-		texturefile = "gfx/interface/goals/goal_CAL_newspaper.dds"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_newspaper.dds"
 				effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_newspaper.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_newspaper.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -79,7 +265,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_newspaper.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_newspaper.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -94,10 +280,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_goal_CAL_starvation_shine"
-		texturefile = "gfx/interface/goals/goal_CAL_starvation.dds"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_starvation.dds"
 				effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_starvation.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_starvation.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -110,7 +296,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_starvation.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_starvation.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -125,10 +311,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_goal_CAL_build_tanks_shine"
-		texturefile = "gfx/interface/goals/goal_unknown.dds"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_build_tanks.dds"
 				effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_build_tanks.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_build_tanks.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -141,7 +327,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_build_tanks.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_build_tanks.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -156,10 +342,10 @@ spriteTypes = {
 	}
 	SpriteType = { 
 		name = "GFX_goal_CAL_defend_democracy_shine"
-		texturefile = "gfx/interface/goals/goal_CAL_defend_democracy.dds"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_defend_democracy.dds"
 				effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_defend_democracy.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_defend_democracy.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -172,7 +358,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_defend_democracy.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_defend_democracy.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -187,10 +373,10 @@ spriteTypes = {
 	} 
 	SpriteType = { 
 		name = "GFX_goal_CAL_nazi_shine"
-		texturefile = "gfx/interface/goals/goal_CAL_nazi.dds"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_nazi.dds"
 				effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_nazi.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_nazi.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -203,7 +389,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_nazi.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_nazi.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -218,10 +404,10 @@ spriteTypes = {
 	}
 	SpriteType = { 
 		name = "GFX_goal_CAL_joseph_stalin_shine"
-		texturefile = "gfx/interface/goals/goal_CAL_joseph_stalin.dds"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_joseph_stalin.dds"
 				effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_joseph_stalin.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_joseph_stalin.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -234,7 +420,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_joseph_stalin.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_joseph_stalin.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -249,10 +435,10 @@ spriteTypes = {
 	}
 	SpriteType = { 
 		name = "GFX_goal_CAL_industrial_connections_shine"
-		texturefile = "gfx/interface/goals/goal_CAL_industrial_connections.dds"
+		texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_industrial_connections.dds"
 				effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_industrial_connections.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_industrial_connections.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -265,7 +451,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/goal_CAL_industrial_connections.dds"
+			animationmaskfile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_industrial_connections.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)

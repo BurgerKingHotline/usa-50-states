@@ -11,7 +11,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_intro_focus
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_intro_focus
 		cost = 10
 		x = 0
 		y = 0
@@ -29,7 +29,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_declare_new_elections
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_republicandemocratparties
 		cost = 10
 		x = 0
 		y = 1
@@ -69,7 +69,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_pattons_plan_con
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_pattonsigma
 		cost = 10
 		x = 2
 		y = 2
@@ -183,7 +183,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_sinclairs_vision_soc
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_sinclairsigma
 		cost = 10
 		x = -2
 		y = 2
@@ -252,7 +252,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_protect_ourselves_soc
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_execution_capitalist
 		cost = 10
 		x = -1
 		y = 4
@@ -270,7 +270,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAL_secure_la_soc
-		icon = GFX_goal_support_democracy
+		icon = GFX_goal_CAL_securela
 		cost = 10
 		x = -2
 		y = 5

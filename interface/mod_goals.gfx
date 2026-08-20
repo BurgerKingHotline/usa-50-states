@@ -1,5 +1,29 @@
 spriteTypes = {
     spriteType = {
+        name = "GFX_goal_CAL_intro_focus"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_intro_focus.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_republicandemocratparties"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_republicandemocratparties.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_pattonsigma"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_pattonsigma.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_sinclairsigma"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_sinclairsigma.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_securela"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_securela.dds"
+    }
+    spriteType = {
+        name = "GFX_goal_CAL_execution_capitalist"
+        texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_execution_capitalist.dds"
+    }
+    spriteType = {
         name = "GFX_goal_CAL_rose"
         texturefile = "gfx/interface/mod_goals/california_goal_icons/goal_CAL_rose.dds"
     }
