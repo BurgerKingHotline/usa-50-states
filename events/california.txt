@@ -1345,6 +1345,7 @@ country_event = {
 	trigger = {
 		date > 1933.11.1
 	}
+	fire_only_once = yes
 	immediate = {
 		clr_country_flag = calbeforecivilwar
 		#set_country_flag = CAL_epic_path
@@ -1364,6 +1365,88 @@ country_event = {
 			random_days = 12
 			hours = 12
 			random_hours = 12
+		}
+	}
+}
+country_event = {
+	id = california_events.49#Tanks or guns
+	title = california_events.49.t
+	desc = california_events.49.desc
+	picture = GFX_report_event_cal_default
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			load_oob = CAL_tanksortroops
+		}
+	}
+	option = {
+		name = california_events.49.a
+		118 = {
+			create_unit = {
+				division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0"
+				owner = CAL
+				count = 2
+			}
+		}
+		140 = {
+			create_unit = {
+				division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0"
+				owner = CAL
+				count = 2
+			}
+
+		}
+		112 = {
+			create_unit = {
+				division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0"
+				owner = CAL
+				count = 2
+			}
+		}
+	}
+	option = {
+		name = california_events.49.a
+		create_equipment_variant = {
+			name = "Light Tank"
+			type = light_tank_chassis_1
+			parent_version = 1
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+			}
+			icon = "GFX_ENG_basic_light_tank_medium"
+			model = ENG_MKIV_light_tank_entity
+			design_team = mio:ENG_vauxhall_organization
+		}
+		118 = {
+			create_unit = {
+				division = "name = \"Light Tank\" division_template = \"Light Tank\" start_experience_factor = 0"
+				owner = CAL
+				count = 1
+			}
+			create_unit = {
+				division = "name = \"Light Tank\" division_template = \"Light Tank\" start_experience_factor = 0"
+				owner = CAL
+				count = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = california_events.50#EPIC Pamphlet
+	title = california_events.50.t
+	desc = california_events.50.desc
+	picture = GFX_report_event_cal_default
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = california_events.50.a
+		add_popularity = {
+			ideology = socialism_ideology
+			popularity = 0.05
 		}
 	}
 }

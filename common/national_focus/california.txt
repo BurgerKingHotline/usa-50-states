@@ -105,6 +105,7 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			country_event = { id = california_events.49 }
 		}
 	}
 	focus = {
@@ -210,10 +211,10 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
-			add_political_power = 10
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.01
+			unlock_decision_tooltip = CAL_form_epic_clubs
+			unlock_decision_tooltip = CAL_appeal_democrats_progressives
+			country_event = {
+				id = california_events.50
 			}
 		}
 	}
@@ -250,11 +251,7 @@ focus_tree = {
 			add_political_power = 20
 			add_popularity = {
 				ideology = fascism
-				popularity = -0.02
-			}
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.02
+				popularity = -0.01
 			}
 		}
 	}
@@ -296,6 +293,11 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			add_to_variable = {
+				var = CAL_socialist_banner_bonus
+				value = 2
+			}
+			custom_effect_tooltip = "add_2_to_socialist_banner_bonus"
 		}
 	}
 	focus = {

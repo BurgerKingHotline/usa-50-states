@@ -1,3 +1,67 @@
+
+CAL_civilwar_cat = {
+	CAL_election_season = {
+		activation = {
+			has_completed_focus = CAL_declare_new_elections
+		}
+		allowed = {
+			tag = CAL
+		}
+		priority = 101
+		days_mission_timeout = 216
+		available = {
+			always = no
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+		}
+		complete_effect = {
+		}
+	}
+    CAL_form_epic_clubs = {
+        allowed = {
+            tag = CAL
+        }
+		visible = {
+			has_completed_focus = CAL_sinclairs_vision_soc
+		}
+        icon = generic_prepare_civil_war   
+        fire_only_once = yes
+        days_remove = 20
+		cost = 20
+        modifier = {
+			socialism_ideology_drift = 0.02
+        }
+        remove_effect = {
+			add_political_power = 20
+        }
+    }
+    CAL_appeal_democrats_progressives = {
+        allowed = {
+            tag = CAL
+        }
+		visible = {
+			has_completed_focus = CAL_sinclairs_vision_soc
+		}
+        icon = generic_prepare_civil_war   
+        fire_only_once = yes
+        days_remove = 43
+		cost = 20
+        modifier = {
+			democratic_drift = -0.01
+        }
+        remove_effect = {
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.016
+			}
+        }
+    }
+}
+
+
+#Redundant
+
 CAL_things_are_getting_worse_cat = {
 	CAL_things_are_getting_worse_mission = {
 		activation = {

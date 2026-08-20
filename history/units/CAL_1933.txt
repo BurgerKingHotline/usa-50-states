@@ -1,5 +1,5 @@
 division_template = {
-	name = "Infantry Division"	
+	name = "National Guard"	
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -7,30 +7,6 @@ division_template = {
 		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-		infantry = { x = 2 y = 0 }
-		infantry = { x = 2 y = 1 }
-	}
-	regimental_support = {
-		fire_support = {x = 0 y = 0}
-		field_guns = { x = 1 y = 0}
-	}
-	support = {
-		engineer = { x = 0 y = 0 }
-		#artillery = { x = 0 y = 1 }
-		#recon = { x = 0 y = 2 }
-		#anti_tank = { x = 0 y = 3 }
-	}
-}
-division_template = {
-	name = "National Guard"	
-
-	regiments = {
-		militia = { x = 0 y = 0 }
-		militia = { x = 0 y = 1 }
-		militia = { x = 0 y = 2 }
-		militia = { x = 1 y = 0 }
-		militia = { x = 1 y = 1 }
 	}
 	regimental_support = {
 		field_guns = { x = 0 y = 0}
@@ -46,13 +22,10 @@ division_template = {
 		cavalry = { x = 0 y = 0 }
 		cavalry = { x = 0 y = 1 }
 		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
 	}
-}
-division_template = {
-	name = "Marines"	
-
-	regiments = {
-		marine = { x = 0 y = 0 }
+	support = {
+		military_police = { x = 0 y = 0 }
 	}
 }
 division_template = {
@@ -60,13 +33,8 @@ division_template = {
 
 	regiments = {
 		mountaineers = { x = 0 y = 0 }
-	}
-}
-division_template = {
-	name = "Local Militia"	
-
-	regiments = {
-		militia = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 1 y = 0 }
 	}
 }
 units = {
@@ -75,49 +43,9 @@ units = {
 				is_name_ordered = yes
 				name_order = 1
 		}
-		location = 5120#Sacramento
-		division_template = "Infantry Division"
-		start_experience_factor = 1
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 5548#Los Angeles
-		division_template = "Infantry Division"
-		start_experience_factor = 1
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
 		location = 2175#Imperial
 		division_template = "Mountaineers"
 		start_experience_factor = 0.5
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 8965
-		division_template = "Marines"
-		start_experience_factor = 0.9
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 8224
-		division_template = "Marines"
-		start_experience_factor = 0.9
 		start_equipment_factor = 1
 	}
 	division= {	
@@ -208,106 +136,6 @@ units = {
 		location = 8895
 		division_template = "National Guard"
 		start_experience_factor = 0.5
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 3728
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 2149
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 8306
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 3708
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 5220
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 8516
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 123
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 5601
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 7861
-		division_template = "Local Militia"	
-		start_experience_factor = 0
-		start_equipment_factor = 1
-	}
-	division= {	
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 3715
-		division_template = "Local Militia"	
-		start_experience_factor = 0
 		start_equipment_factor = 1
 	}
 }
