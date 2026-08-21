@@ -558,10 +558,10 @@ country_event = {
 				transfer_state_to = JEF
 				set_demilitarized_zone = no
 			}
-			JEF = {
-				load_oob = "JEFF_ffl"
-				inherit_technology = CAL
-			}
+#			JEF = {
+#				load_oob = "JEFF_ffl"
+#				inherit_technology = CAL
+#			}
 		}
 	}
 	option = {

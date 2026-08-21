@@ -1,7 +1,27 @@
 spriteTypes = {
 	spriteType = {
+		name = "GFX_Portrait_CAL_Arthur_Wilson"
+		texturefile = "gfx/interface/leaders/California/Portrait_CAL_Arthur_Wilson.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAL_George_Patton"
+		texturefile = "gfx/interface/leaders/California/Portrait_CAL_George_Patton.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAL_Henry_Arnold"
+		texturefile = "gfx/interface/leaders/California/Portrait_CAL_Henry_Arnold.dds"
+	}
+	spriteType = {
 		name = "GFX_CAL_Portrait_James_Rolph"
 		texturefile = "gfx/interface/leaders/California/CAL_Portrait_James_Rolph_Jr_AI.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAL_Jimmy_Dolittle"
+		texturefile = "gfx/interface/leaders/California/Portrait_CAL_Jimmy_Dolittle.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_CAL_Merritt_Barton_Curtis"
+		texturefile = "gfx/interface/leaders/California/Portrait_CAL_Merritt_Barton_Curtis.dds"
 	}
 	spriteType = {
 		name = "GFX_CAL_Portrait_Upton_Sinlair"

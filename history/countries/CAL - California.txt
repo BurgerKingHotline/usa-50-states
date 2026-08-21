@@ -51,7 +51,13 @@ recruit_character = CAL_UPTON_SINCLAIR
 recruit_character = CAL_FRANK_MERRIAM
 #advisors
 recruit_character = CAL_EARL_WARREN
+
+#military
 recruit_character = CAL_GEORGE_PATTON
+recruit_character = CAL_ARTHUR_WILSON
+recruit_character = CAL_HENRY_ARNOLD
+recruit_character = CAL_JIMMY_DOOLITTLE
+recruit_character = CAL_MERRITT_BARTON
 
 set_politics = {
         ruling_party = conservatism_ideology
@@ -60,12 +66,12 @@ set_politics = {
         elections_allowed = no
 }
 set_popularities = {
-        democratic = 25#Democrats - Maurice Harrison
+        democratic = 22#Democrats - Maurice Harrison
         conservatism_ideology = 32#Republican Party - Sunny Jim, Frank Merriam
         socialism_ideology = 18#Socialist Party of America - Bill Busick
         populism_ideology = 8#Asiatic Exclusion League - Walter McArthur
         neutrality = 11#Republican Party - Sunny Jim, Frank Merriam
-        fascism = 2#Friends of Progress - Robert Noble
+        fascism = 5#Friends of Progress - Robert Noble
         communism = 4#Socialist Party Of America - Bill Busick
 }
 set_research_slots = 3

@@ -15,3 +15,10 @@ set_popularities = {
         fascism = 15 
         communism = 4
     }
+
+add_ideas = {
+    JEF_sinclairist_militias
+    JEF_kkk_militias
+}
+load_oob = "JEFF_ffl"
+inherit_technology = CAL

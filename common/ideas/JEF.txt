@@ -1,0 +1,42 @@
+ideas = {
+	country = {
+		JEF_sinclairist_militias = {
+			picture = cal_great_depression
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				weekly_manpower = -100
+				stability_weekly = -0.2
+				socialism_ideology_drift = 0.04
+			}
+		}
+		JEF_kkk_militias = {
+			picture = cal_great_depression
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				weekly_manpower = -100
+				stability_weekly = -0.2
+				fascism_drift = 0.04
+			}
+		}
+	}
+}
