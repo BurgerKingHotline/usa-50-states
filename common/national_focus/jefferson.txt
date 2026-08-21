@@ -1,0 +1,598 @@
+focus_tree = {
+	id = jefferson_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = JEF
+		}
+	}
+	continuous_focus_position = {
+		x = 10000
+		y = 100
+	}
+	focus = {
+		id = JEF_war_for_our_survival
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = 0
+		y = 0
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_klansmen
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 0
+		y = 1
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = JEF_war_for_our_survival
+		}
+		relative_position_id = JEF_war_for_our_survival
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_sinclairists
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -2
+		y = 1
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = JEF_war_for_our_survival
+		}
+		relative_position_id = JEF_war_for_our_survival
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_nationalists
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 2
+		y = 1
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = JEF_war_for_our_survival
+		}
+		relative_position_id = JEF_war_for_our_survival
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_betrayed_no_longer
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 0
+		y = 3
+		available = {
+			has_completed_focus = JEF_nationalists
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_protect_christian_values
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 0
+		y = 1
+		relative_position_id = JEF_betrayed_no_longer
+		prerequisite = {
+			focus = JEF_betrayed_no_longer
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_we_take_care_of_our_own
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 0
+		y = 2
+		relative_position_id = JEF_betrayed_no_longer
+		prerequisite = {
+			focus = JEF_protect_christian_values
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_our_friends_in_oregon
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 2
+		y = 1
+		relative_position_id = JEF_betrayed_no_longer
+		prerequisite = {
+			focus = JEF_betrayed_no_longer
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_uprising_gold_country
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 2
+		y = 2
+		relative_position_id = JEF_betrayed_no_longer
+		prerequisite = {
+			focus = JEF_our_friends_in_oregon
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_secure_our_country
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = JEF_betrayed_no_longer
+		}
+		relative_position_id = JEF_betrayed_no_longer
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_a_new_identity
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -1
+		y = 3
+		prerequisite = {
+			focus = JEF_secure_our_country
+		}
+		prerequisite = {
+			focus = JEF_we_take_care_of_our_own
+		}
+		prerequisite = {
+			focus = JEF_uprising_gold_country
+		}
+		relative_position_id = JEF_betrayed_no_longer
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_an_all_white_state
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 7
+		y = 3
+		available = {
+			has_completed_focus = JEF_klansmen
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_ban_catholicism
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = JEF_an_all_white_state
+		}
+		relative_position_id = JEF_an_all_white_state
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_go_forth_brave_knights
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = JEF_an_all_white_state
+		}
+		relative_position_id = JEF_an_all_white_state
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_call_for_white_settlers
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = JEF_an_all_white_state
+		}
+		relative_position_id = JEF_an_all_white_state
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_cells_down_south
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 1
+		y = 2
+		relative_position_id = JEF_an_all_white_state
+		prerequisite = {
+			focus = JEF_go_forth_brave_knights
+			focus = JEF_ban_catholicism
+			focus = JEF_call_for_white_settlers
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_citizens_only
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -1
+		y = 2
+		relative_position_id = JEF_an_all_white_state
+		prerequisite = {
+			focus = JEF_go_forth_brave_knights
+			focus = JEF_ban_catholicism
+			focus = JEF_call_for_white_settlers
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_newest_castle_of_empire
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 0
+		y = 3
+		relative_position_id = JEF_an_all_white_state
+		prerequisite = {
+			focus = JEF_citizens_only
+		}
+		prerequisite = {
+			focus = JEF_cells_down_south
+		}
+		available = {
+			has_completed_focus = JEF_go_forth_brave_knights
+			has_completed_focus = JEF_ban_catholicism
+			has_completed_focus = JEF_call_for_white_settlers
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_following_sinclairs_lead
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -7
+		y = 3
+		available = {
+			has_completed_focus = JEF_sinclairists
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_to_be_betrayed_again
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = JEF_following_sinclairs_lead
+		}
+		relative_position_id = JEF_following_sinclairs_lead
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_establish_cooperatives
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 1
+		y = 1
+		relative_position_id = JEF_following_sinclairs_lead
+		prerequisite = {
+			focus = JEF_following_sinclairs_lead
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_it_takes_two
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -1
+		y = 2
+		relative_position_id = JEF_following_sinclairs_lead
+		prerequisite = {
+			focus = JEF_to_be_betrayed_again
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_question_of_capitalism
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 1
+		y = 2
+		relative_position_id = JEF_following_sinclairs_lead
+		prerequisite = {
+			focus = JEF_establish_cooperatives
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_worker_trampled_no_longer
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 0
+		y = 3
+		relative_position_id = JEF_following_sinclairs_lead
+		prerequisite = {
+			focus = JEF_question_of_capitalism
+			focus = JEF_it_takes_two
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_democracy_and_liberty
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 2
+		y = 3
+		relative_position_id = JEF_following_sinclairs_lead
+		prerequisite = {
+			focus = JEF_question_of_capitalism
+			focus = JEF_it_takes_two
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_for_california
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -2
+		y = 3
+		prerequisite = {
+			focus = JEF_question_of_capitalism
+			focus = JEF_it_takes_two
+		}
+		relative_position_id = JEF_following_sinclairs_lead
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_a_referendum
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -7
+		y = 8
+		available = {
+			NOT = {
+				has_war = yes
+			}
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_local_autonomy
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = JEF_a_referendum
+		}
+		mutually_exclusive = {
+			focus = JEF_joined_at_the_hip
+		}
+		relative_position_id = JEF_a_referendum
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_joined_at_the_hip
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = JEF_a_referendum
+		}
+		mutually_exclusive = {
+			focus = JEF_local_autonomy
+		}
+		relative_position_id = JEF_a_referendum
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_the_newest_country
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 0
+		y = 8
+		available = {
+			NOT = {
+				has_war = yes
+			}
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_peace_at_last
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = JEF_the_newest_country
+		}
+		mutually_exclusive = {
+			focus = JEF_expand_into_oregon
+		}
+		relative_position_id = JEF_the_newest_country
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_expand_into_oregon
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = JEF_the_newest_country
+		}
+		mutually_exclusive = {
+			focus = JEF_peace_at_last
+		}
+		relative_position_id = JEF_the_newest_country
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_a_question_of_government
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 7
+		y = 8
+		available = {
+			NOT = {
+				has_war = yes
+			}
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_strong_leadership
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = 1
+		y = 1
+		relative_position_id = JEF_a_question_of_government
+		prerequisite = {
+			focus = JEF_a_question_of_government
+		}
+		mutually_exclusive = {
+			focus = JEF_a_loyal_democracy
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_a_loyal_democracy
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 1
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = JEF_a_question_of_government
+		}
+		mutually_exclusive = {
+			focus = JEF_strong_leadership
+		}
+		relative_position_id = JEF_a_question_of_government
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_connect_to_the_world
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = 13
+		y = 0
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_improve_crescent_city
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = JEF_connect_to_the_world
+		}
+		relative_position_id = JEF_connect_to_the_world
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_expand_copper_mines
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = JEF_connect_to_the_world
+		}
+		relative_position_id = JEF_connect_to_the_world
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_invest_in_agriculture
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = JEF_connect_to_the_world
+		}
+		relative_position_id = JEF_connect_to_the_world
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_neglected_no_longer
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = JEF_improve_crescent_city
+		}
+		prerequisite = {
+			focus = JEF_expand_copper_mines
+		}
+		prerequisite = {
+			focus = JEF_invest_in_agriculture
+		}
+		relative_position_id = JEF_connect_to_the_world
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_future_of_jefferson
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = 13
+		y = 5
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_a_seperate_state
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = 0
+		y = 1
+		mutually_exclusive = {
+			focus = JEF_start_of_a_revolution
+			focus = JEF_eventual_incorporation
+		}
+		prerequisite = {
+			focus = JEF_future_of_jefferson
+		}
+		relative_position_id = JEF_future_of_jefferson
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_eventual_incorporation
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = -2
+		y = 1
+		mutually_exclusive = {
+			focus = JEF_a_seperate_state
+			focus = JEF_start_of_a_revolution
+		}
+		prerequisite = {
+			focus = JEF_future_of_jefferson
+		}
+		relative_position_id = JEF_future_of_jefferson
+		completion_reward = { }
+	}
+	focus = {
+		id = JEF_start_of_a_revolution
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 10
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = JEF_future_of_jefferson
+		}
+		mutually_exclusive = {
+			focus = JEF_a_seperate_state
+			focus = JEF_eventual_incorporation
+		}
+		relative_position_id = JEF_future_of_jefferson
+		completion_reward = { }
+	}
+}

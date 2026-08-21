@@ -1419,7 +1419,6 @@ country_event = {
 			}
 			icon = "GFX_ENG_basic_light_tank_medium"
 			model = ENG_MKIV_light_tank_entity
-			design_team = mio:ENG_vauxhall_organization
 		}
 		118 = {
 			create_unit = {
