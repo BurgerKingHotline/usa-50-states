@@ -1,0 +1,102 @@
+focus_tree = {
+	id = calisoviet_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = CAS
+		}
+	}
+	focus = {
+		id = CAS_second_californian_revolution
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 0
+		y = 0
+		completion_reward = { }
+	}
+	focus = {
+		id = CAS_help_communists
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = CAS_second_californian_revolution
+		prerequisite = {
+			focus = CAS_second_californian_revolution
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAS_forgive_and_forget
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = CAS_second_californian_revolution
+		prerequisite = {
+			focus = CAS_second_californian_revolution
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAS_sinclairs_powers
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = CAS_second_californian_revolution
+		prerequisite = {
+			focus = CAS_second_californian_revolution
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAS_abolish_capitalism
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = -1
+		y = 2
+		relative_position_id = CAS_second_californian_revolution
+		prerequisite = {
+			focus = CAS_help_communists
+			focus = CAS_sinclairs_powers
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAS_total_war
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 1
+		y = 2
+		relative_position_id = CAS_second_californian_revolution
+		prerequisite = {
+			focus = CAS_forgive_and_forget
+			focus = CAS_sinclairs_powers
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAS_question_of_government
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 0
+		y = 3
+		relative_position_id = CAS_second_californian_revolution
+		prerequisite = {
+			focus = CAS_total_war
+		}
+		prerequisite = {
+			focus = CAS_abolish_capitalism
+		}
+		available = {
+			has_completed_focus = CAS_help_communists
+			has_completed_focus = CAS_forgive_and_forget
+			has_completed_focus = CAS_sinclairs_powers
+		}
+		completion_reward = { }
+	}
+}

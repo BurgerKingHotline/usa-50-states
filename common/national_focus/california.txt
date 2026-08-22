@@ -324,6 +324,108 @@ focus_tree = {
 		completion_reward = {
 		}
 	}
+	###Civilwarstart focus tree\
+	focus = {
+		id = CAL_our_greatest_fears
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 0
+		y = 0
+		allow_branch = {
+			has_country_flag = calcivilwarintrofocus
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_suspend_habeus_corpus
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = CAL_our_greatest_fears
+		prerequisite = {
+			focus = CAL_our_greatest_fears
+		}
+		allow_branch = {
+			has_country_flag = calcivilwarintrofocus
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_expand_military_powers
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = CAL_our_greatest_fears
+		prerequisite = {
+			focus = CAL_our_greatest_fears
+		}
+		allow_branch = {
+			has_country_flag = calcivilwarintrofocus
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_military_appropiation_act
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = CAL_our_greatest_fears
+		prerequisite = {
+			focus = CAL_our_greatest_fears
+		}
+		allow_branch = {
+			has_country_flag = calcivilwarintrofocus
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_sinclair_act
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = CAL_suspend_habeus_corpus			
+		}
+		prerequisite = {
+			focus = CAL_expand_military_powers			
+		}
+		prerequisite = {
+			focus = CAL_military_appropiation_act
+		}
+		relative_position_id = CAL_our_greatest_fears
+		allow_branch = {
+			has_country_flag = calcivilwarintrofocus
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_secure_la_soc
+		icon = GFX_goal_CAL_securela
+		cost = 10
+		x = -2
+		y = 5
+		relative_position_id = CAL_intro_focus
+		available = {
+			has_completed_focus = CAL_room_for_an_author_soc
+			has_completed_focus = CAL_union_support_soc
+			has_completed_focus = CAL_battlefield_of_the_press
+		}
+		prerequisite = {
+			focus = CAL_plan_starvation_soc
+		}
+		prerequisite = {
+			focus = CAL_protect_ourselves_soc
+		}
+		allow_branch = {
+			has_country_flag = calbeforecivilwar
+		}
+		completion_reward = {
+		}
+	}
 	focus = {
 		id = CAL_declare_independence#State Building#declare republic, change it's name to republic of california, bear republic of california, or state of california
 		icon = GFX_goal_generic_national_unity 
