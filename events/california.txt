@@ -702,12 +702,12 @@ country_event = {
 	}
 	after = {
 		109 = {
-			add_manpower = -10000
+			add_manpower = -1000
 			add_resistance = 75
 			add_compliance = -30
 		}
 		110 = {
-			add_manpower = -10000
+			add_manpower = -1000
 			add_resistance = 75
 			add_compliance = -30
 		}
@@ -1069,7 +1069,7 @@ country_event = {
 	option = {
 		name = california_events.36.b#john clinton porter
 		add_popularity = {
-			ideology = populism_ideology
+			ideology = fascism
 			popularity = 0.03
 		}
 	}

@@ -403,30 +403,6 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_secure_la_soc
-		icon = GFX_goal_CAL_securela
-		cost = 10
-		x = -2
-		y = 5
-		relative_position_id = CAL_intro_focus
-		available = {
-			has_completed_focus = CAL_room_for_an_author_soc
-			has_completed_focus = CAL_union_support_soc
-			has_completed_focus = CAL_battlefield_of_the_press
-		}
-		prerequisite = {
-			focus = CAL_plan_starvation_soc
-		}
-		prerequisite = {
-			focus = CAL_protect_ourselves_soc
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-		}
-	}
-	focus = {
 		id = CAL_declare_independence#State Building#declare republic, change it's name to republic of california, bear republic of california, or state of california
 		icon = GFX_goal_generic_national_unity 
 		cost = 5
