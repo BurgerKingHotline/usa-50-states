@@ -1,30 +1,20 @@
 state = {
 	id = 143
 	name = "STATE_143"
-	manpower = 285749
-	state_category = city
-	provinces = { #6595
-		8954 2441 2990 8952 9004 6263 5515 6596 2701 5864 9051 2645 9062 3493 9068 4487 4548 5004 8944 8921 5820 2496 8894
+	manpower = 87081
+	state_category = town #Alahambra and Pasadena
+	provinces = {
+		5820 8894 2496 8943 3779 8863 387 5222
 	}#179 is where orange county begins
 	history = {
 		owner = CAL
 		add_core_of = CAL
 		victory_points = {
-			8991 2 #Annheim
-		}
-		victory_points = {
-			179 3#Santa Ana
-		}
-		victory_points = {
-			8952 1#San Bernardino
-		}
-		victory_points = {
-			2441 1#Riverside
+			8943 6#Pasadena
 		}
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 3
-			arms_factory = 1
 		}
 	}
 }

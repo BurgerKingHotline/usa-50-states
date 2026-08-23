@@ -10,21 +10,16 @@ state = {
 		owner = CAL
 		add_core_of = CAL
 		victory_points = {
-			8991 2 #Annheim
+			5046 2 #Annheim
 		}
 		victory_points = {
-			179 3#Santa Ana
-		}
-		victory_points = {
-			8952 1#San Bernardino
-		}
-		victory_points = {
-			2441 1#Riverside
+			8995 3#Santa Ana
 		}
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 2
-			dockyard = 1
+			arms_factory = 1
+			#dockyard = 1
 			8995 = {
 				naval_base = 5
 			}

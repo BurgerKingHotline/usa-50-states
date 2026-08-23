@@ -9,6 +9,10 @@ focus_tree = {
 			tag = CAS
 		}
 	}
+	continuous_focus_position = {
+		x = 10000
+		y = 10000
+	}
 	focus = {
 		id = CAS_second_californian_revolution
 		icon = GFX_focus_IRQ_decouple_from_the_pound
@@ -18,7 +22,7 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAS_help_communists
+		id = CAS_what_divides_us#explains the difference between democrats, e.p.i.c. democrats, and communists
 		icon = GFX_focus_IRQ_decouple_from_the_pound
 		cost = 5
 		x = -2
@@ -30,7 +34,19 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAS_forgive_and_forget
+		id = CAS_what_unites_us
+		icon = GFX_focus_IRQ_decouple_from_the_pound
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = CAS_second_californian_revolution
+		prerequisite = {
+			focus = CAS_second_californian_revolution
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAS_forgive_and_forget#choose whether to let conservatives back
 		icon = GFX_focus_IRQ_decouple_from_the_pound
 		cost = 5
 		x = 2
@@ -42,60 +58,20 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAS_sinclairs_powers
+		id = CAS_organize_the_militias
 		icon = GFX_focus_IRQ_decouple_from_the_pound
 		cost = 5
 		x = 0
-		y = 1
-		relative_position_id = CAS_second_californian_revolution
-		prerequisite = {
-			focus = CAS_second_californian_revolution
-		}
-		completion_reward = { }
-	}
-	focus = {
-		id = CAS_abolish_capitalism
-		icon = GFX_focus_IRQ_decouple_from_the_pound
-		cost = 5
-		x = -1
 		y = 2
 		relative_position_id = CAS_second_californian_revolution
 		prerequisite = {
-			focus = CAS_help_communists
-			focus = CAS_sinclairs_powers
+			focus = CAS_what_divides_us
 		}
-		completion_reward = { }
-	}
-	focus = {
-		id = CAS_total_war
-		icon = GFX_focus_IRQ_decouple_from_the_pound
-		cost = 5
-		x = 1
-		y = 2
-		relative_position_id = CAS_second_californian_revolution
 		prerequisite = {
 			focus = CAS_forgive_and_forget
-			focus = CAS_sinclairs_powers
-		}
-		completion_reward = { }
-	}
-	focus = {
-		id = CAS_question_of_government
-		icon = GFX_focus_IRQ_decouple_from_the_pound
-		cost = 5
-		x = 0
-		y = 3
-		relative_position_id = CAS_second_californian_revolution
-		prerequisite = {
-			focus = CAS_total_war
 		}
 		prerequisite = {
-			focus = CAS_abolish_capitalism
-		}
-		available = {
-			has_completed_focus = CAS_help_communists
-			has_completed_focus = CAS_forgive_and_forget
-			has_completed_focus = CAS_sinclairs_powers
+			focus = CAS_what_unites_us
 		}
 		completion_reward = { }
 	}

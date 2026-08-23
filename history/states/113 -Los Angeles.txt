@@ -3,7 +3,7 @@ state = {
 	name = "STATE_113"
 	manpower = 830412
 	state_category = metropolis
-	provinces = { 657 897 3485 3720 3779 4556 5540 5848 5969 6737 6810 8843 8913 }
+	provinces = { 657 897 3485 3720 4556 5540 5848 5969 6737 6810 8843 8913 4226 2195 }
 	resources = {
 		aluminium = 15
 		oil = 90
@@ -21,9 +21,10 @@ state = {
 			6737 6#Glendale
 		}
 		buildings = {
-			industrial_complex = 3
-			arms_factory = 3
+			industrial_complex = 5
+			arms_factory = 2
 			infrastructure = 4
+			fuel_silo = 1
 		}
 	}
 }
