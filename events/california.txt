@@ -677,14 +677,14 @@ country_event = {
 		name = california_events.34.c
 		add_popularity = {
 			ideology = conservatism_ideology
-			popularity = 0.001
+			popularity = -0.05
 		}
 	}
 	option = {#nominate james rolph
 		name = california_events.34.d
 		add_popularity = {
 			ideology = conservatism_ideology
-			popularity = 0.01
+			popularity = 0.05
 		}
 	}
 }
@@ -715,42 +715,129 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.35#upton sinclair candidacy for democrat - elections
-	title = california_events.35.t
-	desc = california_events.35.desc
+	id = california_events.37#upton sinclair candidacy for democrat - elections
+	title = california_events.37.t
+	desc = california_events.37.desc
 	picture = GFX_report_event_cal_greatdepressionvagrants
 	is_triggered_only = yes
 	option = {
-		name = california_events.35.a
+		name = california_events.37.a
+		country_event = {
+			id = california_events.38
+		}
+	}
+	option = {
+		name = california_events.37.b
+		add_popularity = {
+			ideology = socialism_ideology
+			popularity = 0.01
+		}
 	}
 }
 country_event = {
-	id = california_events.36#tell me more about sinclair- elections
-	title = california_events.36.t
-	desc = california_events.36.desc
+	id = california_events.38#tell me more about sinclair- elections
+	title = california_events.38.t
+	desc = california_events.38.desc
 	picture = GFX_report_event_cal_greatdepressionvagrants
 	is_triggered_only = yes
 	option = {
-		name = california_events.36.a
+		name = california_events.38.a
+		country_event = {
+			id = california_events.37
+		}
 	}
 }
 country_event = {
-	id = california_events.36#raymond l haight announces candidacy - elections
-	title = california_events.36.t
-	desc = california_events.36.desc
+	id = california_events.39#raymond l haight announces candidacy - elections
+	title = california_events.39.t
+	desc = california_events.39.desc
 	picture = GFX_report_event_cal_greatdepressionvagrants
 	is_triggered_only = yes
 	option = {
-		name = california_events.36.a
+		name = california_events.39.a
+		country_event = {
+			id = california_events.40
+		}
+	}
+	option = {
+		name = california_events.39.b#stay in
+		
+	}
+	option = {
+		name = california_events.39.c#drop out
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.01
+		}
 	}
 }
 country_event = {
-	id = california_events.36#tell me more about raymond l haight - elections
-	title = california_events.36.t
-	desc = california_events.36.desc
+	id = california_events.40#tell me more about raymond l haight - elections
+	title = california_events.40.t
+	desc = california_events.40.desc
 	picture = GFX_report_event_cal_greatdepressionvagrants
 	is_triggered_only = yes
 	option = {
-		name = california_events.36.a
+		name = california_events.40.a
+		country_event = {
+			id = california_events.39
+		}
+	}
+}
+country_event = {
+	id = california_events.41#republican mideterms - elections
+	title = california_events.41.t
+	desc = california_events.41.desc
+	picture = GFX_report_event_cal_greatdepressionvagrants
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = california_events.41.a
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.05
+		}
+	}
+}
+country_event = {
+	id = california_events.42#republican mideterms - elections
+	title = california_events.42.t
+	desc = california_events.42.desc
+	picture = GFX_report_event_cal_greatdepressionvagrants
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = california_events.42.a
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.05
+		}
+	}
+}
+country_event = {
+	id = california_events.43#frank merriam/james rolph wins election - elections
+	title = california_events.43.t
+	desc = california_events.43.desc
+	picture = GFX_report_event_cal_greatdepressionvagrants
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = california_events.43.a
+	}
+}
+country_event = {
+	id = california_events.44#deep election fraud discovered - elections
+	title = california_events.44.t
+	desc = california_events.44.desc
+	picture = GFX_report_event_cal_greatdepressionvagrants
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = california_events.44.a
+		add_stability = -0.1
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = -0.1
+		}
 	}
 }
