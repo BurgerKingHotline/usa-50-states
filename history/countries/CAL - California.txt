@@ -66,13 +66,13 @@ set_politics = {
         elections_allowed = no
 }
 set_popularities = {
-        democratic = 22#Democrats - Maurice Harrison
-        conservatism_ideology = 32#Republican Party - Sunny Jim, Frank Merriam
-        socialism_ideology = 18#Socialist Party of America - Bill Busick
-        populism_ideology = 8#Asiatic Exclusion League - Walter McArthur
-        neutrality = 11#Republican Party - Sunny Jim, Frank Merriam
+        democratic = 20#Democrats - Maurice Harrison
+        conservatism_ideology = 35#Republican Party - Sunny Jim, Frank Merriam
+        socialism_ideology = 20#Socialist Party of America - Bill Busick
+        populism_ideology = 5#Asiatic Exclusion League - Walter McArthur
+        neutrality = 10#Republican Party - Sunny Jim, Frank Merriam
         fascism = 5#Friends of Progress - Robert Noble
-        communism = 4#Socialist Party Of America - Bill Busick
+        communism = 5#Socialist Party Of America - Bill Busick
 }
 set_research_slots = 3
 set_stability = 0.55
@@ -178,19 +178,4 @@ create_equipment_variant = {
 		tank_nsb_armor_upgrade = 1
 	}
 	icon = "GFX_ENG_basic_light_tank_medium"
-}
-
-country_event = {
-	id = california_events.46
-	random_days = 6#2
-	hours = 12
-	days = 6#0
-	random_hours = 12
-}
-country_event = {
-	id = california_events.24
-	random_days = 12#2
-	hours = 12
-	days = 12#0
-	random_hours = 12
 }
