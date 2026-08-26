@@ -5,15 +5,18 @@ state = {
 		9168 9131 4205
 	}
 	state_category = rural
-	manpower = 10202
+	manpower = 1020
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 	history = {
-		owner = WMA
+		owner = ARZ
 		add_core_of = WMA
-		add_claim_by = ARZ
+		add_core_of = ARZ
 		victory_points = {
 			9168 1#Whiteriver
+		}
+		buildings = {
+			infrastructure = 1
 		}
 	}
 }

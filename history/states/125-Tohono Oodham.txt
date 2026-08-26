@@ -5,15 +5,18 @@ state = {
 		191 3528 4060 781 4266
 	}
 	state_category = rural
-	manpower = 26543
+	manpower = 2654
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 	history = {
-		owner = TON
+		owner = ARZ
 		add_core_of = TON
-		add_claim_by = ARZ
+		add_core_of = ARZ
 		victory_points = {
 			4266 1#Sells
+		}
+		buildings = {
+			infrastructure = 1
 		}
 	}
 }
