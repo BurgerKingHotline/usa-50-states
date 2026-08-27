@@ -428,17 +428,6 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.22#unions feel like they can no longer surrender - cottonstrikes
-	title = california_events.22.t
-	desc = california_events.22.desc
-	picture = GFX_report_event_cal_greatdepressionvagrants
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = california_events.22.a
-	}
-}
-country_event = {
 	id = california_events.22#sinclairs book published - riseepic
 	title = california_events.22.t
 	desc = california_events.22.desc
@@ -545,11 +534,18 @@ country_event = {
 	title = california_events.27.t
 	desc = california_events.27.desc
 	picture = GFX_report_event_cal_jefferson
-	is_triggered_only = yes
+	trigger = {
+		date > 1933.1.1
+	}
 	fire_only_once = yes
 	option = {
 		name = california_events.27.a
 		add_stability = -0.1
+	}
+	option = {
+		name = california_events.27.b
+		add_stability = -0.05
+		add_political_power = -100
 	}
 }
 country_event = {
@@ -670,56 +666,18 @@ country_event = {
 	desc = california_events.34.desc
 	picture = GFX_report_event_cal_default
 	is_triggered_only = yes
-	option = {#tell me more about merriam
-		name = california_events.34.a
-		country_event = {
-			id = california_events.35
-		}
-	}
-	option = {#tell me more about james rolph
-		name = california_events.34.b
-		country_event = {
-			id = california_events.36
-		}
-	}
 	option = {#nominate frank merriam
-		name = california_events.34.c
+		name = california_events.34.a
 		add_popularity = {
 			ideology = conservatism_ideology
 			popularity = -0.05
 		}
 	}
 	option = {#nominate james rolph
-		name = california_events.34.d
+		name = california_events.34.b
 		add_popularity = {
 			ideology = conservatism_ideology
 			popularity = 0.05
-		}
-	}
-}
-country_event = {
-	id = california_events.35#tell me more about merriam - elections
-	title = california_events.35.t
-	desc = california_events.35.desc
-	picture = GFX_report_event_cal_frankmerriam
-	is_triggered_only = yes
-	option = {
-		name = california_events.35.a
-		country_event = {
-			id = california_events.34
-		}
-	}
-}
-country_event = {
-	id = california_events.36#tell me more about james rolph - elections
-	title = california_events.36.t
-	desc = california_events.36.desc
-	picture = GFX_report_event_cal_default
-	is_triggered_only = yes
-	option = {
-		name = california_events.36.a
-		country_event = {
-			id = california_events.34
 		}
 	}
 }
@@ -740,19 +698,6 @@ country_event = {
 		add_popularity = {
 			ideology = socialism_ideology
 			popularity = 0.01
-		}
-	}
-}
-country_event = {
-	id = california_events.38#tell me more about sinclair- elections
-	title = california_events.38.t
-	desc = california_events.38.desc
-	picture = GFX_report_event_cal_uptonsinclair
-	is_triggered_only = yes
-	option = {
-		name = california_events.38.a
-		country_event = {
-			id = california_events.37
 		}
 	}
 }
@@ -781,19 +726,6 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.40#tell me more about raymond l haight - elections
-	title = california_events.40.t
-	desc = california_events.40.desc
-	picture = GFX_report_event_cal_raymondhaight
-	is_triggered_only = yes
-	option = {
-		name = california_events.40.a
-		country_event = {
-			id = california_events.39
-		}
-	}
-}
-country_event = {
 	id = california_events.41#republican mideterms - elections
 	title = california_events.41.t
 	desc = california_events.41.desc
@@ -802,21 +734,6 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.41.a
-		add_popularity = {
-			ideology = conservatism_ideology
-			popularity = 0.05
-		}
-	}
-}
-country_event = {
-	id = california_events.42#republican mideterms - elections
-	title = california_events.42.t
-	desc = california_events.42.desc
-	picture = GFX_report_event_cal_default
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = california_events.42.a
 		add_popularity = {
 			ideology = conservatism_ideology
 			popularity = 0.05
