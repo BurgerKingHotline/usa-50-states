@@ -20,7 +20,7 @@ state = {
 			8965 = {
 				naval_base = 10
 			}
-			industrial_complex = 7
+			industrial_complex = 6
 			arms_factory = 5
 			fuel_silo = 1
 			#dockyard = 4

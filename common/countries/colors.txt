@@ -1,4 +1,8 @@
 #reload countrycolors
+CAZ = {
+	color = rgb { 185 50 30 }
+	color_ui = rgb { 185 50 30 }
+}
 CAS = {
 	color = rgb { 185 50 30 }
 	color_ui = rgb { 185 50 30 }

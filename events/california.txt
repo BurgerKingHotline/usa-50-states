@@ -591,17 +591,9 @@ country_event = {
 	option = {#success
 		name = california_events.30.a
 		add_stability = -0.1
-		add_popularity = {
-			ideology = fascism
-			popularity = 0.05
-		}
-	}
-	option = {#failure
-		name = california_events.30.b
-		add_stability = -0.1
-		add_popularity = {
-			ideology = fascism
-			popularity = -0.05
+		112 = {
+			add_core_of = CAZ
+			transfer_state_to = CAZ
 		}
 	}
 	after = {
@@ -624,6 +616,10 @@ country_event = {
 	option = {
 		name = california_events.31.a
 		add_stability = -0.05
+		141 = {
+			add_core_of = CAS
+			transfer_state_to = CAS
+		}
 	}
 	after = {
 		country_event = {

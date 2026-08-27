@@ -25,16 +25,21 @@ set_variable = { CAL_socialist_banner_bonus = 0 }
 set_variable = { CAL_jefferson_banner_bonus = 0 }
 set_variable = { CAL_conservative_banner_bonus = 0 }
 
+#what states nazi's get at start, some like orange county are garunteed, others depend on decisions/events
 
 
-set_variable = { CAL_jefferson_escalation = 0 }
-set_variable = { CAL_ila_escalation = 0 }
-set_variable = { CAL_joaquin_escalation = 0 }
-set_variable = { CAL_brooke_escalation = 0 }
-set_variable = { CAL_brooke_event_chance = 20 }
-set_variable = { CAL_joaquin_event_chance = 20 }
-set_variable = { CAL_jefferson_event_chance = 20 }
-set_variable = { CAL_ila_event_chance = 20 }
+#what states sinclair gets at start, some like san francisco are garunteed, others depend on decisions/events
+
+
+#set_variable = { CAL_jefferson_escalation = 0 }
+#set_variable = { CAL_ila_escalation = 0 }
+#set_variable = { CAL_joaquin_escalation = 0 }
+#set_variable = { CAL_brooke_escalation = 0 }
+#set_variable = { CAL_brooke_event_chance = 20 }
+#set_variable = { CAL_joaquin_event_chance = 20 }
+#set_variable = { CAL_jefferson_event_chance = 20 }
+#set_variable = { CAL_ila_event_chance = 20 }
+
 #add_to_array = {
 #	array = brooke_events_array
 #	value = this.id
