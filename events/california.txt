@@ -591,9 +591,21 @@ country_event = {
 	option = {#success
 		name = california_events.30.a
 		add_stability = -0.1
-		112 = {
-			add_core_of = CAZ
-			transfer_state_to = CAZ
+		add_war_support = 0.1
+		CAZ = {
+			add_state_core = 4
+			transfer_state = 4
+			add_state_core = 111
+			transfer_state = 111
+			add_state_core = 112
+			transfer_state = 112
+			add_state_core = 114
+			transfer_state = 114
+			add_state_core = 143
+			transfer_state = 143
+			add_state_core = 144
+			transfer_state = 144
+			inherit_technology = CAL
 		}
 	}
 	after = {
@@ -615,10 +627,20 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.31.a
-		add_stability = -0.05
-		141 = {
-			add_core_of = CAS
-			transfer_state_to = CAS
+		add_stability = -0.1
+		add_war_support = 0.1
+		CAS = {
+			add_state_core = 4
+			transfer_state = 4
+			add_state_core = 109
+			transfer_state = 109
+			add_state_core = 110
+			transfer_state = 110
+			add_state_core = 141
+			transfer_state = 141
+			add_state_core = 144
+			transfer_state = 144
+			inherit_technology = CAL
 		}
 	}
 	after = {
@@ -640,7 +662,32 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.32.a
+		add_stability = 0.05
+		add_war_support = 0.1
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.2
+		}
+	}
+	option = {
+		name = california_events.32.b
 		add_stability = -0.05
+		add_war_support = 0.15
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.2
+		}
+	}
+	after = {
+		set_party_name = {
+			ideology = neutrality
+			long_name = CAL_national_guard_party_long
+			name = CAL_national_guard_party
+		}
 	}
 }
 country_event = {
@@ -652,8 +699,38 @@ country_event = {
 		date > 1934.1.10
 	}
 	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			CAS = {
+				every_owned_state = {
+					add_claim_by = CAL
+					remove_core_of = CAL
+					add_claim_by = CAZ
+				}
+			}
+			CAZ = {
+				every_owned_state = {
+					add_claim_by = CAL
+					remove_core_of = CAL
+					add_claim_by = CAS
+				}
+			}
+			every_owned_state = {
+				add_claim_by = CAZ
+				add_claim_by = CAS
+			}
+		}
+	}
 	option = {
 		name = california_events.33.a
+		declare_war_on = {
+			target = CAS
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = CAZ
+			type = annex_everything
+		}
 	}
 }
 country_event = {

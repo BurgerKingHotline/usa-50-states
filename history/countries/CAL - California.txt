@@ -22,7 +22,7 @@ set_variable = { CAL_sell_epic_bonds_cost = 100 }
 set_variable = { CAL_epic_costs_mission_time = 75 }
 set_variable = { CAL_epic_sieze_factories_cost = 100 }
 set_variable = { CAL_socialist_banner_bonus = 0 }
-set_variable = { CAL_jefferson_banner_bonus = 0 }
+set_variable = { CAL_jefferson_banner_bonus = 0 }#used to represent jefferson seperatists, now represents fascist sepratists
 set_variable = { CAL_conservative_banner_bonus = 0 }
 
 #what states nazi's get at start, some like orange county are garunteed, others depend on decisions/events

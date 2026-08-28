@@ -4,14 +4,14 @@ set_politics = {
         elections_allowed = no
 }
 set_popularities = {
-        democratic = 25#Democrats - Upton
-        conservatism_ideology = 32#Republican Party - Sunny Jim, Frank Merriam
-        socialism_ideology = 18#Democrats - Upton
-        populism_ideology = 8#Asiatic Exclusion League - Walter McArthur
-        neutrality = 11#Republican Party - Sunny Jim, Frank Merriam
-        fascism = 2#Friends of Progress - Robert Noble
-        communism = 4#Socialist Party Of America - Bill Busick
+        democratic = 20#Democratic Party
+        conservatism_ideology = 20#BANNED
+        socialism_ideology = 35#E.P.I.C. Party
+        populism_ideology = 0 #BANNED
+        neutrality = 10 #RESISTANCE
+        fascism = 0 #BANNED
+        communism = 15#Communist Party
 }
 set_research_slots = 3
-set_stability = 0.55
-set_war_support = 0.15
+set_stability = 0.40
+set_war_support = 0.70

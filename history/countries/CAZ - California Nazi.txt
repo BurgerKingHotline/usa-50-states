@@ -1,0 +1,17 @@
+capital = 112
+set_politics = {
+        ruling_party = fascism
+        elections_allowed = no
+}
+set_popularities = {
+        democratic = 10#BANNED
+        conservatism_ideology = 10#BANNED
+        socialism_ideology = 25#RESISTANCE
+        populism_ideology = 10#BANNED
+        neutrality = 30#Klu Klux Klan
+        fascism = 15#National Socialist Party
+        communism = 0#BANNED
+}
+set_research_slots = 2
+set_stability = 0.25
+set_war_support = 0.15

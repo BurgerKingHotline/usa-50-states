@@ -3,6 +3,8 @@
  CAL_communism:0 "Pacific Workers' Front"
  CAL_communism_DEF:0 "The Pacific Workers' Front"
  CAL_DEF:0 "The State of California"
+ CAL_neutrality:0 " National Guard"
+ CAL_neutrality_DEF:0 "The National Guard"
  CAL_democratic:0 "California Republic"
  CAL_democratic_DEF:0 "The California Republic"
  CAL_fascism:0 "Golden State Vanguard"

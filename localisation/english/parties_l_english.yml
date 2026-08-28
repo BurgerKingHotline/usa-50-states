@@ -27,6 +27,8 @@
  CAL_populism_ideology_party_long: "Asian Exclusion League"
  CAL_neutrality_party: "Republican"
  CAL_neutrality_party_long: "Republican Party"
+ CAL_national_guard_party: "National Guard"
+ CAL_national_guard_party_long: "National Guard"
  CAL_fascism_party: "K.K.K."
  CAL_fascism_party_long: "Klu Klux Klan"
  CAL_fascism_fp_party: "F.P."
