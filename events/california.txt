@@ -590,16 +590,6 @@ country_event = {
 	fire_only_once = yes
 	option = {#success
 		name = california_events.30.a
-		add_stability = -0.1
-		add_war_support = 0.1
-		for_each_loop = {
-			array = CAL.nazi_states
-			value = v
-			CAZ = {
-				add_state_core = v
-				transfer_state = v
-			}
-		}
 #		CAZ = {
 #			add_state_core = 4
 #			transfer_state = 4
@@ -616,13 +606,31 @@ country_event = {
 #			inherit_technology = CAL
 #		}
 	}
+	option = {
+		name = california_events.30.b
+		CAS = { change_tag_from = CAL }
+	}
 	after = {
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.1
+		}
+		add_stability = -0.1
+		add_war_support = 0.1
 		country_event = {
 			id = california_events.31
 			hours = 12
 			random_hours = 12
 			days = 1
 			random_days = 5
+		}
+		for_each_loop = {
+			array = CAL.nazi_states
+			value = v
+			CAZ = {
+				add_state_core = v
+				transfer_state = v
+			}
 		}
 	}
 }
@@ -633,29 +641,13 @@ country_event = {
 	picture = GFX_report_event_cal_default
 	is_triggered_only = yes
 	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			load_oob = "californian_civilwar"
+		}
+	}
 	option = {
 		name = california_events.31.a
-		add_stability = -0.1
-		add_war_support = 0.1
-		for_each_loop = {
-			array = CAL.sinclair_states
-			value = v
-			CAS = {
-				add_state_core = v
-				transfer_state = v
-			}
-		}
-		for_loop_effect = {
-			value = CAL_socialist_banner_bonus
-			CAS = {
-				random_controlled_state = {
-					create_unit = {
-						division = x
-						owner = FROM
-					}
-				}
-			}
-		}
 #		CAS = {
 #			add_state_core = 4
 #			transfer_state = 4
@@ -671,6 +663,12 @@ country_event = {
 #		}
 	}
 	after = {
+		add_stability = -0.1
+		add_war_support = 0.1
+		add_popularity = {
+			ideology = socialism_ideology
+			popularity = -0.1
+		}
 		country_event = {
 			id = california_events.32
 			hours = 12
@@ -678,6 +676,26 @@ country_event = {
 			days = 1
 			random_days = 5
 		}
+		for_each_loop = {
+			array = CAL.sinclair_states
+			value = v
+			CAS = {
+				add_state_core = v
+				transfer_state = v
+			}
+		}
+#		for_loop_effect = {
+#			value = 2
+#			CAS = {
+#				random_owned_state = {
+#					create_unit = {
+#						division = "name = \"Commonwealth Army\" division_template = \"Civilwar Militia\" start_experience_factor = 0\" start_equipment_factor = 0.9"
+#						owner = CAS
+#						count = 1
+#					}
+#				}
+#			}
+#		}
 	}
 }
 country_event = {

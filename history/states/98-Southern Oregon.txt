@@ -9,6 +9,7 @@ state = {
 	history = {
 		owner = ORE
 		add_core_of = ORE
+		add_core_of = JEF
 		victory_points = { 372 1 } # Klamath Falls, OR
 		victory_points = { 2111 1 } # Brookings and Gold Beach, OR
 		victory_points = { 7492 1 } # Roseburg, OR
