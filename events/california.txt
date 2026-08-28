@@ -592,21 +592,29 @@ country_event = {
 		name = california_events.30.a
 		add_stability = -0.1
 		add_war_support = 0.1
-		CAZ = {
-			add_state_core = 4
-			transfer_state = 4
-			add_state_core = 111
-			transfer_state = 111
-			add_state_core = 112
-			transfer_state = 112
-			add_state_core = 114
-			transfer_state = 114
-			add_state_core = 143
-			transfer_state = 143
-			add_state_core = 144
-			transfer_state = 144
-			inherit_technology = CAL
+		for_each_loop = {
+			array = CAL.nazi_states
+			value = v
+			CAZ = {
+				add_state_core = v
+				transfer_state = v
+			}
 		}
+#		CAZ = {
+#			add_state_core = 4
+#			transfer_state = 4
+#			add_state_core = 111
+#			transfer_state = 111
+#			add_state_core = 112
+#			transfer_state = 112
+#			add_state_core = 114
+#			transfer_state = 114
+#			add_state_core = 143
+#			transfer_state = 143
+#			add_state_core = 144
+#			transfer_state = 144
+#			inherit_technology = CAL
+#		}
 	}
 	after = {
 		country_event = {
@@ -629,19 +637,38 @@ country_event = {
 		name = california_events.31.a
 		add_stability = -0.1
 		add_war_support = 0.1
-		CAS = {
-			add_state_core = 4
-			transfer_state = 4
-			add_state_core = 109
-			transfer_state = 109
-			add_state_core = 110
-			transfer_state = 110
-			add_state_core = 141
-			transfer_state = 141
-			add_state_core = 144
-			transfer_state = 144
-			inherit_technology = CAL
+		for_each_loop = {
+			array = CAL.sinclair_states
+			value = v
+			CAS = {
+				add_state_core = v
+				transfer_state = v
+			}
 		}
+		for_loop_effect = {
+			value = CAL_socialist_banner_bonus
+			CAS = {
+				random_controlled_state = {
+					create_unit = {
+						division = x
+						owner = FROM
+					}
+				}
+			}
+		}
+#		CAS = {
+#			add_state_core = 4
+#			transfer_state = 4
+#			add_state_core = 109
+#			transfer_state = 109
+#			add_state_core = 110
+#			transfer_state = 110
+#			add_state_core = 141
+#			transfer_state = 141
+#			add_state_core = 144
+#			transfer_state = 144
+#			inherit_technology = CAL
+#		}
 	}
 	after = {
 		country_event = {
