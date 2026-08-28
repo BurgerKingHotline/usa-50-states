@@ -1,1 +1,16 @@
 ﻿add_namespace = ffl_news
+
+news_event = {
+	id = ffl_news.1
+	title = ffl_news.1.t
+	desc = ffl_news.1.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ffl_news.1.a
+	}
+}

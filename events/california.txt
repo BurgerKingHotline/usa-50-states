@@ -608,7 +608,7 @@ country_event = {
 	}
 	option = {
 		name = california_events.30.b
-		CAS = { change_tag_from = CAL }
+		CAZ = { change_tag_from = CAL }
 	}
 	after = {
 		add_popularity = {
@@ -632,6 +632,25 @@ country_event = {
 				transfer_state = v
 			}
 		}
+		CAZ = {
+			inherit_technology = CAL
+			hidden_effect = {
+				load_oob = "californian_civilwar"
+				load_oob = "CAZ_civilwar"
+			}
+		}
+		ROOT = {
+			for_loop_effect = {
+				end = CAL_fascist_banner_bonus
+				value = temp
+				random_owned_state = {
+					create_unit = {
+						division = "name = \"Nationalist Militia\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+						owner = ROOT
+					}
+				}
+			}
+		}
 	}
 }
 country_event = {
@@ -641,11 +660,6 @@ country_event = {
 	picture = GFX_report_event_cal_default
 	is_triggered_only = yes
 	fire_only_once = yes
-	immediate = {
-		hidden_effect = {
-			load_oob = "californian_civilwar"
-		}
-	}
 	option = {
 		name = california_events.31.a
 #		CAS = {
@@ -661,6 +675,10 @@ country_event = {
 #			transfer_state = 144
 #			inherit_technology = CAL
 #		}
+	}
+	option = {
+		name = california_events.31.b
+		CAS = { change_tag_from = CAL }
 	}
 	after = {
 		add_stability = -0.1
@@ -684,18 +702,25 @@ country_event = {
 				transfer_state = v
 			}
 		}
-#		for_loop_effect = {
-#			value = 2
-#			CAS = {
-#				random_owned_state = {
-#					create_unit = {
-#						division = "name = \"Commonwealth Army\" division_template = \"Civilwar Militia\" start_experience_factor = 0\" start_equipment_factor = 0.9"
-#						owner = CAS
-#						count = 1
-#					}
-#				}
-#			}
-#		}
+		CAS = {
+			inherit_technology = CAL
+			hidden_effect = {
+				load_oob = "californian_civilwar"
+				load_oob = "CAS_civilwar"
+			}
+		}
+		ROOT = {
+			for_loop_effect = {
+				end = CAL_socialist_banner_bonus
+				value = temp
+				random_owned_state = {
+					create_unit = {
+						division = "name = \"Commonwealth Militia\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+						owner = ROOT
+					}
+				}
+			}
+		}
 	}
 }
 country_event = {
@@ -705,6 +730,12 @@ country_event = {
 	picture = GFX_report_event_cal_default
 	is_triggered_only = yes
 	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			load_oob = "californian_civilwar"
+			load_oob = "CAL_civilwar"
+		}
+	}
 	option = {
 		name = california_events.32.a
 		add_stability = 0.05
@@ -732,6 +763,18 @@ country_event = {
 			ideology = neutrality
 			long_name = CAL_national_guard_party_long
 			name = CAL_national_guard_party
+		}
+		ROOT = {
+			for_loop_effect = {
+				end = CAL_conservative_banner_bonus
+				value = temp
+				random_owned_state = {
+					create_unit = {
+						division = "name = \"Republican Militia\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+						owner = ROOT
+					}
+				}
+			}
 		}
 	}
 }

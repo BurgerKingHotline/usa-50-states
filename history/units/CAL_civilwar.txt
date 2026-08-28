@@ -1,0 +1,95 @@
+
+division_template = {
+	name = "Anti-Communist Militia"	
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+units = {
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 3100
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8422
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5220
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 1463
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 4180
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 3896
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2079
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5120
+		division_template = "Anti-Communist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.9
+	}
+}

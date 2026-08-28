@@ -1,0 +1,23 @@
+add_namespace = arizona_events
+
+country_event = {
+	id = arizona_events.1#Ask California if they want aid
+	title = arizona_events.1.t
+	desc = arizona_events.1.desc
+	picture = GFX_report_event_cal_lasangeles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {#YES
+		name = arizona_events.1.a
+		add_ideas = {
+
+		}
+	}
+	option = {#NO
+		name = arizona_events.1.b
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -10
+	}
+}

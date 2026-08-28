@@ -1,0 +1,24 @@
+
+focus_tree = {
+	id = arizona_focus_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ARZ
+		} 
+	}
+	focus = {
+		id = ARZ_intervene_in_california
+		icon = GFX_goal_CAL_ban_advertising
+		cost = 10
+		x = 0
+		y = 0
+		completion_reward = { 
+			add_ideas = {
+				ARZ_supporting_california
+			}
+		}
+	}
+}

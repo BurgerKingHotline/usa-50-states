@@ -1,0 +1,181 @@
+division_template = {
+	name = "Stormtrooper Division"	
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	regimental_support = {
+		field_guns = { x = 0 y = 0}
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Nationalist Militia"	
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Loyal Cavalary"	
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+	}
+}
+division_template = {
+	name = "Marines"	
+
+	regiments = {
+		marine = { x = 0 y = 0 }
+		marine = { x = 0 y = 1 }
+		marine = { x = 1 y = 0 }
+		marine = { x = 1 y = 1 }
+	}
+}
+units = {
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8995
+		division_template = "Marines"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8224
+		division_template = "Marines"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2175
+		division_template = "Loyal Cavalary"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5869
+		division_template = "Loyal Cavalary"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2441
+		division_template = "Loyal Cavalary"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5046
+		division_template = "Nationalist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5820
+		division_template = "Nationalist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 9203
+		division_template = "Nationalist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 9068
+		division_template = "Nationalist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 3834
+		division_template = "Nationalist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5820
+		division_template = "Nationalist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2380
+		division_template = "Nationalist Militia"
+		start_experience_factor = 0
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8943
+		division_template =  "Stormtrooper Division"	
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
+}
