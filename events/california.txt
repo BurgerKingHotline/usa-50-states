@@ -27,13 +27,13 @@ country_event = {
 			value = 144
 		}
 	}
-	option = {
-		name = california_events.36.c#george e. cryer
-		add_popularity = {
-			ideology = conservatism_ideology
-			popularity = 0.03
-		}
-	}
+#	option = {
+#		name = california_events.36.c#george e. cryer
+#		add_popularity = {
+#			ideology = conservatism_ideology
+#			popularity = 0.03
+#		}
+#	}
 	option = {
 		name = california_events.36.d#w. dempster
 		add_popularity = {
@@ -105,14 +105,6 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.4.a 
-		add_popularity = {
-			ideology = neutrality
-			popularity = 0.015
-		}
-		add_popularity = {
-			ideology = conservatism_ideology
-			popularity = 0.015
-		}
 		country_event = {
 			id = california_events.5
 			random_hours = 12
@@ -127,7 +119,7 @@ country_event = {
 	}
 	after = {
 		add_manpower = -1
-		add_stability = -0.02
+		add_stability = -0.01
 		add_political_power = -10
 	}
 }
@@ -141,7 +133,12 @@ country_event = {
 	option = {
 		name = california_events.5.a 
 		add_manpower = -2
-		add_stability = -0.03
+		add_stability = -0.02
+		add_to_variable = {
+			var = CAL_conservative_banner_bonus
+			value = 1
+			tooltip = add_1_to_cal_conservative_banner_tt
+		}
 	}
 }
 country_event = {
@@ -207,6 +204,11 @@ country_event = {
 			random_hours = 12
 			random_days = 12
 			days = 22
+		}
+		add_to_variable = {
+			var = CAL_fascist_banner_bonus
+			value = 2
+			tooltip = add_1_to_cal_conservative_banner_tt
 		}
 	}
 }
@@ -287,6 +289,11 @@ country_event = {
 	fire_only_once = yes
 	option = {#go
 		name = california_events.13.a
+		add_to_variable = {
+			var = CAL_fascist_banner_bonus
+			value = 2
+			tooltip = add_1_to_cal_conservative_banner_tt
+		}
 	}
 }
 country_event = {
@@ -316,6 +323,11 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.15.a
+		add_to_variable = {
+			var = CAL_fascist_banner_bonus
+			value = -4
+			tooltip = add_1_to_cal_conservative_banner_tt
+		}
 	}
 }
 country_event = {
@@ -336,6 +348,11 @@ country_event = {
 			days = 8
 			random_days = 4
 		}
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 2
+			tooltip = add_1_to_cal_conservative_banner_tt
+		}
 	}
 }
 country_event = {
@@ -347,6 +364,7 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.17.a
+		add_stability = -0.1
 		country_event = {
 			id = california_events.18
 			hours = 12
@@ -365,6 +383,16 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.18.a
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 1
+			tooltip = add_1_to_cal_conservative_banner_tt
+		}
+		add_to_variable = {
+			var = CAL_conservative_banner_bonus
+			value = 1
+			tooltip = add_1_to_cal_conservative_banner_tt
+		}
 		country_event = {
 			id = california_events.19
 			hours = 12
@@ -422,6 +450,16 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.20.a
+		add_stability = -0.1
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = -3
+			tooltip = add_1_to_cal_conservative_banner_tt
+		}
+		custom_effect_tooltip = "remove_3_socialist_militias_tt"
+		117 = {
+			add_manpower = -153
+		}
 	}
 }
 country_event = {
@@ -433,6 +471,15 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.21.a
+		add_stability = -0.1
+		add_to_variable = {
+			var = CAL_socialist_banner_bonus
+			value = 1
+			tooltip = add_1_to_cal_conservative_banner_tt
+		}
+		117 = {
+			add_manpower = -53
+		}
 	}
 }
 country_event = {

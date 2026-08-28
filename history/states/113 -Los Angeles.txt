@@ -4,10 +4,6 @@ state = {
 	manpower = 830412
 	state_category = metropolis
 	provinces = { 657 897 3485 3720 4556 5540 5848 5969 6737 6810 8843 8913 4226 2195 }
-	resources = {
-		aluminium = 15
-		oil = 90
-	}
 	history = {
 		owner = CAL
 		add_core_of = CAL

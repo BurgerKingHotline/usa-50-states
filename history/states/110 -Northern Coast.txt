@@ -17,8 +17,7 @@ state = {
 			3863 1#Crescent City
 		}
 		buildings = {
-			infrastructure = 2
-			arms_factory = 1
+			infrastructure = 1
 			
 			7656 = {
 				naval_base = 1

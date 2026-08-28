@@ -3,15 +3,15 @@ state = {
 	name = "STATE_144"
 	manpower = 1375080
 	state_category = megalopolis
-	provinces = { 8965 8974 5548 8934 10398 10399 10397 }
+	provinces = { 8965 8974 5548 8934}
 	history = {
 		owner = CAL
 		add_core_of = CAL
 		victory_points = {
-			8974 15 #Long Beach 14
+			8974 10 #Long Beach 14
 		}
 		victory_points = {
-			5548 50#Los Angeles 100
+			5548 35#Los Angeles 100
 		}
 		victory_points = {
 			8934 5#Hollywood

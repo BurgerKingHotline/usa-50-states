@@ -10,7 +10,7 @@ state = {
 		add_core_of = CAL
 
 		victory_points = {
-			8224 35 #San Francisco 65
+			8224 20 #San Francisco 65
 		}
 		victory_points = {
 			8247 2#Burlingame
