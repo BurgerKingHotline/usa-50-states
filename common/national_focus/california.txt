@@ -137,9 +137,11 @@ focus_tree = {
 		y = 4
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
-			focus = CAL_battlefield_of_the_press
 			focus = CAL_build_tanks_con
 			focus = CAL_moscows_man_con
+		}
+		prerequisite = {
+			focus = CAL_battlefield_of_the_press
 		}
 		allow_branch = {
 			has_country_flag = calbeforecivilwar
@@ -157,9 +159,11 @@ focus_tree = {
 		y = 4
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
-			focus = CAL_battlefield_of_the_press
 			focus = CAL_build_tanks_con
 			focus = CAL_moscows_man_con
+		}
+		prerequisite = {
+			focus = CAL_battlefield_of_the_press
 		}
 		allow_branch = {
 			has_country_flag = calbeforecivilwar
@@ -263,8 +267,10 @@ focus_tree = {
 		y = 4
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
-			focus = CAL_room_for_an_author_soc
 			focus = CAL_union_support_soc
+			focus = CAL_room_for_an_author_soc
+		}
+		prerequisite = {
 			focus = CAL_battlefield_of_the_press
 		}
 		allow_branch = {
@@ -285,8 +291,10 @@ focus_tree = {
 		y = 4
 		relative_position_id = CAL_intro_focus
 		prerequisite = {
-			focus = CAL_room_for_an_author_soc
 			focus = CAL_union_support_soc
+			focus = CAL_room_for_an_author_soc
+		}
+		prerequisite = {
 			focus = CAL_battlefield_of_the_press
 		}
 		allow_branch = {
@@ -322,6 +330,10 @@ focus_tree = {
 			has_country_flag = calbeforecivilwar
 		}
 		completion_reward = {
+			add_to_array = {
+				array = CAL.sinclair_states
+				value = 144
+			}
 		}
 	}
 	###Civilwarstart focus tree\

@@ -22,6 +22,10 @@ country_event = {
 			ideology = fascism
 			popularity = 0.03
 		}
+		add_to_array = {
+			array = CAL.nazi_states
+			value = 144
+		}
 	}
 	option = {
 		name = california_events.36.c#george e. cryer
@@ -35,6 +39,10 @@ country_event = {
 		add_popularity = {
 			ideology = socialism_ideology
 			popularity = 0.03
+		}
+		add_to_array = {
+			array = CAL.sinclair_states
+			value = 144
 		}
 	}
 }
@@ -609,6 +617,9 @@ country_event = {
 	option = {
 		name = california_events.30.b
 		CAZ = { change_tag_from = CAL }
+		ai_chance = {
+			base =0
+		}
 	}
 	after = {
 		add_popularity = {
@@ -621,8 +632,8 @@ country_event = {
 			id = california_events.31
 			hours = 12
 			random_hours = 12
-			days = 1
-			random_days = 5
+			days = 5
+			random_days =5 
 		}
 		for_each_loop = {
 			array = CAL.nazi_states
@@ -679,6 +690,9 @@ country_event = {
 	option = {
 		name = california_events.31.b
 		CAS = { change_tag_from = CAL }
+		ai_chance = {
+			base =0
+		}
 	}
 	after = {
 		add_stability = -0.1
@@ -691,8 +705,8 @@ country_event = {
 			id = california_events.32
 			hours = 12
 			random_hours = 12
-			days = 1
-			random_days = 5
+			days = 5
+			random_days =5 
 		}
 		for_each_loop = {
 			array = CAL.sinclair_states
@@ -757,6 +771,9 @@ country_event = {
 			ideology = neutrality
 			popularity = 0.2
 		}
+		ai_chance = {
+			base =0
+		}
 	}
 	after = {
 		set_party_name = {
@@ -818,6 +835,12 @@ country_event = {
 		declare_war_on = {
 			target = CAZ
 			type = annex_everything
+		}
+		CAZ = {
+			declare_war_on = {
+				target = CAS
+				type = annex_everything
+			}
 		}
 	}
 }
