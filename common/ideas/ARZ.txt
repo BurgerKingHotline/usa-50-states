@@ -1,7 +1,7 @@
 ideas = {
 	country = {
 		ARZ_supporting_california = {
-			picture = cal_great_depression
+			picture = ETH_conservative_high_command
 			
 			allowed = {
 				tag = CAL
@@ -10,9 +10,11 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				experience_gain_army_factor = 0.15
 				send_volunteer_size = 5
 				air_volunteer_cap = 1
+				send_volunteer_divisions_required = -1
+				experience_gain_army_factor = 0.15
+				lend_lease_tension = -1
 			}
 		}
 	}

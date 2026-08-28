@@ -19,6 +19,10 @@ focus_tree = {
 			add_ideas = {
 				ARZ_supporting_california
 			}
+			add_opinion_modifier = {
+				target = CAL
+				modifier = supported_us_civilwar
+			}
 		}
 	}
 }

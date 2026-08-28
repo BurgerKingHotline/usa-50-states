@@ -1,0 +1,7 @@
+
+opinion_modifiers = {
+
+	supported_us_civilwar = {
+		value = 75
+	}
+}
