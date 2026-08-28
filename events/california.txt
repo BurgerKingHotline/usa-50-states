@@ -871,6 +871,7 @@ country_event = {
 				add_claim_by = CAZ
 				add_claim_by = CAS
 			}
+			set_global_flag = california_civilwar_flag
 		}
 	}
 	option = {

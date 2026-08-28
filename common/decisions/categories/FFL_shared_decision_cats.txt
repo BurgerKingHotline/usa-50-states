@@ -1,19 +1,22 @@
-colorado_water_wars_cat = {
-		priority = 45
-		picture = GFX_decision_cat_picture_generic_promote_immigration_cat
-		icon = GFX_decision_SWI_support_humanitarian_efforts
 
-		allowed = {
-			AND = {
-				OR = {
-					tag = CAL
-					tag = NVD
-					tag = UTT
-					tag = ARZ
-				}
-			}
-			always = no
+california_civilwar_cat = {
+	allowed = {
+		OR = {
+			tag = CAL
+			tag = CAZ
+			tag = CAS
 		}
-		visible_when_empty = yes
-
+	}
+	available = {
+		OR = {
+			tag = CAL
+			tag = CAZ
+			tag = CAS
+		}
+	}
+	visible = {
+		always =yes
+		#has_global_flag = california_civilwar_flag
+	}
+	visible_when_empty = yes
 }

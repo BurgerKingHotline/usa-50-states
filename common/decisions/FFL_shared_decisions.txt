@@ -1,0 +1,22 @@
+california_civilwar_cat = {
+    reintergrate_state = {
+        allowed = {
+            OR = {
+				tag = CAL
+				tag = CAZ
+				tag = CAS
+			}
+        }
+        icon = QAT_example
+        fire_only_once = yes
+		on_map_mode = map_and_decisions_view
+        days_remove = 100
+        modifier = {
+			political_power_cost = 0.1
+        }
+        remove_effect = {
+        }
+        cancel_trigger = {
+        }
+    }
+}
