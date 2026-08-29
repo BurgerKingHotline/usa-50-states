@@ -26,6 +26,80 @@ set_variable = { CAL_fascist_banner_bonus = 0 }
 set_variable = { CAL_jefferson_banner_bonus = 10 }#used to represent jefferson seperatists, now represents fascist sepratists
 set_variable = { CAL_conservative_banner_bonus = 0 }
 
+#california array, used for reintergration decisions
+add_to_array = {
+	array = Global.california_states
+	value = 4
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 114
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 112
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 111
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 143
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 109
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 110
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 141
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 144
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 116
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 142
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 118
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 139
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 115
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 117
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 113
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 145
+}
+add_to_array = { 
+	array = Global.california_states
+	value = 140
+}
+
 #what states nazi's get at start, some like orange county are garunteed, others depend on decisions/events
 add_to_array = { 
 	array = CAL.nazi_states

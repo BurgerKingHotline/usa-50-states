@@ -1,5 +1,5 @@
 california_civilwar_cat = {
-    reintergrate_state = {
+    reintergrate_state_dec = {
         allowed = {
             OR = {
 				tag = CAL
@@ -10,13 +10,32 @@ california_civilwar_cat = {
         icon = QAT_example
         fire_only_once = yes
 		on_map_mode = map_and_decisions_view
-        days_remove = 100
+        days_remove = 50
+        cost = 50
         modifier = {
-			political_power_cost = 0.1
+            command_power_gain = -0.1
         }
+        target_trigger = {
+            FROM = {
+                NOT = {
+                   is_core_of = prev
+                } #var:original_tag
+            }
+        }
+        available = {
+            resistance < 50
+            compliance > 25
+        }
+        visible = {
+            always =yes
+        }
+        state_target = yes
+        target_array = global.california_states
         remove_effect = {
+            add_state_core = FROM
         }
         cancel_trigger = {
+            controls_state = FROM
         }
     }
 }
