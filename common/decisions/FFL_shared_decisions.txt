@@ -23,8 +23,10 @@ california_civilwar_cat = {
             }
         }
         available = {
-            resistance < 50
-            compliance > 25
+            FROM = {
+                resistance < 50
+                compliance > 25
+            }
         }
         visible = {
             always =yes
