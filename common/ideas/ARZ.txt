@@ -15,6 +15,7 @@ ideas = {
 				send_volunteer_divisions_required = -1
 				experience_gain_army_factor = 0.15
 				lend_lease_tension = -1
+				#set_rule = { can_send_volunteers = yes }
 			}
 		}
 	}

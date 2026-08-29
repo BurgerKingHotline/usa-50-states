@@ -706,9 +706,19 @@ country_event = {
 				end = CAL_fascist_banner_bonus
 				value = temp
 				random_owned_state = {
-					create_unit = {
-						division = "name = \"Nationalist Militia\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
-						owner = ROOT
+					random_list = {
+						6 = {
+							create_unit = {
+								division = "name = \"Revolutionary Miltias\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+								owner = ROOT
+							}
+						}
+						3 = {
+							create_unit = {
+								division = "name = \"Revolutionary Miltias\" division_template = \"Civilwar Horse\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+								owner = ROOT
+							}
+						}
 					}
 				}
 			}
@@ -797,9 +807,19 @@ country_event = {
 				end = CAL_socialist_banner_bonus
 				value = temp
 				random_owned_state = {
-					create_unit = {
-						division = "name = \"Commonwealth Militia\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
-						owner = ROOT
+					random_list = {
+						6 = {
+							create_unit = {
+								division = "name = \"Commonwealth Militia\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+								owner = ROOT
+							}
+						}
+						3 = {
+							create_unit = {
+								division = "name = \"Commonwealth Militia\" division_template = \"Civilwar Horse\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+								owner = ROOT
+							}
+						}
 					}
 				}
 			}
@@ -873,9 +893,19 @@ country_event = {
 				end = CAL_conservative_banner_bonus
 				value = temp
 				random_owned_state = {
-					create_unit = {
-						division = "name = \"Republican Militia\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
-						owner = ROOT
+					random_list = {
+						6 = {
+							create_unit = {
+								division = "name = \"Republican Militia\" division_template = \"Civilwar Militia\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+								owner = ROOT
+							}
+						}
+						3 = {
+							create_unit = {
+								division = "name = \"Republican Militia\" division_template = \"Civilwar Horse\" start_experience_factor = 0\"start_equipment_factor = 0.8"
+								owner = ROOT
+							}
+						}
 					}
 				}
 			}
@@ -955,6 +985,8 @@ country_event = {
 	}
 	option = {
 		name = california_events.33.a
+	} 
+	after = {
 		declare_war_on = {
 			target = CAS
 			type = annex_everything
@@ -962,12 +994,6 @@ country_event = {
 		declare_war_on = {
 			target = CAZ
 			type = annex_everything
-		}
-		CAZ = {
-			declare_war_on = {
-				target = CAS
-				type = annex_everything
-			}
 		}
 	}
 }
