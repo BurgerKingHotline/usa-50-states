@@ -1,0 +1,32 @@
+ideas = {
+	country = {
+		CAS_movement_of_the_future = {
+			picture = cal_great_depression
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			on_add = {
+				set_rule = { can_join_factions = no }
+			}
+
+			on_remove = { 
+				set_rule = { can_join_factions = yes }
+			}
+			
+			modifier = {
+				#custom_modifier_tooltip = PRU_no_factions_tt
+				recruitable_population_factor = 0.35
+				weekly_manpower = 100
+				surrender_limit = 0.25
+				production_lack_of_resource_penalty_factor = -1
+			}
+		}
+	}
+}

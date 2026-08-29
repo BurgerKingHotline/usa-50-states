@@ -1,0 +1,4 @@
+﻿l_english:
+ california_civilwar_cat:0 "Reintergration"
+ california_civilwar_cat_desc:0 "As the Californian civilwar wages on, factions lose and gain territory, and consolidate those new holdings. While this process takes a while and requires a certain amount of compliance from the local population, it is nessecary in order to reunite our country."
+ reintergrate_californian_state_dec:0 "Reintergrate [FROM.GetName]"

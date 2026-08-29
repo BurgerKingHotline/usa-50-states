@@ -328,6 +328,10 @@ country_event = {
 			value = -4
 			tooltip = add_1_to_cal_conservative_banner_tt
 		}
+		remove_from_array = {
+			array = CAL.nazi_states
+			value = 111
+		}
 	}
 }
 country_event = {
@@ -709,6 +713,24 @@ country_event = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				is_in_array = {
+					array = CAL.nazi_states
+					value = 144
+				}
+			}
+			load_oob = "CAL_los_angeles_civilwar"
+		}
+		if = {
+			limit = {
+				is_in_array = {
+					array = CAL.nazi_states
+					value = 111
+				}
+			}
+			load_oob = "CAL_san_diego_civilwar"
+		}
 	}
 }
 country_event = {
@@ -782,6 +804,24 @@ country_event = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				is_in_array = {
+					array = CAL.sinclair_states
+					value = 144
+				}
+			}
+			load_oob = "CAL_los_angeles_civilwar"
+		}
+		if = {
+			limit = {
+				is_in_array = {
+					array = CAL.sinclair_states
+					value = 111
+				}
+			}
+			load_oob = "CAL_san_diego_civilwar"
+		}
 	}
 }
 country_event = {
@@ -840,6 +880,36 @@ country_event = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				NOT = {
+					is_in_array = {
+						array = CAL.nazi_states
+						value = 144
+					}
+					is_in_array = {
+						array = CAL.sinclair_states
+						value = 144
+					}
+				}
+			}
+			load_oob = "CAL_los_angeles_civilwar"
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_in_array = {
+						array = CAL.nazi_states
+						value = 111
+					}
+					is_in_array = {
+						array = CAL.sinclair_states
+						value = 111
+					}
+				}
+			}
+			load_oob = "CAL_san_diego_civilwar"
+		}
 	}
 }
 country_event = {
@@ -859,6 +929,9 @@ country_event = {
 					remove_core_of = CAL
 					add_claim_by = CAZ
 				}
+				add_ideas = {
+					CAS_movement_of_the_future
+				}
 			}
 			CAZ = {
 				every_owned_state = {
@@ -866,12 +939,18 @@ country_event = {
 					remove_core_of = CAL
 					add_claim_by = CAS
 				}
+				add_ideas = {
+					CAZ_unpopular_tryants
+				}
 			}
 			every_owned_state = {
 				add_claim_by = CAZ
 				add_claim_by = CAS
 			}
 			set_global_flag = california_civilwar_flag
+			add_ideas ={
+				CAL_status_quo
+			}
 		}
 	}
 	option = {

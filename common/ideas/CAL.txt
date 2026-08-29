@@ -16,7 +16,9 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.30
 				local_resources_factor = -0.50
+				industrial_capacity_factory = -0.6
 				stability_factor = -0.1
+				disabled_ideas = 1
 			}
 		}
 		CAL_great_depression_worse_simple = {
@@ -35,7 +37,9 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.50
 				local_resources_factor = -0.7
+				industrial_capacity_factory = -0.9
 				stability_factor = -0.2
+				disabled_ideas = 1
 			}
 		}
 		CAL_epic_plan_cost_1 = {
@@ -761,7 +765,33 @@ ideas = {
 				recruitable_population_factor = -0.35
 				offence = -0.2
 				defence = -0.2
-				country_lock_all_division_template = yes
+				#country_lock_all_division_template = yes
+			}
+		}
+		CAL_status_quo = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = cal_sunshine_state
+			on_add = {
+				set_rule = { can_join_factions = no }
+			}
+
+			on_remove = { 
+				set_rule = { can_join_factions = yes }
+			}
+			
+			modifier = {
+				resistance_target = -0.1
+				compliance_growth_on_our_occupied_states = 0.1
+				surrender_limit = 0.25
+				#custom_modifier_tooltip = PRU_no_factions_tt
+				production_lack_of_resource_penalty_factor = -1
 			}
 		}
 	}

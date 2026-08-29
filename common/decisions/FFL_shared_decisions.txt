@@ -1,5 +1,5 @@
 california_civilwar_cat = {
-    reintergrate_state_dec = {
+    reintergrate_californian_state_dec = {
         allowed = {
             OR = {
 				tag = CAL
@@ -21,15 +21,13 @@ california_civilwar_cat = {
                    is_core_of = prev
                 } #var:original_tag
             }
+            controls_state = FROM
         }
         available = {
             FROM = {
                 resistance < 50
                 compliance > 25
             }
-        }
-        visible = {
-            always =yes
         }
         state_target = yes
         target_array = global.california_states

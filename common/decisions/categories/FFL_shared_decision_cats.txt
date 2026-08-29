@@ -15,8 +15,7 @@ california_civilwar_cat = {
 		}
 	}
 	visible = {
-		always =yes
-		#has_global_flag = california_civilwar_flag
+		has_global_flag = california_civilwar_flag
 	}
 	visible_when_empty = yes
 }
