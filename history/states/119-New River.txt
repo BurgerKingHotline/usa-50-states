@@ -1,7 +1,7 @@
 state = {
 	id = 119
 	name = "STATE_119"
-	manpower = 10
+	manpower = 700800
 	state_category = city
 	provinces = { 4842 8506 5104 1278 2077 2110 2693 2935 3667 3898 4413 4946 5651 8566 8576 8594 8421 8435 8480 8504 832 5528 8619 8638 8547 2933 8554 8525 8508 5177 8455 8479 4656 2945 8478 8451 1314 3421 3972 8526 }
 	resources = {
@@ -20,10 +20,10 @@ state = {
 			8619 1#Bluefield
 		}
 		victory_points = {
-			8478 2#Charleston
+			8478 2#Charleston, 2 but is capital
 		}
 		victory_points = {
-			5177 3#Huntington
+			5177 1#Huntington, 3
 		}
 		WVR = {
 			set_province_controller = 8421

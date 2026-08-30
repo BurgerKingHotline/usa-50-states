@@ -683,8 +683,8 @@ country_event = {
 			id = california_events.31
 			hours = 12
 			random_hours = 12
-			days = 5
-			random_days =5 
+			days = 2
+			random_days = 1
 		}
 		for_each_loop = {
 			array = CAL.nazi_states
@@ -784,8 +784,8 @@ country_event = {
 			id = california_events.32
 			hours = 12
 			random_hours = 12
-			days = 5
-			random_days =5 
+			days = 2
+			random_days = 1
 		}
 		for_each_loop = {
 			array = CAL.sinclair_states
@@ -985,8 +985,6 @@ country_event = {
 	}
 	option = {
 		name = california_events.33.a
-	} 
-	after = {
 		declare_war_on = {
 			target = CAS
 			type = annex_everything
@@ -995,7 +993,7 @@ country_event = {
 			target = CAZ
 			type = annex_everything
 		}
-	}
+	} 
 }
 country_event = {
 	id = california_events.34#who runs merriam or james rolph? - elections
