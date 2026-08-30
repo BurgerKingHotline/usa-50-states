@@ -1,6 +1,6 @@
 capital = 119
 set_politics = {
-        ruling_party = communism
+        ruling_party = socialism_ideology
         last_election = "1936.1.1"
         election_frequency = 48
         elections_allowed = yes
@@ -9,9 +9,9 @@ recruit_character = UMW_Bill_Blizzard
 set_popularities = {
     democratic = 3
     conservatism_ideology = 42
-    socialism_ideology = 4
+    socialism_ideology = 39 
     populism_ideology = 12
-    communism = 39
+    communism = 4
 }
 set_technology = {
 	infantry_weapons = 1

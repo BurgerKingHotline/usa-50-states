@@ -6,7 +6,7 @@ characters = {
 		}
 		gender = male
 		country_leader = {
-			ideology = conservatism_subideology
+			ideology = socialism_subideology
 			expire = "1965.1.1"
 		}
 		field_marshal = {
