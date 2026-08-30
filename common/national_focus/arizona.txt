@@ -16,6 +16,7 @@ focus_tree = {
 		x = 0
 		y = 0
 		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
 			add_ideas = {
 				ARZ_supporting_california
 			}

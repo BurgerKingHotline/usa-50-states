@@ -5,8 +5,7 @@ state = {
 	state_category = rural
 	provinces = { 307 3079 5147 5318 6493 8675 8694 8727 }
 	history = {
-		owner = UMW
-		add_core_of = UMW
+		owner = VRG
 		add_core_of = VRG
 	}
 }

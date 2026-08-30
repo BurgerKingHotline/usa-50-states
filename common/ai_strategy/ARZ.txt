@@ -1,0 +1,20 @@
+ARZ_support_california = {
+	allowed = {
+		original_tag = ARZ
+	}
+	ai_strategy = {
+		type = protect
+		id = CAL
+		value = 200
+	}
+	ai_strategy = {
+		type = support
+		id = CAL
+		value = 200
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = CAL
+		value = 200
+	}
+}

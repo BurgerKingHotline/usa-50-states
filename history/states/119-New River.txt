@@ -2,11 +2,36 @@ state = {
 	id = 119
 	name = "STATE_119"
 	manpower = 10
-	state_category = rural
-	provinces = { 1278 2077 2110 2693 2935 3667 3898 4413 4946 5651 8566 8576 8594 }
+	state_category = city
+	provinces = { 4842 8506 5104 1278 2077 2110 2693 2935 3667 3898 4413 4946 5651 8566 8576 8594 8421 8435 8480 8504 832 5528 8619 8638 8547 2933 8554 8525 8508 5177 8455 8479 4656 2945 8478 8451 1314 3421 3972 8526 }
+	resources = {
+		coal = 64
+	}
 	history = {
 		owner = UMW
 		add_core_of = UMW
 		add_core_of = WVR
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 2
+		}
+		victory_points = {
+			8619 1#Bluefield
+		}
+		victory_points = {
+			8478 2#Charleston
+		}
+		victory_points = {
+			5177 3#Huntington
+		}
+		WVR = {
+			set_province_controller = 8421
+			set_province_controller = 5104
+			set_province_controller = 8435
+			set_province_controller = 1314
+			set_province_controller = 8451
+			set_province_controller = 8478
+		}
 	}
 }

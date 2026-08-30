@@ -13,3 +13,4 @@ set_popularities = {
     populism_ideology = 12
     communism = 39
 }
+load_oob = "UMW_ffl"

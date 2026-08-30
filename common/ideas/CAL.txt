@@ -765,6 +765,10 @@ ideas = {
 				recruitable_population_factor = -0.35
 				offence = -0.2
 				defence = -0.2
+				country_lock_all_division_template = {
+					is_locked = yes
+					desc = loc_key
+				}
 				#country_lock_all_division_template = yes
 			}
 		}

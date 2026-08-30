@@ -2,10 +2,30 @@ state = {
 	id = 49
 	name = "STATE_49"
 	manpower = 1752000
-	state_category = rural
-	provinces = { 306 341 390 478 832 1067 1314 1525 1635 1652 1861 2217 2302 2841 2933 2945 3203 3421 3475 3531 3950 3972 4120 4174 4204 4656 4833 4842 5104 5177 5341 5396 5489 5528 5658 5677 5918 5941 6193 6392 6410 6588 6682 8217 8245 8261 8270 8275 8276 8294 8336 8356 8359 8364 8376 8383 8402 8410 8421 8435 8451 8455 8468 8478 8479 8480 8504 8506 8508 8525 8526 8547 8554 8619 8638 }
+	state_category = large_city
+	provinces = { 6682 1067 8364 3950 2302 5658 306 6392 8468 8294 8217 6410 4174 5941 6588 5677 390 8276 3531 2841 341 8270 8245 1635 5396 1861 8359 2217 8376 4120 4833 6193 3203 8336 5918 3475 8402 8410 8383 1652 8356 1525 4204 8261 8275 5489 478 5341 }
+	resources = {
+		coal = 32
+	}
 	history = {
 		owner = WVR
 		add_core_of = WVR
+		add_core_of = UMW
+		victory_points = {
+			3203 1#clarksburg
+		}
+		victory_points = {
+			8275 1#fairmont
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 4
+			arms_factory = 3
+		}
+		UMW = {
+			set_province_controller = 8468
+			set_province_controller = 6392
+			set_province_controller = 306
+		}
 	}
 }
