@@ -2,6 +2,15 @@ ARZ_support_california = {
 	allowed = {
 		original_tag = ARZ
 	}
+	enable = {
+		country_exists = CAL
+		has_global_flag = california_civilwar_flag
+	}
+	abort = {
+		NOT = {
+			country_exists = CAL
+		}
+	}
 	ai_strategy = {
 		type = protect
 		id = CAL

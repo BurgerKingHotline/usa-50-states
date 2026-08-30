@@ -642,10 +642,7 @@ country_event = {
 	title = california_events.30.t
 	desc = california_events.30.desc
 	picture = GFX_report_event_cal_default
-	trigger = {
-		date > 1933.12.1
-		always = yes
-	}
+	is_triggered_only = yes
 	fire_only_once = yes
 	option = {#success
 		name = california_events.30.a
@@ -681,10 +678,10 @@ country_event = {
 		add_war_support = 0.1
 		country_event = {
 			id = california_events.31
-			hours = 12
-			random_hours = 12
 			days = 2
-			random_days = 1
+			random_days = 2
+			random_hours = 12
+			hours = 12
 		}
 		for_each_loop = {
 			array = CAL.nazi_states
@@ -782,10 +779,10 @@ country_event = {
 		}
 		country_event = {
 			id = california_events.32
-			hours = 12
-			random_hours = 12
 			days = 2
-			random_days = 1
+			random_days = 2
+			random_hours = 12
+			hours = 12
 		}
 		for_each_loop = {
 			array = CAL.sinclair_states
@@ -949,6 +946,8 @@ country_event = {
 	picture = GFX_report_event_cal_default
 	trigger = {
 		date > 1934.1.10
+		country_exists = CAZ
+		country_exists = CAS
 	}
 	fire_only_once = yes
 	immediate = {
@@ -985,13 +984,17 @@ country_event = {
 	}
 	option = {
 		name = california_events.33.a
-		declare_war_on = {
-			target = CAS
-			type = annex_everything
+		CAS = {
+			declare_war_on = {
+				target = ROOT
+				type = annex_everything
+			}
 		}
-		declare_war_on = {
-			target = CAZ
-			type = annex_everything
+		CAZ = {
+			declare_war_on = {
+				target = ROOT
+				type = annex_everything
+			}
 		}
 	} 
 }
@@ -1087,11 +1090,14 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.44#deep election fraud discovered - elections
+	id = california_events.44#election results are in - elections
 	title = california_events.44.t
 	desc = california_events.44.desc
 	picture = GFX_report_event_cal_default
-	is_triggered_only = yes
+	trigger = {
+		date > 1933.11.1
+		tag = CAL
+	}
 	fire_only_once = yes
 	option = {
 		name = california_events.44.a
@@ -1099,6 +1105,36 @@ country_event = {
 		add_popularity = {
 			ideology = conservatism_ideology
 			popularity = -0.1
+		}
+		country_event = {
+			id = california_events.44
+			days = 6
+			random_days = 6
+			random_hours = 12
+			hours = 12
+		}
+	}
+}
+country_event = {
+	id = california_events.45#deep election fraud discovered - elections
+	title = california_events.45.t
+	desc = california_events.45.desc
+	picture = GFX_report_event_cal_default
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = california_events.45.a
+		add_stability = -0.1
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = -0.1
+		}
+		country_event = {
+			id = california_events.30
+			days = 2
+			random_days = 2
+			random_hours = 12
+			hours = 12
 		}
 	}
 }

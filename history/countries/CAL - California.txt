@@ -1,7 +1,6 @@
 
 capital = 118
 
-load_oob = "CAL_1933"
 
 set_country_flag = calbeforecivilwar
 #set_country_flag = CAL_intro_tree
@@ -255,6 +254,7 @@ set_technology = {
 
 set_technology = {
 	infantry_weapons = 1
+    support_weapons = 1
 	tech_trucks = 1
 	tech_support = 1		
 	gw_artillery = 1
@@ -262,6 +262,7 @@ set_technology = {
 	fuel_silos = 1
 	marines = 1
 	basic_train = 1
+	tech_engineers = 1
 }
 #if = {
 #	limit = {
@@ -298,3 +299,5 @@ if = {
 #	}
 #	icon = "GFX_ENG_basic_light_tank_medium"
 #}
+
+load_oob = "CAL_1933"
