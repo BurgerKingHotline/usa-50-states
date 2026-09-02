@@ -24,4 +24,11 @@ set_technology = {
 	basic_train = 1
 	tech_engineers = 1
 }
+
+add_ideas = {
+    limited_conscription
+}
+
 load_oob = "UMW_ffl"
+
+add_manpower = 10000
