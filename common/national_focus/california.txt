@@ -9,2456 +9,354 @@ focus_tree = {
 			tag = CAL
 		}
 	}
+	continuous_focus_position = {
+		x = 10000
+		y = 10000
+	}
 	focus = {
-		id = CAL_intro_focus
-		icon = GFX_goal_CAL_intro_focus
+		id = CAL_sunny_governor#sunny governor, sunny state
+		icon = GFX_goal_generic_production2
 		cost = 10
 		x = 0
 		y = 0
 		allow_branch = {
 			has_country_flag = calbeforecivilwar
 		}
-		completion_reward = {
-			country_event = {
-				id = california_events.26
-				days = 1
-				random_days = 2
-				random_hours = 12
-			}
-		}
+		completion_reward = { }
 	}
 	focus = {
-		id = CAL_declare_new_elections
-		icon = GFX_goal_CAL_republicandemocratparties
-		cost = 2
+		id = CAL_budget_questions
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 0
 		y = 1
-		relative_position_id = CAL_intro_focus
 		prerequisite = {
-			focus = CAL_intro_focus
+			focus = CAL_sunny_governor
 		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			country_event = { 
-				id = california_events.43 
-				days = 7
-				random_days = 7
-				hours = 12
-				random_hours = 12
-			}
-		}
+		completion_reward = { }
 	}
 	focus = {
-		id = CAL_battlefield_of_the_press
-		icon = GFX_goal_CAL_newspaper
-		cost = 5
-		x = 0
-		y = 3
-		relative_position_id = CAL_intro_focus
-		prerequisite = {
-			focus = CAL_sinclairs_vision_soc
-			focus = CAL_pattons_plan_con
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = CAL_pattons_plan_con
-		icon = GFX_goal_CAL_pattonsigma
-		cost = 1
-		x = 2
-		y = 2
-		relative_position_id = CAL_intro_focus
-		prerequisite = {
-			focus = CAL_declare_new_elections
-		}
-		mutually_exclusive = {
-			focus = CAL_sinclairs_vision_soc
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			add_war_support = 0.01
-			add_popularity = {
-				ideology = neutrality
-				popularity = 0.01
-			}
-		}
-	}
-	focus = {
-		id = CAL_build_tanks_con
-		icon = GFX_goal_CAL_build_tanks
-		cost = 4
-		x = 2
-		y = 3
-		relative_position_id = CAL_intro_focus
-		prerequisite = {
-			focus = CAL_pattons_plan_con
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			country_event = { id = california_events.49 }
-		}
-	}
-	focus = {
-		id = CAL_moscows_man_con
-		icon = GFX_goal_CAL_joseph_stalin
-		cost = 4
-		x = 4
-		y = 3
-		relative_position_id = CAL_intro_focus
-		prerequisite = {
-			focus = CAL_pattons_plan_con
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			add_political_power = 20
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = -0.02
-			}
-		}
-	}
-	focus = {
-		id = CAL_save_democracy_con
-		icon = GFX_goal_CAL_defend_democracy
-		cost = 5
-		x = 3
-		y = 4
-		relative_position_id = CAL_intro_focus
-		prerequisite = {
-			focus = CAL_build_tanks_con
-			focus = CAL_moscows_man_con
-		}
-		prerequisite = {
-			focus = CAL_battlefield_of_the_press
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			add_stability = -0.1
-			add_war_support = 0.15
-		}
-	}
-	focus = {
-		id = CAL_our_industrial_connections_con
-		icon = GFX_goal_CAL_industrial_connections
-		cost = 5
-		x = 1
-		y = 4
-		relative_position_id = CAL_intro_focus
-		prerequisite = {
-			focus = CAL_build_tanks_con
-			focus = CAL_moscows_man_con
-		}
-		prerequisite = {
-			focus = CAL_battlefield_of_the_press
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			country_event = { 
-				id = california_events.42
-			}
-		}
-	}
-	focus = {
-		id = CAL_rig_the_election_con
-		icon = GFX_goal_CAL_rig_elections
+		id = CAL_expand_military#Expand military budget, bigger military budget
+		icon = GFX_goal_generic_production2
 		cost = 10
-		x = 2
-		y = 5
-		relative_position_id = CAL_intro_focus
-		available = {
-			has_completed_focus = CAL_battlefield_of_the_press
-			has_completed_focus = CAL_build_tanks_con
-			has_completed_focus = CAL_moscows_man_con
-		}
-		prerequisite = {
-			focus = CAL_our_industrial_connections_con
-		}
-		prerequisite = {
-			focus = CAL_save_democracy_con
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = CAL_sinclairs_vision_soc
-		icon = GFX_goal_CAL_sinclairsigma
-		cost = 1
-		x = -2
+		x = 4
 		y = 2
-		relative_position_id = CAL_intro_focus
-		prerequisite = {
-			focus = CAL_declare_new_elections
-		}
 		mutually_exclusive = {
-			focus = CAL_pattons_plan_con
+			focus = CAL_break_status
 		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			unlock_decision_tooltip = CAL_form_epic_clubs
-			unlock_decision_tooltip = CAL_appeal_democrats_progressives
-			country_event = {
-				id = california_events.50
-			}
-		}
-	}
-	focus = {
-		id = CAL_union_support_soc
-		icon = GFX_goal_CAL_rose
-		cost = 4
-		x = -2
-		y = 3
-		relative_position_id = CAL_intro_focus
 		prerequisite = {
-			focus = CAL_sinclairs_vision_soc
+			focus = CAL_budget_questions
 		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-		}
+		completion_reward = { }
 	}
 	focus = {
-		id = CAL_room_for_an_author_soc
-		icon = GFX_goal_CAL_nazi
-		cost = 4
+		id = CAL_break_status#quo, break status quo
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = -4
-		y = 3
-		relative_position_id = CAL_intro_focus
+		y = 2
+		mutually_exclusive = {
+			focus = CAL_expand_military
+		}
 		prerequisite = {
-			focus = CAL_sinclairs_vision_soc
+			focus = CAL_budget_questions
 		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			add_political_power = 20
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.01
-			}
-		}
+		completion_reward = { }
 	}
 	focus = {
-		id = CAL_plan_starvation_soc
-		icon = GFX_goal_CAL_starvation
-		cost = 5
-		x = -3
-		y = 4
-		relative_position_id = CAL_intro_focus
+		id = CAL_nazi
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = -4
+		y = 1
+		relative_position_id = CAL_break_status
 		prerequisite = {
-			focus = CAL_union_support_soc
-			focus = CAL_room_for_an_author_soc
+			focus = CAL_break_status
 		}
-		prerequisite = {
-			focus = CAL_battlefield_of_the_press
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.05
-			}
-		}
+		completion_reward = { }
 	}
 	focus = {
-		id = CAL_protect_ourselves_soc
-		icon = GFX_goal_CAL_execution_capitalist
-		cost = 5
-		x = -1
-		y = 4
-		relative_position_id = CAL_intro_focus
+		id = CAL_launch_revolution
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = 0
+		y = 2
+		relative_position_id = CAL_nazi
 		prerequisite = {
-			focus = CAL_union_support_soc
-			focus = CAL_room_for_an_author_soc
+			focus = CAL_connections_with_marines
 		}
 		prerequisite = {
-			focus = CAL_battlefield_of_the_press
+			focus = CAL_friends_new_germany
 		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
+		prerequisite = {
+			focus = CAL_business_autocracy
 		}
-		completion_reward = {
-			add_to_variable = {
-				var = CAL_socialist_banner_bonus
-				value = 2
-			}
-			custom_effect_tooltip = "add_2_to_socialist_banner_bonus"
-		}
+		completion_reward = { }
 	}
 	focus = {
-		id = CAL_secure_la_soc
-		icon = GFX_goal_CAL_securela
+		id = CAL_connections_with_marines#buy guns, yippe hoo yippe kayee!
+		icon = GFX_goal_generic_production2
 		cost = 10
 		x = -2
-		y = 5
-		relative_position_id = CAL_intro_focus
-		available = {
-			has_completed_focus = CAL_room_for_an_author_soc
-			has_completed_focus = CAL_union_support_soc
-			has_completed_focus = CAL_battlefield_of_the_press
-		}
+		y = 1
+		relative_position_id = CAL_nazi
 		prerequisite = {
-			focus = CAL_plan_starvation_soc
-		}
-		prerequisite = {
-			focus = CAL_protect_ourselves_soc
-		}
-		allow_branch = {
-			has_country_flag = calbeforecivilwar
-		}
-		completion_reward = {
-			add_to_array = {
-				array = CAL.sinclair_states
-				value = 144
-			}
-		}
-	}
-	###Civilwarstart focus tree\
-	focus = {
-		id = CAL_our_greatest_fears
-		icon = GFX_focus_IRQ_decouple_from_the_pound
-		cost = 5
-		x = 0
-		y = 0
-		allow_branch = {
-			has_country_flag = calcivilwarintrofocus
+			focus = CAL_nazi
 		}
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_suspend_habeus_corpus
-		icon = GFX_focus_IRQ_decouple_from_the_pound
-		cost = 5
+		id = CAL_friends_new_germany#organize varied fascist groups into a coherent movement
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 0
 		y = 1
-		relative_position_id = CAL_our_greatest_fears
+		relative_position_id = CAL_nazi
 		prerequisite = {
-			focus = CAL_our_greatest_fears
-		}
-		allow_branch = {
-			has_country_flag = calcivilwarintrofocus
+			focus = CAL_nazi
 		}
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_expand_military_powers
-		icon = GFX_focus_IRQ_decouple_from_the_pound
-		cost = 5
-		x = -2
-		y = 1
-		relative_position_id = CAL_our_greatest_fears
-		prerequisite = {
-			focus = CAL_our_greatest_fears
-		}
-		allow_branch = {
-			has_country_flag = calcivilwarintrofocus
-		}
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_military_appropiation_act
-		icon = GFX_focus_IRQ_decouple_from_the_pound
-		cost = 5
+		id = CAL_business_autocracy#they're going to let us starve!
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 2
 		y = 1
-		relative_position_id = CAL_our_greatest_fears
+		relative_position_id = CAL_nazi
 		prerequisite = {
-			focus = CAL_our_greatest_fears
-		}
-		allow_branch = {
-			has_country_flag = calcivilwarintrofocus
+			focus = CAL_nazi
+			focus = CAL_sinclair
 		}
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_sinclair_act
-		icon = GFX_focus_IRQ_decouple_from_the_pound
-		cost = 5
+		id = CAL_sinclair
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = CAL_break_status
+		prerequisite = {
+			focus = CAL_break_status
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_epic_plan
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = CAL_sinclair
+		prerequisite = {
+			focus = CAL_sinclair
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_democrat_elected#change name, change of pace? break status quo? probably not, not exactly democrats being elected. can think of better name later. 
+		#haight and sinclair can both use this
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 0
 		y = 2
-		prerequisite = {
-			focus = CAL_suspend_habeus_corpus			
-		}
-		prerequisite = {
-			focus = CAL_expand_military_powers			
-		}
-		prerequisite = {
-			focus = CAL_military_appropiation_act
-		}
-		relative_position_id = CAL_our_greatest_fears
-		allow_branch = {
-			has_country_flag = calcivilwarintrofocus
-		}
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_declare_independence#State Building#declare republic, change it's name to republic of california, bear republic of california, or state of california
-		icon = GFX_goal_generic_national_unity 
-		cost = 5
-		x = 0
-		y = 1
-		prerequisite = {
-			focus = CAL_intro_focus
-			focus = CAL_socialist_governor
-		}
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		ai_will_do = {
-			base = 11
-		}
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = CAL_strengthen_da
-		icon = GFX_goal_generic_national_unity
-		cost = 5
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_declare_independence
-		}
-		ai_will_do = {
-			base = 11
-		}
-		x = 3
-		y = 1
-		completion_reward = { 
-			activate_advisor = cal_earl_warren
-		}
-	}
-	focus = {
-		id = CAL_new_currency
-		icon = GFX_goal_generic_national_unity
-		cost = 9
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_declare_independence
-		}
-		ai_will_do = {
-			base = 11
-		}
-		x = 0
-		y = 1
-		select_effect = {
-			add_political_power = -100
-		}
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = CAL_one_term_ammendment
-		icon = GFX_goal_generic_national_unity
-		cost = 6
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_declare_independence
-		}
-		prerequisite = {
-			focus = CAL_strengthen_da
-		}
-		ai_will_do = {
-			base = 11
-		}
-		x = 2
-		y = 3
-		completion_reward = { 
-			custom_effect_tooltip = california_one_term_ammendment
-			set_country_flag = CAL_one_term_governor_ammendment
-			add_stability = 0.1
-		}
-	}
-	focus = {
-		id = CAL_reassure_public_no
-		icon = GFX_goal_generic_national_unity
-		cost = 4
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_declare_independence
-		}
-		ai_will_do = {
-			base = 11
-		}
-		x = -3
-		y = 1
-		completion_reward = { 
-			add_stability = 0.05
-			add_popularity = {
-				ideology = conservatism_ideology
-				popularity = 0.05
-			}
-		}
-	}
-	focus = {
-		id = CAL_stoke_patriotism#independence day
-		icon = GFX_goal_generic_national_unity
-		cost = 4
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_declare_independence
-		}
-		prerequisite = {
-			#focus = CAL_reassure_public
-		}
-		ai_will_do = {
-			base = 11
-		}
-		x = -2
-		y = 3
-		completion_reward = { 
-			custom_effect_tooltip = california_independence_day
-			set_country_flag = CAL_independence_day_official
-			add_war_support = 0.1
-		}
-	}
-	focus = {
-		id = CAL_gold_standard
-		icon = GFX_goal_generic_national_unity
-		cost = 2
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_new_currency
-		}
+		relative_position_id = CAL_sinclair
 		mutually_exclusive = {
-			focus = CAL_fiat_currency
-		}
-		ai_will_do = {
-			base = 11
-		}
-		x = 1
-		y = 2
-		completion_reward = { 
-			add_popularity = {
-				ideology = conservatism_ideology
-				popularity = 0.05
-			}
-			add_ideas = {
-				CAL_gold_standard
-			}
-		}
-	}
-#	focus = {
-#		id = CAL_deputize_militias
-#		icon = GFX_goal_generic_allies_build_infantry
-#		cost = 6
-#		relative_position_id = CAL_declare_independence
-#		allow_branch = {
-#			has_country_flag = CAL_intro_tree
-#		prerequisite = {
-#			focus = CAL_declare_independence
-#		}
-#		x = -4
-#		y = 1
-#		completion_reward = { 
-#			CAL_civil_unrest_level_down = yes
-#		}
-#	}
-	focus = {
-		id = CAL_fiat_currency
-		icon = GFX_goal_generic_national_unity
-		cost = 2
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
+			focus = CAL_heal_wounds
 		}
 		prerequisite = {
-			focus = CAL_new_currency
+			focus = CAL_business_autocracy
+			focus = CAL_corporate_sponsors
 		}
-		mutually_exclusive = {
-			focus = CAL_gold_standard
+		prerequisite = {
+			focus = CAL_epic_plan
+			focus = CAL_forward_progress
 		}
-		ai_will_do = {
-			base = 11
-		}
-		x = -1
-		y = 2
-		completion_reward = { 
-			add_popularity = {
-				ideology = conservatism_ideology
-				popularity = -0.05
-			}
-			add_ideas = {
-				CAL_fiat_currency
-			}
-		}
-	}
-	focus = {
-		id = CAL_scramble_army
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = -6
-		y = 10
-		allow_branch = {
-			always = no
-		}
-		offset = {
-			x = 0
-			y = -1
-			trigger = {
-				has_country_flag = CAL_epic_path
-			}
+		prerequisite = {
+			focus = CAL_democratic_convention
 		}
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_scavenge_navy
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		x = 6
-		y = 10
-		allow_branch = {
-			always = no
-		}
-		available = {
-			always = no
-		}
-		offset = {
-			x = 0
-			y = -1
-			trigger = {
-				has_country_flag = CAL_epic_path
-			}
-		}
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_recruit_admirals
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_scavenge_navy
-		}
-		x = 0
-		y = 1
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_upgrade_nps
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_scavenge_navy
-		}
-		x = -2
-		y = 1
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_assemble_marine_corp
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_scavenge_navy
-		}
-		x = 2
-		y = 1
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_research_submarines
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_recruit_admirals
-			focus = CAL_assemble_marine_corp
-			focus = CAL_upgrade_nps
-		}
-		available = {
-			has_country_flag = CAL_epic_path
-		}
-		x = -4
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_improve_ports#Eureka, Oakland, San Diego
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_recruit_admirals
-			focus = CAL_assemble_marine_corp
-			focus = CAL_upgrade_nps
-		}
-		available = {
-			NOT = {
-				has_country_flag = CAL_intro_tree
-			}
-		}
+		id = CAL_haight
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 0
 		y = 2
+		relative_position_id = CAL_budget_questions
+		prerequisite = {
+			focus = CAL_break_status
+			focus = CAL_expand_military
+		}
 		completion_reward = { }
-	}
-	focus = {
-		id = CAL_research_battleships
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_recruit_admirals
-			focus = CAL_assemble_marine_corp
-			focus = CAL_upgrade_nps
-		}
-		available = {
-			NOT = {
-				has_country_flag = CAL_intro_tree
-			}
-		}
-		x = 4
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_new_generation_fleet
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_research_submarines
-			focus = CAL_research_cruisers
-			focus = CAL_improve_ports
-		}
-		mutually_exclusive = {
-			focus = CAL_old_generation_fleet
-		}
-		available = {
-			NOT = {
-				has_country_flag = CAL_intro_tree
-			}
-		}
-		x = -2
-		y = 3
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_old_generation_fleet
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_research_battleships
-			focus = CAL_research_carriers
-			focus = CAL_improve_ports
-		}
-		mutually_exclusive = {
-			focus = CAL_new_generation_fleet
-		}
-		available = {
-			NOT = {
-				has_country_flag = CAL_intro_tree
-			}
-		}
-		x = 2
-		y = 3
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_research_carriers
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_recruit_admirals
-			focus = CAL_assemble_marine_corp
-			focus = CAL_upgrade_nps
-		}
-		available = {
-			NOT = {
-				has_country_flag = CAL_intro_tree
-			}
-		}
-		x = 2
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_research_cruisers
-		icon = GFX_goal_generic_navy_battleship
-		cost = 5
-		relative_position_id = CAL_scavenge_navy
-		prerequisite = {
-			focus = CAL_recruit_admirals
-			focus = CAL_assemble_marine_corp
-			focus = CAL_upgrade_nps
-		}
-		available = {
-			NOT = {
-				has_country_flag = CAL_intro_tree
-			}
-		}
-		x = -2
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_poach_generals
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_scramble_army
-		}
-		x = 0
-		y = 1
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_desert_training
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_fort_irwin
-		}
-		available = {
-			has_country_flag = CAL_intro_tree
-		}
-		x = -4
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_research_support
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_fort_irwin
-			focus = CAL_poach_generals
-			focus = CAL_recruitment_campaign
-		}
-		available = {
-			has_country_flag = CAL_intro_tree
-		}
-		x = 0
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_research_tanks
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_fort_irwin
-			focus = CAL_poach_generals
-			focus = CAL_recruitment_campaign
-		}
-		available = {
-			has_country_flag = CAL_intro_tree
-		}
-		x = -2
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_new_generation_army
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_research_support
-			focus = CAL_research_weapons
-			focus = CAL_train_new_officers
-			focus = CAL_research_tanks
-			focus = CAL_desert_training
-		}
-		mutually_exclusive = {
-			focus = CAL_old_generation_army
-		}
-		available = {
-			has_country_flag = CAL_intro_tree
-		}
-		x = -2
-		y = 3
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_old_generation_army
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_research_support
-			focus = CAL_research_weapons
-			focus = CAL_train_new_officers
-			focus = CAL_research_tanks
-			focus = CAL_desert_training
-		}
-		mutually_exclusive = {
-			focus = CAL_new_generation_army
-		}
-		available = {
-			has_country_flag = CAL_intro_tree
-		}
-		x = 2
-		y = 3
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_research_weapons
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_fort_irwin
-			focus = CAL_poach_generals
-			focus = CAL_recruitment_campaign
-		}
-		available = {
-			has_country_flag = CAL_intro_tree
-		}
-		x = 2
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_train_new_officers
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_fort_irwin
-			focus = CAL_poach_generals
-			focus = CAL_recruitment_campaign
-		}
-		available = {
-			has_country_flag = CAL_intro_tree
-		}
-		x = 4
-		y = 2
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_fort_irwin
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_scramble_army
-		}
-		x = -2
-		y = 1
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_recruitment_campaign
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_scramble_army
-		prerequisite = {
-			focus = CAL_scramble_army
-		}
-		x = 2
-		y = 1
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_hold_elections#declare republic, change it's name to republic of california, bear republic of california, or state of california
-		icon = GFX_goal_generic_national_unity
-		cost = 5
-		relative_position_id = CAL_declare_independence
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		ai_will_do = {
-			base = 11
-		}
-		prerequisite = {
-			focus = CAL_fiat_currency
-			focus = CAL_gold_standard
-		}
-		prerequisite = {
-			focus = CAL_one_term_ammendment
-		}
-		prerequisite = {
-			focus = CAL_stoke_patriotism
-		}
-		x = 0
-		y = 4
-		completion_reward = { 
-			remove_ideas = {
-				CAL_great_collapse
-			}
-		}
 	}
 	focus = {
 		id = CAL_democratic_convention
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = -5
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = -2
 		y = 1
-		relative_position_id = CAL_hold_elections
+		relative_position_id = CAL_haight
 		prerequisite = {
-			focus = CAL_hold_elections
+			focus = CAL_sinclair
+			focus = CAL_haight
 		}
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		available = {
-		}
-		completion_reward = {
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.05
-			}
-
-		}
+		completion_reward = { }
 	}
 	focus = {
-		id = CAL_campaign_century
-		icon = GFX_goal_support_communism
-		cost = 5
+		id = CAL_forward_progress
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 0
 		y = 1
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
+		relative_position_id = CAL_haight
+		prerequisite = {
+			focus = CAL_haight
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_heal_wounds
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = 0
+		y = 2
+		relative_position_id = CAL_haight
+		mutually_exclusive = {
+			focus = CAL_democrat_elected
+		}
+		prerequisite = {
+			focus = CAL_forward_progress
 		}
 		prerequisite = {
 			focus = CAL_democratic_convention
 		}
-		relative_position_id = CAL_democratic_convention
-		completion_reward = { 
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.05
-			}
-		}
-	}
-	focus = {
-		id = CAL_room_for_an_author
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = 2
-		y = 1
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
 		prerequisite = {
-			focus = CAL_democratic_convention
-		}
-		relative_position_id = CAL_democratic_convention
-		completion_reward = { 
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.05
-			}
-		}
-	}
-	focus = {
-		id = CAL_plan_starvation
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = -2
-		y = 1
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		prerequisite = {
-			focus = CAL_democratic_convention
-		}
-		relative_position_id = CAL_democratic_convention
-		completion_reward = { 
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.05
-			}
-		}
-	}
-	focus = {
-		id = CAL_sinclair_elected
-		icon = GFX_goal_CAL_upton_socialist_governor_alternate
-		cost = 5
-		x = 0
-		y = 2
-		allow_branch = {
-			has_country_flag = CAL_intro_tree
-		}
-		available = {
-			always = no
-		}
-		prerequisite = {
-			focus = CAL_plan_starvation
-			focus = CAL_campaign_century
-			focus = CAL_room_for_an_author
-		}
-		relative_position_id = CAL_democratic_convention
-		completion_reward = { 
-			add_political_power = 100
-		}
-	}
-	focus = {
-		id = CAL_joaquin_strike
-		icon = GFX_goal_generic_production
-		cost = 5
-		relative_position_id = CAL_intro_focus
-		allow_branch = {
-			has_country_flag = CAL_joaquin_strike
-		}
-		prerequisite = {
-			focus = CAL_intro_focus
-		}
-		offset = {
-			x = 0
-			y = -1
-			trigger = {
-				has_country_flag = CAL_epic_path
-			}
-		}
-		bypass = {
-			always = yes
-		}
-		x = 6
-		y = 1
-		completion_reward = { }
-	}
-	focus = {
-		id = CAL_negotiate_cawui
-		icon = GFX_goal_generic_production
-		cost = 5
-		relative_position_id = CAL_joaquin_strike
-		allow_branch = {
-			has_country_flag = CAL_joaquin_strike
-		}
-		prerequisite = {
-			focus = CAL_joaquin_strike
-		}
-		mutually_exclusive = {
-			focus = CAL_disarm_strikers
-		}
-		x = 1
-		y = 1
-		completion_reward = { 
-			country_event = {
-				id = california_events.8
-				days = 10
-				random_hours = 12
-				random_days = 5
-			}
-		}
-	}
-	focus = {
-		id = CAL_disarm_strikers
-		icon = GFX_goal_generic_production
-		cost = 5
-		relative_position_id = CAL_joaquin_strike
-		allow_branch = {
-			has_country_flag = CAL_joaquin_strike
-		}
-		prerequisite = {
-			focus = CAL_joaquin_strike
-		}
-		mutually_exclusive = {
-			focus = CAL_negotiate_cawui
-		}
-		x = -1
-		y = 1
-		completion_reward = { 
-			country_event = {
-				id = california_events.7
-				days = 10
-				random_hours = 12
-				random_days = 5
-			}
-		}
-	}
-	focus = {
-		id = CAL_back_to_work
-		icon = GFX_goal_generic_production
-		cost = 5
-		relative_position_id = CAL_joaquin_strike
-		allow_branch = {
-			has_country_flag = CAL_joaquin_strike
-		}
-		prerequisite = {
-			focus = CAL_disarm_strikers
-			focus = CAL_negotiate_cawui
-		}
-		x = 0
-		y = 2
-		completion_reward = { 
-			remove_ideas = {
-				CAL_joaquin_strikes
-			}
-			if = {
-				limit = { has_completed_focus = CAL_disarm_strikers }
-				country_event = {
-					id = california_events.9
-					days = 10
-					random_hours = 12
-					random_days = 5
-				}
-			}
-			else_if = {
-				limit = { has_completed_focus = CAL_negotiate_cawui }
-				country_event = {
-					id = california_events.10
-					days = 10
-					random_days = 5
-					random_hours = 12
-				}
-			}
-		}
-	}
-	focus = {
-		id = CAL_san_francisco_strikes
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_intro_focus
-		x = 8
-		y = 0
-		allow_branch = {
-			has_country_flag = CAL_ila_strike
-		}
-		offset = {
-			trigger = {
-				has_country_flag = CAL_joaquin_strike
-			}
-			x = 0
-			y = 5
+			focus = CAL_corporate_sponsors
 		}
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_negotiate_ila
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_san_francisco_strikes
-		x = -2
+		id = CAL_corporate_sponsors
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = 2
 		y = 1
-		allow_branch = {
-			has_country_flag = CAL_ila_strike
-		}
+		relative_position_id = CAL_haight
 		prerequisite = {
-			focus = CAL_san_francisco_strikes
-		}
-		mutually_exclusive = {
-			focus = CAL_withhold_national_guard
-			focus = CAL_send_national_guard
+			focus = CAL_haight
+			focus = CAL_status_quo
 		}
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_withhold_national_guard
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_san_francisco_strikes
+		id = CAL_status_quo#talk about how conservatives have held the country for thirty years
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 0
 		y = 1
-		allow_branch = {
-			has_country_flag = CAL_ila_strike
-		}
+		relative_position_id = CAL_expand_military
 		prerequisite = {
-			focus = CAL_san_francisco_strikes
-		}
-		mutually_exclusive = {
-			focus = CAL_negotiate_ila
-			focus = CAL_send_national_guard
+			focus = CAL_expand_military
 		}
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_send_national_guard
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_san_francisco_strikes
-		x = 2
+		id = CAL_republican_convention
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = 0
 		y = 1
-		allow_branch = {
-			has_country_flag = CAL_ila_strike
-		}
+		relative_position_id = CAL_status_quo
 		prerequisite = {
-			focus = CAL_san_francisco_strikes
-		}
-		mutually_exclusive = {
-			focus = CAL_withhold_national_guard
-			focus = CAL_negotiate_ila
+			focus = CAL_status_quo
 		}
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_end_strikes
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		relative_position_id = CAL_san_francisco_strikes
+		id = CAL_republicans_elected
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 0
 		y = 2
-		allow_branch = {
-			has_country_flag = CAL_ila_strike
+		relative_position_id = CAL_status_quo
+		prerequisite = {
+			focus = CAL_republican_convention
 		}
 		prerequisite = {
-			focus = CAL_negotiate_ila
-			focus = CAL_withhold_national_guard
-			focus = CAL_send_national_guard
+			focus = CAL_moscows_man
 		}
-		completion_reward = { 
-			remove_ideas = CAL_francisco_general_strikes
-			CAL_civil_unrest_level_up = yes
+		prerequisite = {
+			focus = CAL_corporate_sponsors
 		}
+		completion_reward = { }
 	}
 	focus = {
-		id = CAL_socialist_governor
-		icon = GFX_goal_CAL_upton_socialist_governor_alternate
-		cost = 5
-		x = 0
-		y = 0
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-		}
-		bypass_effect = {
-			add_political_power = 100
-		}
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = CAL_make_appointments
-		icon = GFX_goal_CAL_make_appointments
-		cost = 5
-		x = -2
-		y = 1
-		relative_position_id = CAL_socialist_governor
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_socialist_governor
-		}
-		completion_reward = { 
-			add_political_power = 100
-		}
-	}
-	focus = {
-		id = CAL_form_legal_committee
-		icon = GFX_goal_CAL_form_legal_committe
-		cost = 5
-		x = 2
-		y = 1
-		relative_position_id = CAL_socialist_governor
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_socialist_governor
-		}
-		completion_reward = { 
-			add_political_power = 100
-		}
-	}
-	focus = {
-		id = CAL_gold_fish_bowl
-		icon = GFX_goal_CAL_goldfish_bowl
-		cost = 5
-		x = 0
-		y = 1
-		relative_position_id = CAL_socialist_governor
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_socialist_governor
-		}
-		completion_reward = {
-			add_ideas = CAL_fishbowl_governorship 
-		}
-	}
-	focus = {
-		id = CAL_the_epic_plan
-		icon = GFX_goal_CAL_bumblebee
-		cost = 5
-		x = 0
-		y = 2
-		relative_position_id = CAL_socialist_governor
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_gold_fish_bowl
-		}
-		prerequisite = {
-			focus = CAL_make_appointments
-		}
-		prerequisite = {
-			focus = CAL_form_legal_committee
-		}
-		completion_reward = {
-			unlock_decision_category_tooltip = CAL_economics_of_cooperation_cat
-		}
-	}
-	focus = {
-		id = CAL_money_act
-		icon = GFX_goal_CAL_california_money_act
-		cost = 5
-		x = 0
-		y = 1
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_the_epic_plan
-		}
-		completion_reward = {
-			unlock_decision_tooltip = CAL_sell_bonds_decision
-		}
-	}
-	focus = {
-		id = CAL_land_colonies_act#Our Daily Bread Instead?
-		icon = GFX_goal_CAL_our_daily_bread
-		cost = 5
-		x = -2
-		y = 1
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_the_epic_plan
-		}
-		completion_reward = {
-			upgrade_economy_law = yes
-			unlock_decision_tooltip = CAL_create_colonies_decision
-		}
-	}
-	focus = {
-		id = CAL_production_act
-		icon = GFX_goal_CAL_production_act
-		cost = 5
-		x = 2
-		y = 1
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_the_epic_plan
-		}
-		completion_reward = { 
-			upgrade_economy_law = yes
-			unlock_decision_tooltip = CAL_sieze_idle_factories_decision
-		}
-	}
-#	focus = {
-#		id = CAL_cam_education_department#California Money Act
-#		icon = GFX_goal_support_democracy
-#		cost = 5
-#		x = 0
-#		y = 2
-#		relative_position_id = CAL_the_epic_plan
-#		allow_branch = {
-#			has_country_flag = CAL_epic_path
-#		}
-#		prerequisite = {
-#			focus = CAL_land_colonies_act
-#		}
-#		prerequisite = {
-#			focus = CAL_money_act
-#		}
-#		prerequisite = {
-#			focus = CAL_production_act
-#		}
-#		completion_reward = { 
-#			set_variable = {
-#				var = CAL_sell_epic_bonds_cost
-#				value = 50
-#				tooltip = set_sell_bonds_cost_to_50_tt
-#			}
-#		}
-#	}
-	focus = {
-		id = CAL_replace_sales_tax
-		icon = GFX_goal_CAL_burden_off_consumer
-		cost = 5
-		x = -2
-		y = 2
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_land_colonies_act
-		}
-		prerequisite = {
-			focus = CAL_money_act
-		}
-		prerequisite = {
-			focus = CAL_production_act
-		}
-		completion_reward = { 
-			CAL_great_depression_level_down = yes
-		}
-	}
-	focus = {
-		id = CAL_income_tax
-		icon = GFX_goal_CAL_tax_the_rich
-		cost = 5
-		x = 2
-		y = 2
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_land_colonies_act
-		}
-		prerequisite = {
-			focus = CAL_money_act
-		}
-		prerequisite = {
-			focus = CAL_production_act
-		}
-		completion_reward = { 
-			CAL_epic_costs_level_down = yes
-		}
-	}
-#	focus = {
-#		id = CAL_absorb_failing_businesses#REMOVE
-#		icon = GFX_goal_support_communism
-#		cost = 5
-#		x = 0
-#		y = 1
-#		relative_position_id = CAL_black_hand
-#		allow_branch = {
-#			has_country_flag = CAL_epic_path
-#		}
-#		prerequisite = {
-#			focus = CAL_black_hand
-#		}
-#		completion_reward = { 
-#			unlock_decision_tooltip = CAL_abosrb_failing_businessess_decision
-#		}
-#	}
-	focus = {
-		id = CAL_georgist_ammendment
-		icon = GFX_goal_support_democracy
-		cost = 5
-		x = 2
-		y = 3
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_establish_pensions
-			focus = CAL_replace_sales_tax
-			focus = CAL_ban_advertising
-			focus = CAL_income_tax
-			focus = CAL_death_tax
-		}
-		completion_reward = { 
-			every_owned_state = {
-				add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	focus = {
-		id = CAL_establish_pensions
-		icon = GFX_goal_CAL_pensions
-		cost = 5
-		x = -4
-		y = 2
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_land_colonies_act
-		}
-		prerequisite = {
-			focus = CAL_money_act
-		}
-		prerequisite = {
-			focus = CAL_production_act
-		}
-		completion_reward = { 
-			add_stability = 0.05
-			add_war_support = 0.05
-		}
-	}
-	focus = {
-		id = CAL_tax_code_ammendment
-		icon = GFX_goal_support_democracy
-		cost = 5
-		x = 0
-		y = 3
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_establish_pensions
-			focus = CAL_replace_sales_tax
-			focus = CAL_ban_advertising
-			focus = CAL_income_tax
-			focus = CAL_death_tax
-		}
-		completion_reward = { 
-			add_ideas = {
-				CAL_tax_the_rich
-			}
-		}
-	}
-	focus = {
-		id = CAL_tax_utilites
-		icon = GFX_goal_support_democracy
-		cost = 5
-		x = -2
-		y = 3
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_establish_pensions
-			focus = CAL_replace_sales_tax
-			focus = CAL_ban_advertising
-			focus = CAL_income_tax
-			focus = CAL_death_tax
-		}
-		completion_reward = { 
-			add_offsite_building = { type = industrial_complex level = 4}
-		}
-	}
-	focus = {
-		id = CAL_golden_rule
-		icon = GFX_goal_generic_political_pressure
-		cost = 5
-		x = 0
-		y = 4
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_tax_code_ammendment
-		}
-		prerequisite = {
-			focus = CAL_georgist_ammendment
-		}
-		prerequisite = {
-			focus = CAL_tax_utilites
-		}
-#		prerequisite = {
-#			focus = CAL_death_tax
-#		}
-#		prerequisite = {
-#			focus = CAL_income_tax
-#		}
-#		prerequisite = {
-#			focus = CAL_cam_education_department
-#		}
-#		prerequisite = {
-#			focus = CAL_replace_sales_tax
-#		}
-		select_effect = {
-
-		}
-		completion_reward = { 
-			CAL_remove_epic_costs = yes
-			
-		}
-	}
-	focus = {
-		id = CAL_death_tax
-		icon = GFX_goal_CAL_death_tax
-		cost = 5
-		x = 4
-		y = 2
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_land_colonies_act
-		}
-		prerequisite = {
-			focus = CAL_money_act
-		}
-		prerequisite = {
-			focus = CAL_production_act
-		}
-		completion_reward = { 
-			add_to_variable = {
-				var = CAL_epic_costs_mission_time
-				value = 45
-				tooltip = add_35_days_to_epic_costs_mission
-			}
-		}
-	}
-	focus = {
-		id = CAL_foreign_focus_socialist
-		icon = GFX_goal_support_communism 
-		cost = 5
-		x = -12
-		y = 3
-		relative_position_id = CAL_socialist_governor
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_the_epic_plan
-		}
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = CAL_support_united_mine_workers
-		icon = GFX_goal_support_communism 
-		cost = 5
-		x = -2
-		y = 1
-		relative_position_id = CAL_foreign_focus_socialist
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_foreign_focus_socialist
-		}
-		completion_reward = { 
-			UMW = {
-				country_event = california_events.27
-				add_equipment_to_stockpile = {
-				    type = infantry_equipment
-				    amount = 1000
-				    producer = CAL
-				}
-				add_equipment_to_stockpile = {
-				    type = support_equipment
-				    amount = 100
-				    producer = CAL
-				}
-			}
-		}
-	}
-	focus = {
-		id = CAL_support_farmer_labor_rebellion
-		icon = GFX_goal_support_communism 
-		cost = 5
-		x = -4
-		y = 1
-		relative_position_id = CAL_foreign_focus_socialist
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_foreign_focus_socialist
-		}
-		completion_reward = { 
-			MNS = {
-				country_event = california_events.27
-				add_equipment_to_stockpile = {
-				    type = infantry_equipment
-				    amount = 1000
-				    producer = CAL
-				}
-				add_equipment_to_stockpile = {
-				    type = support_equipment
-				    amount = 100
-				    producer = CAL
-				}
-			}
-		}
-	}
-	focus = {
-		id = CAL_secure_water_sources
-		icon = GFX_goal_support_communism 
-		cost = 5
-		x = 2
-		y = 1
-		relative_position_id = CAL_foreign_focus_socialist
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		available = {
-			date > 1935.1.1
-			has_army_manpower = {
-				size > 100000
-			}
-		}
-		prerequisite = {
-			focus = CAL_foreign_focus_socialist
-		}
-		completion_reward = { 
-			create_wargoal = {
-				type = annex_everything
-				target = ARZ
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = NVD
-			}
-		}
-	}
-	focus = {
-		id = CAL_crush_religious_extremists
-		icon = GFX_goal_support_communism 
-		cost = 5
+		id = CAL_pattons_plan#patton cincinnatus path, W larps?
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 4
 		y = 1
-		relative_position_id = CAL_foreign_focus_socialist
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		available = {
-			date > 1935.1.1
-			has_army_manpower = {
-				size > 100000
-			}
-			any_neighbor_country = {
-				tag = UTT
-			}
-		}
+		relative_position_id = CAL_expand_military
 		prerequisite = {
-			focus = CAL_foreign_focus_socialist
+			focus = CAL_expand_military
 		}
-		completion_reward = { 
-			create_wargoal = {
-				type = annex_everything
-				target = UTT
-			}
-		}
-	}
-	focus = {
-		id = CAL_liberate_cascadia
-		icon = GFX_goal_support_communism 
-		cost = 5
-		x = 0
-		y = 1
-		relative_position_id = CAL_foreign_focus_socialist
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		available = {
-			date > 1937.1.1
-			has_army_manpower = {
-				size > 125000
-			}
-		}
-		prerequisite = {
-			focus = CAL_foreign_focus_socialist
-		}
-		completion_reward = { 
-			create_wargoal = {
-				type = annex_everything
-				target = ORE
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = WSH
-			}
-		}
-	}
-	focus = {
-		id = CAL_final_push_east
-		icon = GFX_goal_support_communism 
-		cost = 5
-		x = 0
-		y = 2
-		relative_position_id = CAL_foreign_focus_socialist
-		available = {
-			NOT = {
-				OR = {
-					country_exists = ARZ
-					country_exists = NVD
-					country_exists = UTT
-					country_exists = ARZ
-					country_exists = ORE
-					country_exists = WSH
-				}
-			}
-		}
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_liberate_cascadia
-		}
-		prerequisite = {
-			focus = CAL_secure_water_sources
-		}
-		prerequisite = {
-			focus = CAL_crush_religious_extremists
-		}
-		completion_reward = { 
-			create_wargoal = {
-				type = annex_everything
-				target = IDH
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = NVJ
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = WMA
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = SCA
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = TON
-			}
-		}
-	}
-	focus = {
-		id = CAL_black_hand#the black hand of california, choose to spy or not
-		icon = GFX_goal_CAL_black_hand 
-		cost = 5
-		x = 10
-		y = 3
-		relative_position_id = CAL_socialist_governor
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_the_epic_plan
-		}
-		completion_reward = { 
-			country_event = {
-				id = california_events.14
-				random_hours = 6
-				days = 1
-			}
-		}
-	}
-	focus = {
-		id = CAL_ban_advertising
-		icon = GFX_goal_CAL_ban_advertising
-		cost = 5
-		x = 0
-		y = 2
-		relative_position_id = CAL_the_epic_plan
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_land_colonies_act
-		}
-		prerequisite = {
-			focus = CAL_money_act
-		}
-		prerequisite = {
-			focus = CAL_production_act
-		}
-		completion_reward = { 
-			country_event = {
-				id = california_events.17
-				random_hours = 6
-				days = 1
-			}
-
-		}
-	}
-	focus = {
-		id = CAL_confront_radio_stations#either sieze or ask for reasonable concessions
-		icon = GFX_goal_CAL_confront_radio_stations
-		cost = 5
-		x = -1
-		y = 1
-		relative_position_id = CAL_black_hand
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_black_hand
-		}
-		completion_reward = { 
-			country_event = {
-				id = california_events.15
-				random_hours = 6
-				days = 1
-			}
-		}
-	}
-	focus = {
-		id = CAL_expose_big_bussiness#expose business autocracy
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = 1
-		y = 1
-		relative_position_id = CAL_black_hand
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_black_hand
-		}
-		completion_reward = {
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.05
-			}
-			add_popularity = {
-				ideology = conservatism_ideology
-				popularity = -0.05
-			}
-			add_stability = 0.05
-		}
-	}
-	focus = {
-		id = CAL_kick_out_lobbyists#remove corporate interest from government
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = 2
-		y = 2
-		relative_position_id = CAL_black_hand
-		prerequisite = {
-			focus = CAL_confront_radio_stations
-			focus = CAL_expose_big_bussiness
-			#focus = CAL_absorb_failing_businesses
-		}
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		completion_reward = { 
-			remove_ideas = {
-				CAL_corporate_influence
-			}
-		}
-	}
-	focus = {
-		id = CAL_assemble_brain_trust
-		icon = GFX_goal_CAL_assemble_brain_trust
-		cost = 5
-		x = -2
-		y = 2
-		relative_position_id = CAL_black_hand
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_confront_radio_stations
-			focus = CAL_expose_big_bussiness
-			#focus = CAL_absorb_failing_businesses
-		}
-		completion_reward = { 
-			add_research_slot = 1
-		}
-	}
-	focus = {
-		id = CAL_hollywood_problem
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = 0
-		y = 2
-		relative_position_id = CAL_black_hand
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_confront_radio_stations
-			focus = CAL_expose_big_bussiness
-			#focus = CAL_absorb_failing_businesses
-		}
-		completion_reward = { 
-			country_event = {
-				id = california_events.16
-				random_hours = 6
-				days = 1
-			}
-		}
-	}
-	focus = {
-		id = CAL_death_of_autocracy#Work With the Enemy? Decide whether or not EPIC cooperatives will work with private business or boycott them.
-		icon = GFX_goal_support_communism
-		cost = 5
-		x = 0
-		y = 3
-		relative_position_id = CAL_black_hand
-		allow_branch = {
-			has_country_flag = CAL_epic_path
-		}
-		prerequisite = {
-			focus = CAL_assemble_brain_trust
-		}
-		prerequisite = {
-			focus = CAL_hollywood_problem
-		}
-		prerequisite = {
-			focus = CAL_kick_out_lobbyists
-		}
-		completion_reward = { 
-			add_political_power = 100
-			add_stability = 0.1
-		}
-	}
-
-	#ARMY
-	
-	focus = {
-		id = CAL_building_an_army
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 6
-		y = 10
-		offset = {
-			x = 0
-			y = -1
-			trigger = {
-				has_country_flag = CAL_epic_path
-			}
-		}
-		allow_branch = {
-			always = no
-		}
-		completion_reward = { 
-			army_experience = 50
-		}
-	}
-	focus = {
-		id = CAL_pattons_guidance
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 1
-		x = -7
-		y = 1
-		prerequisite = {
-			focus = CAL_building_an_army
-		}
-		relative_position_id = CAL_building_an_army
-		mutually_exclusive = {
-			focus = CAL_sideline_patton
-		}
-		completion_reward = { 
-		}
-	}
-	focus = {
-		id = CAL_battlefield_of_the_press_no
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = -6
-		y = 1
-		prerequisite = {
-			focus = CAL_pattons_guidance
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			add_war_support = 0.1
-		}
-	}
-	focus = {
-		id = CAL_armor_doctrine
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 0
-		y = 1
-		prerequisite = {
-			focus = CAL_pattons_guidance
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			#set_grand_doctrine = mobile_warfare
-			#I want to set it so that it gives bonus for mobile warfare grand doctrine but idk how
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.9
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-	focus = {
-		id = CAL_build_tank_factories
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = -3
-		y = 2
-		prerequisite = {
-			focus = CAL_armor_doctrine
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			random_core_state = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_core_state = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			add_ideas = {
-				patton_manufactorer_cal
-			}
-		}
-	}
-	focus = {
-		id = CAL_mobile_artillery
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 1
-		y = 2
-		prerequisite = {
-			focus = CAL_armor_doctrine
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				ahead_reduction = 1
-				category = artillery
-			}
-		}
-	}
-	focus = {
-		id = CAL_motorized_infantry
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 1
-		y = 3
-		prerequisite = {
-			focus = CAL_mobile_artillery
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = motorized_equipment
-			}
-		}
-	}
-	focus = {
-		id = CAL_master_blitzkrieg
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 0
-		y = 4
-		prerequisite = {
-			focus = CAL_speed_saves_lives
-		}
-		prerequisite = {
-			focus = CAL_motorized_infantry
-		}
-		prerequisite = {
-			focus = CAL_intergrate_air_support
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			unlock_tactic = tactic_masterful_blitz
-		}
-	}
-	focus = {
-		id = CAL_speed_saves_lives
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = -2
-		y = 3
-		prerequisite = {
-			focus = CAL_build_tank_factories
-			focus = CAL_develop_tanks
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			add_ideas = {
-				CAL_speed_saves_lives
-			}
-		}
-	}
-	focus = {
-		id = CAL_develop_tanks
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = -1
-		y = 2
-		prerequisite = {
-			focus = CAL_armor_doctrine
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = cat_medium_armor
-			}
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = cat_light_armor
-			}
-		}
-	}
-	focus = {
-		id = CAL_establish_airforce
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 0
-		y = 2
-		prerequisite = {
-			focus = CAL_pattons_guidance
-			focus = CAL_sideline_patton
-		}
-		relative_position_id = CAL_building_an_army
-		completion_reward = { 
-			air_experience = 100
-		}
-	}
-	focus = {
-		id = CAL_long_destruction
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 0
-		y = 3
-		prerequisite = {
-			focus = CAL_establish_airforce
-		}
-		relative_position_id = CAL_building_an_army
-		completion_reward = { 
-			add_tech_bonus = {
-				bonus = 2
-				uses = 2
-				category = cat_strategic_bomber
-			}
-		}
-	}
-	focus = {
-		id = CAL_support_from_above
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = -2
-		y = 3
-		prerequisite = {
-			focus = CAL_establish_airforce
-		}
-		relative_position_id = CAL_building_an_army
-		completion_reward = { 
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = tactical_bomber
-			}
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = cas_bomber
-			}
-		}
-	}
-	focus = {
-		id = CAL_control_the_skies
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 2
-		y = 3
-		prerequisite = {
-			focus = CAL_establish_airforce
-		}
-		relative_position_id = CAL_building_an_army
-		completion_reward = { 
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = medium_air
-			}
-		}
-	}
-	focus = {
-		id = CAL_infantry_of_the_air
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 10
-		y = 3
-		prerequisite = {
-			focus = CAL_control_the_skies
-		}
-		available = {
-			always = no
-		}
-		relative_position_id = CAL_pattons_guidance
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_intergrate_air_support
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 3
-		y = 3
-		prerequisite = {
-			focus = CAL_armor_doctrine
-		}
-		prerequisite = {
-			focus = CAL_support_from_above
-		}
-		relative_position_id = CAL_pattons_guidance
-		completion_reward = { 
-			add_ideas = {CAL_intergrated_air_support}
-		}
-	}
-	focus = {
-		id = CAL_sideline_patton
-		icon = GFX_goal_generic_allies_build_infantry
-		cost = 5
-		x = 7
+		id = CAL_moscows_man
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = -2
 		y = 1
-		mutually_exclusive = {
-			focus = CAL_pattons_guidance
-		}
+		relative_position_id = CAL_pattons_plan
 		prerequisite = {
-			focus = CAL_building_an_army
-		}
-		relative_position_id = CAL_building_an_army
-		available = {
-			always = no
+			focus = CAL_status_quo
+			focus = CAL_pattons_plan
 		}
 		completion_reward = { }
 	}
-
-	continuous_focus_position = {
+	focus = {
+		id = CAL_black_reichswehr
+		icon = GFX_goal_generic_production2
+		cost = 10
 		x = 0
-		y = 10000
+		y = 1
+		relative_position_id = CAL_pattons_plan
+		prerequisite = {
+			focus = CAL_pattons_plan
+		}
+		completion_reward = { }
 	}
-	default = no
+	focus = {
+		id = CAL_ensure_loyalty
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = CAL_pattons_plan
+		prerequisite = {
+			focus = CAL_pattons_plan
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = CAL_cincinnatus#might change later, idk if this is w larps
+		icon = GFX_goal_generic_production2
+		cost = 10
+		x = 0
+		y = 2
+		relative_position_id = CAL_pattons_plan
+		prerequisite = {
+			focus = CAL_moscows_man
+		}
+		prerequisite = {
+			focus = CAL_black_reichswehr
+		}
+		prerequisite = {
+			focus = CAL_ensure_loyalty
+		}
+		completion_reward = { }
+	}
 }
