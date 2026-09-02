@@ -70,6 +70,13 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = CAL_break_status
+		mutually_exclusive = {
+			focus = CAL_status_quo
+			focus = CAL_pattons_plan
+			focus = CAL_haight
+			focus = CAL_sinclair
+			#focus = CAL_nazi
+		}
 		prerequisite = {
 			focus = CAL_break_status
 		}
@@ -137,6 +144,13 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = CAL_break_status
+		mutually_exclusive = {
+			focus = CAL_status_quo
+			focus = CAL_pattons_plan
+			focus = CAL_haight
+			#focus = CAL_sinclair
+			focus = CAL_nazi
+		}
 		prerequisite = {
 			focus = CAL_break_status
 		}
@@ -185,6 +199,13 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = CAL_budget_questions
+		mutually_exclusive = {
+			focus = CAL_status_quo
+			focus = CAL_pattons_plan
+			#focus = CAL_haight
+			focus = CAL_sinclair
+			focus = CAL_nazi
+		}
 		prerequisite = {
 			focus = CAL_break_status
 			focus = CAL_expand_military
@@ -257,6 +278,13 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = CAL_expand_military
+		mutually_exclusive = {
+			#focus = CAL_status_quo
+			focus = CAL_pattons_plan
+			focus = CAL_haight
+			focus = CAL_sinclair
+			focus = CAL_nazi
+		}
 		prerequisite = {
 			focus = CAL_expand_military
 		}
@@ -299,6 +327,13 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = CAL_expand_military
+		mutually_exclusive = {
+			focus = CAL_status_quo
+			#focus = CAL_pattons_plan
+			focus = CAL_haight
+			focus = CAL_sinclair
+			focus = CAL_nazi
+		}
 		prerequisite = {
 			focus = CAL_expand_military
 		}
