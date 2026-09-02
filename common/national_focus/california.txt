@@ -22,10 +22,14 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = calbeforecivilwar
 		}
-		completion_reward = { }
+		completion_reward = { 
+			country_event = {
+				id = california_events.36
+			}
+		}
 	}
 	focus = {
-		id = CAL_budget_questions
+		id = CAL_budget_questions#sunny governor for a sunny state
 		icon = GFX_goal_generic_production2
 		cost = 10
 		x = 0
@@ -33,7 +37,11 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_sunny_governor
 		}
-		completion_reward = { }
+		completion_reward = { 
+			country_event = {
+				id = california_events.6
+			}
+		}
 	}
 	focus = {
 		id = CAL_expand_military#Expand military budget, bigger military budget
@@ -47,10 +55,12 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_budget_questions
 		}
-		completion_reward = { }
+		completion_reward = { 
+			add_offsite_building = { type = arms_factory level = 4 }
+		}
 	}
 	focus = {
-		id = CAL_break_status#quo, break status quo
+		id = CAL_break_status#quo, break status quo/focus on social issues?
 		icon = GFX_goal_generic_production2
 		cost = 10
 		x = -4
@@ -61,7 +71,9 @@ focus_tree = {
 		prerequisite = {
 			focus = CAL_budget_questions
 		}
-		completion_reward = { }
+		completion_reward = { 
+			add_stability = 0.1
+		}
 	}
 	focus = {
 		id = CAL_nazi
@@ -157,7 +169,7 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_epic_plan
+		id = CAL_room_author
 		icon = GFX_goal_generic_production2
 		cost = 10
 		x = 0
@@ -184,11 +196,11 @@ focus_tree = {
 			focus = CAL_corporate_sponsors
 		}
 		prerequisite = {
-			focus = CAL_epic_plan
+			focus = CAL_room_author
 			focus = CAL_forward_progress
 		}
 		prerequisite = {
-			focus = CAL_democratic_convention
+			focus = CAL_appeal_moderates
 		}
 		completion_reward = { }
 	}
@@ -213,7 +225,7 @@ focus_tree = {
 		completion_reward = { }
 	}
 	focus = {
-		id = CAL_democratic_convention
+		id = CAL_appeal_moderates
 		icon = GFX_goal_generic_production2
 		cost = 10
 		x = -2
@@ -251,7 +263,7 @@ focus_tree = {
 			focus = CAL_forward_progress
 		}
 		prerequisite = {
-			focus = CAL_democratic_convention
+			focus = CAL_appeal_moderates
 		}
 		prerequisite = {
 			focus = CAL_corporate_sponsors

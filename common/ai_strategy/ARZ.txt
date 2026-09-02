@@ -4,7 +4,7 @@ ARZ_support_california = {
 	}
 	enable = {
 		country_exists = CAL
-		has_global_flag = california_civilwar_flag
+		#has_global_flag = california_civilwar_flag
 	}
 	abort = {
 		NOT = {

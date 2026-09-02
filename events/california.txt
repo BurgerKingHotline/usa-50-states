@@ -150,9 +150,11 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = california_events.6.a
+		complete_national_focus = CAL_expand_military#bigger budget
 	}
 	option = {
 		name = california_events.6.b
+		complete_national_focus = CAL_break_status#focus on social issues
 	}
 }
 country_event = {
@@ -1004,6 +1006,7 @@ country_event = {
 	desc = california_events.34.desc
 	picture = GFX_report_event_cal_default
 	is_triggered_only = yes
+	fire_only_once = yes
 	option = {#nominate frank merriam
 		name = california_events.34.a
 		add_popularity = {
@@ -1018,6 +1021,40 @@ country_event = {
 			popularity = 0.05
 		}
 	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = california_events.37
+				days = 4
+				random_days = 4
+				random_hours = 12
+				hours = 12
+			}
+		}
+	}
+}
+country_event = {
+	id = california_events.36#intro focus - generalevents/elections, is also setting up elections
+	title = california_events.36.t
+	desc = california_events.36.desc
+	picture = GFX_report_event_cal_default
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = california_events.36.a#sunny man for a sunny state
+		add_stability = 0.01
+	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = california_events.34
+				days = 4
+				random_days = 4
+				random_hours = 12
+				hours = 12
+			}
+		}
+	}
 }
 country_event = {
 	id = california_events.37#upton sinclair candidacy for democrat - elections
@@ -1027,15 +1064,35 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.37.a
-		country_event = {
-			id = california_events.38
-		}
-	}
-	option = {
-		name = california_events.37.b
 		add_popularity = {
 			ideology = socialism_ideology
-			popularity = 0.01
+			popularity = 0.05
+		}
+	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = california_events.39
+				days = 4
+				random_days = 4
+				random_hours = 12
+				hours = 12
+			}
+		}
+	}
+}
+country_event = {
+	id = california_events.38#republican mideterms - elections
+	title = california_events.38.t
+	desc = california_events.38.desc
+	picture = GFX_report_event_cal_default
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = california_events.38.a
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.05
 		}
 	}
 }
@@ -1047,16 +1104,6 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = california_events.39.a
-		country_event = {
-			id = california_events.40
-		}
-	}
-	option = {
-		name = california_events.39.b#stay in
-
-	}
-	option = {
-		name = california_events.39.c#drop out
 		add_popularity = {
 			ideology = democratic
 			popularity = 0.01
@@ -1064,35 +1111,20 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.41#republican mideterms - elections
-	title = california_events.41.t
-	desc = california_events.41.desc
-	picture = GFX_report_event_cal_default
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = california_events.41.a
-		add_popularity = {
-			ideology = conservatism_ideology
-			popularity = 0.05
-		}
-	}
-}
-country_event = {
-	id = california_events.43#frank merriam/james rolph wins election - elections
-	title = california_events.43.t
-	desc = california_events.43.desc
+	id = california_events.40#frank merriam/james rolph wins election - elections
+	title = california_events.40.t
+	desc = california_events.40.desc
 	picture = GFX_report_event_cal_merriaminaguration
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
-		name = california_events.43.a
+		name = california_events.40.a
 	}
 }
 country_event = {
-	id = california_events.44#election results are in - elections
-	title = california_events.44.t
-	desc = california_events.44.desc
+	id = california_events.41#election results are in - elections
+	title = california_events.41.t
+	desc = california_events.41.desc
 	picture = GFX_report_event_cal_default
 	trigger = {
 		date > 1933.11.1
@@ -1100,14 +1132,14 @@ country_event = {
 	}
 	fire_only_once = yes
 	option = {
-		name = california_events.44.a
+		name = california_events.41.a
 		add_stability = -0.1
 		add_popularity = {
 			ideology = conservatism_ideology
 			popularity = -0.1
 		}
 		country_event = {
-			id = california_events.45
+			id = california_events.42
 			days = 6
 			random_days = 6
 			random_hours = 12
@@ -1116,14 +1148,14 @@ country_event = {
 	}
 }
 country_event = {
-	id = california_events.45#deep election fraud discovered - elections
-	title = california_events.45.t
-	desc = california_events.45.desc
+	id = california_events.42#deep election fraud discovered - elections, for patton path
+	title = california_events.42.t
+	desc = california_events.42.desc
 	picture = GFX_report_event_cal_default
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
-		name = california_events.45.a
+		name = california_events.42.a
 		add_stability = -0.1
 		add_popularity = {
 			ideology = conservatism_ideology
