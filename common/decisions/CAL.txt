@@ -1,6 +1,6 @@
 
 CAL_civilwar_cat = {
-	CAL_election_season = {
+	CAL_election_season_mission = {
 		activation = {
 			has_completed_focus = CAL_declare_new_elections
 		}
@@ -18,45 +18,153 @@ CAL_civilwar_cat = {
 		complete_effect = {
 		}
 	}
-    CAL_form_epic_clubs = {
-        allowed = {
-            tag = CAL
-        }
-		visible = {
-			has_completed_focus = CAL_sinclairs_vision_soc
+	CAL_nazi_coup_mission = {
+		activation = {
+			always = yes
 		}
-        icon = generic_prepare_civil_war   
-        fire_only_once = yes
-        days_remove = 20
-		cost = 20
-        modifier = {
-			socialism_ideology_drift = 0.02
-        }
-        remove_effect = {
-			add_political_power = 20
-        }
-    }
-    CAL_appeal_democrats_progressives = {
-        allowed = {
-            tag = CAL
-        }
-		visible = {
-			has_completed_focus = CAL_sinclairs_vision_soc
+		allowed = {
+			tag = CAL
 		}
-        icon = generic_prepare_civil_war   
-        fire_only_once = yes
-        days_remove = 43
-		cost = 20
-        modifier = {
-			democratic_drift = -0.01
-        }
-        remove_effect = {
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = 0.016
-			}
-        }
-    }
+		priority = 100
+		days_mission_timeout = 160
+		available = {
+			always = no
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+		}
+		complete_effect = {
+		}
+	}
+	CAL_conservatives_election_mission = {
+		activation = {
+			always = yes
+		}
+		allowed = {
+			tag = CAL
+		}
+		days_mission_timeout = CAL_oppposition_mission_time_gb
+		available = {
+			always = no
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+		}
+		complete_effect = {
+		}
+	}
+	CAL_haight_election_mission = {
+		activation = {
+			always = yes
+		}
+		allowed = {
+			tag = CAL
+		}
+		days_mission_timeout = CAL_oppposition_mission_time_gb
+		available = {
+			always = no
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+		}
+		complete_effect = {
+		}
+	}
+	CAL_sinclair_election_mission = {
+		activation = {
+			always = yes
+		}
+		allowed = {
+			tag = CAL
+		}
+		days_mission_timeout = CAL_oppposition_mission_time_gb
+		available = {
+			always = no
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+		}
+		complete_effect = {
+		}
+	}
+	CAL_organize_militias_decision = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = CAL_decision_reenable_time_gb
+		days_remove = CAL_decision_timeout_time_gb
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+		
+		cost = 50
+
+		fire_only_once = no
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+		}
+	}
+	CAL_campaign_decision = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = CAL_decision_reenable_time_gb
+		days_remove = CAL_decision_timeout_time_gb
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+		
+		cost = 50
+
+		fire_only_once = no
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+		}
+	}
+	CAL_stockpile_weapons_decision = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = CAL
+		}
+		days_re_enable = CAL_decision_reenable_time_gb
+		days_remove = CAL_decision_timeout_time_gb
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+		
+		cost = 50
+
+		fire_only_once = no
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+		}
+	}
 }
 
 
