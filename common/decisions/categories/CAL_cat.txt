@@ -1,4 +1,4 @@
-CAL_civilwar_cat = {
+CAL_civilwar_preparation_cat = {
 	allowed = {
 		tag = CAL
 	}
@@ -6,7 +6,7 @@ CAL_civilwar_cat = {
 	}
 	visible = {
 		NOT = {
-			has_global_flag = CAL_civilwar_flag
+			has_global_flag = california_civilwar_flag
 		}
 	}
 	visible_when_empty = yes

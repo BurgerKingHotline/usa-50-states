@@ -1,8 +1,6 @@
-
-CAL_civilwar_cat = {
+CAL_civilwar_preparation_cat = {
 	CAL_election_season_mission = {
 		activation = {
-			has_completed_focus = CAL_declare_new_elections
 		}
 		allowed = {
 			tag = CAL
@@ -20,7 +18,6 @@ CAL_civilwar_cat = {
 	}
 	CAL_nazi_coup_mission = {
 		activation = {
-			always = yes
 		}
 		allowed = {
 			tag = CAL
@@ -38,7 +35,6 @@ CAL_civilwar_cat = {
 	}
 	CAL_conservatives_election_mission = {
 		activation = {
-			always = yes
 		}
 		allowed = {
 			tag = CAL
@@ -55,7 +51,6 @@ CAL_civilwar_cat = {
 	}
 	CAL_haight_election_mission = {
 		activation = {
-			always = yes
 		}
 		allowed = {
 			tag = CAL
@@ -87,7 +82,6 @@ CAL_civilwar_cat = {
 	}
 	CAL_fascist_subversion_mission = {
 		activation = {
-			always = yes
 		}
 		allowed = {
 			tag = CAL
@@ -146,7 +140,6 @@ CAL_civilwar_cat = {
 	}
 	CAL_sinclair_election_mission = {
 		activation = {
-			always = yes
 		}
 		allowed = {
 			tag = CAL
