@@ -8,4 +8,7 @@ state = {
 		owner = LOU
 		add_core_of = LOU
 	}
+	resources = {
+		oil = 58
+	}
 }

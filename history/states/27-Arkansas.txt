@@ -10,4 +10,7 @@ state = {
 		owner = ARK
 		add_core_of = ARK
 	}
+	resources = {
+		aluminium = 28
+	}
 }

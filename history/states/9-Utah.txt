@@ -4,6 +4,10 @@ state = {
 	provinces = {
 		8354 1826 1280 2161 662 3572 13030 4947 2450 4298 4067 8167 4737 1651 8271 8130 8102 8151 5584 953 3587 2712 1594 2860 2266 653 4267
 	}
+	resources = {
+		tungsten = 152
+		coal = 8
+	}
 	manpower = 127854
 	state_category = rural
 	buildings_max_level_factor = 1.000

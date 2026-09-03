@@ -8,4 +8,7 @@ state = {
 		owner = INA
 		add_core_of = INA
 	}
+	resources = {
+		coal = 28
+	}
 }

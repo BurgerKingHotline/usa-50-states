@@ -11,4 +11,9 @@ state = {
 			4664 2 #devils lake
 		}
 	}
+	resources = {
+		steel = 34
+		oil = 14
+		coal = 24
+	}
 }

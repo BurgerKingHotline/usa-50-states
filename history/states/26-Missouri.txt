@@ -10,4 +10,8 @@ state = {
 		owner = MSR
 		add_core_of = MSR
 	}
+	resources = {
+		aluminium = 24
+		coal = 10
+	}
 }

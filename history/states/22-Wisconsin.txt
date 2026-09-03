@@ -11,4 +11,7 @@ state = {
 			7817 11 #madison
 		}
 	}
+	resources = {
+		steel = 56
+	}
 }

@@ -8,4 +8,8 @@ state = {
 		owner = MCH
 		add_core_of = MCH
 	}
+	resources = {
+		steel = 120
+		coal = 10
+	}
 }

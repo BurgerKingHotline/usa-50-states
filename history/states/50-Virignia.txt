@@ -8,4 +8,7 @@ state = {
 		owner = VRG
 		add_core_of = VRG
 	}
+	resources = {
+		coal = 22
+	}
 }

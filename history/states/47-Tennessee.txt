@@ -8,4 +8,8 @@ state = {
 		owner = TNS
 		add_core_of = TNS
 	}
+	resources = {
+		steel = 120
+		coal = 10
+	}
 }

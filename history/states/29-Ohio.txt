@@ -10,4 +10,9 @@ state = {
 		owner = OHI
 		add_core_of = OHI
 	}
+	resources = {
+		steel = 56
+		aluminium = 18
+		coal = 26
+	}
 }

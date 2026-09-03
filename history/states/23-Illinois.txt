@@ -11,4 +11,7 @@ state = {
 			8370 25
 		}
 	}
+	resources = {
+		coal = 68
+	}
 }

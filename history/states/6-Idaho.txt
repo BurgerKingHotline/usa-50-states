@@ -3,6 +3,11 @@ state = {
 	name = "STATE_6"
 	manpower = 166118
 	state_category = rural
+	resources = {
+		steel = 32
+		chromium = 2
+		tungsten = 36
+	}
 	provinces = {
 		157 433 1204 1355 1356 2194 2239 2287 2793 2905 3285 3355 3565 3891 3899 4359 5732 6756 7466 7548 7650 13011 13017
 	}

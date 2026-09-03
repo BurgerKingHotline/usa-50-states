@@ -10,4 +10,9 @@ state = {
 		owner = TEX
 		add_core_of = TEX
 	}
+	resources = {
+		oil = 420
+		aluminium = 100
+		coal = 22
+	}
 }

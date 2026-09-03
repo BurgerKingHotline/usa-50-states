@@ -20,4 +20,7 @@ state = {
 			3860 1 #bemidji
 		}
 	}
+	resources = {
+		steel = 220
+	}
 }

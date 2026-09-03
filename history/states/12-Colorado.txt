@@ -8,4 +8,8 @@ state = {
 		owner = CLO
 		add_core_of = CLO
 	}
+	resources = {
+		oil = 28
+		coal = 14
+	}
 }

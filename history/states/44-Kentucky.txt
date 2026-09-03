@@ -8,4 +8,7 @@ state = {
 		owner = KTY
 		add_core_of = KTY
 	}
+	resources = {
+		coal = 112
+	}
 }

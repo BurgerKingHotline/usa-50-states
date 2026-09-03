@@ -10,4 +10,8 @@ state = {
 		owner = PEN
 		add_core_of = PEN
 	}
+	resources = {
+		steel = 88
+		coal = 320
+	}
 }
