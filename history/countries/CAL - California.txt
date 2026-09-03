@@ -25,22 +25,25 @@ set_country_flag = calbeforecivilwar#IMPORTANT!!!
 #used for election decisions
 set_variable = { CAL_popularity_bonus_large_gb = 0.05 }
 set_variable = { CAL_popularity_bonus_gb = 0.03 }
-set_variable = { CAL_popularity_cost_gb = -0.01 }
-set_variable = { CAL_oppposition_mission_time_gb = 31 }
+set_variable = { CAL_popularity_bonus_small_gb = 0.01 }
+set_variable = { CAL_popularity_malus_gb = -0.01 }
+set_variable = { CAL_oppposition_mission_time_gb = 28 }
 set_variable = { CAL_decision_reenable_time_gb = 0 }
 set_variable = { CAL_decision_timeout_time_gb = 25 }
 
 #civilwar militias setup
-set_variable = { CAL_socialist_banner_bonus = 2 }
-set_variable = { CAL_fascist_banner_bonus = 2 }
+set_variable = { CAL_socialist_banner_bonus = 1 }
+set_variable = { CAL_fascist_banner_bonus = 0 }
 set_variable = { CAL_jefferson_banner_bonus = 10 }#used to represent jefferson seperatists, now represents fascist sepratists
 set_variable = { CAL_conservative_banner_bonus = 2 }
-set_variable = { CAL_socialist_stockpile_infantry = 150 }
-set_variable = { CAL_socialist_stockpile_support = 30 }
-set_variable = { CAL_conservative_stockpile_infantry = 150 }
-set_variable = { CAL_conservative_stockpile_support = 30 }
-set_variable = { CAL_fascist_stockpile_infantry = 150 }
-set_variable = { CAL_fascist_stockpile_support = 30 }
+set_variable = { CAL_stockpile_infantry_increase = 150 }
+set_variable = { CAL_stockpile_support_increase = 30 }
+set_variable = { CAL_socialist_stockpile_infantry = 40 }
+set_variable = { CAL_socialist_stockpile_support = 0 }
+set_variable = { CAL_conservative_stockpile_infantry = 120 }
+set_variable = { CAL_conservative_stockpile_support = 0 }
+set_variable = { CAL_fascist_stockpile_infantry = 25 }
+set_variable = { CAL_fascist_stockpile_support = 0 }
 
 
 #california array, used for reintergration decisions

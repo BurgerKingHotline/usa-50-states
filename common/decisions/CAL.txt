@@ -66,6 +66,80 @@ CAL_civilwar_cat = {
 		}
 		icon = generic_prepare_civil_war
 		timeout_effect = {
+			random_list = {
+				1 = {
+					add_popularity = {
+						ideology = democratic
+						popularity = CAL_popularity_bonus_gb
+					}
+				}
+				2 = {
+					add_popularity = {
+						ideology = democratic
+						popularity = CAL_popularity_bonus_small_gb
+					}
+				}
+			}
+			activate_mission = CAL_haight_election_mission
+		}
+		complete_effect = {
+		}
+	}
+	CAL_fascist_subversion_mission = {
+		activation = {
+			always = yes
+		}
+		allowed = {
+			tag = CAL
+		}
+		days_mission_timeout = CAL_oppposition_mission_time_gb
+		available = {
+			always = no
+		}
+		icon = generic_prepare_civil_war
+		timeout_effect = {
+			random_list = {
+				0.5 = {
+					add_popularity = {
+						ideology = fascism
+						popularity = CAL_popularity_bonus_gb
+					}
+				}
+				0.5 = {
+					add_popularity = {
+						ideology = fascism
+						popularity = CAL_popularity_bonus_small_gb
+					}
+				}
+				1 = {
+					add_to_variable = {
+						var = CAL_fascist_banner_bonus
+						value = 1
+					}
+					custom_effect_tooltip = add_1_fascist_banner_bonus_tt
+					add_popularity = {
+						ideology = fascism
+						popularity = CAL_popularity_malus_gb
+					}
+				}
+				1 = {
+					add_to_variable = {
+						var = CAL_fascist_stockpile_infantry
+						value = CAL_stockpile_infantry_increase
+						tooltip = add_100_to_var_tt
+					}
+					add_to_variable = {
+						var = CAL_fascist_stockpile_support
+						value = CAL_stockpile_support_increase
+						tooltip = add_100_to_var_tt
+					}
+					add_popularity = {
+						ideology = fascism
+						popularity = CAL_popularity_malus_gb
+					}
+				}
+			}
+			activate_mission = CAL_fascist_subversion_mission
 		}
 		complete_effect = {
 		}
@@ -83,6 +157,48 @@ CAL_civilwar_cat = {
 		}
 		icon = generic_prepare_civil_war
 		timeout_effect = {
+			random_list = {
+				0.5 = {
+					add_popularity = {
+						ideology = socialism_ideology
+						popularity = CAL_popularity_bonus_large_gb 
+					}
+				}
+				0.5 = {
+					add_popularity = {
+						ideology = socialism_ideology
+						popularity = CAL_popularity_bonus_gb
+					}
+				}
+				1 = {
+					add_to_variable = {
+						var = CAL_socialist_banner_bonus
+						value = 1
+					}
+					custom_effect_tooltip = add_1_fascist_banner_bonus_tt
+					add_popularity = {
+						ideology = socialism_ideology
+						popularity = CAL_popularity_malus_gb
+					}
+				}
+				1 = {
+					add_to_variable = {
+						var = CAL_socialist_stockpile_infantry
+						value = CAL_stockpile_infantry_increase
+						tooltip = add_100_to_var_tt
+					}
+					add_to_variable = {
+						var = CAL_socialist_stockpile_support
+						value = CAL_stockpile_support_increase
+						tooltip = add_100_to_var_tt
+					}
+					add_popularity = {
+						ideology = socialism_ideology
+						popularity = CAL_popularity_malus_gb
+					}
+				}
+			}
+			activate_mission = CAL_sinclair_election_mission
 		}
 		complete_effect = {
 		}
@@ -162,733 +278,6 @@ CAL_civilwar_cat = {
 		ai_will_do = {
 			factor = 10
 		}
-		complete_effect = {
-		}
-	}
-}
-
-
-#Redundant
-
-CAL_things_are_getting_worse_cat = {
-	CAL_things_are_getting_worse_mission = {
-		activation = {
-			has_idea = CAL_great_collapse
-		}
-		allowed = {
-			original_tag = CAL
-		}
-		cancel_trigger = {
-			#always = no
-			NOT = {
-				has_idea = CAL_great_collapse
-			}
-		}
-		days_re_enable = 1
-		priority = 50
-		days_mission_timeout = 45#45
-		available = {
-			has_completed_focus = CAL_golden_rule
-		}
-		icon = generic_prepare_civil_war
-		timeout_effect = {
-			activate_mission = CAL_things_are_getting_worse_mission
-			random_list = {
-				CAL_brooke_event_chance = {
-					if = {
-						limit = {
-							check_variable = {
-								CAL_brooke_escalation = 0
-							}
-						}
-						country_event = california_events.11
-						add_to_variable = {
-							var = CAL_brooke_escalation
-							value = 1
-						}
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_brooke_escalation = 1
-							}
-						}
-						country_event = california_events.12
-						set_variable = {
-							CAL_brooke_event_chance = 0
-						}
-					}
-				}
-				CAL_joaquin_event_chance = {
-					if = {
-						limit = {
-							check_variable = {
-								CAL_joaquin_escalation = 0 
-							}
-						}
-						country_event = california_events.7
-						add_to_variable = {
-							var = CAL_jefferson_escalation
-							value = 1
-						}
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_joaquin_escalation = 1
-							}
-						}
-						add_to_variable = {
-							var = CAL_jefferson_escalation
-							value = 1
-						}
-						country_event = california_events.8
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_joaquin_escalation = 2
-							}
-						}
-						country_event = california_events.9
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_joaquin_escalation = 3
-							}
-						}
-						country_event = california_events.10
-						set_variable = {
-							CAL_joaquin_event_chance = 0
-						}
-					}
-					
-				}
-				CAL_jefferson_event_chance = {
-					if = {
-						limit = {
-							check_variable = {
-								CAL_jefferson_escalation = 0
-							}
-						}
-						country_event = california_events.24
-						add_to_variable = {
-							var = CAL_jefferson_escalation
-							value = 1
-						}
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_jefferson_escalation = 1
-							}
-						}
-						add_to_variable = {
-							var = CAL_jefferson_escalation
-							value = 1
-						}
-						country_event = california_events.25
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_jefferson_escalation = 2
-							}
-						}
-						add_to_variable = {
-							var = CAL_jefferson_escalation
-							value = 1
-						}
-						country_event = california_events.22
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_jefferson_escalation = 3
-							}
-						}
-						country_event = california_events.21
-						set_variable = {
-							CAL_jefferson_event_chance = 0
-						}
-					}
-					
-				}
-				CAL_ila_event_chance = {
-					if = {
-						limit = {
-							check_variable = {
-								CAL_ila_escalation = 0
-							}
-						}
-						country_event = california_events.1
-						add_to_variable = {
-							var = CAL_ila_escalation
-							value = 1
-						}
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_ila_escalation = 1
-							}
-						}
-						add_to_variable = {
-							var = CAL_ila_escalation
-							value = 1
-						}
-						country_event = california_events.2
-					}
-					else_if = {
-						limit = { 
-							check_variable = {
-								CAL_ila_escalation = 2
-							}
-						}
-						country_event = california_events.3
-						set_variable = {
-							CAL_ila_event_chance = 0
-						}
-					}
-					
-				}
-				1 = {
-					country_event = california_events.13
-				}
-			}
-		}
-		complete_effect = {
-		}
-
-	}
-}
-CAL_1934_gubernatorial_election_cat = {
-	CAL_merriam_campaigning_mission = {
-	    activation = {
-			always = yes
-    	}
-	    available = {
-			always = no
-	    }
-    	icon = mission_icon     # For GFX_decision_mission_icon
-	    is_good = no
-	    days_mission_timeout = 100
-    	selectable_mission = no
-		priority = 10
-	    complete_effect = {
-	    }
-    	timeout_effect = {
-			add_popularity = {
-				ideology = conservatism_ideology
-				popularity = CAL_merriam_popularity_increase_1934_gb
-			}
-		}
-
-	}
-	CAL_campaign_sinclair_1_decision = {
-
-		icon = generic_prepare_civil_war
-
-		allowed = {
-			original_tag = CAL
-		}
-		days_re_enable = 30 
-		days_remove = 35
-
-		visible = {
-			
-		}
-
-		available = {
-		}
-		
-		cost = 25
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 0
-		}
-		modifier = {
-			socialism_ideology_drift = 0.01
-		}
-
-		complete_effect = {
-			add_to_variable = {
-				var = CAL_sinclair_increase_1934_gb_small
-				value = 5
-			}
-
-		}
-	}
-	CAL_campaign_sinclair_2_decision = {
-
-		icon = generic_prepare_civil_war
-
-		allowed = {
-			original_tag = CAL
-		}
-		days_re_enable = 30 
-		days_remove = 35
-
-		visible = {
-			
-		}
-
-		available = {
-		}
-		modifier = {
-			socialism_ideology_drift = 0.03
-		}
-		
-		cost = 50
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 0
-		}
-
-		complete_effect = {
-			add_to_variable = {
-				var = CAL_sinclair_increase_1934_gb_large
-				value = 10
-			}
-		}
-	}
-}
-CAL_economics_of_cooperation_cat = {
-	CAL_growing_costs_epic_mission = {
-		activation = {
-			has_completed_focus = CAL_the_epic_plan
-		}
-		allowed = {
-			original_tag = CAL
-		}
-		cancel_trigger = {
-			#always = no
-		}
-		days_re_enable = 1
-		priority = 50
-		days_mission_timeout = CAL_epic_costs_mission_time
-		available = {
-			has_completed_focus = CAL_golden_rule
-		}
-		icon = generic_prepare_civil_war
-		timeout_effect = {
-			activate_mission = CAL_growing_costs_epic_mission
-			CAL_epic_costs_level_up = yes
-		}
-		complete_effect = {
-		}
-
-	}
-	CAL_sell_bonds_decision = {
-
-		icon = generic_prepare_civil_war
-
-		allowed = {
-			original_tag = CAL
-		}
-		days_re_enable = 270 
-		days_remove = 35
-		priority = 49
-
-		visible = {
-			has_completed_focus = CAL_money_act
-			
-		}
-
-		available = {
-		}
-		modifier = {
-		}
-		
-		cost = CAL_sell_epic_bonds_cost
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 10
-				OR = {
-					has_idea = CAL_epic_plan_cost_7
-				}
-			}
-		}
-		remove_effect = {
-			add_days_mission_timeout = {
-				mission = CAL_growing_costs_epic_mission
-				days = 65
-			}
-			#CAL_epic_costs_level_down = yes
-		}
-
-		complete_effect = {
-		}
-
-	}
-	CAL_increase_exports_decision = {
-
-		icon = generic_prepare_civil_war
-
-		allowed = {
-			original_tag = CAL
-		}
-		days_re_enable = 270 
-		days_remove = 180
-		priority = 49
-
-		visible = {
-			has_completed_focus = CAL_money_act
-			
-		}
-
-		available = {
-		}
-		modifier = {
-			min_export = 0.25
-		}
-		
-		cost = 50
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 10
-				OR = {
-					has_idea = CAL_epic_plan_cost_7
-				}
-			}
-		}
-		remove_effect = {
-		}
-
-		complete_effect = {
-			add_days_mission_timeout = {
-				mission = CAL_growing_costs_epic_mission
-				days = 65
-			}
-			#CAL_epic_costs_level_down = yes
-		}
-
-	}
-	CAL_depression_recovery_progress_mission = {
-		activation = {
-			has_completed_focus = CAL_the_epic_plan
-			CAL_has_depression_idea = yes
-		}
-		allowed = {
-			original_tag = CAL
-		}
-		cancel_trigger = {
-			#always = no
-		}
-		days_re_enable = 10
-		priority = 101
-		days_mission_timeout = 180
-		available = {
-			#always = no
-			check_variable = {
-				var = CAL_depression_recovery
-				value = 100
-				compare = greater_than_or_equals
-			}
-		}
-		icon = generic_prepare_civil_war
-		timeout_effect = {
-			activate_mission = CAL_depression_recovery_progress_mission
-		}
-		complete_effect = {
-			CAL_great_depression_level_down = yes
-			subtract_from_variable = {
-				var = CAL_depression_recovery
-				value = 100
-			}
-		}
-
-	}
-	CAL_create_colonies_decision = {
-		icon = generic_prepare_civil_war
-		state_target = yes
-		on_map_mode = map_only
-		days_remove = 90
-		allowed = {
-			original_tag = CAL
-		}
-
-		visible = {
-			has_completed_focus = CAL_land_colonies_act
-		}
-		targets = {
-			4 118 116 117 115 114 113 112 111
-
-		}
-		target_trigger = {
-		}
-
-		available = {
-		}
-		modifier = {
-		}
-		
-		cost = 50
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-		}
-		remove_effect = {
-			FROM = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_manpower = 25000
-			}
-			add_to_variable = {
-				var = CAL_depression_recovery
-				value = 65
-				tooltip = add_65_to_depression_recovery_var_tt
-			}
-			
-		}
-
-		complete_effect = {
-		}
-	}
-	CAL_create_colonies_small_decision = {#Want to get rid of this decision
-		icon = generic_prepare_civil_war
-		state_target = yes
-		on_map_mode = map_only
-		days_remove = 89
-		allowed = {
-			original_tag = CAL
-			always = no
-		}
-
-		visible = {
-			has_completed_focus = CAL_land_colonies_act
-		}
-		targets = {
-			109 110 114
-		}
-		target_trigger = {
-		}
-
-		available = {
-		}
-		modifier = {
-		}
-		
-		cost = 30
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-		}
-		remove_effect = {
-			FROM = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_manpower = 5000
-			}
-			add_to_variable = {
-				var = CAL_depression_recovery
-				value = 35
-				tooltip = add_35_to_depression_recovery_var_tt
-			}
-			
-		}
-
-		complete_effect = {
-		}
-	}
-	CAL_sieze_idle_factories_decision = {
-		icon = generic_prepare_civil_war
-		state_target = yes
-		on_map_mode = map_and_decisions_view
-		days_remove = 50
-		allowed = {
-			original_tag = CAL
-		}
-		priority = 70
-
-		visible = {
-			has_completed_focus = CAL_production_act
-			
-		}
-		targets = {
-			118 4 113 112 111
-		}
-		target_trigger = {
-		}
-
-		available = {
-		}
-		modifier = {
-		}
-		
-		cost = CAL_epic_sieze_factories_cost
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 10
-		}
-		remove_effect = {
-			FROM = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_to_variable = {
-				var = CAL_depression_recovery
-				value = 75
-				tooltip = add_75_to_depression_recovery_var_tt
-			}
-			
-		}
-
-		complete_effect = {
-		}
-	}
-	CAL_abosrb_failing_businessess_decision = {
-
-		icon = generic_prepare_civil_war
-
-		allowed = {
-			original_tag = CAL
-		}
-		days_re_enable = 90 
-		days_remove = 35
-		priority = 68
-
-		visible = {
-			always = no
-		}
-
-		available = {
-		}
-		modifier = {
-		}
-		
-		cost = 65
-
-		ai_will_do = {
-			factor = 8
-		}
-		remove_effect = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			
-		}
-
-		complete_effect = {
-		}
-	}
-	CAL_appropiate_undeveloped_land_decision = {
-
-		icon = generic_prepare_civil_war
-
-		allowed = {
-			original_tag = CAL
-		}
-		days_re_enable = 180 
-		days_remove = 35
-		priority = 69
-
-		visible = {
-			OR = {
-				has_completed_focus = CAL_production_act
-				has_completed_focus = CAL_land_colonies_act
-				always = yes
-			}
-			
-		}
-
-		available = {
-		}
-		modifier = {
-		}
-		
-		cost = 20
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				add = 10
-				date > 1936.1.1
-			}
-		}
-		remove_effect = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-			}
-			
-		}
-
-		complete_effect = {
-		}
-	}
-	CAL_regulate_industry_descision = {
-
-		icon = generic_prepare_civil_war
-
-		allowed = {
-			original_tag = CAL
-		}
-		days_re_enable = 20 
-		days_remove = 180
-		priority = 55
-
-		visible = {
-			has_completed_focus = CAL_the_epic_plan
-			
-		}
-
-		available = {
-		}
-		modifier = {
-			stability_weekly = 0.0025
-			production_factory_efficiency_gain_factor = -0.2
-		}
-		
-		cost = 40
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				add = 10
-				date > 1936.1.1
-			}
-		}
-		remove_effect = {
-		}
-
 		complete_effect = {
 		}
 	}
