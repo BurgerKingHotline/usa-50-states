@@ -3,6 +3,9 @@ CAL_civilwar_preparation_cat = {
 		tag = CAL
 	}
 	available = {
+		NOT = {
+			has_global_flag = california_civilwar_flag
+		}
 	}
 	visible = {
 		NOT = {
@@ -10,51 +13,4 @@ CAL_civilwar_preparation_cat = {
 		}
 	}
 	visible_when_empty = yes
-}
-
-CAL_things_are_getting_worse_cat = {
-	allowed = {
-		tag = CAL
-		always = no
-	}
-	visible = {
-		has_country_flag = CAL_intro_tree
-		always = yes
-	}
-	visible_when_empty = yes
-
-} 
-CAL_1934_gubernatorial_election_cat = {
-	allowed = {
-		tag = CAL
-		always = no
-	}
-	visible = {
-		always = no#yes
-	}
-	visible_when_empty = no#yes
-
-}
-CAL_economics_of_cooperation_cat= {
-	allowed = {
-		tag = CAL
-	}
-	visible = {
-		has_completed_focus = CAL_the_epic_plan
-	}
-	visible_when_empty = yes
-
-}
-CAL_balance_of_power_category = {
-	icon = GFX_decision_category_power_struggle
-	
-	allowed = {
-		original_tag = CAL
-	}
-	
-	priority = 90
-	
-	visible = {
-		has_completed_focus = CAL_socialist_governor
-	}
 }
