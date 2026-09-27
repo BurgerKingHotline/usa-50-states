@@ -1,11 +1,15 @@
 #reload countrycolors
-CAZ = {
-	color = rgb { 85 5 3 }
-	color_ui = rgb { 85 5 3 }
+CA0 = {
+	color = rgb { 151 77 77 }
+	color_ui = rgb { 151 77 77 }
 }
-CAS = {
-	color = rgb { 185 50 30 }
-	color_ui = rgb { 185 50 30 }
+CA1 = {
+	color = rgb { 151 77 77 }
+	color_ui = rgb { 151 77 77 }
+}
+CA2 = {
+	color = rgb { 151 77 77 }
+	color_ui = rgb { 151 77 77 }
 }
 NVJ = {
 	color = rgb { 255 222 173 }
@@ -22,10 +26,6 @@ WMA = {
 TON = {
 	color = rgb { 96 92 47 }
 	color_ui = rgb { 96 92 47 }
-}
-JEF = {
-	color = rgb {130 130 180 }
-	color_ui = rgb {130 130 180 }
 }
 GER = {
 	color = HSV { 0.1 0.15 0.4 }
@@ -1219,10 +1219,6 @@ ARZ = {
 ARK = {
 	color = rgb { 25 100 125 }
 	color_ui = rgb { 25 100 125 }
-}
-CAL = {
-	color = rgb { 185 185 55 }
-	color_ui = rgb { 185 185 55 }
 }
 CLO = {
 	color = rgb { 55 85 75 }

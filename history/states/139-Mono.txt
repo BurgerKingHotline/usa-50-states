@@ -2,11 +2,11 @@ state = {
 	id = 139
 	name = "STATE_139"
 	provinces = {
-		367 5605 1649 8575 3868 2476 55 8464 2124 1470 1743 2982
+		367 5605 1649 8575 3868 2476 55 8464 2124 1470 1743 2982 4861 8680 2653
 	}
 	history = {
-		owner = CAL
-		add_core_of = CAL
+		owner = CA1
+		add_core_of = CA1
 		victory_points = {
 			55 1 #Independence
 		}

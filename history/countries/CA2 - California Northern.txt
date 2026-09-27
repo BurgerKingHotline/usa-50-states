@@ -1,0 +1,13 @@
+capital = 116
+
+set_popularities = {
+	communism = 10
+	socialism_ideology = 60
+	conservatism_ideology = 30
+}
+set_politics = {
+	ruling_party = socialism_ideology
+	elections_allowed = yes
+	last_election = "1930.1.1"
+	election_frequency = 48
+}
