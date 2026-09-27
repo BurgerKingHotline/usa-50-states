@@ -1,15 +1,15 @@
 #reload countrycolors
-CA0 = {
-	color = rgb { 151 77 77 }
-	color_ui = rgb { 151 77 77 }
+CA0 = {#blue
+	color = rgb { 22 52 200 }
+	color_ui = rgb { 22 52 200 }
 }
-CA1 = {
-	color = rgb { 151 77 77 }
-	color_ui = rgb { 151 77 77 }
+CA1 = {#white
+	color = rgb { 230 230 230 }
+	color_ui = rgb { 230 230 230 }
 }
-CA2 = {
-	color = rgb { 151 77 77 }
-	color_ui = rgb { 151 77 77 }
+CA2 = {#red
+	color = rgb { 224 24 24 }
+	color_ui = rgb { 224 24 24 }
 }
 NVJ = {
 	color = rgb { 255 222 173 }

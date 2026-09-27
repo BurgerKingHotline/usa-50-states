@@ -3,7 +3,8 @@ capital = 113
 set_popularities = {
 	conservatism_ideology = 30
 	neutrality = 50
-	fascism = 20
+	fascism = 10
+	socialism_ideology = 10
 }
 set_politics = {
 	ruling_party = neutrality

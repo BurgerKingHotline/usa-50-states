@@ -2,7 +2,8 @@ capital = 116
 
 set_popularities = {
 	communism = 10
-	socialism_ideology = 60
+	socialism_ideology = 45
+	democratic = 15
 	conservatism_ideology = 30
 }
 set_politics = {

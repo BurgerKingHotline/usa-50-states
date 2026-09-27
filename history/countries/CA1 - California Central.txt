@@ -1,8 +1,8 @@
 capital = 118
 
 set_popularities = {
-	socialism_ideology = 10
-	democratic = 30
+	socialism_ideology = 5
+	democratic = 35
 	conservatism_ideology = 50
 	neutrality = 10
 }
