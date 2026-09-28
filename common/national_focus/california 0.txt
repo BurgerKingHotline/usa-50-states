@@ -13,7 +13,7 @@ focus_tree = {
 	default = no
 	
 	focus = {
-		id = CA0_
+		id = CA0_reunification_talks
 		icon = GFX_goal_generic_consumer_goods
 		x = 0
 		y = 0
@@ -21,7 +21,297 @@ focus_tree = {
 		cost = 10
 
 		completion_reward = {
-			add_political_power = 120
+		}
+	}
+	focus = {
+		id = CA0_porter_branch
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		relative_position_id = CA0_reunification_talks
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_reunification_talks
+		}
+		mutually_exclusive = {
+			focus = CA0_shaw_branch
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_native_country#defend nativist protestant character
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		relative_position_id = CA0_porter_branch
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_porter_branch
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_prohibition_endures#keep prohibition!
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		relative_position_id = CA0_native_country
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_native_country
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_reform_excesses#pull back some of the excesses of porter's administration, especially the corruption ones
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		relative_position_id = CA0_shaw_branch
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_shaw_branch
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_end_prohibition
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		relative_position_id = CA0_reform_excesses
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_reform_excesses
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_shaw_branch
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		relative_position_id = CA0_reunification_talks
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_reunification_talks
+		}
+		mutually_exclusive = {
+			focus = CA0_porter_branch
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_ban_unions
+		icon = GFX_goal_generic_consumer_goods
+		x = -6
+		y = 1
+		relative_position_id = CA0_reunification_talks
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_reunification_talks
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_root_out_sinclairists
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		relative_position_id = CA0_ban_unions
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_ban_unions
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = -0.1
+			}
+		}
+	}
+	focus = {
+		id = CA0_legitimate_organization#legitamize fascist and white supremacist parties
+		icon = GFX_goal_generic_consumer_goods
+		x = -4
+		y = 1
+		relative_position_id = CA0_reunification_talks
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_reunification_talks
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = CA0_friends_of_new_germany
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		relative_position_id = CA0_legitimate_organization
+
+		cost = 10
+		available = {#hitler is dictator of germany
+
+		}
+		prerequisite = {
+			focus = CA0_legitimate_organization
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_investment_from_fascist_europe
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		relative_position_id = CA0_friends_of_new_germany
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_friends_of_new_germany
+		}
+		prerequisite = {
+			focus = CA0_root_out_sinclairists
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_build_up_military
+		icon = GFX_goal_generic_consumer_goods
+		x = 6
+		y = 1
+		relative_position_id = CA0_reunification_talks
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_reunification_talks
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_take_back_parker_dam
+		icon = GFX_goal_generic_consumer_goods
+		x = 4
+		y = 1
+		relative_position_id = CA0_reunification_talks
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_reunification_talks
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_sieze_channel_islands
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 2
+		relative_position_id = CA0_take_back_parker_dam
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_fascist_military_advisors
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_military_excercises
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 2
+		relative_position_id = CA0_build_up_military
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_fascist_military_advisors
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_fascist_military_advisors
+		icon = GFX_goal_generic_consumer_goods
+		x = 5
+		y = 2
+		relative_position_id = CA0_reunification_talks
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_take_back_parker_dam
+		}
+		prerequisite = {
+			focus = CA0_build_up_military
+		}
+
+		completion_reward = {
+			add_ideas = {
+				CA0_idea_fascist_advisors
+			}
+		}
+	}
+	focus = {
+		id = CA0_reunite_california
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 4
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_prohibition_endures
+			focus = CA0_end_prohibition
+		}
+		prerequisite = {
+			focus = CA0_sieze_channel_islands
+		}
+		prerequisite = {
+			focus = CA0_military_excercises
+		}
+		prerequisite = {
+			focus = CA0_investment_from_fascist_europe
+		}
+
+		completion_reward = {
 		}
 	}
 }

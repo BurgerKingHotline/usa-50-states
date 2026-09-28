@@ -1,13 +1,17 @@
 capital = 113
 
+set_stability = 0.25
+set_war_support = 0.35
+
 set_popularities = {
-	conservatism_ideology = 30
-	neutrality = 50
-	fascism = 10
+	conservatism_ideology = 25
+	neutrality = 20
+	fascism = 5
 	socialism_ideology = 10
+	populism_ideology = 40
 }
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = populism_ideology
 	elections_allowed = yes
 	last_election = "1930.1.1"
 	election_frequency = 48
