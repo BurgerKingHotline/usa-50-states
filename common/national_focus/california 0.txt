@@ -120,9 +120,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CA0_ban_unions
+		id = CA0_root_out_unions
 		icon = GFX_goal_generic_consumer_goods
-		x = -6
+		x = -8
 		y = 1
 		relative_position_id = CA0_reunification_talks
 
@@ -132,37 +132,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		}
-	}
-	focus = {
-		id = CA0_root_out_sinclairists
-		icon = GFX_goal_generic_consumer_goods
-		x = 0
-		y = 1
-		relative_position_id = CA0_ban_unions
-
-		cost = 10
-		prerequisite = {
-			focus = CA0_ban_unions
-		}
-		completion_reward = {
-			add_stability = 0.1
-			add_popularity = {
-				ideology = socialism_ideology
-				popularity = -0.1
-			}
 		}
 	}
 	focus = {
 		id = CA0_legitimate_organization#legitamize fascist and white supremacist parties
 		icon = GFX_goal_generic_consumer_goods
 		x = -4
-		y = 1
+		y = 2
 		relative_position_id = CA0_reunification_talks
 
 		cost = 10
 		prerequisite = {
-			focus = CA0_reunification_talks
+			focus = CA0_friends_of_new_germany
 		}
 
 		completion_reward = {
@@ -176,16 +157,16 @@ focus_tree = {
 	focus = {
 		id = CA0_friends_of_new_germany
 		icon = GFX_goal_generic_consumer_goods
-		x = 0
+		x = -5
 		y = 1
-		relative_position_id = CA0_legitimate_organization
+		relative_position_id = CA0_reunification_talks
 
 		cost = 10
 		available = {#hitler is dictator of germany
 
 		}
 		prerequisite = {
-			focus = CA0_legitimate_organization
+			focus = CA0_reunification_talks
 		}
 
 		completion_reward = {
@@ -201,9 +182,6 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = CA0_friends_of_new_germany
-		}
-		prerequisite = {
-			focus = CA0_root_out_sinclairists
 		}
 
 		completion_reward = {
@@ -306,9 +284,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = CA0_military_excercises
-		}
-		prerequisite = {
-			focus = CA0_investment_from_fascist_europe
 		}
 
 		completion_reward = {
