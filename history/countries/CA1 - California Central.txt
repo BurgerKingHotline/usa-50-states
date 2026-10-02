@@ -1,10 +1,9 @@
 capital = 118
 
 set_popularities = {
-	socialism_ideology = 5
+	socialism_ideology = 15
 	democratic = 35
 	conservatism_ideology = 50
-	neutrality = 10
 }
 set_politics = {
 	ruling_party = conservatism_ideology

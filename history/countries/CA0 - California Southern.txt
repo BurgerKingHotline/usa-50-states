@@ -4,11 +4,11 @@ set_stability = 0.25
 set_war_support = 0.35
 
 set_popularities = {
-	conservatism_ideology = 25
-	neutrality = 20
 	fascism = 5
+	neutrality = 35
+	conservatism_ideology = 20
 	socialism_ideology = 10
-	populism_ideology = 40
+	populism_ideology = 30
 }
 set_politics = {
 	ruling_party = populism_ideology

@@ -1,0 +1,30 @@
+add_namespace = california0_events
+add_namespace = california0_news_events
+
+news_event = {
+	id = california0_news_events.1
+	title = california0_news_events.1.t
+	desc = california0_news_events.1.desc
+	
+	option = {
+		name = california0_news_events.1.a
+	}
+}
+
+country_event = {
+	id = california0_events.1
+	title = california0_events.1.t
+	desc = california0_events.1.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		original_tag = CA0
+	}
+	option = {
+		name = california0_events.1.a
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+	}
+}

@@ -14,7 +14,7 @@ state = {
 			3797 2 #Modesto
 		}
 		victory_points = {
-			5120 25#Sacramento 9
+			5120 10#Sacramento 9
 		}
 		victory_points = {
 			8235 5#Stockton
