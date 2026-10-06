@@ -1,0 +1,449 @@
+focus_tree = {
+	id = arz_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ARZ
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+
+	focus = {
+		id = ARZ_intro_focus
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		cancelable = no
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ARZ_fight_big_interest
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 1
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_intro_focus
+		}
+		mutually_exclusive = {
+			focus = ARZ_responsible_government
+		}
+		completion_reward = {
+			add_ideas = {
+				ARZ_big_interest_curbed
+			}
+		}
+	}
+	focus = {
+		id = ARZ_protect_labor
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 1
+		y = 2
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_fight_big_interest
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.1
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ARZ_responsible_government#tax increases and budget cuts
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 3
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_intro_focus
+		}
+		mutually_exclusive = {
+			focus = ARZ_fight_big_interest
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = -0.1
+			}
+			add_stability = -0.1
+			add_political_power = -150
+		}
+	}
+	focus = {
+		id = ARZ_reap_rewards
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 3
+		y = 2
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_responsible_government
+		}
+		completion_reward = {
+			add_ideas = {
+				ARZ_responsible_government
+			}
+		}
+	}
+	focus = {
+		id = ARZ_depression_relief
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -2
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_intro_focus
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_depression_over
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 3
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_dustbowl_refugees
+		}
+		prerequisite = {
+			focus = ARZ_build_gila_dam
+		}
+		prerequisite = {
+			focus = ARZ_protect_labor
+			focus = ARZ_reap_rewards
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_california_civil_war
+		x = -8
+		y = 0
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_take_advantage_california#water resources w!
+		x = -3
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_california_civil_war
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_california_civil_war
+		}
+		completion_reward = {
+			add_ideas = {
+				ARZ_all_the_water_we_need
+			}
+		}
+	}
+	focus = {
+		id = ARZ_who_support#?
+		x = -1
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_california_civil_war
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_california_civil_war
+		}
+		mutually_exclusive = {
+			focus = ARZ_increase_support
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_increase_support
+		x = 1
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_california_civil_war
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_california_civil_war
+		}
+		mutually_exclusive = {
+			focus = ARZ_who_support
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_vegas_conference
+		x = 0
+		y = 2
+
+		cost = 10
+		relative_position_id = ARZ_california_civil_war
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_who_support
+			focus = ARZ_increase_support
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_stay_sidelines
+		x = 1
+		y = 3
+
+		cost = 10
+		relative_position_id = ARZ_california_civil_war
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_vegas_conference
+		}
+		mutually_exclusive = {
+			focus = ARZ_intervene
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_intervene
+		x = -1
+		y = 3
+
+		cost = 10
+		relative_position_id = ARZ_california_civil_war
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_vegas_conference
+		}
+		mutually_exclusive = {
+			focus = ARZ_stay_sidelines
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_build_gila_dam
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -1
+		y = 2
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_depression_relief
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_dustbowl_refugees
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -3
+		y = 2
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_depression_relief
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_professional_military
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 9
+		y = 0
+
+		cost = 10
+		relative_position_id = ARZ_intro_focus
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = ARZ_build_up_military_factories
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 2
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_professional_military
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_professional_military
+		}
+		completion_reward = {
+			#add_building_construction = {
+			#	type = arms_factory
+			#	level = 2
+			#}
+		}
+	}
+	focus = {
+		id = ARZ_armor_division
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_professional_military
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = ARZ_infantry_divisions
+		}
+		prerequisite = {
+			focus = ARZ_professional_military
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_infantry_divisions
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -2
+		y = 1
+
+		cost = 10
+		relative_position_id = ARZ_professional_military
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = ARZ_armor_division
+		}
+		prerequisite = {
+			focus = ARZ_professional_military
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ARZ_conscription
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 2
+
+		cost = 10
+		relative_position_id = ARZ_professional_military
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ARZ_infantry_divisions
+			focus = ARZ_armor_division
+		}
+		prerequisite = {
+			focus = ARZ_build_up_military_factories
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = extensive_conscription
+				}
+				upgrade_conscription_law = yes
+			}
+			else = {
+				add_ideas = {
+					extensive_conscription
+				}
+			}
+			add_manpower = 25000
+		}
+	}
+}

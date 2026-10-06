@@ -10,4 +10,13 @@ on_actions = {
 #			}
 #		}
 #	}
+	on_new_term_election = {
+		effect = {
+			if = {
+				limit = { tag = ARZ }
+				country_event = { id = arizona_events.3 }
+				country_event = { id = arizona_events.4 }
+			}
+		}
+	}
 }

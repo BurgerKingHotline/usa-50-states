@@ -1,5 +1,5 @@
 division_template = {
-	name = "Infantry Division"	
+	name = "National Guard"
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -17,54 +17,43 @@ units = {
 				is_name_ordered = yes
 				name_order = 1
 		}
-		location = 1692
-		division_template = "Infantry Division"
-		start_experience_factor = 0.1
+		location = 2837
+		division_template = "National Guard"
+		start_experience_factor = 1
 		start_equipment_factor = 1
-
+		start_manpower_factor = 1
 	}
 	division= {
 		division_name = {
 				is_name_ordered = yes
 				name_order = 1
 		}
-		location = 1692
-		division_template = "Infantry Division"
-		start_experience_factor = 0.1
+		location = 9401
+		division_template = "National Guard"
+		start_experience_factor = 1
 		start_equipment_factor = 1
-
+		start_manpower_factor = 1
 	}
 	division= {
 		division_name = {
 				is_name_ordered = yes
 				name_order = 1
 		}
-		location = 1692
-		division_template = "Infantry Division"
-		start_experience_factor = 0.1
+		location = 1948
+		division_template = "National Guard"
+		start_experience_factor = 1
 		start_equipment_factor = 1
-
+		start_manpower_factor = 1
 	}
 	division= {
 		division_name = {
 				is_name_ordered = yes
 				name_order = 1
 		}
-		location = 1692
-		division_template = "Infantry Division"
-		start_experience_factor = 0.1
+		location = 8937
+		division_template = "National Guard"
+		start_experience_factor = 1
 		start_equipment_factor = 1
-
-	}
-	division= {
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 1692
-		division_template = "Infantry Division"
-		start_experience_factor = 0.1
-		start_equipment_factor = 1
-
+		start_manpower_factor = 1
 	}
 }

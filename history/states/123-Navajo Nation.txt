@@ -9,9 +9,9 @@ state = {
 	buildings_max_level_factor = 1.000
 	local_supplies = 0.000
 	history = {
-		owner = NVJ
+		owner = ARZ
 		add_core_of = NVJ
-		add_claim_by = ARZ
+		add_core_of = ARZ
 		victory_points = {
 			8898 1#Tseghanoodzani
 		}

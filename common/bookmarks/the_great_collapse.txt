@@ -8,6 +8,12 @@ bookmarks = {
 		"WSH" = { history = "WSH_GREAT_COLLAPSE_DESC" }
 		"ORE" = { history = "ORE_GREAT_COLLAPSE_DESC" }
 		"IDH" = { history = "IDH_GREAT_COLLAPSE_DESC" }
+		"CA1" = { history = "CA1_GREAT_COLLAPSE_DESC" }
+		#minors
+		"ARZ" = {
+			history = "ARZ_GREAT_COLLAPSE_DESC"
+			minor = yes
+		}
 		"---" = { history = "OTHER_GREAT_COLLAPSE_DESC" }
 		effect = {
 			randomize_weather = 12345 # <- Obligatory in every bookmark !

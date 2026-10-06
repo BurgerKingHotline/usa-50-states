@@ -6,8 +6,8 @@ state = {
 	provinces = { 918 4724 8662 5644 8697 4180 230 3126 8776 6667 8802 2466 4652 2675 5401 4265 1851 4854 8736 }
 
 	history = {
-		owner = CA0
-		add_core_of = CA0
+		owner = CA1
+		add_core_of = CA1
 		victory_points = {
 			4180 3#Bakersfield
 		}

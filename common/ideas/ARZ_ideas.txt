@@ -1,0 +1,50 @@
+ideas = {
+	country = {
+		ARZ_big_interest_curbed = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				#democratic_drift = 0.03
+				political_power_gain = 0.1
+				monthly_population = 0.15
+				stability_factor = 0.1
+				local_resources_factor = -0.2
+			}
+		}
+		ARZ_responsible_government = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.2
+				stability_weekly = 0.01
+				political_power_gain = 0.25
+			}
+		}
+		ARZ_all_the_water_we_need = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor =-0.25
+				monthly_population = 2
+			}
+		}
+	}
+}

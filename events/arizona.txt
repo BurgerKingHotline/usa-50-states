@@ -21,3 +21,51 @@ country_event = {
 		add_political_power = -10
 	}
 }
+country_event = {
+	id = arizona_events.2#determine path
+	title = arizona_events.2.t
+	desc = arizona_events.2.desc
+	picture = GFX_report_event_cal_lasangeles
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {#George the Eigth
+		name = arizona_events.2.a
+		retire_character = ARZ_GEORGE_HUNT
+	}
+	option = {#Mouer
+		name = arizona_events.2.b
+	}
+}
+country_event = {
+	id = arizona_events.3#election chaos
+	title = arizona_events.3.t
+	desc = arizona_events.3.desc
+	picture = GFX_report_event_cal_lasangeles
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		date > 1932.1.1
+		date < 1934.1.1
+	}
+	option = {
+		name = arizona_events.3.a
+		add_political_power = -25
+	}
+}
+country_event = {
+	id = arizona_events.4#reelected
+	title = arizona_events.4.t
+	desc = arizona_events.4.desc
+	picture = GFX_report_event_cal_lasangeles
+	is_triggered_only = yes
+	trigger = {
+		date > 1934.1.1
+	}
+	option = {
+		name = arizona_events.4.a
+		add_popularity = {
+			ideology = ROOT
+			popularity = 0.1
+		}
+	}
+}

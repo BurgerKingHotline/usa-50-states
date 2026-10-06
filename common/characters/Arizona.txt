@@ -1,14 +1,28 @@
 # Characters for Arizona
 characters = {
-	ARIZONA_GOV = {
+	ARZ_GEORGE_HUNT = {
 		name = "George W. P. Hunt"
 		portraits = {
 			civilian = { large = "GFX_ABM_Portrait_George_W_P_Hunt" }
 		}
 		gender = male
 		country_leader = {
+			ideology = populism_subideology
+			desc = "Governor of Arizona, 1931-1933"
+		}
+		country_leader = {
 			ideology = liberalism
-			expire = "1965.1.1"
+			desc = "Governor of Arizona, 1931-1933"
+		}
+	}
+	ARZ_BENJAMIN_MOEUR = {
+		name = "Benjamin Baker Moeur"
+		portraits = {
+			civilian = { large = "GFX_ABM_Portrait_George_W_P_Hunt" }
+		}
+		gender = male
+		country_leader = {
+			ideology = liberalism
 			desc = "Governor of Arizona, 1931-1933"
 		}
 	}

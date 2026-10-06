@@ -7,9 +7,8 @@ state = {
 		179 2380 8991 9037 5046 8995
 	}#179 is where orange county begins
 	history = {
-		owner = CA0
-		add_core_of = CA0
-		add_claim_by = CA1
+		owner = CA1
+		add_core_of = CA1
 		victory_points = {
 			5046 2 #Annheim
 		}

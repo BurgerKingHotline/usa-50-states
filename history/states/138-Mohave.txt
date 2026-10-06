@@ -13,6 +13,9 @@ state = {
 		victory_points = {
 			9039 1#Jerome
 		}
+		buildings = {
+			arms_factory = 1
+		}
 	}
 	state_category = town
 	manpower = 48106

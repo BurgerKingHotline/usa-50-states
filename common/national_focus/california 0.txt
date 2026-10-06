@@ -24,24 +24,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CA0_porter_branch
-		icon = GFX_goal_generic_consumer_goods
-		x = -1
-		y = 1
-		relative_position_id = CA0_reunification_talks
-
-		cost = 10
-		prerequisite = {
-			focus = CA0_reunification_talks
-		}
-		mutually_exclusive = {
-			focus = CA0_shaw_branch
-		}
-
-		completion_reward = {
-		}
-	}
-	focus = {
 		id = CA0_native_country#defend nativist protestant character
 		icon = GFX_goal_generic_consumer_goods
 		x = 0
@@ -96,6 +78,24 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = CA0_reform_excesses
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_porter_branch
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		relative_position_id = CA0_reunification_talks
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_reunification_talks
+		}
+		mutually_exclusive = {
+			focus = CA0_shaw_branch
 		}
 
 		completion_reward = {
@@ -236,11 +236,11 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_daily_mastery ={
-				amount = 0.5
-				days = 100
-				folder = land
-			}
+			#add_daily_mastery ={
+			#	amount = 0.5
+			#	days = 100
+			#	folder = land
+			#}
 		}
 	}
 	focus = {

@@ -8,9 +8,8 @@ state = {
 		oil = 30
 	}
 	history = {
-		owner = CA0
-		add_core_of = CA0
-		add_claim_by = CA1
+		owner = CA1
+		add_core_of = CA1
 		victory_points = {
 			9203 2 #Brawley
 		}

@@ -4,9 +4,8 @@ state = {
 	manpower = 209669
 	state_category = large_city
 	history = { 
-		owner = CA0
-		add_core_of = CA0
-		add_claim_by = CA1
+		owner = CA1
+		add_core_of = CA1
 		victory_points = {
 			9182 15#San Diego 14
 		}
