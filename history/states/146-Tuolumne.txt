@@ -1,0 +1,40 @@
+state = {
+	id = 146
+	name = "STATE_146"
+	manpower = 10
+	state_category = rural
+	provinces = { 1708 8206 6521 5409 1617 5866 4485 3708 1271 4602 }
+
+	history = {
+		owner = CA1
+		add_core_of = CA1
+		
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+			3797 2 #Modesto
+		}
+		victory_points = {
+			8235 5#Stockton
+		}
+		victory_points = {
+			4485 1#Mariposa
+		}
+		victory_points = {
+			5866 1#Sonora
+		}
+		victory_points = {
+			1708 1#Andreas
+		}
+		victory_points = {
+			4821 1#Jackson
+		}
+		victory_points = {
+			6801 1#Placerville
+		}
+		victory_points = {
+			8162 1#Alpine
+		}
+	}
+}

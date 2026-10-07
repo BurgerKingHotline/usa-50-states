@@ -1,4 +1,7 @@
 ﻿l_english:
+ STATE_144:0 "Kern"
+ STATE_146:0 "Tuolumne"
+ STATE_145:0 "Santa Barbara"
  STATE_119:0 "New River"
  STATE_143:0 "Channel Islands"
  STATE_140:0 "Santa Clara"
@@ -31,7 +34,7 @@
  STATE_112:1 "Orange County"
  STATE_113:1 "Los Angeles"
  STATE_114:1 "Imperial"
- STATE_115:1 "Central Coast"
+ STATE_115:1 "Monterey"
  STATE_116:1 "Gold Country"
  STATE_117:1 "Joaquin Valley"
  STATE_118:1 "Sacramento Valley"
