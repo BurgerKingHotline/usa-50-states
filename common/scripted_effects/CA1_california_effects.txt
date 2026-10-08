@@ -1,0 +1,66 @@
+CA1_add_states_to_faction_arrays = {
+	#sinclair
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 146
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 4
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 141
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 110
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 109
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 111
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 144
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 145
+	}
+	#merriam
+	add_to_array = {
+		array = CA1.angeles_states
+		value = 113
+	}
+	add_to_array = {
+		array = CA1.angeles_states
+		value = 112
+	}
+	add_to_array = {
+		array = CA1.angeles_states
+		value = 114
+	}
+}
+CA1_start_californian_civil_war = {
+	for_each_loop = {
+		array = CA1.sinclair_states
+		value = v
+		CA2 = {
+			add_state_core = v
+			transfer_state = v
+		}
+	}
+	for_each_loop = {
+		array = CA1.angeles_states
+		value = v
+		CA0 = {
+			add_state_core = v
+			transfer_state = v
+		}
+	}
+}

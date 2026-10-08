@@ -1,0 +1,18 @@
+CA1_debug = {
+	CA1_start_civil_war  = {
+
+		priority = 11
+
+		icon = GFX_decision_generic_forestry
+
+		visible = {
+			is_debug = yes
+		}
+
+		cost = 0
+
+		complete_effect = { 
+			CA1_start_californian_civil_war = yes
+		}
+	}
+}
