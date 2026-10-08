@@ -49,7 +49,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CA1_sunny_man_sunny_state
 		}
-		completion_reward = {
+		completion_reward = {#give a good completion reward, but then an event about funds not being found and reducing the reward to something less good like -5 instead of -25
 		}
 	}
 	focus = {
@@ -128,7 +128,21 @@ focus_tree = {
 	focus = {
 		id = CA1_friends_new_germany
 		icon = GFX_goal_generic_consumer_goods
-		x = 3
+		x = 2
+		y = 3
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_new_rules_hollywood
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_slander_sinclair
+		icon = GFX_goal_generic_consumer_goods
+		x = 4
 		y = 3
 
 		cost = 10
