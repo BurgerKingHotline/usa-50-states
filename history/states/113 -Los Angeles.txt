@@ -1,7 +1,7 @@
 state = {
 	id = 113
 	name = "STATE_113"
-	manpower = 2263468
+	manpower = 2260459
 	state_category = metropolis
 	provinces = { 657 897 3485 3720 4556 5540 5848 5969 6737 6810 8843 8913 4226 2195 5820 8894 2496 8943 3779 8863 387 5222 8965 8974 5548 8934 }
 	history = {

@@ -1,7 +1,7 @@
 state = {
 	id = 116
 	name = "STATE_116"
-	manpower = 173196
+	manpower = 125778
 	state_category = large_town
 	provinces = { 2152 4299 4519 4583 5705 7940 5316 414 4723 7999 7986 8003 7928 6696 6511 3896 13027 3924 7998 1604 7943 1863 2280 7815 6282 7861 3393 4699 7920 6512 3636 }#7815 is where Mendecino starts
 	resources = {

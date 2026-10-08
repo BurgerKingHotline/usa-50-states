@@ -11,6 +11,7 @@ set_politics = {
 	last_election = "1930.1.1"
 	election_frequency = 48
 }
+set_research_slots = 3
 
 CA1_add_states_to_faction_arrays = yes
 set_cosmetic_tag = CA1_CALIFORNIA_REPUBLIC

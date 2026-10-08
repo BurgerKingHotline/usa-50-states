@@ -54,21 +54,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CA0_reform_excesses#pull back some of the excesses of porter's administration, especially the corruption ones
-		icon = GFX_goal_generic_consumer_goods
-		x = 0
-		y = 1
-		relative_position_id = CA0_shaw_branch
-
-		cost = 10
-		prerequisite = {
-			focus = CA0_shaw_branch
-		}
-
-		completion_reward = {
-		}
-	}
-	focus = {
 		id = CA0_end_prohibition
 		icon = GFX_goal_generic_consumer_goods
 		x = 0
@@ -114,6 +99,21 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = CA0_porter_branch
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA0_reform_excesses#pull back some of the excesses of porter's administration, especially the corruption ones
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		relative_position_id = CA0_shaw_branch
+
+		cost = 10
+		prerequisite = {
+			focus = CA0_shaw_branch
 		}
 
 		completion_reward = {
