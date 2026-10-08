@@ -1,0 +1,226 @@
+focus_tree = {
+	id = california_1_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = CA1
+		}
+	}
+	
+	default = no
+	
+	focus = {
+		id = CA1_sunny_man_sunny_state
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 0
+
+		cost = 10
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_support_vigilantism
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_sunny_man_sunny_state
+		prerequisite = {
+			focus = CA1_sunny_man_sunny_state
+		}
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_fund_state_emergency_relief
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_sunny_man_sunny_state
+		prerequisite = {
+			focus = CA1_sunny_man_sunny_state
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_good_radio_program
+		icon = GFX_goal_generic_consumer_goods
+		x = -5
+		y = 2
+
+		cost = 10
+		relative_position_id = CA1_sunny_man_sunny_state
+		prerequisite = {
+			focus = CA1_support_vigilantism
+		}
+		prerequisite = {
+			focus = CA1_fund_state_emergency_relief
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_patriotic_organizations
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_good_radio_program
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_burton_fitts
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_good_radio_program
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_let_loose_navy
+		icon = GFX_goal_generic_consumer_goods
+		x = -3
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_good_radio_program
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_new_rules_hollywood
+		icon = GFX_goal_generic_consumer_goods
+		x = 3
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_good_radio_program
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_friends_new_germany
+		icon = GFX_goal_generic_consumer_goods
+		x = 3
+		y = 3
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_new_rules_hollywood
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_shaws_corruption
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 2
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		mutually_exclusive = {
+			focus = CA1_porters_xenophobia
+		}
+		prerequisite = {
+			focus = CA1_let_loose_navy
+			focus = CA1_burton_fitts
+			focus = CA1_patriotic_organizations
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_porters_xenophobia
+		icon = GFX_goal_generic_consumer_goods
+		x = -2
+		y = 2
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		mutually_exclusive = {
+			focus = CA1_shaws_corruption
+		}
+		prerequisite = {
+			focus = CA1_let_loose_navy
+			focus = CA1_burton_fitts
+			focus = CA1_patriotic_organizations
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_crusade_against_vice
+		icon = GFX_goal_generic_consumer_goods
+		x = -2
+		y = 3
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_porters_xenophobia
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_support_minority_communities
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 3
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_shaws_corruption
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_crush_sinclairism
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 4
+
+		cost = 10
+		relative_position_id = CA1_good_radio_program
+		prerequisite = {
+			focus = CA1_crusade_against_vice
+			focus = CA1_support_minority_communities
+		}
+		prerequisite = {
+			focus = CA1_friends_new_germany
+		}
+		completion_reward = {
+		}
+	}
+}

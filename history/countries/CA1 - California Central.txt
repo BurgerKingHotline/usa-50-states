@@ -13,3 +13,4 @@ set_politics = {
 }
 
 CA1_add_states_to_faction_arrays = yes
+set_cosmetic_tag = CA1_CALIFORNIA_REPUBLIC

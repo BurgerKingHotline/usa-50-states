@@ -2,3 +2,7 @@ MN_farmer_labor = {
 	color = rgb { 72 206 67 }
 	color_ui = rgb { 36 177 31 }
 }
+CA1_CALIFORNIA_REPUBLIC = {
+	color = rgb { 182 12 47 }
+	color_ui = rgb { 182 12 47 }
+}
