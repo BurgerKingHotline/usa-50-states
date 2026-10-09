@@ -55,7 +55,7 @@ focus_tree = {
 	focus = {
 		id = CA1_good_radio_program
 		icon = GFX_goal_generic_consumer_goods
-		x = -5
+		x = -10
 		y = 2
 
 		cost = 10
@@ -233,6 +233,159 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = CA1_friends_new_germany
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_socialist_crusader#room for an author?
+		icon = GFX_goal_generic_consumer_goods
+		x = 4
+		y = 2
+
+		cost = 10
+		relative_position_id = CA1_sunny_man_sunny_state
+		prerequisite = {
+			focus = CA1_support_vigilantism
+		}
+		prerequisite = {
+			focus = CA1_fund_state_emergency_relief
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_form_epic_clubs
+		icon = GFX_goal_generic_consumer_goods
+		x = 2
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		prerequisite = {
+			focus = CA1_socialist_crusader
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_arm_cooperatives
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		prerequisite = {
+			focus = CA1_socialist_crusader
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_plan_of_starvation
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 2
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		prerequisite = {
+			focus = CA1_arm_cooperatives
+			focus = CA1_form_epic_clubs
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_leon_lewis#HE will help us set up a intelligence ring in the fascist and autocratic areas
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 2
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		prerequisite = {
+			focus = CA1_building_up_network
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_building_up_network#supporters are disconnected
+		icon = GFX_goal_generic_consumer_goods
+		x = -2
+		y = 1
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		prerequisite = {
+			focus = CA1_socialist_crusader
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_our_daily_bread#release movie counter slander
+		icon = GFX_goal_generic_consumer_goods
+		x = -3
+		y = 3
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		prerequisite = {
+			focus = CA1_building_up_network
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_moderate_our_approach#?
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 3
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		mutually_exclusive = {
+			focus = CA1_protect_workers
+		}
+		prerequisite = {
+			focus = CA1_leon_lewis
+			focus = CA1_plan_of_starvation
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_protect_workers#we must protect the strikers from the government!
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 3
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		mutually_exclusive = {
+			focus = CA1_moderate_our_approach
+		}
+		prerequisite = {
+			focus = CA1_leon_lewis
+			focus = CA1_plan_of_starvation
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CA1_retreat_from_la
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 4
+
+		cost = 10
+		relative_position_id = CA1_socialist_crusader
+		prerequisite = {
+			focus = CA1_moderate_our_approach
+			focus = CA1_protect_workers
 		}
 		completion_reward = {
 		}
