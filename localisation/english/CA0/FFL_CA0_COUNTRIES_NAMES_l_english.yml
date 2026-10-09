@@ -1,4 +1,7 @@
 ﻿l_english:
- CA0:0 "Unitary Republic of California"
- CA0_ADJ:0 "Unitary Republic of California"
- CA0_DEF:0 "the Unitary Republic of California"
+ CA0:0 "California Republic"
+ CA0_ADJ:0 "California Republic"
+ CA0_DEF:0 "the California Republic"
+ CA0_CIVILWAR:0 "Angeles Government"
+ CA0_CIVILWAR_ADJ:0 "Angeles Government"
+ CA0_CIVILWAR_DEF:0 "the Angeles Government"

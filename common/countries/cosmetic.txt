@@ -6,3 +6,15 @@ CA1_CALIFORNIA_REPUBLIC = {
 	color = rgb { 182 12 47 }
 	color_ui = rgb { 182 12 47 }
 }
+CA0_CIVILWAR = {
+	color = rgb { 128 128 128 }
+	color_ui = rgb { 128 128 128 }
+}
+CA1_CIVILWAR = {
+	color = rgb { 20 64 156 }
+	color_ui = rgb { 20 64 156 }
+}
+CA2_CIVILWAR  = {
+	color = rgb { 182 12 47 }
+	color_ui = rgb { 182 12 47 }
+}

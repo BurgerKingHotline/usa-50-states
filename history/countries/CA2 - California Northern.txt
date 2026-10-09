@@ -2,9 +2,9 @@ capital = 116
 
 set_popularities = {
 	communism = 10
-	socialism_ideology = 45
+	socialism_ideology = 40
 	democratic = 15
-	conservatism_ideology = 30
+	neutrality = 35
 }
 set_politics = {
 	ruling_party = socialism_ideology
@@ -12,3 +12,4 @@ set_politics = {
 	last_election = "1930.1.1"
 	election_frequency = 48
 }
+set_cosmetic_tag = CA2_CIVILWAR

@@ -1,4 +1,7 @@
 ﻿l_english:
- CA2:0 "Commonwealth of Jefferson"
- CA2_ADJ:0 "Commonwealth of Jefferson"
- CA2_DEF:0 "the Commonwealth of Jefferson"
+ CA2:0 "California Commonwealth"
+ CA2_ADJ:0 "California Commonwealth"
+ CA2_DEF:0 "the California Commonwealth"
+ CA2_CIVILWAR:0 "EPIC Army"
+ CA2_CIVILWAR_ADJ:0 "EPIC Army"
+ CA2_CIVILWAR_DEF:0 "the EPIC Army"

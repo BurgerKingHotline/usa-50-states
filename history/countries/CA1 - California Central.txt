@@ -1,9 +1,20 @@
 capital = 118
 
+recruit_character = CA1_JAMES_ROLPH
+recruit_character = CA1_FRANK_MERRIAM
+recruit_character = CA1_UPTON_SINCLAIR
+recruit_character = CA1_GEORGE_PATTON
+recruit_character = CA1_ARTHUR_WILSON
+recruit_character = CA1_HENRY_ARNOLD
+recruit_character = CA1_JIMMY_DOOLITTLE
+recruit_character = CA1_MERRITT_BARTON
+
 set_popularities = {
-	socialism_ideology = 15
-	democratic = 35
-	conservatism_ideology = 50
+	socialism_ideology = 10
+	democratic = 30
+	conservatism_ideology = 35
+	populism_ideology = 15
+	neutrality = 10
 }
 set_politics = {
 	ruling_party = conservatism_ideology
@@ -15,3 +26,4 @@ set_research_slots = 3
 
 CA1_add_states_to_faction_arrays = yes
 set_cosmetic_tag = CA1_CALIFORNIA_REPUBLIC
+

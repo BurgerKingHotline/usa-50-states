@@ -1,0 +1,137 @@
+characters = {
+	CA1_JAMES_ROLPH = {
+		name = "James Rolph Jr."
+		portraits = {
+			civilian = { large = "GFX_CAL_Portrait_James_Rolph" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism_subideology
+			expire = "1936.11.6"
+			desc = CA1_james_rolph_desc
+		}
+	}
+	CA1_FRANK_MERRIAM = {
+		name = "Frank Merriam"
+		portraits = {
+			civilian = { large = "GFX_CAL_Portrait_Frank_Merriam" }
+		}
+		gender = male
+		country_leader = {
+			ideology = conservatism_subideology
+			expire = "1955.5.25"
+			desc = CA1_frank_merriam_desc
+		}
+	}
+	CA1_UPTON_SINCLAIR = {
+		name = "Upton Sinclair"
+		portraits = {
+			civilian = { large = "GFX_CA1_Portrait_Upton_Sinlair" }
+		}
+		gender = male
+		country_leader = {
+			ideology = socialism_subideology
+			expire = "1968.11.25"
+			desc = CA1_upton_sinclair_desc
+		}
+	}
+	#army leaders
+	CA1_GEORGE_PATTON = {
+		name = "George S. Patton"
+		portraits = {
+			army = {
+				large = "GFX_Portrait_CAL_George_Patton"
+			}
+		}
+		gender = male
+		field_marshal = {
+			traits = { trait_reckless armor_officer war_hero trickster panzer_leader }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = cal_george_patton
+			allowed = {
+				original_tag = CA1
+			}
+			traits = {
+				mobile_warfare_expert 
+			}
+			visible = {
+			}
+		}
+	}
+	CA1_ARTHUR_WILSON = {
+		name = "Arthur R. Wilson"
+		portraits = {
+			army = {
+				large = "GFX_Portrait_CAL_Arthur_Wilson"
+			}
+		}
+		gender = male
+		corps_commander = {
+			traits = { organizer career_officer }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+
+	}
+	CA1_HENRY_ARNOLD = {
+		name = "Henry H. Arnold"
+		portraits = {
+			army = {
+				large = "GFX_Portrait_CAL_Henry_Arnold"
+			}
+		}
+		gender = male
+		corps_commander = {
+			traits = { commando paratrooper }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	CA1_JIMMY_DOOLITTLE = {
+		name = "Jimmy Doolittle"
+		portraits = {
+			army = {
+				large = "GFX_Portrait_CAL_Jimmy_Dolittle"
+			}
+		}
+		gender = male
+		corps_commander = {
+			traits = { commando paratrooper }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	CA1_MERRITT_BARTON = {
+		name = "Merritt Burton Curtis"
+		portraits = {
+			army = {
+				large = "GFX_Portrait_CAL_Merritt_Barton_Curtis"
+			}
+		}
+		gender = male
+		corps_commander = {
+			traits = { career_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+}
