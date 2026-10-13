@@ -15,7 +15,7 @@ characters = {
 	CAL_FRANK_MERRIAM = {
 		name = "Frank Merriam"
 		portraits = {
-			civilian = { large = "GFX_CAL_Portrait_Frank_Merriam" }
+			civilian = { large = "GFX_CA1_Portrait_Frank_Merriam" }
 		}
 		gender = male
 		country_leader = {

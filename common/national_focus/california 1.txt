@@ -291,6 +291,7 @@ focus_tree = {
 		cost = 10
 		relative_position_id = CA1_socialist_crusader
 		prerequisite = {
+			focus = CA1_building_up_network
 			focus = CA1_arm_cooperatives
 			focus = CA1_form_epic_clubs
 		}
@@ -307,6 +308,8 @@ focus_tree = {
 		relative_position_id = CA1_socialist_crusader
 		prerequisite = {
 			focus = CA1_building_up_network
+			focus = CA1_arm_cooperatives
+			focus = CA1_form_epic_clubs
 		}
 		completion_reward = {
 		}

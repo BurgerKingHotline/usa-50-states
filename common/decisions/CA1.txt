@@ -16,4 +16,20 @@ CA1_debug = {
 			set_cosmetic_tag = CA1_CIVILWAR
 		}
 	}
+	CA1_kill_james_rolph = {
+
+		priority = 11
+
+		icon = GFX_decision_generic_forestry
+
+		visible = {
+			is_debug = yes
+		}
+
+		cost = 0
+
+		complete_effect = { 
+			retire_character = CA1_JAMES_ROLPH
+		}
+	}
 }

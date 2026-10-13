@@ -32,18 +32,29 @@ CA1_add_states_to_faction_arrays = {
 		array = CA1.sinclair_states
 		value = 145
 	}
-	#merriam
 	add_to_array = {
-		array = CA1.angeles_states
+		array = CA1.sinclair_states
 		value = 113
 	}
 	add_to_array = {
-		array = CA1.angeles_states
-		value = 112
+		array = CA1.sinclair_states
+		value = 114
 	}
 	add_to_array = {
-		array = CA1.angeles_states
-		value = 114
+		array = CA1.sinclair_states
+		value = 147
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 116
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 142
+	}
+	add_to_array = {
+		array = CA1.sinclair_states
+		value = 139
 	}
 }
 CA1_start_californian_civil_war = {
@@ -55,12 +66,12 @@ CA1_start_californian_civil_war = {
 			transfer_state = v
 		}
 	}
-	for_each_loop = {
-		array = CA1.angeles_states
-		value = v
-		CA0 = {
-			add_state_core = v
-			transfer_state = v
-		}
-	}
+	#for_each_loop = {
+	#	array = CA1.angeles_states
+	#	value = v
+	#	CA0 = {
+	#		add_state_core = v
+	#		transfer_state = v
+	#	}
+	#}
 }
