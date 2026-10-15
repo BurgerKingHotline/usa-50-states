@@ -74,7 +74,7 @@ recruit_character = PRC_zhou_enlai
 recruit_character = PRC_liu_shaoqi
 recruit_character = PRC_dong_biwu
 recruit_character = PRC_deng_xiaoping
-recruit_character = PRC_luo_ruiqing
+#recruit_character = PRC_luo_ruiqing
 recruit_character = PRC_kang_sheng
 
 IF = { #Recruit only if we have the dlc
