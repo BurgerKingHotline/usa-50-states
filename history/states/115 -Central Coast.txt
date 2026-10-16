@@ -5,8 +5,8 @@ state = {
 	state_category = rural
 	provinces = { 3381 3926 3975 4698 5187 5336 5351 6221 8422 8452 8483 8516 8587 }
 	history = {
-		owner = CA1
-		add_core_of = CA1
+		owner = CAL
+		add_core_of = CAL
 		victory_points = {
 			8422 2#Salinas
 		}

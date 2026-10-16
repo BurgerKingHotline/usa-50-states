@@ -2,19 +2,17 @@ MN_farmer_labor = {
 	color = rgb { 72 206 67 }
 	color_ui = rgb { 36 177 31 }
 }
-CA1_CALIFORNIA_REPUBLIC = {
+CAL_CALIFORNIA_REPUBLIC = {
 	color = rgb { 182 12 47 }
 	color_ui = rgb { 182 12 47 }
 }
-CA0_CIVILWAR = {
-	color = rgb { 128 128 128 }
-	color_ui = rgb { 128 128 128 }
+CAL_SOCIALIST_CIVILWAR = {
+	color = rgb { 163 0 0 }
+	color_ui = rgb { 163 0 0 }
 }
-CA1_CIVILWAR = {
-	color = rgb { 20 64 156 }
-	color_ui = rgb { 20 64 156 }
-}
-CA2_CIVILWAR  = {
-	color = rgb { 182 12 47 }
-	color_ui = rgb { 182 12 47 }
+CAL_CONSERVATIVES_CIVILWAR = {
+	color = rgb { 0 59 163 }
+	color_ui = rgb { 0 59 163 }
+	#color = rgb { 0 35 163 }
+	#color_ui = rgb { 0 35 163 }
 }

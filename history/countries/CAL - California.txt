@@ -1,0 +1,31 @@
+capital = 118
+
+recruit_character = CAL_JAMES_ROLPH
+recruit_character = CAL_FRANK_MERRIAM
+recruit_character = CAL_UPTON_SINCLAIR
+recruit_character = CAL_GEORGE_PATTON
+recruit_character = CAL_ARTHUR_WILSON
+recruit_character = CAL_HENRY_ARNOLD
+recruit_character = CAL_JIMMY_DOOLITTLE
+recruit_character = CAL_MERRITT_BARTON
+
+set_popularities = {
+	socialism_ideology = 10
+	democratic = 22
+	conservatism_ideology = 20
+	populism_ideology = 0
+	neutrality = 45
+	fascism = 2
+	communism = 1
+}
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = yes
+	last_election = "1930.1.1"
+	election_frequency = 48
+}
+set_research_slots = 3
+
+set_cosmetic_tag = CAL_CALIFORNIA_REPUBLIC
+
+load_oob = "CAL_1933"

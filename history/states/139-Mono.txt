@@ -5,8 +5,8 @@ state = {
 		367 5605 1649 8575 3868 2476 55 8464 2124 1470 1743 2982 4861 8680 2653
 	}
 	history = {
-		owner = CA1
-		add_core_of = CA1
+		owner = CAL
+		add_core_of = CAL
 		victory_points = {
 			55 1 #Independence
 		}

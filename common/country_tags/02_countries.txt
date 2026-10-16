@@ -1,6 +1,4 @@
-CA0 = "countries/California 0.txt"
-CA1 = "countries/California 1.txt"
-CA2 = "countries/California 2.txt"
+CAL = "countries/California.txt"
 TON = "countries/Tohono Oodham.txt"
 SCA = "countries/San Carlos Apache.txt"
 WMA = "countries/White Mountain Apache.txt"

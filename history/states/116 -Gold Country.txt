@@ -8,8 +8,8 @@ state = {
 		coal = 15
 	}
 	history = {
-		owner = CA1
-		add_core_of = CA1
+		owner = CAL
+		add_core_of = CAL
 		victory_points = {
 			7986 1#Maryarille
 		}

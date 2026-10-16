@@ -353,6 +353,10 @@ ideologies = {
 			centrism = {
 			}
 
+			authoritarian_democracy = {
+				can_be_randomly_selected = no
+			}
+
 			mafia_oligarchism = {
 				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
 			}

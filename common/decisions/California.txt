@@ -1,0 +1,92 @@
+CAL_debug_decision_cat = {
+	CAL_kill_james_rolph = {
+		icon = GFX_decision_generic_army_support
+
+		allowed = { 
+			original_tag = CAL
+		}
+		complete_effect = {
+			retire_character = CAL_JAMES_ROLPH
+		}
+	}
+	CAL_start_civil_war = {
+		icon = GFX_decision_generic_army_support
+
+		allowed = { 
+			original_tag = CAL
+		}
+		complete_effect = {
+			set_global_flag = global_flag_cal_civil_war
+			set_country_flag = country_flag_cal_conservative_civil_war
+			set_cosmetic_tag = CAL_CONSERVATIVES_CIVILWAR
+			load_oob = "CAL_civilwar"
+			add_ideas = { CAL_idea_civilwar }
+			start_civil_war = {
+				load_oob = "CAL_civilwar"
+				ideology = socialism_ideology
+				capital = 113
+				army_ratio = 0.5
+				states = {
+					4 113 141 109 110 147 146
+				}
+				set_cosmetic_tag =CAL_SOCIALIST_CIVILWAR
+				set_country_flag = country_flag_cal_socialist_civil_war
+				add_ideas = { CAL_idea_civilwar }
+			}
+		}
+	}
+}
+CAL_civilwar_decision_cat = {
+	CAL_summon_initial_militias = {
+		icon = GFX_decision_generic_army_support
+
+		allowed = { 
+			original_tag = CAL
+		}
+		ai_will_do = {
+			base =10
+		}
+		fire_only_once = yes
+		complete_effect = {
+			for_loop_effect = {
+				end = 16
+				value = temp
+				random_owned_state = {
+					create_unit = {
+						division = "name = \"Artie\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
+						owner = ROOT
+						count = 1
+					}
+				}
+			}
+		}
+	}
+	CAL_create_militias = {
+		icon = GFX_decision_generic_army_support
+
+		allowed = { 
+			original_tag = CAL
+		}
+		ai_will_do = {
+			base =10
+		}
+		days_remove = 35
+		#days_re_enable = 25
+		available = {
+			any_state = {
+				is_core_of = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		complete_effect = {
+			random_core_state = {
+				create_unit = {
+					division = "name = \"Artie\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
+					owner = ROOT
+					count = 2
+				}
+			}
+		}
+	}
+
+}

@@ -11,15 +11,25 @@ characters = {
 			expire = "1934.11.6"
 			desc = CAL_james_rolph_desc
 		}
+		country_leader = {
+			ideology = authoritarian_democracy
+			expire = "1955.5.25"
+			desc = CAL_james_rolph_desc
+		}
 	}
 	CAL_FRANK_MERRIAM = {
 		name = "Frank Merriam"
 		portraits = {
-			civilian = { large = "GFX_CA1_Portrait_Frank_Merriam" }
+			civilian = { large = "GFX_CAL_Portrait_Frank_Merriam" }
 		}
 		gender = male
 		country_leader = {
 			ideology = conservatism_subideology
+			expire = "1955.5.25"
+			desc = CAL_frank_merriam_desc
+		}
+		country_leader = {
+			ideology = authoritarian_democracy
 			expire = "1955.5.25"
 			desc = CAL_frank_merriam_desc
 		}
@@ -36,28 +46,11 @@ characters = {
 			desc = CAL_upton_sinclair_desc
 		}
 	}
-	CAL_EARL_WARREN = {
-		name = "Earl Warren"
-		portraits = {
-			civilian = { large = "GFX_CAL_Portrait_Upton_Sinlair" }
-		}
-		gender = male
-		advisor = {
-			slot = political_advisor
-			idea_token = cal_earl_warren
-			allowed = {
-				original_tag = CAL
-			}
-			traits = {
-				conformist_attorney
-			}
-		}
-	}
 	CAL_GEORGE_PATTON = {
 		name = "George S. Patton"
 		portraits = {
 			army = {
-				large = "GFX_Portrait_CAL_George_Patton"
+				large = "GFX_CAL_Portrait_George_Patton"
 			}
 		}
 		gender = male
@@ -86,7 +79,7 @@ characters = {
 		name = "Arthur R. Wilson"
 		portraits = {
 			army = {
-				large = "GFX_Portrait_CAL_Arthur_Wilson"
+				large = "GFX_CAL_Portrait_Arthur_Wilson"
 			}
 		}
 		gender = male
@@ -104,7 +97,7 @@ characters = {
 		name = "Henry H. Arnold"
 		portraits = {
 			army = {
-				large = "GFX_Portrait_CAL_Henry_Arnold"
+				large = "GFX_CAL_Portrait_Henry_Arnold"
 			}
 		}
 		gender = male
@@ -121,7 +114,7 @@ characters = {
 		name = "Jimmy Doolittle"
 		portraits = {
 			army = {
-				large = "GFX_Portrait_CAL_Jimmy_Dolittle"
+				large = "GFX_CAL_Portrait_Jimmy_Dolittle"
 			}
 		}
 		gender = male
@@ -138,7 +131,7 @@ characters = {
 		name = "Merritt Burton Curtis"
 		portraits = {
 			army = {
-				large = "GFX_Portrait_CAL_Merritt_Barton_Curtis"
+				large = "GFX_CAL_Portrait_Merritt_Barton_Curtis"
 			}
 		}
 		gender = male

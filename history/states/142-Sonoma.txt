@@ -6,8 +6,8 @@ state = {
 	}
 
 	history = {
-		owner = CA1
-		add_core_of = CA1
+		owner = CAL
+		add_core_of = CAL
 
 		victory_points = {
 			5692 3#Belvedere

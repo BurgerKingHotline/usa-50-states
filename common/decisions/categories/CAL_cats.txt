@@ -1,0 +1,27 @@
+CAL_debug_decision_cat = {
+    allowed = {
+        always = yes
+    }
+    visible = {
+        original_tag = CAL
+		is_debug = yes
+    }
+    visible_when_empty = yes
+    priority = 100
+}
+CAL_civilwar_decision_cat = {
+    allowed = {
+        always = yes
+    }
+    visible = {
+		OR = {
+			has_country_flag = country_flag_cal_conservative_civil_war
+			has_country_flag = country_flag_cal_socialist_civil_war
+		}
+        original_tag = CAL
+		#is_debug = yes
+    }
+    visible_when_empty = yes
+    priority = 100
+}
+

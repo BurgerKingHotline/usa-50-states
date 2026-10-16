@@ -6,8 +6,8 @@ state = {
 	provinces = { 8162 8177 8156 4821 6801 5146 1823 8097 8071 13029 1725 7977 3190 8029 3742 7988 4855 5270 }
 
 	history = {
-		owner = CA1
-		add_core_of = CA1
+		owner = CAL
+		add_core_of = CAL
 		
 		buildings = {
 			infrastructure = 3

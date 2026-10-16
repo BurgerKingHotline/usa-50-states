@@ -1,0 +1,18 @@
+ideas = {
+	country = {
+		CAL_idea_civilwar = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				surrender_limit = 0.5
+				army_attack_factor = -0.1
+			}
+		}
+	}
+}

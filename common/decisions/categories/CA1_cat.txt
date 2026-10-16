@@ -1,8 +1,0 @@
-CA1_debug = {
-	allowed = {
-		tag = CA1
-	}
-	available = {
-		is_debug = yes
-	}
-}
