@@ -24,4 +24,14 @@ CAL_civilwar_decision_cat = {
     visible_when_empty = yes
     priority = 100
 }
-
+CAL_civil_war_preparation_cat = {
+    allowed = {
+        always = yes
+    }
+    visible = {
+		is_debug = yes
+        original_tag = CAL
+    }
+    visible_when_empty = yes
+    priority = 100
+}

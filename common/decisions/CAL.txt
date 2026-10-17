@@ -6,7 +6,8 @@ CAL_debug_decision_cat = {
 			original_tag = CAL
 		}
 		complete_effect = {
-			retire_character = CAL_JAMES_ROLPH
+			country_event = { id = california_major_events.1 }
+			#retire_character = CAL_JAMES_ROLPH
 		}
 	}
 	CAL_start_civil_war = {
@@ -32,6 +33,22 @@ CAL_debug_decision_cat = {
 				set_cosmetic_tag =CAL_SOCIALIST_CIVILWAR
 				set_country_flag = country_flag_cal_socialist_civil_war
 				add_ideas = { CAL_idea_civilwar }
+				every_owned_state = {
+					remove_core_of = CAL
+					add_claim_by = CAL
+				}
+				every_state = {
+					if = {
+						limit = {
+							NOT = {
+								is_owned_by = ROOT
+							}
+							is_core_of = CAL
+						}
+						remove_core_of = CAL
+						add_claim_by = CAL
+					}
+				}
 			}
 		}
 	}
@@ -46,19 +63,44 @@ CAL_civilwar_decision_cat = {
 		ai_will_do = {
 			base =10
 		}
+		available = {
+			always = no
+		}
 		fire_only_once = yes
 		complete_effect = {
-			for_loop_effect = {
-				end = 16
-				value = temp
-				random_owned_state = {
+			every_owned_state = {
+				if = {
+					limit = {
+						state_population_k > 250
+					}
 					create_unit = {
-						division = "name = \"Artie\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
+						division = "name = \"50\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
+						owner = ROOT
+						count = 3
+					}
+				}
+				else_if = {
+					limit = {
+						state_population_k > 50
+					}
+					create_unit = {
+						division = "name = \"50\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
 						owner = ROOT
 						count = 1
 					}
 				}
 			}
+			#for_loop_effect = {
+			#	end = 16
+			#	value = temp
+			#	random_owned_state = {
+			#		create_unit = {
+			#			division = "name = \"Artie\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
+			#			owner = ROOT
+			#			count = 1
+			#		}
+			#	}
+			#}
 		}
 	}
 	CAL_create_militias = {
@@ -66,12 +108,13 @@ CAL_civilwar_decision_cat = {
 
 		allowed = { 
 			original_tag = CAL
+			always = no
 		}
 		ai_will_do = {
 			base =10
 		}
 		days_remove = 35
-		#days_re_enable = 25
+		days_re_enable = 25
 		available = {
 			any_state = {
 				is_core_of = ROOT
@@ -88,5 +131,20 @@ CAL_civilwar_decision_cat = {
 			}
 		}
 	}
-
+}
+CAL_civil_war_preparation_cat = {
+	CAL_strikes_coming = {
+		activation = {
+			has_country_flag = country_flag_cal_strikes_incoming
+		}
+		icon = mission_icon
+		available = {
+			always = no
+		}
+		days_mission_timeout = 1
+		timeout_effect = {
+			clr_country_flag = country_flag_cal_strikes_incoming
+			country_event = { id = california_major_events.2 }
+		}
+	}
 }

@@ -10,6 +10,28 @@ division_template = {
 		infantry = { x = 2 y = 1 }
 	}
 }
+division_template = {
+	name = "Tank Division"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Military Police"
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+		military_police = { x = 0 y = 0 }
+	}
+}
 units = {
 	division= {
 		division_name = {
@@ -17,8 +39,8 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
+		division_template = "Tank Division"
+		start_experience_factor = 0.1
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -29,7 +51,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -40,7 +62,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -51,7 +73,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -62,7 +84,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -73,7 +95,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -84,7 +106,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -95,7 +117,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -106,7 +128,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -117,7 +139,7 @@ units = {
 		}
 		location = 5120
 		division_template = "National Guard"
-		start_experience_factor = 1
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -128,8 +150,8 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
+		division_template = "Military Police"
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -139,8 +161,8 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
+		division_template = "Military Police"
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -150,8 +172,8 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
+		division_template = "Military Police"
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -161,8 +183,8 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
+		division_template = "Military Police"
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -172,8 +194,8 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
+		division_template = "Military Police"
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
@@ -183,52 +205,8 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
-		start_equipment_factor = 1
-		start_manpower_factor = 1
-	}
-	division= {
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
-		start_equipment_factor = 1
-		start_manpower_factor = 1
-	}
-	division= {
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
-		start_equipment_factor = 1
-		start_manpower_factor = 1
-	}
-	division= {
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
-		start_equipment_factor = 1
-		start_manpower_factor = 1
-	}
-	division= {
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 5120
-		division_template = "National Guard"
-		start_experience_factor = 1
+		division_template = "Military Police"
+		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
 	}
