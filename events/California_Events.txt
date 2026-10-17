@@ -1,384 +1,437 @@
 add_namespace = california_flavor_events#these events provide bonuses usually, but mostly just texture the world and aren't super important to progression
 add_namespace = california_major_events#things like the civilwar starting, bloody thursday. critical events not only progression but also mechanicallys
 
+
 #townsend act
 country_event = {
-	id = california_flavor_events.1
-	title = california_flavor_events.1.t
-	desc = california_flavor_events.1.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_flavor_events.1.a
-		add_popularity = {
-			ideology = socialism_ideology
-			popularity = 0.05
-		}
+    id = california_flavor_events.1
+    title = california_flavor_events.1.t
+    desc = california_flavor_events.1.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_flavor_events.1.a
+        add_popularity = {
+            ideology = socialism_ideology
+            popularity = 0.05
+        }
+    }
 }
 #klu klux klan rides again
 country_event = {
-	id = california_flavor_events.2
-	title = california_flavor_events.2.t
-	desc = california_flavor_events.2.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
+    id = california_flavor_events.2
+    title = california_flavor_events.2.t
+    desc = california_flavor_events.2.desc
+    
+    fire_only_once = yes
 	trigger = {
-		date > 1934.2.1
+		tag = CAL
 	}
-	option = {
-		name = california_flavor_events.2.a
-		add_stability = -0.01
-		add_popularity = {
-			ideology = fascism
-			popularity = 0.01
-		}
-	}
+    trigger = {
+        date > 1934.2.1
+    }
+    option = {
+        name = california_flavor_events.2.a
+        add_stability = -0.01
+        add_popularity = {
+            ideology = fascism
+            popularity = 0.01
+        }
+    }
 }
 #epic pamphlet becomes a big seller
 country_event = {
-	id = california_flavor_events.3
-	title = california_flavor_events.3.t
-	desc = california_flavor_events.3.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_flavor_events.3.a
-		add_popularity = {
-			ideology = socialism_ideology
-			popularity = 0.1
-		}
-		add_popularity = {
-			ideology = democratic
-			popularity = -0.05
-		}
+    id = california_flavor_events.3
+    title = california_flavor_events.3.t
+    desc = california_flavor_events.3.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_flavor_events.3.a
+        add_popularity = {
+            ideology = socialism_ideology
+            popularity = 0.1
+        }
+        add_popularity = {
+            ideology = democratic
+            popularity = -0.05
+        }
+    }
 }
 #long beach earthquake
 country_event = {
-	id = california_flavor_events.4
-	title = california_flavor_events.4.t
-	desc = california_flavor_events.4.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_flavor_events.4.a
-		113 = {
-			damage_building = {
-				type = infrastructure
-				damage = 1
-			}
-			damage_building = {
-				type = industrial_complex
-				damage = 2
-			}
-			add_manpower = -120
-		}
-	}
+    id = california_flavor_events.4
+    title = california_flavor_events.4.t
+    desc = california_flavor_events.4.desc
+    
+    fire_only_once = yes
+    trigger = {
+        date > 1933.3.1
+		tag = CAL
+    }
+    option = {
+        name = california_flavor_events.4.a
+        113 = {
+            damage_building = {
+                type = infrastructure
+                damage = 1
+            }
+            damage_building = {
+                type = industrial_complex
+                damage = 2
+            }
+            add_manpower = -120
+        }
+    }
 }
 #republican party agrees to nominate merriam(only fires if merriam withholds national guard)
 country_event = {
-	id = california_flavor_events.5
-	title = california_flavor_events.5.t
-	desc = california_flavor_events.5.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
+    id = california_flavor_events.5
+    title = california_flavor_events.5.t
+    desc = california_flavor_events.5.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
 	trigger = {
-		date > 1933.3.10
+		tag = CAL
 	}
-	option = {
-		name = california_flavor_events.5.a
-	}
+    option = {
+        name = california_flavor_events.5.a
+    }
 }
 #nobody likes merriam
 country_event = {
-	id = california_flavor_events.6
-	title = california_flavor_events.6.t
-	desc = california_flavor_events.6.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_flavor_events.6.a
-		add_popularity = {
-			ideology = neutrality
-			popularity = -0.05
-		}
-		if = {
-			limit = {
-				has_country_flag = country_flag_cal_go_sinclair
-			}
-			add_political_power = 10
-		}
-		else = {
-			add_political_power = -10
-		}
+    id = california_flavor_events.6
+    title = california_flavor_events.6.t
+    desc = california_flavor_events.6.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_flavor_events.6.a
+        add_popularity = {
+            ideology = neutrality
+            popularity = -0.05
+        }
+        if = {
+            limit = {
+                has_country_flag = country_flag_cal_go_sinclair
+            }
+            add_political_power = 10
+        }
+        else = {
+            add_political_power = -10
+        }
+    }
 }
 #upton sinclair refusing to campaing/secretly wanting to lose
 country_event = {
-	id = california_flavor_events.7
-	title = california_flavor_events.7.t
-	desc = california_flavor_events.7.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_flavor_events.7.a
-		add_popularity = {
-			ideology = socialism_ideology
-			popularity = -0.05
-		}
+    id = california_flavor_events.7
+    title = california_flavor_events.7.t
+    desc = california_flavor_events.7.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_flavor_events.7.a
+        add_popularity = {
+            ideology = socialism_ideology
+            popularity = -0.05
+        }
+    }
 }
 #upton sinclair drops out and endorses harry bridges!
 country_event = {
-	id = california_flavor_events.8
-	title = california_flavor_events.8.t
-	desc = california_flavor_events.8.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_flavor_events.8.a
+    id = california_flavor_events.8
+    title = california_flavor_events.8.t
+    desc = california_flavor_events.8.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_flavor_events.8.a
+    }
 }
 #upton sinclair kicked out of socialist party of america
 country_event = {
-	id = california_flavor_events.9
-	title = california_flavor_events.9.t
-	desc = california_flavor_events.9.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	trigger = {
-		has_country_flag = country_flag_cal_elections_starting
-	}
-	option = {
-		name = california_flavor_events.9.a
-		add_popularity = {
-			ideology = socialism_ideology
-			popularity = -0.01
-		}
-	}
+    id = california_flavor_events.9
+    title = california_flavor_events.9.t
+    desc = california_flavor_events.9.desc
+    
+    fire_only_once = yes
+    trigger = {
+        has_country_flag = country_flag_cal_elections_starting
+		tag = CAL
+    }
+    option = {
+        name = california_flavor_events.9.a
+        add_popularity = {
+            ideology = socialism_ideology
+            popularity = -0.01
+        }
+    }
 }
 #raymond l haight decides to run, make sure to mention that his only support comes from valley and he probably won't win, even though he can in california republic
 country_event = {
-	id = california_flavor_events.10
-	title = california_flavor_events.10.t
-	desc = california_flavor_events.10.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_flavor_events.10.a
-		add_popularity = {
-			ideology = democratic
-			popularity = 0.03
-		}
+    id = california_flavor_events.10
+    title = california_flavor_events.10.t
+    desc = california_flavor_events.10.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_flavor_events.10.a
+        add_popularity = {
+            ideology = democratic
+            popularity = 0.03
+        }
+    }
 }
 #mayoral elections of los angeles
 country_event = {
-	id = california_flavor_events.11
-	title = california_flavor_events.11.t
-	desc = california_flavor_events.11.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	trigger = {
-		date > 1933.6.1
-	}
-	option = {#frank l. shaw wins
-		name = california_flavor_events.11
-		add_popularity = {
-			ideology = neutrality
-			popularity = 0.03
-		}
-	}
-	option = {#john clinton porter
-		name = california_flavor_events.11
-		add_popularity = {
-			ideology = fascism
-			popularity = 0.03
-		}
-	}
+    id = california_flavor_events.11
+    title = california_flavor_events.11.t
+    desc = california_flavor_events.11.desc
+    
+    fire_only_once = yes
+    trigger = {
+        date > 1933.6.1
+		tag = CAL
+    }
+    option = {#frank l. shaw wins
+        name = california_flavor_events.11
+        add_popularity = {
+            ideology = neutrality
+            popularity = 0.03
+        }
+    }
+    option = {#john clinton porter
+        name = california_flavor_events.11
+        add_popularity = {
+            ideology = fascism
+            popularity = 0.03
+        }
+    }
 }
+
 
 #upton sincliar registers as democrat: decide who to side with, election season starts once that mechanics implemented
 country_event = {
-	id = california_major_events.1
-	title = california_major_events.1.t
-	desc = california_major_events.1.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	trigger = {
-		date > 1933.9.1
-	}
-	option = {
-		name = california_major_events.1.a#An "E.P.I.C." Idea
-		set_country_flag = country_flag_cal_go_sinclair
-	}
-	option = {
-		name = california_major_events.1.b#stop sinclair
-		set_country_flag = country_flag_cal_stop_sinclair
-	}
-	after = {
-		country_event = { id = california_flavor_events.3 }
-		set_country_flag = country_flag_cal_elections_starting
-	}
+    id = california_major_events.1
+    title = california_major_events.1.t
+    desc = california_major_events.1.desc
+    
+    fire_only_once = yes
+    trigger = {
+        date > 1933.9.1
+		tag = CAL
+    }
+    option = {
+        name = california_major_events.1.a#An "E.P.I.C." Idea
+        set_country_flag = country_flag_cal_go_sinclair
+    }
+    option = {
+        name = california_major_events.1.b#stop sinclair
+        set_country_flag = country_flag_cal_stop_sinclair
+    }
+    after = {
+        country_event = { id = california_flavor_events.3 }
+        set_country_flag = country_flag_cal_elections_starting
+    }
 }
 #october strikes begin, mass evictions, cotton strike: make total engagement idea worse
 country_event = {
-	id = california_major_events.2
-	title = california_major_events.2.t
-	desc = california_major_events.2.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	trigger = {
-		date > 1933.10.1
-	}
-	option = {
-		name = california_major_events.2.a
-		hidden_effect = {
-			country_event = { id = california_major_events.3 days = 5 random_days = 5 hours =12 random_hours = 12}
-		}
-	}
+    id = california_major_events.2
+    title = california_major_events.2.t
+    desc = california_major_events.2.desc
+    
+    fire_only_once = yes
+    trigger = {
+        date > 1933.10.1
+		tag = CAL
+    }
+    option = {
+        name = california_major_events.2.a
+        hidden_effect = {
+            country_event = { id = california_major_events.3 days = 5 random_days = 5 hours =12 random_hours = 12}
+        }
+    }
 }
 #pixley murders, public outrage: make total engagement idea worse, enable a decision/event or focus or something
 country_event = {
-	id = california_major_events.3
-	title = california_major_events.3.t
-	desc = california_major_events.3.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_major_events.3.a
+    id = california_major_events.3
+    title = california_major_events.3.t
+    desc = california_major_events.3.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_major_events.3.a
+    }
 }
 #james rolph's death: dies of heart attack with frank merriam taking over
 country_event = {
-	id = california_major_events.4
-	title = california_major_events.4.t
-	desc = california_major_events.4.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	trigger = {
-		date > 1934.5.2
-	}
-	option = {
-		name = california_major_events.4.a
-		retire_character = CAL_JAMES_ROLPH
-		country_event = { id = california_flavor_events.6 }
-	}
+    id = california_major_events.4
+    title = california_major_events.4.t
+    desc = california_major_events.4.desc
+    
+    fire_only_once = yes
+    trigger = {
+        date > 1934.5.2
+		tag = CAL
+    }
+    option = {
+        name = california_major_events.4.a
+        retire_character = CAL_JAMES_ROLPH
+        country_event = { id = california_flavor_events.6 }
+    }
 }
 #ila waterfront strikes: add terrible idea. start the countdown to the strikes being broken up, in real life it was like 3 months or something
 country_event = {
-	id = california_major_events.5
-	title = california_major_events.5.t
-	desc = california_major_events.5.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	trigger = {
-		date > 1934.5.1
-	}
-	option = {
-		name = california_major_events.5.a
-		set_country_flag = country_flag_cal_strikes_incoming#will lead to bloody thursday, allows player to change what time civil war starts slightly
-	}
+    id = california_major_events.5
+    title = california_major_events.5.t
+    desc = california_major_events.5.desc
+    
+    fire_only_once = yes
+    trigger = {
+        date > 1934.5.1
+		tag = CAL
+    }
+    option = {
+        name = california_major_events.5.a
+        set_country_flag = country_flag_cal_strikes_incoming#will lead to bloody thursday, allows player to change what time civil war starts slightly
+    }
 }
 #bloody thursday: mention harry bridges, withhold the national guard or send it in immediately
 #Merriam, however, had threatened not to deploy the California National Guard to San Francisco if the party would not nominate him.
 country_event = {
-	id = california_major_events.6
-	title = california_major_events.6.t
-	desc = california_major_events.6.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {#deploy it immediately
-		name = california_major_events.6.a
+    id = california_major_events.6
+    title = california_major_events.6.t
+    desc = california_major_events.6.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
-	option = {#withhold national guard
-		name = california_major_events.6.b
-		set_country_flag = country_flag_cal_merriam_withheld_national_guard
-		country_event = { id = california_flavor_events.5 days = 1 random_hours = 12 }
-	}
-	after = {
-		hidden_effect = {
-			country_event = { id = california_major_events.7 days = 4 random_hours = 10 }
-		}
-	}
+    option = {#deploy it immediately
+        name = california_major_events.6.a
+    }
+    option = {#withhold national guard
+        name = california_major_events.6.b
+        set_country_flag = country_flag_cal_merriam_withheld_national_guard
+        country_event = { id = california_flavor_events.5 days = 1 random_hours = 12 }
+    }
+    after = {
+        hidden_effect = {
+            country_event = { id = california_major_events.7 days = 4 random_hours = 10 }
+        }
+    }
 }
 #civilwar starts
 country_event = {
-	id = california_major_events.7
-	title = california_major_events.7.t
-	desc = california_major_events.7.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_major_events.7.a
-		CAL_start_civil_war = yes
+    id = california_major_events.7
+    title = california_major_events.7.t
+    desc = california_major_events.7.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_major_events.7.a
+        CAL_start_civil_war = yes
+    }
 }
 #republican convention
 #if picked to withhold national guard frank merriam is the only choice, but this will bring extra goodies or whatever
 #i'm not sure who else. maybe c.c. young(progressive) conservatism
 #burton fitts. get that degenerate in here for populism. wasn't really a populist but he's such a terrible person and a conservative so it's fine.
 country_event = {
-	id = california_major_events.8
-	title = california_major_events.8.t
-	desc = california_major_events.8.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_major_events.8.a
+    id = california_major_events.8
+    title = california_major_events.8.t
+    desc = california_major_events.8.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_major_events.8.a
+    }
 }
-#election of california republic 
+#election of california republic
 #Raymond L. Haight can win, or the republian candidate. with haight drawing his popularity from the central valley, running on a third party so he's not tainted by democrats
 country_event = {
-	id = california_major_events.9
-	title = california_major_events.9.t
-	desc = california_major_events.9.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_major_events.9.a
+    id = california_major_events.9
+    title = california_major_events.9.t
+    desc = california_major_events.9.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_major_events.9.a
+    }
 }
 #upton sinclair deciding whether or not to run or drop out of race(if he drops out harry bridges becomes the only candidate)
 country_event = {
-	id = california_major_events.10
-	title = california_major_events.10.t
-	desc = california_major_events.10.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_major_events.10.a
+    id = california_major_events.10
+    title = california_major_events.10.t
+    desc = california_major_events.10.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
-	option = {
-		name = california_major_events.10.a
-		country_event = { id = california_flavor_events.8 }
-	}
+    option = {
+        name = california_major_events.10.a
+    }
+    option = {
+        name = california_major_events.10.a
+        country_event = { id = california_flavor_events.8 }
+    }
 }
 #commonwealth elections
 country_event = {
-	id = california_major_events.11
-	title = california_major_events.11.t
-	desc = california_major_events.11.desc
-	picture = GFX_report_event_cal_lasangeles
-	fire_only_once = yes
-	is_triggered_only = yes
-	option = {
-		name = california_major_events.11.a
+    id = california_major_events.11
+    title = california_major_events.11.t
+    desc = california_major_events.11.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+	trigger = {
+		tag = CAL
 	}
+    option = {
+        name = california_major_events.11.a
+    }
 }
-
