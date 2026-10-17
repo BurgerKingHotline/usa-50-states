@@ -117,7 +117,8 @@ CAL_civilwar_decision_cat = {
 		target_array = ROOT.core_states
 		days_remove = 25
 		available = {
-			command_power > 25
+			#command_power > 25
+			NOT = { has_country_flag = country_flag_cal_recruiting_civil_war_militias }
 		}
 		target_trigger = {
 			FROM = {
@@ -126,17 +127,39 @@ CAL_civilwar_decision_cat = {
 				state_population_k > 50
 			}
 		}
+		custom_cost_trigger = {
+			#command_power > 25
+		}
 		complete_effect = {
 			add_command_power = -25
+			set_country_flag = country_flag_cal_recruiting_civil_war_militias
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				set_temp_variable = { cal_militia_state_number_temp = FROM.state_population_k }#state_population_k }
+				divide_temp_variable = { cal_militia_state_number_temp = 101 }
+				round_temp_variable = cal_militia_state_number_temp
+				add = cal_militia_state_number_temp
+			}
 		}
 		remove_effect = {
-			random_core_state = {
+			set_temp_variable = { cal_militia_state_number_temp = FROM.state_population_k }#state_population_k }
+			divide_temp_variable = { cal_militia_state_number_temp = 101 }
+			round_temp_variable = cal_militia_state_number_temp
+			clamp_temp_variable = {
+				var = cal_militia_state_number_temp
+				max = 11
+				min = 1
+			}
+			FROM = { 
 				create_unit = {
 					division = "name = \"Civil War Militia\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
 					owner = ROOT
-					count = 1
+					count = cal_militia_state_number_temp
 				}
 			}
+			clr_country_flag = country_flag_cal_recruiting_civil_war_militias
 		}
 	}
 }
