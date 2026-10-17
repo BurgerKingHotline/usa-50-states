@@ -10,13 +10,13 @@ recruit_character = CAL_JIMMY_DOOLITTLE
 recruit_character = CAL_MERRITT_BARTON
 
 set_popularities = {
-	socialism_ideology = 10
-	democratic = 22
-	conservatism_ideology = 20
-	populism_ideology = 0
-	neutrality = 45
-	fascism = 2
-	communism = 1
+	socialism_ideology = 10#socialist party of california
+	democratic = 20#democratic party
+	conservatism_ideology = 20#republican party
+	populism_ideology = 0#there is no populism in bae-sing-sae, idk gng, i want right-wing radicals to be represented by fascism not this, not quite accurate but i think will make more sense narratively
+	neutrality = 45#republican party
+	fascism = 5#fifth column
+	communism = 0#communist party of california
 }
 set_politics = {
 	ruling_party = neutrality

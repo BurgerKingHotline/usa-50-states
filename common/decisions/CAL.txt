@@ -133,7 +133,7 @@ CAL_civilwar_decision_cat = {
 	}
 }
 CAL_civil_war_preparation_cat = {
-	CAL_strikes_coming = {
+	CAL_strikes_coming = {#waterfront strikes escalating
 		activation = {
 			has_country_flag = country_flag_cal_strikes_incoming
 		}
@@ -141,10 +141,10 @@ CAL_civil_war_preparation_cat = {
 		available = {
 			always = no
 		}
-		days_mission_timeout = 1
+		days_mission_timeout = 1#HAS to be long enough to let James rolp die during june.
 		timeout_effect = {
 			clr_country_flag = country_flag_cal_strikes_incoming
-			country_event = { id = california_major_events.2 }
+			country_event = { id = california_major_events.6 }#bloody thursday
 		}
 	}
 }
