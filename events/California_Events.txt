@@ -447,6 +447,7 @@ country_event = {
 			has_country_flag = country_flag_cal_conservative_civil_war
 			has_country_flag = country_flag_cal_socialist_civil_war
 		}
+		NOT = { has_idea = CAL_idea_guerrilla_fighting }
 	}
     option = {
         name = california_civil_war_events.1.a
