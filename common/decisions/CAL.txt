@@ -108,25 +108,33 @@ CAL_civilwar_decision_cat = {
 
 		allowed = { 
 			original_tag = CAL
-			always = no
 		}
+		on_map_mode = map_and_decisions_view
+		state_target = yes
 		ai_will_do = {
 			base =10
 		}
-		days_remove = 35
-		days_re_enable = 25
+		target_array = ROOT.core_states
+		days_remove = 25
 		available = {
-			any_state = {
+			command_power > 25
+		}
+		target_trigger = {
+			FROM = {
 				is_core_of = ROOT
 				is_fully_controlled_by = ROOT
+				state_population_k > 50
 			}
 		}
 		complete_effect = {
+			add_command_power = -25
+		}
+		remove_effect = {
 			random_core_state = {
 				create_unit = {
-					division = "name = \"Artie\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
+					division = "name = \"Civil War Militia\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
 					owner = ROOT
-					count = 2
+					count = 1
 				}
 			}
 		}

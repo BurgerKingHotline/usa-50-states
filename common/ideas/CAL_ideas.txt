@@ -1,6 +1,6 @@
 ideas = {
 	country = {
-		CAL_idea_civilwar = {
+		CAL_idea_civil_war = {
 			picture = generic_production_bonus
 			allowed = {
 				always = no
@@ -12,6 +12,27 @@ ideas = {
 			modifier = {
 				surrender_limit = 0.5
 				army_attack_factor = -0.1
+			}
+		}
+		CAL_idea_guerrilla_fighting = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_activity = 0.25
+				required_garrison_factor = 0.25
+				resistance_target = 0.50
+				#positive
+				#resistance_growth_on_our_occupied_states = 0.1
+				#resistance_target_on_our_occupied_states = 0.25
+				#resistance_decay_on_our_occupied_states = -0.1
+				#compliance_growth_on_our_occupied_states = -0.1
+				#weekly_manpower = -100
 			}
 		}
 	}

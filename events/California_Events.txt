@@ -1,6 +1,6 @@
 add_namespace = california_flavor_events#these events provide bonuses usually, but mostly just texture the world and aren't super important to progression
 add_namespace = california_major_events#things like the civilwar starting, bloody thursday. critical events not only progression but also mechanicallys
-
+add_namespace = california_civil_war_events#mostly telling you about things the other side of the civil war is doing
 
 #townsend act
 country_event = {
@@ -300,7 +300,7 @@ country_event = {
     
     fire_only_once = yes
     trigger = {
-        date > 1934.5.2
+        date > 1934.4.20
 		tag = CAL
     }
     option = {
@@ -434,4 +434,33 @@ country_event = {
     option = {
         name = california_major_events.11.a
     }
-}
+} 
+#guerrilla warfar starts acting up california
+country_event = {
+    id = california_civil_war_events.1
+    title = california_civil_war_events.1.t
+    desc = california_civil_war_events.1.desc
+
+	trigger = {
+		#tag = CAL
+		OR = {
+			has_country_flag = country_flag_cal_conservative_civil_war
+			has_country_flag = country_flag_cal_socialist_civil_war
+		}
+	}
+    option = {
+        name = california_civil_war_events.1.a
+		add_ideas = { CAL_idea_guerrilla_fighting }
+		every_core_state = {
+			if = {
+				limit = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+				}
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+			}
+		}
+    }
+} 
