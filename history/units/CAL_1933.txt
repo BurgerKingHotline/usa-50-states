@@ -20,7 +20,7 @@ division_template = {
 	}
 }
 division_template = {
-	name = "Military Police"
+	name = "Cavalry Division"
 
 	regiments = {
 		cavalry = { x = 0 y = 0 }
@@ -28,9 +28,9 @@ division_template = {
 		cavalry = { x = 1 y = 0 }
 		cavalry = { x = 1 y = 1 }
 	}
-	support = {
-		military_police = { x = 0 y = 0 }
-	}
+	#support = {
+	#	military_police = { x = 0 y = 0 }
+	#}
 }
 units = {
 	division= {
@@ -150,7 +150,7 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "Military Police"
+		division_template = "Cavalry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
@@ -161,7 +161,7 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "Military Police"
+		division_template = "Cavalry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
@@ -172,7 +172,7 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "Military Police"
+		division_template = "Cavalry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
@@ -183,7 +183,7 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "Military Police"
+		division_template = "Cavalry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
@@ -194,7 +194,7 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "Military Police"
+		division_template = "Cavalry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
@@ -205,7 +205,7 @@ units = {
 				name_order = 1
 		}
 		location = 5120
-		division_template = "Military Police"
+		division_template = "Cavalry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 1
 		start_manpower_factor = 1
