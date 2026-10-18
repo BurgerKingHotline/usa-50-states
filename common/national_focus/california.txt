@@ -247,13 +247,13 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.015
 			}
-			load_oob = "CAL_gb_volunteers"
+			hidden_effect = { load_oob = "CAL_gb_volunteers" }
 			random_owned_controlled_state = {
-				#prioritize = { 118 }
+				prioritize = { 118 }
 				create_unit = {
-					division = "name = \"50\" division_template = \"Great Britain Tank Volunteers\" start_manpower_factor = 0.8"
+					division = "name = \"British Armored Volunteers\" division_template = \"Great Britain Tank Volunteers\" start_manpower_factor = 0.8"
 					owner = ROOT
-					count = 3
+					count = 2
 				}
 			}
 		}
@@ -276,16 +276,21 @@ focus_tree = {
 			focus = CAL_conservative_civil_war_turn_to_gb
 		}
 		completion_reward = {
-			add_timed_idea = {
-				idea = CAL_idea_supported_by_nazi_germany
-				days = 1
+			add_ideas = {
+				CAL_idea_supported_by_nazi_germany
 			}
-			#add_ideas = {
-			#	CAL_idea_supported_by_nazi_germany
-			#}
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.03
+			}
+			hidden_effect = { load_oob = "CAL_nazi_volunteers" }
+			random_owned_controlled_state = {
+				prioritize = { 118 }
+				create_unit = {
+					division = "name = \"Nazi Infantry Volunteers\" division_template = \"Nazi Infantry Volunteers\" start_manpower_factor = 0.8"
+					owner = ROOT
+					count = 3
+				}
 			}
 		}
 	}

@@ -79,6 +79,11 @@ ideas = {
 			modifier = {
 				experience_gain_army = 0.1
 			}
+			on_remove = {
+				delete_units = {
+					division_template = "Nazi Infantry Volunteers"
+				}
+			}
 		}
 	}
 }

@@ -7,7 +7,7 @@ state = {
 		owner = CAL
 		add_core_of = CAL
 		victory_points = {
-			9182 15#San Diego 14
+			9182 5#San Diego 14
 		}
 		buildings = {
 			infrastructure = 3
