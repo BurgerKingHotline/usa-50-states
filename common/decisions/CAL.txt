@@ -87,8 +87,8 @@ CAL_civilwar_decision_cat = {
 		cancel_trigger = {
 			FROM = {
 				NOT = {
-					is_owned_by = ROOT
-					#is_controlled_by = ROOT
+					#is_owned_by = ROOT
+					is_controlled_by = ROOT
 				}
 			}
 		}
@@ -99,7 +99,8 @@ CAL_civilwar_decision_cat = {
 		target_trigger = {
 			FROM = {
 				is_core_of = ROOT
-				is_fully_controlled_by = ROOT
+				is_controlled_by = ROOT
+				#is_fully_controlled_by = ROOT
 				state_population_k > 50
 				NOT = { has_state_flag = state_flag_cal_recruited_civil_war_militia }
 			}
