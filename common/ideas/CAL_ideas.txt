@@ -26,7 +26,7 @@ ideas = {
 			modifier = {
 				resistance_activity = 0.25
 				required_garrison_factor = 0.25
-				resistance_target = 0.50
+				resistance_target = 0.25
 				#positive
 				#resistance_growth_on_our_occupied_states = 0.1
 				#resistance_target_on_our_occupied_states = 0.25

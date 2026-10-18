@@ -155,6 +155,7 @@ CAL_civilwar_decision_cat = {
 			custom_effect_tooltip = cal_create_x_militias_civilwar_tt
 			clr_country_flag = country_flag_cal_recruiting_civil_war_militias
 		}
+		cancel_if_not_visible = yes
 		cancel_effect = {
 			clr_country_flag = country_flag_cal_recruiting_civil_war_militias
 		}

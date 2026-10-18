@@ -1,0 +1,402 @@
+
+focus_tree = {
+	id = californian_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = CAL
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1500 }
+
+	focus = {
+		id = CAL_conservative_civil_war_intro
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 12
+		y = 0
+		cost = 5
+		allow_branch = {
+		}
+		available = {
+			has_country_flag = country_flag_cal_conservative_civil_war
+		}
+		completion_reward = {
+		}
+	}
+	####deal with resistance
+	focus = {
+		id = CAL_conservative_civil_war_add_extensive_conscription
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =-8
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_intro
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_add_limited_conscription
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 8
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_intro
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_enable_state_reintergration
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =-8
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_intro
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_decrease_resistance
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_increase_compliance
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =2
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_contact_fifth_column
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =0
+		y =2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_organize_uprising_shasta
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =2
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_secure_south
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =1
+		y = 3
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_remove_guerrilla_warfare_idea
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =1
+		y = 4
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	#foreign aid
+	focus = {
+		id = CAL_conservative_civil_war_foreign_aid
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =-3
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_intro
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_get_volunteer_forces
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =0
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_unlock_decision_to_buy_guns
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =2
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_increase_support_for_tradeoff
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =1
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	#public propaganda
+	focus = {
+		id = CAL_conservative_civil_war_get_less_positive_idea
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =2
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_intro
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_get_more_positive_idea
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 2
+		y = 0
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_worse_propaganda
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =0
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_better_propaganda
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =2
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_reduce_epic_effect
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =1
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_war_support_propaganda_0
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =0
+		y = 3
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_war_support_propaganda_1
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =2
+		y = 3
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_war_propaganda_final_focus
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =1
+		y = 4
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	#economic branch
+	focus = {
+		id = CAL_conservative_civil_war_economic_branch
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =8
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_intro
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_increase_mobilization
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_economic_branch
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_decrease_debuffs_short_term
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =-1
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_economic_branch
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_civilian_factories#long term reward
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =-1
+		y = 3
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_economic_branch
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_long_term_consequence
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 1
+		y = 3
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_economic_branch
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_stop_death_spiral
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =0
+		y = 4
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_economic_branch
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	#final offensive
+	focus = {
+		id = CAL_conservative_civil_war_final_offensive
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x =0 
+		y = 7
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_intro
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+}
