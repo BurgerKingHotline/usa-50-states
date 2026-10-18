@@ -1,9 +1,8 @@
 CAL_debug_decision_cat = {
     allowed = {
-        always = yes
+        original_tag = CAL
     }
     visible = {
-        original_tag = CAL
 		is_debug = yes
     }
     visible_when_empty = yes
@@ -11,14 +10,13 @@ CAL_debug_decision_cat = {
 }
 CAL_civilwar_decision_cat = {
     allowed = {
-        always = yes
+        original_tag = CAL
     }
     visible = {
 		OR = {
 			has_country_flag = country_flag_cal_conservative_civil_war
 			has_country_flag = country_flag_cal_socialist_civil_war
 		}
-        original_tag = CAL
 		#is_debug = yes
     }
     visible_when_empty = yes
@@ -26,12 +24,22 @@ CAL_civilwar_decision_cat = {
 }
 CAL_civil_war_preparation_cat = {
     allowed = {
-        always = yes
+        original_tag = CAL
     }
     visible = {
 		is_debug = yes
-        original_tag = CAL
     }
     visible_when_empty = yes
     priority = 100
+}
+CAL_purchase_foreign_weapons = {
+    allowed = {
+        original_tag = CAL
+    }
+    visible = {
+		is_debug = yes
+        has_country_flag = country_flag_cal_buying_foreign_weapons
+    }
+    visible_when_empty = yes
+    priority = 10
 }

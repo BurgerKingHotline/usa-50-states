@@ -21,13 +21,14 @@ focus_tree = {
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 12
 		y = 0
-		cost = 5
+		cost = 3
 		allow_branch = {
 		}
 		available = {
 			has_country_flag = country_flag_cal_conservative_civil_war
 		}
 		completion_reward = {
+			add_war_support = 0.05
 		}
 	}
 	####deal with resistance
@@ -35,7 +36,7 @@ focus_tree = {
 		id = CAL_conservative_civil_war_add_extensive_conscription
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x =-8
+		x =-6
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
@@ -48,13 +49,17 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
+			add_ideas = {
+				extensive_conscription
+			}
+			add_stability = -0.05
 		}
 	}
 	focus = {
 		id = CAL_conservative_civil_war_add_limited_conscription
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x = 8
+		x = 5
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
@@ -67,19 +72,40 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
+			add_ideas = {
+				limited_conscription
+			}
+			add_war_support = 0.05
 		}
 	}
 	focus = {
-		id = CAL_conservative_civil_war_enable_state_reintergration
+		id = CAL_conservative_civil_war_suspend_habeus_corpus
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x =-8
+		x =-6
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
 		prerequisite = {
 			focus = CAL_conservative_civil_war_add_extensive_conscription
 			focus = CAL_conservative_civil_war_add_limited_conscription
+		}
+		available = {
+		}
+		completion_reward = {
+			country_event = { id = california_flavor_events.12 }
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_enable_state_reintergration
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_suspend_habeus_corpus
+		prerequisite = {
+			focus = CAL_conservative_civil_war_suspend_habeus_corpus
 		}
 		available = {
 		}
@@ -91,11 +117,14 @@ focus_tree = {
 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 0
-		y = 1
+		y = 2
 		cost = 5
-		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		relative_position_id = CAL_conservative_civil_war_suspend_habeus_corpus
 		prerequisite = {
 			focus = CAL_conservative_civil_war_enable_state_reintergration
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_increase_compliance
 		}
 		available = {
 		}
@@ -106,12 +135,15 @@ focus_tree = {
 		id = CAL_conservative_civil_war_increase_compliance
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x =2
-		y = 1
+		x = 2
+		y = 2
 		cost = 5
-		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		relative_position_id = CAL_conservative_civil_war_suspend_habeus_corpus
 		prerequisite = {
 			focus = CAL_conservative_civil_war_enable_state_reintergration
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_decrease_resistance
 		}
 		available = {
 		}
@@ -119,13 +151,13 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_conservative_civil_war_contact_fifth_column
+		id = CAL_conservative_civil_war_work_southern_fascists
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x =0
-		y =2
+		x = 0
+		y = 3
 		cost = 5
-		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		relative_position_id = CAL_conservative_civil_war_suspend_habeus_corpus
 		prerequisite = {
 			focus = CAL_conservative_civil_war_decrease_resistance
 		}
@@ -135,32 +167,15 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = CAL_conservative_civil_war_organize_uprising_shasta
+		id = CAL_conservative_civil_war_work_allow_recruitment_claimed
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x =2
-		y = 2
-		cost = 5
-		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
-		prerequisite = {
-			focus = CAL_conservative_civil_war_increase_compliance
-		}
-		available = {
-		}
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = CAL_conservative_civil_war_secure_south
-
-		icon = GFX_goal_generic_allies_build_infantry
-		x =1
+		x = 2
 		y = 3
 		cost = 5
-		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		relative_position_id = CAL_conservative_civil_war_suspend_habeus_corpus
 		prerequisite = {
-			focus = CAL_conservative_civil_war_contact_fifth_column
-			focus = CAL_conservative_civil_war_organize_uprising_shasta
+			focus = CAL_conservative_civil_war_increase_compliance
 		}
 		available = {
 		}
@@ -174,9 +189,10 @@ focus_tree = {
 		x =1
 		y = 4
 		cost = 5
-		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		relative_position_id = CAL_conservative_civil_war_suspend_habeus_corpus
 		prerequisite = {
-			focus = CAL_conservative_civil_war_secure_south
+			focus = CAL_conservative_civil_war_work_southern_fascists
+			focus = CAL_conservative_civil_war_work_allow_recruitment_claimed
 		}
 		available = {
 		}
@@ -185,10 +201,10 @@ focus_tree = {
 	}
 	#foreign aid
 	focus = {
-		id = CAL_conservative_civil_war_foreign_aid
+		id = CAL_conservative_civil_war_ask_other_states_for_help
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x =-3
+		x =9
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
@@ -197,57 +213,100 @@ focus_tree = {
 			focus = CAL_conservative_civil_war_add_limited_conscription
 		}
 		available = {
+			has_global_flag = global_flag_cal_civil_war
 		}
 		completion_reward = {
 		}
 	}
 	focus = {
-		id = CAL_conservative_civil_war_get_volunteer_forces
+		id = CAL_conservative_civil_war_turn_to_gb
 
 		icon = GFX_goal_generic_allies_build_infantry
 		x =0
 		y = 1
 		cost = 5
-		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		relative_position_id = CAL_conservative_civil_war_ask_other_states_for_help
 		prerequisite = {
-			focus = CAL_conservative_civil_war_foreign_aid
+			focus = CAL_conservative_civil_war_ask_other_states_for_help
 		}
 		available = {
+			has_global_flag = global_flag_cal_civil_war
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_turn_to_nazi_germany
 		}
 		completion_reward = {
+			add_ideas = {
+				CAL_idea_supported_by_gb
+			}
+			add_popularity = {
+				ideology = conservatism_ideology
+				popularity = 0.015
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.015
+			}
+			load_oob = "CAL_gb_volunteers"
+			random_owned_controlled_state = {
+				#prioritize = { 118 }
+				create_unit = {
+					division = "name = \"50\" division_template = \"Great Britain Tank Volunteers\" start_manpower_factor = 0.8"
+					owner = ROOT
+					count = 3
+				}
+			}
 		}
 	}
 	focus = {
-		id = CAL_conservative_civil_war_unlock_decision_to_buy_guns
+		id = CAL_conservative_civil_war_turn_to_nazi_germany
 
 		icon = GFX_goal_generic_allies_build_infantry
 		x =2
 		y = 1
 		cost = 5
-		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		relative_position_id = CAL_conservative_civil_war_ask_other_states_for_help
 		prerequisite = {
-			focus = CAL_conservative_civil_war_foreign_aid
+			focus = CAL_conservative_civil_war_ask_other_states_for_help
 		}
 		available = {
+			has_global_flag = global_flag_cal_civil_war
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_turn_to_gb
 		}
 		completion_reward = {
+			add_timed_idea = {
+				idea = CAL_idea_supported_by_nazi_germany
+				days = 1
+			}
+			#add_ideas = {
+			#	CAL_idea_supported_by_nazi_germany
+			#}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
 		}
 	}
 	focus = {
-		id = CAL_conservative_civil_war_increase_support_for_tradeoff
+		id = CAL_conservative_civil_war_buy_weapons
 
 		icon = GFX_goal_generic_allies_build_infantry
 		x =1
 		y = 2
 		cost = 5
-		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		relative_position_id = CAL_conservative_civil_war_ask_other_states_for_help
 		prerequisite = {
-			focus = CAL_conservative_civil_war_get_volunteer_forces
-			focus = CAL_conservative_civil_war_unlock_decision_to_buy_guns
+			focus = CAL_conservative_civil_war_turn_to_gb
+			focus = CAL_conservative_civil_war_turn_to_nazi_germany
 		}
 		available = {
+			has_global_flag = global_flag_cal_civil_war
 		}
 		completion_reward = {
+			set_country_flag = country_flag_cal_buying_foreign_weapons
+			unlock_decision_category_tooltip = CAL_purchase_foreign_weapons
 		}
 	}
 	#public propaganda
@@ -255,7 +314,7 @@ focus_tree = {
 		id = CAL_conservative_civil_war_get_less_positive_idea
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x =2
+		x =-1
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
@@ -400,7 +459,7 @@ focus_tree = {
 		id = CAL_conservative_civil_war_economic_branch
 
 		icon = GFX_goal_generic_allies_build_infantry
-		x =8
+		x =5
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
@@ -500,7 +559,7 @@ focus_tree = {
 			focus = CAL_conservative_civil_war_decrease_debuffs_short_term
 		}
 		mutually_exclusive = {
-			focus = CAL_conservative_civil_war_long_term_consequence
+			focus = CAL_conservative_civil_war_civilian_factories
 		}
 		available = {
 		}

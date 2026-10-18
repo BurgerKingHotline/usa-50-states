@@ -1,6 +1,5 @@
 add_namespace = california_flavor_events#these events provide bonuses usually, but mostly just texture the world and aren't super important to progression
 add_namespace = california_major_events#things like the civilwar starting, bloody thursday. critical events not only progression but also mechanicallys
-add_namespace = california_civil_war_events#mostly telling you about things the other side of the civil war is doing
 
 #townsend act
 country_event = {
@@ -219,17 +218,36 @@ country_event = {
 		tag = CAL
     }
     option = {#frank l. shaw wins
-        name = california_flavor_events.11
+        name = california_flavor_events.11.a
         add_popularity = {
             ideology = neutrality
             popularity = 0.03
         }
     }
     option = {#john clinton porter
-        name = california_flavor_events.11
+        name = california_flavor_events.11.b
         add_popularity = {
             ideology = fascism
             popularity = 0.03
+        }
+    }
+}
+#suspend habeus corpus?
+country_event = {
+    id = california_flavor_events.12
+    title = california_flavor_events.12.t
+    desc = california_flavor_events.12.desc
+    
+    fire_only_once = yes
+    is_triggered_only = yes
+    option = {
+        name = california_flavor_events.12.a
+        add_stability = 0.05
+    }
+    option = {
+        name = california_flavor_events.12.b
+        add_ideas = {
+            CAL_idea_suspend_habeus_corpus
         }
     }
 }
@@ -437,9 +455,9 @@ country_event = {
 } 
 #guerrilla warfare starts acting up california
 country_event = {
-    id = california_civil_war_events.1
-    title = california_civil_war_events.1.t
-    desc = california_civil_war_events.1.desc
+    id = california_major_events.12
+    title = california_major_events.12.t
+    desc = california_major_events.12.desc
 	fire_only_once = yes
 	trigger = {
 		#tag = CAL
@@ -447,7 +465,7 @@ country_event = {
 		NOT = { has_idea = CAL_idea_guerrilla_fighting }
 	}
     option = {
-        name = california_civil_war_events.1.a
+        name = california_major_events.12.a
 		add_ideas = { CAL_idea_guerrilla_fighting }
 		every_core_state = {
 			if = {
@@ -464,9 +482,9 @@ country_event = {
 }
 #you may notice that both these events do exactly the same thing, that's because it needs to fire exactly once for two countries and i don't wanna use a flag
 country_event = {
-    id = california_civil_war_events.2
-    title = california_civil_war_events.2.t
-    desc = california_civil_war_events.2.desc
+    id = california_major_events.13
+    title = california_major_events.13.t
+    desc = california_major_events.13.desc
 	fire_only_once = yes
 	trigger = {
 		#tag = CAL
@@ -474,7 +492,7 @@ country_event = {
 		NOT = { has_idea = CAL_idea_guerrilla_fighting }
 	}
     option = {
-        name = california_civil_war_events.1.a
+        name = california_major_events.13.a
 		add_ideas = { CAL_idea_guerrilla_fighting }
 		every_core_state = {
 			if = {

@@ -35,5 +35,50 @@ ideas = {
 				#weekly_manpower = -100
 			}
 		}
+		CAL_idea_suspend_habeus_corpus = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = -0.15
+				resistance_decay = 0.15
+			}
+		}
+		CAL_idea_supported_by_gb = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.1
+			}
+			on_remove = {
+				delete_units = {
+					division_template = "Great Britain Tank Volunteers"
+				}
+			}
+		}
+		CAL_idea_supported_by_nazi_germany = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.1
+			}
+		}
 	}
 }

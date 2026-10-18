@@ -177,3 +177,199 @@ CAL_civil_war_preparation_cat = {
 		}
 	}
 }
+CAL_purchase_foreign_weapons = {
+    CAL_buy_infantry_equipment = {
+        allowed = {
+            tag = CAL
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 25
+        days_remove = 65
+		days_re_enable = 1
+        modifier = {
+			consumer_goods_factor = 0.1
+        }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_equipment = {
+					infantry_equipment < 0
+				}
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = ENG
+			}
+		}
+    }
+    CAL_buy_foreign_support_equipment = {
+        allowed = {
+            tag = CAL
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 25
+        days_remove = 65
+		days_re_enable = 1
+        modifier = {
+			consumer_goods_factor = 0.1
+        }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_equipment = {
+					support_equipment < 0 
+				}
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+				producer = ENG
+			}
+		}
+    }
+    CAL_buy_foreign_trucks = {
+        allowed = {
+            tag = CAL
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 25
+        days_remove = 65
+		days_re_enable = 1
+        modifier = {
+			consumer_goods_factor = 0.1
+        }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_equipment = {
+					motorized_equipment < 0 
+				}
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 500
+				producer = ENG
+			}
+		}
+    }
+    CAL_buy_foreign_tanks = {
+        allowed = {
+            tag = CAL
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 25
+        days_remove = 65
+		days_re_enable = 1
+        modifier = {
+			consumer_goods_factor = 0.1
+        }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				if = {
+					limit = {
+						has_dlc = "No Step Back"
+					}
+					has_equipment = {
+						light_tank_chassis_0 < 0 
+					}
+				}
+				else = {
+					has_equipment = {
+						gw_tank_equipment < 0 
+					}
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_0
+					amount = 500
+					producer = ENG
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = gw_tank_equipment
+					amount = 500
+					producer = ENG
+				}
+			}
+		}
+    }
+    CAL_buy_foreign_planes = {
+        allowed = {
+            tag = CAL
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 25
+        days_remove = 65
+		days_re_enable = 1
+        modifier = {
+			consumer_goods_factor = 0.1
+        }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					has_equipment = {
+						small_plane_airframe_0 < 1 
+					}
+				}
+				else = {
+					has_equipment = {
+						fighter_equipment_0 < 1
+					}
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_equipment_to_stockpile = {
+					type = small_plane_airframe_0
+					amount = 10
+					producer = ENG
+				}
+				add_equipment_to_stockpile = {
+					type = small_plane_cas_airframe_0
+					amount = 5
+					producer = ENG
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_0
+					amount = 10
+					producer = ENG
+				}
+				add_equipment_to_stockpile = {
+					type = CAS_equipment_1
+					amount = 5
+					producer = ENG
+				}
+			}
+		}
+    }
+}
