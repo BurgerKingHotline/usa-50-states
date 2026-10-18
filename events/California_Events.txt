@@ -435,18 +435,42 @@ country_event = {
         name = california_major_events.11.a
     }
 } 
-#guerrilla warfar starts acting up california
+#guerrilla warfare starts acting up california
 country_event = {
     id = california_civil_war_events.1
     title = california_civil_war_events.1.t
     desc = california_civil_war_events.1.desc
-
+	fire_only_once = yes
 	trigger = {
 		#tag = CAL
-		OR = {
-			has_country_flag = country_flag_cal_conservative_civil_war
-			has_country_flag = country_flag_cal_socialist_civil_war
+		has_country_flag = country_flag_cal_socialist_civil_war
+		NOT = { has_idea = CAL_idea_guerrilla_fighting }
+	}
+    option = {
+        name = california_civil_war_events.1.a
+		add_ideas = { CAL_idea_guerrilla_fighting }
+		every_core_state = {
+			if = {
+				limit = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+				}
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+			}
 		}
+    }
+}
+#you may notice that both these events do exactly the same thing, that's because it needs to fire exactly once for two countries and i don't wanna use a flag
+country_event = {
+    id = california_civil_war_events.2
+    title = california_civil_war_events.2.t
+    desc = california_civil_war_events.2.desc
+	fire_only_once = yes
+	trigger = {
+		#tag = CAL
+		has_country_flag = country_flag_cal_conservative_civil_war
 		NOT = { has_idea = CAL_idea_guerrilla_fighting }
 	}
     option = {

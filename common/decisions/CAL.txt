@@ -17,39 +17,7 @@ CAL_debug_decision_cat = {
 			original_tag = CAL
 		}
 		complete_effect = {
-			set_global_flag = global_flag_cal_civil_war
-			set_country_flag = country_flag_cal_conservative_civil_war
-			set_cosmetic_tag = CAL_CONSERVATIVES_CIVILWAR
-			load_oob = "CAL_civilwar"
-			#add_ideas = { CAL_idea_civilwar }
-			start_civil_war = {
-				load_oob = "CAL_civilwar"
-				ideology = socialism_ideology
-				capital = 113
-				army_ratio = 0.5
-				states = {
-					4 113 141 109 110 147 146
-				}
-				set_cosmetic_tag =CAL_SOCIALIST_CIVILWAR
-				set_country_flag = country_flag_cal_socialist_civil_war
-				#add_ideas = { CAL_idea_civilwar }
-				every_owned_state = {
-					remove_core_of = CAL
-					add_claim_by = CAL
-				}
-				every_state = {
-					if = {
-						limit = {
-							NOT = {
-								is_owned_by = ROOT
-							}
-							is_core_of = CAL
-						}
-						remove_core_of = CAL
-						add_claim_by = CAL
-					}
-				}
-			}
+			CAL_start_civil_war = yes
 		}
 	}
 }
@@ -116,6 +84,14 @@ CAL_civilwar_decision_cat = {
 		}
 		target_array = ROOT.core_states
 		days_remove = 35
+		cancel_trigger = {
+			FROM = {
+				NOT = {
+					is_owned_by = ROOT
+					#is_controlled_by = ROOT
+				}
+			}
+		}
 		available = {
 			command_power > 25
 			NOT = { has_country_flag = country_flag_cal_recruiting_civil_war_militias }
@@ -125,6 +101,7 @@ CAL_civilwar_decision_cat = {
 				is_core_of = ROOT
 				is_fully_controlled_by = ROOT
 				state_population_k > 50
+				NOT = { has_state_flag = state_flag_cal_recruited_civil_war_militia }
 			}
 		}
 		custom_cost_trigger = {
@@ -172,8 +149,12 @@ CAL_civilwar_decision_cat = {
 						}
 					}
 				}
+				set_state_flag = state_flag_cal_recruited_civil_war_militia
 			}
 			custom_effect_tooltip = cal_create_x_militias_civilwar_tt
+			clr_country_flag = country_flag_cal_recruiting_civil_war_militias
+		}
+		cancel_effect = {
 			clr_country_flag = country_flag_cal_recruiting_civil_war_militias
 		}
 	}

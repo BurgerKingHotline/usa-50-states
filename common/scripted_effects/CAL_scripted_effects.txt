@@ -3,7 +3,22 @@ CAL_start_civil_war = {
 	set_country_flag = country_flag_cal_conservative_civil_war
 	set_cosmetic_tag = CAL_CONSERVATIVES_CIVILWAR
 	load_oob = "CAL_civilwar"
+	load_oob = "CAL_conservative_civilwar"
 	add_ideas = { CAL_idea_civil_war }
+	set_stability = 0.4
+	set_war_support = 0.55
+	add_popularity = {
+		ideology = socialism_ideology
+		popularity = -0.1
+	}
+	add_popularity = {
+		ideology = communism
+		popularity = -0.1
+	}
+	add_popularity = {
+		ideology = ROOT
+		popularity = 0.1
+	}
 	start_civil_war = {
 		load_oob = "CAL_civilwar"
 		load_oob = "CAL_socialist_civilwar"
@@ -16,6 +31,14 @@ CAL_start_civil_war = {
 		set_cosmetic_tag =CAL_SOCIALIST_CIVILWAR
 		set_country_flag = country_flag_cal_socialist_civil_war
 		add_ideas = { CAL_idea_civil_war }
+		set_stability = 0.25
+		set_war_support = 0.75
+		set_popularities = {
+			democratic = 20
+			socialism_ideology = 40
+			neutrality = 30
+			communism = 10
+		}
 		#every_owned_state = {
 		#	remove_core_of = CAL
 		#	add_claim_by = CAL
