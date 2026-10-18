@@ -6,9 +6,10 @@ CAL_start_civil_war = {
 	add_ideas = { CAL_idea_civil_war }
 	start_civil_war = {
 		load_oob = "CAL_civilwar"
+		load_oob = "CAL_socialist_civilwar"
 		ideology = socialism_ideology
 		capital = 113
-		army_ratio = 0.5
+		army_ratio = 0.35
 		states = {
 		4 113 141 109 110 147 146
 		}

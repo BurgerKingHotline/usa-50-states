@@ -21,7 +21,7 @@ CAL_debug_decision_cat = {
 			set_country_flag = country_flag_cal_conservative_civil_war
 			set_cosmetic_tag = CAL_CONSERVATIVES_CIVILWAR
 			load_oob = "CAL_civilwar"
-			add_ideas = { CAL_idea_civilwar }
+			#add_ideas = { CAL_idea_civilwar }
 			start_civil_war = {
 				load_oob = "CAL_civilwar"
 				ideology = socialism_ideology
@@ -32,7 +32,7 @@ CAL_debug_decision_cat = {
 				}
 				set_cosmetic_tag =CAL_SOCIALIST_CIVILWAR
 				set_country_flag = country_flag_cal_socialist_civil_war
-				add_ideas = { CAL_idea_civilwar }
+				#add_ideas = { CAL_idea_civilwar }
 				every_owned_state = {
 					remove_core_of = CAL
 					add_claim_by = CAL
@@ -115,9 +115,9 @@ CAL_civilwar_decision_cat = {
 			base =10
 		}
 		target_array = ROOT.core_states
-		days_remove = 25
+		days_remove = 35
 		available = {
-			#command_power > 25
+			command_power > 25
 			NOT = { has_country_flag = country_flag_cal_recruiting_civil_war_militias }
 		}
 		target_trigger = {
@@ -153,12 +153,27 @@ CAL_civilwar_decision_cat = {
 				min = 1
 			}
 			FROM = { 
-				create_unit = {
-					division = "name = \"Civil War Militia\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
-					owner = ROOT
-					count = cal_militia_state_number_temp
+				for_loop_effect = {
+					end = cal_militia_state_number_temp
+					random_list = {
+						7 = {
+							create_unit = {
+								division = "name = \"Civil War Militia\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
+								owner = ROOT
+								count = 1
+							}
+						}
+						3 = {
+							create_unit = {
+								division = "name = \"Cavalry Militia\" division_template = \"Cavalry Militia\" start_manpower_factor = 0.8"
+								owner = ROOT
+								count = 1
+							}
+						}
+					}
 				}
 			}
+			custom_effect_tooltip = cal_create_x_militias_civilwar_tt
 			clr_country_flag = country_flag_cal_recruiting_civil_war_militias
 		}
 	}

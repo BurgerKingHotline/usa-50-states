@@ -1,0 +1,165 @@
+division_template = {
+	name = "EPIC Militias"
+
+	regiments = {
+		militia  = { x = 0 y = 0 }
+		militia  = { x = 0 y = 1 }
+		militia  = { x = 1 y = 0 }
+		militia  = { x = 1 y = 1 }
+		militia  = { x = 2 y = 0 }
+		militia  = { x = 2 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y =0 }
+	}
+}
+division_template = {
+	name = "EPIC Cavalry"
+
+	regiments = {
+		cavalry  = { x = 0 y = 0 }
+		cavalry  = { x = 0 y = 1 }
+		cavalry  = { x = 1 y = 0 }
+		cavalry  = { x = 1 y = 1 }
+		militia  = { x = 2 y = 0 }
+		militia  = { x = 2 y = 1 }
+	}
+}
+units = {
+	#los angeles
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 6737
+		division_template = "EPIC Militias"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8974
+		division_template = "EPIC Militias"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5548
+		division_template = "EPIC Militias"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 657
+		division_template = "EPIC Cavalry"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8863
+		division_template = "EPIC Cavalry"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	#san francisco
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8258
+		division_template = "EPIC Militias"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8224
+		division_template = "EPIC Militias"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8224
+		division_template = "EPIC Cavalry"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	#alameda
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 2146
+		division_template = "EPIC Militias"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8231
+		division_template = "EPIC Militias"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	#north
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 7656
+		division_template = "EPIC Militias"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+	division= {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 5242
+		division_template = "EPIC Cavalry"
+		start_experience_factor = 0
+		start_equipment_factor = 1
+		start_manpower_factor = 1
+	}
+}
