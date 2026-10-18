@@ -39,6 +39,12 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
+		prerequisite = {
+			focus = CAL_conservative_civil_war_intro
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_add_limited_conscription
+		}
 		available = {
 		}
 		completion_reward = {
@@ -52,6 +58,12 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
+		prerequisite = {
+			focus = CAL_conservative_civil_war_intro
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_add_extensive_conscription
+		}
 		available = {
 		}
 		completion_reward = {
@@ -65,6 +77,10 @@ focus_tree = {
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
+		prerequisite = {
+			focus = CAL_conservative_civil_war_add_extensive_conscription
+			focus = CAL_conservative_civil_war_add_limited_conscription
+		}
 		available = {
 		}
 		completion_reward = {
@@ -78,6 +94,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		prerequisite = {
+			focus = CAL_conservative_civil_war_enable_state_reintergration
+		}
 		available = {
 		}
 		completion_reward = {
@@ -91,6 +110,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		prerequisite = {
+			focus = CAL_conservative_civil_war_enable_state_reintergration
+		}
 		available = {
 		}
 		completion_reward = {
@@ -104,6 +126,9 @@ focus_tree = {
 		y =2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		prerequisite = {
+			focus = CAL_conservative_civil_war_decrease_resistance
+		}
 		available = {
 		}
 		completion_reward = {
@@ -117,6 +142,9 @@ focus_tree = {
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		prerequisite = {
+			focus = CAL_conservative_civil_war_increase_compliance
+		}
 		available = {
 		}
 		completion_reward = {
@@ -130,6 +158,10 @@ focus_tree = {
 		y = 3
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		prerequisite = {
+			focus = CAL_conservative_civil_war_contact_fifth_column
+			focus = CAL_conservative_civil_war_organize_uprising_shasta
+		}
 		available = {
 		}
 		completion_reward = {
@@ -143,6 +175,9 @@ focus_tree = {
 		y = 4
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_enable_state_reintergration
+		prerequisite = {
+			focus = CAL_conservative_civil_war_secure_south
+		}
 		available = {
 		}
 		completion_reward = {
@@ -157,6 +192,10 @@ focus_tree = {
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
+		prerequisite = {
+			focus = CAL_conservative_civil_war_add_extensive_conscription
+			focus = CAL_conservative_civil_war_add_limited_conscription
+		}
 		available = {
 		}
 		completion_reward = {
@@ -170,6 +209,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		prerequisite = {
+			focus = CAL_conservative_civil_war_foreign_aid
+		}
 		available = {
 		}
 		completion_reward = {
@@ -183,6 +225,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		prerequisite = {
+			focus = CAL_conservative_civil_war_foreign_aid
+		}
 		available = {
 		}
 		completion_reward = {
@@ -196,6 +241,10 @@ focus_tree = {
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_foreign_aid
+		prerequisite = {
+			focus = CAL_conservative_civil_war_get_volunteer_forces
+			focus = CAL_conservative_civil_war_unlock_decision_to_buy_guns
+		}
 		available = {
 		}
 		completion_reward = {
@@ -210,6 +259,13 @@ focus_tree = {
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
+		prerequisite = {
+			focus = CAL_conservative_civil_war_add_extensive_conscription
+			focus = CAL_conservative_civil_war_add_limited_conscription
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_get_more_positive_idea
+		}
 		available = {
 		}
 		completion_reward = {
@@ -223,6 +279,13 @@ focus_tree = {
 		y = 0
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		prerequisite = {
+			focus = CAL_conservative_civil_war_add_extensive_conscription
+			focus = CAL_conservative_civil_war_add_limited_conscription
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_get_less_positive_idea
+		}
 		available = {
 		}
 		completion_reward = {
@@ -236,6 +299,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		prerequisite = {
+			focus = CAL_conservative_civil_war_get_less_positive_idea
+		}
 		available = {
 		}
 		completion_reward = {
@@ -249,6 +315,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		prerequisite = {
+			focus = CAL_conservative_civil_war_get_more_positive_idea
+		}
 		available = {
 		}
 		completion_reward = {
@@ -262,6 +331,10 @@ focus_tree = {
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		prerequisite = {
+			focus = CAL_conservative_civil_war_worse_propaganda
+			focus = CAL_conservative_civil_war_better_propaganda
+		}
 		available = {
 		}
 		completion_reward = {
@@ -275,6 +348,12 @@ focus_tree = {
 		y = 3
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		prerequisite = {
+			focus = CAL_conservative_civil_war_reduce_epic_effect
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_war_support_propaganda_1
+		}
 		available = {
 		}
 		completion_reward = {
@@ -288,6 +367,12 @@ focus_tree = {
 		y = 3
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
+		prerequisite = {
+			focus = CAL_conservative_civil_war_reduce_epic_effect
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_war_support_propaganda_0
+		}
 		available = {
 		}
 		completion_reward = {
@@ -303,6 +388,10 @@ focus_tree = {
 		relative_position_id = CAL_conservative_civil_war_get_less_positive_idea
 		available = {
 		}
+		prerequisite = {
+			focus = CAL_conservative_civil_war_war_support_propaganda_0
+			focus = CAL_conservative_civil_war_war_support_propaganda_1
+		}
 		completion_reward = {
 		}
 	}
@@ -315,6 +404,10 @@ focus_tree = {
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
+		prerequisite = {
+			focus = CAL_conservative_civil_war_add_extensive_conscription
+			focus = CAL_conservative_civil_war_add_limited_conscription
+		}
 		available = {
 		}
 		completion_reward = {
@@ -328,6 +421,9 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_economic_branch
+		prerequisite = {
+			focus = CAL_conservative_civil_war_economic_branch
+		}
 		available = {
 		}
 		completion_reward = {
@@ -341,6 +437,31 @@ focus_tree = {
 		y = 2
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_economic_branch
+		prerequisite = {
+			focus = CAL_conservative_civil_war_increase_mobilization
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_decrease_debuffs_long_term
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = CAL_conservative_civil_war_decrease_debuffs_long_term
+
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 1
+		y = 2
+		cost = 5
+		relative_position_id = CAL_conservative_civil_war_economic_branch
+		prerequisite = {
+			focus = CAL_conservative_civil_war_increase_mobilization
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_decrease_debuffs_short_term
+		}
 		available = {
 		}
 		completion_reward = {
@@ -354,6 +475,13 @@ focus_tree = {
 		y = 3
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_economic_branch
+		prerequisite = {
+			focus = CAL_conservative_civil_war_decrease_debuffs_long_term
+			focus = CAL_conservative_civil_war_decrease_debuffs_short_term
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_long_term_consequence
+		}
 		available = {
 		}
 		completion_reward = {
@@ -367,6 +495,13 @@ focus_tree = {
 		y = 3
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_economic_branch
+		prerequisite = {
+			focus = CAL_conservative_civil_war_decrease_debuffs_long_term
+			focus = CAL_conservative_civil_war_decrease_debuffs_short_term
+		}
+		mutually_exclusive = {
+			focus = CAL_conservative_civil_war_long_term_consequence
+		}
 		available = {
 		}
 		completion_reward = {
@@ -380,6 +515,10 @@ focus_tree = {
 		y = 4
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_economic_branch
+		prerequisite = {
+			focus = CAL_conservative_civil_war_civilian_factories
+			focus = CAL_conservative_civil_war_long_term_consequence
+		}
 		available = {
 		}
 		completion_reward = {
@@ -395,6 +534,15 @@ focus_tree = {
 		cost = 5
 		relative_position_id = CAL_conservative_civil_war_intro
 		available = {
+		}
+		prerequisite = {
+			focus = CAL_conservative_civil_war_war_propaganda_final_focus
+		}
+		prerequisite = {
+			focus = CAL_conservative_civil_war_stop_death_spiral
+		}
+		prerequisite = {
+			focus = CAL_conservative_civil_war_remove_guerrilla_warfare_idea
 		}
 		completion_reward = {
 		}
