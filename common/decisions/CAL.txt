@@ -190,7 +190,7 @@ CAL_purchase_foreign_weapons = {
 			consumer_goods_factor = 0.1
         }
 		ai_will_do = {
-			base = 0
+			base = 10
 			modifier = {
 				add = 10
 				has_equipment = {
