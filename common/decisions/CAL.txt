@@ -2,9 +2,6 @@ CAL_debug_decision_cat = {
 	CAL_kill_james_rolph = {
 		icon = GFX_decision_generic_army_support
 
-		allowed = { 
-			original_tag = CAL
-		}
 		complete_effect = {
 			country_event = { id = california_major_events.1 }
 			#retire_character = CAL_JAMES_ROLPH
@@ -13,11 +10,19 @@ CAL_debug_decision_cat = {
 	CAL_start_civil_war = {
 		icon = GFX_decision_generic_army_support
 
-		allowed = { 
-			original_tag = CAL
-		}
 		complete_effect = {
 			CAL_start_civil_war = yes
+		}
+	}
+	CAL_add_total_engagement_modifier = {
+		icon = GFX_decision_generic_army_support
+
+		complete_effect = {
+			CAL = {
+				add_dynamic_modifier = {
+					modifier = CAL_total_engagement_modifier
+				}
+			}
 		}
 	}
 }

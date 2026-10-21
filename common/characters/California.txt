@@ -1,5 +1,16 @@
 # Characters for California
 characters = {
+	CAL_BURTON_FITTS = {
+		name = "Burton Fitts"
+		portraits = {
+			civilian = { large = "GFX_CAL_Portrait_Burton_Fitts" }
+		}
+		gender = male
+		country_leader = {
+			ideology = fascism_ideology
+			desc = CAL_burton_fitts_desc
+		}
+	}
 	CAL_JAMES_ROLPH = {
 		name = "James Rolph Jr."
 		portraits = {

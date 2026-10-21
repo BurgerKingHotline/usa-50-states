@@ -1,0 +1,11 @@
+CAL_total_engagement_modifier = {
+	enable = { always = yes }
+	
+	icon = GFX_idea_ETH_army
+
+	consumer_goods_factor = CAL_total_engagement_consumer_goods_factor
+	weekly_manpower = CAL_total_engagement_weekly_manpower
+	stability_weekly = CAL_total_engagement_stability_weekly
+	socialism_ideology_drift = CAL_total_engagement_socialism_drift
+	neutrality_drift = CAL_total_engagement_neutrality_drift
+}

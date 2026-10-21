@@ -5,6 +5,7 @@ CAL_start_civil_war = {
 	load_oob = "CAL_civilwar"
 	load_oob = "CAL_conservative_civilwar"
 	add_ideas = { CAL_idea_civil_war }
+	remove_dynamic_modifier = { modifier = CAL_total_engagement_modifier }
 	set_stability = 0.4
 	set_war_support = 0.55
 	add_popularity = {
@@ -26,7 +27,7 @@ CAL_start_civil_war = {
 		capital = 113
 		army_ratio = 0.35
 		states = {
-		4 113 141 109 110 147 146
+		4 113 141 109 110 146 111 114
 		}
 		set_cosmetic_tag =CAL_SOCIALIST_CIVILWAR
 		set_country_flag = country_flag_cal_socialist_civil_war

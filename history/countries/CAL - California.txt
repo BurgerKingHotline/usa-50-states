@@ -8,6 +8,7 @@ recruit_character = CAL_ARTHUR_WILSON
 recruit_character = CAL_HENRY_ARNOLD
 recruit_character = CAL_JIMMY_DOOLITTLE
 recruit_character = CAL_MERRITT_BARTON
+recruit_character = CAL_BURTON_FITTS
 
 set_popularities = {
 	socialism_ideology = 10#socialist party of california
@@ -25,6 +26,19 @@ set_politics = {
 	election_frequency = 48
 }
 set_research_slots = 3
+add_ideas = {
+	CAL_idea_paradisiacal
+	CAL_idea_great_depression
+}
+
+set_variable = { CAL_total_engagement_consumer_goods_factor = 0.1 }
+set_variable = { CAL_total_engagement_weekly_manpower = 0 }
+set_variable = { CAL_total_engagement_stability_weekly = -0.0005 }
+set_variable = { CAL_total_engagement_socialism_drift = 0.00 }
+set_variable = { CAL_total_engagement_neutrality_drift = 0.00 }
+add_dynamic_modifier = {
+	modifier = CAL_total_engagement_modifier
+}
 
 set_cosmetic_tag = CAL_CALIFORNIA_REPUBLIC
 
