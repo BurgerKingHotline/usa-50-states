@@ -1,4 +1,8 @@
 #reload countrycolors
+JEF = {
+	color = rgb { 0 132 87 }
+	color_ui = rgb { 0 132 87 }
+}
 CAL = {
 	color = rgb { 230 230 230 }
 	color_ui = rgb { 230 230 230 }

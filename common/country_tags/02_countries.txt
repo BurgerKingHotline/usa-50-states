@@ -1,3 +1,4 @@
+JEF = "countries/Jefferson.txt"
 CAL = "countries/California.txt"
 TON = "countries/Tohono Oodham.txt"
 SCA = "countries/San Carlos Apache.txt"

@@ -9,6 +9,7 @@ state = {
 	history = {
 		owner = ORE
 		add_core_of = ORE
+		add_core_of = JEF
 		victory_points = { 5199 4 } # Eugene, OR -- University of Oregon; 2nd-largest OR city (pop 18,901; county 57,718).
 		victory_points = { 7368 1 } # Florence, OR
 	}

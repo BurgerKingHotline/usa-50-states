@@ -1,5 +1,9 @@
 spriteTypes = {
 	spriteType = {
+		name = "GFX_JEF_Portrait_Gilbert_Gable"
+		texturefile = "gfx/interface/leaders/Jefferson/JEF_Portrait_Gilbert_Gable.dds"
+	}
+	spriteType = {
 		name = "GFX_CAL_Portrait_Burton_Fitts"
 		texturefile = "gfx/interface/leaders/California/CAL_Portrait_Burton_Fitts.dds"
 	}

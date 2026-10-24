@@ -1,0 +1,31 @@
+# Characters for Jefferson
+characters = {
+	JEF_GILBERT_GABLE = {
+		name = "Gilbert Gable"
+		portraits = {
+			civilian = { large = "GFX_JEF_Portrait_Gilbert_Gable" }
+		}
+		gender = male
+		country_leader = {
+			ideology = marxism
+		}
+		country_leader = {
+			ideology = socialism_subideology
+		}
+		country_leader = {
+			ideology = conservatism_subideology
+		}
+		country_leader = {
+			ideology = liberalism
+		}
+		country_leader = {
+			ideology = populism_subideology
+		}
+		country_leader = {
+			ideology = authoritarian_democracy
+		}
+		country_leader = {
+			ideology = fascism_ideology
+		}
+	}
+}
