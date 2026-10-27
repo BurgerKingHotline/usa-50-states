@@ -25,6 +25,46 @@ CAL_debug_decision_cat = {
 			}
 		}
 	}
+	CAL_setup_max_conservatives_civil_war = {
+		icon = GFX_decision_generic_army_support
+
+		complete_effect = {
+			CAL_sided_with_socialists_setup = yes
+		}
+	}
+	CAL_setup_max_socialists_civil_war = {
+		icon = GFX_decision_generic_army_support
+
+		complete_effect = {
+			CAL_sided_with_conservatives_setup = yes
+		}
+	}
+	CAL_starting_civil_war_militias = {
+		icon = GFX_decision_generic_army_support
+		complete_effect = {
+			for_loop_effect = {
+				end = cal_conservative_militias
+				random_controlled_state = {
+					random_list = {
+						7 = {
+							create_unit = {
+								division = "name = \"Civil War Militia\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
+								owner = ROOT
+								count = 1
+							}
+						}
+						3 = {
+							create_unit = {
+								division = "name = \"Cavalry Militia\" division_template = \"Cavalry Militia\" start_manpower_factor = 0.8"
+								owner = ROOT
+								count = 1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 CAL_civilwar_decision_cat = {
 	CAL_summon_initial_militias = {
@@ -97,6 +137,15 @@ CAL_civilwar_decision_cat = {
 				}
 			}
 		}
+		visible = {
+			FROM = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				#is_fully_controlled_by = ROOT
+				state_population_k > 50
+				NOT = { has_state_flag = state_flag_cal_recruited_civil_war_militia }
+			}
+		}
 		available = {
 			command_power > 25
 			NOT = { has_country_flag = country_flag_cal_recruiting_civil_war_militias }
@@ -161,7 +210,7 @@ CAL_civilwar_decision_cat = {
 			clr_country_flag = country_flag_cal_recruiting_civil_war_militias
 		}
 		cancel_if_not_visible = yes
-		cancel_effect = {
+		cancel_effect  = {
 			clr_country_flag = country_flag_cal_recruiting_civil_war_militias
 		}
 	}

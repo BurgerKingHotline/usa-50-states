@@ -40,6 +40,8 @@ add_dynamic_modifier = {
 	modifier = CAL_total_engagement_modifier
 }
 
+set_variable = { cal_conservative_militias = 10 }
+
 set_cosmetic_tag = CAL_CALIFORNIA_REPUBLIC
 
 load_oob = "CAL_1933"
@@ -71,3 +73,4 @@ if = {
 		basic_light_tank_chassis = 1
 	}
 }
+

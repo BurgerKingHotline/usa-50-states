@@ -11,25 +11,7 @@ state = {
 		owner = CAL
 		add_core_of = CAL
 		victory_points = {
-			7986 1#Maryarille
-		}
-		victory_points = {
 			3896 1#Chico
-		}
-		victory_points = {
-			414 1#Colusa
-		}
-		victory_points = {
-			6696 1#Willowa
-		}
-		victory_points = {
-			7943 1#Lakeport
-		}
-		victory_points = {
-			4519 1#Red Bluff
-		}
-		victory_points = {
-			2280 1#Oroville
 		}
 		buildings = {
 			infrastructure = 3

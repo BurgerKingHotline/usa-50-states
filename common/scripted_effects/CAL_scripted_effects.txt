@@ -3,7 +3,7 @@ CAL_start_civil_war = {
 	set_country_flag = country_flag_cal_conservative_civil_war
 	set_cosmetic_tag = CAL_CONSERVATIVES_CIVILWAR
 	load_oob = "CAL_civilwar"
-	load_oob = "CAL_conservative_civilwar"
+	#load_oob = "CAL_conservative_civilwar"
 	add_ideas = { CAL_idea_civil_war }
 	remove_dynamic_modifier = { modifier = CAL_total_engagement_modifier }
 	set_stability = 0.4
@@ -22,12 +22,13 @@ CAL_start_civil_war = {
 	}
 	start_civil_war = {
 		load_oob = "CAL_civilwar"
-		load_oob = "CAL_socialist_civilwar"
+		#load_oob = "CAL_socialist_civilwar"
 		ideology = socialism_ideology
 		capital = 113
 		army_ratio = 0.35
-		states = {
-		4 113 141 109 110 146 111 114
+		states = all
+		states_filter = {
+			has_state_flag = state_flag_cal_socialist_uprising
 		}
 		set_cosmetic_tag =CAL_SOCIALIST_CIVILWAR
 		set_country_flag = country_flag_cal_socialist_civil_war
@@ -45,4 +46,23 @@ CAL_start_civil_war = {
 		#	add_claim_by = CAL
 		#}
 	}
+}
+CAL_sided_with_socialists_setup = {#this means only the states that are COMPLETELY garunteed will start out going to sinclair
+	110 = { set_state_flag = state_flag_cal_socialist_uprising }
+	146 = { set_state_flag = state_flag_cal_socialist_uprising }
+	4 = { set_state_flag = state_flag_cal_socialist_uprising }
+	141 = { set_state_flag = state_flag_cal_socialist_uprising }
+	113 = { set_state_flag = state_flag_cal_socialist_uprising }
+}
+CAL_sided_with_conservatives_setup = {#this means all states that can possibly go to sinclair start out going to him
+	110 = { set_state_flag = state_flag_cal_socialist_uprising }
+	146 = { set_state_flag = state_flag_cal_socialist_uprising }
+	4 = { set_state_flag = state_flag_cal_socialist_uprising }
+	141 = { set_state_flag = state_flag_cal_socialist_uprising }
+	113 = { set_state_flag = state_flag_cal_socialist_uprising }
+	142 = { set_state_flag = state_flag_cal_socialist_uprising }
+	109 = { set_state_flag = state_flag_cal_socialist_uprising }
+	144 = { set_state_flag = state_flag_cal_socialist_uprising }
+	145 = { set_state_flag = state_flag_cal_socialist_uprising }
+	111 = { set_state_flag = state_flag_cal_socialist_uprising }
 }

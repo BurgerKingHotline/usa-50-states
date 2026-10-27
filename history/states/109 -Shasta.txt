@@ -11,19 +11,7 @@ state = {
 			infrastructure = 1
 		}
 		victory_points = {
-			2143 1#Redding
-		}
-		victory_points = {
-			5242 2#Yreka#only 2 bc it's the capital
-		}
-		victory_points = {
-			867 1#Alturas
-		}
-		victory_points = {
-			3473 1#Susanville
-		}
-		victory_points = {
-			7906 1#Quincy
+			5242 1#Yreka#only 2 bc it's the capital
 		}
 	}
 	provinces = { 510 867 978 1481 1787 1943 2143 2821 2825 3166 3354 3473 3512 5241 5242 7739 7657 7695 7790 7826 7900 13002 13019 3715 1578 7906 7899 }

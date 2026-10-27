@@ -12,9 +12,6 @@ state = {
 		victory_points = {
 			8231 15 #Alameda, Berkeley, Oakland, San Leandro 30 OAKLAND
 		}
-		victory_points = {
-			2146 2#Richmond
-		}
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 2

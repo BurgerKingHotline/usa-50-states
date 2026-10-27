@@ -1,13 +1,16 @@
 state = {
 	id = 111
 	name = "STATE_111"
-	manpower = 209659
+	manpower = 209659####209659 + 60909 for imperial
 	state_category = large_city
 	history = { 
 		owner = CAL
 		add_core_of = CAL
 		victory_points = {
 			9182 5#San Diego 14
+		}
+		victory_points = {
+			9203 1 #Brawley
 		}
 		buildings = {
 			infrastructure = 3
@@ -18,6 +21,6 @@ state = {
 				naval_base = 4
 			}
 		}
-	}
-	provinces = { 595 1001 1613 3317 3478 3638 4272 5044 5159 5236 6338 9091 9148 9149 9155 9167 9182 9184 9229 }
+	}#9124 is where imperial starts
+	provinces = { 595 1001 1613 3317 3478 3638 4272 5044 5159 5236 6338 9091 9148 9149 9155 9167 9182 9184 9229 9124 13048 4149 9203 3936 5930 5324 4406 9232 1601 2891 5170 }
 }

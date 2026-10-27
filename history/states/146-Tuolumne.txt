@@ -1,40 +1,19 @@
 state = {
 	id = 146
-	name = "STATE_146"
-	manpower = 18512
+	name = "STATE_146"#18512 + 17164 for madera
+	manpower = 35676
 	state_category = rural
-	provinces = { 1708 8206 6521 5409 1617 5866 4485 3708 1271 4602 }
+	provinces = { 1708 8206 6521 5409 1617 5866 4485 3708 1271 4602 5244 4290 8424 3100 8457 }
 
 	history = {
 		owner = CAL
 		add_core_of = CAL
 		
 		buildings = {
-			infrastructure = 3
+			infrastructure = 2
 		}
 		victory_points = {
-			3797 2 #Modesto
-		}
-		victory_points = {
-			8235 5#Stockton
-		}
-		victory_points = {
-			4485 1#Mariposa
-		}
-		victory_points = {
-			5866 1#Sonora
-		}
-		victory_points = {
-			1708 1#Andreas
-		}
-		victory_points = {
-			4821 1#Jackson
-		}
-		victory_points = {
-			6801 1#Placerville
-		}
-		victory_points = {
-			8162 1#Alpine
+			3100 1#Joaquin
 		}
 	}
 }

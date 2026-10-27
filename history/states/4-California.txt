@@ -13,10 +13,7 @@ state = {
 			8224 20 #San Francisco 65
 		}
 		victory_points = {
-			8247 2#Burlingame
-		}
-		victory_points = {
-			8258 2 #Palo Alto, San Mateo
+			8258 1 #Palo Alto, San Mateo
 		}
 		buildings = {
 			infrastructure = 4

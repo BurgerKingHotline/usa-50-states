@@ -7,12 +7,6 @@ state = {
 	history = {
 		owner = CAL
 		add_core_of = CAL
-		victory_points = {
-			55 1 #Independence
-		}
-		victory_points = {
-			1743 1#Bridgeport
-		}
 		buildings = {
 			infrastructure = 2
 		}

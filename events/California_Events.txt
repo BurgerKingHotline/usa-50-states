@@ -425,7 +425,7 @@ country_event = {
     
     fire_only_once = yes
     trigger = {
-        date > 1934.4.20
+        date > 1934.5.25
 		tag = CAL
     }
     option = {
@@ -496,7 +496,7 @@ country_event = {
         country_event = { id = california_flavor_events.15 days = 10 random_hours = 12 }
     }
 }
-#civilwar starts
+#civilwar starts civil war starts
 country_event = {
     id = california_major_events.7
     title = california_major_events.7.t

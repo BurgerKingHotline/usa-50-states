@@ -10,13 +10,7 @@ state = {
 		add_core_of = CAL
 
 		victory_points = {
-			5692 3#Belvedere
-		}
-		victory_points = {
-			2079 2#Santa Rosa
-		}
-		victory_points = {
-			1444 2#Vallejo
+			5692 1#Belvederetownship
 		}
 		buildings = {
 			infrastructure = 3

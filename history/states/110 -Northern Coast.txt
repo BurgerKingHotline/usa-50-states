@@ -10,12 +10,6 @@ state = {
 		victory_points = {
 			7656 1#Eureka
 		}
-		victory_points = {
-			3053 1#Weaverville
-		}
-		victory_points = {
-			3863 1#Crescent City
-		}
 		buildings = {
 			infrastructure = 1
 			

@@ -9,7 +9,7 @@ state = {
 		owner = CAL
 		add_core_of = CAL
 		victory_points = {
-			4180 3#Bakersfield
+			4180 1#Bakersfield
 		}
 		buildings = {
 			infrastructure = 3

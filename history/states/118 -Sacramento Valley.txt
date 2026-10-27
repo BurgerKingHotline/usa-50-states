@@ -11,22 +11,13 @@ state = {
 		owner = CAL
 		add_core_of = CAL
 		victory_points = {
-			3797 2 #Modesto
+			3797 1 #Modesto
 		}
 		victory_points = {
-			5120 10#Sacramento 9
+			5120 5#Sacramento 9
 		}
 		victory_points = {
-			8235 5#Stockton
-		}
-		victory_points = {
-			4821 1#Jackson
-		}
-		victory_points = {
-			6801 1#Placerville
-		}
-		victory_points = {
-			8162 1#Alpine
+			8235 1#Stockton
 		}
 		buildings = {
 			infrastructure = 4
