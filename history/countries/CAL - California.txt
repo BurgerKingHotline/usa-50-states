@@ -40,7 +40,16 @@ add_dynamic_modifier = {
 	modifier = CAL_total_engagement_modifier
 }
 
+#CIVIL WAR SETUP
 set_variable = { cal_conservative_militias = 10 }
+set_variable = { cal_socialist_militias = 8 }
+set_variable = { cal_army_defection_ratio = 0.35 }
+set_variable = { cal_conservative_arms_stockpiles = 1500 }
+set_variable = { cal_socialism_arms_stockpiles = 1000 }
+set_variable = { cal_socialist_stability_starting_cv = 0.3 } # Stability
+set_variable = { cal_socialist_war_support_starting_cv = 0.75 } # War Support
+set_variable = { cal_conservatism_stability_starting_cv = 0.65 } # Stability
+set_variable = { cal_conservatism_war_support_starting_cv = 0.35 } # War Support
 
 set_cosmetic_tag = CAL_CALIFORNIA_REPUBLIC
 

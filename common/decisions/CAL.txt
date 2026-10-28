@@ -39,30 +39,10 @@ CAL_debug_decision_cat = {
 			CAL_sided_with_conservatives_setup = yes
 		}
 	}
-	CAL_starting_civil_war_militias = {
+	CAL_starting_civil_war_militias_debug_test = {
 		icon = GFX_decision_generic_army_support
 		complete_effect = {
-			for_loop_effect = {
-				end = cal_conservative_militias
-				random_controlled_state = {
-					random_list = {
-						7 = {
-							create_unit = {
-								division = "name = \"Civil War Militia\" division_template = \"Civil War Militia\" start_manpower_factor = 0.8"
-								owner = ROOT
-								count = 1
-							}
-						}
-						3 = {
-							create_unit = {
-								division = "name = \"Cavalry Militia\" division_template = \"Cavalry Militia\" start_manpower_factor = 0.8"
-								owner = ROOT
-								count = 1
-							}
-						}
-					}
-				}
-			}
+			CAL_add_starting_militias_civil_war = yes
 		}
 	}
 }

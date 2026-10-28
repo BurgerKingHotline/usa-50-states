@@ -1,31 +1,58 @@
+CAL_add_starting_militias_civil_war = {
+	load_oob = "CAL_civilwar"
+	if = {
+		limit = {
+			has_country_flag = country_flag_cal_conservative_civil_war
+		}
+		set_temp_variable = { cal_militias_to_create_temp = CAL.cal_conservative_militias }
+	}
+	else = {
+		set_temp_variable = { cal_militias_to_create_temp = CAL.cal_socialist_militias }
+	}
+	for_loop_effect = {
+		end = cal_militias_to_create_temp#cal_militias_to_create_temp
+		random_owned_state = {
+			random_list = {
+				7 = {
+					create_unit = {
+						division = "name = \"Civil War Militia\" division_template = \"Civil War Militia"
+							owner = ROOT
+						count = 1
+					}
+				}
+				3 = {
+					create_unit = {
+						division = "name = \"Cavalry Militia\" division_template = \"Cavalry Militia"
+						owner = ROOT
+						count = 1
+					}
+				}
+			}
+		}
+	}
+
+}
 CAL_start_civil_war = {
 	set_global_flag = global_flag_cal_civil_war
 	set_country_flag = country_flag_cal_conservative_civil_war
 	set_cosmetic_tag = CAL_CONSERVATIVES_CIVILWAR
-	load_oob = "CAL_civilwar"
+	#load_oob = "CAL_civilwar"
 	#load_oob = "CAL_conservative_civilwar"
 	add_ideas = { CAL_idea_civil_war }
 	remove_dynamic_modifier = { modifier = CAL_total_engagement_modifier }
-	set_stability = 0.4
-	set_war_support = 0.55
-	add_popularity = {
-		ideology = socialism_ideology
-		popularity = -0.1
-	}
-	add_popularity = {
-		ideology = communism
-		popularity = -0.1
-	}
-	add_popularity = {
-		ideology = ROOT
-		popularity = 0.1
+	set_stability = cal_conservatism_stability_starting_cv
+	set_war_support = cal_conservatism_war_support_starting_cv
+	add_equipment_to_stockpile = {
+		type = infantry_equipment
+		amount = CAL.cal_conservative_arms_stockpiles
+		producer = ROOT
 	}
 	start_civil_war = {
-		load_oob = "CAL_civilwar"
+		#load_oob = "CAL_civilwar"
 		#load_oob = "CAL_socialist_civilwar"
 		ideology = socialism_ideology
 		capital = 113
-		army_ratio = 0.35
+		army_ratio = cal_army_defection_ratio
 		states = all
 		states_filter = {
 			has_state_flag = state_flag_cal_socialist_uprising
@@ -33,18 +60,25 @@ CAL_start_civil_war = {
 		set_cosmetic_tag =CAL_SOCIALIST_CIVILWAR
 		set_country_flag = country_flag_cal_socialist_civil_war
 		add_ideas = { CAL_idea_civil_war }
-		set_stability = 0.25
-		set_war_support = 0.75
-		set_popularities = {
-			democratic = 20
-			socialism_ideology = 40
-			neutrality = 30
-			communism = 10
+		set_stability = cal_socialist_stability_starting_cv
+		set_war_support = cal_socialist_war_support_starting_cv
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = CAL.cal_socialism_arms_stockpiles
+			producer = ROOT
 		}
-		#every_owned_state = {
-		#	remove_core_of = CAL
-		#	add_claim_by = CAL
-		#}
+	}
+	add_popularity = {
+		ideology = socialism_ideology
+		popularity = -1
+	}
+	add_popularity = {
+		ideology = fascism
+		popularity = 0.1
+	}
+	add_popularity = {
+		ideology = ROOT
+		popularity = 0.2
 	}
 }
 CAL_sided_with_socialists_setup = {#this means only the states that are COMPLETELY garunteed will start out going to sinclair
@@ -53,6 +87,7 @@ CAL_sided_with_socialists_setup = {#this means only the states that are COMPLETE
 	4 = { set_state_flag = state_flag_cal_socialist_uprising }
 	141 = { set_state_flag = state_flag_cal_socialist_uprising }
 	113 = { set_state_flag = state_flag_cal_socialist_uprising }
+	145 = { set_state_flag = state_flag_cal_socialist_uprising }
 }
 CAL_sided_with_conservatives_setup = {#this means all states that can possibly go to sinclair start out going to him
 	110 = { set_state_flag = state_flag_cal_socialist_uprising }

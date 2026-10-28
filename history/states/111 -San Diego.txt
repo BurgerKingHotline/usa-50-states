@@ -1,7 +1,7 @@
 state = {
 	id = 111
 	name = "STATE_111"
-	manpower = 209659####209659 + 60909 for imperial
+	manpower = 270568####209659 + 60909 for imperial
 	state_category = large_city
 	history = { 
 		owner = CAL
