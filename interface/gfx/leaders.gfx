@@ -99,4 +99,12 @@ spriteTypes = {
 		name = "GFX_UMW_Portrait_Bill_Blizzard"
 		texturefile = "gfx/interface/leaders/WestVirginia/WV_Portrait_Bill_Blizzard.dds"
 	}
+	spriteType = {
+		name = "GFX_WSH_Portrait_Frederick_G_Hamley"
+		texturefile = "gfx/interface/leaders/Washington/WSH_Portrait_Frederick_G_Hamley.dds"
+	}
+	spriteType = {
+		name = "GFX_WSH_Portrait_Luther_Powell"
+		texturefile = "gfx/interface/leaders/Washington/WSH_Portrait_Luther_Powell.dds"
+	}
 }

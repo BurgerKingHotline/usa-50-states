@@ -21,6 +21,7 @@ focus_tree = {
 				OR = {
 					has_country_flag = WSH_hartley_certified
 					has_country_flag = WSH_martin_holds_office
+					has_country_flag = WSH_provisional_authority
 				}
 			}
 		}
@@ -43,13 +44,17 @@ focus_tree = {
 			focus = WSH_governorship_must_continue
 		}
 		available = {
-			has_country_flag = WSH_hartley_certified
+			OR = {
+				has_country_flag = WSH_hartley_certified
+				has_country_flag = WSH_martin_holds_office
+				has_country_flag = WSH_provisional_authority
+			}
 		}
 		allow_branch = {
 		}
 		completion_reward = {
 			country_event = {
-				id = WSH_hartley.3
+				id = WSH_1933.10
 				days = 1
 			}
 		}
@@ -66,7 +71,11 @@ focus_tree = {
 			focus = WSH_lawful_transfer
 		}
 		available = {
-			has_country_flag = WSH_hartley_certified
+			OR = {
+				has_country_flag = WSH_hartley_certified
+				has_country_flag = WSH_martin_holds_office
+				has_country_flag = WSH_provisional_authority
+			}
 			NOT = { has_country_flag = WSH_inauguration_complete }
 		}
 		allow_branch = {
@@ -76,6 +85,7 @@ focus_tree = {
 				id = WSH_hartley.4
 				days = 1
 			}
+			add_ideas = WSH_provisional_state_authority
 		}
 	}
 
@@ -99,7 +109,6 @@ focus_tree = {
 		allow_branch = {
 		}
 		completion_reward = {
-			add_ideas = WSH_state_insolvency
 			country_event = {
 				id = WSH_hartley.10
 				days = 1
@@ -126,6 +135,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_balanced_budget_government_idea
+			add_to_variable = { WSH_hartley_machine_influence = 2 }
+			add_to_variable = { WSH_business_confidence = 2 }
+			add_to_variable = { WSH_relief_capacity = -1 }
+			add_to_variable = { WSH_labor_anger = 1 }
+			set_country_flag = WSH_treasury_balanced
+			set_country_flag = WSH_hartley_economic_line
 			set_country_flag = WSH_treasury_resolved
 		}
 	}
@@ -149,6 +164,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_emergency_credit_state_idea
+			add_to_variable = { WSH_public_works_commitment = 2 }
+			add_to_variable = { WSH_relief_capacity = 2 }
+			add_to_variable = { WSH_state_debt = 2 }
+			add_to_variable = { WSH_martin_influence = 2 }
+			set_country_flag = WSH_relief_bond_authorized
+			set_country_flag = WSH_martin_economic_line
 			set_country_flag = WSH_treasury_resolved
 		}
 	}
@@ -172,6 +193,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_corporate_credit_compact_idea
+			add_to_variable = { WSH_business_confidence = 3 }
+			add_to_variable = { WSH_state_capacity = -1 }
+			add_to_variable = { WSH_port_autonomy = 2 }
+			add_to_variable = { WSH_labor_anger = 1 }
+			set_country_flag = WSH_private_credit_system
 			set_country_flag = WSH_treasury_resolved
 		}
 	}
@@ -196,7 +222,6 @@ focus_tree = {
 		allow_branch = {
 		}
 		completion_reward = {
-			add_ideas = WSH_divided_chain_of_command
 			country_event = {
 				id = WSH_hartley.20
 				days = 1
@@ -223,6 +248,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_constitutional_guard_idea
+			set_country_flag = WSH_guard_civilian_control
+			add_to_variable = { WSH_democratic_legitimacy = 2 }
 			set_country_flag = WSH_guard_resolved
 		}
 	}
@@ -238,7 +265,11 @@ focus_tree = {
 			focus = WSH_command_of_the_guard
 		}
 		available = {
-			has_country_flag = WSH_guard_executive
+			OR = {
+				has_country_flag = WSH_guard_executive
+				has_country_flag = WSH_hartley_certified
+				has_country_flag = WSH_emergency_executive
+			}
 		}
 		mutually_exclusive = { focus = WSH_constitutional_guard }
 		mutually_exclusive = { focus = WSH_independent_general_staff }
@@ -246,6 +277,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_executive_guard_idea
+			set_country_flag = WSH_guard_loyal_to_executive
+			add_to_variable = { WSH_authoritarian_pressure = 2 }
 			set_country_flag = WSH_guard_resolved
 		}
 	}
@@ -269,6 +302,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_independent_general_staff_idea
+			set_country_flag = WSH_guard_professional_autonomy
+			add_to_variable = { WSH_military_autonomy = 3 }
 			set_country_flag = WSH_guard_resolved
 		}
 	}
@@ -293,7 +328,6 @@ focus_tree = {
 		allow_branch = {
 		}
 		completion_reward = {
-			add_ideas = WSH_unclaimed_federal_assets
 			country_event = {
 				id = WSH_hartley.30
 				days = 1
@@ -320,6 +354,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_legal_custodianship_idea
+			set_country_flag = WSH_property_legal_custody
+			add_to_variable = { WSH_democratic_legitimacy = 1 }
+			add_to_variable = { WSH_state_capacity = 1 }
 			set_country_flag = WSH_property_resolved
 		}
 	}
@@ -343,6 +380,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_state_nationalization_idea
+			set_country_flag = WSH_state_nationalization
+			add_to_variable = { WSH_state_capacity = 2 }
+			add_to_variable = { WSH_revolutionary_temperature = 1 }
+			add_to_variable = { WSH_business_confidence = -2 }
 			set_country_flag = WSH_property_resolved
 		}
 	}
@@ -366,6 +407,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_fragmented_ownership_idea
+			set_country_flag = WSH_property_fragmented
+			add_to_variable = { WSH_county_autonomy = 2 }
+			add_to_variable = { WSH_state_capacity = -1 }
+			add_to_variable = { WSH_port_autonomy = 1 }
 			set_country_flag = WSH_property_resolved
 		}
 	}
@@ -390,7 +435,6 @@ focus_tree = {
 		allow_branch = {
 		}
 		completion_reward = {
-			add_ideas = WSH_mass_unemployment
 			country_event = {
 				id = WSH_hartley.40
 				days = 1
@@ -418,6 +462,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_public_works_administration_idea
+			set_country_flag = WSH_public_works_relief
+			add_to_variable = { WSH_public_works_commitment = 2 }
+			add_to_variable = { WSH_unemployment_pressure = -2 }
+			add_to_variable = { WSH_state_debt = 1 }
+			add_to_variable = { WSH_ucl_influence = -1 }
 			set_country_flag = WSH_relief_resolved
 		}
 	}
@@ -442,6 +491,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_cooperative_relief_network_idea
+			set_country_flag = WSH_labor_relief_network
+			add_to_variable = { WSH_ucl_influence = 3 }
+			add_to_variable = { WSH_state_capacity = -1 }
+			add_to_variable = { WSH_relief_capacity = 1 }
 			set_country_flag = WSH_relief_resolved
 		}
 	}
@@ -466,6 +519,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_county_relief_system_idea
+			set_country_flag = WSH_county_relief
+			add_to_variable = { WSH_county_autonomy = 2 }
+			add_to_variable = { WSH_relief_capacity = 1 }
 			set_country_flag = WSH_relief_resolved
 		}
 	}
@@ -490,16 +546,25 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = WSH_restricted_relief_idea
+			set_country_flag = WSH_restricted_relief
+			add_to_variable = { WSH_business_confidence = 2 }
+			add_to_variable = { WSH_unemployment_pressure = 2 }
+			add_to_variable = { WSH_labor_anger = 2 }
+			add_to_variable = { WSH_klan_influence = 1 }
+			country_event = { id = WSH_relief.1 days = 30 }
 			set_country_flag = WSH_relief_resolved
 		}
 	}
 
 	# ============================================================
-	# CONVERGENCE: THE FIRST REPUBLICAN BUDGET
+	# CONVERGENCE: THE FIRST WASHINGTON BUDGET
+	# One completed choice from each branch is required: HOI4 reads the
+	# focuses inside a single prerequisite block as "any of", and separate
+	# prerequisite blocks as "all of".
 	# ============================================================
 
 	focus = {
-		id = WSH_first_republican_budget
+		id = WSH_first_national_budget
 		icon = GFX_goal_generic_major_alliance
 		cost = 10
 		x = 0
@@ -532,15 +597,650 @@ focus_tree = {
 		allow_branch = {
 		}
 		completion_reward = {
-			remove_ideas = WSH_state_insolvency
-			remove_ideas = WSH_divided_chain_of_command
-			remove_ideas = WSH_unclaimed_federal_assets
-			remove_ideas = WSH_mass_unemployment
-			set_country_flag = WSH_first_republican_budget_passed
+			if = {
+				limit = { has_country_flag = WSH_treasury_resolved }
+				remove_ideas = WSH_state_insolvency
+			}
+			if = {
+				limit = { has_country_flag = WSH_guard_resolved }
+				remove_ideas = WSH_divided_chain_of_command
+			}
+			if = {
+				limit = { has_country_flag = WSH_property_resolved }
+				remove_ideas = WSH_unclaimed_federal_assets
+			}
+			if = {
+				limit = { has_country_flag = WSH_relief_resolved }
+				remove_ideas = WSH_mass_unemployment
+			}
+			remove_ideas = WSH_martin_inauguration_crisis
+			set_country_flag = WSH_first_national_budget_passed
+			set_country_flag = WSH_emergency_government_functional
+			set_country_flag = WSH_treaty_dialogue_open
 			country_event = {
 				id = WSH_hartley.50
 				days = 1
 			}
+			if = {
+				limit = {
+					has_country_flag = WSH_hartley_economic_line
+					has_country_flag = WSH_guard_loyal_to_executive
+					has_country_flag = WSH_restricted_relief
+				}
+				country_event = { id = WSH_1933.50 days = 2 }
+			}
+			if = {
+				limit = {
+					has_country_flag = WSH_martin_economic_line
+					has_country_flag = WSH_guard_civilian_control
+					has_country_flag = WSH_relief_bond_authorized
+				}
+				country_event = { id = WSH_1933.51 days = 2 }
+			}
+			if = {
+				limit = {
+					has_country_flag = WSH_state_nationalization
+					has_country_flag = WSH_labor_relief_network
+				}
+				country_event = { id = WSH_1933.52 days = 2 }
+			}
+		}
+	}
+
+	# STABILIZATION AND REGIONAL BARGAINS
+	focus = {
+		id = WSH_keep_the_lights_on
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
+		x = -6
+		y = 1
+		relative_position_id = WSH_first_national_budget
+		prerequisite = { focus = WSH_first_national_budget }
+		available = { has_country_flag = WSH_utilities_settled has_country_flag = WSH_supply_lines_settled has_country_flag = WSH_currency_payroll_settled }
+		completion_reward = {
+			set_country_flag = WSH_services_secured
+			add_stability = 0.03
+			add_ideas = WSH_public_services_compact
+			country_event = { id = WSH_politics.1 days = 1 }
+		}
+	}
+	focus = {
+		id = WSH_county_compact
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = WSH_first_national_budget
+		prerequisite = { focus = WSH_first_national_budget }
+		available = { has_country_flag = WSH_counties_heard }
+		completion_reward = {
+			set_country_flag = WSH_counties_compact
+			add_to_variable = { WSH_legislature_approval = 3 }
+			add_stability = 0.04
+			country_event = { id = WSH_region.1 days = 1 }
+		}
+	}
+	focus = {
+		id = WSH_regional_settlements
+		icon = GFX_goal_generic_construct_civilian
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = WSH_first_national_budget
+		prerequisite = { focus = WSH_first_national_budget }
+		available = { has_country_flag = WSH_counties_compact }
+		completion_reward = {
+			set_country_flag = WSH_regional_settlements_signed
+			add_ideas = WSH_regional_bargain
+			add_political_power = 50
+			country_event = { id = WSH_region.2 days = 1 }
+		}
+	}
+	focus = {
+		id = WSH_treaty_and_neighbor_relations
+		icon = GFX_goal_generic_improve_relations
+		cost = 5
+		x = 6
+		y = 1
+		relative_position_id = WSH_first_national_budget
+		prerequisite = { focus = WSH_first_national_budget }
+		available = { has_country_flag = WSH_treaty_council_convened }
+		completion_reward = {
+			set_country_flag = WSH_treaty_settled
+			add_stability = 0.02
+			country_event = { id = WSH_diplomacy.1 days = 1 }
+		}
+	}
+	focus = {
+		id = WSH_define_the_republic
+		icon = GFX_goal_generic_political_reform
+		cost = 10
+		x = 0
+		y = 3
+		relative_position_id = WSH_first_national_budget
+		prerequisite = { focus = WSH_keep_the_lights_on }
+		prerequisite = { focus = WSH_county_compact }
+		prerequisite = { focus = WSH_regional_settlements }
+		prerequisite = { focus = WSH_treaty_and_neighbor_relations }
+		completion_reward = {
+			country_event = { id = WSH_1933.60 days = 1 }
+		}
+	}
+
+	# ============================================================
+	# SECOND LAYER: THE DEFINED REPUBLIC
+	# ============================================================
+
+	focus = {
+		id = WSH_reconstruct_the_economy
+		icon = GFX_goal_generic_construction2
+		cost = 5
+		x = -12
+		y = 1
+		relative_position_id = WSH_define_the_republic
+		prerequisite = { focus = WSH_define_the_republic }
+		completion_reward = {
+			set_country_flag = WSH_economy_branch_open
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = WSH_ten_million_legacy
+		icon = GFX_goal_generic_construct_civilian
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = WSH_reconstruct_the_economy
+		prerequisite = { focus = WSH_reconstruct_the_economy }
+		available = { has_country_flag = WSH_relief_bond_authorized }
+		completion_reward = {
+			add_to_variable = { WSH_public_works_commitment = 2 }
+			add_to_variable = { WSH_martin_influence = 1 }
+			add_to_variable = { WSH_state_debt = 1 }
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = WSH_columbia_basin_survey
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = WSH_reconstruct_the_economy
+		prerequisite = { focus = WSH_reconstruct_the_economy }
+		completion_reward = {
+			add_to_variable = { WSH_public_works_commitment = 2 }
+			add_to_variable = { WSH_state_capacity = 1 }
+			set_country_flag = WSH_columbia_basin_surveyed
+		}
+	}
+
+	focus = {
+		id = WSH_state_banking_system
+		icon = GFX_goal_generic_trade
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = WSH_reconstruct_the_economy
+		prerequisite = { focus = WSH_reconstruct_the_economy }
+		completion_reward = {
+			add_to_variable = { WSH_state_capacity = 2 }
+			add_to_variable = { WSH_state_debt = -1 }
+			add_to_variable = { WSH_business_confidence = -1 }
+			set_country_flag = WSH_state_bank
+		}
+	}
+
+	focus = {
+		id = WSH_stabilize_grain_belt
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		x = -2
+		y = 2
+		relative_position_id = WSH_reconstruct_the_economy
+		prerequisite = { focus = WSH_ten_million_legacy focus = WSH_columbia_basin_survey focus = WSH_state_banking_system }
+		completion_reward = {
+			add_to_variable = { WSH_county_autonomy = -1 }
+			add_stability = 0.02
+			add_political_power = 25
+			set_country_flag = WSH_grain_belt_stabilized
+		}
+	}
+
+	focus = {
+		id = WSH_reopen_timber_mills
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = WSH_reconstruct_the_economy
+		prerequisite = { focus = WSH_ten_million_legacy focus = WSH_columbia_basin_survey focus = WSH_state_banking_system }
+		completion_reward = {
+			add_to_variable = { WSH_business_confidence = 2 }
+			add_to_variable = { WSH_unemployment_pressure = -2 }
+			add_to_variable = { WSH_labor_anger = 1 }
+			set_country_flag = WSH_timber_mills_reopened
+		}
+	}
+
+	focus = {
+		id = WSH_port_labor_accord
+		icon = GFX_goal_generic_improve_relations
+		cost = 5
+		x = 2
+		y = 2
+		relative_position_id = WSH_reconstruct_the_economy
+		prerequisite = { focus = WSH_ten_million_legacy focus = WSH_columbia_basin_survey focus = WSH_state_banking_system }
+		completion_reward = {
+			add_to_variable = { WSH_labor_anger = -2 }
+			add_to_variable = { WSH_port_autonomy = -1 }
+			add_to_variable = { WSH_state_capacity = 1 }
+			set_country_flag = WSH_port_labor_accord
+		}
+	}
+
+	focus = {
+		id = WSH_public_power
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		x = 0
+		y = 3
+		relative_position_id = WSH_reconstruct_the_economy
+		prerequisite = { focus = WSH_columbia_basin_survey }
+		prerequisite = { focus = WSH_stabilize_grain_belt focus = WSH_reopen_timber_mills focus = WSH_port_labor_accord }
+		completion_reward = {
+			add_to_variable = { WSH_state_capacity = 2 }
+			add_to_variable = { WSH_business_confidence = -1 }
+			add_stability = 0.03
+			set_country_flag = WSH_public_power
+		}
+	}
+
+	focus = {
+		id = WSH_settle_the_labor_question
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = -4
+		y = 1
+		relative_position_id = WSH_define_the_republic
+		prerequisite = { focus = WSH_define_the_republic }
+		completion_reward = {
+			set_country_flag = WSH_labor_branch_open
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = WSH_recognize_collective_bargaining
+		icon = GFX_goal_support_democracy
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = WSH_settle_the_labor_question
+		prerequisite = { focus = WSH_settle_the_labor_question }
+		mutually_exclusive = { focus = WSH_open_shop_republic }
+		completion_reward = {
+			add_to_variable = { WSH_labor_anger = -3 }
+			add_to_variable = { WSH_business_confidence = -2 }
+			add_to_variable = { WSH_democratic_legitimacy = 1 }
+			set_country_flag = WSH_collective_bargaining
+		}
+	}
+
+	focus = {
+		id = WSH_incorporate_ucl
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = WSH_settle_the_labor_question
+		prerequisite = { focus = WSH_settle_the_labor_question }
+		mutually_exclusive = { focus = WSH_break_unemployed_councils }
+		available = { has_country_flag = WSH_labor_relief_network }
+		completion_reward = {
+			add_to_variable = { WSH_ucl_influence = 1 }
+			add_to_variable = { WSH_labor_anger = -2 }
+			add_to_variable = { WSH_unemployment_pressure = -1 }
+			set_country_flag = WSH_ucl_incorporated
+		}
+	}
+
+	focus = {
+		id = WSH_break_unemployed_councils
+		icon = GFX_goal_generic_position_armies
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = WSH_settle_the_labor_question
+		prerequisite = { focus = WSH_settle_the_labor_question }
+		mutually_exclusive = { focus = WSH_incorporate_ucl }
+		mutually_exclusive = { focus = WSH_repeal_criminal_syndicalism }
+		completion_reward = {
+			add_to_variable = { WSH_authoritarian_pressure = 1 }
+			add_to_variable = { WSH_labor_anger = 2 }
+			add_to_variable = { WSH_revolutionary_temperature = 1 }
+			add_to_variable = { WSH_business_confidence = 1 }
+			set_country_flag = WSH_councils_broken
+		}
+	}
+
+	focus = {
+		id = WSH_repeal_criminal_syndicalism
+		icon = GFX_goal_generic_political_reform
+		cost = 5
+		x = -2
+		y = 2
+		relative_position_id = WSH_settle_the_labor_question
+		prerequisite = { focus = WSH_recognize_collective_bargaining focus = WSH_incorporate_ucl focus = WSH_break_unemployed_councils }
+		mutually_exclusive = { focus = WSH_break_unemployed_councils }
+		completion_reward = {
+			add_to_variable = { WSH_democratic_legitimacy = 2 }
+			add_to_variable = { WSH_labor_anger = -2 }
+			add_to_variable = { WSH_klan_influence = 1 }
+			set_country_flag = WSH_syndicalism_repealed
+		}
+	}
+
+	focus = {
+		id = WSH_open_shop_republic
+		icon = GFX_goal_generic_defence
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = WSH_settle_the_labor_question
+		prerequisite = { focus = WSH_recognize_collective_bargaining focus = WSH_incorporate_ucl focus = WSH_break_unemployed_councils }
+		mutually_exclusive = { focus = WSH_recognize_collective_bargaining }
+		mutually_exclusive = { focus = WSH_labor_charter }
+		completion_reward = {
+			add_to_variable = { WSH_business_confidence = 3 }
+			add_to_variable = { WSH_labor_anger = 2 }
+			add_to_variable = { WSH_hartley_machine_influence = 1 }
+			set_country_flag = WSH_open_shop
+		}
+	}
+
+	focus = {
+		id = WSH_general_strike_test
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		x = 2
+		y = 2
+		relative_position_id = WSH_settle_the_labor_question
+		prerequisite = { focus = WSH_recognize_collective_bargaining focus = WSH_incorporate_ucl focus = WSH_break_unemployed_councils }
+		completion_reward = {
+			if = { limit = { check_variable = { WSH_labor_anger > 4 } } add_stability = -0.05 add_to_variable = { WSH_revolutionary_temperature = 2 } set_country_flag = WSH_general_strike_failed } else = { add_stability = 0.03 add_to_variable = { WSH_democratic_legitimacy = 1 } set_country_flag = WSH_general_strike_weathered }
+		}
+	}
+
+	focus = {
+		id = WSH_labor_charter
+		icon = GFX_goal_support_democracy
+		cost = 10
+		x = 0
+		y = 3
+		relative_position_id = WSH_settle_the_labor_question
+		prerequisite = { focus = WSH_recognize_collective_bargaining }
+		prerequisite = { focus = WSH_repeal_criminal_syndicalism focus = WSH_general_strike_test }
+		mutually_exclusive = { focus = WSH_open_shop_republic }
+		completion_reward = {
+			add_to_variable = { WSH_democratic_legitimacy = 2 }
+			add_to_variable = { WSH_labor_anger = -3 }
+			add_to_variable = { WSH_state_capacity = 1 }
+			add_stability = 0.03
+			set_country_flag = WSH_labor_charter
+		}
+	}
+
+	focus = {
+		id = WSH_settle_the_civic_question
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		x = 4
+		y = 1
+		relative_position_id = WSH_define_the_republic
+		prerequisite = { focus = WSH_define_the_republic }
+		completion_reward = {
+			set_country_flag = WSH_civic_branch_open
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = WSH_defeat_initiative_49
+		icon = GFX_goal_support_democracy
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = WSH_settle_the_civic_question
+		prerequisite = { focus = WSH_settle_the_civic_question }
+		completion_reward = {
+			add_to_variable = { WSH_klan_influence = -1 }
+			add_to_variable = { WSH_democratic_legitimacy = 1 }
+			set_country_flag = WSH_i49_defeated
+		}
+	}
+
+	focus = {
+		id = WSH_preserve_alien_land_acts
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = WSH_settle_the_civic_question
+		prerequisite = { focus = WSH_settle_the_civic_question }
+		mutually_exclusive = { focus = WSH_repeal_alien_land_acts }
+		mutually_exclusive = { focus = WSH_common_washington_citizenship }
+		completion_reward = {
+			add_to_variable = { WSH_klan_influence = 1 }
+			add_to_variable = { WSH_county_autonomy = 1 }
+			add_to_variable = { WSH_democratic_legitimacy = -1 }
+			set_country_flag = WSH_alien_land_preserved
+		}
+	}
+
+	focus = {
+		id = WSH_repeal_alien_land_acts
+		icon = GFX_goal_generic_political_reform
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = WSH_settle_the_civic_question
+		prerequisite = { focus = WSH_settle_the_civic_question }
+		mutually_exclusive = { focus = WSH_preserve_alien_land_acts }
+		completion_reward = {
+			add_to_variable = { WSH_democratic_legitimacy = 2 }
+			add_to_variable = { WSH_klan_influence = 1 }
+			add_stability = -0.01
+			set_country_flag = WSH_alien_land_repealed
+		}
+	}
+
+	focus = {
+		id = WSH_protect_valley_communities
+		icon = GFX_goal_generic_fortify_city
+		cost = 5
+		x = -2
+		y = 2
+		relative_position_id = WSH_settle_the_civic_question
+		prerequisite = { focus = WSH_defeat_initiative_49 focus = WSH_preserve_alien_land_acts focus = WSH_repeal_alien_land_acts }
+		completion_reward = {
+			add_to_variable = { WSH_democratic_legitimacy = 1 }
+			add_to_variable = { WSH_unemployment_pressure = -1 }
+			add_stability = 0.02
+			set_country_flag = WSH_valley_communities_protected
+		}
+	}
+
+	focus = {
+		id = WSH_university_question
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = WSH_settle_the_civic_question
+		prerequisite = { focus = WSH_defeat_initiative_49 focus = WSH_preserve_alien_land_acts focus = WSH_repeal_alien_land_acts }
+		completion_reward = {
+			add_to_variable = { WSH_state_capacity = 1 }
+			add_to_variable = { WSH_democratic_legitimacy = 1 }
+			set_country_flag = WSH_university_settled
+		}
+	}
+
+	focus = {
+		id = WSH_investigate_the_vigilantes
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		x = 2
+		y = 2
+		relative_position_id = WSH_settle_the_civic_question
+		prerequisite = { focus = WSH_defeat_initiative_49 focus = WSH_preserve_alien_land_acts focus = WSH_repeal_alien_land_acts }
+		completion_reward = {
+			add_to_variable = { WSH_klan_influence = -2 }
+			add_to_variable = { WSH_democratic_legitimacy = 1 }
+			add_to_variable = { WSH_county_autonomy = -1 }
+			set_country_flag = WSH_vigilantes_investigated
+		}
+	}
+
+	focus = {
+		id = WSH_common_washington_citizenship
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		x = 0
+		y = 3
+		relative_position_id = WSH_settle_the_civic_question
+		prerequisite = { focus = WSH_repeal_alien_land_acts focus = WSH_defeat_initiative_49 }
+		prerequisite = { focus = WSH_protect_valley_communities focus = WSH_investigate_the_vigilantes }
+		mutually_exclusive = { focus = WSH_preserve_alien_land_acts }
+		completion_reward = {
+			add_to_variable = { WSH_democratic_legitimacy = 3 }
+			add_stability = 0.04
+			set_country_flag = WSH_common_citizenship
+		}
+	}
+
+	focus = {
+		id = WSH_secure_the_successor_state
+		icon = GFX_goal_generic_defence
+		cost = 5
+		x = 12
+		y = 1
+		relative_position_id = WSH_define_the_republic
+		prerequisite = { focus = WSH_define_the_republic }
+		completion_reward = {
+			set_country_flag = WSH_security_branch_open
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = WSH_secure_puget_sound
+		icon = GFX_goal_generic_fortify_city
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = WSH_secure_the_successor_state
+		prerequisite = { focus = WSH_secure_the_successor_state }
+		completion_reward = {
+			add_to_variable = { WSH_military_autonomy = 1 }
+			add_to_variable = { WSH_state_capacity = 1 }
+			add_stability = 0.02
+			set_country_flag = WSH_puget_sound_secured
+		}
+	}
+
+	focus = {
+		id = WSH_guard_the_columbia
+		icon = GFX_goal_generic_position_armies
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = WSH_secure_the_successor_state
+		prerequisite = { focus = WSH_secure_the_successor_state }
+		completion_reward = {
+			add_to_variable = { WSH_military_autonomy = 1 }
+			add_political_power = 25
+			set_country_flag = WSH_columbia_guarded
+		}
+	}
+
+	focus = {
+		id = WSH_canadian_trade_route
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = WSH_secure_the_successor_state
+		prerequisite = { focus = WSH_secure_the_successor_state }
+		completion_reward = {
+			add_to_variable = { WSH_business_confidence = 1 }
+			add_to_variable = { WSH_state_capacity = 1 }
+			set_country_flag = WSH_canada_route_open
+		}
+	}
+
+	focus = {
+		id = WSH_inland_grain_corridor
+		icon = GFX_goal_generic_trade
+		cost = 5
+		x = -1
+		y = 2
+		relative_position_id = WSH_secure_the_successor_state
+		prerequisite = { focus = WSH_secure_puget_sound focus = WSH_guard_the_columbia focus = WSH_canadian_trade_route }
+		completion_reward = {
+			add_to_variable = { WSH_county_autonomy = -1 }
+			add_to_variable = { WSH_business_confidence = 1 }
+			set_country_flag = WSH_grain_corridor_open
+		}
+	}
+
+	focus = {
+		id = WSH_pacific_defense_command
+		icon = GFX_goal_generic_army_doctrines
+		cost = 5
+		x = 1
+		y = 2
+		relative_position_id = WSH_secure_the_successor_state
+		prerequisite = { focus = WSH_secure_puget_sound focus = WSH_guard_the_columbia focus = WSH_canadian_trade_route }
+		completion_reward = {
+			add_to_variable = { WSH_military_autonomy = 2 }
+			add_stability = 0.01
+			set_country_flag = WSH_pacific_command
+		}
+	}
+
+	focus = {
+		id = WSH_federal_restoration_question
+		icon = GFX_goal_generic_major_alliance
+		cost = 10
+		x = -1
+		y = 3
+		relative_position_id = WSH_secure_the_successor_state
+		prerequisite = { focus = WSH_inland_grain_corridor focus = WSH_pacific_defense_command }
+		mutually_exclusive = { focus = WSH_washington_will_stand_alone }
+		completion_reward = {
+			add_to_variable = { WSH_democratic_legitimacy = 1 }
+			add_to_variable = { WSH_military_autonomy = -1 }
+			set_country_flag = WSH_restoration_talks
+		}
+	}
+
+	focus = {
+		id = WSH_washington_will_stand_alone
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10
+		x = 1
+		y = 3
+		relative_position_id = WSH_secure_the_successor_state
+		prerequisite = { focus = WSH_inland_grain_corridor focus = WSH_pacific_defense_command }
+		mutually_exclusive = { focus = WSH_federal_restoration_question }
+		completion_reward = {
+			add_to_variable = { WSH_state_capacity = 1 }
+			add_stability = 0.02
+			add_political_power = 50
+			set_country_flag = WSH_stands_alone
 		}
 	}
 

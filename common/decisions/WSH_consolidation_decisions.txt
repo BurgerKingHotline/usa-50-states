@@ -1,0 +1,7 @@
+WSH_hartley_governance_cat = {
+ WSH_stabilize_currency_and_payroll = { icon = generic_political_discourse visible = { has_country_flag = WSH_inauguration_complete } available = { always = yes } cost = 50 fire_only_once = yes complete_effect = { add_stability = 0.02 add_political_power = 25 set_country_flag = WSH_currency_payroll_settled } }
+ WSH_keep_power_and_water_running = { icon = generic_construct_infrastructure visible = { has_country_flag = WSH_inauguration_complete } available = { always = yes } cost = 50 fire_only_once = yes complete_effect = { add_stability = 0.02 set_country_flag = WSH_utilities_settled } }
+ WSH_keep_food_fuel_and_freight_moving = { icon = generic_civil_support visible = { has_country_flag = WSH_inauguration_complete } available = { always = yes } cost = 50 fire_only_once = yes complete_effect = { add_stability = 0.02 set_country_flag = WSH_supply_lines_settled } }
+ WSH_county_roundtable = { icon = generic_national_unity visible = { has_country_flag = WSH_inauguration_complete } available = { always = yes } cost = 50 fire_only_once = yes complete_effect = { add_to_variable = { WSH_legislature_approval = 2 } set_country_flag = WSH_counties_heard } }
+ WSH_open_treaty_council = { icon = generic_improve_relations visible = { has_country_flag = WSH_treaty_dialogue_open } available = { always = yes } cost = 50 fire_only_once = yes complete_effect = { add_stability = 0.02 add_to_variable = { WSH_professional_approval = 2 } set_country_flag = WSH_treaty_council_convened } }
+}

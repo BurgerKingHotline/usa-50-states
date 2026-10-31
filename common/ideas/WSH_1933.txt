@@ -1,0 +1,171 @@
+ideas = {
+	country = {
+		WSH_martin_inauguration_crisis = {
+			picture = usa_great_depression_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.03
+				political_power_factor = -0.05
+			}
+		}
+		WSH_hartley_continuity = {
+			picture = usa_great_depression_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = -0.02
+			}
+		}
+		WSH_provisional_state_authority = {
+			picture = generic_political_discourse
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.10
+				stability_factor = -0.05
+				consumer_goods_factor = 0.05
+				war_support_weekly = 0.001
+			}
+		}
+		WSH_commercial_executive_order = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.08
+				stability_factor = -0.03
+				production_speed_buildings_factor = 0.04
+			}
+		}
+		WSH_developmental_order = {
+			picture = generic_construct_infrastructure
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				stability_factor = 0.03
+				political_power_factor = -0.03
+			}
+		}
+		WSH_labor_commonwealth_order = {
+			picture = usa_great_depression_3
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.03
+				production_factory_max_efficiency_factor = 0.04
+				consumer_goods_factor = -0.03
+			}
+		}
+		WSH_martin_reconstruction_republic = {
+			picture = generic_construct_infrastructure
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.08
+				political_power_factor = 0.03
+			}
+		}
+		WSH_hartley_continuity_republic = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = 0.03
+				war_support_factor = 0.03
+				production_speed_buildings_factor = -0.04
+			}
+		}
+		WSH_washington_commonwealth = {
+			picture = usa_great_depression_3
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.04
+				political_power_factor = 0.03
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		WSH_emergency_security_state = {
+			picture = SPR_political_violence
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.06
+				political_power_factor = 0.10
+				war_support_factor = 0.05
+				army_org_factor = 0.03
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		WSH_county_compact_republic = {
+			picture = generic_political_discourse
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.03
+				political_power_factor = -0.05
+				production_speed_buildings_factor = 0.03
+			}
+		}
+	}
+}

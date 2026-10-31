@@ -1,0 +1,160 @@
+WSH_hartley_governance_cat = {
+	WSH_veto_emergency_spending = {
+		icon = generic_political_discourse
+		visible = { has_country_flag = WSH_hartley_economic_line }
+		available = { always = yes }
+		cost = 0
+		days_re_enable = 60
+		complete_effect = {
+			add_political_power = 30
+			add_to_variable = { WSH_labor_anger = 1 }
+			add_to_variable = { WSH_unemployment_pressure = 1 }
+			add_to_variable = { WSH_state_debt = -1 }
+		}
+	}
+
+	WSH_issue_relief_bond = {
+		icon = generic_political_discourse
+		visible = { has_country_flag = WSH_relief_bond_authorized }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_unemployment_pressure = -2 }
+			add_to_variable = { WSH_state_debt = 2 }
+			add_to_variable = { WSH_relief_capacity = 1 }
+		}
+	}
+
+	WSH_fund_minor_public_works = {
+		icon = generic_construction
+		visible = { has_country_flag = WSH_relief_bond_authorized }
+		available = { always = yes }
+		cost = 25
+		days_re_enable = 90
+		complete_effect = {
+			add_to_variable = { WSH_unemployment_pressure = -1 }
+			add_to_variable = { WSH_state_debt = 1 }
+			add_to_variable = { WSH_public_works_commitment = 1 }
+			add_stability = 0.01
+		}
+	}
+
+	WSH_appropriate_columbia_basin_funds = {
+		icon = generic_construct_infrastructure
+		visible = { has_country_flag = WSH_relief_bond_authorized }
+		available = { NOT = { check_variable = { WSH_columbia_basin_progress > 3 } } }
+		cost = 75
+		days_re_enable = 180
+		complete_effect = {
+			add_to_variable = { WSH_columbia_basin_progress = 1 }
+			add_to_variable = { WSH_public_works_commitment = 2 }
+			add_to_variable = { WSH_state_debt = 1 }
+		}
+	}
+
+	WSH_guarantee_county_relief_payments = {
+		icon = generic_national_unity
+		visible = { has_country_flag = WSH_relief_bond_authorized }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_relief_capacity = 1 }
+			add_to_variable = { WSH_county_autonomy = 1 }
+			add_to_variable = { WSH_state_debt = 1 }
+			add_to_variable = { WSH_legislature_approval = 1 }
+		}
+	}
+
+	WSH_build_emergency_roads = {
+		icon = generic_construct_infrastructure
+		visible = { has_country_flag = WSH_public_works_relief }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_unemployment_pressure = -1 }
+			add_to_variable = { WSH_state_debt = 1 }
+			add_stability = 0.01
+		}
+	}
+
+	WSH_repair_ports_and_railways = {
+		icon = generic_construct_infrastructure
+		visible = { has_country_flag = WSH_public_works_relief }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_unemployment_pressure = -1 }
+			add_to_variable = { WSH_business_confidence = 1 }
+			add_to_variable = { WSH_state_debt = 1 }
+		}
+	}
+
+	WSH_begin_columbia_basin_survey = {
+		icon = generic_construct_infrastructure
+		visible = { has_country_flag = WSH_public_works_relief }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_public_works_commitment = 1 }
+			add_to_variable = { WSH_state_debt = 1 }
+			set_country_flag = WSH_columbia_basin_survey_begun
+		}
+	}
+
+	WSH_guarantee_public_payrolls = {
+		icon = generic_civil_support
+		visible = { has_country_flag = WSH_public_works_relief }
+		available = { always = yes }
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_to_variable = { WSH_unemployment_pressure = -2 }
+			add_to_variable = { WSH_ucl_influence = -1 }
+			add_to_variable = { WSH_state_debt = 1 }
+		}
+	}
+
+	WSH_incorporate_ucl_decision = {
+		icon = generic_national_unity
+		activation = { has_country_flag = WSH_labor_relief_network NOT = { has_country_flag = WSH_ucl_incorporated } }
+		available = { always = yes }
+		days_mission_timeout = 120
+		fire_only_once = yes
+		cost = 75
+		complete_effect = {
+			set_country_flag = WSH_ucl_incorporated
+			add_to_variable = { WSH_ucl_influence = 1 }
+			add_to_variable = { WSH_labor_anger = -2 }
+		}
+		timeout_effect = {
+			set_country_flag = WSH_ucl_autonomous_councils
+			add_to_variable = { WSH_ucl_influence = 2 }
+			add_to_variable = { WSH_revolutionary_temperature = 1 }
+			add_to_variable = { WSH_state_capacity = -1 }
+		}
+	}
+
+	WSH_eastern_autonomy_movement = {
+		icon = generic_political_discourse
+		activation = { has_country_flag = WSH_county_compact_failed }
+		available = { always = yes }
+		days_mission_timeout = 180
+		fire_only_once = yes
+		cost = 75
+		complete_effect = {
+			clr_country_flag = WSH_county_compact_failed
+			set_country_flag = WSH_secession_risk_low
+			add_to_variable = { WSH_county_autonomy = 3 }
+		}
+		timeout_effect = {
+			set_country_flag = WSH_eastern_secession_crisis
+			add_stability = -0.05
+			add_to_variable = { WSH_county_autonomy = 2 }
+		}
+	}
+}

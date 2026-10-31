@@ -11,6 +11,7 @@ WSH_hartley_transition_cat = {
 			NOT = {
 				has_country_flag = WSH_hartley_certified
 				has_country_flag = WSH_martin_holds_office
+				has_country_flag = WSH_provisional_authority
 			}
 		}
 
