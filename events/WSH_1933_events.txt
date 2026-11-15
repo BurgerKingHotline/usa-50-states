@@ -1,0 +1,268 @@
+add_namespace = WSH_1933
+
+# 1. Martin certified - the Hartley machine stays in the building
+country_event = {
+	id = WSH_1933.1
+	title = WSH_1933.1.t
+	desc = WSH_1933.1.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = WSH_1933.1.a
+		add_political_power = 10
+	}
+}
+
+# 2. Hartley's continuity claim accepted
+country_event = {
+	id = WSH_1933.2
+	title = WSH_1933.2.t
+	desc = WSH_1933.2.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = WSH_1933.2.a
+		add_political_power = 10
+	}
+}
+
+# 3. Neither claim accepted - a convention names who sits in the chair
+country_event = {
+	id = WSH_1933.3
+	title = WSH_1933.3.t
+	desc = WSH_1933.3.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Martin takes the chair
+		name = WSH_1933.3.a
+		ai_chance = { factor = 50 }
+		set_country_flag = WSH_provisional_authority
+		set_country_flag = WSH_martin_coalition_active
+		add_to_variable = { WSH_martin_influence = 1 }
+		add_to_variable = { WSH_democratic_legitimacy = 1 }
+		set_politics = { ruling_party = democratic elections_allowed = no }
+		retire_country_leader = yes
+		promote_character = WASHINGTON_GOV_1933_DEM
+		remove_ideas = WSH_uncertain_succession
+	}
+	option = { #Hartley's caretaker administration
+		name = WSH_1933.3.b
+		ai_chance = { factor = 20 }
+		set_country_flag = WSH_provisional_authority
+		set_country_flag = WSH_hartley_machine_active
+		add_to_variable = { WSH_hartley_machine_influence = 1 }
+		set_politics = { ruling_party = conservatism_ideology elections_allowed = no }
+		retire_country_leader = yes
+		promote_character = WASHINGTON_GOV_1933_CON
+		remove_ideas = WSH_uncertain_succession
+	}
+	option = { #The convention governs through a committee
+		name = WSH_1933.3.c
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_provisional_authority
+		set_country_flag = WSH_convention_committee
+		add_to_variable = { WSH_democratic_legitimacy = 3 }
+		add_to_variable = { WSH_legitimacy_crisis = 1 }
+		set_politics = { ruling_party = democratic elections_allowed = no }
+		retire_country_leader = yes
+		promote_character = WASHINGTON_GOV_1933_DEM
+		remove_ideas = WSH_uncertain_succession
+	}
+}
+
+# 10. What does the state government become? (neutral replacement for WSH_hartley.3)
+country_event = {
+	id = WSH_1933.10
+	title = WSH_1933.10.t
+	desc = WSH_1933.10.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #State continuity
+		name = WSH_1933.10.a
+		ai_chance = { factor = 40 }
+		set_country_flag = WSH_state_continuity
+		add_stability = 0.02
+		add_political_power = -10
+		add_to_variable = { WSH_democratic_legitimacy = 1 }
+		if = {
+			limit = { has_idea = WSH_lawful_transfer_underway }
+			swap_ideas = {
+				remove_idea = WSH_lawful_transfer_underway
+				add_idea = WSH_continuity_of_government
+			}
+		}
+	}
+	option = { #Emergency national authority
+		name = WSH_1933.10.b
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_loyalist_appointments
+		set_country_flag = WSH_emergency_executive
+		add_political_power = 25
+		add_to_variable = { WSH_authoritarian_pressure = 1 }
+		add_popularity = {
+			ideology = conservatism_ideology
+			popularity = 0.03
+		}
+	}
+	option = { #Constitutional convention
+		name = WSH_1933.10.c
+		ai_chance = { factor = 30 }
+		set_country_flag = WSH_legislative_transfer_oversight
+		add_stability = 0.03
+		add_political_power = -25
+		add_to_variable = { WSH_democratic_legitimacy = 2 }
+	}
+}
+
+# 50. Hartley line: balanced budget, executive Guard, restricted relief
+country_event = {
+	id = WSH_1933.50
+	title = WSH_1933.50.t
+	desc = WSH_1933.50.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = WSH_1933.50.a
+		add_ideas = WSH_commercial_executive_order
+		set_country_flag = WSH_order_commercial_executive
+		add_to_variable = { WSH_hartley_machine_influence = 2 }
+		add_to_variable = { WSH_labor_anger = 1 }
+	}
+}
+
+# 51. Martin line: relief bonds, civilian Guard, public works
+country_event = {
+	id = WSH_1933.51
+	title = WSH_1933.51.t
+	desc = WSH_1933.51.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = WSH_1933.51.a
+		add_ideas = WSH_developmental_order
+		set_country_flag = WSH_order_developmental
+		add_to_variable = { WSH_martin_influence = 2 }
+		add_to_variable = { WSH_democratic_legitimacy = 1 }
+	}
+}
+
+# 52. Labor line: nationalized estate, cooperative relief
+country_event = {
+	id = WSH_1933.52
+	title = WSH_1933.52.t
+	desc = WSH_1933.52.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = WSH_1933.52.a
+		add_ideas = WSH_labor_commonwealth_order
+		set_country_flag = WSH_order_labor_commonwealth
+		add_to_variable = { WSH_ucl_influence = 1 }
+		add_to_variable = { WSH_revolutionary_temperature = 1 }
+	}
+}
+
+# 60. The permanent order - options are gated by what the emergency produced
+country_event = {
+	id = WSH_1933.60
+	title = WSH_1933.60.t
+	desc = WSH_1933.60.desc
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		remove_ideas = WSH_provisional_state_authority
+		clr_country_flag = WSH_constitution_pending
+		clr_country_flag = WSH_republic_not_yet_defined
+	}
+	option = { #The Martin Reconstruction Republic
+		name = WSH_1933.60.a
+		trigger = {
+			OR = {
+				has_country_flag = WSH_martin_economic_line
+				has_country_flag = WSH_guard_civilian_control
+				has_country_flag = WSH_public_works_relief
+			}
+		}
+		ai_chance = { factor = 40 }
+		add_ideas = WSH_martin_reconstruction_republic
+		set_country_flag = WSH_republic_defined
+		set_country_flag = WSH_republic_martin
+		add_to_variable = { WSH_martin_influence = 2 }
+	}
+	option = { #The Hartley Continuity Republic
+		name = WSH_1933.60.b
+		trigger = {
+			OR = {
+				has_country_flag = WSH_hartley_economic_line
+				has_country_flag = WSH_guard_loyal_to_executive
+				has_country_flag = WSH_restricted_relief
+			}
+		}
+		ai_chance = { factor = 25 }
+		add_ideas = WSH_hartley_continuity_republic
+		set_country_flag = WSH_republic_defined
+		set_country_flag = WSH_republic_hartley
+		add_to_variable = { WSH_hartley_machine_influence = 2 }
+	}
+	option = { #The Washington Commonwealth
+		name = WSH_1933.60.c
+		trigger = {
+			OR = {
+				has_country_flag = WSH_state_nationalization
+				has_country_flag = WSH_labor_relief_network
+			}
+		}
+		ai_chance = { factor = 15 }
+		add_ideas = WSH_washington_commonwealth
+		set_country_flag = WSH_republic_defined
+		set_country_flag = WSH_republic_commonwealth
+		add_to_variable = { WSH_ucl_influence = 2 }
+	}
+	option = { #The Emergency Security State
+		name = WSH_1933.60.d
+		trigger = {
+			OR = {
+				has_country_flag = WSH_guard_loyal_to_executive
+				has_country_flag = WSH_guard_professional_autonomy
+			}
+			check_variable = { WSH_authoritarian_pressure > 1 }
+		}
+		ai_chance = { factor = 10 }
+		add_ideas = WSH_emergency_security_state
+		set_country_flag = WSH_republic_defined
+		set_country_flag = WSH_republic_security_state
+		add_to_variable = { WSH_authoritarian_pressure = 2 }
+	}
+	option = { #The County Compact Republic
+		name = WSH_1933.60.e
+		ai_chance = { factor = 10 }
+		add_ideas = WSH_county_compact_republic
+		set_country_flag = WSH_republic_defined
+		set_country_flag = WSH_republic_county_compact
+		add_to_variable = { WSH_county_autonomy = 3 }
+	}
+}

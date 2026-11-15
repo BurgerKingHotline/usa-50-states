@@ -1,0 +1,2 @@
+﻿l_english:
+ # Intentionally empty: overrides vanilla state names so FFL_GLOBAL_MAP_STATE_NAMES wins without key collisions.

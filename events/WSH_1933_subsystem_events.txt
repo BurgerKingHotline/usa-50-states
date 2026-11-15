@@ -1,0 +1,257 @@
+add_namespace = WSH_relief
+add_namespace = WSH_politics
+add_namespace = WSH_region
+add_namespace = WSH_diplomacy
+
+# ---- Restricted relief chain (fires 30 days after WSH_restricted_relief)
+
+country_event = {
+	id = WSH_relief.1
+	title = WSH_relief.1.t
+	desc = WSH_relief.1.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Open public kitchens
+		name = WSH_relief.1.a
+		add_to_variable = { WSH_unemployment_pressure = -1 }
+		add_to_variable = { WSH_state_debt = 1 }
+		add_to_variable = { WSH_ucl_influence = 1 }
+		country_event = { id = WSH_relief.2 days = 30 }
+	}
+	option = { #Hold the line
+		name = WSH_relief.1.b
+		add_to_variable = { WSH_labor_anger = 1 }
+		add_to_variable = { WSH_klan_influence = 1 }
+		country_event = { id = WSH_relief.2 days = 30 }
+	}
+}
+
+country_event = {
+	id = WSH_relief.2
+	title = WSH_relief.2.t
+	desc = WSH_relief.2.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Clear the queue
+		name = WSH_relief.2.a
+		add_stability = -0.03
+		add_to_variable = { WSH_authoritarian_pressure = 1 }
+		add_to_variable = { WSH_revolutionary_temperature = 1 }
+		country_event = { id = WSH_relief.3 days = 30 }
+	}
+	option = { #Open an emergency commissary
+		name = WSH_relief.2.b
+		add_to_variable = { WSH_state_debt = 1 }
+		add_to_variable = { WSH_unemployment_pressure = -1 }
+		country_event = { id = WSH_relief.3 days = 30 }
+	}
+}
+
+country_event = {
+	id = WSH_relief.3
+	title = WSH_relief.3.t
+	desc = WSH_relief.3.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Accept the auxiliaries
+		name = WSH_relief.3.a
+		set_country_flag = WSH_klan_auxiliaries
+		add_stability = 0.02
+		add_to_variable = { WSH_klan_influence = 3 }
+		add_to_variable = { WSH_authoritarian_pressure = 1 }
+		country_event = { id = WSH_klan.1 days = 180 }
+	}
+	option = { #Refuse them
+		name = WSH_relief.3.b
+		add_stability = -0.01
+		add_to_variable = { WSH_democratic_legitimacy = 1 }
+		add_to_variable = { WSH_klan_influence = -1 }
+	}
+}
+
+# ---- Utilities ownership (WSH_keep_the_lights_on)
+
+country_event = {
+	id = WSH_politics.1
+	title = WSH_politics.1.t
+	desc = WSH_politics.1.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Public utility authority
+		name = WSH_politics.1.a
+		set_country_flag = WSH_utilities_public
+		add_to_variable = { WSH_state_capacity = 2 }
+		add_to_variable = { WSH_business_confidence = -1 }
+	}
+	option = { #Private utility compact
+		name = WSH_politics.1.b
+		set_country_flag = WSH_utilities_private
+		add_to_variable = { WSH_business_confidence = 2 }
+		add_to_variable = { WSH_state_capacity = -1 }
+		add_to_variable = { WSH_port_autonomy = 1 }
+	}
+	option = { #County utility boards
+		name = WSH_politics.1.c
+		set_country_flag = WSH_utilities_county
+		add_to_variable = { WSH_county_autonomy = 2 }
+	}
+	option = { #Labor-management boards
+		name = WSH_politics.1.d
+		set_country_flag = WSH_utilities_joint_boards
+		add_to_variable = { WSH_labor_anger = -2 }
+		add_to_variable = { WSH_democratic_legitimacy = 1 }
+	}
+}
+
+# ---- East-west bargain (WSH_county_compact)
+
+country_event = {
+	id = WSH_region.1
+	title = WSH_region.1.t
+	desc = WSH_region.1.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Counties keep policing and relief allocation
+		name = WSH_region.1.a
+		set_country_flag = WSH_secession_risk_low
+		add_to_variable = { WSH_county_autonomy = 2 }
+		add_to_variable = { WSH_state_capacity = -1 }
+	}
+	option = { #Share Puget Sound port revenue
+		name = WSH_region.1.b
+		set_country_flag = WSH_secession_risk_low
+		add_to_variable = { WSH_county_autonomy = 1 }
+		add_to_variable = { WSH_business_confidence = -1 }
+		add_to_variable = { WSH_port_autonomy = -1 }
+	}
+	option = { #Hold the central line
+		name = WSH_region.1.c
+		set_country_flag = WSH_county_compact_failed
+		add_political_power = 25
+		add_to_variable = { WSH_county_autonomy = -1 }
+	}
+}
+
+# ---- Regional settlements (WSH_regional_settlements)
+
+country_event = {
+	id = WSH_region.2
+	title = WSH_region.2.t
+	desc = WSH_region.2.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #State courts protect the Valley workers
+		name = WSH_region.2.a
+		set_country_flag = WSH_valley_state_protection
+		add_stability = 0.02
+		add_to_variable = { WSH_democratic_legitimacy = 1 }
+		add_to_variable = { WSH_county_autonomy = -1 }
+	}
+	option = { #Leave order to the county sheriffs
+		name = WSH_region.2.b
+		set_country_flag = WSH_valley_vigilante_order
+		add_stability = 0.01
+		add_to_variable = { WSH_county_autonomy = 1 }
+		add_to_variable = { WSH_klan_influence = 1 }
+	}
+	option = { #Settle by revenue: banks, timber, ports
+		name = WSH_region.2.c
+		set_country_flag = WSH_revenue_settlement
+		add_to_variable = { WSH_business_confidence = 1 }
+		add_to_variable = { WSH_state_capacity = 1 }
+	}
+}
+
+# ---- First treaties (WSH_treaty_and_neighbor_relations)
+
+country_event = {
+	id = WSH_diplomacy.1
+	title = WSH_diplomacy.1.t
+	desc = WSH_diplomacy.1.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Columbia River agreement with Oregon
+		name = WSH_diplomacy.1.a
+		set_country_flag = WSH_treaty_oregon
+		add_to_variable = { WSH_public_works_commitment = 1 }
+		if = {
+			limit = { has_country_flag = WSH_martin_economic_line }
+			add_to_variable = { WSH_public_works_commitment = 1 }
+			add_to_variable = { WSH_state_capacity = 1 }
+		}
+	}
+	option = { #Northern trade agreement with British Columbia
+		name = WSH_diplomacy.1.b
+		set_country_flag = WSH_treaty_canada
+		add_to_variable = { WSH_business_confidence = 1 }
+		if = {
+			limit = { has_country_flag = WSH_private_credit_system }
+			add_to_variable = { WSH_business_confidence = 1 }
+		}
+		if = {
+			limit = { has_country_flag = WSH_state_nationalization }
+			add_to_variable = { WSH_business_confidence = -1 }
+		}
+	}
+	option = { #Grain and rail agreement with Idaho
+		name = WSH_diplomacy.1.c
+		set_country_flag = WSH_treaty_idaho
+		add_to_variable = { WSH_county_autonomy = -1 }
+		add_to_variable = { WSH_unemployment_pressure = -1 }
+	}
+	option = { #Pacific shipping agreement with California
+		name = WSH_diplomacy.1.d
+		set_country_flag = WSH_treaty_california
+		add_to_variable = { WSH_port_autonomy = 1 }
+		add_to_variable = { WSH_business_confidence = 1 }
+	}
+	option = { #Federal-restoration talks
+		name = WSH_diplomacy.1.e
+		set_country_flag = WSH_treaty_federal_talks
+		add_to_variable = { WSH_democratic_legitimacy = 1 }
+		add_to_variable = { WSH_military_autonomy = -1 }
+	}
+}
+
+# ---- The Klan and the New Order of Cincinnatus
+# Fires 180 days after the auxiliaries are accepted; the Klan takes the New Order
+# only if its influence has kept growing.
+country_event = {
+	id = WSH_klan.1
+	title = WSH_klan.1.t
+	desc = WSH_klan.1.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = WSH_klan_auxiliaries
+		check_variable = { WSH_klan_influence > 4 }
+	}
+
+	option = {
+		name = WSH_klan.1.a
+		recruit_character = WASHINGTON_LUTHER_POWELL
+		set_party_name = {
+			ideology = fascism
+			long_name = WSH_fascism_party_klan_long
+			name = WSH_fascism_party_klan
+		}
+		set_country_flag = WSH_klan_controls_new_order
+		add_to_variable = { WSH_klan_influence = 1 }
+		add_to_variable = { WSH_democratic_legitimacy = -1 }
+	}
+}

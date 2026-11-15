@@ -26,13 +26,8 @@
  WSH_hartley.2.desc: "The count is finished, the challenges are exhausted, and the Secretary of State has certified a winner. Whatever comes next, it will have the law behind it."
  WSH_hartley.2.a: "Roland H. Hartley Has Prevailed"
  WSH_hartley.2.b: "Martin Retains the Governorship"
+ WSH_hartley.2.c: "Refuse Both Claims and Call a Convention"
 
- # WSH_hartley.3
- WSH_hartley.3.t: "A Lawful Transfer"
- WSH_hartley.3.desc: "Certification settled the question of who won. It did not move a single file cabinet. The outgoing administration's appointees still hold the treasury keys, still sit at the department desks, and still answer the phones in the Governor's office.\n\nHartley must decide how quickly - and how completely - to make Olympia his own."
- WSH_hartley.3.a: "Retain Experienced Officials"
- WSH_hartley.3.b: "Install Hartley Loyalists"
- WSH_hartley.3.c: "Require Legislative Approval"
 
  # WSH_hartley.4
  WSH_hartley.4.t: "The Oath of Continuity"
@@ -43,7 +38,7 @@
 
  # WSH_hartley.5
  WSH_hartley.5.t: "Governor of the Republic"
- WSH_hartley.5.desc: "Roland H. Hartley takes the oath on the steps of the Legislative Building in Olympia. Whatever Washington is now, it is not ungoverned. The treasury has a signature on its ledgers again, the National Guard has a commander-in-chief, and the courts have someone to answer to.\n\nThe hard part - actually governing what's left - starts tomorrow."
+ WSH_hartley.5.desc: "The governor takes the oath on the steps of the Legislative Building in Olympia. Whatever Washington is now, it is not ungoverned. The treasury has a signature on its ledgers again, the National Guard has a commander-in-chief, and the courts have someone to answer to.\n\nThe hard part - actually governing what's left - starts tomorrow."
  WSH_hartley.5.a: "Long Live the Republic of Washington"
 
  # Decision Category

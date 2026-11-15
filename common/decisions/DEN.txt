@@ -4358,53 +4358,6 @@ DEN_overlord_category = {
 		}
 	}
 
-	DEN_overlord_requests_the_return_of_the_faroes = {
-
-		icon = GFX_decision_generic_operation
-		
-		available = {
-			337 = {
-				is_controlled_by = ENG
-			}
-			is_subject = no
-			NOT = {
-				has_war_with = ENG
-				any_allied_country = {
-					has_war_with = ENG
-				}
-			}
-			ENG = {
-				has_opinion = {
-					target = ROOT
-					value > 74
-				}
-			}
-		}
-
-		cost = 50
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			base = 0
-		} 
-		
-		visible = {
-			has_global_flag = ENG_occupied_DEN_faroes
-			has_subject = DEN
-			337 = {
-				is_fully_controlled_by = ENG
-			}
-			NOT = {
-				has_war_with = ENG
-			}
-		}
-		
-		complete_effect = {
-			#ENG = { country_event = { id = AAT_USA_events.08 days = 1 } }
-			ENG = { country_event = { id = AAT_USA_events.08 days = 2 } }
-		}
-	}
 
 	DEN_overlord_requests_greenland_back = {
 		icon = generic_operation
@@ -7712,74 +7665,6 @@ DEN_offer_protection_category = {
 DEN_return_occupied_territory_category = {
 	
 	# Request the Return of the Faroes
-	DEN_request_the_return_of_the_faroes = {
-
-		icon = GFX_decision_generic_operation
-		ai_will_do = {
-			base = 100
-		}
-	
-		allowed = {
-			tag = DEN
-		}
-		
-		available = {
-			337 = {
-				is_controlled_by = ENG
-			}
-			is_subject = no
-			NOT = {
-				has_war_with = ENG
-				any_allied_country = {
-					has_war_with = ENG
-				}
-			}
-		}
-
-		cost = 0
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 1.5
-				DEN = { #Denmark controls mainland Denmark
-  					controls_state = 37
-					controls_state = 99
-					controls_state = 911
-					controls_state = 912
-  				}
-			}
-			modifier = {
-				factor = 5
-				has_war = no
-			}
-			modifier = {
-				factor = 2
-				is_in_faction_with = ENG
-			}
-			modifier = {
-				factor = 2
-				ENG = {
-					has_government = ROOT
-				}
-			}
-		} 
-		
-		visible = {
-			tag = DEN
-			337 = {
-				is_controlled_by = ENG
-			}
-			has_dlc = "Arms Against Tyranny"
-			has_global_flag = ENG_occupied_DEN_faroes
-		}
-		
-		complete_effect = {
-			ENG = { country_event = { id = AAT_USA_events.03 days = 2 } }
-		}
-	}
 
 	DEN_request_greenland_back = {
 		icon = generic_operation

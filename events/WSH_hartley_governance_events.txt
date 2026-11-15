@@ -153,7 +153,7 @@ country_event = {
 	}
 }
 
-# 50. Convergence event - fires on completion of WSH_first_republican_budget
+# 50. Convergence event - fires on completion of WSH_first_national_budget
 country_event = {
 	id = WSH_hartley.50
 	title = WSH_hartley.50.t
@@ -194,3 +194,5 @@ country_event = {
 		add_stability = 0.05
 	}
 }
+
+# The permanent constitutional order is chosen in WSH_1933.60 (events/WSH_1933_events.txt)

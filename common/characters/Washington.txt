@@ -25,4 +25,30 @@ characters = {
 			desc = "Governor of Washington, 1925-1933"
 		}
 	}
+
+	WASHINGTON_FREDERICK_G_HAMLEY = {
+		name = "Frederick G. Hamley"
+		portraits = {
+			civilian = { large = "GFX_WSH_Portrait_Frederick_G_Hamley" }
+		}
+		gender = male
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.1.1"
+			desc = WASHINGTON_FREDERICK_G_HAMLEY_desc
+		}
+	}
+
+	WASHINGTON_LUTHER_POWELL = {
+		name = "Luther Powell"
+		portraits = {
+			civilian = { large = "GFX_WSH_Portrait_Luther_Powell" }
+		}
+		gender = male
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.1.1"
+			desc = WASHINGTON_LUTHER_POWELL_desc
+		}
+	}
 }
