@@ -27,7 +27,11 @@ CAL_civil_war_preparation_cat = {
         original_tag = CAL
     }
     visible = {
-		is_debug = yes
+        OR = {
+            is_debug = yes
+            has_country_flag = country_flag_cal_conservative_civil_war_preparation
+            has_country_flag = country_flag_cal_socialist_civil_war_preparation
+        }
     }
     visible_when_empty = yes
     priority = 100

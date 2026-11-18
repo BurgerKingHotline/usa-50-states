@@ -11,13 +11,13 @@ recruit_character = CAL_MERRITT_BARTON
 recruit_character = CAL_BURTON_FITTS
 
 set_popularities = {
-	socialism_ideology = 10#socialist party of california
-	democratic = 20#democratic party
-	conservatism_ideology = 20#republican party
+	socialism_ideology = 20#socialist party of california
+	democratic = 10#democratic party
+	conservatism_ideology = 26#republican party
 	populism_ideology = 0#there is no populism in bae-sing-sae, idk gng, i want right-wing radicals to be represented by fascism not this, not quite accurate but i think will make more sense narratively
-	neutrality = 45#republican party
-	fascism = 5#fifth column
-	communism = 0#communist party of california
+	neutrality = 40#republican party
+	fascism = 3#fifth column
+	communism = 1#communist party of california
 }
 set_politics = {
 	ruling_party = neutrality
@@ -33,8 +33,8 @@ add_ideas = {
 
 set_variable = { CAL_total_engagement_consumer_goods_factor = 0.1 }
 set_variable = { CAL_total_engagement_weekly_manpower = 0 }
-set_variable = { CAL_total_engagement_stability_weekly = -0.0005 }
-set_variable = { CAL_total_engagement_socialism_drift = 0.00 }
+set_variable = { CAL_total_engagement_stability_weekly = -0.001 }
+set_variable = { CAL_total_engagement_socialism_drift = 0.02 }
 set_variable = { CAL_total_engagement_neutrality_drift = 0.00 }
 add_dynamic_modifier = {
 	modifier = CAL_total_engagement_modifier
@@ -43,7 +43,7 @@ add_dynamic_modifier = {
 #CIVIL WAR SETUP
 set_variable = { cal_conservative_militias = 10 }
 set_variable = { cal_socialist_militias = 8 }
-set_variable = { cal_army_defection_ratio = 0.35 }
+set_variable = { cal_army_defection_ratio = 0.30 }
 set_variable = { cal_conservative_arms_stockpiles = 1500 }
 set_variable = { cal_socialism_arms_stockpiles = 1000 }
 set_variable = { cal_socialist_stability_starting_cv = 0.3 } # Stability
@@ -83,3 +83,9 @@ if = {
 	}
 }
 
+country_event = {
+	id = california_event.1
+	days = 59
+	random_days = 10
+	random_hours = 12
+}

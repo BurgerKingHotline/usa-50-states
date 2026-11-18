@@ -88,6 +88,7 @@ CAL_sided_with_socialists_setup = {#this means only the states that are COMPLETE
 	141 = { set_state_flag = state_flag_cal_socialist_uprising }
 	113 = { set_state_flag = state_flag_cal_socialist_uprising }
 	145 = { set_state_flag = state_flag_cal_socialist_uprising }
+	#set_variable = { cal_army_defection_ratio = 0.35 }
 }
 CAL_sided_with_conservatives_setup = {#this means all states that can possibly go to sinclair start out going to him
 	110 = { set_state_flag = state_flag_cal_socialist_uprising }
@@ -100,4 +101,5 @@ CAL_sided_with_conservatives_setup = {#this means all states that can possibly g
 	144 = { set_state_flag = state_flag_cal_socialist_uprising }
 	145 = { set_state_flag = state_flag_cal_socialist_uprising }
 	111 = { set_state_flag = state_flag_cal_socialist_uprising }
+	#set_variable = { cal_army_defection_ratio = 0.45 }
 }
