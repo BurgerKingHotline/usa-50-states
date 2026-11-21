@@ -12,33 +12,47 @@ recruit_character = CAL_BURTON_FITTS
 
 set_popularities = {
 	socialism_ideology = 20#socialist party of california
-	democratic = 10#democratic party
-	conservatism_ideology = 26#republican party
-	populism_ideology = 0#there is no populism in bae-sing-sae, idk gng, i want right-wing radicals to be represented by fascism not this, not quite accurate but i think will make more sense narratively
+	democratic = 14#democratic party
+	conservatism_ideology = 7#republican party
+	populism_ideology = 15#there is no populism in bae-sing-sae, idk gng, i want right-wing radicals to be represented by fascism not this, not quite accurate but i think will make more sense narratively
 	neutrality = 40#republican party
 	fascism = 3#fifth column
 	communism = 1#communist party of california
 }
+
 set_politics = {
 	ruling_party = neutrality
 	elections_allowed = yes
 	last_election = "1930.1.1"
 	election_frequency = 48
 }
+
 set_research_slots = 3
+
+set_stability = 0.75
+set_war_support = 0.35
+
 add_ideas = {
 	CAL_idea_paradisiacal
 	CAL_idea_great_depression
 }
 
+#total engagement dynamic modifier
 set_variable = { CAL_total_engagement_consumer_goods_factor = 0.1 }
 set_variable = { CAL_total_engagement_weekly_manpower = 0 }
 set_variable = { CAL_total_engagement_stability_weekly = -0.001 }
 set_variable = { CAL_total_engagement_socialism_drift = 0.02 }
-set_variable = { CAL_total_engagement_neutrality_drift = 0.00 }
+set_variable = { CAL_total_engagement_neutrality_drift = 0.02 }
 add_dynamic_modifier = {
 	modifier = CAL_total_engagement_modifier
 }
+
+#loyalty of industries minigame
+set_variable = { CAL_loyalty_hollywood = 50 }
+set_variable = { CAL_loyalty_industry = 50 }
+set_variable = { CAL_loyalty_military = 50 }
+set_variable = { CAL_loyalties_turn_time = 31 }
+set_variable = { CAL_loyalties_enemy_turn_time = CAL_loyalties_turn_time }
 
 #CIVIL WAR SETUP
 set_variable = { cal_conservative_militias = 10 }

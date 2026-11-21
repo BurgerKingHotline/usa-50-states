@@ -13,14 +13,14 @@ country_event = {
     }
 	option = {
 		name = california_event.1.a
-        set_country_flag = country_flag_cal_socialist_civil_war_preparation
         complete_national_focus = CAL_side_sinclair
+        set_country_flag = country_flag_cal_side_sinclair
         CAL_sided_with_socialists_setup = yes
 	}
 	option = {
 		name = california_event.1.a
-        set_country_flag = country_flag_cal_conservative_civil_war_preparation
         complete_national_focus = CAL_side_conservative
+        set_country_flag = country_flag_cal_side_conservative
         CAL_sided_with_conservatives_setup = yes
 	}
     after = {
@@ -48,6 +48,9 @@ country_event = {
             long_name = CAL_socialism_ideology_party_epic_long
             name = CAL_socialism_ideology_party_epic
         }
+        set_country_flag = country_flag_cal_loyalties_minigame_enabled
+        set_country_flag = country_flag_cal_not_taking_loyalties_minigame_dec
+        unlock_decision_category_tooltip = CAL_loyalties_minigame_cat
 	}
 }
 #los angeles, long beach earthquake

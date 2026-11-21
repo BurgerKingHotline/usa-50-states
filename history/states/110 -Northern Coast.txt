@@ -13,9 +13,9 @@ state = {
 		buildings = {
 			infrastructure = 1
 			
-			7656 = {
-				naval_base = 1
-			}
+			#####7656 = {
+			#	naval_base = 1
+			#}
 		}
 	}
 	provinces = { 2269 2616 3053 3145 3726 3863 4905 5208 6159 7616 7656 7701 7780 13014 }#7815 is where Mendecino starts

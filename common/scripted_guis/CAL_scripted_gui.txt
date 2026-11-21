@@ -1,0 +1,20 @@
+scripted_gui = {
+    CAL_loyalties_minigame_gui = {
+        context_type = decision_category
+        window_name = "CAL_loyalties_minigame_gui_window"
+        dynamic_lists = {
+            city_council_seat_container = {
+				# The interface grid places a deterministic 10 x 5 rectangular council.
+                array = chg_city_council_layout_frame
+                change_scope = no
+                entry_container = chg_council_seat
+                index = chg_seat_index
+            }
+        }
+        properties = {
+            chg_council_seat_icon = {
+				frame = chg_city_council_layout_frame^chg_seat_index
+			}
+        }
+    }
+}

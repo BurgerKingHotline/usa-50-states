@@ -1,0 +1,7 @@
+﻿l_english:
+ add_x_to_CAL_loyalty_military_tt:0 "§5Military Loyalty Changes By §R[?CAL_increase_decrease_loyalty_temp]§!"
+ add_x_to_CAL_loyalty_hollywood_tt:0 "§5Hollywood Loyalty Changes By §R[?CAL_increase_decrease_loyalty_temp]§!"
+ add_x_to_CAL_loyalty_industry_tt:0 "§5Industry Loyalty Changes By §R[?CAL_increase_decrease_loyalty_temp]§!"
+
+ cal_create_x_militias_civilwar_tt:0 "§RCreates [?cal_militia_state_number_temp|.0] Militias§!"
+ global_flag_cal_civil_war:0 "Californian Civil War Is Ongoing"

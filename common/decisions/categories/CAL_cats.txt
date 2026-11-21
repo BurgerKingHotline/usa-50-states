@@ -29,10 +29,24 @@ CAL_civil_war_preparation_cat = {
     visible = {
         OR = {
             is_debug = yes
-            has_country_flag = country_flag_cal_conservative_civil_war_preparation
-            has_country_flag = country_flag_cal_socialist_civil_war_preparation
         }
     }
+    visible_when_empty = yes
+    priority = 100
+}
+CAL_loyalties_minigame_cat = {
+    allowed = {
+        original_tag = CAL
+    }
+    visible = {
+        OR = {
+            is_debug = yes
+            has_country_flag = country_flag_cal_loyalties_minigame_enabled
+            #has_country_flag = country_flag_cal_sided_sinclair
+            #has_country_flag = country_flag_cal_sided_conservatives
+        }
+    }
+    scripted_gui = CAL_loyalties_minigame_gui
     visible_when_empty = yes
     priority = 100
 }

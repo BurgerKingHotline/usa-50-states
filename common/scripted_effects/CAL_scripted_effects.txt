@@ -32,6 +32,8 @@ CAL_add_starting_militias_civil_war = {
 	}
 
 }
+CAL_start_civil_war_conservative = {}
+CAL_start_civil_war_socialism = {}
 CAL_start_civil_war = {
 	set_global_flag = global_flag_cal_civil_war
 	set_country_flag = country_flag_cal_conservative_civil_war

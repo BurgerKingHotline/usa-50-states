@@ -196,6 +196,278 @@ CAL_civilwar_decision_cat = {
 	}
 }
 CAL_civil_war_preparation_cat = {
+    CAL_prepare_militias = {
+        allowed = {
+            is_debug = yes
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 25
+        days_remove = 31
+        modifier = {
+			#command_power_gain = -0.1
+        }
+		ai_will_do = {
+			base = 10
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = cal_socialist_militias
+				value = 1
+				tooltip = cal_add_1_socialist_militia_tt
+			}
+		}
+    }
+    CAL_stockpile_guns = {
+        allowed = {
+            is_debug = yes
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 25
+        days_remove = 31
+        modifier = {
+			#command_power_gain = -0.1
+        }
+		ai_will_do = {
+			base = 10
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = cal_socialism_arms_stockpiles
+				value = 500
+				tooltip = cal_add_500_socialist_arms_stockpiles_tt
+			}
+		}
+    }
+	CAL_build_infrastructure_shasta = {
+        allowed = {
+            is_debug = yes
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 0
+		remove_effect = {
+			109 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+		}
+	}
+    CAL_shasta_unrest_mission = {
+		activation = {
+			NOT = {
+				109 = {
+					infrastructure > 1
+				}
+			}
+		}
+		available = {
+			109 = {
+				infrastructure > 1
+			}
+		}
+		cancel_trigger = {
+			109 = {
+				infrastructure > 1
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = yes
+		days_mission_timeout = 400
+		selectable_mission = yes
+		#fire_only_once = yes
+		modifier = {
+			stability_factor = -0.1
+			war_support_factor = -0.1
+		}
+		cancel_effect = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.05
+			}
+			109 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		timeout_effect = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = -0.05
+			}
+		}
+    }
+
+	CAL_produce_campaign_media = {
+        allowed = {
+            tag = CAL
+        }
+        icon = GFX_decision_generic_army_support 
+		cost = 50
+        days_remove = 62
+        modifier = {
+			socialism_ideology_drift = 0.04
+        }
+		ai_will_do = {
+			base = 10
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = 0.03
+			}
+		}
+	}
+	CAL_mobilize_support = {
+        allowed = {
+            tag = CAL
+        }
+        icon = GFX_decision_generic_army_support 
+		custom_cost_trigger = {
+			socialism_ideology > 0.2
+		}
+        days_remove = 50
+        modifier = {
+			political_power_cost = -0.1
+        }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_political_power < 0
+				add = 10
+			}
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = socialism_ideology
+				popularity = -0.05
+			}
+		}
+		remove_effect = {
+			add_political_power = 50
+		}
+	}
+}
+CAL_loyalties_minigame_cat = {
+	CAL_country_flag_cal_not_taking_loyalties_minigame_dec_debug = {
+        allowed = {
+            tag = CAL
+			is_debug = yes
+        }
+        icon = GFX_decision_generic_army_support 
+        days_remove = 0
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {
+			set_country_flag = country_flag_cal_not_taking_loyalties_minigame_dec
+		}
+	}
+	CAL_country_flag_cal_loyalties_minigame_enabled_debug = {
+        allowed = {
+            tag = CAL
+			is_debug = yes
+        }
+        icon = GFX_decision_generic_army_support 
+        days_remove = 0
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {
+			set_country_flag = country_flag_cal_loyalties_minigame_enabled
+		}
+	}
+	CAL_increase_industry_small_c_dec = {
+        allowed = {
+            tag = CAL
+        }
+        icon = GFX_decision_generic_army_support 
+        days_remove = CAL_loyalties_turn_time
+		cost = 50
+		ai_will_do = {
+			base = 0
+		}
+		available = {
+			OR = {
+				has_country_flag = country_flag_cal_not_taking_loyalties_minigame_dec
+			}
+		}
+		complete_effect = {
+			clr_country_flag = country_flag_cal_not_taking_loyalties_minigame_dec
+		}
+		remove_effect = {
+			set_country_flag = country_flag_cal_not_taking_loyalties_minigame_dec
+			add_to_variable = {
+				var = CAL_loyalty_industry
+				value = 5
+				tooltip = add_5_to_CAL_loyalty_industry_tt
+			}
+		}
+	}
+	CAL_opposition_mission = {
+		activation = {
+			has_country_flag = country_flag_cal_loyalties_minigame_enabled
+		}
+		available = {
+			NOT = {
+				has_country_flag = country_flag_cal_loyalties_minigame_enabled
+			}
+		}
+		cancel_trigger = {
+			NOT = {
+				has_country_flag = country_flag_cal_loyalties_minigame_enabled
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = CAL_loyalties_enemy_turn_time
+		selectable_mission = no
+		timeout_effect = {
+			activate_mission = CAL_opposition_mission
+			if = {
+				limit = {
+					has_country_flag = country_flag_cal_side_sinclair
+				}
+				set_temp_variable = { CAL_increase_decrease_loyalty_temp = 5 }
+			}
+			else_if = {
+				limit = {
+					has_country_flag = country_flag_cal_side_conservative
+				}
+				set_temp_variable = { CAL_increase_decrease_loyalty_temp = -5 }
+			}
+			#set_temp_variable = { CAL_increase_decrease_loyalty_temp = 5 }
+			random_list = {
+				5 = {
+					add_to_variable = {
+						var = CAL_loyalty_military
+						value = CAL_increase_decrease_loyalty_temp
+						tooltip = add_x_to_CAL_loyalty_military_tt
+					}
+				}
+				5 = {
+					add_to_variable = {
+						var = CAL_loyalty_hollywood
+						value = CAL_increase_decrease_loyalty_temp
+						tooltip = add_x_to_CAL_loyalty_hollywood_tt
+					}
+				}
+				5 = {
+					add_to_variable = {
+						var = CAL_loyalty_industry
+						value = CAL_increase_decrease_loyalty_temp
+						tooltip = add_x_to_CAL_loyalty_industry_tt
+					}
+				}
+				5 = {
+				}
+			}
+		}
+	}
 }
 CAL_purchase_foreign_weapons = {
     CAL_buy_infantry_equipment = {

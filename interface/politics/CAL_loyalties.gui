@@ -1,0 +1,134 @@
+guiTypes = {
+	containerWindowType = {
+		name = "CAL_loyalties_minigame_gui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 400 }
+		clipping = no
+
+		# INDUSTRY
+		iconType = {
+			name = "industry_portrait"
+			spriteType = "GFX_CHG_Portrait_Henry_Horner"
+			position = { x = 25 y = 4 }
+			scale = 0.70
+		}
+		# HOLLYWOOD
+		iconType = {
+			name = "hollywood_portrait"
+			spriteType = "GFX_CHG_Portrait_Henry_Horner"
+			position = { x = 200 y = 4 }
+			scale = 0.70
+		}
+		# MILITARY
+		iconType = {
+			name = "military_portrait"
+			spriteType = "GFX_CHG_Portrait_Henry_Horner"
+			position = { x = 375 y = 4 }
+			scale = 0.70
+		}
+        # PORTRAIT NAME
+		instantTextboxType = {
+			name = "industry_portrait_name"
+			position = { x = 25 y = 154 }
+			font = "hoi_18mbs"
+			text = "CAL_INDUSTRY_PORTRAIT_NAME"
+			maxWidth = 116
+			maxHeight = 34
+			fixedsize = yes
+			format = centre
+		}
+		instantTextboxType = {
+			name = "hollywood_portrait_name"
+			position = { x = 200 y = 154 }
+			font = "hoi_18mbs"
+			text = "CAL_HOLLYWOOD_PORTRAIT_NAME"
+			maxWidth = 116
+			maxHeight = 34
+			fixedsize = yes
+			format = centre
+		}
+		instantTextboxType = {
+			name = "military_portrait_name"
+			position = { x = 375 y = 154 }
+			font = "hoi_18mbs"
+			text = "CAL_MILITARY_PORTRAIT_NAME"
+			maxWidth = 116
+			maxHeight = 34
+			fixedsize = yes
+			format = centre
+		}
+        # LOYALTIES
+		instantTextboxType = {
+			name = "loyalties_title_bar"
+			position = { x = 200 y = 175 }
+			font = "hoi_18mbs"
+			text = "CAL_LOYALTIES_TITLE_BAR"
+			maxWidth = 116
+			maxHeight = 18
+			fixedsize = yes
+			format = centre
+		}
+        # LOYALTY VAR
+		instantTextboxType = {
+			name = "industry_loyalty_var_name"
+			position = { x = 25 y = 200 }
+			font = "hoi_18mbs"
+			text = "CAL_INDUSTRY_LOYALTY_NAME"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "hollywood_loyalty_var_name"
+			position = { x = 200 y = 200 }
+			font = "hoi_18mbs"
+			text = "CAL_HOLLYWOOD_LOYALTY_NAME"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "military_loyalty_var_name"
+			position = { x = 375 y = 200 }
+			font = "hoi_18mbs"
+			text = "CAL_MILITARY_LOYALTY_NAME"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+        # LOYALTY VAR
+		instantTextboxType = {
+			name = "industry_loyalty_var"
+			position = { x = 25 y = 221 }
+			font = "hoi_18mbs"
+			text = "CAL_INDUSTRY_LOYALTY"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "hollywood_loyalty_var"
+			position = { x = 200 y = 221 }
+			font = "hoi_18mbs"
+			text = "CAL_HOLLYWOOD_LOYALTY"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "military_loyalty_var"
+			position = { x = 375 y = 221 }
+			font = "hoi_18mbs"
+			text = "CAL_MILITARY_LOYALTY"
+			maxWidth = 116
+			maxHeight = 18
+			format = centre
+			alwaystransparent = yes
+		}
+    }
+}
